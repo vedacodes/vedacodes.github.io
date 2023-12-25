@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f8f8f8;
             color: #333;
         }
         header {
@@ -37,19 +37,29 @@
         }
         main {
             padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         article {
+            flex: 1 1 300px;
             background-color: white;
             padding: 20px;
-            margin-bottom: 30px;
+            margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        article:hover {
+            transform: scale(1.05);
         }
         article h2 {
             color: #333;
+            margin-bottom: 10px;
         }
         article p {
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         article a {
             color: #4CAF50;
@@ -90,68 +100,80 @@
         <a href="rome_page.html#rome">
             <img class="city-image" src="rome-image.jpg" alt="Rome">
         </a>
-        <h2><a href="rome_page.html#rome">Rome</a></h2>
         <p>Rome, the capital city of Italy, is known for its rich history, stunning architecture, and delicious cuisine. Explore iconic landmarks such as the Colosseum, Roman Forum, and Vatican City.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="rome_page.html#rome">Read more</a></p>
     </article>
 
     <article id="vatican">
         <h2>Vatican City</h2>
         <a href="vatican-page.html#vatican">
-            <img class="vatican-image" src="vatican-image.jpg" alt="Vatican City">
+            <img class="city-image" src="vatican-image.jpg" alt="Vatican City">
         </a>
-        <h2><a href="vatican-page.html#vatican">Vatican</a></h2>
         <p>Vatican City, an independent city-state surrounded by Rome, is the headquarters of the Roman Catholic Church. Visit St. Peter's Basilica, the Vatican Museums, and the Sistine Chapel.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="vatican-page.html#vatican">Read more</a></p>
     </article>
 
     <article id="venice">
         <h2>Venice</h2>
-        <img class="city-image" src="venice-image.jpg" alt="Venice">
+        <a href="venice-page.html#venice">
+            <img class="city-image" src="venice-image.jpg" alt="Venice City">
+        </a>
         <p>Venice, known for its romantic canals and historic architecture, is a unique city built on a lagoon. Explore landmarks like St. Mark's Basilica, the Grand Canal, and enjoy a gondola ride.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="venice-page.html#venice">Read more</a></p>
     </article>
 
     <article id="paris">
         <h2>Paris</h2>
-        <img class="city-image" src="paris-image.jpg" alt="Paris">
+        <a href="paris-page.html#paris">
+            <img class="city-image" src="paris-image.jpg" alt="Paris City">
+        </a>
         <p>Paris, the capital of France, is renowned for its art, fashion, and gastronomy. Visit iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="paris-page.html#paris">Read more</a></p>
     </article>
 
     <article id="barcelona">
         <h2>Barcelona</h2>
-        <img class="city-image" src="barcelona-image.jpg" alt="Barcelona">
+        <a href="barcelona-page.html#barcelona">
+            <img class="city-image" src="barcelona-image.jpg" alt="Barcelona City">
+        </a>
         <p>Barcelona, located on the northeast coast of the Iberian Peninsula, is famous for its unique architecture by Antoni Gaudí. Explore attractions like Sagrada Família, Park Güell, and La Rambla.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="barcelona-page.html#barcelona">Read more</a></p>
     </article>
 
     <article id="cancun">
         <h2>Cancun</h2>
-        <img class="city-image" src="cancun-image.jpg" alt="Cancun">
+        <a href="cancun-page.html#cancun">
+            <img class="city-image" src="cancun-image.jpg" alt="Cancun City">
+        </a>
         <p>Cancun, a popular resort destination in Mexico, is known for its beautiful beaches, vibrant nightlife, and archaeological wonders like Chichen Itza. Relax by the turquoise waters of the Caribbean Sea.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="cancun-page.html#cancun">Read more</a></p>
     </article>
 
     <article id="mexicocity">
         <h2>Mexico City</h2>
-        <img class="city-image" src="mexicocity-image.jpg" alt="Mexico City">
+        <a href="mexicocity-page.html#mexicocity">
+            <img class="city-image" src="mexicocity-image.jpg" alt="Mexico City">
+        </a>
         <p>Mexico City, the capital of Mexico, offers a blend of modern and historic attractions. Explore the ancient Aztec Templo Mayor, the historic Zocalo, and indulge in authentic Mexican cuisine.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="mexicocity-page.html#mexicocity">Read more</a></p>
     </article>
 
     <article id="lima">
         <h2>Lima</h2>
-        <img class="city-image" src="lima-image.jpg" alt="Lima">
+        <a href="lima-page.html#lima">
+            <img class="city-image" src="lima-image.jpg" alt="Lima City">
+        </a>
         <p>Lima, the capital of Peru, boasts a rich culinary scene and historic architecture. Explore the UNESCO-listed historic center, visit the Larco Museum, and savor the flavors of Peruvian cuisine.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="lima-page.html#lima">Read more</a></p>
     </article>
 
     <article id="cusco">
         <h2>Cusco</h2>
-        <img class="city-image" src="cusco-image.jpg" alt="Cusco">
+        <a href="cusco-page.html#cusco">
+            <img class="city-image" src="cusco-image.jpg" alt="Cusco City">
+        </a>
         <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a href="cusco-page.html#cusco">Read more</a></p>
     </article>
 </main>
 
