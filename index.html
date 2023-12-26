@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Veda's Travel Diary</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -82,26 +83,70 @@
     <h1>Welcome to Veda's Travel Diary</h1>
 </header>
 
+
 <nav>
-    <a href="#rome">Rome</a>
-    <a href="#vatican">Vatican City</a>
-    <a href="#venice">Venice</a>
-    <a href="#paris">Paris</a>
-    <a href="#barcelona">Barcelona</a>
-    <a href="#cancun">Cancun</a>
-    <a href="#mexicocity">Mexico City</a>
-    <a href="#lima">Lima</a>
-    <a href="#cusco">Cusco</a>
+    <div class="dropdown">
+        <button class="dropbtn">Europe</button>
+        <div class="dropdown-content">
+            <a href="#rome">Rome</a>
+            <a href="#vatican">Vatican City</a>
+            <a href="#venice">Venice</a>
+            <a href="#paris">Paris</a>
+            <a href="#barcelona">Barcelona</a>
+            <a href="#amsterdam">Amsterdam</a>
+            <a href="#brussels">Brussels</a>
+            <a href="#interlaken">Interlaken</a>
+            <a href="#milan">Milan</a>
+            <a href="#santorini">Santorini</a>
+            <a href="#athens">Athens</a>
+            <a href="#prague">Prague</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">North America</button>
+        <div class="dropdown-content">
+            <a href="#cancun">Cancun</a>
+            <a href="#mexicocity">Mexico City</a>
+            <a href="#miami">Miami</a>
+            <a href="#losangeles">Los Angeles</a>
+            <a href="#lasvegas">Las Vegas</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">South America</button>
+        <div class="dropdown-content">
+            <a href="#lima">Lima</a>
+            <a href="#cusco">Cusco</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Asia</button>
+        <div class="dropdown-content">
+            <a href="#gangtok">Gangtok</a>
+            <a href="#darjeeling">Darjeeling</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Antarctica</button>
+        <div class="dropdown-content">
+            <a href="#kidding">Just Kidding :-D</a>
+        </div>
+    </div>
 </nav>
 
 <main>
     <article id="rome">
         <h2>Rome</h2>
-        <a href="rome_page.html#rome">
+        <a href="rome-page.html#rome">
             <img class="city-image" src="rome-image.jpg" alt="Rome">
         </a>
         <p>Rome, the capital city of Italy, is known for its rich history, stunning architecture, and delicious cuisine. Explore iconic landmarks such as the Colosseum, Roman Forum, and Vatican City.</p>
-        <p><a href="rome_page.html#rome">Read more</a></p>
+        <p><a href="rome-page.html#rome">Read more</a></p>
     </article>
 
     <article id="lima">
@@ -158,6 +203,69 @@
         <p><a href="mexicocity-page.html#mexicocity">Read more</a></p>
     </article>
 
+    <article id="cusco">
+        <h2>Cusco</h2>
+        <a href="cusco-page.html#cusco">
+            <img class="city-image" src="cusco-image.jpg" alt="Cusco City">
+        </a>
+        <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
+        <p><a href="cusco-page.html#cusco">Read more</a></p>
+    </article>
+
+    <article id="prague">
+        <h2>Prague</h2>
+        <a href="prague-page.html#prague">
+            <img class="city-image" src="prague-image.jpg" alt="Prague City">
+        </a>
+        <p>Prague, capital city of the Czech Republic, is bisected by the Vltava River. Nicknamed “the City of a Hundred Spires,” it's known for its Old Town Square, the heart of its historic core, with colorful baroque buildings, Gothic churches and the medieval Astronomical Clock.</p>
+        <p><a href="prague-page.html#prague">Read more</a></p>
+    </article>
+
+    <article id="miami">
+        <h2>Miami</h2>
+        <a href="miami-page.html#miami">
+            <img class="city-image" src="miami-image.jpg" alt="Miami City">
+        </a>
+        <p>Miami, at Florida's southeastern tip, is a vibrant city whose Cuban influence is reflected in the cafes and cigar shops. Miami Beach, on barrier islands across the turquoise waters of Biscayne Bay, is home to glamorous South Beach.</p>
+        <p><a href="miami-page.html#miami">Read more</a></p>
+    </article>
+    
+    <article id="losangeles">
+        <h2>Los Angeles</h2>
+        <a href="losangeles-page.html#losangeles">
+            <img class="city-image" src="losangeles-image.jpg" alt="Los Angeles City">
+        </a>
+        <p>Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours.</p>
+        <p><a href="losangeles-page.html#losangeles">Read more</a></p>
+    </article>
+    
+    <article id="lasvegas">
+        <h2>Las Vegas</h2>
+        <a href="lasvegas-page.html#lasvegas">
+            <img class="city-image" src="lasvegas-image.jpg" alt="Las Vegas City">
+        </a>
+        <p>Las Vegas, in Nevada’s Mojave Desert, is a resort city famed for its vibrant nightlife, centered around 24-hour casinos and other entertainment options. Its main street and focal point is the Strip, just over 4 miles long.</p>
+        <p><a href="lasvegas-page.html#lasvegas">Read more</a></p>
+    </article>
+
+    <article id="darjeeling">
+        <h2>Darjeeling</h2>
+        <a href="darjeeling-page.html#darjeeling">
+            <img class="city-image" src="darjeeling-image.jpg" alt="Darjeeling City">
+        </a>
+        <p>Darjeeling, in India's West Bengal state, is a hill station known for its distinctive black tea grown on plantations that dot its surrounding slopes. Its backdrop of Mt. Kanchenjunga, among the world’s highest peaks, is truly breathtaking.</p>
+        <p><a href="darjeeling-page.html#darjeeling">Read more</a></p>
+    </article>
+
+    <article id="gangtok">
+        <h2>Gangtok</h2>
+        <a href="gangtok-page.html#gangtok">
+            <img class="city-image" src="gangtok-image.jpg" alt="Gangtok City">
+        </a>
+        <p>Gangtok, the capital of Sikkim, is a popular hill destination in the northeast region of India. It is known for its scenic beauty and striking views of Mount Kanchenjunga, the third highest peak in the world.</p>
+        <p><a href="gangtok-page.html#gangtok">Read more</a></p>
+    </article>
+
     <article id="vatican">
         <h2>Vatican City</h2>
         <a href="vatican-page.html#vatican">
@@ -167,13 +275,58 @@
         <p><a href="vatican-page.html#vatican">Read more</a></p>
     </article>
 
-    <article id="cusco">
-        <h2>Cusco</h2>
-        <a href="cusco-page.html#cusco">
-            <img class="city-image" src="cusco-image.jpg" alt="Cusco City">
+    <article id="santorini">
+        <h2>Santorini</h2>
+        <a href="santorini-page.html#santorini">
+            <img class="city-image" src="santorini-image.jpg" alt="Santorini City">
         </a>
-        <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
-        <p><a href="cusco-page.html#cusco">Read more</a></p>
+        <p>Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).</p>
+        <p><a href="santorini-page.html#santorini">Read more</a></p>
+    </article>
+    
+    <article id="milan">
+        <h2>Milan</h2>
+        <a href="milan-page.html#milan">
+            <img class="city-image" src="milan-image.jpg" alt="Milan City">
+        </a>
+        <p>Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design. Home to the national stock exchange, it’s a financial hub also known for its high-end restaurants and shops.</p>
+        <p><a href="milan-page.html#milan">Read more</a></p>
+    </article>
+    
+    <article id="interlaken">
+        <h2>Interlaken</h2>
+        <a href="interlaken-page.html#interlaken">
+            <img class="city-image" src="interlaken-image.jpg" alt="Interlaken City">
+        </a>
+        <p>Interlaken is a traditional resort town in the mountainous Bernese Oberland region of central Switzerland. Built on a narrow stretch of valley, between the emerald-colored waters of Lake Thun and Lake Brienz, it has old timber houses and parkland on either side of the Aare River.</p>
+        <p><a href="interlaken-page.html#interlaken">Read more</a></p>
+    </article>
+    
+    <article id="athens">
+        <h2>Athens</h2>
+        <a href="athens-page.html#athens">
+            <img class="city-image" src="athens-image.jpg" alt="Athens City">
+        </a>
+        <p>Athens is the capital of Greece. It was also at the heart of Ancient Greece, a powerful civilization and empire. The city is still dominated by 5th-century BC landmarks, including the Acropolis, a hilltop citadel topped with ancient buildings like the colonnaded Parthenon temple.</p>
+        <p><a href="athens-page.html#athens">Read more</a></p>
+    </article>
+    
+    <article id="amsterdam">
+        <h2>Amsterdam</h2>
+        <a href="amsterdam-page.html#amsterdam">
+            <img class="city-image" src="amsterdam-image.jpg" alt="Amsterdam City">
+        </a>
+        <p>Amsterdam is the Netherlands’ capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk.</p>
+        <p><a href="amsterdam-page.html#amsterdam">Read more</a></p>
+    </article>
+
+    <article id="brussels">
+        <h2>Brussels</h2>
+        <a href="brussels-page.html#brussels">
+            <img class="city-image" src="brussels-image.jpg" alt="Brussels City">
+        </a>
+        <p>Brussels, the capital of Belgium and the European Union, is known for its medieval Grand-Place, royal palaces and Art Nouveau architecture. It's also home to international organizations, universities and research institutes.</p>
+        <p><a href="brussels-page.html#brussels">Read more</a></p>
     </article>
 </main>
 

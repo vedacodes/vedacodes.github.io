@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Page</title>
+    <title>When in Rome...</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,22 +40,59 @@
 <body>
 
 <header>
-    <h1>City Page</h1>
+    <h1>Lima, a city of contrasts, colors and cultures..</h1>
 </header>
 
-<main>
-    <section>
-        <h2>Rome</h2>
-        <img src="rome-image-1.jpg" alt="Rome 1">
-        <img src="rome-image-2.jpg" alt="Rome 2">
-        <img src="rome-image-3.jpg" alt="Rome 3">
-        <img src="rome-image-4.jpg" alt="Rome 4">
-        <p>Description of Rome goes here...</p>
-    </section>
-
-    <!-- Similar sections for other cities -->
-
-</main>
-
+<head>
+    <title>Lima</title>
+    <style>
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .image-gallery figure {
+            flex: 1 0 21%;
+            margin: 1%;
+            text-align: center;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="image-gallery">
+            <!-- Existing figures for images 1, 2, and 3... -->
+    
+            <figure>
+                <img src="lima-image-1.jpg" alt="Lima 1">
+                <figcaption>Cycling through the streets</figcaption>
+            </figure>
+            <figure>
+                <img src="lima-image-2.jpg" alt="Lima 2">
+                <figcaption>La Marina Lighthouse</figcaption>
+            </figure>
+            <figure>
+                <img src="lima-image-3.jpg" alt="Lima 3">
+                <figcaption>Love Park</figcaption>
+            </figure>
+        </section>
+    
+        <section class="image-gallery">
+            <figure>
+                <img src="lima-image-4.jpg" alt="Lima 4">
+                <figcaption>Street art in Barranco</figcaption>
+            </figure>
+            <figure>
+                <img src="lima-image-5.jpg" alt="Lima 5">
+                <figcaption>Street art in Barranco</figcaption>
+            </figure>
+        </section>
+    
+        <p>Lima, the capital of Peru, boasts a rich culinary scene and historic architecture. Explore the UNESCO-listed historic center, visit the Larco Museum, and savor the flavors of Peruvian cuisine.</p>
+    </main>
 </body>
 </html>
