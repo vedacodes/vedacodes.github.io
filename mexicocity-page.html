@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Page</title>
+    <title>Mexicocity</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,29 +32,97 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        section p {
-            line-height: 1.6;
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .image-gallery figure {
+            flex: 1 0 21%;
+            margin: 1%;
+            text-align: center;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>City Page</h1>
+    <h1>Mexicocity, where the Andes whisper ancient tales and the stones of Machu Picchu tell secrets of the past..</h1>
 </header>
 
 <main>
-    <section>
-        <h2>Rome</h2>
-        <img src="rome-image-1.jpg" alt="Rome 1">
-        <img src="rome-image-2.jpg" alt="Rome 2">
-        <img src="rome-image-3.jpg" alt="Rome 3">
-        <img src="rome-image-4.jpg" alt="Rome 4">
-        <p>Description of Rome goes here...</p>
+    <section class="image-gallery">
+        <figure>
+            <img src="mexicocity/mexicocity-image-2.jpg" alt="Mexicocity 2">
+            <figcaption>La Marina Lighthouse</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-4.jpg" alt="Mexicocity 4">
+            <figcaption>Street art in Barranco</figcaption>
+        </figure>
     </section>
 
-    <!-- Similar sections for other cities -->
+    <section class="image-gallery">
+        <figure>
+            <img src="mexicocity/mexicocity-image-1.jpg" alt="Mexicocity 1">
+            <figcaption>Cycling through the streets</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-3.jpg" alt="Mexicocity 3">
+            <figcaption>Love Park</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-5.jpg" alt="Mexicocity 5">
+            <figcaption>Street art in Barranco</figcaption>
+        </figure>
+    </section>
 
+    <section class="image-gallery">
+        <figure>
+            <img src="mexicocity/mexicocity-image-6.jpg" alt="Mexicocity 6">
+            <figcaption>Beautiful architecture</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-7.jpg" alt="Mexicocity 7">
+            <figcaption>Park Guell</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-8.jpg" alt="Mexicocity 8">
+            <figcaption>Beach view</figcaption>
+        </figure>
+    </section>
+
+    <section class="image-gallery">
+        <figure>
+            <img src="mexicocity/mexicocity-image-10.jpg" alt="Mexicocity 10">
+            <figcaption>Historic architecture</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-11.jpg" alt="Mexicocity 11">
+            <figcaption>Image 11</figcaption>
+        </figure>
+    </section>
+
+    <section class="image-gallery">
+        <figure>
+            <img src="mexicocity/mexicocity-image-9.jpg" alt="Mexicocity 9">
+            <figcaption>City skyline</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-12.jpg" alt="Mexicocity 12">
+            <figcaption>Image 12</figcaption>
+        </figure>
+        <figure>
+            <img src="mexicocity/mexicocity-image-13.jpg" alt="Mexicocity 13">
+            <figcaption>Image 13</figcaption>
+        </figure>
+    </section>
+
+    <p>Mexicocity, where the Andes whisper ancient tales and the stones of Machu Picchu tell secrets of the past.</p>
 </main>
 
 </body>

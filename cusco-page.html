@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Page</title>
+    <title>Cusco</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,29 +32,90 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        section p {
-            line-height: 1.6;
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .image-gallery figure {
+            flex: 1 0 21%;
+            margin: 1%;
+            text-align: center;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>City Page</h1>
+    <h1>Cusco, where the Andes whisper ancient tales and the stones of Machu Picchu tell secrets of the past..</h1>
 </header>
 
 <main>
-    <section>
-        <h2>Rome</h2>
-        <img src="rome-image-1.jpg" alt="Rome 1">
-        <img src="rome-image-2.jpg" alt="Rome 2">
-        <img src="rome-image-3.jpg" alt="Rome 3">
-        <img src="rome-image-4.jpg" alt="Rome 4">
-        <p>Description of Rome goes here...</p>
+    <section class="image-gallery">
+        <figure>
+            <img src="cusco/cusco-image-1.jpg" alt="Cusco 1">
+            <figcaption>Cycling through the streets</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-2.jpg" alt="Cusco 2">
+            <figcaption>La Marina Lighthouse</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-3.jpg" alt="Cusco 3">
+            <figcaption>Love Park</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-4.jpg" alt="Cusco 4">
+            <figcaption>Street art in Barranco</figcaption>
+        </figure>
     </section>
 
-    <!-- Similar sections for other cities -->
+    <section class="image-gallery">
+        <figure>
+            <img src="cusco/cusco-image-5.jpg" alt="Cusco 5">
+            <figcaption>Street art in Barranco</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-6.jpg" alt="Cusco 6">
+            <figcaption>Beautiful architecture</figcaption>
+        </figure>
+    </section>
 
+    <section class="image-gallery">
+        <figure>
+            <img src="cusco/cusco-image-8.jpg" alt="Cusco 8">
+            <figcaption>Additional Image 1</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-9.jpg" alt="Cusco 9">
+            <figcaption>Additional Image 2</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-10.jpg" alt="Cusco 10">
+            <figcaption>Additional Image 3</figcaption>
+        </figure>
+    </section>
+
+    <section class="image-gallery">
+        <figure>
+            <img src="cusco/cusco-image-11.jpg" alt="Cusco 11">
+            <figcaption>Additional Image 4</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-12.jpg" alt="Cusco 12">
+            <figcaption>Additional Image 5</figcaption>
+        </figure>
+        <figure>
+            <img src="cusco/cusco-image-13.jpg" alt="Cusco 13">
+            <figcaption>Additional Image 6</figcaption>
+        </figure>
+    </section>
+
+    <p>Cusco, where the Andes whisper ancient tales and the stones of Machu Picchu tell secrets of the past.</p>
 </main>
 
 </body>
