@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Page</title>
+    <title>Venice</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,26 +32,62 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        section p {
-            line-height: 1.6;
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .image-gallery figure {
+            flex: 1 0 21%;
+            margin: 1%;
+            text-align: center;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
+
 
 <header>
     <h1>Venice, where every canal tells a story and every bridge is a work of art.</h1>
 </header>
 
 <main>
-    <section>
-        <h2>Venice</h2>
-        <img src="venice/venice-image-1.jpg" alt="Rome 1">
-        <img src="venice/venice-image-2.jpg" alt="Rome 2">
-        <img src="venice/venice-image-3.jpg" alt="Rome 3">
-        <img src="venice/venice-image-4.jpg" alt="Rome 4">
-        <p>Description of Rome goes here...</p>
+    <section class="image-gallery">
+        <figure>
+            <img src="venice/venice-image-4.jpg" alt="Venice 4">
+            <figcaption>Gondola Ride!</figcaption>
+        </figure>
+        <figure>
+            <img src="venice/venice-image-2.jpg" alt="Venice 2">
+            <figcaption>Saint Mark's Basilica</figcaption>
+        </figure>
     </section>
+    <section class="image-gallery">
+        <figure>
+            <img src="venice/venice-image-1.jpg" alt="Venice 1">
+            <figcaption>Grand Canal </figcaption>
+        </figure>
+        <figure>
+            <img src="venice/venice-image-3.jpg" alt="Venice 3">
+        </figure>
+    </section>
+</section>
+<section class="image-gallery">
+    <figure>
+        <img src="venice/venice-image-5.jpg" alt="Venice 5">
+        <figcaption>Burano </figcaption>
+    </figure>
+    <figure>
+        <img src="venice/venice-image-6.jpg" alt="Venice 6">
+    </figure>
+    <figure>
+        <img src="venice/venice-image-7.jpg" alt="Venice 7">
+    </figure>
+</section>
 
     <!-- Similar sections for other cities -->
 
