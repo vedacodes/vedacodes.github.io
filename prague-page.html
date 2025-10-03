@@ -3,117 +3,792 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prague - City of a Hundred Spires | Veda's Travel Diary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYCWL3V5TW');
     </script>
-    <title>Prague</title>
+    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --city-gradient: linear-gradient(135deg, #8B4513 0%, #FFD700 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeInPage 1s ease-in-out forwards;
         }
-        main {
-            padding: 20px;
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
         }
-        section {
-            margin-bottom: 30px;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        section h2 {
-            color: #333;
-        }
-        section img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .image-gallery {
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
         }
-        .image-gallery figure {
-            flex: 1 0 21%;
-            margin: 1%;
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--city-gradient);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.4;
+        }
+
+        .collage-image {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .collage-image:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .collage-image:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .collage-image:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 2s; }
+        .collage-image:nth-child(4) { bottom: 15%; right: 20%; animation-delay: 3s; }
+        .collage-image:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            opacity: 0.8;
+            animation: slideInUp 1s ease-out 0.9s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Description Card */
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--city-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .description-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--city-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Travel Tips Grid */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
             text-align: center;
         }
-        .image-gallery img {
-            max-width: 100%;
-            height: auto;
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tip-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Booking Tips */
+        .booking-tips {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .booking-tip {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .booking-tip h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-tip h4 i {
+            color: #667eea;
+        }
+
+        .booking-tip p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Cuisine Grid */
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .food-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .food-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .food-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .food-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--city-gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            .description-card {
+                padding: 2rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .travel-tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cuisine-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collage-container {
+                opacity: 0.2;
+            }
+            
+            .collage-image {
+                width: 180px;
+                height: 140px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Veda's Travel Diary</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#travel-tips">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<header>
-    <h1>Prague: The Enchanting City of a Hundred Spires</h1>
-</header>
-
-<main>
-    <section class="image-gallery">
-        <!-- Existing figures for images 1, 2, and 3... -->
-        <figure>
-            <img src="prague/prague-image-2.jpg" alt="Prague 2">
-            <figcaption>The ancient Charles Bridge, construction started in 1357!!!</figcaption>
-        </figure>
-        <figure>
-            <img src="prague/prague-image-3.jpg" alt="Prague 3">
-            <figcaption>Sculptures on the Charles Bridge</figcaption>
-        </figure>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="collage-container">
+                <img src="prague/prague-image-1.jpg" alt="" class="collage-image">
+                <img src="prague/prague-image-2.jpg" alt="" class="collage-image">
+                <img src="prague/prague-image-3.jpg" alt="" class="collage-image">
+                <img src="prague/prague-image-4.jpg" alt="" class="collage-image">
+                <img src="prague/prague-image-1.jpg" alt="" class="collage-image">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Prague</h1>
+            <p class="hero-subtitle">Medieval Magic in the Heart of Europe</p>
+            <p class="hero-description">Step into a fairy tale in the enchanting capital of Czech Republic. Prague's Gothic cathedrals, baroque palaces, and medieval streets create one of Europe's most beautiful and well-preserved historic centers.</p>
+        </div>
     </section>
 
-    <section class="image-gallery">
+    <!-- Main Content -->
+    <main>
+        <!-- Description Section -->
+        <section class="content-section">
+            <h2 class="section-title">My Prague Adventure</h2>
+            <div class="description-card">
+                <p>Prague felt like walking through a living fairy tale. Every street corner revealed another architectural marvel, from the astronomical clock to the stunning castle complex. The charm of this city, combined with excellent beer and warm hospitality, made it one of my most memorable European experiences.</p>
+            </div>
+        </section>
 
-        <figure>
-            <img src="prague/prague-image-1.jpg" alt="Prague 1">
-            <figcaption>Fall in Prague</figcaption>
-        </figure>
-        <!-- Additional figures for images 4 to 16 -->
-        <figure>
-            <img src="prague/prague-image-4.jpg" alt="Prague 4">
-            <figcaption>Beautiful fall colors near Strahov Monastery</figcaption>
-        </figure>
-    </section>
+        <!-- Stats Section -->
+        <section class="content-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Days Exploring</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Gothic Beauty</div>
+                </div>
+            </div>
+        </section>
 
-    <section class="image-gallery">
-        <figure>
-            <img src="prague/prague-image-5.jpg" alt="Prague 5">
-            <figcaption>Lennon Wall</figcaption>
-        </figure>
-        <figure>
-            <img src="prague/prague-image-6.jpg" alt="Prague 6">
-            <figcaption>Prague Astronomical Clock, ticking from the year 1410!</figcaption>
-        </figure>
-    </section>
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Pages from My Prague Diary</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-1.jpg" alt="First Glimpse of Prague" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>First Glimpse of Prague</h3>
+                        <p>My initial impression of Prague was absolutely magical. Every corner held a new surprise and wonder.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Cultural Treasures</h3>
+                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Prague adventure.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Local Life</h3>
+                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Prague's authentic character.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Hidden Gems</h3>
+                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Unforgettable Moments</h3>
+                        <p>Some moments are so perfect they stay with you forever. Prague gave me many of these precious memories.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Farewell Views</h3>
+                        <p>As I prepared to leave Prague, I knew this place had changed me and would always hold a special place in my heart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="image-gallery">
-        <figure>
-            <img src="prague/prague-image-7.jpg" alt="Prague 7">
-            <figcaption>Entrance to the Charles Bridge</figcaption>
-        </figure>
-        <figure>
-            <img src="prague/prague-image-8.jpg" alt="Prague 8">
-            <figcaption>The ancient Prague Castle</figcaption>
-        </figure>
-        <!-- Rest of the figures... -->
-    </section>
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See Places in Prague</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏰</div>
+                    <h3>Prague Castle</h3>
+                    <p>Largest ancient castle complex in the world. St. Vitus Cathedral and Old Royal Palace are must-sees.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌉</div>
+                    <h3>Charles Bridge</h3>
+                    <p>Historic stone bridge with statues and street artists. Most beautiful at sunrise or sunset.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🕐</div>
+                    <h3>Astronomical Clock</h3>
+                    <p>Medieval clock with hourly show of moving figures. Historic Old Town Square centerpiece.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍺</div>
+                    <h3>Traditional Beer Halls</h3>
+                    <p>Czech Republic has the highest beer consumption per capita. Try Pilsner Urquell at source.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎭</div>
+                    <h3>Jewish Quarter</h3>
+                    <p>Historic district with ancient synagogues and Jewish cemetery. Important cultural and historical site.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>St. Vitus Cathedral</h3>
+                    <p>Gothic masterpiece inside Prague Castle. Stunning stained glass and royal tombs.</p>
+                </div>
+            </div>
+        </section>
 
-    <p>Nestled along the Vltava River, Prague, the capital of the Czech Republic, exudes an irresistible charm that transports visitors to a fairy-tale setting. Renowned for its picturesque skyline adorned with a hundred spires, Prague is a city where Gothic, Baroque, and Renaissance architecture harmoniously coexist. The historic Old Town Square captivates with its medieval Astronomical Clock and vibrant street performances.</p>
-</main>
+        <!-- Hotel Booking Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">When & Where to Book Accommodation</h2>
+            <div class="description-card">
+                <div class="booking-tips">
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
+                        <p>2-3 months ahead for summer season. Book castle tickets online to skip lines. Christmas markets are very popular.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
+                        <p>Old Town: Historic center, walking distance to attractions. Lesser Town: Quiet, below castle. New Town: Modern, good restaurants.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
+                        <p>Use public transportation day passes. Eat at traditional pubs. Book accommodations outside peak summer. Many churches and sites are free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Local Cuisine Section -->
+        <section class="content-section">
+            <h2 class="section-title">What to Eat in Prague</h2>
+            <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🍺</div>
+                    <h3>Czech Beer</h3>
+                    <p>World's best beer with Pilsner invented here. Try traditional beer halls for authentic experience.</p>
+                    <span class="food-price">$2-4</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥩</div>
+                    <h3>Goulash</h3>
+                    <p>Hearty beef stew with vegetables and bread dumplings. Perfect comfort food for cold days.</p>
+                    <span class="food-price">$8-12</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥖</div>
+                    <h3>Bread Dumplings</h3>
+                    <p>Traditional side dish served with most meals. Unique texture and flavor, very filling.</p>
+                    <span class="food-price">$3-5</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥨</div>
+                    <h3>Trdelník</h3>
+                    <p>Sweet pastry rolled in cinnamon and sugar. Popular street food, though touristy.</p>
+                    <span class="food-price">$3-5</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍖</div>
+                    <h3>Roast Pork</h3>
+                    <p>Traditional Czech meat dish with sauerkraut and dumplings. Hearty, authentic local cuisine.</p>
+                    <span class="food-price">$10-15</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Czech Coffee</h3>
+                    <p>Strong coffee culture with beautiful historic cafes. Perfect for people-watching.</p>
+                    <span class="food-price">$2-4</span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

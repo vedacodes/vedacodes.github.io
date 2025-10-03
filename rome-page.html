@@ -3,99 +3,1232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome - The Eternal City | Veda's Travel Diary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYCWL3V5TW');
     </script>
-    <title>Rome</title>
+    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --rome-gradient: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        section h2 {
-            color: #333;
-        }
-        section img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        section p {
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--primary-gradient);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--rome-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--rome-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        /* Image Collage Background */
+        .hero-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            opacity: 0.8;
+        }
+
+        .collage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: brightness(0.8) contrast(1.1);
+            animation: subtleFloat 8s ease-in-out infinite;
+        }
+
+        .collage-image:nth-child(even) {
+            animation-direction: reverse;
+            animation-delay: -2s;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                filter: brightness(0.8) contrast(1.1);
+            }
+            50% {
+                transform: scale(1.02) rotate(0.5deg);
+                filter: brightness(0.85) contrast(1.15);
+            }
+        }
+
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
+        }
+
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
+        .collage-image:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.3) 90%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styling */
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            background: var(--rome-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--rome-gradient);
+        }
+
+        .description-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,107,107,0.3), rgba(255,167,38,0.3));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--rome-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            background: var(--rome-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--rome-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+            }
+            
+            .hero-collage {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+            }
+
+            .collage-image:nth-child(6) {
+                grid-column: 2 / 4;
+                grid-row: 4 / 5;
+            }
+            
+            .description-card {
+                padding: 25px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .quote-section {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 3;
+                grid-row: 4 / 6;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 2;
+                grid-row: 6 / 7;
+            }
+
+            .collage-image:nth-child(6) {
+                grid-column: 2 / 3;
+                grid-row: 6 / 7;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .gallery-item, .description-card, .stat-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .description-card { animation-delay: 0.2s; }
+        .stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.5s; }
+
+        /* Travel Tips Grid */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Booking Tips */
+        .booking-tips {
+            display: grid;
+            gap: 30px;
+        }
+
+        .booking-tip h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .booking-tip h4 i {
+            color: #ff6b6b;
+        }
+
+        .booking-tip p {
+            margin: 0;
+        }
+
+        /* Cuisine Grid */
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--rome-gradient);
+        }
+
+        .food-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .food-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .food-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .food-price {
+            display: inline-block;
+            background: var(--rome-gradient);
+            color: var(--text-light);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card.spring .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card.summer .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card.autumn .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card.winter .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .season-rating {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-top: 15px;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-price {
+            background: var(--accent-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i> Back to Travel Diary
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Rome, Italy
+            </div>
+        </div>
+    </nav>
 
-<header>
-    <h1>When in Rome...</h1>
-</header>
-
-<main>
-    <section class="image-gallery">
-        <style>
-            .image-gallery {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-            .image-gallery figure {
-                flex: 1 0 21%; /* This will make the images take up approximately 1/4 of the container's width, allowing for four images per row. Adjust as needed. */
-                margin: 1%;
-                text-align: center; /* This will center the figcaption under the image */
-            }
-            .image-gallery img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-        <figure>
-            <img src="rome/rome-image-1.jpg" alt="Rome 1">
-            <figcaption>Colesseum...</figcaption>
-        </figure>
-        <figure>
-            <img src="rome/rome-image-2.jpg" alt="Rome 2">
-            <figcaption>Streets of Rome...</figcaption>
-        </figure>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-collage">
+            <img src="rome/rome-image-1.jpg" alt="" class="collage-image">
+            <img src="rome/rome-image-2.jpg" alt="" class="collage-image">
+            <img src="rome/rome-image-3.jpg" alt="" class="collage-image">
+            <img src="rome/rome-image-4.jpg" alt="" class="collage-image">
+            <img src="rome/rome-image-1.jpg" alt="" class="collage-image">
+            <img src="rome/rome-image-2.jpg" alt="" class="collage-image">
+        </div>
+        <div class="hero-content">
+            <h1>When in Rome...</h1>
+            <p class="hero-subtitle">The Eternal City Awaits</p>
+            <p class="hero-description">Experience the timeless beauty of Rome, where ancient history meets vibrant modern life. From the mighty Colosseum to the sacred Vatican, every corner tells a story of empire, art, and eternal human spirit.</p>
+        </div>
     </section>
 
-    <section class="image-gallery">
-        <figure>
-            <img src="rome/rome-image-3.jpg" alt="Rome 3">
-            <figcaption>Pantheon</figcaption>
-        </figure>
-        <figure>
-            <img src="rome/rome-image-4.jpg" alt="Rome 4">
-            <figcaption>Castel Sant'Angelo</figcaption>
-        </figure>
-        <p>Rome, Italy's capital, is a sprawling, cosmopolitan city with nearly 3,000 years of globally influential art, architecture and culture on display. Ancient ruins such as the Roman Forum and the Colosseum evoke the power of the former Roman Empire. Vatican City, headquarters of the Roman Catholic Church, boasts St. Peter’s Basilica and the Vatican Museums, which house masterpieces such as Michelangelo’s Sistine Chapel frescoes.</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Description Section -->
+        <section class="content-section">
+            <h2 class="section-title">My Roman Adventure</h2>
+            <div class="description-card">
+                <p>Rome wasn't just a destination for me—it was a revelation. Walking through streets where history lives and breathes, I found myself constantly amazed by how the ancient and modern coexist so beautifully. Every piazza told a story, every fountain whispered secrets of the past. This city changed something in me, ignited a deeper love for travel and discovery that I carry with me everywhere I go.</p>
+            </div>
+        </section>
 
-    <!-- Similar sections for other cities -->
-    <p>All Roads Lead to Rome!</p>
+        <!-- Stats Section -->
+        <section class="content-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Days Exploring</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Miles Walked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Memories Made</div>
+                </div>
+            </div>
+        </section>
 
-</main>
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Pages from My Rome Diary</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="rome/rome-image-1.jpg" alt="My first glimpse of the Colosseum" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Colosseum</h3>
+                        <p>Standing before the Colosseum for the first time was overwhelming. The sheer scale and history hit me immediately - I could almost hear the echoes of ancient crowds. This moment reminded me why I fell in love with travel.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="rome/rome-image-2.jpg" alt="Getting lost in Roman streets" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Roman Streets</h3>
+                        <p>Got completely lost wandering these narrow cobblestone streets, but it led to the most magical discoveries. Sometimes the best travel moments happen when you have no idea where you're going.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="rome/rome-image-3.jpg" alt="Peaceful moment at the Pantheon" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Pantheon</h3>
+                        <p>Found myself alone in the Pantheon at sunset. The light streaming through the oculus created this ethereal atmosphere that gave me chills. Some places just touch your soul in unexpected ways.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="rome/rome-image-4.jpg" alt="Watching sunrise from Castel Sant'Angelo" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Castel Sant'Angelo</h3>
+                        <p>Woke up early to catch the sunrise from Castel Sant'Angelo. Watching Rome wake up slowly while the Tiber reflected the golden light - this is why I travel. These quiet moments between the chaos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="content-section">
+            <div class="quote-section">
+                <div class="quote-text">"All Roads Lead to Rome"</div>
+                <div class="quote-author">Ancient Roman Proverb</div>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See Places in Rome</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>The Colosseum</h3>
+                    <p>Book skip-the-line tickets in advance. Visit early morning or late afternoon for fewer crowds and better lighting for photos.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>Vatican Museums</h3>
+                    <p>Reserve tickets online weeks ahead. Consider a guided tour for the Sistine Chapel. Dress code strictly enforced.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Pantheon</h3>
+                    <p>Free entry but arrive early. The oculus creates stunning light effects throughout the day. Best visited during rainy weather!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛲</div>
+                    <h3>Trevi Fountain</h3>
+                    <p>Visit at sunrise for photos without crowds. Throw a coin with your right hand over your left shoulder for luck!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌸</div>
+                    <h3>Spanish Steps</h3>
+                    <p>Beautiful year-round but spectacular in spring with azaleas. Great spot for people-watching and shopping nearby.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏺</div>
+                    <h3>Roman Forum</h3>
+                    <p>Combine with Colosseum ticket. Bring water and comfortable shoes. Audio guide highly recommended for historical context.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Booking Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">When & Where to Book Hotels</h2>
+            <div class="description-card">
+                <div class="booking-tips">
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> Best Time to Book</h4>
+                        <p><strong>3-4 months in advance</strong> for peak season (April-June, September-October). <strong>6-8 weeks ahead</strong> for winter visits. Book immediately for Easter week and Christmas holidays.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-map-marker-alt"></i> Best Areas to Stay</h4>
+                        <p><strong>Historic Center:</strong> Walking distance to major sites but pricey. <strong>Trastevere:</strong> Authentic neighborhood with great restaurants. <strong>Near Vatican:</strong> Good for art lovers. <strong>Termini Station:</strong> Budget-friendly with easy transport.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-euro-sign"></i> Budget Tips</h4>
+                        <p>Avoid hotels near major tourist sites for better value. Consider <strong>boutique B&Bs</strong> in residential areas. Book Sunday-Thursday for lower rates. Many hotels include breakfast - factor this into costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Cuisine Section -->
+        <section class="content-section">
+            <h2 class="section-title">What to Eat in Rome</h2>
+            <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🍝</div>
+                    <h3>Carbonara</h3>
+                    <p>The holy grail of Roman pasta. Authentic versions use only eggs, pecorino romano, guanciale, and black pepper. Never cream!</p>
+                    <span class="food-price">€12-18</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥖</div>
+                    <h3>Supplì</h3>
+                    <p>Roman street food - fried rice balls with mozzarella center. Perfect quick snack while sightseeing.</p>
+                    <span class="food-price">€2-4</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍖</div>
+                    <h3>Saltimbocca</h3>
+                    <p>Veal with prosciutto and sage in white wine sauce. A Roman classic that literally means "jumps in the mouth."</p>
+                    <span class="food-price">€18-25</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🧀</div>
+                    <h3>Cacio e Pepe</h3>
+                    <p>Simple perfection - pasta with pecorino cheese and black pepper. Looks easy, but requires real skill to make properly.</p>
+                    <span class="food-price">€10-15</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍨</div>
+                    <h3>Gelato</h3>
+                    <p>Not just any gelato - find places that make it fresh daily. Look for natural colors and covered containers.</p>
+                    <span class="food-price">€3-6</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Espresso</h3>
+                    <p>Stand at the bar like locals do. Never cappuccino after 11am! Add sugar and drink it quickly while hot.</p>
+                    <span class="food-price">€1-2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Rome</h2>
+            <div class="seasons-grid">
+                <div class="season-card spring">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (April-May)</h3>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Weather:</strong> Perfect! 18-23°C, sunny days</p>
+                        <p><strong>Pros:</strong> Ideal temperatures, flowers blooming, Easter celebrations</p>
+                        <p><strong>Cons:</strong> Peak crowds, higher prices</p>
+                        <div class="season-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="season-card summer">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Weather:</strong> Hot! 25-35°C, can be humid</p>
+                        <p><strong>Pros:</strong> Long days, outdoor dining, festivals</p>
+                        <p><strong>Cons:</strong> Very crowded, expensive, heat exhausting</p>
+                        <div class="season-rating">★★★☆☆</div>
+                    </div>
+                </div>
+                <div class="season-card autumn">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Autumn (September-October)</h3>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Weather:</strong> Excellent! 20-25°C, crisp air</p>
+                        <p><strong>Pros:</strong> Fewer crowds than summer, good weather</p>
+                        <p><strong>Cons:</strong> Still busy in September</p>
+                        <div class="season-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="season-card winter">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (November-March)</h3>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Weather:</strong> Mild, 8-15°C, some rain</p>
+                        <p><strong>Pros:</strong> Fewer tourists, lower prices, cozy atmosphere</p>
+                        <p><strong>Cons:</strong> Shorter days, some attractions have reduced hours</p>
+                        <div class="season-rating">★★★★☆</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Rome</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚇</div>
+                    <h3>Metro</h3>
+                    <p>Limited but useful for major sites. Line A hits Spanish Steps, Vatican. Line B reaches Colosseum. Runs 5:30am-11:30pm (12:30am weekends).</p>
+                    <div class="transport-price">€1.50 per ride</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Buses</h3>
+                    <p>Extensive network covering the entire city. Validate tickets when boarding. Bus #64 connects main tourist areas but gets very crowded.</p>
+                    <div class="transport-price">€1.50 per ride</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚊</div>
+                    <h3>Trams</h3>
+                    <p>Scenic way to see the city. Tram #8 is great for sightseeing, passing many major attractions. Less crowded than buses.</p>
+                    <div class="transport-price">€1.50 per ride</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxis</h3>
+                    <p>Reliable but expensive. Fixed rates from airports. Always use official white taxis with taxi lights. Uber and local apps available.</p>
+                    <div class="transport-price">€3-4 base + €1.10/km</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p>Best way to experience Rome! Historic center is very walkable. Wear comfortable shoes and bring water. Many sites are close together.</p>
+                    <div class="transport-price">Free!</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🎫</div>
+                    <h3>Roma Pass</h3>
+                    <p>72-hour pass includes public transport and entry to first 2 attractions. Good value if visiting multiple paid sites.</p>
+                    <div class="transport-price">€38.50</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Parallax effect for collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+    </script>
 
 </body>
 </html>

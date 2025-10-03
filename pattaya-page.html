@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam - Venice of the North | Veda's Travel Diary</title>
+    <title>Pattaya - Thailand's Beach Paradise | Veda's Travel Diary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --amsterdam-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --pattaya-gradient: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -97,7 +97,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             color: var(--text-light);
             padding: 8px 16px;
             border-radius: 20px;
@@ -107,7 +107,7 @@
 
         /* Hero Section */
         .hero {
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             color: var(--text-light);
             text-align: center;
             padding: 160px 20px 100px;
@@ -258,7 +258,7 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -285,7 +285,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
         }
 
         .description-card p {
@@ -343,7 +343,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(255,107,53,0.3), rgba(247,147,30,0.3));
+            background: linear-gradient(45deg, rgba(0,201,255,0.3), rgba(146,254,157,0.3));
             opacity: 0;
             transition: var(--transition);
             border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -391,7 +391,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             opacity: 0.03;
             transform: rotate(45deg);
         }
@@ -401,7 +401,7 @@
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 600;
             font-style: italic;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -442,7 +442,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -515,7 +515,7 @@
         }
 
         .booking-tip h4 i {
-            color: #FF6B35;
+            color: #00c9ff;
         }
 
         .booking-tip p {
@@ -555,7 +555,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
         }
 
         .food-icon {
@@ -579,7 +579,7 @@
 
         .food-price {
             display: inline-block;
-            background: var(--amsterdam-gradient);
+            background: var(--pattaya-gradient);
             color: var(--text-light);
             padding: 5px 12px;
             border-radius: 15px;
@@ -617,20 +617,16 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
-        .season-card.spring .season-header {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        .season-card.cool .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
         }
 
-        .season-card.summer .season-header {
+        .season-card.hot .season-header {
             background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
         }
 
-        .season-card.autumn .season-header {
-            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
-        }
-
-        .season-card.winter .season-header {
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        .season-card.rainy .season-header {
+            background: linear-gradient(135deg, #636e72 0%, #2d3436 100%);
         }
 
         .season-icon {
@@ -680,22 +676,11 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
             position: relative;
-            overflow: hidden;
         }
 
         .transport-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-medium);
-        }
-
-        .transport-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--amsterdam-gradient);
         }
 
         .transport-icon {
@@ -714,17 +699,18 @@
             color: var(--text-secondary);
             line-height: 1.6;
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .transport-price {
-            display: inline-block;
-            background: var(--amsterdam-gradient);
+            background: var(--accent-gradient);
             color: var(--text-light);
-            padding: 5px 12px;
-            border-radius: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            display: inline-block;
         }
 
         /* Responsive Design */
@@ -868,7 +854,7 @@
                 <i class="fas fa-home"></i> Back to Travel Diary
             </a>
             <div class="location-tag">
-                <i class="fas fa-map-marker-alt"></i> Amsterdam, Netherlands
+                <i class="fas fa-map-marker-alt"></i> Pattaya, Thailand
             </div>
         </div>
     </nav>
@@ -876,17 +862,17 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="amsterdam/amsterdam-image-1.jpg" alt="" class="collage-image">
-            <img src="amsterdam/amsterdam-image-2.jpg" alt="" class="collage-image">
-            <img src="amsterdam/amsterdam-image-3.jpg" alt="" class="collage-image">
-            <img src="amsterdam/amsterdam-image-4.jpg" alt="" class="collage-image">
-            <img src="amsterdam/amsterdam-image-5.jpg" alt="" class="collage-image">
-            <img src="amsterdam/amsterdam-image-6.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_1.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_2.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_3.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_4.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_5.jpg" alt="" class="collage-image">
+            <img src="pattaya/pattaya/pattaya_beach_6.jpg" alt="" class="collage-image">
         </div>
         <div class="hero-content">
-            <h1>Amsterdam Adventures</h1>
-            <p class="hero-subtitle">Venice of the North</p>
-            <p class="hero-description">Discover a city where historic canals wind through vibrant neighborhoods, world-class museums house artistic treasures, and cycling culture defines daily life. Amsterdam captured my heart with its perfect blend of old-world charm and modern energy.</p>
+            <h1>Pattaya Paradise</h1>
+            <p class="hero-subtitle">Thailand's Vibrant Beach City</p>
+            <p class="hero-description">Experience the perfect blend of beach relaxation and vibrant nightlife in Pattaya. From stunning beaches to floating markets, this coastal city offers unforgettable adventures and beautiful sunsets that paint the sky in magical colors.</p>
         </div>
     </section>
 
@@ -894,9 +880,9 @@
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Amsterdam Journey</h2>
+            <h2 class="section-title">My Pattaya Adventure</h2>
             <div class="description-card">
-                <p>Amsterdam exceeded every expectation I had. Beyond the famous canals and coffee shops lies a city of incredible depth and character. From cycling through tree-lined streets to getting lost in world-renowned museums, every moment felt like discovering hidden gems. The warmth of the locals, the artistic energy, and the laid-back atmosphere made me feel instantly at home in this remarkable city.</p>
+                <p>Pattaya was a delightful surprise that exceeded all my expectations. What started as a beach getaway turned into a cultural journey filled with incredible food, warm locals, and breathtaking sunsets. The energy of this city is infectious - from the bustling markets to the peaceful beach mornings, every moment felt like a new discovery waiting to unfold.</p>
             </div>
         </section>
 
@@ -904,103 +890,144 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Days of Paradise</div>
+                </div>
+                <div class="stat-card">
                     <div class="stat-number">3</div>
-                    <div class="stat-label">Days Exploring</div>
+                    <div class="stat-label">Beaches Explored</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">165</div>
-                    <div class="stat-label">Canals Crossed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Miles Cycled</div>
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Sunsets Witnessed</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Canal Stories & City Moments</h2>
+            <h2 class="section-title">Moments from My Beach Diary</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-1.jpg" alt="Amsterdam Central Station" class="gallery-image" loading="lazy">
+                        <img src="pattaya/pattaya/pattaya_beach_1.jpg" alt="First morning on Pattaya Beach" class="gallery-image" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Amsterdam Central</h3>
-                        <p>First impressions matter, and Amsterdam Central Station didn't disappoint. The grand architecture combined with the energy of travelers from around the world set the perfect tone for my Dutch adventure.</p>
+                        <h3>Pattaya Beach Morning</h3>
+                        <p>Waking up to this view was magical. The gentle waves and soft sand made me forget all my worries. There's something about the ocean that instantly puts your soul at peace.</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-3.jpg" alt="Canal boat tour" class="gallery-image" loading="lazy">
+                        <img src="pattaya/pattaya/pattaya_beach_2.jpg" alt="Beach activities and fun" class="gallery-image" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Amstel River Cruise</h3>
-                        <p>Seeing Amsterdam from the water gave me a completely different perspective. The canal houses looked like a fairy tale, and I finally understood why they call this the Venice of the North.</p>
+                        <h3>Beach Adventures</h3>
+                        <p>Tried parasailing for the first time! The view from above was incredible - seeing the coastline stretch endlessly while feeling the wind beneath me was pure freedom.</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-4.jpg" alt="Anne Frank House" class="gallery-image" loading="lazy">
+                        <img src="pattaya/pattaya/pattaya_beach_3.jpg" alt="Sunset moments at the beach" class="gallery-image" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Anne Frank House</h3>
-                        <p>A deeply moving experience that brought history to life. Standing in the secret annex where Anne wrote her diary was both heartbreaking and inspiring - a reminder of human resilience.</p>
+                        <h3>Golden Hour Magic</h3>
+                        <p>Every sunset in Pattaya felt like a painting coming to life. Sitting on the beach, watching the sky transform into brilliant oranges and pinks - these are the moments that make travel so special.</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-6.jpg" alt="Royal Palace Amsterdam" class="gallery-image" loading="lazy">
+                        <img src="pattaya/pattaya/pattaya_beach_4.jpg" alt="Local culture and street food" class="gallery-image" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Royal Palace</h3>
-                        <p>The grandeur of Dam Square and the Royal Palace showcased Amsterdam's royal heritage. The contrast between the formal palace and the lively square perfectly captured the city's dual nature.</p>
+                        <h3>Street Food Heaven</h3>
+                        <p>Discovering local street food was an adventure in itself. Every meal was a explosion of flavors I'd never experienced before. The vendors were so friendly and patient with my attempts at Thai!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="pattaya/pattaya/pattaya_beach_5.jpg" alt="Floating market experience" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Floating Market</h3>
+                        <p>The floating market was like stepping into another world. Vendors selling fresh fruits from their boats, the gentle rocking motion, and the vibrant colors everywhere - truly unforgettable.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="pattaya/pattaya/pattaya_beach_6.jpg" alt="Temple visit and spiritual moments" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Spiritual Serenity</h3>
+                        <p>Visiting the local temples brought a sense of peace and spirituality to my trip. The intricate architecture and the quiet meditation moments were a beautiful contrast to the beach energy.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="pattaya/pattaya/pattaya_beach_7.jpg" alt="Night markets and local life" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Night Market Magic</h3>
+                        <p>The night markets came alive after sunset with incredible energy. Shopping for souvenirs, trying local delicacies, and soaking in the atmosphere made every evening an adventure.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Quote Section -->
+        <section class="content-section">
+            <div class="quote-section">
+                <div class="quote-text">"The sea, once it casts its spell, holds one in its net of wonder forever"</div>
+                <div class="quote-author">Jacques Cousteau</div>
+            </div>
+        </section>
+
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Amsterdam</h2>
+            <h2 class="section-title">Must-See Places in Pattaya</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🚤</div>
-                    <h3>Canal Cruise</h3>
-                    <p>Essential Amsterdam experience. Book evening cruises for magical illuminated canals. Avoid tourist traps - choose smaller operators for intimate tours.</p>
+                    <div class="tip-icon">🏖️</div>
+                    <h3>Pattaya Beach</h3>
+                    <p>The main beach with endless water sports, beach bars, and people watching. Best visited early morning for peaceful walks or sunset for romantic vibes.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🎨</div>
-                    <h3>Van Gogh Museum</h3>
-                    <p>World's largest Van Gogh collection. Pre-book tickets months ahead. Best visited in early morning for smaller crowds and better lighting.</p>
+                    <div class="tip-icon">🛶</div>
+                    <h3>Floating Market</h3>
+                    <p>Experience traditional Thai culture with vendors selling from boats. Try fresh tropical fruits and authentic local dishes. Go early to avoid crowds.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏛️</div>
-                    <h3>Rijksmuseum</h3>
-                    <p>Dutch Golden Age masterpieces including Rembrandt's Night Watch. Free entry to gardens and library. Allow full day for complete experience.</p>
+                    <h3>Sanctuary of Truth</h3>
+                    <p>Magnificent wooden temple showcasing traditional Thai craftsmanship. Book guided tours for deeper cultural insights. Photography enthusiasts will love this place.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🏡</div>
-                    <h3>Anne Frank House</h3>
-                    <p>Book online exactly 2 months in advance at 10am CET. Emotional and educational experience. No photos allowed inside - be present in the moment.</p>
+                    <div class="tip-icon">🏝️</div>
+                    <h3>Coral Island</h3>
+                    <p>Perfect day trip for snorkeling and pristine beaches. Take speedboat tours or traditional longtail boats. Underwater activities are spectacular here.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🌷</div>
-                    <h3>Jordaan District</h3>
-                    <p>Charming neighborhood with indie shops, cozy cafés, and local markets. Best explored on foot or bicycle. Saturday markets are particularly vibrant.</p>
+                    <div class="tip-icon">🌅</div>
+                    <h3>Walking Street</h3>
+                    <p>Famous nightlife district comes alive after dark. Great for dinner, shopping, and experiencing Pattaya's energetic night scene safely.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🚴</div>
-                    <h3>Vondelpark</h3>
-                    <p>Perfect for cycling, picnics, and people-watching. Free outdoor concerts in summer. Rent bikes nearby - cycling is the authentic Amsterdam experience.</p>
+                    <div class="tip-icon">🐅</div>
+                    <h3>Nong Nooch Garden</h3>
+                    <p>Beautiful botanical gardens with cultural shows. Perfect family destination with elephant shows and traditional Thai performances.</p>
                 </div>
             </div>
         </section>
@@ -1012,15 +1039,15 @@
                 <div class="booking-tips">
                     <div class="booking-tip">
                         <h4><i class="fas fa-calendar-alt"></i> Best Time to Book</h4>
-                        <p><strong>2-3 months in advance</strong> for summer visits (June-August). <strong>4-6 weeks ahead</strong> for shoulder seasons. Book immediately for King's Day (April 27) and tulip season.</p>
+                        <p><strong>2-3 months in advance</strong> for peak season (December-February). <strong>4-6 weeks ahead</strong> for shoulder seasons. Book early for New Year and Songkran festival periods.</p>
                     </div>
                     <div class="booking-tip">
                         <h4><i class="fas fa-map-marker-alt"></i> Best Areas to Stay</h4>
-                        <p><strong>Canal Ring:</strong> Historic center, walking distance to major sites. <strong>Jordaan:</strong> Local neighborhood feel with great restaurants. <strong>Museum Quarter:</strong> Art lovers' paradise. <strong>De Pijp:</strong> Trendy area with nightlife.</p>
+                        <p><strong>Beach Road:</strong> Close to main beach and restaurants. <strong>Central Pattaya:</strong> Best for first-time visitors, walkable to attractions. <strong>Jomtien:</strong> Quieter beach area, family-friendly. <strong>Naklua:</strong> Upscale and peaceful.</p>
                     </div>
                     <div class="booking-tip">
-                        <h4><i class="fas fa-euro-sign"></i> Budget Tips</h4>
-                        <p>Consider <strong>houseboats</strong> for unique experience. Book Sunday-Thursday for lower rates. Many hotels include bikes - factor this into costs. City tax is extra (€3-7 per night).</p>
+                        <h4><i class="fas fa-dollar-sign"></i> Budget Tips</h4>
+                        <p>Consider hotels slightly inland for better value. Many include breakfast and pool access. Book weekday stays for lower rates. Check for package deals including airport transfers.</p>
                     </div>
                 </div>
             </div>
@@ -1028,96 +1055,84 @@
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Amsterdam</h2>
+            <h2 class="section-title">What to Eat in Pattaya</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🧀</div>
-                    <h3>Dutch Cheese</h3>
-                    <p>Try aged Gouda and Edam at local cheese shops. Many offer free tastings. Perfect with Dutch beer or jenever.</p>
-                    <span class="food-price">€8-15</span>
+                    <div class="food-icon">🍜</div>
+                    <h3>Tom Yum Goong</h3>
+                    <p>Spicy shrimp soup that's a Thai classic. The perfect balance of sour, spicy, and aromatic flavors that will awaken your taste buds.</p>
+                    <span class="food-price">150-200 THB</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥞</div>
-                    <h3>Stroopwafel</h3>
-                    <p>Fresh warm stroopwafels from Albert Cuyp Market are life-changing. Place over hot coffee to soften the caramel center.</p>
-                    <span class="food-price">€2-4</span>
+                    <div class="food-icon">🥭</div>
+                    <h3>Mango Sticky Rice</h3>
+                    <p>Thailand's most beloved dessert. Sweet coconut milk over sticky rice with fresh mango - pure tropical heaven in every bite.</p>
+                    <span class="food-price">80-120 THB</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍤</div>
+                    <h3>Pad Thai</h3>
+                    <p>Iconic stir-fried noodles with shrimp, tofu, bean sprouts, and tamarind sauce. Ask for it mild if you're not used to spicy food!</p>
+                    <span class="food-price">100-150 THB</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥥</div>
+                    <h3>Fresh Coconut</h3>
+                    <p>Nothing beats fresh coconut water straight from the shell on a hot beach day. Refreshing and naturally hydrating.</p>
+                    <span class="food-price">40-60 THB</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🐟</div>
-                    <h3>Herring</h3>
-                    <p>Raw herring with onions and pickles - surprisingly delicious! Get it from street vendors for authentic experience.</p>
-                    <span class="food-price">€3-5</span>
+                    <h3>Grilled Seafood</h3>
+                    <p>Fresh catch of the day grilled to perfection at beachside restaurants. Choose your fish and watch it being prepared!</p>
+                    <span class="food-price">200-400 THB</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍟</div>
-                    <h3>Dutch Fries</h3>
-                    <p>Thick-cut fries with mayo or peanut sauce. Vleminckx Saus is the most famous spot - expect queues but worth the wait.</p>
-                    <span class="food-price">€4-6</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍺</div>
-                    <h3>Local Beer</h3>
-                    <p>Heineken Experience or local craft breweries. Try Dutch gin (jenever) at traditional brown cafés (bruine kroeg).</p>
-                    <span class="food-price">€3-7</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🥩</div>
-                    <h3>Bitterballen</h3>
-                    <p>Deep-fried meat croquettes - perfect pub snack with beer. Best enjoyed hot at traditional brown cafés.</p>
-                    <span class="food-price">€5-8</span>
+                    <div class="food-icon">🍹</div>
+                    <h3>Thai Iced Tea</h3>
+                    <p>Sweet, creamy, and perfectly refreshing. This orange-colored drink is Thailand's signature beverage - perfect for hot days.</p>
+                    <span class="food-price">30-50 THB</span>
                 </div>
             </div>
         </section>
 
         <!-- Best Time to Visit Section -->
         <section class="content-section">
-            <h2 class="section-title">Best Time to Visit Amsterdam</h2>
+            <h2 class="section-title">Best Time to Visit Pattaya</h2>
             <div class="seasons-grid">
-                <div class="season-card spring">
+                <div class="season-card cool">
                     <div class="season-header">
-                        <div class="season-icon">🌷</div>
-                        <h3>Spring (April-May)</h3>
+                        <div class="season-icon">❄️</div>
+                        <h3>Cool Season (Nov-Feb)</h3>
                     </div>
                     <div class="season-content">
-                        <p><strong>Weather:</strong> Mild, 15-20°C, occasional rain</p>
-                        <p><strong>Pros:</strong> Tulip season, perfect cycling weather, King's Day celebrations</p>
-                        <p><strong>Cons:</strong> Crowded, higher prices, unpredictable weather</p>
+                        <p><strong>Weather:</strong> Perfect! 20-30°C, low humidity</p>
+                        <p><strong>Pros:</strong> Ideal beach weather, clear skies, comfortable temperatures</p>
+                        <p><strong>Cons:</strong> Peak tourist season, higher prices</p>
                         <div class="season-rating">★★★★★</div>
                     </div>
                 </div>
-                <div class="season-card summer">
+                <div class="season-card hot">
                     <div class="season-header">
                         <div class="season-icon">☀️</div>
-                        <h3>Summer (June-August)</h3>
+                        <h3>Hot Season (Mar-May)</h3>
                     </div>
                     <div class="season-content">
-                        <p><strong>Weather:</strong> Warm, 20-25°C, long daylight hours</p>
-                        <p><strong>Pros:</strong> Perfect weather, outdoor festivals, canal swimming</p>
-                        <p><strong>Cons:</strong> Peak crowds, highest prices, fully booked accommodations</p>
-                        <div class="season-rating">★★★★☆</div>
+                        <p><strong>Weather:</strong> Very hot! 30-38°C, can be humid</p>
+                        <p><strong>Pros:</strong> Fewer crowds, lower accommodation rates</p>
+                        <p><strong>Cons:</strong> Extremely hot, uncomfortable for outdoor activities</p>
+                        <div class="season-rating">★★☆☆☆</div>
                     </div>
                 </div>
-                <div class="season-card autumn">
+                <div class="season-card rainy">
                     <div class="season-header">
-                        <div class="season-icon">🍂</div>
-                        <h3>Autumn (September-November)</h3>
+                        <div class="season-icon">🌧️</div>
+                        <h3>Rainy Season (Jun-Oct)</h3>
                     </div>
                     <div class="season-content">
-                        <p><strong>Weather:</strong> Cool, 10-18°C, frequent rain</p>
-                        <p><strong>Pros:</strong> Fewer tourists, golden autumn colors, cozy café season</p>
-                        <p><strong>Cons:</strong> Shorter days, more rain, some outdoor activities limited</p>
-                        <div class="season-rating">★★★★☆</div>
-                    </div>
-                </div>
-                <div class="season-card winter">
-                    <div class="season-header">
-                        <div class="season-icon">❄️</div>
-                        <h3>Winter (December-March)</h3>
-                    </div>
-                    <div class="season-content">
-                        <p><strong>Weather:</strong> Cold, 2-8°C, gray and wet</p>
-                        <p><strong>Pros:</strong> Lowest prices, cozy atmosphere, possible canal ice skating</p>
-                        <p><strong>Cons:</strong> Cold and dark, limited outdoor activities</p>
+                        <p><strong>Weather:</strong> Hot and humid, 25-32°C, frequent rain</p>
+                        <p><strong>Pros:</strong> Lowest prices, lush green landscapes</p>
+                        <p><strong>Cons:</strong> Heavy rainfall, some activities may be canceled</p>
                         <div class="season-rating">★★★☆☆</div>
                     </div>
                 </div>
@@ -1126,40 +1141,44 @@
 
         <!-- Transportation Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">Getting Around Amsterdam</h2>
+            <h2 class="section-title">Getting Around Pattaya</h2>
             <div class="transport-grid">
                 <div class="transport-card">
-                    <div class="transport-icon">🚴</div>
-                    <h3>Bicycle</h3>
-                    <p>The authentic Amsterdam experience! Rent from hotels or bike shops. Watch for trams and other cyclists. Locks are essential - bike theft is common.</p>
-                    <div class="transport-price">€10-15/day</div>
+                    <div class="transport-icon">🚐</div>
+                    <h3>Songthaew</h3>
+                    <p>Local shared taxis - blue trucks with benches. Cheap and fun way to travel like locals. Flag them down and pay when you get off.</p>
+                    <div class="transport-price">10-20 THB per ride</div>
                 </div>
                 <div class="transport-card">
-                    <div class="transport-icon">🚋</div>
-                    <h3>Trams</h3>
-                    <p>Efficient public transport covering the entire city. Buy GVB day passes for unlimited travel. Tram 2 hits most tourist attractions.</p>
-                    <div class="transport-price">€8.50/day</div>
+                    <div class="transport-icon">🏍️</div>
+                    <h3>Motorbike Taxi</h3>
+                    <p>Fast way to beat traffic, especially for short distances. Drivers wear colored vests. Always wear the provided helmet for safety.</p>
+                    <div class="transport-price">20-50 THB per ride</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🛵</div>
+                    <h3>Rental Scooter</h3>
+                    <p>Popular among tourists for flexibility. International license required. Be very careful with traffic and always wear helmets.</p>
+                    <div class="transport-price">200-300 THB per day</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxi/Grab</h3>
+                    <p>Convenient and air-conditioned. Grab app is widely used and reliable. Regular taxis might not use meters, so negotiate first.</p>
+                    <div class="transport-price">100-300 THB per ride</div>
                 </div>
                 <div class="transport-card">
                     <div class="transport-icon">🚶</div>
                     <h3>Walking</h3>
-                    <p>Central Amsterdam is very walkable. Most major attractions within 20-minute walk of each other. Watch for cyclists and trams!</p>
-                    <div class="transport-price">Free</div>
+                    <p>Great for beach area and central Pattaya. Many attractions are within walking distance. Bring water and use covered walkways when available.</p>
+                    <div class="transport-price">Free!</div>
                 </div>
                 <div class="transport-card">
-                    <div class="transport-icon">🚕</div>
-                    <h3>Taxi/Uber</h3>
-                    <p>Expensive but convenient late at night. Uber is widely available. Many areas are pedestrian-only, so expect walking the last bit.</p>
-                    <div class="transport-price">€2.50/km</div>
+                    <div class="transport-icon">🛥️</div>
+                    <h3>Speedboat Tours</h3>
+                    <p>Perfect for island hopping to Coral Island or Koh Larn. Book through hotels or tour operators. Half-day and full-day options available.</p>
+                    <div class="transport-price">800-1500 THB per person</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Quote Section -->
-        <section class="content-section">
-            <div class="quote-section">
-                <div class="quote-text">"Amsterdam is a city of freedom, where everyone can be themselves"</div>
-                <div class="quote-author">Dutch saying</div>
             </div>
         </section>
     </main>

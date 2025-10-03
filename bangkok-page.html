@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok - The City of Angels | Veda's Travel Diary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --bangkok-gradient: linear-gradient(135deg, #FF6B9D 0%, #FFD93D 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--primary-gradient);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bangkok-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Hero Section with Photo Collage */
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+
+        .photo-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            opacity: 0.6;
+        }
+
+        .collage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: var(--transition);
+        }
+
+        .collage-image:hover {
+            filter: brightness(1);
+            transform: scale(1.05);
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 60px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--bangkok-gradient);
+            border-radius: 2px;
+        }
+
+        .section-content {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+            color: var(--text-light);
+            padding: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .info-card-icon {
+            font-size: 2.5rem;
+            background: var(--bangkok-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .info-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .info-card-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* List Styles */
+        .highlight-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .highlight-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-list li:before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .main-content {
+                padding: 40px 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 50vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+        }
+
+        /* Loading Animation */
+        body.loaded {
+            opacity: 1;
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Back to Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bangkok, Thailand</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Photo Collage -->
+    <section class="hero-section">
+        <div class="photo-collage">
+            <img src="bangkok/grand-palace.jpg" alt="Grand Palace" class="collage-image">
+            <img src="bangkok/wat-pho.jpg" alt="Wat Pho" class="collage-image">
+            <img src="bangkok/temple-of-dawn.jpg" alt="Temple of Dawn" class="collage-image">
+            <img src="bangkok/floating-market.jpg" alt="Floating Market" class="collage-image">
+            <img src="bangkok/sky-bar.jpg" alt="Sky Bar" class="collage-image">
+            <img src="bangkok/chatuchak-market.jpg" alt="Chatuchak Market" class="collage-image">
+            <img src="bangkok/khao-san-road.jpg" alt="Khao San Road" class="collage-image">
+            <img src="bangkok/chinatown.jpg" alt="Chinatown" class="collage-image">
+            <img src="bangkok/jim-thompson-house.jpg" alt="Jim Thompson House" class="collage-image">
+            <img src="bangkok/lumpini-park.jpg" alt="Lumpini Park" class="collage-image">
+            <img src="bangkok/wat-arun.jpg" alt="Wat Arun" class="collage-image">
+            <img src="bangkok/bangkok-thumbnail.jpg" alt="Bangkok Skyline" class="collage-image">
+        </div>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Bangkok</h1>
+                <p class="hero-subtitle">Pages from my diary in the City of Angels</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Must See Places Section -->
+        <section class="section">
+            <h2 class="section-title">Must See Places in Bangkok</h2>
+            <div class="section-content">
+                <p>Bangkok offers an incredible mix of ancient temples, modern skyscrapers, bustling markets, and vibrant street life. Here are the essential places that capture the soul of this magnificent city.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="bangkok/grand-palace.jpg" alt="Grand Palace" class="gallery-image">
+                    <div class="gallery-caption">Grand Palace - The heart of Thai royalty and architectural magnificence</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/wat-pho.jpg" alt="Wat Pho Temple" class="gallery-image">
+                    <div class="gallery-caption">Wat Pho - Home to the famous Reclining Buddha</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/temple-of-dawn.jpg" alt="Temple of Dawn" class="gallery-image">
+                    <div class="gallery-caption">Wat Arun - The Temple of Dawn along the Chao Phraya River</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/sky-bar.jpg" alt="Sky Bar Bangkok" class="gallery-image">
+                    <div class="gallery-caption">Sky Bar - Breathtaking city views from the 63rd floor</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/jim-thompson-house.jpg" alt="Jim Thompson House" class="gallery-image">
+                    <div class="gallery-caption">Jim Thompson House - Traditional Thai architecture and silk heritage</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/floating-market.jpg" alt="Floating Market" class="gallery-image">
+                    <div class="gallery-caption">Floating Markets - Traditional trading along the canals</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/chatuchak-market.jpg" alt="Chatuchak Market" class="gallery-image">
+                    <div class="gallery-caption">Chatuchak Market - Weekend market paradise with endless shopping</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/khao-san-road.jpg" alt="Khao San Road" class="gallery-image">
+                    <div class="gallery-caption">Khao San Road - Backpacker hub with vibrant street life</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bangkok/chinatown.jpg" alt="Chinatown Bangkok" class="gallery-image">
+                    <div class="gallery-caption">Chinatown - Bustling district with authentic street food and culture</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- When to Book Hotel Section -->
+        <section class="section">
+            <h2 class="section-title">When to Book Your Hotel</h2>
+            <div class="section-content">
+                <p>Bangkok is a year-round destination, but timing your visit can make a significant difference in both experience and budget. Here's what you need to know about the best times to visit and book accommodation.</p>
+            </div>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="info-card-title">Cool Season</h3>
+                    <div class="info-card-content">
+                        <strong>November - February</strong><br>
+                        Perfect weather (20-30°C), peak tourist season. Book 2-3 months in advance for best rates.
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3 class="info-card-title">Hot Season</h3>
+                    <div class="info-card-content">
+                        <strong>March - May</strong><br>
+                        Very hot (30-40°C), fewer crowds. Book 1-2 months ahead for significant savings.
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3 class="info-card-title">Rainy Season</h3>
+                    <div class="info-card-content">
+                        <strong>June - October</strong><br>
+                        Afternoon showers, lush greenery. Best hotel deals, book 2-4 weeks in advance.
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="highlight-list">
+                <li><strong>Peak Season Tips:</strong> Book luxury hotels 3-4 months early, especially around Christmas and Chinese New Year</li>
+                <li><strong>Budget Options:</strong> Hostels and guesthouses in Khao San Road area, book 1-2 weeks ahead</li>
+                <li><strong>Business Hotels:</strong> Best rates on weekends, book Sunday-Thursday for better deals</li>
+                <li><strong>Location Matters:</strong> Sukhumvit for nightlife, Silom for business, Rattanakosin for temples</li>
+            </ul>
+        </section>
+
+        <!-- What to Try Eating Section -->
+        <section class="section">
+            <h2 class="section-title">What to Try Eating in Bangkok</h2>
+            <div class="section-content">
+                <p>Bangkok is a food lover's paradise, offering everything from street food stalls to Michelin-starred restaurants. The city's culinary scene reflects its rich cultural diversity and passion for bold flavors.</p>
+            </div>
+            
+            <ul class="highlight-list">
+                <li><strong>Pad Thai:</strong> The iconic stir-fried noodle dish - try it from street vendors for authenticity</li>
+                <li><strong>Tom Yum Goong:</strong> Spicy and sour shrimp soup that defines Thai cuisine</li>
+                <li><strong>Som Tam:</strong> Refreshing green papaya salad, perfect for hot weather</li>
+                <li><strong>Mango Sticky Rice:</strong> The ultimate Thai dessert, especially during mango season</li>
+                <li><strong>Thai Iced Tea:</strong> Sweet, creamy, and perfectly refreshing</li>
+                <li><strong>Boat Noodles:</strong> Small bowls of intensely flavored soup served in floating markets</li>
+                <li><strong>Massaman Curry:</strong> Rich, slightly sweet curry with Persian influences</li>
+                <li><strong>Grilled Fish:</strong> Fresh catches prepared with Thai herbs and spices</li>
+            </ul>
+        </section>
+
+        <!-- Neighborhood Guide Section -->
+        <section class="section">
+            <h2 class="section-title">Bangkok Neighborhoods Guide</h2>
+            <div class="section-content">
+                <p>Each district of Bangkok has its own personality and attractions. Understanding the different areas will help you make the most of your visit.</p>
+            </div>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="info-card-title">Sukhumvit</h3>
+                    <div class="info-card-content">
+                        Modern Bangkok with shopping malls, international restaurants, and vibrant nightlife. Great for first-time visitors.
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="info-card-title">Rattanakosin</h3>
+                    <div class="info-card-content">
+                        Historic old city with Grand Palace, Wat Pho, and traditional architecture. Essential for cultural exploration.
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="info-card-title">Khao San Road</h3>
+                    <div class="info-card-content">
+                        Backpacker hub with budget accommodations, street food, and lively atmosphere. Perfect for budget travelers.
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3 class="info-card-title">Chinatown</h3>
+                    <div class="info-card-content">
+                        Bustling district with authentic Chinese-Thai cuisine, gold shops, and traditional markets.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Tips Section -->
+        <section class="section">
+            <h2 class="section-title">Essential Bangkok Travel Tips</h2>
+            <div class="section-content">
+                <p>Make your Bangkok experience smoother with these practical tips gathered from exploring this incredible city.</p>
+            </div>
+            
+            <ul class="highlight-list">
+                <li><strong>Transportation:</strong> Use BTS Skytrain and MRT for quick city travel, tuk-tuks for short distances</li>
+                <li><strong>Temples:</strong> Dress modestly - cover shoulders and knees, remove shoes before entering</li>
+                <li><strong>Haggling:</strong> Expected at markets but not in malls or restaurants</li>
+                <li><strong>Tipping:</strong> Not mandatory but appreciated, 10% in restaurants is generous</li>
+                <li><strong>Language:</strong> Learn basic Thai phrases - locals appreciate the effort</li>
+                <li><strong>Heat:</strong> Start early, take midday breaks, stay hydrated</li>
+                <li><strong>Scams:</strong> Avoid gem shops recommended by strangers, use official taxi meters</li>
+                <li><strong>Currency:</strong> Have small bills for street food and tuk-tuks</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Gallery item hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

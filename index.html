@@ -3,379 +3,1461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Veda's Travel Diary</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Veda's Travel Diary - Explore the World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYCWL3V5TW');
     </script>
+    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--primary-gradient);
+            color: var(--text-light);
             text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Travel Collage Background */
+        .hero-travel-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 2px;
+            opacity: 0.85;
+        }
+
+        .travel-collage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+            filter: brightness(0.85) contrast(1.15) saturate(1.3);
+            animation: gentleFloat 10s ease-in-out infinite;
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .collage-cell {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .travel-collage-image:nth-child(odd) {
+            animation-direction: reverse;
+            animation-delay: -3s;
+        }
+
+        /* Enhanced Grid Layout for More Images */
+        .collage-cell:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .collage-cell:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .collage-cell:nth-child(3) {
+            grid-column: 4 / 6;
+            grid-row: 1 / 2;
+        }
+
+        .collage-cell:nth-child(4) {
+            grid-column: 6 / 7;
+            grid-row: 1 / 3;
+        }
+
+        .collage-cell:nth-child(5) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .collage-cell:nth-child(6) {
+            grid-column: 4 / 5;
+            grid-row: 2 / 4;
+        }
+
+        .collage-cell:nth-child(7) {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+        }
+
+        .collage-cell:nth-child(8) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 5;
+        }
+
+        .collage-cell:nth-child(9) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        .collage-cell:nth-child(10) {
+            grid-column: 3 / 4;
+            grid-row: 3 / 5;
+        }
+
+        .collage-cell:nth-child(11) {
+            grid-column: 5 / 7;
+            grid-row: 3 / 4;
+        }
+
+        .collage-cell:nth-child(12) {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+        }
+
+        .collage-cell:nth-child(13) {
+            grid-column: 4 / 5;
+            grid-row: 4 / 6;
+        }
+
+        .collage-cell:nth-child(14) {
+            grid-column: 5 / 6;
+            grid-row: 4 / 5;
+        }
+
+        .collage-cell:nth-child(15) {
+            grid-column: 6 / 7;
+            grid-row: 4 / 6;
+        }
+
+        .collage-cell:nth-child(16) {
+            grid-column: 1 / 3;
+            grid-row: 5 / 6;
+        }
+
+        .collage-cell:nth-child(17) {
+            grid-column: 3 / 4;
+            grid-row: 5 / 6;
+        }
+
+        .collage-cell:nth-child(18) {
+            grid-column: 5 / 6;
+            grid-row: 5 / 6;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                filter: brightness(0.85) contrast(1.15) saturate(1.3);
+            }
+            50% {
+                transform: scale(1.03) rotate(0.3deg);
+                filter: brightness(0.9) contrast(1.2) saturate(1.4);
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102,126,234,0.2) 0%, rgba(118,75,162,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 30px;
+            opacity: 1;
+            font-weight: 400;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 
+                         0 0 20px rgba(0, 0, 0, 0.5),
+                         0 0 40px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            z-index: -1;
+            margin: -10px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Navigation */
         nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: center;
-            background-color: #4CAF50;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #45a049;
-        }
-        main {
-            padding: 20px;
-            display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            gap: 15px;
         }
-        article {
-            flex: 1 1 300px;
-            background-color: white;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+
+        .dropdown {
+            position: relative;
         }
-        article:hover {
+
+        .dropbtn {
+            background: var(--primary-gradient);
+            color: var(--text-light);
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropbtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .dropbtn:hover::before {
+            left: 100%;
+        }
+
+        .dropbtn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            min-width: 200px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .dropdown-content a {
+            color: var(--text-primary);
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-gradient);
+            color: var(--text-light);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInDown 0.3s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .destination-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .card-image-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            width: 100%;
+        }
+
+        .city-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .destination-card:hover .city-image {
             transform: scale(1.05);
         }
-        article h2 {
-            color: #333;
-            margin-bottom: 10px;
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
-        article p {
-            line-height: 1.6;
+
+        .destination-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .destination-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .destination-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            transition: var(--transition);
+        }
+
+        .destination-card:hover h2::after {
+            width: 60px;
+        }
+
+        .destination-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--secondary-gradient);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .read-more-btn:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .read-more-btn i {
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 20px;
         }
-        article a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
-        article a:hover {
-            text-decoration: underline;
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 20px 60px;
+                min-height: 70vh;
+            }
+            
+            .hero-travel-collage {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+
+            .collage-cell:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-cell:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .collage-cell:nth-child(3) {
+                grid-column: 4 / 5;
+                grid-row: 1 / 2;
+            }
+
+            .collage-cell:nth-child(4) {
+                grid-column: 3 / 5;
+                grid-row: 2 / 3;
+            }
+
+            .collage-cell:nth-child(5) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 5;
+            }
+
+            .collage-cell:nth-child(6) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .collage-cell:nth-child(7) {
+                grid-column: 3 / 4;
+                grid-row: 3 / 4;
+            }
+
+            .collage-cell:nth-child(8) {
+                grid-column: 4 / 5;
+                grid-row: 3 / 5;
+            }
+
+            .collage-cell:nth-child(9) {
+                grid-column: 2 / 4;
+                grid-row: 4 / 5;
+            }
+
+            .collage-cell:nth-child(10) {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+            }
+
+            .collage-cell:nth-child(11) {
+                grid-column: 2 / 3;
+                grid-row: 5 / 6;
+            }
+
+            .collage-cell:nth-child(12) {
+                grid-column: 3 / 4;
+                grid-row: 5 / 6;
+            }
+
+            .collage-cell:nth-child(13) {
+                grid-column: 4 / 5;
+                grid-row: 5 / 6;
+            }
+
+            .collage-cell:nth-child(n+14) {
+                display: none;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .destination-card {
+                margin: 0;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
         }
-        .city-image {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 480px) {
+            .dropbtn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            
+            .dropdown-content {
+                min-width: 160px;
+            }
+
+            .hero {
+                padding: 80px 15px 50px;
+                min-height: 60vh;
+            }
+
+            .hero-travel-collage {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+
+            .collage-cell:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-cell:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .collage-cell:nth-child(3) {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .collage-cell:nth-child(4) {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+            }
+
+            .collage-cell:nth-child(5) {
+                grid-column: 1 / 2;
+                grid-row: 4 / 6;
+            }
+
+            .collage-cell:nth-child(6) {
+                grid-column: 2 / 3;
+                grid-row: 4 / 5;
+            }
+
+            .collage-cell:nth-child(7) {
+                grid-column: 3 / 4;
+                grid-row: 4 / 6;
+            }
+
+            .collage-cell:nth-child(8) {
+                grid-column: 2 / 3;
+                grid-row: 5 / 6;
+            }
+
+            .collage-cell:nth-child(n+9) {
+                display: none;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0 15px;
+                text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 
+                             0 0 25px rgba(0, 0, 0, 0.6),
+                             0 0 50px rgba(0, 0, 0, 0.4);
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+
+            .hero-subtitle::before {
+                margin: -15px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        /* Loading Animation */
+        .destination-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .destination-card:nth-child(1) { animation-delay: 0.1s; }
+        .destination-card:nth-child(2) { animation-delay: 0.2s; }
+        .destination-card:nth-child(3) { animation-delay: 0.3s; }
+        .destination-card:nth-child(4) { animation-delay: 0.4s; }
+        .destination-card:nth-child(5) { animation-delay: 0.5s; }
+        .destination-card:nth-child(6) { animation-delay: 0.6s; }
+        .destination-card:nth-child(7) { animation-delay: 0.7s; }
+        .destination-card:nth-child(8) { animation-delay: 0.8s; }
+        .destination-card:nth-child(9) { animation-delay: 0.9s; }
+        .destination-card:nth-child(10) { animation-delay: 1.0s; }
+        .destination-card:nth-child(11) { animation-delay: 1.1s; }
+        .destination-card:nth-child(12) { animation-delay: 1.2s; }
+        .destination-card:nth-child(13) { animation-delay: 1.3s; }
+        .destination-card:nth-child(14) { animation-delay: 1.4s; }
+        .destination-card:nth-child(n+15) { animation-delay: 1.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Welcome to Veda's Travel Diary</h1>
-</header>
-
-
-<nav>
-    <div class="dropdown">
-        <button class="dropbtn">Europe</button>
-        <div class="dropdown-content">
-            <a href="#rome">Rome</a>
-            <a href="#vatican">Vatican City</a>
-            <a href="#venice">Venice</a>
-            <a href="#paris">Paris</a>
-            <a href="#barcelona">Barcelona</a>
-            <a href="#amsterdam">Amsterdam</a>
-            <a href="#brussels">Brussels</a>
-            <a href="#interlaken">Interlaken</a>
-            <a href="#milan">Milan</a>
-            <a href="#santorini">Santorini</a>
-            <a href="#athens">Athens</a>
-            <a href="#prague">Prague</a>
-            <a href="#berlin">Berlin</a>
-            <a href="#vienna">Vienna</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-travel-collage">
+            <!-- Each cell contains multiple images that will rotate -->
+            <div class="collage-cell" data-cell="1">
+                <img src="rome-image.jpg" alt="" class="travel-collage-image">
+                <img src="cancun-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="athens-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="miami-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="2">
+                <img src="paris-image.jpg" alt="" class="travel-collage-image">
+                <img src="lima-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="berlin-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="losangeles-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="3">
+                <img src="barcelona-image.jpg" alt="" class="travel-collage-image">
+                <img src="cusco-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="vienna-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="lasvegas-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="4">
+                <img src="venice-image.jpg" alt="" class="travel-collage-image">
+                <img src="mexicocity-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="brussels-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="grandcanyon-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="5">
+                <img src="santorini-image.jpg" alt="" class="travel-collage-image">
+                <img src="darjeeling-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="interlaken-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="machupicchu-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="6">
+                <img src="amsterdam-image.jpg" alt="" class="travel-collage-image">
+                <img src="gangtok-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="vatican-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="bangkok-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="pattaya-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="prague-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="7">
+                <img src="milan-image.jpg" alt="" class="travel-collage-image">
+                <img src="rome-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="paris-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="barcelona-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="8">
+                <img src="prague-image.jpg" alt="" class="travel-collage-image">
+                <img src="venice-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="santorini-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="amsterdam-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="9">
+                <img src="athens-image.jpg" alt="" class="travel-collage-image">
+                <img src="milan-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="cancun-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="lima-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="10">
+                <img src="berlin-image.jpg" alt="" class="travel-collage-image">
+                <img src="cusco-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="mexicocity-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="darjeeling-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="11">
+                <img src="vienna-image.jpg" alt="" class="travel-collage-image">
+                <img src="gangtok-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="vatican-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="bangkok-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="pattaya-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="miami-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="12">
+                <img src="brussels-image.jpg" alt="" class="travel-collage-image">
+                <img src="losangeles-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="lasvegas-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="grandcanyon-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="13">
+                <img src="interlaken-image.jpg" alt="" class="travel-collage-image">
+                <img src="machupicchu-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="rome-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="paris-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="14">
+                <img src="vatican-image.jpg" alt="" class="travel-collage-image">
+                <img src="barcelona-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="santorini-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="15">
+                <img src="darjeeling-image.jpg" alt="" class="travel-collage-image">
+                <img src="amsterdam-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="milan-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="athens-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="16">
+                <img src="gangtok-image.jpg" alt="" class="travel-collage-image">
+                <img src="berlin-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="vienna-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="bangkok-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="pattaya-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="brussels-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="17">
+                <img src="machupicchu-image.jpg" alt="" class="travel-collage-image">
+                <img src="interlaken-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="cancun-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="lima-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="18">
+                <img src="grandcanyon-image.jpg" alt="" class="travel-collage-image">
+                <img src="cusco-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="mexicocity-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="darjeeling-image.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
         </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">North America</button>
-        <div class="dropdown-content">
-            <a href="#cancun">Cancun</a>
-            <a href="#mexicocity">Mexico City</a>
-            <a href="#miami">Miami</a>
-            <a href="#losangeles">Los Angeles</a>
-            <a href="#lasvegas">Las Vegas</a>
+        <div class="hero-content">
+            <h1>Veda's Travel Diary</h1>
+            <p class="hero-subtitle">Journey Through Amazing Destinations</p>
+            <p class="hero-description">Join me as I wander through hidden gems, collect stories from every corner of the world, and turn ordinary moments into extraordinary memories.</p>
         </div>
-    </div>
-    </div>
+    </section>
 
-    <div class="dropdown">
-        <button class="dropbtn">South America</button>
-        <div class="dropdown-content">
-            <a href="#lima">Lima</a>
-            <a href="#cusco">Cusco</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-monument"></i> Europe
+                </button>
+                <div class="dropdown-content">
+                    <a href="#rome"><i class="fas fa-landmark"></i> Rome</a>
+                    <a href="#vatican"><i class="fas fa-church"></i> Vatican City</a>
+                    <a href="#venice"><i class="fas fa-water"></i> Venice</a>
+                    <a href="#paris"><i class="fas fa-tower-broadcast"></i> Paris</a>
+                    <a href="#barcelona"><i class="fas fa-building"></i> Barcelona</a>
+                    <a href="#amsterdam"><i class="fas fa-bicycle"></i> Amsterdam</a>
+                    <a href="#brussels"><i class="fas fa-crown"></i> Brussels</a>
+                    <a href="#interlaken"><i class="fas fa-mountain"></i> Interlaken</a>
+                    <a href="#milan"><i class="fas fa-tshirt"></i> Milan</a>
+                    <a href="#santorini"><i class="fas fa-island-tropical"></i> Santorini</a>
+                    <a href="#athens"><i class="fas fa-columns"></i> Athens</a>
+                    <a href="#prague"><i class="fas fa-castle"></i> Prague</a>
+                    <a href="#berlin"><i class="fas fa-gate"></i> Berlin</a>
+                    <a href="#vienna"><i class="fas fa-music"></i> Vienna</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-flag-usa"></i> North America
+                </button>
+                <div class="dropdown-content">
+                    <a href="#cancun"><i class="fas fa-cocktail"></i> Cancun</a>
+                    <a href="#mexicocity"><i class="fas fa-city"></i> Mexico City</a>
+                    <a href="#miami"><i class="fas fa-umbrella-beach"></i> Miami</a>
+                    <a href="#losangeles"><i class="fas fa-film"></i> Los Angeles</a>
+                    <a href="#lasvegas"><i class="fas fa-dice"></i> Las Vegas</a>
+                    <a href="#grandcanyon"><i class="fas fa-mountain-sun"></i> Grand Canyon</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map"></i> South America
+                </button>
+                <div class="dropdown-content">
+                    <a href="#lima"><i class="fas fa-utensils"></i> Lima</a>
+                    <a href="#cusco"><i class="fas fa-mountain"></i> Cusco</a>
+                    <a href="#machupicchu"><i class="fas fa-ruins"></i> Machu Picchu</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-yin-yang"></i> Asia
+                </button>
+                <div class="dropdown-content">
+                    <a href="#bangkok"><i class="fas fa-temple"></i> Bangkok</a>
+                    <a href="#pattaya"><i class="fas fa-umbrella-beach"></i> Pattaya</a>
+                    <a href="#gangtok"><i class="fas fa-mountain-sun"></i> Gangtok</a>
+                    <a href="#darjeeling"><i class="fas fa-leaf"></i> Darjeeling</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-snowflake"></i> Antarctica
+                </button>
+                <div class="dropdown-content">
+                    <a href="#kidding"><i class="fas fa-laugh"></i> Just Kidding :-D</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="dropdown">
-        <button class="dropbtn">Asia</button>
-        <div class="dropdown-content">
-            <a href="#gangtok">Gangtok</a>
-            <a href="#darjeeling">Darjeeling</a>
+    <!-- Main Content -->
+    <main>
+        <div class="section-header">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Explore these incredible places that have captured my heart during my travels</p>
         </div>
-    </div>
 
-    <div class="dropdown">
-        <button class="dropbtn">Antarctica</button>
-        <div class="dropdown-content">
-            <a href="#kidding">Just Kidding :-D</a>
+        <div class="destinations-grid">
+            <article class="destination-card" id="rome">
+                <div class="card-image-container">
+                    <img class="city-image" src="rome-image.jpg" alt="Rome" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Rome</h2>
+                    <p>Rome, the capital city of Italy, is known for its rich history, stunning architecture, and delicious cuisine. Explore iconic landmarks such as the Colosseum, Roman Forum, and Vatican City.</p>
+                    <a href="rome-page.html#rome" class="read-more-btn">
+                        Explore Rome <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="paris">
+                <div class="card-image-container">
+                    <img class="city-image" src="paris-image.jpg" alt="Paris City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Paris</h2>
+                    <p>Paris, the capital of France, is renowned for its art, fashion, and gastronomy. Visit iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
+                    <a href="paris-page.html#paris" class="read-more-btn">
+                        Explore Paris <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="barcelona">
+                <div class="card-image-container">
+                    <img class="city-image" src="barcelona-image.jpg" alt="Barcelona City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Barcelona</h2>
+                    <p>Barcelona, located on the northeast coast of the Iberian Peninsula, is famous for its unique architecture by Antoni Gaudí. Explore attractions like Sagrada Família, Park Güell, and La Rambla.</p>
+                    <a href="barcelona-page.html#barcelona" class="read-more-btn">
+                        Explore Barcelona <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="venice">
+                <div class="card-image-container">
+                    <img class="city-image" src="venice-image.jpg" alt="Venice City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Venice</h2>
+                    <p>Venice, known for its romantic canals and historic architecture, is a unique city built on a lagoon. Explore landmarks like St. Mark's Basilica, the Grand Canal, and enjoy a gondola ride.</p>
+                    <a href="venice-page.html#venice" class="read-more-btn">
+                        Explore Venice <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="santorini">
+                <div class="card-image-container">
+                    <img class="city-image" src="santorini-image.jpg" alt="Santorini City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Santorini</h2>
+                    <p>Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera.</p>
+                    <a href="santorini-page.html#santorini" class="read-more-btn">
+                        Explore Santorini <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="amsterdam">
+                <div class="card-image-container">
+                    <img class="city-image" src="amsterdam-image.jpg" alt="Amsterdam City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Amsterdam</h2>
+                    <p>Amsterdam is the Netherlands' capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city's 17th-century Golden Age.</p>
+                    <a href="amsterdam-page.html#amsterdam" class="read-more-btn">
+                        Explore Amsterdam <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="machupicchu">
+                <div class="card-image-container">
+                    <img class="city-image" src="machupicchu-image.jpg" alt="Machu Picchu" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Machu Picchu</h2>
+                    <p>Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru. Built in the 15th century and later abandoned, it's renowned for its sophisticated dry-stone walls and intriguing astronomical alignments.</p>
+                    <a href="machupicchu-page.html#machupicchu" class="read-more-btn">
+                        Explore Machu Picchu <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="grandcanyon">
+                <div class="card-image-container">
+                    <img class="city-image" src="grandcanyon-image.jpg" alt="Grand Canyon" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Grand Canyon</h2>
+                    <p>The Grand Canyon, in Arizona, is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history. Vast in scale, the canyon averages 10 miles across and a mile deep.</p>
+                    <a href="grandcanyon-page.html#grandcanyon" class="read-more-btn">
+                        Explore Grand Canyon <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="prague">
+                <div class="card-image-container">
+                    <img class="city-image" src="prague-image.jpg" alt="Prague City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Prague</h2>
+                    <p>Prague, capital city of the Czech Republic, is nicknamed "the City of a Hundred Spires." It's known for its Old Town Square, colorful baroque buildings, Gothic churches and the medieval Astronomical Clock.</p>
+                    <a href="prague-page.html#prague" class="read-more-btn">
+                        Explore Prague <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="milan">
+                <div class="card-image-container">
+                    <img class="city-image" src="milan-image.jpg" alt="Milan City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Milan</h2>
+                    <p>Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design. It's a financial hub also known for its high-end restaurants and luxury shops.</p>
+                    <a href="milan-page.html#milan" class="read-more-btn">
+                        Explore Milan <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="miami">
+                <div class="card-image-container">
+                    <img class="city-image" src="miami-image.jpg" alt="Miami City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Miami</h2>
+                    <p>Miami, at Florida's southeastern tip, is a vibrant city whose Cuban influence is reflected in the cafes and cigar shops. Miami Beach is home to glamorous South Beach across the turquoise waters of Biscayne Bay.</p>
+                    <a href="miami-page.html#miami" class="read-more-btn">
+                        Explore Miami <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="lima">
+                <div class="card-image-container">
+                    <img class="city-image" src="lima-image.jpg" alt="Lima City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Lima</h2>
+                    <p>Lima, the capital of Peru, boasts a rich culinary scene and historic architecture. Explore the UNESCO-listed historic center, visit the Larco Museum, and savor the flavors of Peruvian cuisine.</p>
+                    <a href="lima-page.html#lima" class="read-more-btn">
+                        Explore Lima <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="cancun">
+                <div class="card-image-container">
+                    <img class="city-image" src="cancun-image.jpg" alt="Cancun City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Cancun</h2>
+                    <p>Cancun, a popular resort destination in Mexico, is known for its beautiful beaches, vibrant nightlife, and archaeological wonders like Chichen Itza. Relax by the turquoise waters of the Caribbean Sea.</p>
+                    <a href="cancun-page.html#cancun" class="read-more-btn">
+                        Explore Cancun <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="mexicocity">
+                <div class="card-image-container">
+                    <img class="city-image" src="mexicocity-image.jpg" alt="Mexico City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Mexico City</h2>
+                    <p>Mexico City, the capital of Mexico, offers a blend of modern and historic attractions. Explore the ancient Aztec Templo Mayor, the historic Zocalo, and indulge in authentic Mexican cuisine.</p>
+                    <a href="mexicocity-page.html#mexicocity" class="read-more-btn">
+                        Explore Mexico City <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="cusco">
+                <div class="card-image-container">
+                    <img class="city-image" src="cusco-image.jpg" alt="Cusco City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Cusco</h2>
+                    <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
+                    <a href="cusco-page.html#cusco" class="read-more-btn">
+                        Explore Cusco <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="losangeles">
+                <div class="card-image-container">
+                    <img class="city-image" src="losangeles-image.jpg" alt="Los Angeles City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Los Angeles</h2>
+                    <p>Los Angeles is a sprawling Southern California city and the center of the nation's film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours.</p>
+                    <a href="losangeles-page.html#losangeles" class="read-more-btn">
+                        Explore Los Angeles <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="lasvegas">
+                <div class="card-image-container">
+                    <img class="city-image" src="lasvegas-image.jpg" alt="Las Vegas City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Las Vegas</h2>
+                    <p>Las Vegas, in Nevada's Mojave Desert, is a resort city famed for its vibrant nightlife, centered around 24-hour casinos and other entertainment options. Its main street and focal point is the Strip, just over 4 miles long.</p>
+                    <a href="lasvegas-page.html#lasvegas" class="read-more-btn">
+                        Explore Las Vegas <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="darjeeling">
+                <div class="card-image-container">
+                    <img class="city-image" src="darjeeling-image.jpg" alt="Darjeeling City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Darjeeling</h2>
+                    <p>Darjeeling, in India's West Bengal state, is a hill station known for its distinctive black tea grown on plantations that dot its surrounding slopes. Its backdrop of Mt. Kanchenjunga, among the world's highest peaks, is truly breathtaking.</p>
+                    <a href="darjeeling-page.html#darjeeling" class="read-more-btn">
+                        Explore Darjeeling <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="bangkok">
+                <div class="card-image-container">
+                    <img class="city-image" src="bangkok-image.jpg" alt="Bangkok City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Bangkok</h2>
+                    <p>Bangkok, the vibrant capital of Thailand, is a city where ancient temples stand alongside modern skyscrapers. Known as the "City of Angels," it offers incredible street food, bustling markets, ornate palaces, and a unique blend of traditional and contemporary culture.</p>
+                    <a href="bangkok-page.html#bangkok" class="read-more-btn">
+                        Explore Bangkok <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="pattaya">
+                <div class="card-image-container">
+                    <img class="city-image" src="pattaya-image.jpg" alt="Pattaya Beach" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Pattaya</h2>
+                    <p>Pattaya, Thailand's vibrant beach city, offers the perfect blend of stunning coastline and energetic nightlife. From pristine beaches and water sports to floating markets and temples, this coastal paradise provides unforgettable adventures and magical sunsets.</p>
+                    <a href="pattaya-page.html#pattaya" class="read-more-btn">
+                        Explore Pattaya <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="gangtok">
+                <div class="card-image-container">
+                    <img class="city-image" src="gangtok-image.jpg" alt="Gangtok City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Gangtok</h2>
+                    <p>Gangtok, the capital of Sikkim, is a popular hill destination in northeast India. It is known for its scenic beauty and striking views of Mount Kanchenjunga, the third highest peak in the world.</p>
+                    <a href="gangtok-page.html#gangtok" class="read-more-btn">
+                        Explore Gangtok <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="vatican">
+                <div class="card-image-container">
+                    <img class="city-image" src="vatican-image.jpg" alt="Vatican City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Vatican City</h2>
+                    <p>Vatican City, an independent city-state surrounded by Rome, is the headquarters of the Roman Catholic Church. Visit St. Peter's Basilica, the Vatican Museums, and the Sistine Chapel.</p>
+                    <a href="vatican-page.html#vatican" class="read-more-btn">
+                        Explore Vatican <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="interlaken">
+                <div class="card-image-container">
+                    <img class="city-image" src="interlaken-image.jpg" alt="Interlaken City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Interlaken</h2>
+                    <p>Interlaken is a traditional resort town in the mountainous Bernese Oberland region of central Switzerland. Built on a narrow stretch of valley, between the emerald-colored waters of Lake Thun and Lake Brienz, it has old timber houses and parkland on either side of the Aare River.</p>
+                    <a href="interlaken-page.html#interlaken" class="read-more-btn">
+                        Explore Interlaken <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="athens">
+                <div class="card-image-container">
+                    <img class="city-image" src="athens-image.jpg" alt="Athens City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Athens</h2>
+                    <p>Athens is the capital of Greece. It was also at the heart of Ancient Greece, a powerful civilization and empire. The city is still dominated by 5th-century BC landmarks, including the Acropolis, a hilltop citadel topped with ancient buildings like the colonnaded Parthenon temple.</p>
+                    <a href="athens-page.html#athens" class="read-more-btn">
+                        Explore Athens <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="brussels">
+                <div class="card-image-container">
+                    <img class="city-image" src="brussels-image.jpg" alt="Brussels City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Brussels</h2>
+                    <p>Brussels, the capital of Belgium and the European Union, is known for its medieval Grand-Place, royal palaces and Art Nouveau architecture. It's also home to international organizations, universities and research institutes.</p>
+                    <a href="brussels-page.html#brussels" class="read-more-btn">
+                        Explore Brussels <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="berlin">
+                <div class="card-image-container">
+                    <img class="city-image" src="berlin-image.jpg" alt="Berlin City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Berlin</h2>
+                    <p>Berlin, Germany's capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Its 18th-century Brandenburg Gate has become an iconic symbol of reunification.</p>
+                    <a href="berlin-page.html#berlin" class="read-more-btn">
+                        Explore Berlin <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card" id="vienna">
+                <div class="card-image-container">
+                    <img class="city-image" src="vienna-image.jpg" alt="Vienna City" loading="lazy">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h2>Vienna</h2>
+                    <p>Vienna, Austria's capital, lies in the country's east on the Danube River. Its artistic and intellectual legacy was shaped by residents including Mozart, Beethoven and Sigmund Freud. The city is also known for its Imperial palaces, including Schönbrunn, the Habsburgs' summer residence.</p>
+                    <a href="vienna-page.html#vienna" class="read-more-btn">
+                        Explore Vienna <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
         </div>
-    </div>
-</nav>
+    </main>
 
-<main>
-    <article id="rome">
-        <h2>Rome</h2>
-        <a href="rome-page.html#rome">
-            <img class="city-image" src="rome-image.jpg" alt="Rome">
-        </a>
-        <p>Rome, the capital city of Italy, is known for its rich history, stunning architecture, and delicious cuisine. Explore iconic landmarks such as the Colosseum, Roman Forum, and Vatican City.</p>
-        <p><a href="rome-page.html#rome">Read more</a></p>
-    </article>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <article id="lima">
-        <h2>Lima</h2>
-        <a href="lima-page.html#lima">
-            <img class="city-image" src="lima-image.jpg" alt="Lima City">
-        </a>
-        <p>Lima, the capital of Peru, boasts a rich culinary scene and historic architecture. Explore the UNESCO-listed historic center, visit the Larco Museum, and savor the flavors of Peruvian cuisine.</p>
-        <p><a href="lima-page.html#lima">Read more</a></p>
-    </article>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <article id="venice">
-        <h2>Venice</h2>
-        <a href="venice-page.html#venice">
-            <img class="city-image" src="venice-image.jpg" alt="Venice City">
-        </a>
-        <p>Venice, known for its romantic canals and historic architecture, is a unique city built on a lagoon. Explore landmarks like St. Mark's Basilica, the Grand Canal, and enjoy a gondola ride.</p>
-        <p><a href="venice-page.html#venice">Read more</a></p>
-    </article>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    <article id="paris">
-        <h2>Paris</h2>
-        <a href="paris-page.html#paris">
-            <img class="city-image" src="paris-image.jpg" alt="Paris City">
-        </a>
-        <p>Paris, the capital of France, is renowned for its art, fashion, and gastronomy. Visit iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
-        <p><a href="paris-page.html#paris">Read more</a></p>
-    </article>
+        // Observe all destination cards
+        document.querySelectorAll('.destination-card').forEach(card => {
+            observer.observe(card);
+        });
 
-    <article id="barcelona">
-        <h2>Barcelona</h2>
-        <a href="barcelona-page.html#barcelona">
-            <img class="city-image" src="barcelona-image.jpg" alt="Barcelona City">
-        </a>
-        <p>Barcelona, located on the northeast coast of the Iberian Peninsula, is famous for its unique architecture by Antoni Gaudí. Explore attractions like Sagrada Família, Park Güell, and La Rambla.</p>
-        <p><a href="barcelona-page.html#barcelona">Read more</a></p>
-    </article>
+        // Add loading state management
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            
+            // Start the individual cell rotations with staggered timing
+            startCollageRotation();
+        });
 
-    <article id="cancun">
-        <h2>Cancun</h2>
-        <a href="cancun-page.html#cancun">
-            <img class="city-image" src="cancun-image.jpg" alt="Cancun City">
-        </a>
-        <p>Cancun, a popular resort destination in Mexico, is known for its beautiful beaches, vibrant nightlife, and archaeological wonders like Chichen Itza. Relax by the turquoise waters of the Caribbean Sea.</p>
-        <p><a href="cancun-page.html#cancun">Read more</a></p>
-    </article>
+        // Individual Cell Rotation System
+        function startCollageRotation() {
+            const cells = document.querySelectorAll('.collage-cell');
+            
+            cells.forEach((cell, cellIndex) => {
+                const images = cell.querySelectorAll('.travel-collage-image');
+                let currentImageIndex = 0;
+                
+                // Start each cell rotation at different times to create wave effect
+                setTimeout(() => {
+                    setInterval(() => {
+                        // Fade out current image
+                        images[currentImageIndex].style.opacity = '0';
+                        
+                        // Move to next image
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        
+                        // Fade in next image
+                        setTimeout(() => {
+                            images[currentImageIndex].style.opacity = '1';
+                        }, 250);
+                        
+                    }, 4000); // Change every 4 seconds
+                }, cellIndex * 200); // Stagger start times by 200ms per cell
+            });
+        }
 
-    <article id="machupicchu">
-        <h2>Machu Picchu</h2>
-        <a href="machupicchu-page.html#machupicchu">
-            <img class="city-image" src="machupicchu-image.jpg" alt="Machu Picchu">
-        </a>
-        <p>Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views.</p>
-        <p><a href="machupicchu-page.html#machupicchu">Read more</a></p>
-    </article>
+        // Parallax effect for travel collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.travel-collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.05 + ((index % 6) * 0.02);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.00005)})`;
+            });
+        });
 
-    <article id="grandcanyon">
-        <h2>Grand Canyon</h2>
-        <a href="grandcanyon-page.html#grandcanyon">
-            <img class="city-image" src="grandcanyon-image.jpg" alt="Grand Canyon">
-        </a>
-        <p>The Grand Canyon, in the U.S. state of Arizona, is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length.</p>
-        <p><a href="grandcanyon-page.html#grandcanyon">Read more</a></p>
-    </article>
-
-    <article id="mexicocity">
-        <h2>Mexico City</h2>
-        <a href="mexicocity-page.html#mexicocity">
-            <img class="city-image" src="mexicocity-image.jpg" alt="Mexico City">
-        </a>
-        <p>Mexico City, the capital of Mexico, offers a blend of modern and historic attractions. Explore the ancient Aztec Templo Mayor, the historic Zocalo, and indulge in authentic Mexican cuisine.</p>
-        <p><a href="mexicocity-page.html#mexicocity">Read more</a></p>
-    </article>
-
-    <article id="cusco">
-        <h2>Cusco</h2>
-        <a href="cusco-page.html#cusco">
-            <img class="city-image" src="cusco-image.jpg" alt="Cusco City">
-        </a>
-        <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
-        <p><a href="cusco-page.html#cusco">Read more</a></p>
-    </article>
-
-    <article id="prague">
-        <h2>Prague</h2>
-        <a href="prague-page.html#prague">
-            <img class="city-image" src="prague-image.jpg" alt="Prague City">
-        </a>
-        <p>Prague, capital city of the Czech Republic, is bisected by the Vltava River. Nicknamed “the City of a Hundred Spires,” it's known for its Old Town Square, the heart of its historic core, with colorful baroque buildings, Gothic churches and the medieval Astronomical Clock.</p>
-        <p><a href="prague-page.html#prague">Read more</a></p>
-    </article>
-
-    <article id="miami">
-        <h2>Miami</h2>
-        <a href="miami-page.html#miami">
-            <img class="city-image" src="miami-image.jpg" alt="Miami City">
-        </a>
-        <p>Miami, at Florida's southeastern tip, is a vibrant city whose Cuban influence is reflected in the cafes and cigar shops. Miami Beach, on barrier islands across the turquoise waters of Biscayne Bay, is home to glamorous South Beach.</p>
-        <p><a href="miami-page.html#miami">Read more</a></p>
-    </article>
-    
-    <article id="losangeles">
-        <h2>Los Angeles</h2>
-        <a href="losangeles-page.html#losangeles">
-            <img class="city-image" src="losangeles-image.jpg" alt="Los Angeles City">
-        </a>
-        <p>Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours.</p>
-        <p><a href="losangeles-page.html#losangeles">Read more</a></p>
-    </article>
-    
-    <article id="lasvegas">
-        <h2>Las Vegas</h2>
-        <a href="lasvegas-page.html#lasvegas">
-            <img class="city-image" src="lasvegas-image.jpg" alt="Las Vegas City">
-        </a>
-        <p>Las Vegas, in Nevada’s Mojave Desert, is a resort city famed for its vibrant nightlife, centered around 24-hour casinos and other entertainment options. Its main street and focal point is the Strip, just over 4 miles long.</p>
-        <p><a href="lasvegas-page.html#lasvegas">Read more</a></p>
-    </article>
-
-    <article id="darjeeling">
-        <h2>Darjeeling</h2>
-        <a href="darjeeling-page.html#darjeeling">
-            <img class="city-image" src="darjeeling-image.jpg" alt="Darjeeling City">
-        </a>
-        <p>Darjeeling, in India's West Bengal state, is a hill station known for its distinctive black tea grown on plantations that dot its surrounding slopes. Its backdrop of Mt. Kanchenjunga, among the world’s highest peaks, is truly breathtaking.</p>
-        <p><a href="darjeeling-page.html#darjeeling">Read more</a></p>
-    </article>
-
-    <article id="gangtok">
-        <h2>Gangtok</h2>
-        <a href="gangtok-page.html#gangtok">
-            <img class="city-image" src="gangtok-image.jpg" alt="Gangtok City">
-        </a>
-        <p>Gangtok, the capital of Sikkim, is a popular hill destination in the northeast region of India. It is known for its scenic beauty and striking views of Mount Kanchenjunga, the third highest peak in the world.</p>
-        <p><a href="gangtok-page.html#gangtok">Read more</a></p>
-    </article>
-
-    <article id="vatican">
-        <h2>Vatican City</h2>
-        <a href="vatican-page.html#vatican">
-            <img class="city-image" src="vatican-image.jpg" alt="Vatican City">
-        </a>
-        <p>Vatican City, an independent city-state surrounded by Rome, is the headquarters of the Roman Catholic Church. Visit St. Peter's Basilica, the Vatican Museums, and the Sistine Chapel.</p>
-        <p><a href="vatican-page.html#vatican">Read more</a></p>
-    </article>
-
-    <article id="santorini">
-        <h2>Santorini</h2>
-        <a href="santorini-page.html#santorini">
-            <img class="city-image" src="santorini-image.jpg" alt="Santorini City">
-        </a>
-        <p>Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).</p>
-        <p><a href="santorini-page.html#santorini">Read more</a></p>
-    </article>
-    
-    <article id="milan">
-        <h2>Milan</h2>
-        <a href="milan-page.html#milan">
-            <img class="city-image" src="milan-image.jpg" alt="Milan City">
-        </a>
-        <p>Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design. Home to the national stock exchange, it’s a financial hub also known for its high-end restaurants and shops.</p>
-        <p><a href="milan-page.html#milan">Read more</a></p>
-    </article>
-    
-    <article id="interlaken">
-        <h2>Interlaken</h2>
-        <a href="interlaken-page.html#interlaken">
-            <img class="city-image" src="interlaken-image.jpg" alt="Interlaken City">
-        </a>
-        <p>Interlaken is a traditional resort town in the mountainous Bernese Oberland region of central Switzerland. Built on a narrow stretch of valley, between the emerald-colored waters of Lake Thun and Lake Brienz, it has old timber houses and parkland on either side of the Aare River.</p>
-        <p><a href="interlaken-page.html#interlaken">Read more</a></p>
-    </article>
-    
-    <article id="athens">
-        <h2>Athens</h2>
-        <a href="athens-page.html#athens">
-            <img class="city-image" src="athens-image.jpg" alt="Athens City">
-        </a>
-        <p>Athens is the capital of Greece. It was also at the heart of Ancient Greece, a powerful civilization and empire. The city is still dominated by 5th-century BC landmarks, including the Acropolis, a hilltop citadel topped with ancient buildings like the colonnaded Parthenon temple.</p>
-        <p><a href="athens-page.html#athens">Read more</a></p>
-    </article>
-    
-    <article id="amsterdam">
-        <h2>Amsterdam</h2>
-        <a href="amsterdam-page.html#amsterdam">
-            <img class="city-image" src="amsterdam-image.jpg" alt="Amsterdam City">
-        </a>
-        <p>Amsterdam is the Netherlands’ capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk.</p>
-        <p><a href="amsterdam-page.html#amsterdam">Read more</a></p>
-    </article>
-
-    <article id="brussels">
-        <h2>Brussels</h2>
-        <a href="brussels-page.html#brussels">
-            <img class="city-image" src="brussels-image.jpg" alt="Brussels City">
-        </a>
-        <p>Brussels, the capital of Belgium and the European Union, is known for its medieval Grand-Place, royal palaces and Art Nouveau architecture. It's also home to international organizations, universities and research institutes.</p>
-        <p><a href="brussels-page.html#brussels">Read more</a></p>
-    </article>
-    
-    <article id="berlin">
-        <h2>Berlin</h2>
-        <a href="berlin-page.html#berlin">
-            <img class="city-image" src="berlin-image.jpg" alt="Berlin City">
-        </a>
-        <p>Berlin, Germany's capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Its 18th-century Brandenburg Gate has become an iconic symbol of reunification.</p>
-        <p><a href="berlin-page.html#berlin">Read more</a></p>
-    </article>
-    
-    <article id="vienna">
-        <h2>Vienna</h2>
-        <a href="vienna-page.html#vienna">
-            <img class="city-image" src="vienna-image.jpg" alt="Vienna City">
-        </a>
-        <p>Vienna, Austria’s capital, lies in the country’s east on the Danube River. Its artistic and intellectual legacy was shaped by residents including Mozart, Beethoven and Sigmund Freud. The city is also known for its Imperial palaces, including Schönbrunn, the Habsburgs’ summer residence.</p>
-        <p><a href="vienna-page.html#vienna">Read more</a></p>
-    </article>
-</main>
+        // Add hover effect to travel collage images
+        document.querySelectorAll('.travel-collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2) saturate(1.5)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.85) contrast(1.15) saturate(1.3)';
+            });
+        });
+    </script>
 
 </body>
 </html>

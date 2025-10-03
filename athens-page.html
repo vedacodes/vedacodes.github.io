@@ -3,131 +3,783 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athens</title>
+    <title>Athens - Cradle of Democracy | Veda's Travel Diary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYCWL3V5TW');
     </script>
+    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --city-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeInPage 1s ease-in-out forwards;
         }
-        main {
-            padding: 20px;
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
         }
-        section {
-            margin-bottom: 30px;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        section h2 {
-            color: #333;
-        }
-        section img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .image-gallery {
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
         }
-        .image-gallery figure {
-            flex: 1 0 21%;
-            margin: 1%;
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--city-gradient);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.3;
+        }
+
+        .collage-image {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .collage-image:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .collage-image:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .collage-image:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 2s; }
+        .collage-image:nth-child(4) { bottom: 15%; right: 20%; animation-delay: 3s; }
+        .collage-image:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            opacity: 0.8;
+            animation: slideInUp 1s ease-out 0.9s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Description Card */
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--city-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .description-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--city-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Travel Tips Grid */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
             text-align: center;
         }
-        .image-gallery img {
-            max-width: 100%;
-            height: auto;
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tip-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Booking Tips */
+        .booking-tips {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .booking-tip {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .booking-tip h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-tip h4 i {
+            color: #667eea;
+        }
+
+        .booking-tip p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Cuisine Grid */
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .food-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .food-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .food-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .food-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--city-gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            .description-card {
+                padding: 2rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .travel-tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cuisine-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Veda's Travel Diary</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#travel-tips">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<header>
-    <h1>Athens: Cradle of Western Civilization</h1>
-</header>
-
-<main>
-
-    <section class="image-gallery">
-        <figure>
-            <img src="athens/athens-image-10.jpg" alt="Athens 10">
-            <figcaption>Entering the Acropolis of Athens</figcaption>
-        </figure>
-        <figure>
-            <img src="athens/athens-image-11.jpg" alt="Athens 11">
-            <figcaption>Parthenon</figcaption>
-        </figure>
-    </section>
-    <section class="image-gallery">
-        <figure>
-            <img src="athens/athens-image-12.jpg" alt="Athens 12">
-        </figure>
-        <figure>
-            <img src="athens/athens-image-13.jpg" alt="Athens 13">
-            <figcaption>Odeon of Herodes Atticus </figcaption>
-        </figure>
-    </section>
-    <section class="image-gallery">
-        <figure>
-            <img src="athens/athens-image-7.jpg" alt="Athens 7">
-        </figure>
-        <figure>
-            <img src="athens/athens-image-8.jpg" alt="Athens 8">
-            <figcaption>Acropolis Museum</figcaption>
-        </figure>
-        <figure>
-            <img src="athens/athens-image-9.jpg" alt="Athens 9">
-        </figure>
-        <!-- Rest of the figures... -->
-    </section>
-    <section class="image-gallery">
-        <!-- Existing figures for images 1, 2, and 3... -->
-
-        <figure>
-            <img src="athens/athens-image-1.jpg" alt="Athens 1">
-            <figcaption>Panathenaic Staduim, home to the first modern Olympic games</figcaption>
-        </figure>
-        <figure>
-            <img src="athens/athens-image-2.jpg" alt="Athens 2">
-        </figure>
-        <figure>
-            <img src="athens/athens-image-3.jpg" alt="Athens 3">
-        </figure>
-        <!-- Additional figures for images 4 to 16 -->
-        <figure>
-            <img src="athens/athens-image-4.jpg" alt="Athens 4">
-        </figure>
-    </section>
-    <section class="image-gallery">
-        <figure>
-            <img src="athens/athens-image-5.jpg" alt="Athens 5">
-            <figcaption>Temple of Hephaestus</figcaption>
-        </figure>
-        <figure>
-            <img src="athens/athens-image-6.jpg" alt="Athens 6">
-            <figcaption>Ancient Agora of Athens</figcaption>
-        </figure>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="collage-container">
+                <img src="athens/athens-image-10.jpg" alt="" class="collage-image">
+                <img src="athens/athens-image-11.jpg" alt="" class="collage-image">
+                <img src="athens/athens-image-12.jpg" alt="" class="collage-image">
+                <img src="athens/athens-image-13.jpg" alt="" class="collage-image">
+                <img src="athens/athens-image-10.jpg" alt="" class="collage-image">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Athens</h1>
+            <p class="hero-subtitle">Where Democracy Was Born</p>
+            <p class="hero-description">Discover the birthplace of democracy and philosophy in the ancient city of Athens. From the majestic Acropolis to the bustling Plaka, every corner whispers tales of gods, heroes, and the foundations of Western civilization.</p>
+        </div>
     </section>
 
-    <p>As the historic capital of Greece, Athens stands proudly as the cradle of Western civilization, embodying a rich tapestry of ancient history and modern vitality. The iconic Acropolis, crowned by the Parthenon, dominates the cityscape, inviting visitors to step back in time to the glory of classical Greece.</p>
-</main>
+    <!-- Main Content -->
+    <main>
+        <!-- Description Section -->
+        <section class="content-section">
+            <h2 class="section-title">My Athens Adventure</h2>
+            <div class="description-card">
+                <p>Standing beneath the Parthenon, I felt the weight of history and human achievement. Athens isn't just a city of ancient ruins—it's a living testament to the power of ideas, democracy, and human creativity. The blend of classical architecture with vibrant street art, ancient philosophy with modern café culture, created a magical experience that connected me to thousands of years of human stories.</p>
+            </div>
+        </section>
 
+        <!-- Stats Section -->
+        <section class="content-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Days Exploring</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2500+</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Inspiration Gained</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Pages from My Athens Diary</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-10.jpg" alt="The Mighty Acropolis" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Mighty Acropolis</h3>
+                        <p>Standing before the Parthenon at sunrise, I felt connected to 2,500 years of human achievement. The perfect proportions and enduring beauty remind us why this is considered the pinnacle of classical architecture.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-11.jpg" alt="Ancient Agora" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Ancient Agora</h3>
+                        <p>Walking the same paths as Socrates and Plato was surreal. The Ancient Agora, birthplace of democracy, still echoes with philosophical debates that shaped our world.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-12.jpg" alt="Temple of Olympian Zeus" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Temple of Olympian Zeus</h3>
+                        <p>These colossal columns took 700 years to complete. Standing among them, I marveled at the persistence and vision of ancient builders who created monuments for eternity.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-13.jpg" alt="Plaka's Charm" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Plaka's Charm</h3>
+                        <p>Getting lost in the narrow streets of Plaka felt like traveling through time. Every corner revealed hidden gems - from tiny churches to traditional tavernas full of life and laughter.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-7.jpg" alt="National Gardens" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>National Gardens</h3>
+                        <p>A peaceful escape from the bustling city center. These green spaces provided the perfect spot for reflection after absorbing so much ancient history.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="athens/athens-image-8.jpg" alt="Sunset Views" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Sunset Views</h3>
+                        <p>Watching the sun set over Athens from Mount Lycabettus was magical. The city sprawled below like a living museum, where ancient and modern blend seamlessly together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See Places in Athens</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>The Acropolis</h3>
+                    <p>Visit the iconic Parthenon and Acropolis Museum. Go early morning to avoid crowds and get perfect lighting for photos.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏺</div>
+                    <h3>Ancient Agora</h3>
+                    <p>Walk where Socrates taught and democracy was born. The Temple of Hephaestus is amazingly preserved.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌅</div>
+                    <h3>Mount Lycabettus</h3>
+                    <p>Climb or take the funicular for panoramic city views. Sunset time is magical but arrive early for best spots.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍽️</div>
+                    <h3>Plaka District</h3>
+                    <p>Get lost in the charming old town with traditional tavernas, shops, and neoclassical architecture.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>National Archaeological Museum</h3>
+                    <p>World-class collection of ancient Greek artifacts. Allow 3-4 hours to see the highlights properly.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>Changing of the Guard</h3>
+                    <p>Watch the ceremonial guard change at Syntagma Square. Happens every hour, elaborate ceremony on Sundays.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Booking Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">When & Where to Book Accommodation</h2>
+            <div class="description-card">
+                <div class="booking-tips">
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
+                        <p>4-6 months in advance for summer season (June-August). 2-3 months ahead for spring/fall. Book Acropolis tickets online to skip lines.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
+                        <p>Plaka: Historic charm, walking distance to sites. Monastiraki: Budget-friendly, great nightlife. Kolonaki: Upscale area with shopping and cafes.</p>
+                    </div>
+                    <div class="booking-tip">
+                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
+                        <p>Visit on first Sunday of month for free museum entry. Take the metro from airport (much cheaper than taxi). Eat at local tavernas in Psyrri district.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Cuisine Section -->
+        <section class="content-section">
+            <h2 class="section-title">What to Eat in Athens</h2>
+            <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🥗</div>
+                    <h3>Greek Salad</h3>
+                    <p>Fresh tomatoes, olives, feta cheese with olive oil. Simple perfection that tastes like sunshine.</p>
+                    <span class="food-price">$8-12</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍖</div>
+                    <h3>Souvlaki</h3>
+                    <p>Grilled meat skewers with pita, tzatziki, and vegetables. Perfect street food for lunch.</p>
+                    <span class="food-price">$6-10</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍯</div>
+                    <h3>Baklava</h3>
+                    <p>Flaky pastry with nuts and honey. Get it fresh from traditional bakeries in Plaka.</p>
+                    <span class="food-price">$3-5</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍷</div>
+                    <h3>Ouzo</h3>
+                    <p>Traditional anise-flavored spirit. Sip slowly with meze while watching the sunset.</p>
+                    <span class="food-price">$4-8</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🐟</div>
+                    <h3>Fresh Seafood</h3>
+                    <p>Grilled octopus and fresh fish by the water. Head to Piraeus port for authentic experience.</p>
+                    <span class="food-price">$15-25</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Greek Coffee</h3>
+                    <p>Strong, unfiltered coffee served with a glass of water. Perfect for slow mornings.</p>
+                    <span class="food-price">$2-4</span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

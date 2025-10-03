@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veda's Travel Diary - Explore the World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--primary-gradient);
+            background-attachment: fixed;
+            color: var(--text-light);
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23a)"/><circle cx="60" cy="30" r="1.5" fill="url(%23a)"/><circle cx="80" cy="60" r="1" fill="url(%23a)"/><circle cx="30" cy="70" r="2.5" fill="url(%23a)"/><circle cx="90" cy="20" r="1" fill="url(%23a)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background: var(--primary-gradient);
+            color: var(--text-light);
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropbtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .dropbtn:hover::before {
+            left: 100%;
+        }
+
+        .dropbtn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            min-width: 200px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .dropdown-content a {
+            color: var(--text-primary);
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-gradient);
+            color: var(--text-light);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInDown 0.3s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .destination-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .card-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .city-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .destination-card:hover .city-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .destination-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .destination-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .destination-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            transition: var(--transition);
+        }
+
+        .destination-card:hover h2::after {
+            width: 60px;
+        }
+
+        .destination-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--secondary-gradient);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .read-more-btn:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .read-more-btn i {
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .destination-card {
+                margin: 0;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dropbtn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            
+            .dropdown-content {
+                min-width: 160px;
+            }
+        }
+
+        /* Loading Animation */
+        .destination-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .destination-card:nth-child(1) { animation-delay: 0.1s; }
+        .destination-card:nth-child(2) { animation-delay: 0.2s; }
+        .destination-card:nth-child(3) { animation-delay: 0.3s; }
+        .destination-card:nth-child(4) { animation-delay: 0.4s; }
+        .destination-card:nth-child(5) { animation-delay: 0.5s; }
+        .destination-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Veda's Travel Diary</h1>
+            <p class="hero-subtitle">Journey Through Amazing Destinations</p>
+            <p class="hero-description">Discover breathtaking places, immerse in diverse cultures, and embark on unforgettable adventures around the globe.</p>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-monument"></i> Europe
+                </button>
+                <div class="dropdown-content">
+                    <a href="#rome"><i class="fas fa-landmark"></i> Rome</a>
+                    <a href="#vatican"><i class="fas fa-church"></i> Vatican City</a>
+                    <a href="#venice"><i class="fas fa-water"></i> Venice</a>
+                    <a href="#paris"><i class="fas fa-tower-broadcast"></i> Paris</a>
+                    <a href="#barcelona"><i class="fas fa-building"></i> Barcelona</a>
+                    <a href="#amsterdam"><i class="fas fa-bicycle"></i> Amsterdam</a>
+                    <a href="#brussels"><i class="fas fa-crown"></i> Brussels</a>
+                    <a href="#interlaken"><i class="fas fa-mountain"></i> Interlaken</a>
+                    <a href="#milan"><i class="fas fa-tshirt"></i> Milan</a>
+                    <a href="#santorini"><i class="fas fa-island-tropical"></i> Santorini</a>
+                    <a href="#athens"><i class="fas fa-columns"></i> Athens</a>
+                    <a href="#prague"><i class="fas fa-castle"></i> Prague</a>
+                    <a href="#berlin"><i class="fas fa-gate"></i> Berlin</a>
+                    <a href="#vienna"><i class="fas fa-music"></i> Vienna</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-flag-usa"></i> North America
+                </button>
+                <div class="dropdown-content">
+                    <a href="#cancun"><i class="fas fa-cocktail"></i> Cancun</a>
+                    <a href="#mexicocity"><i class="fas fa-city"></i> Mexico City</a>
+                    <a href="#miami"><i class="fas fa-umbrella-beach"></i> Miami</a>
+                    <a href="#losangeles"><i class="fas fa-film"></i> Los Angeles</a>
+                    <a href="#lasvegas"><i class="fas fa-dice"></i> Las Vegas</a>
+                    <a href="#grandcanyon"><i class="fas fa-mountain-sun"></i> Grand Canyon</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-map"></i> South America
+                </button>
+                <div class="dropdown-content">
+                    <a href="#lima"><i class="fas fa-utensils"></i> Lima</a>
+                    <a href="#cusco"><i class="fas fa-mountain"></i> Cusco</a>
+                    <a href="#machupicchu"><i class="fas fa-ruins"></i> Machu Picchu</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-yin-yang"></i> Asia
+                </button>
+                <div class="dropdown-content">
+                    <a href="#gangtok"><i class="fas fa-mountain-sun"></i> Gangtok</a>
+                    <a href="#darjeeling"><i class="fas fa-leaf"></i> Darjeeling</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fas fa-snowflake"></i> Antarctica
+                </button>
+                <div class="dropdown-content">
+                    <a href="#kidding"><i class="fas fa-laugh"></i> Just Kidding :-D</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="section-header">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Explore these incredible places that have captured my heart during my travels</p>
+        </div>
+
+        <div class="destinations-grid">
+    <article id="rome">
+        <h2>Rome</h2>
+        <a href="rome-page.html#rome">
+            <img class="city-image" src="rome-image.jpg" alt="Rome">
+        </a>
+        <p>Rome, the capital city of Italy, is known for its rich history, stunning architecture, and delicious cuisine. Explore iconic landmarks such as the Colosseum, Roman Forum, and Vatican City.</p>
+        <p><a href="rome-page.html#rome">Read more</a></p>
+    </article>
+
+    <article id="lima">
+        <h2>Lima</h2>
+        <a href="lima-page.html#lima">
+            <img class="city-image" src="lima-image.jpg" alt="Lima City">
+        </a>
+        <p>Lima, the capital of Peru, boasts a rich culinary scene and historic architecture. Explore the UNESCO-listed historic center, visit the Larco Museum, and savor the flavors of Peruvian cuisine.</p>
+        <p><a href="lima-page.html#lima">Read more</a></p>
+    </article>
+
+    <article id="venice">
+        <h2>Venice</h2>
+        <a href="venice-page.html#venice">
+            <img class="city-image" src="venice-image.jpg" alt="Venice City">
+        </a>
+        <p>Venice, known for its romantic canals and historic architecture, is a unique city built on a lagoon. Explore landmarks like St. Mark's Basilica, the Grand Canal, and enjoy a gondola ride.</p>
+        <p><a href="venice-page.html#venice">Read more</a></p>
+    </article>
+
+    <article id="paris">
+        <h2>Paris</h2>
+        <a href="paris-page.html#paris">
+            <img class="city-image" src="paris-image.jpg" alt="Paris City">
+        </a>
+        <p>Paris, the capital of France, is renowned for its art, fashion, and gastronomy. Visit iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
+        <p><a href="paris-page.html#paris">Read more</a></p>
+    </article>
+
+    <article id="barcelona">
+        <h2>Barcelona</h2>
+        <a href="barcelona-page.html#barcelona">
+            <img class="city-image" src="barcelona-image.jpg" alt="Barcelona City">
+        </a>
+        <p>Barcelona, located on the northeast coast of the Iberian Peninsula, is famous for its unique architecture by Antoni Gaudí. Explore attractions like Sagrada Família, Park Güell, and La Rambla.</p>
+        <p><a href="barcelona-page.html#barcelona">Read more</a></p>
+    </article>
+
+    <article id="cancun">
+        <h2>Cancun</h2>
+        <a href="cancun-page.html#cancun">
+            <img class="city-image" src="cancun-image.jpg" alt="Cancun City">
+        </a>
+        <p>Cancun, a popular resort destination in Mexico, is known for its beautiful beaches, vibrant nightlife, and archaeological wonders like Chichen Itza. Relax by the turquoise waters of the Caribbean Sea.</p>
+        <p><a href="cancun-page.html#cancun">Read more</a></p>
+    </article>
+
+    <article id="machupicchu">
+        <h2>Machu Picchu</h2>
+        <a href="machupicchu-page.html#machupicchu">
+            <img class="city-image" src="machupicchu-image.jpg" alt="Machu Picchu">
+        </a>
+        <p>Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views.</p>
+        <p><a href="machupicchu-page.html#machupicchu">Read more</a></p>
+    </article>
+
+    <article id="grandcanyon">
+        <h2>Grand Canyon</h2>
+        <a href="grandcanyon-page.html#grandcanyon">
+            <img class="city-image" src="grandcanyon-image.jpg" alt="Grand Canyon">
+        </a>
+        <p>The Grand Canyon, in the U.S. state of Arizona, is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length.</p>
+        <p><a href="grandcanyon-page.html#grandcanyon">Read more</a></p>
+    </article>
+
+    <article id="mexicocity">
+        <h2>Mexico City</h2>
+        <a href="mexicocity-page.html#mexicocity">
+            <img class="city-image" src="mexicocity-image.jpg" alt="Mexico City">
+        </a>
+        <p>Mexico City, the capital of Mexico, offers a blend of modern and historic attractions. Explore the ancient Aztec Templo Mayor, the historic Zocalo, and indulge in authentic Mexican cuisine.</p>
+        <p><a href="mexicocity-page.html#mexicocity">Read more</a></p>
+    </article>
+
+    <article id="cusco">
+        <h2>Cusco</h2>
+        <a href="cusco-page.html#cusco">
+            <img class="city-image" src="cusco-image.jpg" alt="Cusco City">
+        </a>
+        <p>Cusco, the historic capital of the Inca Empire, is a gateway to Machu Picchu. Explore the ancient ruins, wander through the charming streets, and immerse yourself in the rich cultural heritage of the Andes.</p>
+        <p><a href="cusco-page.html#cusco">Read more</a></p>
+    </article>
+
+    <article id="prague">
+        <h2>Prague</h2>
+        <a href="prague-page.html#prague">
+            <img class="city-image" src="prague-image.jpg" alt="Prague City">
+        </a>
+        <p>Prague, capital city of the Czech Republic, is bisected by the Vltava River. Nicknamed “the City of a Hundred Spires,” it's known for its Old Town Square, the heart of its historic core, with colorful baroque buildings, Gothic churches and the medieval Astronomical Clock.</p>
+        <p><a href="prague-page.html#prague">Read more</a></p>
+    </article>
+
+    <article id="miami">
+        <h2>Miami</h2>
+        <a href="miami-page.html#miami">
+            <img class="city-image" src="miami-image.jpg" alt="Miami City">
+        </a>
+        <p>Miami, at Florida's southeastern tip, is a vibrant city whose Cuban influence is reflected in the cafes and cigar shops. Miami Beach, on barrier islands across the turquoise waters of Biscayne Bay, is home to glamorous South Beach.</p>
+        <p><a href="miami-page.html#miami">Read more</a></p>
+    </article>
+    
+    <article id="losangeles">
+        <h2>Los Angeles</h2>
+        <a href="losangeles-page.html#losangeles">
+            <img class="city-image" src="losangeles-image.jpg" alt="Los Angeles City">
+        </a>
+        <p>Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours.</p>
+        <p><a href="losangeles-page.html#losangeles">Read more</a></p>
+    </article>
+    
+    <article id="lasvegas">
+        <h2>Las Vegas</h2>
+        <a href="lasvegas-page.html#lasvegas">
+            <img class="city-image" src="lasvegas-image.jpg" alt="Las Vegas City">
+        </a>
+        <p>Las Vegas, in Nevada’s Mojave Desert, is a resort city famed for its vibrant nightlife, centered around 24-hour casinos and other entertainment options. Its main street and focal point is the Strip, just over 4 miles long.</p>
+        <p><a href="lasvegas-page.html#lasvegas">Read more</a></p>
+    </article>
+
+    <article id="darjeeling">
+        <h2>Darjeeling</h2>
+        <a href="darjeeling-page.html#darjeeling">
+            <img class="city-image" src="darjeeling-image.jpg" alt="Darjeeling City">
+        </a>
+        <p>Darjeeling, in India's West Bengal state, is a hill station known for its distinctive black tea grown on plantations that dot its surrounding slopes. Its backdrop of Mt. Kanchenjunga, among the world’s highest peaks, is truly breathtaking.</p>
+        <p><a href="darjeeling-page.html#darjeeling">Read more</a></p>
+    </article>
+
+    <article id="gangtok">
+        <h2>Gangtok</h2>
+        <a href="gangtok-page.html#gangtok">
+            <img class="city-image" src="gangtok-image.jpg" alt="Gangtok City">
+        </a>
+        <p>Gangtok, the capital of Sikkim, is a popular hill destination in the northeast region of India. It is known for its scenic beauty and striking views of Mount Kanchenjunga, the third highest peak in the world.</p>
+        <p><a href="gangtok-page.html#gangtok">Read more</a></p>
+    </article>
+
+    <article id="vatican">
+        <h2>Vatican City</h2>
+        <a href="vatican-page.html#vatican">
+            <img class="city-image" src="vatican-image.jpg" alt="Vatican City">
+        </a>
+        <p>Vatican City, an independent city-state surrounded by Rome, is the headquarters of the Roman Catholic Church. Visit St. Peter's Basilica, the Vatican Museums, and the Sistine Chapel.</p>
+        <p><a href="vatican-page.html#vatican">Read more</a></p>
+    </article>
+
+    <article id="santorini">
+        <h2>Santorini</h2>
+        <a href="santorini-page.html#santorini">
+            <img class="city-image" src="santorini-image.jpg" alt="Santorini City">
+        </a>
+        <p>Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).</p>
+        <p><a href="santorini-page.html#santorini">Read more</a></p>
+    </article>
+    
+    <article id="milan">
+        <h2>Milan</h2>
+        <a href="milan-page.html#milan">
+            <img class="city-image" src="milan-image.jpg" alt="Milan City">
+        </a>
+        <p>Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design. Home to the national stock exchange, it’s a financial hub also known for its high-end restaurants and shops.</p>
+        <p><a href="milan-page.html#milan">Read more</a></p>
+    </article>
+    
+    <article id="interlaken">
+        <h2>Interlaken</h2>
+        <a href="interlaken-page.html#interlaken">
+            <img class="city-image" src="interlaken-image.jpg" alt="Interlaken City">
+        </a>
+        <p>Interlaken is a traditional resort town in the mountainous Bernese Oberland region of central Switzerland. Built on a narrow stretch of valley, between the emerald-colored waters of Lake Thun and Lake Brienz, it has old timber houses and parkland on either side of the Aare River.</p>
+        <p><a href="interlaken-page.html#interlaken">Read more</a></p>
+    </article>
+    
+    <article id="athens">
+        <h2>Athens</h2>
+        <a href="athens-page.html#athens">
+            <img class="city-image" src="athens-image.jpg" alt="Athens City">
+        </a>
+        <p>Athens is the capital of Greece. It was also at the heart of Ancient Greece, a powerful civilization and empire. The city is still dominated by 5th-century BC landmarks, including the Acropolis, a hilltop citadel topped with ancient buildings like the colonnaded Parthenon temple.</p>
+        <p><a href="athens-page.html#athens">Read more</a></p>
+    </article>
+    
+    <article id="amsterdam">
+        <h2>Amsterdam</h2>
+        <a href="amsterdam-page.html#amsterdam">
+            <img class="city-image" src="amsterdam-image.jpg" alt="Amsterdam City">
+        </a>
+        <p>Amsterdam is the Netherlands’ capital, known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk.</p>
+        <p><a href="amsterdam-page.html#amsterdam">Read more</a></p>
+    </article>
+
+    <article id="brussels">
+        <h2>Brussels</h2>
+        <a href="brussels-page.html#brussels">
+            <img class="city-image" src="brussels-image.jpg" alt="Brussels City">
+        </a>
+        <p>Brussels, the capital of Belgium and the European Union, is known for its medieval Grand-Place, royal palaces and Art Nouveau architecture. It's also home to international organizations, universities and research institutes.</p>
+        <p><a href="brussels-page.html#brussels">Read more</a></p>
+    </article>
+    
+    <article id="berlin">
+        <h2>Berlin</h2>
+        <a href="berlin-page.html#berlin">
+            <img class="city-image" src="berlin-image.jpg" alt="Berlin City">
+        </a>
+        <p>Berlin, Germany's capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Its 18th-century Brandenburg Gate has become an iconic symbol of reunification.</p>
+        <p><a href="berlin-page.html#berlin">Read more</a></p>
+    </article>
+    
+    <article id="vienna">
+        <h2>Vienna</h2>
+        <a href="vienna-page.html#vienna">
+            <img class="city-image" src="vienna-image.jpg" alt="Vienna City">
+        </a>
+        <p>Vienna, Austria’s capital, lies in the country’s east on the Danube River. Its artistic and intellectual legacy was shaped by residents including Mozart, Beethoven and Sigmund Freud. The city is also known for its Imperial palaces, including Schönbrunn, the Habsburgs’ summer residence.</p>
+        <p><a href="vienna-page.html#vienna">Read more</a></p>
+    </article>
+</main>
+
+</body>
+</html>
