@@ -33,6 +33,8 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:latest
+    ports:
+      - "8080:8080"
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
@@ -42,6 +44,8 @@ services:
       - KC_DB_PASSWORD=${KEYCLOAK_DB_PASSWORD}
       - KC_HOSTNAME_STRICT=false
       - KC_HTTP_ENABLED=true
+      - KC_HOSTNAME_URL=http://98.84.38.150:8080
+      - KC_HOSTNAME_ADMIN_URL=http://98.84.38.150:8080
     command: start-dev
     depends_on:
       - postgres
