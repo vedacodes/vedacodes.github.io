@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/ssl
+    depends_on:
+      - webapp
+      - keycloak
+    restart: unless-stopped
+
+  webapp:
+    build: ./webapp
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=postgres
+      - DB_USER=vedablog
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=vedablog
+      - KEYCLOAK_URL=http://keycloak:8080
+      - KEYCLOAK_REALM=vedablog
+      - KEYCLOAK_CLIENT_ID=vedablog-client
+      - SESSION_SECRET=${SESSION_SECRET}
+    depends_on:
+      - postgres
+      - keycloak
+    volumes:
+      - ./webapp/public/images:/app/public/images
+    restart: unless-stopped
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
+      - KC_DB_USERNAME=keycloak
+      - KC_DB_PASSWORD=${KEYCLOAK_DB_PASSWORD}
+      - KC_HOSTNAME_STRICT=false
+      - KC_HTTP_ENABLED=true
+    command: start-dev
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

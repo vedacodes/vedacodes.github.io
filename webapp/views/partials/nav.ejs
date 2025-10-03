@@ -1,0 +1,285 @@
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="/" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Veda's Travel Diary</span>
+            </a>
+        </div>
+        
+        <div class="nav-center">
+            <div class="search-container">
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="Search destinations..." class="search-input">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <% if (user) { %>
+                <div class="user-menu">
+                    <button class="user-menu-btn" onclick="toggleUserMenu()">
+                        <i class="fas fa-user-circle"></i>
+                        <span><%= user.preferences.display_name || user.username %></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-menu-dropdown" id="userMenuDropdown">
+                        <a href="/auth/dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Dashboard
+                        </a>
+                        <a href="/favorites">
+                            <i class="fas fa-heart"></i>
+                            My Favorites
+                        </a>
+                        <a href="/auth/profile">
+                            <i class="fas fa-user-cog"></i>
+                            Profile Settings
+                        </a>
+                        <hr>
+                        <a href="/auth/logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="auth-buttons">
+                    <a href="/auth/login" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Navigation Styles */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-light);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-left .home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    background: var(--primary-gradient);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.nav-left .home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.search-container {
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    background: white;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-bg);
+    border: 2px solid #e9ecef;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.user-menu-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-1px);
+}
+
+.user-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-heavy);
+    padding: 10px 0;
+    min-width: 200px;
+    display: none;
+    z-index: 1001;
+    margin-top: 5px;
+}
+
+.user-menu-dropdown.show {
+    display: block;
+}
+
+.user-menu-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.user-menu-dropdown a:hover {
+    background: #f8f9fa;
+}
+
+.user-menu-dropdown hr {
+    margin: 5px 0;
+    border: none;
+    border-top: 1px solid #e9ecef;
+}
+
+.auth-buttons .login-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    background: var(--secondary-gradient);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.auth-buttons .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .nav-left {
+        order: 1;
+    }
+    
+    .nav-center {
+        order: 3;
+        width: 100%;
+    }
+    
+    .nav-right {
+        order: 2;
+    }
+    
+    .search-container {
+        max-width: none;
+    }
+}
+
+/* Add top padding to body to account for fixed nav */
+body {
+    padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px;
+    }
+}
+</style>
+
+<script>
+function toggleUserMenu() {
+    const dropdown = document.getElementById('userMenuDropdown');
+    dropdown.classList.toggle('show');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const userMenu = document.querySelector('.user-menu');
+    const dropdown = document.getElementById('userMenuDropdown');
+    
+    if (userMenu && !userMenu.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
+</script>

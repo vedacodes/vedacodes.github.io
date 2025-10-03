@@ -1,0 +1,636 @@
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Veda's Travel Diary</h1>
+        <p class="hero-subtitle">Explore the World Through My Adventures</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number"><%= allDestinations.length %></span>
+                <span class="stat-label">Destinations</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number"><%= featuredDestinations.length %></span>
+                <span class="stat-label">Featured</span>
+            </div>
+            <% if (user) { %>
+            <div class="stat">
+                <span class="stat-number" id="userFavoritesCount">-</span>
+                <span class="stat-label">My Favorites</span>
+            </div>
+            <% } %>
+        </div>
+        <div class="hero-cta">
+            <a href="#featured" class="cta-btn primary">
+                <i class="fas fa-compass"></i>
+                Start Exploring
+            </a>
+            <% if (!user) { %>
+            <a href="/auth/login" class="cta-btn secondary">
+                <i class="fas fa-user-plus"></i>
+                Join Community
+            </a>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Destinations -->
+<section id="featured" class="featured-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Destinations</h2>
+            <p>Discover the most amazing places I've visited</p>
+        </div>
+        
+        <div class="destinations-grid featured-grid">
+            <% featuredDestinations.forEach(destination => { %>
+            <div class="destination-card featured-card" data-destination-id="<%= destination.id %>">
+                <div class="card-image">
+                    <img src="/images/<%= destination.image_url %>" alt="<%= destination.title %>" loading="lazy">
+                    <div class="card-overlay">
+                        <div class="card-actions">
+                            <% if (user) { %>
+                            <button class="favorite-btn" data-destination-id="<%= destination.id %>">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3><%= destination.title %></h3>
+                        <span class="location-tag">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <%= destination.country %>
+                        </span>
+                    </div>
+                    <p class="card-description"><%= destination.description %></p>
+                    <div class="card-footer">
+                        <div class="rating" data-destination-id="<%= destination.id %>">
+                            <div class="stars">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">Loading...</span>
+                        </div>
+                        <a href="/<%= destination.slug %>-page.html" class="read-more-btn">
+                            Read More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!-- All Destinations -->
+<section class="destinations-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>All Destinations</h2>
+            <p>Browse through all the places I've explored</p>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-continent="all">All</button>
+            <button class="filter-tab" data-continent="Europe">Europe</button>
+            <button class="filter-tab" data-continent="Asia">Asia</button>
+            <button class="filter-tab" data-continent="North America">North America</button>
+            <button class="filter-tab" data-continent="South America">South America</button>
+        </div>
+        
+        <div class="destinations-grid" id="destinationsGrid">
+            <% allDestinations.forEach(destination => { %>
+            <div class="destination-card" data-continent="<%= destination.continent %>" data-destination-id="<%= destination.id %>">
+                <div class="card-image">
+                    <img src="/images/<%= destination.image_url %>" alt="<%= destination.title %>" loading="lazy">
+                    <div class="card-overlay">
+                        <div class="card-actions">
+                            <% if (user) { %>
+                            <button class="favorite-btn" data-destination-id="<%= destination.id %>">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3><%= destination.title %></h3>
+                        <span class="location-tag">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <%= destination.country %>
+                        </span>
+                    </div>
+                    <p class="card-description"><%= destination.description %></p>
+                    <div class="card-footer">
+                        <div class="rating" data-destination-id="<%= destination.id %>">
+                            <div class="stars">
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">Loading...</span>
+                        </div>
+                        <a href="/<%= destination.slug %>-page.html" class="read-more-btn">
+                            Read More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-btn.primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.cta-btn.secondary {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 2px solid transparent;
+}
+
+.cta-btn.secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Sections */
+.featured-section,
+.destinations-section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 10px 20px;
+    border: 2px solid #e9ecef;
+    background: white;
+    color: var(--text-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+}
+
+/* Destination Grid */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.featured-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.destination-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.featured-card .card-image {
+    height: 300px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.destination-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.destination-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.favorite-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: #e74c3c;
+}
+
+.favorite-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.favorite-btn.active i {
+    color: #e74c3c;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.location-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--accent-gradient);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.stars i {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.rating-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .cta-btn {
+        padding: 12px 25px;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize favorites count for logged-in users
+    if (window.userData) {
+        loadUserFavoritesCount();
+        loadUserFavorites();
+    }
+    
+    // Load ratings for all destinations
+    loadAllRatings();
+    
+    // Initialize filter tabs
+    initializeFilterTabs();
+});
+
+function loadUserFavoritesCount() {
+    fetch('/api/favorites')
+        .then(response => response.json())
+        .then(data => {
+            const countElement = document.getElementById('userFavoritesCount');
+            if (countElement) {
+                countElement.textContent = data.favorites.length;
+            }
+        })
+        .catch(error => console.error('Error loading favorites count:', error));
+}
+
+function loadUserFavorites() {
+    fetch('/api/favorites')
+        .then(response => response.json())
+        .then(data => {
+            data.favorites.forEach(favorite => {
+                const favoriteBtn = document.querySelector(`[data-destination-id="${favorite.destination_id}"] .favorite-btn`);
+                if (favoriteBtn) {
+                    favoriteBtn.classList.add('active');
+                    favoriteBtn.querySelector('i').className = 'fas fa-heart';
+                }
+            });
+        })
+        .catch(error => console.error('Error loading user favorites:', error));
+}
+
+function loadAllRatings() {
+    const ratingElements = document.querySelectorAll('.rating[data-destination-id]');
+    ratingElements.forEach(element => {
+        const destinationId = element.dataset.destinationId;
+        loadRating(destinationId, element);
+    });
+}
+
+function loadRating(destinationId, element) {
+    fetch(`/api/ratings/${destinationId}`)
+        .then(response => response.json())
+        .then(data => {
+            const stars = element.querySelectorAll('.stars i');
+            const ratingText = element.querySelector('.rating-text');
+            
+            if (data.ratings.average > 0) {
+                updateStars(stars, data.ratings.average);
+                ratingText.textContent = `${data.ratings.average.toFixed(1)} (${data.ratings.count})`;
+            } else {
+                ratingText.textContent = 'No ratings yet';
+            }
+        })
+        .catch(error => {
+            console.error('Error loading rating:', error);
+            element.querySelector('.rating-text').textContent = 'No ratings yet';
+        });
+}
+
+function updateStars(stars, rating) {
+    stars.forEach((star, index) => {
+        if (index < Math.floor(rating)) {
+            star.className = 'fas fa-star';
+        } else if (index < rating) {
+            star.className = 'fas fa-star-half-alt';
+        } else {
+            star.className = 'far fa-star';
+        }
+    });
+}
+
+function initializeFilterTabs() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const destinationCards = document.querySelectorAll('#destinationsGrid .destination-card');
+    
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            const continent = tab.dataset.continent;
+            
+            // Filter cards
+            destinationCards.forEach(card => {
+                if (continent === 'all' || card.dataset.continent === continent) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+</script>
