@@ -1,11 +1,11 @@
 const express = require('express');
 const database = require('../models/database');
-const { keycloak, addUserInfo } = require('./auth');
+const { addUserInfo, requireAuth } = require('./auth');
 
 const router = express.Router();
 
 // Apply authentication middleware to all routes
-router.use(keycloak.protect());
+router.use(requireAuth);
 router.use(addUserInfo);
 
 // Show favorites page

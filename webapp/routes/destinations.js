@@ -12,6 +12,11 @@ router.use(addUserInfo);
 // Home page
 router.get('/', async (req, res) => {
     try {
+        // Check if this is a Keycloak callback (has authorization code)
+        if (req.query.code && req.query.iss) {
+            return handleKeycloakCallback(req, res);
+        }
+        
         const [featuredDestinations, allDestinations] = await Promise.all([
             database.destinations.findFeatured(),
             database.destinations.findAll()
@@ -32,6 +37,76 @@ router.get('/', async (req, res) => {
         });
     }
 });
+
+// Keycloak callback handler function
+async function handleKeycloakCallback(req, res) {
+    const { code, state } = req.query;
+    
+    console.log('Processing Keycloak callback with code:', code);
+    
+    try {
+        // Exchange code for token using fetch (built-in in Node.js 18+)
+        const tokenParams = new URLSearchParams({
+            grant_type: 'authorization_code',
+            client_id: 'vedablog-client',
+            code: code,
+            redirect_uri: 'http://localhost:3000/'
+        });
+        
+        const tokenResponse = await fetch('http://keycloak:8080/realms/vedablog/protocol/openid-connect/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: tokenParams.toString()
+        });
+        
+        if (!tokenResponse.ok) {
+            const errorText = await tokenResponse.text();
+            console.error('Token exchange failed:', tokenResponse.status, errorText);
+            throw new Error(`Token exchange failed: ${tokenResponse.status}`);
+        }
+        
+        const tokens = await tokenResponse.json();
+        console.log('Successfully exchanged code for tokens');
+        
+        // Decode the access token to get user info
+        const tokenParts = tokens.access_token.split('.');
+        const payload = JSON.parse(Buffer.from(tokenParts[1], 'base64').toString());
+        
+        console.log('User payload:', payload.preferred_username);
+        
+        // Store user session
+        req.session.user = {
+            id: payload.sub,
+            username: payload.preferred_username,
+            email: payload.email,
+            name: payload.name,
+            accessToken: tokens.access_token
+        };
+        
+        // Create/update user preferences in database
+        let userPrefs = await database.userPreferences.findByKeycloakId(payload.sub);
+        if (!userPrefs) {
+            userPrefs = await database.userPreferences.create({
+                keycloak_user_id: payload.sub,
+                display_name: payload.preferred_username || payload.name,
+                profile_picture_url: null,
+                email_notifications: true
+            });
+            console.log('Created new user preferences for:', payload.preferred_username);
+        }
+        
+        req.session.user.preferences = userPrefs;
+        
+        // Redirect to clean URL with success message
+        res.redirect('/?login=success');
+        
+    } catch (error) {
+        console.error('Authentication callback error:', error);
+        res.redirect('/?login=error');
+    }
+}
 
 // Search destinations
 router.get('/search', async (req, res) => {

@@ -19,7 +19,7 @@ services:
       - DB_USER=vedablog
       - DB_PASSWORD=vedablog123
       - DB_NAME=vedablog
-      - KEYCLOAK_URL=http://localhost:8081
+      - KEYCLOAK_URL=http://keycloak:8080
       - KEYCLOAK_REALM=vedablog
       - KEYCLOAK_CLIENT_ID=vedablog-client
       - SESSION_SECRET=dev-secret-key-change-in-production

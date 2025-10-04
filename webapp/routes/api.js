@@ -1,7 +1,7 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const database = require('../models/database');
-const { keycloak, addUserInfo } = require('./auth');
+const { addUserInfo, requireAuth } = require('./auth');
 
 const router = express.Router();
 
@@ -67,7 +67,7 @@ router.get('/destinations', async (req, res) => {
 });
 
 // Add to favorites (protected route)
-router.post('/favorites/:destinationId', strictLimiter, keycloak.protect(), async (req, res) => {
+router.post('/favorites/:destinationId', strictLimiter, requireAuth, async (req, res) => {
     try {
         const destinationId = parseInt(req.params.destinationId);
         const userId = req.user.id;
@@ -84,7 +84,7 @@ router.post('/favorites/:destinationId', strictLimiter, keycloak.protect(), asyn
 });
 
 // Remove from favorites (protected route)
-router.delete('/favorites/:destinationId', strictLimiter, keycloak.protect(), async (req, res) => {
+router.delete('/favorites/:destinationId', strictLimiter, requireAuth, async (req, res) => {
     try {
         const destinationId = parseInt(req.params.destinationId);
         const userId = req.user.id;
@@ -102,7 +102,7 @@ router.delete('/favorites/:destinationId', strictLimiter, keycloak.protect(), as
 });
 
 // Get user favorites (protected route)
-router.get('/favorites', keycloak.protect(), async (req, res) => {
+router.get('/favorites', requireAuth, async (req, res) => {
     try {
         const favorites = await database.favorites.findByUser(req.user.id);
         res.json({ favorites });
@@ -113,7 +113,7 @@ router.get('/favorites', keycloak.protect(), async (req, res) => {
 });
 
 // Add comment (protected route)
-router.post('/comments', strictLimiter, keycloak.protect(), async (req, res) => {
+router.post('/comments', strictLimiter, requireAuth, async (req, res) => {
     try {
         const { destination_id, content } = req.body;
 
@@ -153,7 +153,7 @@ router.get('/comments/:destinationId', async (req, res) => {
 });
 
 // Add/update rating (protected route)
-router.post('/ratings', strictLimiter, keycloak.protect(), async (req, res) => {
+router.post('/ratings', strictLimiter, requireAuth, async (req, res) => {
     try {
         const { destination_id, rating } = req.body;
 

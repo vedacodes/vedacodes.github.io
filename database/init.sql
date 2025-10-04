@@ -10,6 +10,14 @@ CREATE USER vedablog WITH PASSWORD 'vedablog123';
 GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
 GRANT ALL PRIVILEGES ON DATABASE vedablog TO vedablog;
 
+-- Connect to keycloak database and set up permissions
+\c keycloak;
+GRANT ALL ON SCHEMA public TO keycloak;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO keycloak;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO keycloak;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO keycloak;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO keycloak;
+
 -- Connect to vedablog database to create tables
 \c vedablog;
 

@@ -1,78 +1,108 @@
 const express = require('express');
 const session = require('express-session');
-const Keycloak = require('keycloak-connect');
 const database = require('../models/database');
 
 const router = express.Router();
 
-// Keycloak configuration
-const keycloakConfig = {
-    'realm': process.env.KEYCLOAK_REALM || 'vedablog',
-    'auth-server-url': process.env.KEYCLOAK_URL || 'http://keycloak:8080',
-    'ssl-required': 'external',
-    'resource': process.env.KEYCLOAK_CLIENT_ID || 'vedablog-client',
-    'public-client': true,
-    'confidential-port': 0
-};
-
-// Create a session store for Keycloak
-const memoryStore = new session.MemoryStore();
-
-// Initialize Keycloak
-const keycloak = new Keycloak({ store: memoryStore }, keycloakConfig);
-
 // Middleware to add user information to requests
 async function addUserInfo(req, res, next) {
-    if (req.kauth && req.kauth.grant && req.kauth.grant.access_token) {
-        try {
-            const token = req.kauth.grant.access_token;
-            const userId = token.content.sub;
-            
-            // Get or create user preferences
-            let userPrefs = await database.userPreferences.findByKeycloakId(userId);
-            if (!userPrefs) {
-                userPrefs = await database.userPreferences.create({
-                    keycloak_user_id: userId,
-                    display_name: token.content.preferred_username || token.content.name,
-                    profile_picture_url: null,
-                    email_notifications: true
-                });
-            }
-            
-            req.user = {
-                id: userId,
-                username: token.content.preferred_username,
-                email: token.content.email,
-                name: token.content.name,
-                preferences: userPrefs
-            };
-        } catch (error) {
-            console.error('Error adding user info:', error);
-        }
+    if (req.session && req.session.user) {
+        req.user = req.session.user;
     }
     next();
 }
 
-// Login route
-router.get('/login', keycloak.protect(), (req, res) => {
-    res.redirect('/');
+// Login route - redirect to Keycloak
+router.get('/login', (req, res) => {
+    const keycloakLoginUrl = `http://localhost:8081/realms/vedablog/protocol/openid-connect/auth?client_id=vedablog-client&redirect_uri=${encodeURIComponent('http://localhost:3000/auth/callback')}&response_type=code&scope=openid`;
+    res.redirect(keycloakLoginUrl);
+});
+
+// Callback route to handle Keycloak response
+router.get('/callback', async (req, res) => {
+    const { code, state } = req.query;
+    
+    if (!code) {
+        return res.status(400).send('Authorization code missing');
+    }
+    
+    try {
+        // Exchange code for token
+        const tokenResponse = await fetch('http://keycloak:8080/realms/vedablog/protocol/openid-connect/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                grant_type: 'authorization_code',
+                client_id: 'vedablog-client',
+                code: code,
+                redirect_uri: 'http://localhost:3000/auth/callback'
+            })
+        });
+        
+        if (!tokenResponse.ok) {
+            throw new Error(`Token exchange failed: ${tokenResponse.status}`);
+        }
+        
+        const tokens = await tokenResponse.json();
+        
+        // Decode the access token to get user info
+        const tokenParts = tokens.access_token.split('.');
+        const payload = JSON.parse(Buffer.from(tokenParts[1], 'base64').toString());
+        
+        // Store user session
+        req.session.user = {
+            id: payload.sub,
+            username: payload.preferred_username,
+            email: payload.email,
+            name: payload.name,
+            accessToken: tokens.access_token
+        };
+        
+        // Create/update user preferences in database
+        let userPrefs = await database.userPreferences.findByKeycloakId(payload.sub);
+        if (!userPrefs) {
+            userPrefs = await database.userPreferences.create({
+                keycloak_user_id: payload.sub,
+                display_name: payload.preferred_username || payload.name,
+                profile_picture_url: null,
+                email_notifications: true
+            });
+        }
+        
+        req.session.user.preferences = userPrefs;
+        
+        // Redirect to home page
+        res.redirect('/?login=success');
+        
+    } catch (error) {
+        console.error('Authentication callback error:', error);
+        res.status(500).send('Authentication failed');
+    }
 });
 
 // Logout route
 router.get('/logout', (req, res) => {
-    if (req.kauth && req.kauth.grant) {
-        req.kauth.logout();
-    }
     req.session.destroy((err) => {
         if (err) {
             console.error('Session destruction error:', err);
         }
-        res.redirect('/');
+        const logoutUrl = `http://localhost:8081/realms/vedablog/protocol/openid-connect/logout?redirect_uri=${encodeURIComponent('http://localhost:3000/?logout=success')}`;
+        res.redirect(logoutUrl);
     });
 });
 
+// Simple authentication middleware
+function requireAuth(req, res, next) {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/auth/login');
+    }
+    next();
+}
+
 // Profile route
-router.get('/profile', keycloak.protect(), addUserInfo, async (req, res) => {
+router.get('/profile', requireAuth, addUserInfo, async (req, res) => {
     try {
         const favorites = await database.favorites.findByUser(req.user.id);
         res.render('pages/profile', {
@@ -91,7 +121,7 @@ router.get('/profile', keycloak.protect(), addUserInfo, async (req, res) => {
 });
 
 // Update profile route
-router.post('/profile', keycloak.protect(), addUserInfo, async (req, res) => {
+router.post('/profile', requireAuth, addUserInfo, async (req, res) => {
     try {
         const { display_name, email_notifications } = req.body;
         
@@ -113,7 +143,7 @@ router.post('/profile', keycloak.protect(), addUserInfo, async (req, res) => {
 });
 
 // Dashboard route
-router.get('/dashboard', keycloak.protect(), addUserInfo, async (req, res) => {
+router.get('/dashboard', requireAuth, addUserInfo, async (req, res) => {
     try {
         const favorites = await database.favorites.findByUser(req.user.id);
         res.render('pages/dashboard', {
@@ -134,6 +164,6 @@ router.get('/dashboard', keycloak.protect(), addUserInfo, async (req, res) => {
 // Export both router and middleware
 module.exports = {
     router,
-    keycloak,
-    addUserInfo
+    addUserInfo,
+    requireAuth
 };

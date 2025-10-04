@@ -8,7 +8,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const database = require('./models/database');
-const { router: authRoutes, keycloak } = require('./routes/auth');
+const { router: authRoutes, addUserInfo, requireAuth } = require('./routes/auth');
 const destinationRoutes = require('./routes/destinations');
 const apiRoutes = require('./routes/api');
 const favoritesRoutes = require('./routes/favorites');
@@ -59,8 +59,8 @@ app.use(session({
     }
 }));
 
-// Initialize Keycloak middleware
-app.use(keycloak.middleware());
+// Initialize Keycloak middleware (commented out for simplified auth)
+// app.use(keycloak.middleware());
 
 // Set view engine
 app.set('view engine', 'ejs');
