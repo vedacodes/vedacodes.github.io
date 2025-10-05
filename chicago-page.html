@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago - The Windy City | Veda's Travel Diary</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --chicago-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: var(--shadow-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--chicago-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: var(--chicago-gradient);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-tag {
+            background: var(--chicago-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 40px 60px;
+        }
+
+        .hero-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .collage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 60px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            background: var(--chicago-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 50px;
+            background: var(--chicago-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .description-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--chicago-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(44,62,80,0.3), rgba(52,152,219,0.3));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--chicago-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            background: var(--chicago-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Travel Tips Grid */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .hero {
+                padding: 100px 20px 40px;
+            }
+
+            .hero-content {
+                padding: 40px 30px;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            .content-section {
+                margin-bottom: 60px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .description-card {
+                padding: 30px 25px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .travel-tips-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-caption {
+                padding: 20px;
+            }
+
+            .quote-section {
+                padding: 40px 25px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .location-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Veda's Travel Diary</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#destinations">Destinations</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Chicago, USA
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-collage">
+            <img src="chicago/chicago-image-1.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-2.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-3.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-4.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-5.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-6.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-7.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-1.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-2.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-3.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-4.jpg" alt="" class="collage-image">
+            <img src="chicago/chicago-image-5.jpg" alt="" class="collage-image">
+        </div>
+        <div class="hero-content">
+            <h1>Chicago Adventure</h1>
+            <p class="hero-subtitle">The Windy City Beckons</p>
+            <p class="hero-description">Experience the architectural marvels, vibrant culture, and delicious cuisine of Chicago. From the stunning skyline along Lake Michigan to the world-class museums and iconic deep-dish pizza, the Windy City offers an unforgettable urban adventure filled with character and charm.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Description Section -->
+        <section class="content-section">
+            <h2 class="section-title">My Chicago Experience</h2>
+            <div class="description-card">
+                <p>Chicago stole my heart with its perfect blend of architectural grandeur and Midwestern charm. Walking through the Loop and admiring the towering skyscrapers, strolling along the beautiful lakefront, and savoring the incredible food scene made every moment memorable. The city's energy is contagious, and its friendly people made me feel right at home.</p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="content-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Days in the City</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Neighborhoods Explored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Amazing Memories</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Highlights from Chicago</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-1.jpg" alt="Chicago skyline and architecture" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Magnificent Skyline</h3>
+                        <p>Chicago's iconic skyline is a testament to architectural innovation. Standing on the lakefront and seeing these towering masterpieces reflect in Lake Michigan was absolutely breathtaking - a perfect blend of nature and human achievement.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-2.jpg" alt="Chicago street scenes and culture" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Urban Energy</h3>
+                        <p>The streets of Chicago pulse with life and character. From the bustling Loop to the trendy neighborhoods, every corner tells a story. The city's unique blend of historic charm and modern vibrancy creates an atmosphere unlike anywhere else.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-3.jpg" alt="Chicago landmarks and attractions" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Iconic Landmarks</h3>
+                        <p>From Cloud Gate in Millennium Park to the historic architecture throughout the city, Chicago's landmarks are world-renowned. Each one offers a unique perspective on the city's rich history and cultural significance.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-4.jpg" alt="Chicago food and dining scene" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Culinary Paradise</h3>
+                        <p>Chicago's food scene is legendary for good reason. From authentic deep-dish pizza to innovative fine dining, the city's culinary landscape offers something for every palate. Every meal was an adventure in itself.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-5.jpg" alt="Chicago riverwalk and waterfront" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Riverwalk</h3>
+                        <p>Strolling along the Chicago Riverwalk offers stunning views of the city's architectural marvels from a unique perspective. The peaceful waterfront provides a perfect contrast to the bustling city streets above.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-6.jpg" alt="Chicago neighborhoods and local life" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Neighborhood Charm</h3>
+                        <p>Beyond downtown, Chicago's diverse neighborhoods each tell their own story. From the artistic murals of Pilsen to the tree-lined streets of Lincoln Park, every area has its own unique character and charm.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="chicago/chicago-image-7.jpg" alt="Chicago parks and green spaces" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Urban Oasis</h3>
+                        <p>Chicago's parks and green spaces provide peaceful retreats within the urban landscape. Whether it's Grant Park's expansive lawns or the lakefront trail, the city beautifully balances nature with metropolitan life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="content-section">
+            <div class="quote-section">
+                <div class="quote-text">"Chicago is more than a city - it's a feeling of home in the heart of America."</div>
+                <div class="quote-author">— From my travel journal</div>
+            </div>
+        </section>
+
+        <!-- Travel Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See Places in Chicago</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏙️</div>
+                    <h3>Millennium Park</h3>
+                    <p>Home to the famous Cloud Gate sculpture and Crown Fountain. A perfect starting point to explore downtown Chicago. Don't miss the free concerts and events during summer months.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h3>Art Institute</h3>
+                    <p>World-class museum with an incredible collection of Impressionist paintings and contemporary art. Plan at least half a day to fully appreciate the masterpieces housed here.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌊</div>
+                    <h3>Navy Pier</h3>
+                    <p>Iconic pier extending into Lake Michigan with shops, restaurants, and entertainment. Take a ride on the Centennial Wheel for spectacular city views, especially at sunset.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍕</div>
+                    <h3>Deep-Dish Pizza</h3>
+                    <p>Experience authentic Chicago-style deep-dish pizza at legendary spots like Lou Malnati's or Giordano's. Be prepared for a hearty meal - it's more like a pizza pie than traditional pizza.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Architecture Tour</h3>
+                    <p>Take a boat tour along the Chicago River to see the city's amazing architecture from water level. The guided tours provide fascinating insights into the city's architectural history.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎵</div>
+                    <h3>Music Scene</h3>
+                    <p>Explore Chicago's legendary music heritage in the blues clubs of South Side and jazz venues downtown. The city's musical legacy is alive and thriving throughout its neighborhoods.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.07)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all gallery items and cards
+        document.querySelectorAll('.gallery-item, .stat-card, .tip-card, .description-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.style.opacity = '1';
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+
+                images.forEach(img => {
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.6s ease';
+                    imageObserver.observe(img);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

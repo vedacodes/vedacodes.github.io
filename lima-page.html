@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lima - Culinary Capital of South America | Veda's Travel Diary</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -131,43 +134,42 @@
             background: var(--city-gradient);
         }
 
-        .hero-background {
+        .hero-collage {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .collage-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            opacity: 0.4;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            opacity: 0.8;
         }
 
         .collage-image {
-            position: absolute;
-            width: 250px;
-            height: 200px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: var(--transition);
-            animation: float 6s ease-in-out infinite;
+            filter: brightness(0.8) contrast(1.1);
+            animation: subtleFloat 8s ease-in-out infinite;
         }
 
-        .collage-image:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-        .collage-image:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
-        .collage-image:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 2s; }
-        .collage-image:nth-child(4) { bottom: 15%; right: 20%; animation-delay: 3s; }
-        .collage-image:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s; }
+        .collage-image:nth-child(even) {
+            animation-direction: reverse;
+            animation-delay: -2s;
+        }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                filter: brightness(0.8) contrast(1.1);
+            }
+            50% {
+                transform: scale(1.02) rotate(0.5deg);
+                filter: brightness(0.85) contrast(1.15);
+            }
         }
 
         .hero-content {
@@ -578,14 +580,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <div class="collage-container">
-                <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
-                <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
-                <img src="lima/lima-image-3.jpg" alt="" class="collage-image">
-                <img src="lima/lima-image-4.jpg" alt="" class="collage-image">
-                <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
-            </div>
+        <div class="hero-collage">
+            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-3.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-4.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-5.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-3.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-4.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-5.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
+            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
         </div>
         <div class="hero-content">
             <h1>Lima</h1>
