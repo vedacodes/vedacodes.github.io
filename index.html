@@ -352,7 +352,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 120%;
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
             background: var(--card-bg);
@@ -363,6 +363,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
             z-index: 1001;
+            margin-top: 2px;
         }
 
         .dropdown-content a {
@@ -379,7 +380,13 @@
             color: var(--text-light);
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+            animation: fadeInDown 0.3s ease-out;
+        }
+
+        .dropdown-content.show {
             display: block;
             animation: fadeInDown 0.3s ease-out;
         }
@@ -393,6 +400,18 @@
                 opacity: 1;
                 transform: translateX(-50%) translateY(0);
             }
+        }
+
+        /* Improved dropdown hover area */
+        .dropdown::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: transparent;
+            z-index: 1000;
         }
 
         /* Main Content */
@@ -920,16 +939,16 @@
                     <a href="#rome"><i class="fas fa-landmark"></i> Rome</a>
                     <a href="#vatican"><i class="fas fa-church"></i> Vatican City</a>
                     <a href="#venice"><i class="fas fa-water"></i> Venice</a>
-                    <a href="#paris"><i class="fas fa-tower-broadcast"></i> Paris</a>
-                    <a href="#barcelona"><i class="fas fa-building"></i> Barcelona</a>
+                    <a href="#paris"><i class="fas fa-heart"></i> Paris</a>
+                    <a href="#barcelona"><i class="fas fa-palette"></i> Barcelona</a>
                     <a href="#amsterdam"><i class="fas fa-bicycle"></i> Amsterdam</a>
                     <a href="#brussels"><i class="fas fa-crown"></i> Brussels</a>
-                    <a href="#interlaken"><i class="fas fa-mountain"></i> Interlaken</a>
+                    <a href="#interlaken"><i class="fas fa-mountain-sun"></i> Interlaken</a>
                     <a href="#milan"><i class="fas fa-tshirt"></i> Milan</a>
-                    <a href="#santorini"><i class="fas fa-island-tropical"></i> Santorini</a>
+                    <a href="#santorini"><i class="fas fa-sun"></i> Santorini</a>
                     <a href="#athens"><i class="fas fa-columns"></i> Athens</a>
-                    <a href="#prague"><i class="fas fa-castle"></i> Prague</a>
-                    <a href="#berlin"><i class="fas fa-gate"></i> Berlin</a>
+                    <a href="#prague"><i class="fas fa-chess-rook"></i> Prague</a>
+                    <a href="#berlin"><i class="fas fa-door-open"></i> Berlin</a>
                     <a href="#vienna"><i class="fas fa-music"></i> Vienna</a>
                 </div>
             </div>
@@ -939,13 +958,14 @@
                     <i class="fas fa-flag-usa"></i> North America
                 </button>
                 <div class="dropdown-content">
-                    <a href="#cancun"><i class="fas fa-cocktail"></i> Cancun</a>
-                    <a href="#mexicocity"><i class="fas fa-city"></i> Mexico City</a>
-                    <a href="#nassau"><i class="fas fa-anchor"></i> Nassau</a>
-                    <a href="#miami"><i class="fas fa-umbrella-beach"></i> Miami</a>
+                    <a href="#cancun"><i class="fas fa-umbrella-beach"></i> Cancun</a>
+                    <a href="#mexicocity"><i class="fas fa-building"></i> Mexico City</a>
+                    <a href="#nassau"><i class="fas fa-ship"></i> Nassau</a>
+                    <a href="#miami"><i class="fas fa-sun"></i> Miami</a>
                     <a href="#losangeles"><i class="fas fa-film"></i> Los Angeles</a>
                     <a href="#lasvegas"><i class="fas fa-dice"></i> Las Vegas</a>
-                    <a href="#grandcanyon"><i class="fas fa-mountain-sun"></i> Grand Canyon</a>
+                    <a href="#grandcanyon"><i class="fas fa-mountain"></i> Grand Canyon</a>
+                    <a href="#chicago"><i class="fas fa-city"></i> Chicago</a>
                 </div>
             </div>
 
@@ -954,9 +974,9 @@
                     <i class="fas fa-map"></i> South America
                 </button>
                 <div class="dropdown-content">
-                    <a href="#lima"><i class="fas fa-utensils"></i> Lima</a>
+                    <a href="#lima"><i class="fas fa-pepper-hot"></i> Lima</a>
                     <a href="#cusco"><i class="fas fa-mountain"></i> Cusco</a>
-                    <a href="#machupicchu"><i class="fas fa-ruins"></i> Machu Picchu</a>
+                    <a href="#machupicchu"><i class="fas fa-monument"></i> Machu Picchu</a>
                 </div>
             </div>
 
@@ -965,10 +985,10 @@
                     <i class="fas fa-yin-yang"></i> Asia
                 </button>
                 <div class="dropdown-content">
-                    <a href="#bangkok"><i class="fas fa-temple"></i> Bangkok</a>
-                    <a href="#pattaya"><i class="fas fa-temple"></i> Pattaya</a>
+                    <a href="#bangkok"><i class="fas fa-pagelines"></i> Bangkok</a>
+                    <a href="#pattaya"><i class="fas fa-umbrella-beach"></i> Pattaya</a>
                     <a href="#gangtok"><i class="fas fa-mountain-sun"></i> Gangtok</a>
-                    <a href="#darjeeling"><i class="fas fa-leaf"></i> Darjeeling</a>
+                    <a href="#darjeeling"><i class="fas fa-coffee"></i> Darjeeling</a>
                 </div>
             </div>
 
@@ -1489,6 +1509,66 @@
             
             img.addEventListener('mouseleave', () => {
                 img.style.filter = 'brightness(0.85) contrast(1.15) saturate(1.3)';
+            });
+        });
+
+        // Enhanced dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            let hideTimeout;
+
+            dropdowns.forEach(dropdown => {
+                const dropbtn = dropdown.querySelector('.dropbtn');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+                // Show dropdown on button hover
+                dropbtn.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
+                });
+
+                // Keep dropdown open when hovering over content
+                dropdownContent.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
+                });
+
+                // Hide dropdown with delay when leaving button
+                dropbtn.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        dropdownContent.classList.remove('show');
+                    }, 150); // 150ms delay to allow moving to dropdown content
+                });
+
+                // Hide dropdown with delay when leaving content
+                dropdownContent.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        dropdownContent.classList.remove('show');
+                    }, 150);
+                });
+
+                // Hide dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdownContent.classList.remove('show');
+                    }
+                });
+
+                // Mobile touch support - toggle on button click
+                dropbtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns first
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.querySelector('.dropdown-content').classList.remove('show');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdownContent.classList.toggle('show');
+                });
             });
         });
     </script>
