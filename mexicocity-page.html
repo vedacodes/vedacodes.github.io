@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexico City - Heart of Mexico | Veda's Travel Diary</title>
+    <title>Mexico City - Cultural Heartbeat | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #228B22 0%, #FFD700 100%);
+            --mexico-gradient: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,89 +51,75 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--mexico-gradient);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--mexico-gradient);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Mexico City Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -144,13 +130,13 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 2px;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -161,90 +147,128 @@
             animation-delay: -2s;
         }
 
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
+        }
+
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
         @keyframes subtleFloat {
             0%, 100% {
                 transform: scale(1) rotate(0deg);
                 filter: brightness(0.8) contrast(1.1);
             }
             50% {
-                transform: scale(1.02) rotate(0.5deg);
+                transform: scale(1.02) rotate(0.3deg);
                 filter: brightness(0.85) contrast(1.15);
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,107,107,0.3) 0%, rgba(254,202,87,0.4) 50%, rgba(72,219,251,0.3) 100%);
+            z-index: 1;
         }
 
-        .hero-content h1 {
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
+        /* Section Styling */
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: var(--mexico-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,64 +279,18 @@
         .description-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--mexico-gradient);
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         /* Image Gallery */
@@ -357,22 +335,6 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
             padding: 25px;
         }
@@ -391,23 +353,334 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--mexico-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--mexico-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            background: var(--mexico-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero-collage {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 4;
+                grid-row: 4 / 5;
+            }
+            
+            .description-card {
+                padding: 25px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .quote-section {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 3;
+                grid-row: 4 / 6;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 3;
+                grid-row: 6 / 7;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .gallery-item, .description-card, .stat-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .description-card { animation-delay: 0.2s; }
+        .stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +689,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,89 +732,210 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i> Back to Travel Diary
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Mexico City, Mexico
+            </div>
         </div>
     </nav>
 
@@ -582,22 +943,15 @@
     <section class="hero">
         <div class="hero-collage">
             <img src="mexicocity/mexicocity-image-1.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-2.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-3.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-4.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-5.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-6.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-7.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-8.jpg" alt="" class="collage-image">
             <img src="mexicocity/mexicocity-image-9.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-10.jpg" alt="" class="collage-image">
+            <img src="mexicocity/mexicocity-image-8.jpg" alt="" class="collage-image">
+            <img src="mexicocity/mexicocity-image-14.jpg" alt="" class="collage-image">
             <img src="mexicocity/mexicocity-image-11.jpg" alt="" class="collage-image">
-            <img src="mexicocity/mexicocity-image-12.jpg" alt="" class="collage-image">
         </div>
         <div class="hero-content">
-            <h1>Mexico City</h1>
+            <h1>Mexico City, Cultural Heartbeat</h1>
             <p class="hero-subtitle">Where Ancient Meets Modern</p>
-            <p class="hero-description">Explore one of the world's largest cities, where Aztec ruins stand alongside colonial cathedrals and modern skyscrapers. Mexico City offers incredible history, world-class cuisine, vibrant culture, and warm hospitality.</p>
+            <p class="hero-description">Discover the vibrant soul of Mexico in its bustling capital, where pre-Columbian pyramids stand alongside colorful markets, world-class museums, and incredible street food. A city that celebrates its rich heritage while embracing the future.</p>
         </div>
     </section>
 
@@ -607,7 +961,7 @@
         <section class="content-section">
             <h2 class="section-title">My Mexico City Adventure</h2>
             <div class="description-card">
-                <p>Mexico City overwhelmed my senses in the best possible way. The energy is infectious, the food is extraordinary, and the cultural richness is unparalleled. From the ancient pyramids of Teotihuacan to the colorful markets of Xochimilco, every day brought new discoveries and flavors that left me wanting more.</p>
+                <p>Mexico City overwhelmed me in the best possible way. From climbing the ancient pyramids of Teotihuacán to wandering through Frida Kahlo's colorful world, every day brought new discoveries. The warmth of the people, the explosion of flavors in every meal, and the vibrant art scene made this one of my most memorable adventures. This city taught me that culture isn't just preserved in museums - it lives and breathes in every street corner, market stall, and family gathering.</p>
             </div>
         </section>
 
@@ -615,16 +969,16 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Days Exploring</div>
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Days of Discovery</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">2240m</div>
-                    <div class="stat-label">Above Sea Level</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Museums Visited</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Cultural Treasures</div>
+                    <div class="stat-label">Tacos Consumed</div>
                 </div>
             </div>
         </section>
@@ -633,169 +987,707 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Mexico City Diary</h2>
             <div class="image-gallery">
+                <!-- Pyramid of the Sun, Teotihuacán Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-1.jpg" alt="First Glimpse of Mexicocity" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="pyramid-sun-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-1.jpg" alt="Pyramid of the Sun, Teotihuacán view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-2.jpg" alt="Pyramid of the Sun, Teotihuacán view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('pyramid-sun-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('pyramid-sun-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="pyramid-sun-carousel-indicators"></div>
+                            <div class="carousel-counter" id="pyramid-sun-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Mexicocity</h3>
-                        <p>My initial impression of Mexicocity was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Pyramid of the Sun, Teotihuacán</h3>
+                        <p>Standing atop this ancient wonder was breathtaking. The climb is steep but worth every step for the panoramic views of the entire archaeological complex. You can feel the spiritual energy that drew pilgrims here centuries ago.</p>
                     </div>
                 </div>
+
+                <!-- Pyramid of Moon Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="pyramid-moon-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-3.jpg" alt="Pyramid of Moon view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-4.jpg" alt="Pyramid of Moon view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('pyramid-moon-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('pyramid-moon-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="pyramid-moon-carousel-indicators"></div>
+                            <div class="carousel-counter" id="pyramid-moon-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Mexicocity adventure.</p>
+                        <h3>Pyramid of Moon</h3>
+                        <p>The second largest pyramid in Teotihuacán offers stunning views down the Avenue of the Dead. The symmetry and planning of this ancient city is mind-blowing when you see it from this perspective.</p>
                     </div>
                 </div>
+
+                <!-- Avenue of the Dead -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="mexicocity/mexicocity-image-5.jpg" alt="Avenue of the Dead" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Mexicocity's authentic character.</p>
+                        <h3>Avenue of the Dead</h3>
+                        <p>Walking down this sacred pathway connecting the pyramids was like traveling through time. The ancient stones beneath my feet witnessed countless rituals and ceremonies of this mysterious civilization.</p>
                     </div>
                 </div>
+
+                <!-- Hot air Balloon Carriage -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="mexicocity/mexicocity-image-6.jpg" alt="Hot air Balloon Carriage" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Hot air Balloon Carriage</h3>
+                        <p>The basket of dreams! Getting ready for an aerial adventure over Teotihuacán. The anticipation and excitement were palpable as we prepared for this once-in-a-lifetime experience.</p>
                     </div>
                 </div>
+
+                <!-- Hot air Balloons getting ready for Teotihuacán visit -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="mexicocity/mexicocity-image-7.jpg" alt="Hot air Balloons getting ready for Teotihuacán visit" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Mexicocity gave me many of these precious memories.</p>
+                        <h3>Hot air Balloons getting ready for Teotihuacán visit</h3>
+                        <p>Dawn breaking over the Valley of Mexico as dozens of balloons prepare for takeoff. The sight of all these colorful giants inflating against the sunrise was magical in itself.</p>
                     </div>
                 </div>
+
+                <!-- Mosaic stone Mural at the University of Mexico -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="mexicocity/mexicocity-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="mexicocity/mexicocity-image-8.jpg" alt="Mosaic stone Mural at the University of Mexico" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Mexicocity, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Mosaic stone Mural at the University of Mexico</h3>
+                        <p>This incredible mural by Juan O'Gorman covers the entire facade of the Central Library. Millions of colored stones tell the story of Mexican culture from pre-Columbian times to the modern era.</p>
                     </div>
                 </div>
+
+                <!-- The Beautiful and Talented Frida -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-9.jpg" alt="The Beautiful and Talented Frida" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Beautiful and Talented Frida</h3>
+                        <p>Standing before Frida Kahlo's self-portraits in her Blue House was deeply moving. Her pain, passion, and incredible artistic vision come alive in this intimate space where she lived and created.</p>
+                    </div>
+                </div>
+
+                <!-- Inside Frida's house -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-10.jpg" alt="Inside Frida's house" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Inside Frida's house</h3>
+                        <p>Every corner of Casa Azul tells Frida's story. Her bedroom, with the mirror on the ceiling where she painted some of her most famous works while bedridden, was particularly touching.</p>
+                    </div>
+                </div>
+
+                <!-- Churros Time!! -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-11.jpg" alt="Churros Time!!" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Churros Time!!</h3>
+                        <p>No Mexico City experience is complete without indulging in fresh churros filled with dulce de leche! These crispy, sugary delights from street vendors became my daily guilty pleasure.</p>
+                    </div>
+                </div>
+
+                <!-- Coyoacán, CDMX -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-12.jpg" alt="Coyoacán, CDMX" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Coyoacán, CDMX</h3>
+                        <p>This charming colonial neighborhood feels like a town within the city. Cobblestone streets, colorful facades, and an artistic atmosphere make it perfect for afternoon strolls and café hopping.</p>
+                    </div>
+                </div>
+
+                <!-- With Frida and Diego Rivera -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-13.jpg" alt="With Frida and Diego Rivera" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>With Frida and Diego Rivera</h3>
+                        <p>Standing with the artistic legends! This mural captures the passionate relationship between two of Mexico's greatest artists. Their tumultuous love story is as captivating as their art.</p>
+                    </div>
+                </div>
+
+                <!-- The Parroquia, the parish church -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-14.jpg" alt="The Parroquia, the parish church" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Parroquia, the parish church</h3>
+                        <p>This beautiful Gothic Revival church in San Miguel de Allende looks like it was transported from Europe. Its pink stone towers and intricate facade are truly breathtaking against the Mexican sky.</p>
+                    </div>
+                </div>
+
+                <!-- In the Vibrant Streets of San Miguel de Allende Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="san-miguel-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-15.jpg" alt="In the Vibrant Streets of San Miguel de Allende view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-16.jpg" alt="In the Vibrant Streets of San Miguel de Allende view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('san-miguel-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('san-miguel-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="san-miguel-carousel-indicators"></div>
+                            <div class="carousel-counter" id="san-miguel-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>In the Vibrant Streets of San Miguel de Allende</h3>
+                        <p>These colorful colonial streets are pure magic! Every building is painted in vibrant hues that reflect the joyful spirit of Mexican culture. Walking here feels like being inside a painting.</p>
+                    </div>
+                </div>
+
+                <!-- Grutas Tolantongo -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-17.jpg" alt="Grutas Tolantongo" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Grutas Tolantongo</h3>
+                        <p>This natural wonder is like discovering a hidden paradise. The turquoise thermal pools carved into the mountain create a surreal landscape that feels otherworldly.</p>
+                    </div>
+                </div>
+
+                <!-- Heated pools of Tolantongo Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="tolantongo-pools-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-18.jpg" alt="Heated pools of Tolantongo view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-19.jpg" alt="Heated pools of Tolantongo view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('tolantongo-pools-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('tolantongo-pools-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="tolantongo-pools-carousel-indicators"></div>
+                            <div class="carousel-counter" id="tolantongo-pools-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Heated pools of Tolantongo</h3>
+                        <p>Soaking in these natural thermal pools with their perfect temperatures was pure bliss. The mineral-rich waters and stunning mountain backdrop made this one of the most relaxing experiences of my trip.</p>
+                    </div>
+                </div>
+
+                <!-- Tolantongo Caves -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-36.jpg" alt="Tolantongo Caves" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Tolantongo Caves</h3>
+                        <p>The mystical caves of Tolantongo are a hidden gem in the mountains. These natural formations create a magical underground world where thermal waters flow through limestone caverns.</p>
+                    </div>
+                </div>
+
+                <!-- Grutas Tolantongo Waterfall -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-37.jpg" alt="Grutas Tolantongo Waterfall" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Grutas Tolantongo Waterfall</h3>
+                        <p>The stunning waterfall at Grutas Tolantongo cascades down the mountain creating natural thermal pools. This breathtaking sight combines the power of nature with the serenity of warm healing waters.</p>
+                    </div>
+                </div>
+
+                <!-- Art at Palacio de Bellas Artes -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-20.jpg" alt="Art at Palacio de Bellas Artes" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Art at Palacio de Bellas Artes</h3>
+                        <p>The murals inside this stunning Art Nouveau palace are masterpieces. Rivera, Orozco, and Siqueiros created works here that capture the essence of Mexican identity and revolutionary spirit.</p>
+                    </div>
+                </div>
+
+                <!-- The infamous Man at the Crossroads -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-21.jpg" alt="The infamous Man at the Crossroads" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The infamous Man at the Crossroads</h3>
+                        <p>Diego Rivera's controversial mural that was destroyed in New York and recreated here in Mexico City. The powerful imagery depicts the struggle between capitalism and socialism, technology and nature.</p>
+                    </div>
+                </div>
+
+                <!-- The Mayan Calendar -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-22.jpg" alt="The Mayan Calendar" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>The Mayan Calendar</h3>
+                        <p>The iconic Aztec Sun Stone at the National Museum of Anthropology. This massive basalt sculpture represents the Aztec cosmology and their understanding of time cycles, absolutely mesmerizing in person.</p>
+                    </div>
+                </div>
+
+                <!-- National Museum of Anthropology -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-23.jpg" alt="National Museum of Anthropology" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>National Museum of Anthropology</h3>
+                        <p>One of the world's greatest museums! The vast collection of pre-Columbian artifacts tells the story of Mexico's indigenous civilizations with incredible detail and reverence.</p>
+                    </div>
+                </div>
+
+                <!-- Teotihuacán From the Hot air Balloon -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-25.jpg" alt="Teotihuacán From the Hot air Balloon" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Teotihuacán From the Hot air Balloon</h3>
+                        <p>The breathtaking aerial view of the ancient city! From above, you can truly appreciate the master planning and astronomical alignment of this UNESCO World Heritage site.</p>
+                    </div>
+                </div>
+
+                <!-- Palacio de Bellas Artes -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-26.jpg" alt="Palacio de Bellas Artes" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Palacio de Bellas Artes</h3>
+                        <p>The stunning exterior of this cultural palace with its magnificent dome and Art Nouveau architecture. This is Mexico City's premier venue for opera, theater, and dance performances.</p>
+                    </div>
+                </div>
+
+                <!-- Xochimilco -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="mexicocity/mexicocity-image-27.jpg" alt="Xochimilco" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Xochimilco</h3>
+                        <p>The floating gardens of Xochimilco! These ancient canals and artificial islands are a testament to Aztec engineering genius and now offer a festive boat ride experience.</p>
+                    </div>
+                </div>
+
+                <!-- Xochimilco Floating Gardens Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="xochimilco-gardens-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-28.jpg" alt="Xochimilco Floating Gardens view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-29.jpg" alt="Xochimilco Floating Gardens view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-30.jpg" alt="Xochimilco Floating Gardens view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-31.jpg" alt="Xochimilco Floating Gardens view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('xochimilco-gardens-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('xochimilco-gardens-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="xochimilco-gardens-carousel-indicators"></div>
+                            <div class="carousel-counter" id="xochimilco-gardens-carousel-counter">1 / 4</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Xochimilco Floating Gardens</h3>
+                        <p>Cruising through the colorful trajineras (boats) while mariachi bands play and vendors sell flowers and food. This UNESCO World Heritage site is pure Mexican joy and tradition in action!</p>
+                    </div>
+                </div>
+
+                <!-- Inside Frida's house Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="frida-house-inside-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="mexicocity/mexicocity-image-32.jpg" alt="Inside Frida's house view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-33.jpg" alt="Inside Frida's house view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-34.jpg" alt="Inside Frida's house view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="mexicocity/mexicocity-image-35.jpg" alt="Inside Frida's house view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('frida-house-inside-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('frida-house-inside-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="frida-house-inside-carousel-indicators"></div>
+                            <div class="carousel-counter" id="frida-house-inside-carousel-counter">1 / 4</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Inside Frida's house</h3>
+                        <p>More intimate glimpses of Casa Azul - Frida's studio, her personal items, and the spaces where she created some of her most powerful works while dealing with physical pain and emotional turmoil.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="content-section">
+            <div class="quote-section">
+                <div class="quote-text">"Mexico is a land of magic and wonder, where every street corner tells a story"</div>
+                <div class="quote-author">Anonymous Traveler</div>
             </div>
         </section>
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Mexico City</h2>
+            <h2 class="section-title">Must-See in Mexico City</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">🏛️</div>
-                    <h3>Zócalo</h3>
-                    <p>Massive main square surrounded by historic buildings including the Metropolitan Cathedral.</p>
+                    <h3>Zócalo & Historic Center</h3>
+                    <p>Massive main square! Cathedral, National Palace (Diego Rivera murals - free!), Aztec ruins underneath. UNESCO Heritage. Start your CDMX journey here!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏺</div>
+                    <h3>Anthropology Museum</h3>
+                    <p>World-class! Pre-Hispanic artifacts, Aztec Sun Stone. Huge collection. Plan 3-4 hours minimum. Best museum in Mexico. Must-see for history lovers!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌸</div>
+                    <h3>Xochimilco Floating Gardens</h3>
+                    <p>Colorful trajinera boats! Mariachi bands, floating food vendors. Party atmosphere weekends. UNESCO site. Touristy but fun. Bring friends!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🎨</div>
                     <h3>Frida Kahlo Museum</h3>
-                    <p>Blue House where the famous artist lived and worked. Book tickets in advance.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏺</div>
-                    <h3>Teotihuacan</h3>
-                    <p>Ancient pyramid complex outside the city. Climb the Pyramid of the Sun for incredible views.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🌺</div>
-                    <h3>Xochimilco</h3>
-                    <p>Floating gardens with colorful boats, mariachi music, and traditional Mexican atmosphere.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🖼️</div>
-                    <h3>Palace of Fine Arts</h3>
-                    <p>Stunning Art Nouveau building with murals by Rivera, Orozco, and Siqueiros.</p>
+                    <p>Casa Azul in Coyoacán! Frida's blue house. Book online weeks ahead. Her art, personal items, gardens. Emotional and inspiring!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🌮</div>
-                    <h3>Mercado de San Juan</h3>
-                    <p>Gourmet food market with exotic ingredients and traditional Mexican delicacies.</p>
+                    <h3>Street Food Markets</h3>
+                    <p>Mercado de San Juan, Roma/Condesa food scene. Tacos, tamales, quesadillas. Authentic flavors everywhere. Food paradise!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛰️</div>
+                    <h3>Teotihuacan Day Trip</h3>
+                    <p>Massive ancient pyramids 1 hour away! Climb Pyramid of the Sun. Hot air balloon rides at dawn. Go early to beat heat and crowds!</p>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Booking Tips Section -->
+        <!-- Best Time to Visit Section -->
         <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-4 months ahead for peak season. Book Frida Kahlo Museum tickets well in advance. Consider altitude when planning activities.</p>
+            <h2 class="section-title">Best Time to Visit Mexico City</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Dry Season (November-April)</h3>
+                        <div class="season-temp">14-26°C</div>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Roma Norte: Trendy, restaurants, galleries. Centro Histórico: Historic, walkable to attractions. Polanco: Upscale, shopping, business district.</p>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Clear skies, minimal rain. Day of the Dead (Nov 1-2) magical! Christmas festive. Perfect weather for sightseeing. Peak tourist season!</p>
+                        <ul class="season-pros">
+                            <li>Sunny days</li>
+                            <li>Day of the Dead celebrations</li>
+                            <li>Comfortable temperatures</li>
+                            <li>Less pollution visible</li>
+                        </ul>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Use public transportation (metro and buses). Eat at local markets and street food stands. Stay in neighborhoods outside tourist areas. Negotiate taxi fares.</p>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Rainy Season (May-October)</h3>
+                        <div class="season-temp">16-28°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Green & Fresh:</strong> Afternoon showers brief. Mornings usually clear. Lush landscapes. Lower prices. Independence Day (Sept 16) spectacular! Pack umbrella!</p>
+                        <ul class="season-pros">
+                            <li>Lower hotel rates</li>
+                            <li>Fewer tourists</li>
+                            <li>Green parks</li>
+                            <li>Fresh, clean air after rain</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🎉</div>
+                        <h3>Festival Season</h3>
+                        <div class="season-temp">Varies</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Cultural Highlights:</strong> Day of the Dead (Nov), Independence Day (Sept), Christmas season. Vibrant celebrations. Book ahead. Experience Mexican culture at its finest!</p>
+                        <ul class="season-pros">
+                            <li>Unique cultural experiences</li>
+                            <li>Colorful parades</li>
+                            <li>Traditional foods</li>
+                            <li>Festive atmosphere</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌡️</div>
+                        <h3>Year-Round Tip</h3>
+                        <div class="season-temp">Spring-like</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Eternal Spring:</strong> High altitude (2,250m) means mild year-round. Mornings cool, afternoons warm. Layer clothing. Sun strong - wear sunscreen. No extreme seasons!</p>
+                        <ul class="season-pros">
+                            <li>Consistent temperatures</li>
+                            <li>No extreme heat/cold</li>
+                            <li>Always good for visiting</li>
+                            <li>Spring-like climate</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Local Cuisine Section -->
+        <!-- Transportation Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Mexico City</h2>
-            <div class="cuisine-grid">
-                <div class="food-card">
-                    <div class="food-icon">🌮</div>
-                    <h3>Street Tacos</h3>
-                    <p>Authentic tacos from street vendors with fresh ingredients and salsas. Try different varieties.</p>
-                    <span class="food-price">$1-3</span>
+            <h2 class="section-title">Getting Around Mexico City</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚇</div>
+                    <h3>Metro</h3>
+                    <p><strong>Best for:</strong> Cheap, fast, extensive. MX$5 per ride! Crowded rush hours. Watch belongings. Color-coded lines. Avoid Line 1 rush hour!</p>
+                    <div class="transport-tip">💡 Buy rechargeable card. Station icons help if you don't read Spanish</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🍫</div>
-                    <h3>Mexican Chocolate</h3>
-                    <p>Traditional hot chocolate with cinnamon and spices. Rich, complex flavors from cacao beans.</p>
-                    <span class="food-price">$2-5</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚖</div>
+                    <h3>Uber/Didi</h3>
+                    <p><strong>Best for:</strong> Safe, reliable, cheap. Uber everywhere. Didi (Chinese app) often cheaper. Track your ride. Pay with card. Much safer than street taxis!</p>
+                    <div class="transport-tip">💡 Airport pickup at official stands. Avoid street taxis - use apps only!</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🌶️</div>
-                    <h3>Mole</h3>
-                    <p>Complex sauce with chocolate and spices, often served with chicken. Traditional Mexican specialty.</p>
-                    <span class="food-price">$8-15</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Metrobús</h3>
+                    <p><strong>Best for:</strong> Major corridors. Faster than regular buses. Dedicated lanes. Same card as Metro. Clean, safe. Good for Reforma avenue!</p>
+                    <div class="transport-tip">💡 Board through specific doors. Less crowded than metro</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🥑</div>
-                    <h3>Guacamole</h3>
-                    <p>Freshly made with avocados, lime, and chilies. Served with tortilla chips everywhere.</p>
-                    <span class="food-price">$3-7</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚲</div>
+                    <h3>Ecobici Bike Share</h3>
+                    <p><strong>Best for:</strong> Roma, Condesa, Reforma areas. Sunday ciclovías (car-free streets). Registration required. Flat neighborhoods only. Fun way to explore!</p>
+                    <div class="transport-tip">💡 Sundays main avenues close to cars - perfect for cycling</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🍹</div>
-                    <h3>Mezcal & Tequila</h3>
-                    <p>Traditional agave spirits with smoky, complex flavors. Try at authentic mezcalerias.</p>
-                    <span class="food-price">$5-15</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p><strong>Best for:</strong> Within neighborhoods (Roma, Condesa, Centro). CDMX huge - don't walk between distant areas. Sidewalks uneven. Stay alert!</p>
+                    <div class="transport-tip">💡 Centro Histórico and Roma/Condesa very walkable</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🍞</div>
-                    <h3>Pan Dulce</h3>
-                    <p>Sweet Mexican pastries perfect for breakfast. Colorful, varied shapes and flavors.</p>
-                    <span class="food-price">$1-3</span>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>From Airport</h3>
+                    <p><strong>Options:</strong> Uber/Didi MX$150-300. Authorized taxi MX$250-400. Metro cheap but not with luggage. Pre-book for peace of mind!</p>
+                    <div class="transport-tip">💡 New airport (Felipe Ángeles) farther but less crowded</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Parallax effect for collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'pyramid-sun-carousel',
+                'pyramid-moon-carousel',
+                'san-miguel-carousel',
+                'tolantongo-pools-carousel',
+                'xochimilco-gardens-carousel',
+                'frida-house-inside-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

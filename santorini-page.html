@@ -131,7 +131,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            background: #000;
         }
 
         .hero-collage {
@@ -140,35 +140,77 @@
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
+            display: flex;
+        }
+
+        .hero-left {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transform: skewX(-8deg);
+            margin-left: -5%;
+        }
+
+        .hero-right {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transform: skewX(-8deg);
+            margin-right: -5%;
         }
 
         .collage-image {
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
+            transform: skewX(8deg) scale(1.3);
+            filter: brightness(0.7) saturate(1.2) contrast(1.1);
         }
 
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
+        .hero-left .collage-image,
+        .hero-right .collage-image {
+            animation: kenBurns 20s ease-in-out infinite;
+        }
+
+        .hero-left .collage-image:nth-child(1) { animation-delay: 0s; }
+        .hero-left .collage-image:nth-child(2) { animation-delay: 4s; }
+        .hero-left .collage-image:nth-child(3) { animation-delay: 8s; }
+        .hero-left .collage-image:nth-child(4) { animation-delay: 12s; }
+        .hero-left .collage-image:nth-child(5) { animation-delay: 16s; }
+
+        .hero-right .collage-image:nth-child(1) { animation-delay: 2s; }
+        .hero-right .collage-image:nth-child(2) { animation-delay: 6s; }
+        .hero-right .collage-image:nth-child(3) { animation-delay: 10s; }
+        .hero-right .collage-image:nth-child(4) { animation-delay: 14s; }
+        .hero-right .collage-image:nth-child(5) { animation-delay: 18s; }
+
+        @keyframes kenBurns {
+            0% { opacity: 0; transform: skewX(8deg) scale(1.3); }
+            5% { opacity: 1; }
+            20% { opacity: 1; transform: skewX(8deg) scale(1.4); }
+            25% { opacity: 0; }
+            100% { opacity: 0; transform: skewX(8deg) scale(1.3); }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.3) 0%, rgba(30, 144, 255, 0.2) 50%, rgba(135, 206, 235, 0.3) 100%);
+            z-index: 1;
+            pointer-events: none;
         }
 
         @keyframes subtleFloat {
             0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
+                transform: translateY(0);
             }
             50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
+                transform: translateY(-10px);
             }
         }
 
@@ -177,8 +219,13 @@
             z-index: 2;
             text-align: center;
             color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+            max-width: 900px;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .hero-content h1 {
@@ -345,33 +392,67 @@
             width: 100%;
         }
 
-        .gallery-image {
+        .carousel-container {
+            position: relative;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .image-overlay {
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .gallery-image-container::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
+            background: transparent;
+            z-index: 1;
+            pointer-events: none;
             transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
+        .gallery-item:hover .gallery-image-container::before {
+            background: transparent;
         }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+
 
         .gallery-caption {
             padding: 25px;
@@ -389,6 +470,76 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
         }
 
         /* Travel Tips Grid */
@@ -529,8 +680,27 @@
                 display: none;
             }
             
+            .hero-left,
+            .hero-right {
+                transform: skewX(0);
+                margin: 0;
+            }
+
+            .collage-image {
+                transform: skewX(0) scale(1.2);
+            }
+
+            @keyframes kenBurns {
+                0% { opacity: 0; transform: skewX(0) scale(1.2); }
+                5% { opacity: 1; }
+                20% { opacity: 1; transform: skewX(0) scale(1.3); }
+                25% { opacity: 0; }
+                100% { opacity: 0; transform: skewX(0) scale(1.2); }
+            }
+            
             .hero-content {
-                padding: 0 1rem;
+                padding: 2rem 1.5rem;
+                max-width: 90%;
             }
             
             main {
@@ -581,18 +751,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="santorini/santorini-image-1.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-2.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-3.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-4.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-5.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-6.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-1.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-2.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-3.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-4.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-5.jpg" alt="" class="collage-image">
-            <img src="santorini/santorini-image-6.jpg" alt="" class="collage-image">
+            <div class="hero-left">
+                <img src="santorini/santorini-image-1.jpg" alt="Santorini Blue Domes" class="collage-image">
+                <img src="santorini/santorini-image-3.jpg" alt="Santorini Village" class="collage-image">
+                <img src="santorini/santorini-image-5.jpg" alt="Santorini Churches" class="collage-image">
+                <img src="santorini/santorini-image-14.jpg" alt="Santorini Architecture" class="collage-image">
+                <img src="santorini/santorini-image-16.jpg" alt="Santorini Views" class="collage-image">
+            </div>
+            <div class="hero-right">
+                <img src="santorini/santorini-image-10.jpg" alt="Santorini Sunset" class="collage-image">
+                <img src="santorini/santorini-image-12.jpg" alt="Santorini Coastline" class="collage-image">
+                <img src="santorini/santorini-image-8.jpg" alt="Santorini Streets" class="collage-image">
+                <img src="santorini/santorini-image-18.jpg" alt="Santorini Caldera" class="collage-image">
+                <img src="santorini/santorini-image-6.jpg" alt="Santorini Windmills" class="collage-image">
+            </div>
         </div>
         <div class="hero-content">
             <h1>Santorini</h1>
@@ -633,64 +805,184 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Santorini Diary</h2>
             <div class="image-gallery">
+                <!-- Prehistoric town of Akrotiri Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-1.jpg" alt="First Glimpse of Santorini" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="akrotiri-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="santorini/santorini-image-1.jpg" alt="Prehistoric town of Akrotiri view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-2.jpg" alt="Prehistoric town of Akrotiri view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('akrotiri-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('akrotiri-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="akrotiri-carousel-indicators"></div>
+                            <div class="carousel-counter" id="akrotiri-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Santorini</h3>
-                        <p>My initial impression of Santorini was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Prehistoric town of Akrotiri</h3>
+                        <p>Exploring the ancient ruins of Akrotiri was like stepping back in time. This remarkably preserved Minoan Bronze Age settlement, buried by volcanic ash, gave me goosebumps as I walked through streets that were last seen 3,600 years ago.</p>
                     </div>
                 </div>
+
+                <!-- Akrotiri -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="santorini/santorini-image-3.jpg" alt="Akrotiri" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Santorini adventure.</p>
+                        <h3>Akrotiri</h3>
+                        <p>The archaeological site of Akrotiri reveals incredible frescoes and multi-story buildings that showcase the sophisticated civilization that once thrived here before the volcanic eruption.</p>
                     </div>
                 </div>
+
+                <!-- Oia Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="oia-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="santorini/santorini-image-4.jpg" alt="Oia view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-9.jpg" alt="Oia view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-11.jpg" alt="Oia view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-18.jpg" alt="Oia view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('oia-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('oia-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="oia-carousel-indicators"></div>
+                            <div class="carousel-counter" id="oia-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Santorini's authentic character.</p>
+                        <h3>Oia</h3>
+                        <p>Oia stole my heart completely. The iconic blue-domed churches, whitewashed houses cascading down the cliff, and the most spectacular sunsets I've ever witnessed made every moment here feel like pure magic.</p>
                     </div>
                 </div>
+
+                <!-- Iconic island views Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="iconic-views-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="santorini/santorini-image-5.jpg" alt="Iconic island views 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-6.jpg" alt="Iconic island views 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('iconic-views-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('iconic-views-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="iconic-views-carousel-indicators"></div>
+                            <div class="carousel-counter" id="iconic-views-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Iconic island views</h3>
+                        <p>These are the views that made Santorini famous worldwide. Every angle offers a postcard-perfect scene that captures the essence of Greek island beauty.</p>
                     </div>
                 </div>
+
+                <!-- Ammoudi Bay -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="santorini/santorini-image-8.jpg" alt="Ammoudi Bay" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Santorini gave me many of these precious memories.</p>
+                        <h3>Ammoudi Bay</h3>
+                        <p>Walking down the winding path to Ammoudi Bay felt like descending into a hidden paradise. The tiny fishing village with its waterfront tavernas and crystal-clear waters was the perfect escape from the crowds above.</p>
                     </div>
                 </div>
+
+                <!-- Meowgical Moment -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="santorini/santorini-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="santorini/santorini-image-10.jpg" alt="Meowgical Moment" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Santorini, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Meowgical Moment</h3>
+                        <p>This furry local knew exactly where to pose for the perfect shot! The cats of Santorini seem to understand they're living in paradise and aren't shy about photobombing tourists.</p>
+                    </div>
+                </div>
+
+                <!-- Paradise found -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="santorini/santorini-image-12.jpg" alt="Paradise found" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Paradise found</h3>
+                        <p>This moment perfectly captures why Santorini feels like paradise. The combination of dramatic landscapes, azure seas, and timeless architecture creates a sense of being somewhere truly special.</p>
+                    </div>
+                </div>
+
+                <!-- Stunning scenery -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="santorini/santorini-image-13.jpg" alt="Stunning scenery" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Stunning scenery</h3>
+                        <p>The natural beauty of Santorini never ceased to amaze me. Every vista revealed another breathtaking scene that reminded me why this island is considered one of the world's most beautiful destinations.</p>
+                    </div>
+                </div>
+
+                <!-- Blue Domes Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="blue-domes-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="santorini/santorini-image-14.jpg" alt="Blue Domes view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-15.jpg" alt="Blue Domes view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('blue-domes-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('blue-domes-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="blue-domes-carousel-indicators"></div>
+                            <div class="carousel-counter" id="blue-domes-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Blue Domes</h3>
+                        <p>The iconic blue domes are the symbol of Santorini. Standing before these picture-perfect churches, I understood why they've become the most photographed architectural feature in all of Greece.</p>
+                    </div>
+                </div>
+
+                <!-- Thira Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="thira-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="santorini/santorini-image-16.jpg" alt="Thira view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="santorini/santorini-image-17.jpg" alt="Thira view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('thira-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('thira-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="thira-carousel-indicators"></div>
+                            <div class="carousel-counter" id="thira-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Thira</h3>
+                        <p>Thira (Fira), the capital of Santorini, buzzes with energy. The cliffside town offers incredible views, vibrant nightlife, and serves as the perfect base for exploring the entire island.</p>
                     </div>
                 </div>
             </div>
@@ -797,5 +1089,106 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'akrotiri-carousel',
+                'oia-carousel',
+                'iconic-views-carousel',
+                'blue-domes-carousel',
+                'thira-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

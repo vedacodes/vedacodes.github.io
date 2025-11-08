@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+            --miami-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -49,27 +49,20 @@
             line-height: 1.6;
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
+            transition: opacity 0.3s ease-in-out;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 1rem 0;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
@@ -78,34 +71,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             background: var(--primary-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
         }
 
         .nav-links a::after {
@@ -126,50 +117,12 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
-        }
-
-        .hero-collage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
-        }
-
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+            background: var(--miami-gradient);
         }
 
         .hero-content {
@@ -248,90 +201,47 @@
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: var(--transition);
         }
 
-        .description-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+        .description-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.5rem;
         }
 
-        /* Stats Grid */
-        .stats-grid {
+        /* Gallery Grid */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
+            margin-top: 3rem;
         }
 
         .gallery-item {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
         }
 
         .gallery-item:hover {
@@ -353,35 +263,14 @@
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
-            padding: 25px;
+            padding: 1.5rem;
         }
 
         .gallery-caption h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
@@ -391,23 +280,144 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-image-container {
+                height: 250px;
+            }
+
+            .description-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +426,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,76 +469,197 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
@@ -569,35 +667,21 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
+            <a href="index.html" class="logo">Veda's Travel Diary</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="miami/miami-image-1.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-2.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-3.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-4.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-5.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-6.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-1.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-2.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-3.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-4.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-5.jpg" alt="" class="collage-image">
-            <img src="miami/miami-image-6.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Miami</h1>
-            <p class="hero-subtitle">Where Caribbean Meets Cosmopolitan</p>
-            <p class="hero-description">Experience the vibrant energy of America's gateway to Latin America. From Art Deco architecture to pristine beaches, from world-class nightlife to Cuban cuisine, Miami pulses with tropical rhythm and international flair.</p>
+            <p class="hero-subtitle">Magic City</p>
+            <p class="hero-description">Where Art Deco meets tropical paradise, and every sunset paints the sky in shades of possibility. Miami is a city that never sleeps, where cultures blend and dreams come alive.</p>
         </div>
     </section>
 
@@ -605,197 +689,395 @@
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Miami Adventure</h2>
             <div class="description-card">
-                <p>Miami captivated me with its unique blend of cultures, stunning beaches, and infectious energy. The Art Deco district felt like stepping into a colorful time machine, while Little Havana transported me to Cuba. The nightlife, food scene, and beach culture create a perfect storm of excitement and relaxation.</p>
+                <h2>Miami: Where the Ocean Meets the City</h2>
+                <p>Miami isn't just a destination; it's a feeling. The moment you step into this vibrant metropolis, you're enveloped by an energy that's impossible to replicate anywhere else. From the pastel-colored Art Deco buildings of South Beach to the crystal-clear waters of the Atlantic, Miami is a sensory experience that captivates every traveler.</p>
+                <p>Whether you're snorkeling in the warm Atlantic waters, exploring the unique ecosystem of the Everglades, or watching the sunset from Key West - the southernmost point of the continental United States - Miami offers adventures that range from urban sophistication to wild natural beauty.</p>
+                <p>The city taught me that paradise isn't just about beautiful beaches; it's about the warmth of the people, the rhythm of the music flowing from every corner, and the way the ocean breeze carries dreams from one shore to another.</p>
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Photo Gallery -->
         <section class="content-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Days in Paradise</div>
+            <h2 class="section-title">Miami Through My Lens</h2>
+            <div class="gallery-grid">
+                
+                <!-- Snorkeling in the Atlantic -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-1.jpg" alt="Snorkeling in the Atlantic" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Snorkeling in the Atlantic</h3>
+                        <p>Diving into the warm, crystal-clear waters of the Atlantic Ocean was like entering another world. The marine life, the coral reefs, and the feeling of floating weightlessly under the Miami sun created unforgettable memories.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">82°F</div>
-                    <div class="stat-label">Perfect Beach Weather</div>
+
+                <!-- Miami Bayside -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-2.jpg" alt="Miami Bayside" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Miami Bayside</h3>
+                        <p>The bustling waterfront where luxury yachts dock alongside fishing boats, creating a perfect blend of glamour and authenticity that defines Miami's character.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Vibrant Energy</div>
+
+                <!-- Speed boat ride in the Atlantic Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="speedboat-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="miami/miami-image-3.jpg" alt="Speed boat ride in the Atlantic view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="miami/miami-image-8.jpg" alt="Speed boat ride in the Atlantic view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('speedboat-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('speedboat-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="speedboat-carousel-indicators"></div>
+                            <div class="carousel-counter" id="speedboat-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Speed boat ride in the Atlantic</h3>
+                        <p>Racing across the open waters with the Miami skyline as a backdrop was pure exhilaration. The wind, the spray, and the endless blue horizon made for an adventure I'll never forget.</p>
+                    </div>
                 </div>
+
+                <!-- Blue-and-yellow Macaws -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-4.jpg" alt="Blue-and-yellow Macaws" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Blue-and-yellow Macaws</h3>
+                        <p>These magnificent tropical birds are a living reminder of Miami's exotic nature. Their vibrant colors and playful personalities perfectly capture the city's colorful spirit.</p>
+                    </div>
+                </div>
+
+                <!-- Everglades -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-5.jpg" alt="Everglades" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Everglades</h3>
+                        <p>The River of Grass is a unique ecosystem unlike anywhere else on Earth. Gliding through these wetlands in an airboat, surrounded by alligators and exotic birds, was both thrilling and peaceful.</p>
+                    </div>
+                </div>
+
+                <!-- Nightlife in Miami -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-6.jpg" alt="Nightlife in Miami" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Nightlife in Miami</h3>
+                        <p>When the sun goes down, Miami truly comes alive. The neon lights, the pulsing music, and the electric energy create a nightlife experience that's legendary around the world.</p>
+                    </div>
+                </div>
+
+                <!-- Key West Southernmost Point of U.S -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="miami/miami-image-7.jpg" alt="Key West Southernmost Point of U.S" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Key West Southernmost Point of U.S</h3>
+                        <p>Standing at the southernmost point of the continental United States, just 90 miles from Cuba, was a surreal moment. The famous marker and the endless ocean view create a sense of being at the edge of adventure.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Image Gallery -->
+        <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Miami Diary</h2>
-            <div class="image-gallery">
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-1.jpg" alt="First Glimpse of Miami" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>First Glimpse of Miami</h3>
-                        <p>My initial impression of Miami was absolutely magical. Every corner held a new surprise and wonder.</p>
-                    </div>
+            <h2 class="section-title">Must-Try Miami Food</h2>
+            <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🥪</div>
+                    <h3>Cuban Sandwich</h3>
+                    <p>Miami's iconic sandwich! Ham, roasted pork, Swiss cheese, pickles, mustard on Cuban bread. Pressed and toasted. Try at Versailles or Sanguich de Miami. Authentic Cuban flavor!</p>
+                    <span class="food-price">$8-12</span>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Miami adventure.</p>
-                    </div>
+                <div class="food-card">
+                    <div class="food-icon">🦞</div>
+                    <h3>Stone Crab Claws</h3>
+                    <p>Miami specialty (Oct-May season). Sweet, succulent. Served cold with mustard sauce. Joe's Stone Crab legendary (expect waits!). Pricey but worth it once!</p>
+                    <span class="food-price">$40-60</span>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Miami's authentic character.</p>
-                    </div>
+                <div class="food-card">
+                    <div class="food-icon">🌮</div>
+                    <h3>Ceviche</h3>
+                    <p>Fresh seafood "cooked" in citrus. Miami's Latin influence shines. Ocean-fresh fish, lime, cilantro. Perfect beach lunch. Try at La Mar or Ceviche 105!</p>
+                    <span class="food-price">$15-25</span>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
-                    </div>
+                <div class="food-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Cuban Coffee (Cafecito)</h3>
+                    <p>Strong espresso with sugar. Sweet, potent, energizing! Order at ventanita (window). Colada for sharing. Essential Miami morning ritual!</p>
+                    <span class="food-price">$1-2</span>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Miami gave me many of these precious memories.</p>
-                    </div>
+                <div class="food-card">
+                    <div class="food-icon">🍰</div>
+                    <h3>Key Lime Pie</h3>
+                    <p>Florida classic! Tart, creamy, graham cracker crust. Joe's Stone Crab version famous. Tangy and refreshing. Perfect dessert after seafood!</p>
+                    <span class="food-price">$8-12</span>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="miami/miami-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Miami, I knew this place had changed me and would always hold a special place in my heart.</p>
-                    </div>
+                <div class="food-card">
+                    <div class="food-icon">🍹</div>
+                    <h3>Mojitos & Tropical Drinks</h3>
+                    <p>Miami's beach bar culture! Fresh mint mojitos, frozen daiquiris, piña coladas. South Beach bars all serve them. Sweet, refreshing, vacation vibes!</p>
+                    <span class="food-price">$12-18</span>
                 </div>
             </div>
         </section>
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Miami</h2>
+            <h2 class="section-title">Must-See in Miami</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">🏖️</div>
                     <h3>South Beach</h3>
-                    <p>World-famous beach with Art Deco buildings, colorful lifeguard stands, and beautiful people.</p>
+                    <p>Iconic Art Deco district! White sand, turquoise water, beautiful people. Ocean Drive restaurants and bars. Lifeguard stands photogenic. Busy but must-experience Miami vibe!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🎨</div>
                     <h3>Wynwood Walls</h3>
-                    <p>Outdoor museum of street art with incredible murals from international artists.</p>
+                    <p>Street art paradise! Massive murals by world-famous artists. Instagram heaven. Free to walk around. Hip breweries and restaurants nearby. Best during day, vibrant at night!</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>Art Deco District</h3>
-                    <p>Largest collection of Art Deco architecture in the world. Take a guided walking tour.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🇨🇺</div>
+                    <div class="tip-icon">🌴</div>
                     <h3>Little Havana</h3>
-                    <p>Cuban cultural heart with authentic food, music, and cigar shops on Calle Ocho.</p>
+                    <p>Cuban culture heartbeat! Calle Ocho (8th Street) main strip. Cigar shops, domino parks, Latin music. Viernes Culturales (last Friday) festival. Authentic cultural experience!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🚤</div>
-                    <h3>Biscayne Bay</h3>
-                    <p>Boat tours to see celebrity homes, downtown skyline, and clear blue waters.</p>
+                    <h3>Boat Tours & Biscayne Bay</h3>
+                    <p>See celebrity homes on Star Island! Sunset cruises, speedboat tours. Beautiful bay views. Venetian Islands scenic. Various tour operators at Bayside Marketplace.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🌃</div>
-                    <h3>Rooftop Bars</h3>
-                    <p>Sky-high cocktails with panoramic city and ocean views. Perfect for Miami sunsets.</p>
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Vizcaya Museum & Gardens</h3>
+                    <p>Italian Renaissance villa on Biscayne Bay. Gorgeous gardens, European architecture. Popular wedding venue. Great for photos. Allow 2-3 hours. $25 entry.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌊</div>
+                    <h3>Key Biscayne</h3>
+                    <p>Quieter beaches than South Beach. Crandon Park Beach excellent. Bill Baggs park lighthouse. Great for families. Bike rentals available. More relaxed Miami beach experience!</p>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Booking Tips Section -->
+        <!-- Best Time to Visit Section -->
         <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for winter season. Book beach clubs and popular restaurants early. Hurricane season affects summer prices.</p>
+            <h2 class="section-title">Best Time to Visit Miami</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Winter (December-March)</h3>
+                        <div class="season-temp">18-26°C</div>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>South Beach: Iconic, walking distance to beach and nightlife. Downtown: Business district, cultural attractions. Coral Gables: Upscale, quieter atmosphere.</p>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Perfect beach weather, low humidity, minimal rain. Peak season = high prices, crowded beaches. Art Basel (December), Ultra Music Festival (March). Book early!</p>
+                        <ul class="season-pros">
+                            <li>Ideal beach conditions</li>
+                            <li>Major events and festivals</li>
+                            <li>Escape northern winter</li>
+                            <li>Perfect for outdoor activities</li>
+                        </ul>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Visit during summer for lower hotel rates. Use ride-sharing and public transport. Happy hour dining. Free beach access and walking tours.</p>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌺</div>
+                        <h3>Spring (April-May)</h3>
+                        <div class="season-temp">22-29°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Great Value:</strong> Still excellent weather, fewer crowds. Lower prices post-spring break. Warm ocean water. Humidity rising but manageable. Perfect shoulder season!</p>
+                        <ul class="season-pros">
+                            <li>Lower accommodation rates</li>
+                            <li>Less crowded beaches</li>
+                            <li>Great beach weather</li>
+                            <li>Pre-summer deals</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Local Cuisine Section -->
-        <section class="content-section">
-            <h2 class="section-title">What to Eat in Miami</h2>
-            <div class="cuisine-grid">
-                <div class="food-card">
-                    <div class="food-icon">🇨🇺</div>
-                    <h3>Cuban Sandwich</h3>
-                    <p>Pressed sandwich with roast pork, ham, Swiss cheese, pickles, and mustard. Miami specialty.</p>
-                    <span class="food-price">$8-12</span>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Summer (June-September)</h3>
+                        <div class="season-temp">26-33°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Hot & Humid:</strong> Hurricane season! Brief afternoon storms. Very hot and sticky. Lowest prices. Good for pool days and indoor attractions. Monitor weather forecasts closely!</p>
+                        <ul class="season-pros">
+                            <li>Cheapest rates (40-50% off)</li>
+                            <li>Fewer tourists</li>
+                            <li>Warm water temps</li>
+                            <li>Summer sales and deals</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🦐</div>
-                    <h3>Stone Crab</h3>
-                    <p>Local delicacy available October through May. Sweet, tender meat with mustard sauce.</p>
-                    <span class="food-price">$25-45</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🥭</div>
-                    <h3>Tropical Fruits</h3>
-                    <p>Fresh mango, papaya, and coconut from local vendors. Perfect for hot Miami weather.</p>
-                    <span class="food-price">$3-7</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍹</div>
-                    <h3>Mojitos</h3>
-                    <p>Classic Cuban cocktail with rum, mint, lime, and soda water. Refreshing beach drink.</p>
-                    <span class="food-price">$8-15</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🐟</div>
-                    <h3>Ceviche</h3>
-                    <p>Fresh fish cured in citrus with peppers and onions. Light, refreshing Latin American dish.</p>
-                    <span class="food-price">$10-18</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Cuban Coffee</h3>
-                    <p>Strong espresso with sugar, often called "cafecito." Essential Miami fuel.</p>
-                    <span class="food-price">$2-4</span>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (October-November)</h3>
+                        <div class="season-temp">23-29°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Improving Weather:</strong> Hurricane risk decreasing. Still warm, less humid than summer. Good deals before winter rush. November excellent value. Transitional but pleasant!</p>
+                        <ul class="season-pros">
+                            <li>Moderate prices</li>
+                            <li>Decreasing humidity</li>
+                            <li>Fewer crowds</li>
+                            <li>Ocean still warm</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer) {
+                indicatorsContainer.innerHTML = '';
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.onclick = () => goToSlide(carouselId, i);
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'speedboat-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>

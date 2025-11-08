@@ -134,7 +134,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             filter: brightness(0.8);
             transition: var(--transition);
         }
@@ -182,92 +182,331 @@
         }
 
         /* Main Content */
-        .main-content {
+        main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        /* Section Styles */
-        .section {
-            margin-bottom: 60px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* Section Styling */
+        .content-section {
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
+            background: var(--bangkok-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 30px;
-            color: var(--text-primary);
-            position: relative;
-            display: inline-block;
+            text-align: center;
         }
 
-        .section-title::after {
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-card::before {
             content: '';
             position: absolute;
-            bottom: -8px;
+            top: 0;
             left: 0;
-            width: 60px;
+            right: 0;
             height: 4px;
             background: var(--bangkok-gradient);
-            border-radius: 2px;
         }
 
-        .section-content {
-            color: var(--text-secondary);
+        .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 30px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
 
-        /* Photo Gallery Grid */
-        .gallery-grid {
+        /* Image Gallery */
+        .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
         }
 
         .gallery-item {
-            position: relative;
+            background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-light);
             transition: var(--transition);
-            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
         }
 
         .gallery-image {
             width: 100%;
             height: auto;
-            object-fit: contain;
+            display: block;
             transition: var(--transition);
-            border-radius: var(--border-radius);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
         .gallery-item:hover .gallery-image {
             transform: scale(1.05);
         }
 
-        .gallery-caption {
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,107,157,0.3), rgba(255,217,61,0.3));
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 0;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
-            color: var(--text-light);
-            padding: 20px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 500;
+            z-index: 10;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            border-radius: var(--border-radius);
+            padding: 25px;
             text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .info-card-icon {
+            font-size: 2.5rem;
+            background: var(--bangkok-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .info-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .info-card-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* List Styles */
+        .highlight-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .highlight-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-list li:before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Loading Animation */
+        body.loaded {
+            opacity: 1;
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .content-section:nth-child(1) { animation-delay: 0.1s; }
+        .content-section:nth-child(2) { animation-delay: 0.2s; }
+        .content-section:nth-child(3) { animation-delay: 0.3s; }
+        .content-section:nth-child(4) { animation-delay: 0.4s; }
+        .content-section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Info Cards */
@@ -354,11 +593,11 @@
                 padding: 0 15px;
             }
             
-            .main-content {
+            main {
                 padding: 40px 15px;
             }
             
-            .section {
+            .description-card {
                 padding: 25px;
             }
             
@@ -366,7 +605,7 @@
                 font-size: 1.8rem;
             }
             
-            .gallery-grid {
+            .image-gallery {
                 grid-template-columns: 1fr;
             }
             
@@ -396,33 +635,6 @@
             .photo-collage {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(6, 1fr);
-            }
-        }
-
-        /* Loading Animation */
-        body.loaded {
-            opacity: 1;
-        }
-
-        .section {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
@@ -467,58 +679,148 @@
     </section>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <!-- Must See Places Section -->
-        <section class="section">
-            <h2 class="section-title">Must See Places in Bangkok</h2>
-            <div class="section-content">
-                <p>Bangkok offers an incredible mix of ancient temples, modern skyscrapers, bustling markets, and vibrant street life. Here are the essential places that capture the soul of this magnificent city.</p>
+    <main>
+        <!-- Description Section -->
+        <section class="content-section">
+            <h2 class="section-title">My Bangkok Adventure</h2>
+            <div class="description-card">
+                <p>Bangkok overwhelmed me in the most beautiful way possible. The city is a sensory explosion - from the golden temples that gleam in the sunlight to the bustling street markets filled with incredible aromas. Getting lost in the maze of tuk-tuks, boats, and floating markets showed me a side of travel I'd never experienced before. This city changed my perspective on organized chaos and taught me that some of the best adventures happen when you least expect them.</p>
             </div>
-            
-            <div class="gallery-grid">
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Pages from My Bangkok Diary</h2>
+            <div class="image-gallery">
+                <!-- Grand Palace -->
                 <div class="gallery-item">
-                    <img src="bangkok/grand-palace.jpg" alt="Grand Palace" class="gallery-image">
-                    <div class="gallery-caption">Grand Palace - The heart of Thai royalty and architectural magnificence</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/grand-palace.jpg" alt="Grand Palace" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Grand Palace</h3>
+                        <p>Standing before the Grand Palace felt like stepping into a fairy tale. The intricate golden details and towering spires left me speechless - this is where I truly understood the magnificence of Thai craftsmanship.</p>
+                    </div>
                 </div>
+
+                <!-- Wat Arun (Temple of Dawn) Carousel -->
                 <div class="gallery-item">
-                    <img src="bangkok/wat-pho.jpg" alt="Wat Pho Temple" class="gallery-image">
-                    <div class="gallery-caption">Wat Pho - Home to the famous Reclining Buddha</div>
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="watarun-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="bangkok/temple-of-dawn.jpg" alt="Wat Arun Temple of Dawn" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="bangkok/wat-arun.jpg" alt="Wat Arun closeup" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('watarun-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('watarun-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="watarun-carousel-indicators"></div>
+                            <div class="carousel-counter" id="watarun-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Wat Arun (Temple of Dawn)</h3>
+                        <p>Watching the sunrise from Wat Arun across the Chao Phraya River was magical. The temple's porcelain-decorated spires caught the morning light beautifully - definitely worth the early wake-up call.</p>
+                    </div>
                 </div>
+
+                <!-- Wat Pho Temple -->
                 <div class="gallery-item">
-                    <img src="bangkok/temple-of-dawn.jpg" alt="Temple of Dawn" class="gallery-image">
-                    <div class="gallery-caption">Wat Arun - The Temple of Dawn along the Chao Phraya River</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/wat-pho.jpg" alt="Wat Pho Temple" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Wat Pho (Temple of the Reclining Buddha)</h3>
+                        <p>The massive Reclining Buddha at Wat Pho took my breath away. At 46 meters long, it's impossible to capture in a single photo, but the serenity it radiates filled the entire temple complex.</p>
+                    </div>
                 </div>
+
+                <!-- Sky Bar -->
                 <div class="gallery-item">
-                    <img src="bangkok/sky-bar.jpg" alt="Sky Bar Bangkok" class="gallery-image">
-                    <div class="gallery-caption">Sky Bar - Breathtaking city views from the 63rd floor</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/sky-bar.jpg" alt="Sky Bar Bangkok" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Sky Bar Bangkok</h3>
+                        <p>Sipping cocktails 63 floors above Bangkok as the city lights twinkled below was surreal. The 360-degree views reminded me why Bangkok is called the "City of Angels" - it truly looked heavenly from up there.</p>
+                    </div>
                 </div>
+
+                <!-- Floating Markets -->
                 <div class="gallery-item">
-                    <img src="bangkok/jim-thompson-house.jpg" alt="Jim Thompson House" class="gallery-image">
-                    <div class="gallery-caption">Jim Thompson House - Traditional Thai architecture and silk heritage</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/floating-market.jpg" alt="Floating Markets" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Floating Markets</h3>
+                        <p>Navigating the floating markets by boat was like traveling back in time. Vendors paddling their colorful boats filled with fresh fruits and local delicacies created such an authentic Thai experience.</p>
+                    </div>
                 </div>
+
+                <!-- Chatuchak Market -->
                 <div class="gallery-item">
-                    <img src="bangkok/floating-market.jpg" alt="Floating Market" class="gallery-image">
-                    <div class="gallery-caption">Floating Markets - Traditional trading along the canals</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/chatuchak-market.jpg" alt="Chatuchak Weekend Market" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Chatuchak Weekend Market</h3>
+                        <p>Getting lost for hours in Chatuchak's 15,000 stalls was an adventure in itself. From vintage finds to street food, this market has everything you could imagine and more.</p>
+                    </div>
                 </div>
+
+                <!-- Khao San Road -->
                 <div class="gallery-item">
-                    <img src="bangkok/chatuchak-market.jpg" alt="Chatuchak Market" class="gallery-image">
-                    <div class="gallery-caption">Chatuchak Market - Weekend market paradise with endless shopping</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/khao-san-road.jpg" alt="Khao San Road" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Khao San Road</h3>
+                        <p>The energy of Khao San Road is infectious! Street food, live music, and travelers from every corner of the world - this legendary backpacker hub showed me the social side of solo travel.</p>
+                    </div>
                 </div>
+
+                <!-- Chinatown Bangkok -->
                 <div class="gallery-item">
-                    <img src="bangkok/khao-san-road.jpg" alt="Khao San Road" class="gallery-image">
-                    <div class="gallery-caption">Khao San Road - Backpacker hub with vibrant street life</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/chinatown.jpg" alt="Chinatown Bangkok" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Chinatown Bangkok</h3>
+                        <p>Bangkok's Chinatown at night is a food lover's paradise. The neon signs, sizzling woks, and incredible aromas created an atmosphere that felt both exotic and comforting.</p>
+                    </div>
                 </div>
+
+                <!-- Jim Thompson House -->
                 <div class="gallery-item">
-                    <img src="bangkok/chinatown.jpg" alt="Chinatown Bangkok" class="gallery-image">
-                    <div class="gallery-caption">Chinatown - Bustling district with authentic street food and culture</div>
+                    <div class="gallery-image-container">
+                        <img src="bangkok/jim-thompson-house.jpg" alt="Jim Thompson House" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Jim Thompson House</h3>
+                        <p>The traditional Thai architecture and silk heritage at Jim Thompson House was fascinating. Learning about this American's impact on Thai silk industry while surrounded by beautiful traditional buildings was enlightening.</p>
+                    </div>
+                </div>
+
+                <!-- Lumpini Park -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="bangkok/lumpini-park.jpg" alt="Lumpini Park" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Lumpini Park</h3>
+                        <p>Finding this green oasis in the heart of Bangkok was like discovering a secret. Watching locals do tai chi at sunrise while monitor lizards basked by the lake gave me a peaceful moment in this busy city.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- When to Book Hotel Section -->
-        <section class="section">
-            <h2 class="section-title">When to Book Your Hotel</h2>
-            <div class="section-content">
+        <section class="content-section">
+            <h2 class="section-title">When & Where to Book Hotels</h2>
+            <div class="description-card">
                 <p>Bangkok is a year-round destination, but timing your visit can make a significant difference in both experience and budget. Here's what you need to know about the best times to visit and book accommodation.</p>
             </div>
             
@@ -564,9 +866,9 @@
         </section>
 
         <!-- What to Try Eating Section -->
-        <section class="section">
+        <section class="content-section">
             <h2 class="section-title">What to Try Eating in Bangkok</h2>
-            <div class="section-content">
+            <div class="description-card">
                 <p>Bangkok is a food lover's paradise, offering everything from street food stalls to Michelin-starred restaurants. The city's culinary scene reflects its rich cultural diversity and passion for bold flavors.</p>
             </div>
             
@@ -583,9 +885,9 @@
         </section>
 
         <!-- Neighborhood Guide Section -->
-        <section class="section">
+        <section class="content-section">
             <h2 class="section-title">Bangkok Neighborhoods Guide</h2>
-            <div class="section-content">
+            <div class="description-card">
                 <p>Each district of Bangkok has its own personality and attractions. Understanding the different areas will help you make the most of your visit.</p>
             </div>
             
@@ -630,9 +932,9 @@
         </section>
 
         <!-- Travel Tips Section -->
-        <section class="section">
+        <section class="content-section">
             <h2 class="section-title">Essential Bangkok Travel Tips</h2>
-            <div class="section-content">
+            <div class="description-card">
                 <p>Make your Bangkok experience smoother with these practical tips gathered from exploring this incredible city.</p>
             </div>
             
@@ -685,7 +987,7 @@
         }, observerOptions);
 
         // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
+        document.querySelectorAll('.content-section').forEach(section => {
             observer.observe(section);
         });
 
@@ -697,6 +999,113 @@
             
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'watarun-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
             });
         });
     </script>

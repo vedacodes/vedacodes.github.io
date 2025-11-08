@@ -110,13 +110,13 @@
 
         /* Hero Section */
         .hero {
-            background: var(--rome-gradient);
-            color: var(--text-light);
-            text-align: center;
-            padding: 160px 20px 100px;
+            height: 100vh;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
-            margin-top: 70px;
+            background: #000;
         }
 
         /* Image Collage Background */
@@ -126,66 +126,66 @@
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
+            display: flex;
+        }
+
+        .hero-left {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transform: skewX(-8deg);
+            margin-left: -5%;
+        }
+
+        .hero-right {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transform: skewX(-8deg);
+            margin-right: -5%;
         }
 
         .collage-image {
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
+            transform: skewX(8deg) scale(1.3);
+            filter: brightness(0.7) saturate(1.2) contrast(1.1);
         }
 
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
+        .hero-left .collage-image,
+        .hero-right .collage-image {
+            animation: kenBurns 20s ease-in-out infinite;
+        }
+
+        .hero-left .collage-image:nth-child(1) { animation-delay: 0s; }
+        .hero-left .collage-image:nth-child(2) { animation-delay: 4s; }
+        .hero-left .collage-image:nth-child(3) { animation-delay: 8s; }
+        .hero-left .collage-image:nth-child(4) { animation-delay: 12s; }
+        .hero-left .collage-image:nth-child(5) { animation-delay: 16s; }
+
+        .hero-right .collage-image:nth-child(1) { animation-delay: 2s; }
+        .hero-right .collage-image:nth-child(2) { animation-delay: 6s; }
+        .hero-right .collage-image:nth-child(3) { animation-delay: 10s; }
+        .hero-right .collage-image:nth-child(4) { animation-delay: 14s; }
+        .hero-right .collage-image:nth-child(5) { animation-delay: 18s; }
+
+        @keyframes kenBurns {
+            0% { opacity: 0; transform: skewX(8deg) scale(1.3); }
+            5% { opacity: 1; }
+            20% { opacity: 1; transform: skewX(8deg) scale(1.4); }
+            25% { opacity: 0; }
+            100% { opacity: 0; transform: skewX(8deg) scale(1.3); }
         }
 
         @keyframes subtleFloat {
             0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
+                transform: translateY(0);
             }
             50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
+                transform: translateY(-10px);
             }
-        }
-
-        .collage-image:nth-child(1) {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
-        }
-
-        .collage-image:nth-child(2) {
-            grid-column: 3 / 4;
-            grid-row: 1 / 2;
-        }
-
-        .collage-image:nth-child(3) {
-            grid-column: 4 / 5;
-            grid-row: 1 / 2;
-        }
-
-        .collage-image:nth-child(4) {
-            grid-column: 3 / 5;
-            grid-row: 2 / 4;
-        }
-
-        .collage-image:nth-child(5) {
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-        }
-
-        .collage-image:nth-child(6) {
-            grid-column: 2 / 3;
-            grid-row: 3 / 4;
         }
 
         .hero::before {
@@ -195,54 +195,62 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.3) 0%, rgba(139, 69, 19, 0.2) 50%, rgba(160, 82, 45, 0.3) 100%);
             z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.3) 90%);
-            z-index: 2;
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
-            z-index: 3;
-            max-width: 800px;
-            margin: 0 auto;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 900px;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: white;
+            animation: slideInUp 1s ease-out 0.5s both;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: clamp(1.2rem, 3vw, 2rem);
             font-weight: 300;
-            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: white;
+            animation: slideInUp 1s ease-out 0.7s both;
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             line-height: 1.8;
+            opacity: 0.8;
+            color: white;
+            animation: slideInUp 1s ease-out 0.9s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         }
 
         /* Main Content */
@@ -353,7 +361,110 @@
         }
 
         .gallery-item:hover .image-overlay {
+            opacity: 0;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
             opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
         }
 
         .gallery-caption {
@@ -869,12 +980,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="rome/rome-image-1.jpg" alt="" class="collage-image">
-            <img src="rome/rome-image-2.jpg" alt="" class="collage-image">
-            <img src="rome/rome-image-3.jpg" alt="" class="collage-image">
-            <img src="rome/rome-image-4.jpg" alt="" class="collage-image">
-            <img src="rome/rome-image-1.jpg" alt="" class="collage-image">
-            <img src="rome/rome-image-2.jpg" alt="" class="collage-image">
+            <div class="hero-left">
+                <img src="rome/rome-image-1.jpg" alt="Rome Colosseum" class="collage-image">
+                <img src="rome/rome-image-3.jpg" alt="Rome Architecture" class="collage-image">
+                <img src="rome/rome-image-5.jpg" alt="Rome Streets" class="collage-image">
+                <img src="rome/rome-image-10.jpg" alt="Rome Landmarks" class="collage-image">
+                <img src="rome/rome-image-12.jpg" alt="Rome Views" class="collage-image">
+            </div>
+            <div class="hero-right">
+                <img src="rome/rome-image-2.jpg" alt="Rome City" class="collage-image">
+                <img src="rome/rome-image-4.jpg" alt="Rome Culture" class="collage-image">
+                <img src="rome/rome-image-6.jpg" alt="Rome Beauty" class="collage-image">
+                <img src="rome/rome-image-14.jpg" alt="Rome Vatican" class="collage-image">
+                <img src="rome/rome-image-16.jpg" alt="Rome History" class="collage-image">
+            </div>
         </div>
         <div class="hero-content">
             <h1>When in Rome...</h1>
@@ -915,10 +1034,29 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Rome Diary</h2>
             <div class="image-gallery">
+                <!-- The Colosseum Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="rome/rome-image-1.jpg" alt="My first glimpse of the Colosseum" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="colosseum-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-1.jpg" alt="The Colosseum view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-10.jpg" alt="The Colosseum view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-11.jpg" alt="The Colosseum view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-12.jpg" alt="The Colosseum view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('colosseum-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('colosseum-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="colosseum-carousel-indicators"></div>
+                            <div class="carousel-counter" id="colosseum-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>The Colosseum</h3>
@@ -926,10 +1064,23 @@
                     </div>
                 </div>
 
+                <!-- Roman Streets Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="rome/rome-image-2.jpg" alt="Getting lost in Roman streets" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="streets-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-2.jpg" alt="Roman Streets view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-17.jpg" alt="Roman Streets view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('streets-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('streets-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="streets-carousel-indicators"></div>
+                            <div class="carousel-counter" id="streets-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>Roman Streets</h3>
@@ -937,10 +1088,23 @@
                     </div>
                 </div>
 
+                <!-- The Pantheon Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="rome/rome-image-3.jpg" alt="Peaceful moment at the Pantheon" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="pantheon-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-3.jpg" alt="The Pantheon view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-16.jpg" alt="The Pantheon view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('pantheon-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('pantheon-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="pantheon-carousel-indicators"></div>
+                            <div class="carousel-counter" id="pantheon-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>The Pantheon</h3>
@@ -948,14 +1112,89 @@
                     </div>
                 </div>
 
+                <!-- Castel Sant'Angelo Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="rome/rome-image-4.jpg" alt="Watching sunrise from Castel Sant'Angelo" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="castel-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-4.jpg" alt="Castel Sant'Angelo view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-5.jpg" alt="Castel Sant'Angelo view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-6.jpg" alt="Castel Sant'Angelo view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('castel-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('castel-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="castel-carousel-indicators"></div>
+                            <div class="carousel-counter" id="castel-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>Castel Sant'Angelo</h3>
                         <p>Woke up early to catch the sunrise from Castel Sant'Angelo. Watching Rome wake up slowly while the Tiber reflected the golden light - this is why I travel. These quiet moments between the chaos.</p>
+                    </div>
+                </div>
+
+                <!-- Navona Square Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="navona-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-7.jpg" alt="Navona Square view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-8.jpg" alt="Navona Square view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('navona-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('navona-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="navona-carousel-indicators"></div>
+                            <div class="carousel-counter" id="navona-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Navona Square</h3>
+                        <p>Spent hours people-watching in this magnificent square. The baroque fountains and street artists created such a lively atmosphere - it felt like being in an open-air theater.</p>
+                    </div>
+                </div>
+
+                <!-- Trevi Fountain -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="rome/rome-image-9.jpg" alt="Trevi Fountain" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Trevi Fountain</h3>
+                        <p>Made my wish and tossed a coin into the Trevi Fountain. The baroque masterpiece was even more breathtaking in person, and I spent ages admiring the intricate sculptures.</p>
+                    </div>
+                </div>
+
+                <!-- Roman Forum Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="forum-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="rome/rome-image-14.jpg" alt="Roman Forum view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="rome/rome-image-15.jpg" alt="Roman Forum view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('forum-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('forum-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="forum-carousel-indicators"></div>
+                            <div class="carousel-counter" id="forum-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Roman Forum</h3>
+                        <p>Walking through the ancient Roman Forum felt like time travel. Standing where Caesar once walked, surrounded by ruins that have witnessed 2000 years of history - absolutely mind-blowing.</p>
                     </div>
                 </div>
             </div>
@@ -1229,6 +1468,118 @@
             
             img.addEventListener('mouseleave', () => {
                 img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'colosseum-carousel',
+                'streets-carousel', 
+                'pantheon-carousel',
+                'castel-carousel',
+                'navona-carousel',
+                'forum-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
             });
         });
     </script>

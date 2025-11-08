@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venice - Floating City | Veda's Travel Diary</title>
+    <title>Venice - City of Canals | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #0077BE 0%, #89CFF0 100%);
+            --venice-gradient: linear-gradient(135deg, #00CED1 0%, #1E90FF 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,15 +51,16 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Navigation */
-        nav {
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
@@ -67,14 +68,16 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 15px 0;
             box-shadow: var(--shadow-light);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -82,217 +85,318 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            background: var(--primary-gradient);
+            background: var(--venice-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 25px;
             transition: var(--transition);
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            background: var(--venice-gradient);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            background: var(--venice-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-light);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--venice-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 120px 20px 80px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
         }
 
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .hero-collage {
+        /* Travel Collage Background */
+        .hero-travel-collage {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
             gap: 2px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
-        .collage-image {
+        .travel-collage-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
+            transition: opacity 0.5s ease-in-out;
+            filter: brightness(0.85) contrast(1.15) saturate(1.3);
+            animation: gentleFloat 10s ease-in-out infinite;
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .collage-image:nth-child(even) {
+        .collage-cell {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .travel-collage-image:nth-child(odd) {
             animation-direction: reverse;
-            animation-delay: -2s;
+            animation-delay: -3s;
         }
 
-        @keyframes subtleFloat {
+        /* Enhanced Grid Layout for More Images */
+        .collage-cell:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .collage-cell:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .collage-cell:nth-child(3) {
+            grid-column: 4 / 6;
+            grid-row: 1 / 2;
+        }
+
+        .collage-cell:nth-child(4) {
+            grid-column: 6 / 7;
+            grid-row: 1 / 3;
+        }
+
+        .collage-cell:nth-child(5) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .collage-cell:nth-child(6) {
+            grid-column: 4 / 5;
+            grid-row: 2 / 4;
+        }
+
+        .collage-cell:nth-child(7) {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+        }
+
+        .collage-cell:nth-child(8) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 5;
+        }
+
+        .collage-cell:nth-child(9) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        .collage-cell:nth-child(10) {
+            grid-column: 3 / 4;
+            grid-row: 3 / 5;
+        }
+
+        .collage-cell:nth-child(11) {
+            grid-column: 5 / 7;
+            grid-row: 3 / 4;
+        }
+
+        .collage-cell:nth-child(12) {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+        }
+
+        .collage-cell:nth-child(13) {
+            grid-column: 4 / 5;
+            grid-row: 4 / 6;
+        }
+
+        .collage-cell:nth-child(14) {
+            grid-column: 5 / 6;
+            grid-row: 4 / 5;
+        }
+
+        .collage-cell:nth-child(15) {
+            grid-column: 6 / 7;
+            grid-row: 4 / 6;
+        }
+
+        .collage-cell:nth-child(16) {
+            grid-column: 1 / 3;
+            grid-row: 5 / 6;
+        }
+
+        .collage-cell:nth-child(17) {
+            grid-column: 3 / 4;
+            grid-row: 5 / 6;
+        }
+
+        .collage-cell:nth-child(18) {
+            grid-column: 5 / 6;
+            grid-row: 5 / 6;
+        }
+
+        @keyframes gentleFloat {
             0%, 100% {
                 transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
+                filter: brightness(0.85) contrast(1.15) saturate(1.3);
             }
             50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
+                transform: scale(1.03) rotate(0.3deg);
+                filter: brightness(0.9) contrast(1.2) saturate(1.4);
             }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,206,209,0.2) 0%, rgba(30,144,255,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
+            z-index: 3;
             max-width: 800px;
-            padding: 0 2rem;
+            margin: 0 auto;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 30px;
+            opacity: 1;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 80px 40px;
         }
 
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 2.5rem;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            margin-bottom: 50px;
+            background: var(--venice-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .description-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin: 50px 0;
         }
 
         .stat-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
@@ -301,27 +405,24 @@
         }
 
         .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
         }
 
         .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            background: var(--city-gradient);
+            background: var(--venice-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
 
         .stat-label {
-            font-size: 0.9rem;
             color: var(--text-secondary);
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
         }
 
         /* Image Gallery */
@@ -338,9 +439,9 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
         }
 
         .gallery-item:hover {
@@ -372,10 +473,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+            background: linear-gradient(45deg, rgba(44,62,80,0.3), rgba(52,152,219,0.3));
             opacity: 0;
             transition: var(--transition);
             border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .gallery-item:hover .image-overlay {
@@ -400,18 +504,62 @@
             line-height: 1.6;
         }
 
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--venice-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            background: var(--venice-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
         /* Travel Tips Grid */
         .travel-tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -425,188 +573,258 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             color: var(--text-primary);
         }
 
         .tip-card p {
             color: var(--text-secondary);
+            font-size: 0.95rem;
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+
             .nav-links {
-                display: none;
+                gap: 15px;
             }
-            
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .hero {
+                padding: 100px 20px 40px;
+            }
+
             .hero-content {
-                padding: 0 1rem;
+                padding: 40px 30px;
             }
-            
+
             main {
-                padding: 2rem 1rem;
+                padding: 60px 20px;
             }
-            
+
+            .content-section {
+                margin-bottom: 60px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
             .description-card {
-                padding: 2rem;
+                padding: 30px 25px;
             }
-            
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .travel-tips-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-caption {
+                padding: 20px;
+            }
+
+            .quote-section {
+                padding: 40px 25px;
+            }
+
             .image-gallery {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
+
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
-            
-            .collage-container {
-                opacity: 0.2;
+
+            .hero-description {
+                font-size: 1rem;
             }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .location-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="logo">Veda's Travel Diary</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#destinations">Destinations</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Chicago, USA
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i> Back to Travel Diary
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Venice, Italy
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="venice/venice-image-1.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-2.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-3.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-4.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-5.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-6.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-7.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-1.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-2.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-3.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-4.jpg" alt="" class="collage-image">
-            <img src="venice/venice-image-5.jpg" alt="" class="collage-image">
+        <div class="hero-travel-collage">
+            <!-- Each cell contains multiple images that will rotate -->
+            <div class="collage-cell" data-cell="1">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="2">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="3">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="4">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="5">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="6">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="7">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="8">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="9">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="10">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="11">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="12">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="13">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="14">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="15">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="16">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-6.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="17">
+                <img src="venice/venice-image-7.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-1.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-2.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
+            
+            <div class="collage-cell" data-cell="18">
+                <img src="venice/venice-image-3.jpg" alt="" class="travel-collage-image">
+                <img src="venice/venice-image-4.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+                <img src="venice/venice-image-5.jpg" alt="" class="travel-collage-image" style="opacity: 0;">
+            </div>
         </div>
         <div class="hero-content">
-            <h1>Venice</h1>
-            <p class="hero-subtitle">Where Romance Flows Like Water</p>
-            <p class="hero-description">Glide through the magical floating city built on lagoon islands. Venice's canals, bridges, and palaces create an otherworldly atmosphere where every corner reveals architectural marvels and romantic vistas.</p>
+            <h1>Venice, City of Canals</h1>
+            <p class="hero-subtitle">Floating Dreams & Endless Romance</p>
+            <p class="hero-description">Step into a city that defies reality, where gondolas glide through narrow canals and every corner reveals centuries of history. Venice is a living masterpiece, a magical labyrinth of waterways, bridges, and timeless beauty.</p>
         </div>
     </section>
 
@@ -614,9 +832,9 @@
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Venice Adventure</h2>
+            <h2 class="section-title">My Venetian Adventure</h2>
             <div class="description-card">
-                <p>Venice cast an immediate spell on me. There's nothing quite like arriving by boat and seeing the city rise from the lagoon. Every bridge crossing revealed new perspectives, every gondola ride felt like a dream. Despite the crowds, Venice maintains its magic - it's a city unlike anywhere else on Earth.</p>
+                <p>Venice stole my heart with its impossible beauty and dreamlike atmosphere. Getting lost in its maze of canals and bridges felt like stepping into a living painting. From the grandeur of St. Mark's Square to the colorful houses of Burano, every moment was pure magic. The gentle lapping of water against ancient stones, the golden light reflecting off canal waters, and the timeless romance that permeates every corner - Venice is a city that exists outside of time, a floating dream that feels too beautiful to be real.</p>
             </div>
         </section>
 
@@ -625,81 +843,144 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">4</div>
-                    <div class="stat-label">Days Floating</div>
+                    <div class="stat-label">Days of Wonder</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">400+</div>
-                    <div class="stat-label">Bridges</div>
+                    <div class="stat-number">118</div>
+                    <div class="stat-label">Small Islands</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Romantic Magic</div>
+                    <div class="stat-label">Magical Moments</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Venice Diary</h2>
+            <h2 class="section-title">Venice Through My Eyes</h2>
             <div class="image-gallery">
+                <!-- Grand Canal Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-1.jpg" alt="First Glimpse of Venice" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="grand-canal-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="venice/venice-image-1.jpg" alt="Grand Canal view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-20.jpg" alt="Grand Canal view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('grand-canal-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('grand-canal-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="grand-canal-carousel-indicators"></div>
+                            <div class="carousel-counter" id="grand-canal-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Venice</h3>
-                        <p>My initial impression of Venice was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Grand Canal</h3>
+                        <p>The main artery of Venice, where palaces line the waterway like a grand outdoor museum. Riding a vaporetto down this iconic canal at sunset, watching the light dance on the water and illuminate the ancient facades, was pure magic.</p>
                     </div>
                 </div>
+
+                <!-- St Mark's Basilica -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="venice/venice-image-2.jpg" alt="St Mark's Basilica" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Venice adventure.</p>
+                        <h3>St Mark's Basilica</h3>
+                        <p>The crown jewel of Venice, this Byzantine masterpiece took my breath away. The golden mosaics inside seemed to glow with their own light, creating an atmosphere of otherworldly beauty and spiritual awe.</p>
                     </div>
                 </div>
+
+                <!-- Grand Canal 2 Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="grand-canal2-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="venice/venice-image-3.jpg" alt="Grand Canal 2 view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-4.jpg" alt="Grand Canal 2 view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('grand-canal2-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('grand-canal2-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="grand-canal2-carousel-indicators"></div>
+                            <div class="carousel-counter" id="grand-canal2-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Venice's authentic character.</p>
+                        <h3>Grand Canal Views</h3>
+                        <p>Different perspectives of Venice's most famous waterway revealed new beauty at every turn. Each bridge offered a unique vantage point, each curve unveiled another architectural masterpiece reflected in the gentle waters.</p>
                     </div>
                 </div>
+
+                <!-- Burano Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="burano-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="venice/venice-image-6.jpg" alt="Burano view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-7.jpg" alt="Burano view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-22.jpg" alt="Burano view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-24.jpg" alt="Burano view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('burano-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('burano-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="burano-carousel-indicators"></div>
+                            <div class="carousel-counter" id="burano-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Burano</h3>
+                        <p>This rainbow-colored island was like stepping into a fairytale. The vibrant houses, each painted in a different brilliant hue, reflected in the calm waters created the most joyful and photogenic scene I've ever witnessed.</p>
                     </div>
                 </div>
+
+                <!-- Burano 2 Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="burano2-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="venice/venice-image-5.jpg" alt="Burano 2 view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="venice/venice-image-21.jpg" alt="Burano 2 view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('burano2-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('burano2-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="burano2-carousel-indicators"></div>
+                            <div class="carousel-counter" id="burano2-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Venice gave me many of these precious memories.</p>
+                        <h3>More Burano Magic</h3>
+                        <p>Every corner of Burano offered new delights - from intricate lace shops to charming canal views. The island's peaceful atmosphere and artistic spirit made it feel like a living work of art.</p>
                     </div>
                 </div>
+
+                <!-- St Mark's Square -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="venice/venice-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="venice/venice-image-19.jpg" alt="St Mark's Square" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Venice, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>St Mark's Square</h3>
+                        <p>Napoleon called it "the drawing room of Europe," and standing in this magnificent piazza, I understood why. The grandeur of the surrounding architecture, the music from the café orchestras, and the flutter of pigeons created an atmosphere of timeless elegance.</p>
                     </div>
                 </div>
             </div>
@@ -712,99 +993,414 @@
                 <div class="tip-card">
                     <div class="tip-icon">⛪</div>
                     <h3>St. Mark's Basilica</h3>
-                    <p>Byzantine masterpiece with golden mosaics. Visit early morning or book skip-the-line tickets.</p>
+                    <p>Stunning Byzantine architecture with golden mosaics. Free entry but book online to skip long queues. Modest dress required. Don't miss the Pala d'Oro altar piece.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏰</div>
                     <h3>Doge's Palace</h3>
-                    <p>Former residence of Venetian rulers. Magnificent rooms and famous Bridge of Sighs.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🚣</div>
-                    <h3>Gondola Ride</h3>
-                    <p>Iconic Venice experience through narrow canals. Best at sunset for romantic atmosphere.</p>
+                    <p>Former residence of Venetian rulers. Incredible architecture and art. Secret Itineraries tour reveals hidden rooms. Combo ticket with Correr Museum recommended.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🌉</div>
-                    <h3>Rialto Bridge</h3>
-                    <p>Famous bridge over Grand Canal with shops and great views. Less crowded early morning.</p>
+                    <h3>Rialto Bridge & Market</h3>
+                    <p>Iconic marble bridge over Grand Canal. Fish market opens early morning (authentic Venetian life). Surrounding area has great local restaurants and shops.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🎭</div>
-                    <h3>Murano & Burano</h3>
-                    <p>Island excursions for glass-making and colorful houses. Take vaporetto for scenic journey.</p>
+                    <div class="tip-icon">🚤</div>
+                    <h3>Grand Canal Ride</h3>
+                    <p>Take vaporetto (water bus) Line 1 full length for budget sightseeing. See palazzos from the water. Best at golden hour. Much cheaper than gondola rides.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h3>Burano Island</h3>
+                    <p>Colorful fisherman island with vibrant houses. Famous for lace-making. Take vaporetto 12 from Fondamente Nove (40 mins). Perfect for photography and seafood lunch.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏛️</div>
-                    <h3>Grand Canal</h3>
-                    <p>Main waterway with beautiful palaces. Take vaporetto water bus for architectural tour.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>3-4 months ahead for peak season. Book restaurants and hotels early. Avoid acqua alta (flooding) season in winter.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>San Marco: Central, near attractions, expensive. Cannaregio: Quieter, authentic, better value. Dorsoduro: Artistic area, great restaurants.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Stay on mainland Mestre for budget options. Use vaporetto day passes. Eat away from tourist areas. Visit free churches and walk the city.</p>
-                    </div>
+                    <h3>Accademia Gallery</h3>
+                    <p>World's best collection of Venetian art. Works by Titian, Tintoretto, Veronese. Less crowded than St. Mark's. Allow 2-3 hours for proper visit.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Venice</h2>
+            <h2 class="section-title">Must-Try Venetian Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🦐</div>
-                    <h3>Seafood Risotto</h3>
-                    <p>Creamy rice with fresh lagoon seafood. Venice specialty with amazing local ingredients.</p>
-                    <span class="food-price">$18-25</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🐟</div>
-                    <h3>Baccalà Mantecato</h3>
-                    <p>Whipped salt cod spread, traditional Venetian appetizer. Served with polenta or bread.</p>
-                    <span class="food-price">$8-12</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍷</div>
-                    <h3>Venetian Wine</h3>
-                    <p>Local Veneto wines including Prosecco and Soave. Perfect with seafood and canal views.</p>
-                    <span class="food-price">$6-15</span>
+                    <div class="food-icon">🦑</div>
+                    <h3>Sarde in Saor</h3>
+                    <p>Marinated sardines with onions, raisins, and pine nuts. Sweet and savory traditional Venetian appetizer. Perfect with Aperol Spritz at bacari (wine bars).</p>
+                    <span class="food-price">€8-12</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍝</div>
                     <h3>Bigoli in Salsa</h3>
-                    <p>Thick pasta with anchovy sauce. Simple, traditional Venetian working-class dish.</p>
-                    <span class="food-price">$12-16</span>
+                    <p>Thick whole-wheat pasta with anchovy and onion sauce. Simple but quintessentially Venetian. Best at traditional osterie away from tourist areas.</p>
+                    <span class="food-price">€12-16</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Venetian Coffee</h3>
-                    <p>Historic coffee culture in beautiful cafes around St. Mark's Square. Expensive but atmospheric.</p>
-                    <span class="food-price">$3-8</span>
+                    <div class="food-icon">🦐</div>
+                    <h3>Risotto al Nero di Seppia</h3>
+                    <p>Black risotto made with cuttlefish ink. Dramatic presentation, delicate seafood flavor. Venice's most iconic dish - worth the black teeth!</p>
+                    <span class="food-price">€18-25</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥂</div>
+                    <h3>Cicchetti & Spritz</h3>
+                    <p>Venetian tapas at bacari bars. Small bites with Aperol or Campari spritz. Order polpette (meatballs) and baccalà mantecato (creamed cod). Local tradition!</p>
+                    <span class="food-price">€2-4 each</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍰</div>
                     <h3>Tiramisu</h3>
-                    <p>Some say this dessert was invented in Veneto region. Creamy, coffee-flavored perfection.</p>
-                    <span class="food-price">$6-10</span>
+                    <p>Invented in Veneto region! Creamy mascarpone dessert with coffee-soaked ladyfingers. Try at historic restaurants like Alle Testiere or I Figli delle Stelle.</p>
+                    <span class="food-price">€6-9</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍪</div>
+                    <h3>Baicoli & Bussolai</h3>
+                    <p>Traditional Venetian cookies. Thin, crispy baicoli perfect for dunking in coffee. Ring-shaped bussolai from Burano. Great edible souvenirs.</p>
+                    <span class="food-price">€5-8</span>
                 </div>
             </div>
         </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Venice</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (March-May)</h3>
+                        <div class="season-temp">10-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Ideal Choice:</strong> Perfect weather before summer heat. Fewer tourists than peak season. Gardens blooming. Book early as prices rise toward summer.</p>
+                        <ul class="season-pros">
+                            <li>Pleasant temperatures</li>
+                            <li>Biennale Art Festival (odd years)</li>
+                            <li>Lower hotel rates than summer</li>
+                            <li>Great for walking and exploring</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                        <div class="season-temp">22-30°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Peak Season:</strong> Hot, humid, and extremely crowded. Highest prices. Some locals leave in August. If visiting, book 6+ months ahead and stay hydrated.</p>
+                        <ul class="season-pros">
+                            <li>Long daylight hours</li>
+                            <li>Outdoor concerts and events</li>
+                            <li>All attractions open</li>
+                            <li>Lively atmosphere</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-November)</h3>
+                        <div class="season-temp">15-24°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Warm weather, fewer crowds than summer. September is perfect. November brings acqua alta (high water) - bring boots but it's magical!</p>
+                        <ul class="season-pros">
+                            <li>Comfortable temperatures</li>
+                            <li>Post-summer tourist drop</li>
+                            <li>Venice Film Festival (September)</li>
+                            <li>Good restaurant availability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (December-February)</h3>
+                        <div class="season-temp">3-10°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget & Authentic:</strong> Lowest prices, fewest crowds. Carnevale in February is spectacular. Acqua alta common - atmospheric but prepare with waterproof shoes.</p>
+                        <ul class="season-pros">
+                            <li>Cheapest accommodation</li>
+                            <li>Magical Carnevale masks festival</li>
+                            <li>Authentic local experience</li>
+                            <li>Cozy cafés and museums</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Venice</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚤</div>
+                    <h3>Vaporetto (Water Bus)</h3>
+                    <p><strong>Best for:</strong> Main transportation around Venice. Line 1 goes down Grand Canal (slow, scenic). Line 2 is faster. Runs 24/7 with night service.</p>
+                    <div class="transport-tip">💡 Get 24hr pass (€25) or 72hr pass (€40) for unlimited rides</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p><strong>Best for:</strong> Everything! Venice is a pedestrian city. Download offline maps (Venice streets are confusing). Comfortable shoes essential - lots of bridges and steps.</p>
+                    <div class="transport-tip">💡 Getting lost is part of the Venice experience - embrace it!</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🛶</div>
+                    <h3>Gondola</h3>
+                    <p><strong>Best for:</strong> Romance and photos. Expensive but iconic. Fixed rates: €80 day, €100 night (30-35 mins). Share with others to split cost. Book near smaller canals.</p>
+                    <div class="transport-tip">💡 Negotiate route before boarding and set duration clearly</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚢</div>
+                    <h3>Water Taxi</h3>
+                    <p><strong>Best for:</strong> Airport transfers with luggage or if you're in a hurry. Expensive (€110+ from airport). Fast and direct to your hotel. Can split among group.</p>
+                    <div class="transport-tip">💡 Confirm price before departure - avoid scams at airport</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">⛴️</div>
+                    <h3>Traghetto</h3>
+                    <p><strong>Best for:</strong> Crossing Grand Canal. Standing gondola ferry at key points. €2 per crossing. Quick, cheap, and authentic. Locals use these daily.</p>
+                    <div class="transport-tip">💡 Look for "Traghetto" signs - they're easy to miss!</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Airport Options</h3>
+                    <p><strong>From Marco Polo:</strong> Alilaguna boat (€15, 1hr scenic). ATVO bus to Piazzale Roma (€10, 20mins) then vaporetto. Water taxi fastest but pricey.</p>
+                    <div class="transport-tip">💡 Book Alilaguna online for slight discount and guaranteed seat</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="content-section">
+            <div class="quote-section">
+                <div class="quote-text">"Venice is like eating an entire box of chocolate liqueurs in one go"</div>
+                <div class="quote-author">Truman Capote</div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Parallax effect for collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'grand-canal-carousel',
+                'grand-canal2-carousel',
+                'burano-carousel',
+                'burano2-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+
+            startCollageRotation();
+        });
+
+        // Individual Cell Rotation System
+        function startCollageRotation() {
+            const cells = document.querySelectorAll('.collage-cell');
+            
+            cells.forEach((cell, cellIndex) => {
+                const images = cell.querySelectorAll('.travel-collage-image');
+                let currentImageIndex = 0;
+                
+                // Start each cell rotation at different times to create wave effect
+                setTimeout(() => {
+                    setInterval(() => {
+                        // Fade out current image
+                        images[currentImageIndex].style.opacity = '0';
+                        
+                        // Move to next image
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        
+                        // Fade in next image
+                        setTimeout(() => {
+                            images[currentImageIndex].style.opacity = '1';
+                        }, 250);
+                        
+                    }, 4000); // Change every 4 seconds
+                }, cellIndex * 200); // Stagger start times by 200ms per cell
+            });
+        }
+
+        // Parallax effect for travel collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.travel-collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.05 + ((index % 6) * 0.02);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.00005)})`;
+            });
+        });
+
+        // Add hover effect to travel collage images
+        document.querySelectorAll('.travel-collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2) saturate(1.5)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.85) contrast(1.15) saturate(1.3)';
+            });
+        });
+    </script>
+
 </body>
 </html>

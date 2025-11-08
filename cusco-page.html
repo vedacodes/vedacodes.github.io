@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cusco - Navel of the World | Veda's Travel Diary</title>
+    <title>Cusco - Gateway to the Andes | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png")
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            --cusco-gradient: linear-gradient(135deg, #8b4513 0%, #cd853f 50%, #daa520 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,200 +51,151 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cusco-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('cusco-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
         }
 
-        .hero-collage {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
-        }
-
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
+            z-index: 3;
             max-width: 800px;
-            padding: 0 2rem;
+            margin: 0 auto;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
+        /* Section Styling */
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: var(--cusco-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,64 +206,18 @@
         .description-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--cusco-gradient);
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         /* Image Gallery */
@@ -353,26 +258,6 @@
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
             padding: 25px;
         }
@@ -391,23 +276,215 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--cusco-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gallery-caption {
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .home-btn, .location-tag {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
+            
+            .description-card {
+                padding: 25px;
+            }
+            
+            .gallery-caption h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Loading Animation */
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +493,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,205 +536,495 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: linear-gradient(135deg, #f5af19 30%, #f12711 100%);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: linear-gradient(135deg, #f5af19 10%, #f12711 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                Peru
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="cusco/cusco-image-1.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-2.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-3.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-4.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-5.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-6.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-7.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-8.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-9.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-10.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-11.jpg" alt="" class="collage-image">
-            <img src="cusco/cusco-image-12.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Cusco</h1>
-            <p class="hero-subtitle">Gateway to Machu Picchu & Inca Empire</p>
-            <p class="hero-description">Step into the ancient capital of the Inca Empire, where cobblestone streets wind past colonial mansions built on Incan foundations. At 11,000 feet above sea level, Cusco serves as both a destination in itself and the gateway to the Sacred Valley and Machu Picchu.</p>
+            <p class="hero-subtitle">Gateway to the Ancient Incan Empire</p>
+            <p class="hero-description">
+                High in the Peruvian Andes, Cusco stands as a testament to both ancient Incan architecture and Spanish colonial influence. This UNESCO World Heritage site serves as the gateway to Machu Picchu and countless adventures through the sacred valley.
+            </p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
-        <!-- Description Section -->
+        <!-- About Section -->
         <section class="content-section">
-            <h2 class="section-title">My Cusco Adventure</h2>
+            <h2 class="section-title">Journey Through the Andes</h2>
+            
             <div class="description-card">
-                <p>Cusco immediately cast its spell on me with its incredible blend of Incan and Spanish colonial architecture. Every stone seemed to whisper stories of ancient civilizations and conquest. The altitude was challenging at first, but the coca tea helped, and the warmth of the people made me feel welcome. This city is truly the heart of Andean culture.</p>
+                <p>
+                    Cusco captured my heart from the moment I arrived at 11,000 feet above sea level. This incredible city seamlessly blends ancient Incan foundations with Spanish colonial architecture, creating a unique atmosphere that feels both timeless and alive. From the breathtaking Rainbow Mountain to the bustling city squares filled with alpacas, every moment in Cusco felt like stepping through time into a living piece of history.
+                </p>
             </div>
-        </section>
 
-        <!-- Stats Section -->
-        <section class="content-section">
+            <!-- Quick Stats -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Days Acclimatizing</div>
+                    <div class="stat-value">11,152</div>
+                    <div class="stat-label">Feet Above Sea Level</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">3500m</div>
-                    <div class="stat-label">Altitude Challenge</div>
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Days of Adventure</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Cultural Riches</div>
+                    <div class="stat-value">17,100</div>
+                    <div class="stat-label">Feet on Rainbow Mountain</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Countless</div>
+                    <div class="stat-label">Memories Made</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Cusco Diary</h2>
+            <h2 class="section-title">Andean Adventures</h2>
+            
             <div class="image-gallery">
+                <!-- Rainbow Mountain Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-1.jpg" alt="First Glimpse of Cusco" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="rainbow-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-1.jpg" alt="Rainbow Mountain (Vinicunca) view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-3.jpg" alt="Rainbow Mountain (Vinicunca) view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('rainbow-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('rainbow-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="rainbow-carousel-indicators"></div>
+                            <div class="carousel-counter" id="rainbow-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Cusco</h3>
-                        <p>My initial impression of Cusco was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>The Rainbow Mountain (Vinicunca)</h3>
+                        <p>The trek to Rainbow Mountain at 17,100 feet was one of the most challenging yet rewarding experiences of my life. The mineral deposits creating these natural rainbow stripes felt like walking through a painting, though the altitude definitely tested my limits!</p>
                     </div>
                 </div>
+
+                <!-- Andean Scenery -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="cusco/cusco-image-2.jpg" alt="Scenic Andes mountains from 17000 feet!" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Cusco adventure.</p>
+                        <h3>Scenic Andes mountains from 17000 feet!</h3>
+                        <p>The view from 17,000 feet in the Andes was absolutely breathtaking. Standing at this altitude, surrounded by snow-capped peaks and endless mountain ranges, made me feel both incredibly small and deeply connected to the earth's raw beauty.</p>
                     </div>
                 </div>
+
+                <!-- Hiking Challenges Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hiking-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-4.jpg" alt="And the hike is not so easy :D view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-14.jpg" alt="And the hike is not so easy :D view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('hiking-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('hiking-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="hiking-carousel-indicators"></div>
+                            <div class="carousel-counter" id="hiking-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Cusco's authentic character.</p>
+                        <h3>And the hike is not so easy :D</h3>
+                        <p>Let me tell you, hiking at this altitude is no joke! Every step was a challenge, but the incredible landscapes and the sense of accomplishment made every difficult breath worth it. The Andes don't make it easy, but they reward you beyond imagination.</p>
                     </div>
                 </div>
+
+                <!-- Local Culture -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="cusco/cusco-image-5.jpg" alt="With Incan natives and a cute Alapaca <3" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>With Incan natives and a cute Alapaca <3</h3>
+                        <p>Meeting the local Incan descendants and their adorable alpacas was such a heartwarming experience. Their connection to the land and their ancestors' traditions was deeply moving, and these fluffy alpacas just stole my heart completely!</p>
                     </div>
                 </div>
+
+                <!-- Cusco City Square Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="square-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-6.jpg" alt="Cusco city square view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-17.jpg" alt="Cusco city square view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-18.jpg" alt="Cusco city square view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('square-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('square-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="square-carousel-indicators"></div>
+                            <div class="carousel-counter" id="square-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Cusco gave me many of these precious memories.</p>
+                        <h3>Cusco city square</h3>
+                        <p>The main square of Cusco is where ancient Incan architecture meets Spanish colonial grandeur. Walking through these cobblestone streets felt like traveling through time, with every corner revealing new stories of this incredible city's rich history.</p>
                     </div>
                 </div>
+
+                <!-- Alpacas Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cusco/cusco-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="alpacas-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-7.jpg" alt="Alpacas view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-15.jpg" alt="Alpacas view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('alpacas-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('alpacas-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="alpacas-carousel-indicators"></div>
+                            <div class="carousel-counter" id="alpacas-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Cusco, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Alpacas</h3>
+                        <p>These fluffy, curious creatures are everywhere in the Cusco region! Their soft wool and gentle nature made every encounter special. They're not just cute animals but an important part of the local culture and economy here in the Andes.</p>
+                    </div>
+                </div>
+
+                <!-- Adventure Ziplining -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-8.jpg" alt="Geared up to fly" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Geared up to fly</h3>
+                        <p>Getting suited up for ziplining through the Andes was both thrilling and terrifying! The safety gear felt reassuring, but knowing I was about to soar through one of the world's most spectacular mountain ranges had my adrenaline pumping.</p>
+                    </div>
+                </div>
+
+                <!-- Ziplining Through Andes -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-9.jpg" alt="Ziplining through the Andes" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Ziplining through the Andes</h3>
+                        <p>Flying through the Sacred Valley on a zipline was pure magic! The rush of wind, the stunning mountain views below, and the feeling of soaring like a condor made this one of the most exhilarating experiences of my entire trip.</p>
+                    </div>
+                </div>
+
+                <!-- Sacred Valley -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-10.jpg" alt="Sacred Valley" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Sacred Valley</h3>
+                        <p>The Sacred Valley of the Incas is a place where time seems to stand still. The lush green terraces carved into mountainsides thousands of years ago still function today, showcasing the incredible engineering skills of the ancient Incan civilization.</p>
+                    </div>
+                </div>
+
+                <!-- ATV Adventures Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="atv-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-11.jpg" alt="ATVing through Sacred Valley" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-12.jpg" alt="Riding the ATVs" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('atv-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('atv-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="atv-carousel-indicators"></div>
+                            <div class="carousel-counter" id="atv-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>ATVing through Sacred Valley</h3>
+                        <p>Exploring the Sacred Valley on ATVs was an incredible way to cover more ground and see hidden gems that are difficult to reach on foot. The muddy trails and steep terrain made for an adventurous ride through this historically significant landscape.</p>
+                    </div>
+                </div>
+
+                <!-- Salt Mines of Maras -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-13.jpg" alt="Salt Mines of Maras" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Salt Mines of Maras</h3>
+                        <p>The ancient salt mines of Maras have been in continuous operation since Incan times. These thousands of salt pools create a stunning geometric pattern across the mountainside, and the traditional harvesting methods remain unchanged after centuries.</p>
+                    </div>
+                </div>
+
+                <!-- Lovely Airbnb -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-16.jpg" alt="Lovely Airbnb" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Lovely Airbnb</h3>
+                        <p>Our cozy Airbnb became a perfect base for all our Cusco adventures. With traditional Andean decor and modern comforts, it was the ideal place to rest and plan our daily excursions while staying connected to the local culture.</p>
+                    </div>
+                </div>
+
+                <!-- Twelve Angled Stone -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-19.jpg" alt="twelve Angled Stone" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>twelve Angled Stone</h3>
+                        <p>This famous twelve-angled stone is a masterpiece of Incan architecture, fitted so perfectly into the wall that not even a knife blade can slip between the joints. It's a testament to the incredible precision and skill of ancient Incan stonemasons.</p>
+                    </div>
+                </div>
+
+                <!-- Cusco Railway Station -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-20.jpg" alt="Cusco Railay station" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Cusco Railway station</h3>
+                        <p>The historic railway station in Cusco is the starting point for the famous train journey to Machu Picchu. The colonial architecture and bustling atmosphere made waiting for our train an exciting part of the overall adventure.</p>
+                    </div>
+                </div>
+
+                <!-- Narrow Streets -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cusco/cusco-image-21.jpg" alt="Narrow Streets of Cusco" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Narrow Streets of Cusco</h3>
+                        <p>Wandering through Cusco's narrow cobblestone streets feels like walking through a living museum. Each alley tells a story, with Incan foundations supporting colonial buildings, creating a unique architectural harmony that exists nowhere else in the world.</p>
                     </div>
                 </div>
             </div>
@@ -698,104 +1032,332 @@
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Cusco</h2>
+            <h2 class="section-title">Must-See Around Cusco</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">⛪</div>
-                    <h3>San Pedro Market</h3>
-                    <p>Vibrant local market with fresh produce, textiles, and street food. Perfect for authentic cultural immersion.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>Qorikancha</h3>
-                    <p>Temple of the Sun - most important Inca temple with precise stonework. Spanish colonial church built on top.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🎨</div>
-                    <h3>San Blas Quarter</h3>
-                    <p>Artisan neighborhood with narrow cobblestone streets, galleries, and traditional workshops.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏰</div>
-                    <h3>Sacsayhuamán</h3>
-                    <p>Impressive Inca fortress overlooking Cusco with massive stone blocks fitted without mortar.</p>
+                    <div class="tip-icon">🏔️</div>
+                    <h3>Rainbow Mountain (Vinicunca)</h3>
+                    <p>Breathtaking multicolored mountain at 17,000 feet. Challenging hike but absolutely worth it. Start early (3-4am departure). Bring coca leaves for altitude. One of Peru's most Instagram-worthy spots!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">⛰️</div>
-                    <h3>Rainbow Mountain</h3>
-                    <p>Colorful mountain due to mineral deposits. Challenging day hike but absolutely stunning views.</p>
+                    <h3>Sacred Valley</h3>
+                    <p>Stunning valley with Incan ruins, markets, and salt terraces. Visit Ollantaytambo fortress and Pisac market. Lower altitude than Cusco - good for acclimatization. Full day tour recommended.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🚂</div>
-                    <h3>Sacred Valley</h3>
-                    <p>Beautiful valley with traditional villages, markets, and Inca ruins. Base for Machu Picchu trips.</p>
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Sacsayhuamán</h3>
+                    <p>Massive Incan fortress overlooking Cusco. Enormous stones fitted perfectly without mortar. Free with Boleto Turístico ticket. Short walk or taxi from Plaza de Armas. Sunset views are spectacular.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>6-8 months ahead for dry season (May-September). Sacred Valley tours and train tickets to Machu Picchu book up quickly.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Historic Center: Colonial charm, walking distance to sites. San Blas: Artistic quarter with boutique hotels. Near markets: Authentic experience, budget-friendly.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Arrive 2-3 days early to acclimatize. Buy Boleto Turístico for multiple site access. Eat at local markets and picanterías. Use local transportation.</p>
-                    </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛰️</div>
+                    <h3>Machu Picchu</h3>
+                    <p>World Wonder accessible from Cusco via train or trek. Book months ahead. 4-day Inca Trail or scenic train from Ollantaytambo. Worth every penny and effort!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🧂</div>
+                    <h3>Maras Salt Mines</h3>
+                    <p>Ancient salt terraces still in use since Incan times. Combined with Moray agricultural terraces makes perfect half-day trip. Great for ATVing or biking tours.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Qorikancha (Sun Temple)</h3>
+                    <p>Most important Incan temple, now merged with Spanish church. Walls once covered in gold. Museum inside explains Incan astronomy and religion. Must-see in city center.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Cusco</h2>
+            <h2 class="section-title">Must-Try Cusco Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🫖</div>
-                    <h3>Coca Tea</h3>
-                    <p>Essential for altitude sickness prevention. Natural energy boost with mild, pleasant flavor.</p>
-                    <span class="food-price">$1-3</span>
+                    <div class="food-icon">🥔</div>
+                    <h3>Cuy (Guinea Pig)</h3>
+                    <p>Traditional Andean delicacy. Crispy skin, gamey meat. Definitely an experience! Try at Pachapapa or local picanterías. Order half if unsure - it's a lot of food.</p>
+                    <span class="food-price">S/. 50-80</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥔</div>
-                    <h3>Papa Rellena</h3>
-                    <p>Stuffed potatoes with meat, olives, and spices. Peru has over 3000 potato varieties!</p>
-                    <span class="food-price">$3-6</span>
+                    <div class="food-icon">🍲</div>
+                    <h3>Alpaca Steak</h3>
+                    <p>Lean, tender red meat similar to beef. Lower in fat, high in protein. Try at Chicha by Gastón Acurio. More common and less adventurous than cuy.</p>
+                    <span class="food-price">S/. 40-60</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🌽</div>
                     <h3>Choclo con Queso</h3>
-                    <p>Giant corn kernels with fresh cheese. Simple, satisfying Andean snack.</p>
-                    <span class="food-price">$2-4</span>
+                    <p>Giant Andean corn with fresh cheese. Street food staple. Sweet, starchy corn kernels twice the size of regular corn. Perfect snack while exploring.</p>
+                    <span class="food-price">S/. 5-10</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥩</div>
-                    <h3>Alpaca Steak</h3>
-                    <p>Lean, flavorful meat that's healthier than beef. Often served with quinoa and native potatoes.</p>
-                    <span class="food-price">$12-20</span>
+                    <div class="food-icon">🥤</div>
+                    <h3>Chicha Morada</h3>
+                    <p>Purple corn drink with pineapple and spices. Sweet, refreshing, non-alcoholic. Available everywhere. Also try coca tea for altitude sickness!</p>
+                    <span class="food-price">S/. 3-8</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍲</div>
-                    <h3>Ají de Gallina</h3>
-                    <p>Creamy chicken stew with yellow peppers and spices. Comfort food that warms you at altitude.</p>
-                    <span class="food-price">$8-15</span>
+                    <div class="food-icon">🍴</div>
+                    <h3>Lomo Saltado</h3>
+                    <p>Peruvian-Chinese fusion stir-fry. Beef, tomatoes, onions, fries, rice. Comfort food perfection. Available at any restaurant. Safe bet if adventure foods intimidate you.</p>
+                    <span class="food-price">S/. 25-40</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍹</div>
-                    <h3>Pisco Sour</h3>
-                    <p>Peru's national cocktail made with pisco brandy, lime juice, and egg white foam.</p>
-                    <span class="food-price">$4-8</span>
+                    <div class="food-icon">🥧</div>
+                    <h3>Empanadas</h3>
+                    <p>Baked or fried pastries with various fillings. Beef, cheese, or chicken common. Hot, portable, and delicious. Perfect for early morning hikes or bus trips.</p>
+                    <span class="food-price">S/. 3-8</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Cusco</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Dry Season (May-September)</h3>
+                        <div class="season-temp">0-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best for Hiking:</strong> Peak season with clear skies and sunny days. Essential for Inca Trail and Rainbow Mountain. Book 6+ months ahead. Cold nights, warm days.</p>
+                        <ul class="season-pros">
+                        <li>Clear mountain views</li>
+                        <li>Perfect for trekking</li>
+                        <li>Minimal rain</li>
+                        <li>Inti Raymi festival in June</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Wet Season (December-March)</h3>
+                        <div class="season-temp">5-18°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget Travel:</strong> Daily afternoon rains, lush green landscapes. Fewer tourists, lower prices. Inca Trail closed in February. Morning hikes still possible before rain.</p>
+                        <ul class="season-pros">
+                        <li>Cheapest accommodation</li>
+                        <li>Fewer crowds at ruins</li>
+                        <li>Green, dramatic scenery</li>
+                        <li>Good for non-trekking trips</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Shoulder Season (April, October-November)</h3>
+                        <div class="season-temp">2-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Value:</strong> Transition periods with good weather and fewer tourists. April can be wet, October/November drying out. Good balance of weather and prices.</p>
+                        <ul class="season-pros">
+                        <li>Moderate crowds</li>
+                        <li>Better hotel deals</li>
+                        <li>Decent weather</li>
+                        <li>Easier last-minute bookings</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Altitude Tips</h3>
+                        <div class="season-temp">11,150 ft elevation</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Important:</strong> Cusco is HIGH. Spend 2-3 days acclimatizing before strenuous activities. Drink coca tea, avoid alcohol first days. Take it slow - altitude sickness is real!</p>
+                        <ul class="season-pros">
+                        <li>Arrive from lower altitude first</li>
+                        <li>Stay hydrated constantly</li>
+                        <li>Coca leaves help</li>
+                        <li>Acetazolamide if needed</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Cusco</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p><strong>Best for:</strong> Historic center exploration. Most attractions within 20-minute walk of Plaza de Armas. Steep hills and altitude make it challenging. Take it slow and acclimatize first.</p>
+                    <div class="transport-tip">💡 Wear good shoes - cobblestones are uneven and slippery when wet</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxis</h3>
+                    <p><strong>Best for:</strong> Night travel or going to ruins. No meters - negotiate before entering. S/. 5-10 for city rides. Use apps like InDriver or Beat for safety and fair prices.</p>
+                    <div class="transport-tip">💡 Never take unmarked taxis - use official companies or apps only</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Local Buses (Combis)</h3>
+                    <p><strong>Best for:</strong> Cheap local transport. Crowded but authentic. S/. 1-2 per ride. Route signs in windshield. Can be confusing for tourists but adventurous!</p>
+                    <div class="transport-tip">💡 Ask locals which bus goes where - routes not always clear</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚐</div>
+                    <h3>Tour Buses</h3>
+                    <p><strong>Best for:</strong> Day trips to Sacred Valley, Maras, Rainbow Mountain. Book through agencies on Plateros street. Includes transport, guide, lunch. Convenient and good value.</p>
+                    <div class="transport-tip">💡 Shop around - prices vary S/. 40-100 for same tour</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚂</div>
+                    <h3>Trains to Machu Picchu</h3>
+                    <p><strong>Options:</strong> PeruRail or IncaRail from Poroy/Ollantaytambo to Aguas Calientes. Vistadome for views, Expedition for budget. Book weeks ahead. Expensive but spectacular journey.</p>
+                    <div class="transport-tip">💡 Ollantaytambo departure cheaper than Poroy - combine with Sacred Valley tour</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Airport Transfer</h3>
+                    <p><strong>From Airport:</strong> 20 mins to city center. Official taxi S/. 25-30. Prearrange hotel pickup for same price. Airport small and easy. Many international flights via Lima.</p>
+                    <div class="transport-tip">💡 Take it easy first day - arrive early to acclimatize before activities</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Page loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Image loading optimization
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            images.forEach(img => {
+                img.addEventListener('load', () => {
+                    img.style.opacity = '1';
+                });
+                
+                img.addEventListener('error', () => {
+                    img.style.filter = 'brightness(0.8) contrast(1.1)';
+                });
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'rainbow-carousel',
+                'hiking-carousel',
+                'square-carousel',
+                'alpacas-carousel',
+                'atv-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

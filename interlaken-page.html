@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interlaken - Swiss Alpine Paradise | Veda's Travel Diary</title>
+    <title>Interlaken - Alpine Paradise | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
+            --interlaken-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -50,12 +50,6 @@
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
         }
 
         /* Navigation */
@@ -67,8 +61,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-light);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -78,6 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -88,17 +82,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -108,32 +103,152 @@
             color: #667eea;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .nav-links a:hover::after {
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--interlaken-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--interlaken-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
             width: 100%;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Destination Badge */
+        .destination-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--interlaken-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--interlaken-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Image Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -150,7 +265,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -172,242 +287,188 @@
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
         }
 
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
 
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+        .collage-image:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .description-card::before {
+        .hero::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
-        }
-
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .gallery-image-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
             opacity: 1;
         }
 
-        .gallery-caption {
-            padding: 25px;
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        .gallery-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
-        .gallery-caption p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        /* Travel Tips Grid */
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active,
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        /* Travel Tips */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: var(--border-radius);
-            padding: 2rem;
             box-shadow: var(--shadow-light);
+            transition: var(--transition);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,15 +477,15 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
@@ -433,181 +494,86 @@
             line-height: 1.6;
         }
 
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .nav-links {
                 display: none;
             }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
+
             .image-gallery {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
             }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
             }
-            
-            .collage-container {
-                opacity: 0.2;
+
+            .collage-image:nth-child(2) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
             }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
+
+            .collage-image:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(5),
+            .collage-image:nth-child(6) {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="interlaken/interlaken-image-1.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-2.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-3.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-4.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-5.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-6.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-7.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-8.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-9.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-10.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-11.jpg" alt="" class="collage-image">
-            <img src="interlaken/interlaken-image-12.jpg" alt="" class="collage-image">
+            <img src="interlaken/interlaken-image-7.jpg" alt="Harder Kulm Top" class="collage-image" loading="lazy">
+            <img src="interlaken/interlaken-image-11.jpg" alt="Alps from Piz Gloria" class="collage-image" loading="lazy">
+            <img src="interlaken/interlaken-image-3.jpg" alt="Switzerland Fall" class="collage-image" loading="lazy">
+            <img src="interlaken/interlaken-image-15.jpg" alt="Interlaken Seen from Harder Kulm" class="collage-image" loading="lazy">
+            <img src="interlaken/lauterbrunnen-image-9.jpg" alt="Lauterbrunnen Falls" class="collage-image" loading="lazy">
+            <img src="interlaken/interlaken-image-14.jpg" alt="The Beautiful Aare River" class="collage-image" loading="lazy">
         </div>
         <div class="hero-content">
-            <h1>Interlaken</h1>
-            <p class="hero-subtitle">Between Lakes, Beneath Mountains</p>
-            <p class="hero-description">Discover the heart of Swiss adventure tourism, nestled between Lake Thun and Lake Brienz beneath the dramatic peaks of the Bernese Alps. Interlaken offers world-class outdoor activities and breathtaking Alpine scenery.</p>
+            <div class="destination-badge">
+                <i class="fas fa-mountain"></i>
+                Interlaken
+            </div>
+            <h1 class="hero-title">Alpine Paradise Between Lakes</h1>
+            <p class="hero-subtitle">Where pristine lakes meet towering peaks in perfect harmony</p>
         </div>
     </section>
 
-    <!-- Main Content -->
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Interlaken Adventure</h2>
+            <h2 class="section-title">My Alpine Adventure</h2>
             <div class="description-card">
-                <p>Interlaken felt like stepping into a postcard. The crystal-clear lakes, snow-capped peaks, and charming Swiss architecture created the perfect Alpine paradise. Whether paragliding over the valleys or taking the cogwheel train to Jungfraujoch, every moment was filled with wonder and adrenaline.</p>
+                <p>Interlaken stole my heart with its breathtaking beauty and endless adventures. Nestled between Lake Thun and Lake Brienz, surrounded by the dramatic peaks of the Swiss Alps, this town is a gateway to some of Europe's most spectacular scenery. Every cable car ride, every mountain hike, every moment here reminded me why Switzerland is nature's masterpiece.</p>
             </div>
         </section>
 
@@ -615,187 +581,500 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Days of Adventure</div>
+                    <div class="stat-number">568m</div>
+                    <div class="stat-label">Elevation</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">3454m</div>
-                    <div class="stat-label">Highest Peak Visited</div>
+                    <div class="stat-number">5,800</div>
+                    <div class="stat-label">Population</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Alpine Magic</div>
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Adventure Sports</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4,158m</div>
+                    <div class="stat-label">Jungfraujoch Height</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Interlaken Diary</h2>
+            <h2 class="section-title">Alpine Moments Captured</h2>
             <div class="image-gallery">
+                <!-- Interlaken Streets Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-1.jpg" alt="First Glimpse of Interlaken" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="streets-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-1.jpg" alt="Interlaken Streets view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-2.jpg" alt="Interlaken Streets view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('streets-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('streets-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="streets-carousel-indicators"></div>
+                            <div class="carousel-counter" id="streets-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Interlaken</h3>
-                        <p>My initial impression of Interlaken was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Interlaken Streets</h3>
+                        <p>Walking through the charming streets of Interlaken, every corner revealed stunning mountain views. The town's perfect blend of Swiss charm and natural beauty is simply magical.</p>
                     </div>
                 </div>
+
+                <!-- Switzerland Fall -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="fall-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-3.jpg" alt="Switzerland Fall" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="fall-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Interlaken adventure.</p>
+                        <h3>Switzerland Fall</h3>
+                        <p>Autumn in Switzerland is pure poetry. The golden leaves against the snow-capped peaks created scenes so beautiful they didn't seem real.</p>
                     </div>
                 </div>
+
+                <!-- Harder Kulm Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="harder-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-4.jpg" alt="Walking up to Harder Kulm" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-5.jpg" alt="Harder Kulm view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-6.jpg" alt="Harder Kulm view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-7.jpg" alt="Harder Kulm Top" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-15.jpg" alt="Interlaken Seen from Harder Kulm view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-16.jpg" alt="Interlaken Seen from Harder Kulm view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-17.jpg" alt="Interlaken Seen from Harder Kulm view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('harder-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('harder-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="harder-carousel-indicators"></div>
+                            <div class="carousel-counter" id="harder-carousel-counter">1 / 7</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Interlaken's authentic character.</p>
+                        <h3>Harder Kulm</h3>
+                        <p>The funicular ride to Harder Kulm was worth every moment. Standing at the top, gazing down at Interlaken nestled between two pristine lakes with the mighty Alps as backdrop - this view will forever be etched in my memory.</p>
                     </div>
                 </div>
+
+                <!-- Random Churches Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="churches-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-8.jpg" alt="Random Churches in Interlaken view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-9.jpg" alt="Random Churches in Interlaken view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('churches-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('churches-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="churches-carousel-indicators"></div>
+                            <div class="carousel-counter" id="churches-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Random Churches in Interlaken</h3>
+                        <p>Discovering these beautiful churches scattered around Interlaken added a spiritual dimension to my journey. Each one told a story of the region's rich cultural heritage.</p>
                     </div>
                 </div>
+
+                <!-- Schilthorn Experience Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="schilthorn-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-10.jpg" alt="Schilthorn cable car ride" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-11.jpg" alt="Alps from Piz Gloria" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-12.jpg" alt="Spy World 007" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/interlaken-image-13.jpg" alt="360° Revolving Restaurant" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-5.jpg" alt="Alps from Piz Gloria view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-6.jpg" alt="Fall colors from Cable Car" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-7.jpg" alt="Schilthorn cable car" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('schilthorn-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('schilthorn-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="schilthorn-carousel-indicators"></div>
+                            <div class="carousel-counter" id="schilthorn-carousel-counter">1 / 7</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Interlaken gave me many of these precious memories.</p>
+                        <h3>Schilthorn cable car ride</h3>
+                        <p>The cable car journey to Schilthorn was an adventure in itself. At Piz Gloria, I felt like James Bond in the revolving restaurant while enjoying 360-degree Alpine views that took my breath away.</p>
                     </div>
                 </div>
+
+                <!-- The Beautiful Aare River -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="interlaken/interlaken-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="aare-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-14.jpg" alt="The Beautiful Aare River" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="aare-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Interlaken, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>The Beautiful Aare River</h3>
+                        <p>The crystal-clear Aare River flowing through Interlaken is mesmerizing. Its turquoise waters reflecting the surrounding mountains create scenes of unmatched beauty.</p>
+                    </div>
+                </div>
+
+                <!-- Beautiful Fall Landscape -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="landscape-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/interlaken-image-18.jpg" alt="Beautiful Fall Landscape" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="landscape-carousel-counter">1 / 1</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Beautiful Fall Landscape</h3>
+                        <p>Every landscape in Interlaken during autumn looked like a masterpiece painting. Nature's artistry at its finest, with colors that no camera could truly capture.</p>
+                    </div>
+                </div>
+
+                <!-- Lauterbrunnen Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="lauterbrunnen-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="interlaken/lauterbrunnen-image-8.jpg" alt="Lauterbrunnen view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-9.jpg" alt="Lauterbrunnen Falls" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-10.jpg" alt="Lauterbrunnen view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="interlaken/lauterbrunnen-image-11.jpg" alt="Magical Lauterbrunnen" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('lauterbrunnen-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('lauterbrunnen-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="lauterbrunnen-carousel-indicators"></div>
+                            <div class="carousel-counter" id="lauterbrunnen-carousel-counter">1 / 4</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Lauterbrunnen</h3>
+                        <p>The valley of 72 waterfalls - Lauterbrunnen is pure magic. Standing in this glacial valley surrounded by towering cliffs and cascading waterfalls, I felt like I was in a fairy tale.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Must-See Places Section -->
+        <!-- Travel Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Interlaken</h2>
+            <h2 class="section-title">Essential Interlaken Tips</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🏔️</div>
-                    <h3>Jungfraujoch</h3>
-                    <p>Top of Europe with glaciers, ice palace, and spectacular mountain views. Take the historic cogwheel train.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🪂</div>
-                    <h3>Paragliding</h3>
-                    <p>Tandem flights offering bird's eye views of lakes and mountains. Unforgettable adrenaline experience.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🚢</div>
-                    <h3>Lake Cruises</h3>
-                    <p>Scenic boat rides on Lake Thun and Lake Brienz. Peaceful way to enjoy mountain reflections.</p>
-                </div>
-                <div class="tip-card">
                     <div class="tip-icon">🚠</div>
-                    <h3>Harder Kulm</h3>
-                    <p>Local mountain with funicular railway. Best sunset views over both lakes and Jungfrau massif.</p>
+                    <h3>Cable Cars & Passes</h3>
+                    <p>Consider the Jungfrau Pass for multiple mountain railways. Book early morning slots for clearer mountain views.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🎿</div>
-                    <h3>Adventure Sports</h3>
-                    <p>Skydiving, bungee jumping, canyoning, and white-water rafting. Adventure capital of Switzerland.</p>
+                    <div class="tip-icon">🌤️</div>
+                    <h3>Weather Planning</h3>
+                    <p>Weather changes quickly in the Alps. Pack layers and check mountain weather before taking cable cars.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🌸</div>
-                    <h3>Unterseen</h3>
-                    <p>Charming old town across the river with traditional Swiss architecture and local shops.</p>
+                    <div class="tip-icon">🥾</div>
+                    <h3>Hiking Gear</h3>
+                    <p>Bring proper hiking boots and warm clothes. Trails can be challenging but offer incredible rewards.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>3-6 months ahead for summer season. Book adventure activities and mountain railways early. Weather dependent activities need flexible planning.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Interlaken Center: Walking distance to trains and activities. Unterseen: Historic charm, quieter. Lakefront: Beautiful views, higher prices.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Buy Swiss Travel Pass for train discounts. Pack lunch for mountain trips. Stay in hostels or guesthouses. Visit during shoulder season.</p>
-                    </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📸</div>
+                    <h3>Photography</h3>
+                    <p>Golden hour lighting on the Alps is magical. Harder Kulm and Schilthorn offer the best panoramic views.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Interlaken</h2>
+            <h2 class="section-title">Must-Try Swiss Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
                     <div class="food-icon">🧀</div>
-                    <h3>Swiss Cheese Fondue</h3>
-                    <p>Traditional melted cheese with bread and white wine. Perfect warming meal after mountain activities.</p>
-                    <span class="food-price">$20-30</span>
+                    <h3>Cheese Fondue</h3>
+                    <p>Melted Swiss cheese with white wine, served with bread cubes. Warming, social, delicious! Restaurant Laterne has excellent fondue. Perfect après-adventure meal!</p>
+                    <span class="food-price">CHF 25-35</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🥩</div>
                     <h3>Rösti</h3>
-                    <p>Crispy potato dish often served with meat or eggs. Swiss comfort food and national dish.</p>
-                    <span class="food-price">$12-18</span>
+                    <p>Swiss potato pancake - crispy outside, soft inside. Served as side or main with toppings (cheese, bacon, eggs). Hearty mountain food. Try at Goldener Anker!</p>
+                    <span class="food-price">CHF 18-28</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍫</div>
                     <h3>Swiss Chocolate</h3>
-                    <p>World-famous chocolate from local chocolatiers. Perfect souvenir and energy boost for hiking.</p>
-                    <span class="food-price">$5-20</span>
+                    <p>Switzerland's pride! Visit Funky Chocolate Club for tasting. Lindt, Toblerone everywhere. Quality unmatched. Perfect souvenir. Indulge shamelessly!</p>
+                    <span class="food-price">CHF 5-15</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥨</div>
-                    <h3>Alpine Sausages</h3>
-                    <p>Local bratwurst and cervelat served with mustard and bread. Hearty mountain fare.</p>
-                    <span class="food-price">$8-15</span>
+                    <div class="food-icon">🌭</div>
+                    <h3>Bratwurst</h3>
+                    <p>Grilled Swiss sausage with bread and mustard. Quick, filling, delicious. Street vendors and restaurants. Budget-friendly lunch option!</p>
+                    <span class="food-price">CHF 8-12</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Swiss Coffee</h3>
-                    <p>Strong coffee culture with excellent cappuccinos and espresso. Perfect with mountain views.</p>
-                    <span class="food-price">$3-6</span>
+                    <div class="food-icon">🥧</div>
+                    <h3>Swiss Pastries</h3>
+                    <p>Visit Schuh bakery (since 1818!). Apple strudel, meringues, nut tarts. Fresh daily. Pair with Swiss hot chocolate. Breakfast paradise!</p>
+                    <span class="food-price">CHF 5-10</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍻</div>
-                    <h3>Local Beer</h3>
-                    <p>Swiss lagers and wheat beers from regional breweries. Refreshing after adventure activities.</p>
-                    <span class="food-price">$4-8</span>
+                    <div class="food-icon">🍺</div>
+                    <h3>Swiss Beer & Wine</h3>
+                    <p>Local beers and wines less famous but excellent! Try Rugenbräu beer. White wines from nearby regions. Après-ski tradition!</p>
+                    <span class="food-price">CHF 6-10</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See in Interlaken</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏔️</div>
+                    <h3>Jungfraujoch - Top of Europe</h3>
+                    <p>Train to 3,454m peak! Snow year-round, ice palace, viewing platforms. Expensive (CHF 240) but bucket-list worthy. Book early, go early morning. Bring warm clothes!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚡</div>
+                    <h3>Harder Kulm</h3>
+                    <p>Panoramic viewpoint 1,322m up. Funicular from town (CHF 32 round trip). Two lakes, three mountains view. Restaurant at top. Sunset spectacular!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🪂</div>
+                    <h3>Paragliding</h3>
+                    <p>Tandem flights over lakes and Alps! No experience needed. Multiple operators. CHF 150-200 for 15-20 mins. Unforgettable adrenaline rush!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🛶</div>
+                    <h3>Lake Thun & Brienz</h3>
+                    <p>Turquoise glacial lakes. Boat cruises, swimming (summer), hiking around shores. Lake Brienz especially stunning. Swiss Pass covers boats!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚞</div>
+                    <h3>Schilthorn (Piz Gloria)</h3>
+                    <p>James Bond filming location! 007 museum, rotating restaurant, amazing views. Alternative to Jungfraujoch. CHF 110. Bond Breakfast worth it!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🥾</div>
+                    <h3>Hiking Trails</h3>
+                    <p>Endless trails for all levels. Lauterbrunnen Valley waterfalls. Alpine meadows in summer. Free with guest card. Download maps offline!</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        // Parallax effect for hero collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-collage');
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'streets-carousel',
+                'fall-carousel', 
+                'harder-carousel',
+                'churches-carousel',
+                'schilthorn-carousel',
+                'aare-carousel',
+                'landscape-carousel',
+                'lauterbrunnen-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

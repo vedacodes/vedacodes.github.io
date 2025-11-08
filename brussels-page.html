@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brussels - Heart of Europe | Veda's Travel Diary</title>
+    <title>Brussels - European Heart | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #8B4513 0%, #FFD700 100%);
+            --brussels-gradient: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -50,12 +50,6 @@
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
         }
 
         /* Navigation */
@@ -67,8 +61,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-light);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -78,6 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -88,17 +82,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -108,32 +103,152 @@
             color: #667eea;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .nav-links a:hover::after {
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--brussels-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--brussels-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
             width: 100%;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Destination Badge */
+        .destination-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--brussels-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--brussels-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Image Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -150,7 +265,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -172,242 +287,188 @@
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
         }
 
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
 
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+        .collage-image:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .description-card::before {
+        .hero::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
-        }
-
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .gallery-image-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
             opacity: 1;
         }
 
-        .gallery-caption {
-            padding: 25px;
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        .gallery-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
-        .gallery-caption p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        /* Travel Tips Grid */
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active,
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        /* Travel Tips */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: var(--border-radius);
-            padding: 2rem;
             box-shadow: var(--shadow-light);
+            transition: var(--transition);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,15 +477,15 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
@@ -433,181 +494,86 @@
             line-height: 1.6;
         }
 
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .nav-links {
                 display: none;
             }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
+
             .image-gallery {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
             }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
             }
-            
-            .collage-container {
-                opacity: 0.2;
+
+            .collage-image:nth-child(2) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
             }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
+
+            .collage-image:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(5),
+            .collage-image:nth-child(6) {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="brussels/brussels-image-1.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-2.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-3.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-4.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-5.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-6.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-7.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-8.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-9.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-1.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-2.jpg" alt="" class="collage-image">
-            <img src="brussels/brussels-image-3.jpg" alt="" class="collage-image">
+            <img src="brussels/brussels-image-3.jpg" alt="Grand Palace" class="collage-image" loading="lazy">
+            <img src="brussels/brussels-image-2.jpg" alt="Manneken Pis" class="collage-image" loading="lazy">
+            <img src="brussels/brussels-image-4.jpg" alt="Mont des Arts" class="collage-image" loading="lazy">
+            <img src="brussels/brussels-image-6.jpg" alt="Mini Europe" class="collage-image" loading="lazy">
+            <img src="brussels/brussels-image-1.jpg" alt="Brussels Street Art" class="collage-image" loading="lazy">
+            <img src="brussels/brussels-image-11.jpg" alt="Cobblestone heritage of Brussels" class="collage-image" loading="lazy">
         </div>
         <div class="hero-content">
-            <h1>Brussels</h1>
-            <p class="hero-subtitle">Chocolate, Waffles & European Dreams</p>
-            <p class="hero-description">Discover the charming capital of Belgium and Europe, where medieval architecture meets modern politics. From the stunning Grand Place to the quirky Manneken Pis, Brussels offers world-class art, incredible cuisine, and that special European charm.</p>
+            <div class="destination-badge">
+                <i class="fas fa-building"></i>
+                Brussels
+            </div>
+            <h1 class="hero-title">European Heart & Soul</h1>
+            <p class="hero-subtitle">Where European unity meets timeless Belgian charm</p>
         </div>
     </section>
 
-    <!-- Main Content -->
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Brussels Adventure</h2>
+            <h2 class="section-title">My Brussels Discovery</h2>
             <div class="description-card">
-                <p>Brussels surprised me at every turn. What I expected to be a purely political city revealed itself as a cultural treasure trove. The Grand Place took my breath away, the chocolate shops tempted me at every corner, and the friendly locals made me feel at home. This city perfectly balances its role as Europe's capital with its Belgian soul.</p>
+                <p>Brussels surprised me at every turn with its perfect blend of medieval charm and modern European sophistication. As the heart of the European Union, this city pulses with international energy while maintaining its distinctly Belgian character. From magnificent guildhalls to whimsical street art, from world-famous chocolate to architectural marvels, Brussels showed me how tradition and progress can dance together beautifully.</p>
             </div>
         </section>
 
@@ -615,187 +581,491 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Days Exploring</div>
+                    <div class="stat-number">1.2M</div>
+                    <div class="stat-label">Population</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Chocolate Shops</div>
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">EU Member Nations</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Sweet Memories</div>
+                    <div class="stat-number">800+</div>
+                    <div class="stat-label">Chocolatiers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">162</div>
+                    <div class="stat-label">Different Nationalities</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Brussels Diary</h2>
+            <h2 class="section-title">Brussels Moments Captured</h2>
             <div class="image-gallery">
+                <!-- Brussels Street Art -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-1.jpg" alt="First Glimpse of Brussels" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="streetart-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-1.jpg" alt="Brussels Street Art" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="streetart-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Brussels</h3>
-                        <p>My initial impression of Brussels was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Brussels Street Art</h3>
+                        <p>Brussels' vibrant street art scene amazed me. The city celebrates creativity at every corner, transforming ordinary walls into extraordinary canvases that tell stories of culture and community.</p>
                     </div>
                 </div>
+
+                <!-- Manneken Pis -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="manneken-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-2.jpg" alt="Manneken Pis" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="manneken-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Brussels adventure.</p>
+                        <h3>Manneken Pis</h3>
+                        <p>This tiny bronze statue embodies Brussels' quirky sense of humor. Finding this famous little boy was like discovering the city's playful soul hidden among grand architecture.</p>
                     </div>
                 </div>
+
+                <!-- Grand Palace -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="grandpalace-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-3.jpg" alt="Grand Palace" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="grandpalace-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Brussels's authentic character.</p>
+                        <h3>Grand Palace</h3>
+                        <p>The Grand Place took my breath away. This UNESCO World Heritage site is arguably Europe's most beautiful square, where Gothic and Baroque architecture create a symphony in stone.</p>
                     </div>
                 </div>
+
+                <!-- Mont des Arts Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="montarts-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-4.jpg" alt="Mont des Arts view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="brussels/brussels-image-5.jpg" alt="Garden of Mont des Arts" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('montarts-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('montarts-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="montarts-carousel-indicators"></div>
+                            <div class="carousel-counter" id="montarts-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Mont des Arts</h3>
+                        <p>This cultural quarter offers stunning views over Brussels. The gardens and museums here create a perfect blend of nature, art, and history in the heart of the city.</p>
                     </div>
                 </div>
+
+                <!-- Mini Europe Experience Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="minieurope-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-6.jpg" alt="Mini Europe" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="brussels/brussels-image-7.jpg" alt="Eiffel Tower - replica" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="brussels/brussels-image-8.jpg" alt="Sacré-Cœur Basilica - replica" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="brussels/brussels-image-9.jpg" alt="Leaning tower of Pisa - replica" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('minieurope-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('minieurope-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="minieurope-carousel-indicators"></div>
+                            <div class="carousel-counter" id="minieurope-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Brussels gave me many of these precious memories.</p>
+                        <h3>Mini Europe</h3>
+                        <p>Walking through Mini Europe was like taking a whirlwind tour across the continent. Seeing iconic European landmarks in miniature made me appreciate the diversity and beauty of our shared heritage.</p>
                     </div>
                 </div>
+
+                <!-- Cobblestone Heritage Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="brussels/brussels-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="cobblestone-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="brussels/brussels-image-11.jpg" alt="Cobblestone heritage of Brussels view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="brussels/brussels-image-12.jpg" alt="Cobblestone heritage of Brussels view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('cobblestone-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('cobblestone-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="cobblestone-carousel-indicators"></div>
+                            <div class="carousel-counter" id="cobblestone-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Brussels, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Cobblestone heritage of Brussels</h3>
+                        <p>Walking on these ancient cobblestone streets felt like traveling through time. Each stone has witnessed centuries of history, from medieval traders to modern European diplomats.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Must-See Places Section -->
+        <!-- Travel Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Brussels</h2>
+            <h2 class="section-title">Essential Brussels Tips</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>Grand Place</h3>
-                    <p>UNESCO World Heritage square surrounded by ornate guildhalls. Most beautiful at sunset and during evening illumination.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">👶</div>
-                    <h3>Manneken Pis</h3>
-                    <p>Brussels' cheeky symbol - a bronze fountain of a little boy. Often dressed in costumes donated from around the world.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🎨</div>
-                    <h3>Royal Museums</h3>
-                    <p>World-class collection including Magritte Museum. Perfect for art lovers and rainy Brussels days.</p>
-                </div>
-                <div class="tip-card">
                     <div class="tip-icon">🍫</div>
-                    <h3>Chocolate Workshops</h3>
-                    <p>Learn from master chocolatiers at Pierre Marcolini or Leonidas. Hands-on experiences with tastings.</p>
+                    <h3>Chocolate Tours</h3>
+                    <p>Take a chocolate walking tour to discover the best chocolatiers. Pierre Marcolini and Godiva are must-visits for world-class Belgian chocolate.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🏰</div>
-                    <h3>Atomium</h3>
-                    <p>Unique 1958 World's Fair structure offering panoramic city views. Iconic symbol of modern Brussels.</p>
+                    <div class="tip-icon">🍺</div>
+                    <h3>Belgian Beer</h3>
+                    <p>Try local beers like Lambic, Dubbel, and Tripel. Visit traditional pubs like Café du Sablon for an authentic Belgian beer experience.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🌸</div>
-                    <h3>Parc du Cinquantenaire</h3>
-                    <p>Beautiful park with triumphal arch and museums. Great for picnics and morning jogs.</p>
+                    <div class="tip-icon">🏛️</div>
+                    <h3>EU Quarter</h3>
+                    <p>Visit the European Parliament and Commission buildings. Free tours are available on certain days - book in advance online.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for peak season. Book chocolate tours and Michelin-starred restaurants early. EU building tours need advance booking.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Historic Center: Near Grand Place, walkable to attractions. Ixelles: Trendy area with great restaurants. European Quarter: Modern, good for business travelers.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Free museums on first Wednesday afternoons. Try local brasseries for authentic Belgian food. Use Brussels Card for discounts on attractions.</p>
-                    </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚇</div>
+                    <h3>Public Transport</h3>
+                    <p>Get a Brussels Card for unlimited public transport and free museum entries. The metro, trams, and buses are efficient and well-connected.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Brussels</h2>
+            <h2 class="section-title">Must-Try Belgian Food</h2>
             <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🍟</div>
+                    <h3>Belgian Frites</h3>
+                    <p>Belgians invented fries! Twice-fried perfection. Crispy outside, fluffy inside. Various sauces (andalouse, samurai). Maison Antoine famous. Belgium's pride!</p>
+                    <span class="food-price">€4-7</span>
+                </div>
                 <div class="food-card">
                     <div class="food-icon">🧇</div>
                     <h3>Belgian Waffles</h3>
-                    <p>Crispy outside, fluffy inside, topped with fresh fruit, chocolate, or cream. Best at street vendors.</p>
-                    <span class="food-price">$3-8</span>
+                    <p>Two types: Brussels (light, rectangular) and Liège (dense, round, sugar pearls). Toppings galore. Tourist trap potential - locals eat plain or with fruit!</p>
+                    <span class="food-price">€5-10</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍫</div>
-                    <h3>Artisan Chocolate</h3>
-                    <p>World's finest chocolates from legendary chocolatiers. Take a chocolate tour to taste the best.</p>
-                    <span class="food-price">$5-25</span>
+                    <h3>Belgian Chocolate</h3>
+                    <p>World's best chocolate! Neuhaus, Godiva, Leonidas. Pralines exquisite. Visit chocolate museums. Sample everything. Perfect souvenir!</p>
+                    <span class="food-price">€3-15</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍺</div>
                     <h3>Belgian Beer</h3>
-                    <p>Over 400 varieties including Trappist ales. Visit traditional beer cafes for authentic experience.</p>
-                    <span class="food-price">$4-10</span>
+                    <p>Over 1,500 beers! Trappist abbey beers, lambics, fruit beers. Each served in specific glass. Delirium Café has 2,000+ beers. Beer paradise!</p>
+                    <span class="food-price">€4-8</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍟</div>
-                    <h3>Belgian Fries</h3>
-                    <p>Thick-cut, double-fried perfection served in paper cones with mayo. Invented in Belgium!</p>
-                    <span class="food-price">$3-6</span>
+                    <div class="food-icon">🦪</div>
+                    <h3>Moules-Frites</h3>
+                    <p>Mussels and fries - Belgian classic! Steamed in white wine, garlic, herbs. Huge pot served. Chez Léon famous. Messy, delicious, essential!</p>
+                    <span class="food-price">€18-25</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥩</div>
+                    <div class="food-icon">🥘</div>
                     <h3>Carbonnade Flamande</h3>
-                    <p>Traditional beef stew cooked in Belgian beer. Hearty comfort food perfect for cold Brussels days.</p>
-                    <span class="food-price">$15-22</span>
+                    <p>Beef stew cooked in beer. Rich, sweet-savory. Served with frites. Hearty Belgian comfort food. Perfect winter meal!</p>
+                    <span class="food-price">€16-22</span>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🧄</div>
-                    <h3>Moules-frites</h3>
-                    <p>Fresh mussels steamed with white wine, served with Belgian fries. Classic Brussels combination.</p>
-                    <span class="food-price">$12-18</span>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See in Brussels</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Grand Place</h3>
+                    <p>UNESCO World Heritage! Stunning medieval square. Ornate guildhalls. Visit day and night - both beautiful. Flower carpet (Aug, even years). Heart of Brussels!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚽</div>
+                    <h3>Manneken Pis</h3>
+                    <p>Tiny peeing boy statue - Brussels icon! Often dressed in costumes. Surprisingly small but historic. Nearby chocolate shops. Quick photo stop!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⚛️</div>
+                    <h3>Atomium</h3>
+                    <p>Giant atom structure from 1958 Expo. Futuristic landmark. Panoramic city views. Quirky exhibits inside. Outside city center but worth trip!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🖼️</div>
+                    <h3>Royal Museums of Fine Arts</h3>
+                    <p>Magritte Museum included! Old Masters, modern art. Bruegel, Rubens collections. Free first Wednesday afternoons. Art lovers' paradise!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏰</div>
+                    <h3>Bruges Day Trip</h3>
+                    <p>1 hour by train! Medieval fairy tale town. Canals, chocolate, beer. One of Europe's prettiest cities. Easy day trip from Brussels!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍺</div>
+                    <h3>Beer Culture</h3>
+                    <p>Visit Brussels Beer Project or Cantillon Brewery. Beer tastings, brewery tours. Learn Belgian beer tradition. Delirium Café for variety!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Brussels</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (April-June)</h3>
+                        <div class="season-temp">10-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Pleasant weather, flowers blooming. Outdoor cafés open. Fewer tourists than summer. Perfect for walking tours and beer gardens!</p>
+                        <ul class="season-pros">
+                            <li>Comfortable temperatures</li>
+                            <li>Beautiful parks</li>
+                            <li>Lower prices than summer</li>
+                            <li>Festival season begins</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (July-August)</h3>
+                        <div class="season-temp">18-25°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Peak Season:</strong> Warmest weather, long days. Crowded tourist sites. Many locals vacation away. Outdoor festivals. Book ahead!</p>
+                        <ul class="season-pros">
+                            <li>Best weather</li>
+                            <li>Outdoor events</li>
+                            <li>Extended hours</li>
+                            <li>Vibrant atmosphere</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-October)</h3>
+                        <div class="season-temp">12-18°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Excellent Choice:</strong> Mild weather, autumn colors. Fewer crowds, lower prices. Beer season! Cozy pub weather. Great for museums and chocolate shops!</p>
+                        <ul class="season-pros">
+                            <li>Shoulder season deals</li>
+                            <li>Comfortable sightseeing</li>
+                            <li>Beer festival season</li>
+                            <li>Beautiful fall colors</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (November-March)</h3>
+                        <div class="season-temp">2-8°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Christmas Markets:</strong> Cold, gray, rainy. Christmas markets magical! Mulled wine, festive atmosphere. Budget-friendly. Perfect for museums and hot chocolate!</p>
+                        <ul class="season-pros">
+                            <li>Christmas markets</li>
+                            <li>Lowest prices</li>
+                            <li>Cozy café culture</li>
+                            <li>Fewer tourists</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        // Parallax effect for hero collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-collage');
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'streetart-carousel',
+                'manneken-carousel', 
+                'grandpalace-carousel',
+                'montarts-carousel',
+                'minieurope-carousel',
+                'cobblestone-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

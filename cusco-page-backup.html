@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cusco - Navel of the World | Veda's Travel Diary</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --cusco-gradient: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--primary-gradient);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cusco-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 20px;
+            background: var(--cusco-gradient);
+            border-radius: var(--border-radius);
+            color: var(--text-light);
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('cusco/cusco-image-1.jpg') center/cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Stats Grid */
+        .stats-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--cusco-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+
+        .photo-widget {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .photo-widget:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .widget-header {
+            padding: 25px 30px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .widget-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .widget-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .widget-content {
+            position: relative;
+        }
+
+        /* Single Image Widget */
+        .single-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            display: block;
+            background: #f8f9fa;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f8f9fa;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            .widget-header {
+                padding: 20px 20px 10px;
+            }
+            
+            .single-image,
+            .carousel-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .home-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .location-tag {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cusco, Peru</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <div class="page-header-content">
+                    <h1 class="page-title">Cusco</h1>
+                    <p class="page-subtitle">The ancient capital of the Inca Empire, where history comes alive in every stone and every breath of high-altitude air</p>
+                </div>
+            </header>
+
+            <section class="stats-section">
+                <h2 class="section-title">Journey Highlights</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏔️</div>
+                        <div class="stat-number">3,399m</div>
+                        <div class="stat-label">Altitude</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌈</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Rainbow Mountain</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏛️</div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Years of History</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🦙</div>
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Alpaca Cuteness</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                <h2 class="section-title">Adventure Gallery</h2>
+                
+                <!-- The Rainbow Mountain (Vinicunca) -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">The Rainbow Mountain (Vinicunca)</h3>
+                        <p class="widget-description">The breathtaking Rainbow Mountain, a natural wonder with vibrant colored stripes created by mineral deposits</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="rainbow-mountain-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-1.jpg" alt="The Rainbow Mountain (Vinicunca)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-3.jpg" alt="The Rainbow Mountain (Vinicunca)">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('rainbow-mountain-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('rainbow-mountain-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('rainbow-mountain-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('rainbow-mountain-carousel', 1)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="rainbow-mountain-carousel-current">1</span> / <span id="rainbow-mountain-carousel-total">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenic Andes mountains -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Scenic Andes Mountains</h3>
+                        <p class="widget-description">Breathtaking views from 17,000 feet above sea level - the majestic Andes in all their glory</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-2.jpg" alt="Scenic Andes mountains from 17000 feet!" class="single-image">
+                    </div>
+                </div>
+
+                <!-- The Challenging Hike -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">The Challenging Adventure</h3>
+                        <p class="widget-description">The hike to Rainbow Mountain is not easy, but the reward is absolutely worth every step</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hike-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-4.jpg" alt="And the hike is not so easy :D">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-14.jpg" alt="And the hike is not so easy :D">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('hike-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('hike-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('hike-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('hike-carousel', 1)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="hike-carousel-current">1</span> / <span id="hike-carousel-total">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- With Incan natives and Alpacas -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Local Culture & Wildlife</h3>
+                        <p class="widget-description">Meeting Incan natives and adorable alpacas - the heart and soul of Cusco's culture</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-5.jpg" alt="With Incan natives and a cute Alapaca" class="single-image">
+                    </div>
+                </div>
+
+                <!-- Cusco City Square -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Cusco City Square</h3>
+                        <p class="widget-description">The historic Plaza de Armas, the beating heart of Cusco with stunning colonial architecture</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="city-square-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-6.jpg" alt="Cusco city square">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-17.jpg" alt="Cusco city square">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-18.jpg" alt="Cusco city square">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('city-square-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('city-square-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('city-square-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('city-square-carousel', 1)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('city-square-carousel', 2)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="city-square-carousel-current">1</span> / <span id="city-square-carousel-total">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpacas -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Alpacas</h3>
+                        <p class="widget-description">The adorable and fluffy alpacas that call the Andes home</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="alpacas-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-7.jpg" alt="Alpacas">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-15.jpg" alt="Alpacas">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('alpacas-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('alpacas-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('alpacas-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('alpacas-carousel', 1)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="alpacas-carousel-current">1</span> / <span id="alpacas-carousel-total">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ziplining Adventure -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Ziplining Through the Andes</h3>
+                        <p class="widget-description">Adrenaline-pumping adventure soaring through the majestic Andes mountains</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="zipline-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-8.jpg" alt="Geared up to fly">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-9.jpg" alt="Ziplining through the Andes">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('zipline-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('zipline-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('zipline-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('zipline-carousel', 1)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="zipline-carousel-current">1</span> / <span id="zipline-carousel-total">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sacred Valley -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Sacred Valley</h3>
+                        <p class="widget-description">The mystical Sacred Valley, where ancient Inca civilization flourished</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-10.jpg" alt="Sacred Valley" class="single-image">
+                    </div>
+                </div>
+
+                <!-- ATV Adventure -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">ATVing Through Sacred Valley</h3>
+                        <p class="widget-description">Exploring the Sacred Valley on ATVs - an adventurous way to see the ancient landscapes</p>
+                    </div>
+                    <div class="widget-content">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="atv-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cusco/cusco-image-11.jpg" alt="ATVing through Sacred Valley">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cusco/cusco-image-12.jpg" alt="Riding the ATVs">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('atv-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('atv-carousel', 1)">›</button>
+                            <div class="carousel-indicators">
+                                <span class="carousel-indicator active" onclick="goToSlide('atv-carousel', 0)"></span>
+                                <span class="carousel-indicator" onclick="goToSlide('atv-carousel', 1)"></span>
+                            </div>
+                            <div class="carousel-counter">
+                                <span id="atv-carousel-current">1</span> / <span id="atv-carousel-total">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salt Mines of Maras -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Salt Mines of Maras</h3>
+                        <p class="widget-description">The ancient salt mines of Maras, a testament to Inca engineering and still in use today</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-13.jpg" alt="Salt Mines of Maras" class="single-image">
+                    </div>
+                </div>
+
+                <!-- Lovely Airbnb -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Lovely Airbnb</h3>
+                        <p class="widget-description">Our charming accommodation in Cusco, the perfect base for our adventures</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-16.jpg" alt="Lovely Airbnb" class="single-image">
+                    </div>
+                </div>
+
+                <!-- Twelve Angled Stone -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Twelve Angled Stone</h3>
+                        <p class="widget-description">The famous twelve-angled stone, a masterpiece of Inca stonework in Cusco's historic center</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-19.jpg" alt="twelve Angled Stone" class="single-image">
+                    </div>
+                </div>
+
+                <!-- Cusco Railway Station -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Cusco Railway Station</h3>
+                        <p class="widget-description">The historic railway station, gateway to many adventures including the journey to Machu Picchu</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-20.jpg" alt="Cusco Railay station" class="single-image">
+                    </div>
+                </div>
+
+                <!-- Narrow Streets of Cusco -->
+                <div class="photo-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Narrow Streets of Cusco</h3>
+                        <p class="widget-description">The charming narrow cobblestone streets that wind through Cusco's historic center</p>
+                    </div>
+                    <div class="widget-content">
+                        <img src="cusco/cusco-image-21.jpg" alt="Narrow Streets of Cusco" class="single-image">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Carousel functionality
+        function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicator');
+            const currentSlideElement = carousel.parentElement.querySelector(`#${carouselId}-current`);
+            
+            let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            
+            // Remove active class from current slide and indicator
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            
+            // Calculate new slide index
+            currentSlide += direction;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            
+            // Add active class to new slide and indicator
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+            
+            // Update counter
+            currentSlideElement.textContent = currentSlide + 1;
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const indicators = carousel.parentElement.querySelectorAll('.carousel-indicator');
+            const currentSlideElement = carousel.parentElement.querySelector(`#${carouselId}-current`);
+            
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to target slide and indicator
+            slides[slideIndex].classList.add('active');
+            indicators[slideIndex].classList.add('active');
+            
+            // Update counter
+            currentSlideElement.textContent = slideIndex + 1;
+        }
+
+        // Auto-advance carousels
+        function autoAdvanceCarousels() {
+            const carousels = document.querySelectorAll('.carousel-wrapper');
+            carousels.forEach(carousel => {
+                if (carousel.querySelectorAll('.carousel-slide').length > 1) {
+                    setInterval(() => {
+                        moveCarousel(carousel.id, 1);
+                    }, 5000);
+                }
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in the page
+            document.body.style.opacity = '1';
+            
+            // Start auto-advance for carousels
+            setTimeout(autoAdvanceCarousels, 2000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                document.querySelectorAll('.carousel-wrapper').forEach(carousel => {
+                    moveCarousel(carousel.id, -1);
+                });
+            } else if (e.key === 'ArrowRight') {
+                document.querySelectorAll('.carousel-wrapper').forEach(carousel => {
+                    moveCarousel(carousel.id, 1);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

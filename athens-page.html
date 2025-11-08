@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --athens-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -50,12 +50,6 @@
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
         }
 
         /* Navigation */
@@ -67,8 +61,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-light);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -78,6 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -88,17 +82,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -108,32 +103,152 @@
             color: #667eea;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .nav-links a:hover::after {
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--athens-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--athens-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
             width: 100%;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Destination Badge */
+        .destination-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--athens-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--athens-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Image Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -150,7 +265,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -172,242 +287,188 @@
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
         }
 
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
 
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+        .collage-image:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .description-card::before {
+        .hero::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
-        }
-
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .gallery-image-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
             opacity: 1;
         }
 
-        .gallery-caption {
-            padding: 25px;
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        .gallery-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
-        .gallery-caption p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        /* Travel Tips Grid */
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active,
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        /* Travel Tips */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: var(--border-radius);
-            padding: 2rem;
             box-shadow: var(--shadow-light);
+            transition: var(--transition);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,15 +477,15 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
@@ -433,172 +494,86 @@
             line-height: 1.6;
         }
 
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .nav-links {
                 display: none;
             }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
+
             .image-gallery {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
             }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(5),
+            .collage-image:nth-child(6) {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="athens/athens-image-1.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-2.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-3.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-4.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-5.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-6.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-7.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-8.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-9.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-10.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-11.jpg" alt="" class="collage-image">
-            <img src="athens/athens-image-12.jpg" alt="" class="collage-image">
+            <img src="athens/athens-image-11.jpg" alt="Acropolis of Athens" class="collage-image" loading="lazy">
+            <img src="athens/athens-image-1.jpg" alt="Panathenaic Stadium" class="collage-image" loading="lazy">
+            <img src="athens/athens-image-7.jpg" alt="Acropolis Museum" class="collage-image" loading="lazy">
+            <img src="athens/athens-image-13.jpg" alt="Odeon of Herodes Atticus" class="collage-image" loading="lazy">
+            <img src="athens/athens-image-5.jpg" alt="Temple of Hephaestus" class="collage-image" loading="lazy">
+            <img src="athens/athens-image-16.jpg" alt="Caryatids: The Daughters of Athens" class="collage-image" loading="lazy">
         </div>
         <div class="hero-content">
-            <h1>Athens</h1>
-            <p class="hero-subtitle">Where Democracy Was Born</p>
-            <p class="hero-description">Discover the birthplace of democracy and philosophy in the ancient city of Athens. From the majestic Acropolis to the bustling Plaka, every corner whispers tales of gods, heroes, and the foundations of Western civilization.</p>
+            <div class="destination-badge">
+                <i class="fas fa-university"></i>
+                Athens
+            </div>
+            <h1 class="hero-title">Cradle of Democracy</h1>
+            <p class="hero-subtitle">Where ancient wisdom meets modern life in timeless harmony</p>
         </div>
     </section>
 
-    <!-- Main Content -->
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Athens Adventure</h2>
+            <h2 class="section-title">My Athenian Journey</h2>
             <div class="description-card">
-                <p>Standing beneath the Parthenon, I felt the weight of history and human achievement. Athens isn't just a city of ancient ruins—it's a living testament to the power of ideas, democracy, and human creativity. The blend of classical architecture with vibrant street art, ancient philosophy with modern café culture, created a magical experience that connected me to thousands of years of human stories.</p>
+                <p>Athens overwhelmed me with its layers of history and vibrant modern culture. Walking where Socrates taught, standing on the Acropolis where democracy was born, touching stones that witnessed the birth of Western civilization—every moment felt profound. This city taught me that history isn't just in books; it lives and breathes in every corner, every marble column, every ancient stone.</p>
             </div>
         </section>
 
@@ -606,187 +581,522 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Days Exploring</div>
+                    <div class="stat-number">3.7M</div>
+                    <div class="stat-label">Population</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">2500+</div>
+                    <div class="stat-number">5,000</div>
                     <div class="stat-label">Years of History</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Inspiration Gained</div>
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">UNESCO Sites</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">508 BC</div>
+                    <div class="stat-label">Birth of Democracy</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Athens Diary</h2>
+            <h2 class="section-title">Ancient Moments Captured</h2>
             <div class="image-gallery">
+                <!-- Panathenaic Stadium Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-10.jpg" alt="The Mighty Acropolis" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="panathenaic-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-1.jpg" alt="Panathenaic Stadium view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-2.jpg" alt="Under Panathenaic Stadium" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-3.jpg" alt="Panathenaic Stadium view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-4.jpg" alt="Panathenaic Stadium view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-15.jpg" alt="Panathenaic Stadium view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('panathenaic-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('panathenaic-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="panathenaic-carousel-indicators"></div>
+                            <div class="carousel-counter" id="panathenaic-carousel-counter">1 / 5</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>The Mighty Acropolis</h3>
-                        <p>Standing before the Parthenon at sunrise, I felt connected to 2,500 years of human achievement. The perfect proportions and enduring beauty remind us why this is considered the pinnacle of classical architecture.</p>
+                        <h3>Panathenaic Stadium</h3>
+                        <p>Standing in the marble stadium where the first modern Olympics were held in 1896, I felt the weight of athletic history. This ancient arena has witnessed countless moments of human triumph and determination.</p>
                     </div>
                 </div>
+
+                <!-- Temple of Hephaestus -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-11.jpg" alt="Ancient Agora" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hephaestus-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-5.jpg" alt="Temple of Hephaestus" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="hephaestus-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Ancient Agora</h3>
-                        <p>Walking the same paths as Socrates and Plato was surreal. The Ancient Agora, birthplace of democracy, still echoes with philosophical debates that shaped our world.</p>
+                        <h3>Temple of Hephaestus</h3>
+                        <p>This perfectly preserved ancient temple left me speechless. Standing before these 2,400-year-old columns, I marveled at the architectural genius of ancient Greeks and their lasting legacy.</p>
                     </div>
                 </div>
+
+                <!-- Ancient Agora of Athens -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-12.jpg" alt="Temple of Olympian Zeus" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="agora-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-6.jpg" alt="Ancient Agora of Athens" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="agora-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Temple of Olympian Zeus</h3>
-                        <p>These colossal columns took 700 years to complete. Standing among them, I marveled at the persistence and vision of ancient builders who created monuments for eternity.</p>
+                        <h3>Ancient Agora of Athens</h3>
+                        <p>Walking through the ancient marketplace where Socrates taught and democracy was debated, I could almost hear the echoes of philosophical discussions that shaped Western thought.</p>
                     </div>
                 </div>
+
+                <!-- Acropolis Museum Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-13.jpg" alt="Plaka's Charm" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="museum-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-7.jpg" alt="Acropolis Museum view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-8.jpg" alt="Acropolis Museum view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-9.jpg" alt="Acropolis Museum view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-17.jpg" alt="Acropolis Museum Archeological Excavation Site" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('museum-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('museum-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="museum-carousel-indicators"></div>
+                            <div class="carousel-counter" id="museum-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Plaka's Charm</h3>
-                        <p>Getting lost in the narrow streets of Plaka felt like traveling through time. Every corner revealed hidden gems - from tiny churches to traditional tavernas full of life and laughter.</p>
+                        <h3>Acropolis Museum</h3>
+                        <p>The modern museum housing ancient treasures created a perfect bridge between past and present. Standing before original sculptures from the Parthenon, I felt connected to artists who lived millennia ago.</p>
                     </div>
                 </div>
+
+                <!-- Acropolis of Athens Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-7.jpg" alt="National Gardens" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="acropolis-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-10.jpg" alt="Entering the Acropolis of Athens" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-11.jpg" alt="Acropolis of Athens view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="athens/athens-image-12.jpg" alt="Acropolis of Athens view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('acropolis-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('acropolis-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="acropolis-carousel-indicators"></div>
+                            <div class="carousel-counter" id="acropolis-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>National Gardens</h3>
-                        <p>A peaceful escape from the bustling city center. These green spaces provided the perfect spot for reflection after absorbing so much ancient history.</p>
+                        <h3>Acropolis of Athens</h3>
+                        <p>Climbing to the Acropolis was a pilgrimage to the heart of Western civilization. Standing where Pericles once stood, gazing at the Parthenon, I understood why this place has inspired humanity for over two millennia.</p>
                     </div>
                 </div>
+
+                <!-- Odeon of Herodes Atticus -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="athens/athens-image-8.jpg" alt="Sunset Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="odeon-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-13.jpg" alt="Odeon of Herodes Atticus" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="odeon-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Sunset Views</h3>
-                        <p>Watching the sun set over Athens from Mount Lycabettus was magical. The city sprawled below like a living museum, where ancient and modern blend seamlessly together.</p>
+                        <h3>Odeon of Herodes Atticus</h3>
+                        <p>This ancient theater still hosts performances today, creating a magical connection between ancient and modern arts. Imagining ancient audiences watching plays here gave me chills.</p>
+                    </div>
+                </div>
+
+                <!-- Caryatids: The Daughters of Athens -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="caryatids-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="athens/athens-image-16.jpg" alt="Caryatids: The Daughters of Athens" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="caryatids-carousel-counter">1 / 1</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Caryatids: The Daughters of Athens</h3>
+                        <p>These elegant female figures supporting the Erechtheion are masterpieces of ancient art. Each sculpture tells a story of grace, strength, and the artistic genius of classical Athens.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Must-See Places Section -->
+        <!-- Travel Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Athens</h2>
+            <h2 class="section-title">Essential Athens Tips</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>The Acropolis</h3>
-                    <p>Visit the iconic Parthenon and Acropolis Museum. Go early morning to avoid crowds and get perfect lighting for photos.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏺</div>
-                    <h3>Ancient Agora</h3>
-                    <p>Walk where Socrates taught and democracy was born. The Temple of Hephaestus is amazingly preserved.</p>
+                    <div class="tip-icon">🎫</div>
+                    <h3>Combined Tickets</h3>
+                    <p>Buy the combined ticket for €30 to visit Acropolis and six other ancient sites. Valid for 5 days and great value.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🌅</div>
-                    <h3>Mount Lycabettus</h3>
-                    <p>Climb or take the funicular for panoramic city views. Sunset time is magical but arrive early for best spots.</p>
+                    <h3>Early Morning Visits</h3>
+                    <p>Visit Acropolis early morning or late afternoon to avoid crowds and heat. The golden hour lighting is spectacular.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🍽️</div>
-                    <h3>Plaka District</h3>
-                    <p>Get lost in the charming old town with traditional tavernas, shops, and neoclassical architecture.</p>
+                    <div class="tip-icon">👟</div>
+                    <h3>Comfortable Shoes</h3>
+                    <p>Wear good walking shoes with grip. Ancient marble can be slippery, and you'll walk on uneven surfaces.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏛️</div>
-                    <h3>National Archaeological Museum</h3>
-                    <p>World-class collection of ancient Greek artifacts. Allow 3-4 hours to see the highlights properly.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">⛪</div>
-                    <h3>Changing of the Guard</h3>
-                    <p>Watch the ceremonial guard change at Syntagma Square. Happens every hour, elaborate ceremony on Sundays.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>4-6 months in advance for summer season (June-August). 2-3 months ahead for spring/fall. Book Acropolis tickets online to skip lines.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Plaka: Historic charm, walking distance to sites. Monastiraki: Budget-friendly, great nightlife. Kolonaki: Upscale area with shopping and cafes.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Visit on first Sunday of month for free museum entry. Take the metro from airport (much cheaper than taxi). Eat at local tavernas in Psyrri district.</p>
-                    </div>
+                    <h3>Museum First</h3>
+                    <p>Visit Acropolis Museum before the actual site. The context and artifacts will enhance your experience significantly.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Athens</h2>
+            <h2 class="section-title">Must-Try Greek Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🥗</div>
-                    <h3>Greek Salad</h3>
-                    <p>Fresh tomatoes, olives, feta cheese with olive oil. Simple perfection that tastes like sunshine.</p>
-                    <span class="food-price">$8-12</span>
+                    <div class="food-icon">🥙</div>
+                    <h3>Souvlaki & Gyros</h3>
+                    <p>Grilled meat skewers (souvlaki) or rotisserie (gyros) with pita, tomatoes, onions, tzatziki. Fast, cheap, delicious! Street food staple. €3-5 for authentic Greek fast food!</p>
+                    <span class="food-price">€3-8</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍖</div>
-                    <h3>Souvlaki</h3>
-                    <p>Grilled meat skewers with pita, tzatziki, and vegetables. Perfect street food for lunch.</p>
-                    <span class="food-price">$6-10</span>
+                    <div class="food-icon">🧀</div>
+                    <h3>Moussaka</h3>
+                    <p>Layered eggplant, meat sauce, béchamel. Greek comfort food! Hearty, rich, satisfying. Try at traditional tavernas. Every grandmother makes it differently!</p>
+                    <span class="food-price">€10-15</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥗</div>
+                    <h3>Greek Salad (Horiatiki)</h3>
+                    <p>Tomatoes, cucumbers, olives, feta, olive oil. Simple perfection! No lettuce in authentic version. Fresh ingredients make it shine. Order at every meal!</p>
+                    <span class="food-price">€6-10</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🐙</div>
+                    <h3>Grilled Octopus</h3>
+                    <p>Tender, charred, with lemon and olive oil. Coastal specialty. Best at seaside tavernas. Often served with fava (split pea purée). Delicious!</p>
+                    <span class="food-price">€12-18</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍯</div>
                     <h3>Baklava</h3>
-                    <p>Flaky pastry with nuts and honey. Get it fresh from traditional bakeries in Plaka.</p>
-                    <span class="food-price">$3-5</span>
+                    <p>Layers of phyllo pastry, nuts, honey syrup. Sweet, flaky, sticky. Greek dessert classic. Pair with Greek coffee. Sugar rush guaranteed!</p>
+                    <span class="food-price">€3-5</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍷</div>
-                    <h3>Ouzo</h3>
-                    <p>Traditional anise-flavored spirit. Sip slowly with meze while watching the sunset.</p>
-                    <span class="food-price">$4-8</span>
+                    <h3>Ouzo & Greek Wine</h3>
+                    <p>Anise-flavored aperitif (ouzo). Greek wines excellent and affordable. Retsina (pine-flavored) unique. Wine bars in Plaka. Opa!</p>
+                    <span class="food-price">€4-12</span>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🐟</div>
-                    <h3>Fresh Seafood</h3>
-                    <p>Grilled octopus and fresh fish by the water. Head to Piraeus port for authentic experience.</p>
-                    <span class="food-price">$15-25</span>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See in Athens</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>The Acropolis</h3>
+                    <p>Ancient citadel with Parthenon! Go early (8am) to beat crowds and heat. €20 combo ticket covers multiple sites. Wear good shoes - marble slippery. Iconic Athens experience!</p>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Greek Coffee</h3>
-                    <p>Strong, unfiltered coffee served with a glass of water. Perfect for slow mornings.</p>
-                    <span class="food-price">$2-4</span>
+                <div class="tip-card">
+                    <div class="tip-icon">🏺</div>
+                    <h3>Acropolis Museum</h3>
+                    <p>Modern museum showcasing Parthenon sculptures. Glass floors reveal archaeological dig below. AC relief from heat! Visit before Acropolis for context. Excellent cafeteria!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏘️</div>
+                    <h3>Plaka Neighborhood</h3>
+                    <p>Old town charm! Narrow streets, neoclassical buildings, shops, tavernas. Tourist-heavy but atmospheric. Get lost in alleyways. Evening stroll magical!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌅</div>
+                    <h3>Lycabettus Hill</h3>
+                    <p>Highest point in Athens. Funicular or hike up. 360° city views. Sunset stunning. Chapel at top. Restaurant pricey but views worth it!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏟️</div>
+                    <h3>Ancient Agora</h3>
+                    <p>Ancient marketplace ruins. Temple of Hephaestus well-preserved. Socrates walked here! Included in combo ticket. Shady trees offer heat relief!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">👟</div>
+                    <h3>Changing of Guard</h3>
+                    <p>Syntagma Square ceremony hourly. Full ceremony Sundays 11am. Evzones in traditional dress. Free to watch. Popular photo op!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Athens</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (April-June)</h3>
+                        <div class="season-temp">15-28°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Perfect weather for exploring ruins. Wildflowers blooming. Not too hot for Acropolis climb. Easter celebrations special. Ideal sightseeing conditions!</p>
+                        <ul class="season-pros">
+                            <li>Pleasant temperatures</li>
+                            <li>Less crowded than summer</li>
+                            <li>Blooming landscapes</li>
+                            <li>Good for walking tours</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (July-August)</h3>
+                        <div class="season-temp">28-38°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Hot & Crowded:</strong> Peak tourist season. Scorching heat, packed sites. Many locals leave Athens. Evening activities better. Island-hop from Piraeus port!</p>
+                        <ul class="season-pros">
+                            <li>Vibrant nightlife</li>
+                            <li>Beach nearby</li>
+                            <li>Long days</li>
+                            <li>Summer festivals</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-October)</h3>
+                        <div class="season-temp">20-30°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Excellent Choice:</strong> Warm but not scorching. Sea still swimmable. Fewer tourists. Lower prices. September especially good. Great for sightseeing!</p>
+                        <ul class="season-pros">
+                            <li>Comfortable temperatures</li>
+                            <li>Post-summer deals</li>
+                            <li>Fewer crowds</li>
+                            <li>Still beach weather</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Winter (November-March)</h3>
+                        <div class="season-temp">8-15°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget Season:</strong> Mild compared to northern Europe. Occasional rain. Museums less crowded. Lowest prices. Some sites close early. Good for culture focus!</p>
+                        <ul class="season-pros">
+                            <li>Cheapest accommodation</li>
+                            <li>Minimal crowds</li>
+                            <li>Authentic local experience</li>
+                            <li>Museums at leisure</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        // Parallax effect for hero collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-collage');
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'panathenaic-carousel',
+                'hephaestus-carousel', 
+                'agora-carousel',
+                'museum-carousel',
+                'acropolis-carousel',
+                'odeon-carousel',
+                'caryatids-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Angeles - City of Angels | Veda's Travel Diary</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --la-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --text-primary: #2c3e50;
+            --text-secondary: #6c757d;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            background: var(--primary-gradient);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--la-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styling */
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            background: var(--la-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .description-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--la-gradient);
+        }
+
+        .description-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 0 20px;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .description-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .gallery-item:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        .gallery-item:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                Los Angeles, California
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Los Angeles</h1>
+            <p class="hero-subtitle">City of Angels</p>
+            <p class="hero-description">
+                Where dreams come alive under the California sun - from Hollywood glamour to Santa Monica beaches, LA offers endless adventures and magical moments.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="content-section">
+            <h2 class="section-title">My Los Angeles Adventure</h2>
+            
+            <div class="description-card">
+                <p>
+                    Los Angeles captured my heart with its incredible diversity and energy. From the magic of Disneyland to the glitz of Hollywood, from the fascinating Museum of Illusions to the breathtaking views at Griffith Observatory, every moment was filled with wonder. The city's blend of entertainment, culture, and natural beauty created memories that will last a lifetime.
+                </p>
+            </div>
+
+            <div class="image-gallery" id="imageGallery">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Image data based on mapping
+        const imageData = {
+            "Disney Land!": ["losangeles-image-1.jpg", "losangeles-image-2.jpg", "losangeles-image-3.jpg"],
+            "With my fav Disney film Coco": ["losangeles-image-4.jpg"],
+            "Hollywood Walk of Fame": ["losangeles-image-5.jpg"],
+            "Fun at Museum of Illusions": ["losangeles-image-6.jpg", "losangeles-image-8.jpg", "losangeles-image-9.jpg", "losangeles-image-10.jpg"],
+            "Museum of Illusions": ["losangeles-image-7.jpg", "losangeles-image-11.jpg"],
+            "Griffith Observatory": ["losangeles-image-12.jpg"],
+            "Universal Studios": ["losangeles-image-13.jpg", "losangeles-image-15.jpg", "losangeles-image-16.jpg"],
+            "Hogwarts at Universal Studios": ["losangeles-image-14.jpg"],
+            "Santa Monica Pier": ["losangeles-image-17.jpg", "losangeles-image-18.jpg"]
+        };
+
+        function createGalleryItem(title, images) {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            
+            if (images.length === 1) {
+                galleryItem.innerHTML = `
+                    <div class="gallery-image-container">
+                        <img src="images/losangeles/${images[0]}" alt="${title}" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>${title}</h3>
+                        <p>A magical moment captured during my Los Angeles adventure.</p>
+                    </div>
+                `;
+            } else {
+                const carouselSlides = images.map((img, index) => 
+                    `<div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                        <img src="images/losangeles/${img}" alt="${title}" loading="lazy">
+                    </div>`
+                ).join('');
+                
+                const indicators = images.map((_, index) => 
+                    `<div class="carousel-indicator ${index === 0 ? 'active' : ''}" data-slide="${index}"></div>`
+                ).join('');
+                
+                galleryItem.innerHTML = `
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper">
+                                ${carouselSlides}
+                            </div>
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            <div class="carousel-indicators">
+                                ${indicators}
+                            </div>
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span> / <span class="total-slides">${images.length}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>${title}</h3>
+                        <p>A beautiful collection from my Los Angeles journey.</p>
+                    </div>
+                `;
+            }
+            
+            return galleryItem;
+        }
+
+        function initializeCarousel(galleryItem) {
+            const wrapper = galleryItem.querySelector('.carousel-wrapper');
+            const slides = galleryItem.querySelectorAll('.carousel-slide');
+            const prevBtn = galleryItem.querySelector('.carousel-prev');
+            const nextBtn = galleryItem.querySelector('.carousel-next');
+            const indicators = galleryItem.querySelectorAll('.carousel-indicator');
+            const currentSlideSpan = galleryItem.querySelector('.current-slide');
+            
+            let currentSlide = 0;
+            
+            function updateCarousel() {
+                wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+                
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+                
+                if (currentSlideSpan) {
+                    currentSlideSpan.textContent = currentSlide + 1;
+                }
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateCarousel();
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateCarousel();
+            }
+            
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
+                });
+            });
+        }
+
+        // Populate gallery
+        function populateGallery() {
+            const gallery = document.getElementById('imageGallery');
+            
+            Object.entries(imageData).forEach(([title, images]) => {
+                const galleryItem = createGalleryItem(title, images);
+                gallery.appendChild(galleryItem);
+                
+                if (images.length > 1) {
+                    initializeCarousel(galleryItem);
+                }
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            populateGallery();
+            
+            // Fade in the page
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+            align-items: center;
+            gap: 6px;
+            background: var(--city-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--city-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        /* Los Angeles Collage Background */
+        .hero-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+            opacity: 0.6;
+        }
+
+        .collage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: brightness(0.8) contrast(1.1);
+            animation: subtleFloat 8s ease-in-out infinite;
+        }
+
+        .collage-image:nth-child(even) {
+            animation-direction: reverse;
+            animation-delay: -2s;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                filter: brightness(0.8) contrast(1.1);
+            }
+            50% {
+                transform: scale(1.02) rotate(0.5deg);
+                filter: brightness(0.85) contrast(1.15);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            opacity: 0.8;
+            animation: slideInUp 1s ease-out 0.9s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Memory Gallery */
+        .memory-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .memory-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .memory-content {
+            padding: 1.5rem;
+        }
+
+        .memory-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .memory-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .memory-gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hero {
+                padding: 140px 20px 80px;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                Los Angeles, USA
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-collage">
+            <img src="losangeles/losangeles-image-1.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-2.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-3.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-4.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-5.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-6.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-7.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-8.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-9.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-10.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-11.jpg" alt="Los Angeles Memory" class="collage-image">
+            <img src="losangeles/losangeles-image-12.jpg" alt="Los Angeles Memory" class="collage-image">
+        </div>
+        <div class="hero-content">
+            <h1>Los Angeles</h1>
+            <p class="hero-subtitle">City of Angels & Dreams</p>
+            <p class="hero-description">From Hollywood's glamour to Disney's magic, exploring the entertainment capital of the world with its iconic landmarks, beautiful beaches, and endless adventures.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="content-section">
+            <h2 class="section-title">My Los Angeles Memories</h2>
+            
+            <!-- Memory Gallery -->
+            <div class="memory-gallery">
+                
+                <!-- Disney Land Carousel -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-disney">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-1.jpg" alt="Disney Land!">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-2.jpg" alt="Disney Land!">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-3.jpg" alt="Disney Land!">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('disney', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('disney', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <div class="carousel-indicator active" onclick="currentSlide('disney', 1)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('disney', 2)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('disney', 3)"></div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Disney Land!</h3>
+                        <p class="memory-description">The magical world of Disney came alive! From thrilling rides to meeting beloved characters, every moment was filled with wonder and joy. The happiest place on earth truly lived up to its name.</p>
+                    </div>
+                </div>
+
+                <!-- With my fav Disney film Coco -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-coco">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-4.jpg" alt="With my fav Disney film Coco">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">With my fav Disney film Coco</h3>
+                        <p class="memory-description">A special moment with Coco, one of my favorite Disney films! The vibrant colors and beautiful story of family and tradition resonated deeply during this magical Disney experience.</p>
+                    </div>
+                </div>
+
+                <!-- Hollywood Walk of Fame -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-hollywood">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-5.jpg" alt="Hollywood Walk of Fame">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Hollywood Walk of Fame</h3>
+                        <p class="memory-description">Walking among the stars on the famous Hollywood Walk of Fame! Each star tells a story of talent and dreams achieved in the entertainment capital of the world.</p>
+                    </div>
+                </div>
+
+                <!-- Museum of Illusions Carousel -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-museum">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-6.jpg" alt="Fun at Museum of Illusions">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-7.jpg" alt="Museum of Illusions">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-8.jpg" alt="Fun at Museum of Illusions">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-9.jpg" alt="Fun at Museum of Illusions">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-10.jpg" alt="Fun at Museum of Illusions">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-11.jpg" alt="Museum of Illusions">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('museum', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('museum', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <div class="carousel-indicator active" onclick="currentSlide('museum', 1)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('museum', 2)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('museum', 3)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('museum', 4)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('museum', 5)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('museum', 6)"></div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Fun at Museum of Illusions</h3>
+                        <p class="memory-description">Mind-bending experiences at the Museum of Illusions! From gravity-defying rooms to impossible perspectives, every exhibit challenged perception and created unforgettable photo opportunities.</p>
+                    </div>
+                </div>
+
+                <!-- Griffith Observatory -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-griffith">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-12.jpg" alt="Griffith Observatory">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Griffith Observatory</h3>
+                        <p class="memory-description">Stunning views of Los Angeles from the iconic Griffith Observatory! The perfect spot to watch the sunset over the city and gaze at the stars above the City of Angels.</p>
+                    </div>
+                </div>
+
+                <!-- Universal Studios Carousel -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-universal">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-13.jpg" alt="Universal Studios">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-14.jpg" alt="Hogwarts at Universal Studios">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-15.jpg" alt="Universal Studios">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-16.jpg" alt="Universal Studios">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('universal', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('universal', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <div class="carousel-indicator active" onclick="currentSlide('universal', 1)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('universal', 2)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('universal', 3)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('universal', 4)"></div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Universal Studios</h3>
+                        <p class="memory-description">Movie magic comes to life at Universal Studios! From the Wizarding World of Harry Potter to thrilling movie-themed rides, experiencing the behind-the-scenes world of filmmaking was absolutely incredible.</p>
+                    </div>
+                </div>
+
+                <!-- Santa Monica Pier Carousel -->
+                <div class="memory-card">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-santa">
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-17.jpg" alt="Santa Monica Pier">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="losangeles/losangeles-image-18.jpg" alt="Santa Monica Pier">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('santa', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('santa', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <div class="carousel-indicator active" onclick="currentSlide('santa', 1)"></div>
+                            <div class="carousel-indicator" onclick="currentSlide('santa', 2)"></div>
+                        </div>
+                    </div>
+                    <div class="memory-content">
+                        <h3 class="memory-title">Santa Monica Pier</h3>
+                        <p class="memory-description">The iconic Santa Monica Pier with its famous Ferris wheel and carnival atmosphere! The perfect blend of beachside relaxation and amusement park fun, with the Pacific Ocean as a stunning backdrop.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Carousel functionality
+        let carousels = {};
+
+        function initCarousels() {
+            const carouselIds = ['disney', 'coco', 'hollywood', 'museum', 'griffith', 'universal', 'santa'];
+            
+            carouselIds.forEach(id => {
+                carousels[id] = {
+                    currentSlide: 1,
+                    totalSlides: document.querySelectorAll(`#carousel-${id} .carousel-slide`).length
+                };
+            });
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            const track = document.getElementById(`carousel-${carouselId}`);
+            
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide > carousel.totalSlides) {
+                carousel.currentSlide = 1;
+            } else if (carousel.currentSlide < 1) {
+                carousel.currentSlide = carousel.totalSlides;
+            }
+            
+            const translateX = -(carousel.currentSlide - 1) * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            updateIndicators(carouselId);
+        }
+
+        function currentSlide(carouselId, slideNumber) {
+            const carousel = carousels[carouselId];
+            const track = document.getElementById(`carousel-${carouselId}`);
+            
+            carousel.currentSlide = slideNumber;
+            
+            const translateX = -(carousel.currentSlide - 1) * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            updateIndicators(carouselId);
+        }
+
+        function updateIndicators(carouselId) {
+            const carousel = carousels[carouselId];
+            const indicators = document.querySelectorAll(`#carousel-${carouselId}`).parentNode.querySelectorAll('.carousel-indicator');
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index + 1 === carousel.currentSlide);
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousels();
+            document.body.style.opacity = '1';
+        });
+
+        // Auto-advance carousels
+        setInterval(() => {
+            Object.keys(carousels).forEach(carouselId => {
+                if (carousels[carouselId].totalSlides > 1) {
+                    moveCarousel(carouselId, 1);
+                }
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

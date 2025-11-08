@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #2E8B57 0%, #98FB98 100%);
+            --darjeeling-gradient: linear-gradient(135deg, #2E8B57 0%, #98FB98 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,89 +51,76 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--darjeeling-gradient);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Darjeeling Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -144,7 +131,7 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 2px;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .collage-image {
@@ -161,177 +148,142 @@
             animation-delay: -2s;
         }
 
+        .collage-image:nth-child(1) {
+            animation-delay: -1s;
+        }
+
+        .collage-image:nth-child(3) {
+            animation-delay: -3s;
+        }
+
+        .collage-image:nth-child(4) {
+            animation-delay: -0.5s;
+        }
+
+        .collage-image:nth-child(5) {
+            animation-delay: -2.5s;
+        }
+
+        .collage-image:nth-child(6) {
+            animation-delay: -1.5s;
+        }
+
+        .collage-image:nth-child(7) {
+            animation-delay: -3.5s;
+        }
+
+        .collage-image:nth-child(8) {
+            animation-delay: -0.8s;
+        }
+
+        .collage-image:nth-child(9) {
+            animation-delay: -2.8s;
+        }
+
+        .collage-image:nth-child(10) {
+            animation-delay: -1.8s;
+        }
+
+        .collage-image:nth-child(11) {
+            animation-delay: -3.8s;
+        }
+
+        .collage-image:nth-child(12) {
+            animation-delay: -0.3s;
+        }
+
         @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
             color: var(--text-light);
             max-width: 800px;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease 0.5s both;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            opacity: 0.95;
+            margin-bottom: 30px;
             font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            animation: fadeInUp 1s ease 0.7s both;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.9s both;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Main Content */
-        main {
+        /* Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 80px 20px;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-primary);
+            margin-bottom: 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .description-card::before {
+        .section-title::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--darjeeling-gradient);
+            border-radius: 2px;
         }
 
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .section-subtitle {
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        /* Stats Grid */
-        .stats-grid {
+        /* Gallery Grid */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
             margin-top: 40px;
-            align-items: start;
         }
 
         .gallery-item {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-medium);
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
         }
 
         .gallery-item:hover {
@@ -357,57 +309,197 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
-            padding: 25px;
+            padding: 30px;
         }
 
         .gallery-caption h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .gallery-caption p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
             line-height: 1.6;
+            font-size: 1rem;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .gallery-caption {
+                padding: 20px;
+            }
+            
+            .gallery-caption h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 60px 15px;
+            }
+            
+            .gallery-grid {
+                gap: 20px;
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +508,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,310 +551,777 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Back to Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Darjeeling, India</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="darjeeling/darjeeling-image-1.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-2.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-3.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-4.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-5.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-6.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-7.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-8.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-9.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-10.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-1.jpg" alt="" class="collage-image">
-            <img src="darjeeling/darjeeling-image-2.jpg" alt="" class="collage-image">
+            <img src="darjeeling/darjeeling-image-1.jpg" alt="Zero Point at Nepal Border" class="collage-image">
+            <img src="darjeeling/darjeeling-image-3.jpg" alt="Mirik Lake" class="collage-image">
+            <img src="darjeeling/darjeeling-image-4.jpg" alt="Darjeeling Tea Gardens" class="collage-image">
+            <img src="darjeeling/darjeeling-image-5.jpg" alt="Peace Pagoda" class="collage-image">
+            <img src="darjeeling/darjeeling-image-7.jpg" alt="Tenzing Rock" class="collage-image">
+            <img src="darjeeling/darjeeling-image-9.jpg" alt="Mt. Kangchenjunga" class="collage-image">
+            <img src="darjeeling/darjeeling-image-10.jpg" alt="Watching sunrise from Tiger Hill" class="collage-image">
+            <img src="darjeeling/darjeeling-image-13.jpg" alt="Siddheshwar Dham (Char Dham)" class="collage-image">
+            <img src="darjeeling/darjeeling-image-16.jpg" alt="Samdruptse, Namchi" class="collage-image">
+            <img src="darjeeling/darjeeling-image-17.jpg" alt="Samdruptse, Namchi" class="collage-image">
+            <img src="darjeeling/darjeeling-image-18.jpg" alt="Prayer Wheel at Samdruptse" class="collage-image">
+            <img src="darjeeling/darjeeling-image-6.jpg" alt="Tea Time!" class="collage-image">
         </div>
         <div class="hero-content">
             <h1>Darjeeling</h1>
-            <p class="hero-subtitle">Where Tea Gardens Meet Himalayan Peaks</p>
-            <p class="hero-description">Nestled in the foothills of the Himalayas, Darjeeling enchants visitors with its world-famous tea gardens, colonial charm, and breathtaking mountain views. This hill station offers a perfect escape into nature and British colonial history.</p>
+            <p class="hero-subtitle">Queen of the Hills</p>
+            <p class="hero-description">
+                Nestled in the Eastern Himalayas, Darjeeling is a breathtaking hill station where misty mountains meet emerald tea gardens, where ancient monasteries echo with prayer bells, and where every sunrise from Tiger Hill feels like a divine blessing.
+            </p>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main>
-        <!-- Description Section -->
-        <section class="content-section">
-            <h2 class="section-title">My Darjeeling Adventure</h2>
-            <div class="description-card">
-                <p>Waking up in Darjeeling to see the sunrise over Kanchenjunga was absolutely magical. The crisp mountain air, the aroma of fresh tea leaves, and the gentle clickety-clack of the toy train created an atmosphere of pure tranquility. Walking through the tea gardens and learning about the harvesting process gave me a deep appreciation for this liquid gold.</p>
-            </div>
-        </section>
+    <main class="container">
+        <div class="section-header">
+            <h2 class="section-title">Himalayan Memories</h2>
+            <p class="section-subtitle">
+                From the mystical peaks of Kangchenjunga to the serene tea gardens that blanket the hillsides, Darjeeling offers a perfect blend of natural beauty, spiritual tranquility, and cultural richness that touches the soul.
+            </p>
+        </div>
 
-        <!-- Stats Section -->
-        <section class="content-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Days in Hills</div>
+        <div class="gallery-grid">
+            <!-- Zero Point at Nepal Border -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="zeropoint-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-1.jpg" alt="Zero Point at Nepal Border view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-2.jpg" alt="Zero Point at Nepal Border view 2" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('zeropoint-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('zeropoint-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="zeropoint-carousel-indicators"></div>
+                        <div class="carousel-counter" id="zeropoint-carousel-counter">1 / 2</div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">2134m</div>
-                    <div class="stat-label">Above Sea Level</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Tea Tastings</div>
+                <div class="gallery-caption">
+                    <h3>Zero Point at Nepal Border</h3>
+                    <p>Standing at the edge of India, Zero Point offers breathtaking panoramic views of the Himalayan range. The crisp mountain air and the feeling of being at the crossroads of nations made this spot truly unforgettable.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Image Gallery -->
-        <section class="content-section">
-            <h2 class="section-title">Pages from My Darjeeling Diary</h2>
-            <div class="image-gallery">
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-1.jpg" alt="First Glimpse of Darjeeling" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>First Glimpse of Darjeeling</h3>
-                        <p>My initial impression of Darjeeling was absolutely magical. Every corner held a new surprise and wonder.</p>
-                    </div>
+            <!-- Mirik Lake -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-3.jpg" alt="Mirik Lake" class="gallery-image" loading="lazy">
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Darjeeling adventure.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Darjeeling's authentic character.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Darjeeling gave me many of these precious memories.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="darjeeling/darjeeling-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Darjeeling, I knew this place had changed me and would always hold a special place in my heart.</p>
-                    </div>
+                <div class="gallery-caption">
+                    <h3>Mirik Lake</h3>
+                    <p>A serene artificial lake surrounded by pine forests and gardens. The peaceful boat rides and the reflection of mountains in the calm waters create a perfect escape from the bustling world.</p>
                 </div>
             </div>
-        </section>
+
+            <!-- Darjeeling Tea Gardens -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="teagardens-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-4.jpg" alt="Darjeeling Tea Gardens view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-8.jpg" alt="Darjeeling Tea Gardens view 2" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('teagardens-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('teagardens-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="teagardens-carousel-indicators"></div>
+                        <div class="carousel-counter" id="teagardens-carousel-counter">1 / 2</div>
+                    </div>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Darjeeling Tea Gardens</h3>
+                    <p>The emerald green tea plantations that cascade down the hillsides like nature's staircase. Walking through these gardens while sipping the world-famous Darjeeling tea was pure bliss.</p>
+                </div>
+            </div>
+
+            <!-- Peace Pagoda -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="peacepagoda-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-5.jpg" alt="Peace Pagoda view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-11.jpg" alt="Peace Pagoda view 2" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('peacepagoda-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('peacepagoda-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="peacepagoda-carousel-indicators"></div>
+                        <div class="carousel-counter" id="peacepagoda-carousel-counter">1 / 2</div>
+                    </div>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Peace Pagoda</h3>
+                    <p>A magnificent white Buddhist stupa that radiates tranquility and peace. The spiritual energy of this place, combined with stunning mountain views, creates a perfect spot for meditation and reflection.</p>
+                </div>
+            </div>
+
+            <!-- Tea Time! -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-6.jpg" alt="Tea Time!" class="gallery-image" loading="lazy">
+                </div>
+                <div class="gallery-caption">
+                    <h3>Tea Time!</h3>
+                    <p>Nothing beats enjoying a cup of authentic Darjeeling tea while surrounded by the very gardens where it grows. The delicate floral aroma and muscatel flavor make every sip a celebration of this hill station's heritage.</p>
+                </div>
+            </div>
+
+            <!-- Tenzing Rock -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-7.jpg" alt="Tenzing Rock" class="gallery-image" loading="lazy">
+                </div>
+                <div class="gallery-caption">
+                    <h3>Tenzing Rock</h3>
+                    <p>Named after the legendary Sherpa Tenzing Norgay, this natural rock formation has been a training ground for mountaineers. Standing here fills you with admiration for those who conquer the mighty Himalayas.</p>
+                </div>
+            </div>
+
+            <!-- Mt. Kangchenjunga -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="kangchenjunga-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-9.jpg" alt="Mt. Kangchenjunga view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-12.jpg" alt="Mt. Kangchenjunga view 2" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('kangchenjunga-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('kangchenjunga-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="kangchenjunga-carousel-indicators"></div>
+                        <div class="carousel-counter" id="kangchenjunga-carousel-counter">1 / 2</div>
+                    </div>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Mt. Kangchenjunga</h3>
+                    <p>The third highest peak in the world stands majestically on the horizon. Watching the golden sunrise paint this sacred mountain in hues of orange and pink is a spiritual experience that stays with you forever.</p>
+                </div>
+            </div>
+
+            <!-- Watching Sunrise from Tiger Hill -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-10.jpg" alt="Watching sunrise from Tiger Hill" class="gallery-image" loading="lazy">
+                </div>
+                <div class="gallery-caption">
+                    <h3>Watching Sunrise from Tiger Hill</h3>
+                    <p>The most magical moment in Darjeeling - watching the sun rise over the Himalayan peaks from Tiger Hill. As the first rays illuminate Kangchenjunga, the entire world seems to come alive in golden splendor.</p>
+                </div>
+            </div>
+
+            <!-- Siddheshwar Dham (Char Dham) -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="chardham-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-13.jpg" alt="Siddheshwar Dham (Char Dham) view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-15.jpg" alt="Siddheshwar Dham (Char Dham) view 2" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('chardham-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('chardham-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="chardham-carousel-indicators"></div>
+                        <div class="carousel-counter" id="chardham-carousel-counter">1 / 2</div>
+                    </div>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Siddheshwar Dham (Char Dham)</h3>
+                    <p>A beautiful temple complex that brings the sacred Char Dham experience to the hills. The intricate architecture and spiritual ambiance provide a peaceful retreat for devotees and visitors alike.</p>
+                </div>
+            </div>
+
+            <!-- Kedareshwara Jyothirlinga (Replica) -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-14.jpg" alt="Kedareshwara Jyothirlinga (Replica)" class="gallery-image" loading="lazy">
+                </div>
+                <div class="gallery-caption">
+                    <h3>Kedareshwara Jyothirlinga (Replica)</h3>
+                    <p>A sacred replica of the famous Kedarnath temple, allowing devotees to experience divine blessings in the serene hills of Darjeeling. The spiritual energy here is palpable and deeply moving.</p>
+                </div>
+            </div>
+
+            <!-- Samdruptse, Namchi -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper" id="samdruptse-carousel">
+                            <div class="carousel-slide active">
+                                <img src="darjeeling/darjeeling-image-16.jpg" alt="Samdruptse, Namchi view 1" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-17.jpg" alt="Samdruptse, Namchi view 2" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="darjeeling/darjeeling-image-20.jpg" alt="Samdruptse, Namchi view 3" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel('samdruptse-carousel', -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel('samdruptse-carousel', 1)">›</button>
+                        <div class="carousel-indicators" id="samdruptse-carousel-indicators"></div>
+                        <div class="carousel-counter" id="samdruptse-carousel-counter">1 / 3</div>
+                    </div>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Samdruptse, Namchi</h3>
+                    <p>Home to the magnificent statue of Guru Padmasambhava, this hilltop offers spectacular views and spiritual solace. The giant statue watching over the valley creates an atmosphere of divine protection and peace.</p>
+                </div>
+            </div>
+
+            <!-- Prayer Wheel at Samdruptse -->
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img src="darjeeling/darjeeling-image-18.jpg" alt="Prayer Wheel at Samdruptse" class="gallery-image" loading="lazy">
+                </div>
+                <div class="gallery-caption">
+                    <h3>Prayer Wheel at Samdruptse</h3>
+                    <p>Spinning the prayer wheels while chanting mantras, surrounded by the misty mountains and prayer flags fluttering in the wind. Each turn sends prayers and positive energy into the universe.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Darjeeling</h2>
+            <h2 class="section-title">Must-See in Darjeeling</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🌅</div>
+                    <div class="tip-icon">🌄</div>
                     <h3>Tiger Hill</h3>
-                    <p>Famous sunrise viewpoint for Kanchenjunga and Mount Everest views. Start early for clear skies.</p>
+                    <p>Wake up at 4am for sunrise over Kangchenjunga (world's 3rd highest peak). Golden rays illuminating snow peaks is magical. Book jeep night before. Carry warm clothes - it's freezing!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍵</div>
+                    <h3>Tea Gardens</h3>
+                    <p>Visit Happy Valley Tea Estate for factory tours. Watch tea processing, sample varieties. Stunning views of terraced gardens. Best time: March-May and September-November during harvest.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🚂</div>
-                    <h3>Darjeeling Toy Train</h3>
-                    <p>UNESCO World Heritage narrow-gauge railway. Scenic journey through hills and tea gardens.</p>
+                    <h3>Toy Train (UNESCO)</h3>
+                    <p>Darjeeling Himalayan Railway - steam engine through mountains. 7-hour journey or short joy ride. Book weeks ahead. Window seats on left side for best views.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🫖</div>
-                    <h3>Tea Garden Tours</h3>
-                    <p>Visit working tea estates to see plucking, processing, and taste different grades of Darjeeling tea.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏔️</div>
-                    <h3>Himalayan Mountaineering Institute</h3>
-                    <p>Learn about mountaineering history and see equipment used on Everest expeditions.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🐅</div>
-                    <h3>Padmaja Naidu Zoo</h3>
-                    <p>High-altitude zoo specializing in Himalayan fauna including red pandas and snow leopards.</p>
+                    <div class="tip-icon">🕊️</div>
+                    <h3>Peace Pagoda</h3>
+                    <p>Japanese Buddhist temple with panoramic views. Peaceful meditation spot. Free entry. 3km from town - walk or taxi. Visit during sunset for stunning mountain silhouettes.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">⛩️</div>
-                    <h3>Japanese Peace Pagoda</h3>
-                    <p>Peaceful Buddhist temple with panoramic valley views. Perfect for meditation and reflection.</p>
+                    <h3>Himalayan Mountaineering Institute</h3>
+                    <p>Museum honoring Everest climbers, Tenzing Norgay memorabilia. Mountain climbing exhibits. Adjacent zoo has red pandas! Combined ticket ₹100. Allow 2-3 hours.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for peak season (March-May, September-November). Book toy train rides and good hotels early.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Mall Road: Colonial heritage hotels, central location. Lebong: Quiet area with tea gardens. Observatory Hill: Peaceful, great views.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Visit during shoulder season for lower prices. Stay in homestays for authentic experience. Use shared jeeps for local transport.</p>
-                    </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏔️</div>
+                    <h3>Batasia Loop</h3>
+                    <p>Toy train spiral with war memorial and gardens. Great photo spot. Free entry. Morning visit for clear mountain views. Combine with Tiger Hill trip.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Darjeeling</h2>
+            <h2 class="section-title">Must-Try Darjeeling Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🍜</div>
-                    <h3>Momos</h3>
-                    <p>Tibetan dumplings filled with vegetables or meat. Perfect comfort food for cool mountain weather.</p>
-                    <span class="food-price">$2-5</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🫖</div>
-                    <h3>Darjeeling Tea</h3>
-                    <p>World's finest black tea with muscatel flavor. Visit tea gardens for fresh, direct-from-garden tastings.</p>
-                    <span class="food-price">$3-15</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍛</div>
-                    <h3>Thukpa</h3>
-                    <p>Hearty Tibetan noodle soup with vegetables and meat. Warming and nutritious mountain food.</p>
-                    <span class="food-price">$3-7</span>
-                </div>
-                <div class="food-card">
                     <div class="food-icon">🥟</div>
-                    <h3>Gundruk</h3>
-                    <p>Fermented leafy vegetable soup, traditional Nepali dish. Tangy, healthy, and perfect with rice.</p>
-                    <span class="food-price">$2-4</span>
+                    <h3>Momos</h3>
+                    <p>Tibetan dumplings - steamed or fried. Veg, chicken, or pork. Served with spicy chutney. Best at Kunga Restaurant or street stalls near Chowrasta. Comfort food perfection!</p>
+                    <span class="food-price">₹80-150</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🧈</div>
-                    <h3>Yak Cheese</h3>
-                    <p>Rich, creamy cheese from high-altitude yaks. Unique taste and important protein source in mountains.</p>
-                    <span class="food-price">$4-8</span>
+                    <div class="food-icon">🍜</div>
+                    <h3>Thukpa</h3>
+                    <p>Hot noodle soup with vegetables and meat. Perfect for cold mountain evenings. Warming, filling, authentic. Try at Sonam's Kitchen or Glenary's.</p>
+                    <span class="food-price">₹100-180</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍯</div>
-                    <h3>Wild Honey</h3>
-                    <p>Local honey from rhododendron flowers. Sweet, medicinal properties, and supports local beekeepers.</p>
-                    <span class="food-price">$5-12</span>
+                    <div class="food-icon">🍵</div>
+                    <h3>Darjeeling Tea</h3>
+                    <p>World-famous "Champagne of Teas". First Flush (spring) and Second Flush (summer) are prized. Buy from authorized dealers. Sample at tea estates. Perfect souvenir!</p>
+                    <span class="food-price">₹300-2000/100g</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍞</div>
+                    <h3>Sel Roti</h3>
+                    <p>Traditional rice-flour doughnut. Sweet, crispy outside, soft inside. Street food favorite. Best fresh from roadside vendors. Perfect with tea!</p>
+                    <span class="food-price">₹10-20</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥘</div>
+                    <h3>Shaphaley</h3>
+                    <p>Tibetan meat-filled bread, deep-fried till crispy. Spicy and savory. Popular snack in local cafes. Vegetarian versions available. Try at Hasty Tasty.</p>
+                    <span class="food-price">₹60-100</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍰</div>
+                    <h3>Bakery Treats</h3>
+                    <p>Colonial-era bakeries like Glenary's and Keventer's. Fresh bread, cakes, pastries. Their breakfast is legendary. Cozy old-world charm. Must-visit!</p>
+                    <span class="food-price">₹150-400</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Darjeeling</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (March-May)</h3>
+                        <div class="season-temp">10-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Perfect weather with blooming flowers. Clear mountain views. First Flush tea harvest. Rhododendrons in full bloom. Book hotels early!</p>
+                        <ul class="season-pros">
+                            <li>Crystal clear Kangchenjunga views</li>
+                            <li>Pleasant daytime temperatures</li>
+                            <li>Tea garden tours at peak</li>
+                            <li>Ideal for outdoor activities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Monsoon (June-September)</h3>
+                        <div class="season-temp">15-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Avoid:</strong> Heavy rainfall, landslides common. Roads dangerous, mountain views obscured. However, lush green landscapes and lowest prices if you don't mind rain.</p>
+                        <ul class="season-pros">
+                            <li>Cheapest hotel rates</li>
+                            <li>Lush green scenery</li>
+                            <li>Fewer tourists</li>
+                            <li>Good for tea lovers (gardens beautiful)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Autumn (October-November)</h3>
+                        <div class="season-temp">8-18°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Excellent Choice:</strong> Post-monsoon clarity. Best mountain views. Second Flush tea. Festive season (Diwali, Dashain). Comfortable weather for sightseeing.</p>
+                        <ul class="season-pros">
+                            <li>Clearest skies of the year</li>
+                            <li>Perfect photography weather</li>
+                            <li>Comfortable temperatures</li>
+                            <li>Local festivals and culture</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (December-February)</h3>
+                        <div class="season-temp">2-10°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>For Cold Lovers:</strong> Chilly but clear. Occasional snow. Fewer tourists. Hotels offer discounts. Carry heavy woolens. December nice, January-February very cold.</p>
+                        <ul class="season-pros">
+                            <li>Possible snowfall experience</li>
+                            <li>Lower tourist numbers</li>
+                            <li>Budget-friendly rates</li>
+                            <li>Cozy café culture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Darjeeling</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚂</div>
+                    <h3>Toy Train</h3>
+                    <p><strong>Best for:</strong> Scenic experience, not transport. Joy rides available 2-3 times daily. Full journey New Jalpaiguri to Darjeeling takes 7+ hours. Book on IRCTC.</p>
+                    <div class="transport-tip">💡 ₹1,000-2,500 depending on class. Book 2 months advance for peak season</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Shared Taxis/Jeeps</h3>
+                    <p><strong>Best for:</strong> NJP/Siliguri to Darjeeling (3 hrs). Leaves when full. ₹200-300 per seat. Private taxi ₹2,000-3,000. Book at taxi stands.</p>
+                    <div class="transport-tip">💡 Start early (6-7am) to avoid afternoon mountain fog</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p><strong>Best for:</strong> Town exploration. Compact mall area is walkable. Steep roads and stairs - good fitness needed. Download offline maps. Comfortable shoes essential!</p>
+                    <div class="transport-tip">💡 Mall Road traffic-free zone perfect for evening strolls</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚙</div>
+                    <h3>Local Taxis</h3>
+                    <p><strong>Best for:</strong> Tiger Hill (₹1,500-2,000 round trip), tea gardens, viewpoints. Negotiate beforehand. Full-day hire ₹2,500-3,500. Apps don't work well here.</p>
+                    <div class="transport-tip">💡 Hotel can arrange reliable drivers - safer than random taxis</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Local Buses</h3>
+                    <p><strong>Best for:</strong> Budget travel to nearby towns. Irregular schedules, crowded. Not recommended for tourists. Shared taxis more convenient and only slightly pricier.</p>
+                    <div class="transport-tip">💡 Use only if you're adventurous and have time flexibility</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Getting There</h3>
+                    <p><strong>Nearest Airport:</strong> Bagdogra (95km, 3.5 hrs). Nearest Railway: New Jalpaiguri. Pre-book taxi from airport/station to Darjeeling. Roads winding but scenic!</p>
+                    <div class="transport-tip">💡 Consider acclimatization day - altitude can cause headaches</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'zeropoint-carousel',
+                'teagardens-carousel',
+                'peacepagoda-carousel',
+                'kangchenjunga-carousel',
+                'chardham-carousel',
+                'samdruptse-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
 </body>
 </html>

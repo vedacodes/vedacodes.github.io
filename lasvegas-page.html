@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #FF6B35 0%, #FFD700 100%);
+            --lasvegas-gradient: linear-gradient(135deg, #FF6B35 0%, #FFD700 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,292 +51,182 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--lasvegas-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('lasvegas-image.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
         }
 
-        .hero-collage {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
+            background: var(--lasvegas-gradient);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite alternate;
         }
 
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+        @keyframes pulse {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.3; }
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
             max-width: 800px;
-            padding: 0 2rem;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 20px;
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 1s ease-out 0.5s forwards;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 1s ease-out 0.7s forwards;
         }
 
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+        .hero .description {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 1s ease-out 0.9s forwards;
         }
 
         @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Main Content */
-        main {
+        /* Main Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
+        /* Photo Gallery Styles */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
+        .image-widget {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
             position: relative;
-            overflow: hidden;
         }
 
-        .description-card::before {
+        .image-widget:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .image-widget::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
-        }
-
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--lasvegas-gradient);
+            z-index: 2;
         }
 
         .gallery-image-container {
@@ -345,69 +235,232 @@
             width: 100%;
         }
 
-        .gallery-image {
+        .carousel-container {
+            position: relative;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
+            height: 100%;
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
+        .carousel-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
             opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: opacity 0.5s ease;
         }
 
-        .gallery-item:hover .image-overlay {
+        .carousel-slide.active {
             opacity: 1;
         }
 
-        .gallery-caption {
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-primary);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .carousel-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+        .image-content {
             padding: 25px;
         }
 
-        .gallery-caption h3 {
+        .image-content h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
             color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .gallery-caption p {
+        .image-content p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--lasvegas-gradient);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 15px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero-content {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-content {
+                padding: 20px;
+            }
+
+            .carousel-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .carousel-prev {
+                left: 10px;
+            }
+
+            .carousel-next {
+                right: 10px;
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +469,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,205 +512,365 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 30%, #f5576c 100%);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: linear-gradient(135deg, #f093fb 10%, #f5576c 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Las Vegas, USA</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="lasvegas/lasvegas-image-1.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-2.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-3.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-4.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-1.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-2.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-3.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-4.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-1.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-2.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-3.jpg" alt="" class="collage-image">
-            <img src="lasvegas/lasvegas-image-4.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Las Vegas</h1>
-            <p class="hero-subtitle">Where Dreams and Neon Lights Collide</p>
-            <p class="hero-description">Experience the ultimate adult playground in the Nevada desert. From world-class shows and casinos to gourmet restaurants and shopping, Las Vegas offers non-stop entertainment and excitement 24/7.</p>
+            <p class="subtitle">Entertainment Capital of the World</p>
+            <p class="description">
+                Welcome to Las Vegas, where neon lights never dim and dreams come alive! From world-class casinos and spectacular shows to incredible dining and iconic replicas of world wonders, Vegas offers an unforgettable experience that's uniquely American.
+            </p>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main>
-        <!-- Description Section -->
-        <section class="content-section">
-            <h2 class="section-title">My Las Vegas Adventure</h2>
-            <div class="description-card">
-                <p>Las Vegas is unlike anywhere else on Earth. The energy is infectious, the shows are spectacular, and the city never sleeps. Walking down the Strip at night, surrounded by millions of lights and the buzz of excitement, I understood why they call it the Entertainment Capital of the World.</p>
+    <div class="container">
+        <!-- Photo Gallery -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Las Vegas Memories</h2>
+                <p>Experience the glitz, glamour, and excitement of Sin City through our adventures</p>
             </div>
-        </section>
 
-        <!-- Stats Section -->
-        <section class="content-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Nights on the Strip</div>
+            <div class="photo-gallery">
+                <!-- Venetian Casino -->
+                <div class="image-widget">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="venetian-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-1.jpg" alt="Venetian Casino" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="venetian-carousel-counter">1 / 1</div>
+                        </div>
+                    </div>
+                    <div class="image-content">
+                        <h3>Venetian Casino</h3>
+                        <p>Step into luxury at the Venetian, one of Las Vegas' most opulent resorts. Experience the grandeur of Venice with gondola rides, stunning architecture, and world-class gaming all under one roof.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Non-stop Action</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Entertainment Options</div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Image Gallery -->
-        <section class="content-section">
-            <h2 class="section-title">Pages from My Vegas Diary</h2>
-            <div class="image-gallery">
-                <div class="gallery-item">
+                <!-- Venice City Replica -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-1.jpg" alt="First Glimpse of Lasvegas" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="venice-replica-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-2.jpg" alt="Venice city replica" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="venice-replica-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>First Glimpse of Lasvegas</h3>
-                        <p>My initial impression of Lasvegas was absolutely magical. Every corner held a new surprise and wonder.</p>
+                    <div class="image-content">
+                        <h3>Venice City Replica</h3>
+                        <p>Venice city replica, almost close :D - Experience the romance of Venice without leaving Las Vegas! Complete with authentic gondola rides and Italian architecture that'll make you forget you're in the desert.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+
+                <!-- Nike (Winged Victory) Replica -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="nike-replica-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-3.jpg" alt="Nike (Winged Victory) - replica" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="nike-replica-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Lasvegas adventure.</p>
+                    <div class="image-content">
+                        <h3>Nike (Winged Victory) - Replica</h3>
+                        <p>Admire this magnificent replica of the famous Winged Victory of Samothrace. Las Vegas brings world-renowned art and sculpture to life in the most unexpected places.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+
+                <!-- Fake Eiffel Tower -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="eiffel-tower-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-4.jpg" alt="Fake Eiffel Tower" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="eiffel-tower-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Lasvegas's authentic character.</p>
+                    <div class="image-content">
+                        <h3>Fake Eiffel Tower</h3>
+                        <p>Visit Paris without leaving Vegas! This half-scale replica of the Eiffel Tower at Paris Las Vegas offers stunning views of the Strip and a touch of French elegance in the Nevada desert.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+
+                <!-- Gordon Ramsay's Hell's Kitchen -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hells-kitchen-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-5.jpg" alt="Gordon Ramsay's Hell's Kitchen" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="hells-kitchen-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                    <div class="image-content">
+                        <h3>Gordon Ramsay's Hell's Kitchen</h3>
+                        <p>Dine at the legendary Hell's Kitchen restaurant, inspired by Gordon Ramsay's hit TV show. Experience world-class cuisine in the iconic red and blue kitchen setting that made television history.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+
+                <!-- At Venice (Replica) -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="venice-inside-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-6.jpg" alt="At Venice (Replica)" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="venice-inside-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Lasvegas gave me many of these precious memories.</p>
+                    <div class="image-content">
+                        <h3>At Venice (Replica)</h3>
+                        <p>Stroll through the detailed recreations of Venetian streets and canals. Every corner reveals stunning architecture and artistic details that transport you straight to Italy.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
+
+                <!-- Hoover Dam -->
+                <div class="image-widget">
                     <div class="gallery-image-container">
-                        <img src="lasvegas/lasvegas-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hoover-dam-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lasvegas/lasvegas-image-7.jpg" alt="Hoover Dam" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lasvegas/lasvegas-image-8.jpg" alt="Hoover Dam" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('hoover-dam-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('hoover-dam-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="hoover-dam-carousel-indicators"></div>
+                            <div class="carousel-counter" id="hoover-dam-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Lasvegas, I knew this place had changed me and would always hold a special place in my heart.</p>
+                    <div class="image-content">
+                        <h3>Hoover Dam</h3>
+                        <p>Marvel at one of America's greatest engineering achievements! Just a short drive from Las Vegas, the Hoover Dam stands as a testament to human ingenuity and provides a dramatic contrast to the city's glittering lights.</p>
                     </div>
                 </div>
             </div>
@@ -698,104 +878,334 @@
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Las Vegas</h2>
+            <h2 class="section-title">Must-See in Las Vegas</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">🎰</div>
                     <h3>The Strip</h3>
-                    <p>Iconic 4-mile stretch with themed casinos, shows, and attractions. Walk or use the monorail.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🎭</div>
-                    <h3>Cirque du Soleil</h3>
-                    <p>World-class acrobatic performances in multiple venues. Book tickets well in advance.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">⛲</div>
-                    <h3>Bellagio Fountains</h3>
-                    <p>Choreographed water show set to music every 15-30 minutes. Free and absolutely magical.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🌃</div>
-                    <h3>High Roller</h3>
-                    <p>World's tallest observation wheel offering panoramic city views, especially beautiful at sunset.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏜️</div>
-                    <h3>Red Rock Canyon</h3>
-                    <p>Natural escape from the city with hiking trails and stunning desert landscapes.</p>
+                    <p>4-mile boulevard of mega-resorts and casinos. Each hotel is an attraction itself. Free fountain show at Bellagio. Best experienced walking at night when everything's lit up.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🎪</div>
-                    <h3>Fremont Street</h3>
-                    <p>Historic downtown Vegas with covered LED canopy, street performers, and vintage casino charm.</p>
+                    <h3>Fremont Street Experience</h3>
+                    <p>Old Vegas downtown with retro casinos. Massive LED canopy light show nightly. Street performers and cheaper gambling. More authentic Vegas atmosphere than the Strip.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for major shows and conventions. Book rooms Sunday-Thursday for better rates. Avoid major holidays and conventions.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>The Strip: Iconic hotels, walking distance to attractions. Downtown: Vintage Vegas, better value. Off-Strip: Cheaper options, require transportation.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Set gambling budget and stick to it. Look for hotel deals mid-week. Eat at buffets or food courts. Take advantage of free drinks while gambling.</p>
-                    </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎭</div>
+                    <h3>Cirque du Soleil Shows</h3>
+                    <p>World-class performances across multiple venues. "O" at Bellagio (water-based) and "KA" at MGM are spectacular. Book weeks ahead for best seats and prices.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏔️</div>
+                    <h3>Red Rock Canyon</h3>
+                    <p>Natural escape 20 mins from Strip. 13-mile scenic drive, hiking trails. Desert wildlife and stunning rock formations. Perfect morning trip before afternoon gambling.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🚁</div>
+                    <h3>Grand Canyon Tours</h3>
+                    <p>Day trips or helicopter tours from Vegas. West Rim is closest (2.5 hrs). South Rim further but more dramatic. Book helicopter for unforgettable experience.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h3>High Roller Observation Wheel</h3>
+                    <p>World's tallest observation wheel at The LINQ. 30-minute rotation with stunning Strip views. Sunset rides are most popular. Happy hour pod available with bar.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Las Vegas</h2>
+            <h2 class="section-title">Must-Try Las Vegas Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
-                    <div class="food-icon">🍤</div>
-                    <h3>Casino Buffets</h3>
-                    <p>All-you-can-eat spreads with international cuisine. Great value and variety for adventurous eaters.</p>
-                    <span class="food-price">$25-75</span>
+                    <div class="food-icon">🍽️</div>
+                    <h3>Buffets</h3>
+                    <p>Vegas is buffet capital! Bacchanal at Caesars Palace is legendary. Wicked Spoon at Cosmopolitan for variety. Go hungry - they're all-you-can-eat experiences.</p>
+                    <span class="food-price">$30-$80</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🥩</div>
-                    <h3>Steakhouses</h3>
-                    <p>World-class beef at celebrity chef restaurants. Premium dining experience with excellent service.</p>
-                    <span class="food-price">$50-150</span>
+                    <h3>Prime Steakhouse</h3>
+                    <p>World-class steakhouses in every major casino. SW Steakhouse at Wynn, Bazaar Meat at SLS. Perfect for celebrating wins or drowning losses in ribeye!</p>
+                    <span class="food-price">$80-$200</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍤</div>
+                    <h3>Shrimp Cocktail</h3>
+                    <p>Old Vegas tradition at Golden Gate Casino. 99¢ shrimp cocktail since 1959! Not gourmet but an iconic Vegas experience. Perfect late-night snack.</p>
+                    <span class="food-price">$1-$3</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍕</div>
                     <h3>Late Night Eats</h3>
-                    <p>Pizza, burgers, and street food available 24/7. Perfect for post-show or casino hunger.</p>
-                    <span class="food-price">$8-20</span>
+                    <p>Secret Pizza at Cosmopolitan (New York-style slices). In-N-Out Burger for West Coast classic. Most restaurants open 24/7 - Vegas never sleeps!</p>
+                    <span class="food-price">$5-$15</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍸</div>
-                    <h3>Craft Cocktails</h3>
-                    <p>Creative mixology at rooftop bars and lounges. Instagram-worthy drinks with city views.</p>
-                    <span class="food-price">$12-25</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🌮</div>
-                    <h3>International Cuisine</h3>
-                    <p>Authentic food from around the world. From high-end to food court options.</p>
-                    <span class="food-price">$15-40</span>
+                    <h3>Celebrity Chef Restaurants</h3>
+                    <p>Gordon Ramsay's Hell's Kitchen, Wolfgang Puck Spago, Giada. Star-studded dining scene. Book well ahead for popular spots. Dress code at upscale venues.</p>
+                    <span class="food-price">$50-$150</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">☕</div>
-                    <h3>Coffee Culture</h3>
-                    <p>Premium coffee shops and espresso bars. Necessary fuel for all-night Vegas adventures.</p>
-                    <span class="food-price">$3-8</span>
+                    <h3>$0.99 Breakfast Specials</h3>
+                    <p>Classic Vegas deals at downtown casinos. Eggs, bacon, hash browns dirt cheap to lure gamblers. Mr. Lucky's at Hard Rock was famous (now closed but others exist).</p>
+                    <span class="food-price">$1-$5</span>
                 </div>
             </div>
         </section>
-    </main>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Las Vegas</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (March-May)</h3>
+                        <div class="season-temp">18-30°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Perfect Weather:</strong> Mild temperatures ideal for outdoor activities and pool parties. March Madness basketball brings crowds. Prices moderate except during conventions.</p>
+                        <ul class="season-pros">
+                        <li>Comfortable day and night temps</li>
+                        <li>Pool season begins</li>
+                        <li>Lower hotel rates than summer</li>
+                        <li>Great for Red Rock hiking</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                        <div class="season-temp">35-45°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Scorching Hot:</strong> Extreme desert heat but pool parties in full swing. AC everywhere. Lowest hotel rates due to heat. Indoor activities during day, party at night.</p>
+                        <ul class="season-pros">
+                        <li>Cheapest room rates</li>
+                        <li>Epic pool parties</li>
+                        <li>Major EDM festivals</li>
+                        <li>24/7 air conditioning</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-November)</h3>
+                        <div class="season-temp">22-35°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Heat subsides but still warm. Perfect pool weather in September. No major holidays mean good rates. Excellent time for outdoor adventures.</p>
+                        <ul class="season-pros">
+                        <li>Pleasant temperatures</li>
+                        <li>Lower crowd levels</li>
+                        <li>Good hotel deals</li>
+                        <li>NFL season brings excitement</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (December-February)</h3>
+                        <div class="season-temp">8-18°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Value Season:</strong> Mild winters, cold nights. New Year's Eve is massive but expensive. Otherwise good deals. CES tech convention in January fills hotels.</p>
+                        <ul class="season-pros">
+                        <li>Comfortable sightseeing weather</li>
+                        <li>Lower rates (except holidays)</li>
+                        <li>NYE spectacular celebrations</li>
+                        <li>No extreme heat</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Las Vegas</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking the Strip</h3>
+                    <p><strong>Best for:</strong> Sightseeing between nearby casinos. Looks close but distances deceive - Strip is 4 miles long. Wear comfortable shoes. Pedestrian bridges cross major roads.</p>
+                    <div class="transport-tip">💡 Takes 1.5-2 hours to walk entire Strip - pace yourself!</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxis & Uber</h3>
+                    <p><strong>Best for:</strong> Quick trips between distant hotels or to downtown. Uber/Lyft widely available and often cheaper than taxis. Watch for surge pricing during peak times.</p>
+                    <div class="transport-tip">💡 Uber from Strip to Fremont: $15-25 depending on time</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>The Deuce Bus</h3>
+                    <p><strong>Best for:</strong> Budget travel along Strip and to downtown. Double-decker buses run 24/7. $8 for 2-hour pass, $20 for 24 hours. Can get crowded evenings.</p>
+                    <div class="transport-tip">💡 Buy pass on RTC app or from bus driver with exact change</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚝</div>
+                    <h3>Monorail</h3>
+                    <p><strong>Best for:</strong> Traveling behind Strip properties. Connects 7 stations from SLS to MGM Grand. Fast but doesn't cover whole Strip. $5 single ride, $15 day pass.</p>
+                    <div class="transport-tip">💡 Only runs east side of Strip - need transport for west side casinos</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚗</div>
+                    <h3>Rental Car</h3>
+                    <p><strong>Best for:</strong> Visiting Red Rock, Hoover Dam, or Grand Canyon. Not needed for Strip itself (parking fees add up). Compare airport vs off-Strip rental locations.</p>
+                    <div class="transport-tip">💡 Most casinos charge $10-20/day for self-parking now</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Airport Transfer</h3>
+                    <p><strong>From McCarran:</strong> 10 mins to Strip. Taxi fixed $23-27 to most Strip hotels. Uber $15-30. Airport shuttles cheapest ($10) but slow. Most hotels have free shuttles.</p>
+                    <div class="transport-tip">💡 Skip airport rental car desks - use off-airport locations for better rates</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+
+            carousels[carouselId] = {
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                currentSlide: 0,
+                totalSlides: slides.length,
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('button');
+                    indicator.className = 'carousel-indicator';
+                    indicator.classList.toggle('active', i === 0);
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slide visibility
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselIds = [
+                'venetian-carousel',
+                'venice-replica-carousel', 
+                'nike-replica-carousel',
+                'eiffel-tower-carousel',
+                'hells-kitchen-carousel',
+                'venice-inside-carousel',
+                'hoover-dam-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+
+            // Fade in body
+            document.body.style.opacity = '1';
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --la-gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,200 +51,153 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--la-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-light);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(247,147,30,0.1) 100%),
+                        url('losangeles-image.jpg') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
         }
 
-        .hero-collage {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
-        }
-
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
+            z-index: 3;
             max-width: 800px;
-            padding: 0 2rem;
+            margin: 0 auto;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
+        /* Section Styling */
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: var(--la-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,64 +208,18 @@
         .description-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--la-gradient);
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         /* Image Gallery */
@@ -357,22 +264,6 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
             padding: 25px;
         }
@@ -391,23 +282,175 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: var(--shadow-light);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+        /* Animation States */
+        .gallery-item, .description-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .main-content {
+                padding: 40px 15px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-caption {
+                padding: 20px;
+            }
+
+            .description-card {
+                padding: 25px;
+            }
+        }
+
+        .gallery-item, .description-card, .stat-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +459,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,263 +502,380 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Los Angeles, USA</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="losangeles/losangeles-image-1.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-2.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-3.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-4.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-5.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-6.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-7.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-8.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-9.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-10.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-11.jpg" alt="" class="collage-image">
-            <img src="losangeles/losangeles-image-12.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Los Angeles</h1>
-            <p class="hero-subtitle">Where Dreams Come to Life</p>
-            <p class="hero-description">Discover the entertainment capital where Hollywood glamour meets California cool. From iconic beaches to star-studded boulevards, from world-class museums to trendy neighborhoods, LA offers endless possibilities under the California sun.</p>
+            <p class="hero-subtitle">City of Angels and Dreams</p>
+            <p class="hero-description">
+                From the magic of Disney to the glamour of Hollywood, Los Angeles captured my heart with its endless sunshine, creative energy, and boundless possibilities. Every corner tells a story of dreams coming true.
+            </p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
-        <!-- Description Section -->
+        <!-- Introduction -->
         <section class="content-section">
-            <h2 class="section-title">My Los Angeles Adventure</h2>
             <div class="description-card">
-                <p>Los Angeles exceeded all my expectations. Beyond the Hollywood glitz, I found a city of incredible diversity, creativity, and natural beauty. From watching the sunset over the Pacific in Santa Monica to exploring the vibrant street art in Arts District, LA showed me why it continues to attract dreamers from around the world.</p>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="content-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Days Exploring</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">75°F</div>
-                    <div class="stat-label">Perfect Weather</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Endless Possibilities</div>
-                </div>
+                <p>
+                    Los Angeles welcomed me with open arms and endless sunshine. This sprawling metropolis of dreams became my playground for a week, where I discovered that LA is so much more than Hollywood glitz. From the magical world of Disney to the mind-bending Museum of Illusions, from the star-studded Walk of Fame to the serene beaches of Santa Monica - every day brought new adventures and unforgettable memories. The city's infectious energy and optimism reminded me why millions come here to chase their dreams.
+                </p>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My LA Diary</h2>
+            <h2 class="section-title">Pages from My Los Angeles Adventure</h2>
             <div class="image-gallery">
+                <!-- Disney Land Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-1.jpg" alt="First Glimpse of Losangeles" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="disney-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="losangeles/losangeles-image-1.jpg" alt="Disney Land view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-2.jpg" alt="Disney Land view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-3.jpg" alt="Disney Land view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-4.jpg" alt="With my fav Disney film Coco" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('disney-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('disney-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="disney-carousel-indicators"></div>
+                            <div class="carousel-counter" id="disney-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Losangeles</h3>
-                        <p>My initial impression of Losangeles was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Disney Land!</h3>
+                        <p>Walking through the gates of Disneyland felt like stepping into childhood dreams. Every corner sparkled with magic, from meeting beloved characters to riding iconic attractions. The joy on everyone's faces reminded me that some dreams really do come true here.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Losangeles adventure.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Losangeles's authentic character.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Losangeles gave me many of these precious memories.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="losangeles/losangeles-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Losangeles, I knew this place had changed me and would always hold a special place in my heart.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Must-See Places Section -->
-        <section class="content-section">
-            <h2 class="section-title">Must-See Places in Los Angeles</h2>
-            <div class="travel-tips-grid">
-                <div class="tip-card">
-                    <div class="tip-icon">🎬</div>
-                    <h3>Hollywood Boulevard</h3>
-                    <p>Walk the Walk of Fame and visit TCL Chinese Theatre. Early morning or evening for fewer crowds.</p>
+                <!-- Hollywood Walk of Fame -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="losangeles/losangeles-image-5.jpg" alt="Hollywood Walk of Fame" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Hollywood Walk of Fame</h3>
+                        <p>Strolling down Hollywood Boulevard, searching for my favorite stars' names, felt like walking through entertainment history. Each star tells a story of talent, perseverance, and the dream that defines this city.</p>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏖️</div>
-                    <h3>Santa Monica Pier</h3>
-                    <p>Iconic beach pier with amusement park, restaurants, and stunning Pacific sunsets.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🎨</div>
-                    <h3>Getty Center</h3>
-                    <p>World-class art museum with stunning architecture and panoramic city views. Free admission.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🌟</div>
-                    <h3>Griffith Observatory</h3>
-                    <p>Hollywood sign views and planetarium shows. Best visited during sunset for magical lighting.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏄</div>
-                    <h3>Venice Beach</h3>
-                    <p>Bohemian boardwalk with street performers, muscle beach, and eclectic local culture.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🛍️</div>
-                    <h3>Rodeo Drive</h3>
-                    <p>Luxury shopping district in Beverly Hills. Perfect for people-watching and window shopping.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for peak season. Book popular restaurants and attractions early. Consider traffic when planning activities.</p>
+                <!-- Museum of Illusions Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="illusions-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="losangeles/losangeles-image-6.jpg" alt="Fun at Museum of Illusions 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-7.jpg" alt="Museum of Illusions 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-8.jpg" alt="Fun at Museum of Illusions 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-9.jpg" alt="Fun at Museum of Illusions 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-10.jpg" alt="Fun at Museum of Illusions 5" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-11.jpg" alt="Museum of Illusions 6" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('illusions-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('illusions-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="illusions-carousel-indicators"></div>
+                            <div class="carousel-counter" id="illusions-carousel-counter">1 / 6</div>
+                        </div>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Santa Monica: Beach access, trendy restaurants. Hollywood: Central, near attractions. Beverly Hills: Luxury, upscale shopping. Downtown: Arts scene, nightlife.</p>
+                    <div class="gallery-caption">
+                        <h3>Museum of Illusions</h3>
+                        <p>My mind was completely blown at the Museum of Illusions! Every room challenged my perception and made me question reality. These interactive exhibits showed me that sometimes the most fun learning happens when you're laughing and scratching your head at the same time.</p>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Use public transportation and ride-shares. Visit free beaches and hiking trails. Happy hour dining. Stay outside central areas for better rates.</p>
+                </div>
+
+                <!-- Griffith Observatory -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="losangeles/losangeles-image-12.jpg" alt="Griffith Observatory" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Griffith Observatory</h3>
+                        <p>Standing at Griffith Observatory with the entire city sprawling below me was breathtaking. The iconic Hollywood sign in the distance, the city lights beginning to twinkle - this view perfectly captured the grandeur and dreams of Los Angeles.</p>
+                    </div>
+                </div>
+
+                <!-- Universal Studios Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="universal-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="losangeles/losangeles-image-13.jpg" alt="Universal Studios view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-14.jpg" alt="Hogwarts at Universal Studios" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-15.jpg" alt="Universal Studios view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-16.jpg" alt="Universal Studios view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('universal-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('universal-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="universal-carousel-indicators"></div>
+                            <div class="carousel-counter" id="universal-carousel-counter">1 / 4</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Universal Studios</h3>
+                        <p>Universal Studios brought my favorite movies to life! Walking through Hogwarts felt magical, and experiencing movie sets up close showed me the incredible artistry behind filmmaking. Every attraction was like stepping into a different world.</p>
+                    </div>
+                </div>
+
+                <!-- Santa Monica Pier Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="santamonica-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="losangeles/losangeles-image-17.jpg" alt="Santa Monica Pier view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="losangeles/losangeles-image-18.jpg" alt="Santa Monica Pier view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('santamonica-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('santamonica-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="santamonica-carousel-indicators"></div>
+                            <div class="carousel-counter" id="santamonica-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Santa Monica Pier</h3>
+                        <p>The perfect ending to my LA adventure! Santa Monica Pier captured the laid-back California vibe perfectly - the ocean breeze, the carnival atmosphere, and that famous Ferris wheel against the sunset. Pure California dreaming at its finest.</p>
                     </div>
                 </div>
             </div>
@@ -756,46 +883,256 @@
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Los Angeles</h2>
+            <h2 class="section-title">Must-Try LA Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
                     <div class="food-icon">🌮</div>
-                    <h3>Mexican Street Food</h3>
-                    <p>Authentic tacos from food trucks and local spots. LA has incredible Mexican food culture.</p>
-                    <span class="food-price">$3-8</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🥗</div>
-                    <h3>Health-Conscious Cuisine</h3>
-                    <p>Farm-to-table restaurants, smoothie bowls, and organic options. LA's wellness food scene.</p>
-                    <span class="food-price">$12-25</span>
+                    <h3>Tacos</h3>
+                    <p>LA's taco scene is legendary! Try street tacos in East LA, gourmet versions in trendy areas. Al pastor, carne asada, fish tacos. Food trucks often best. Authentic Mexican flavors!</p>
+                    <span class="food-price">$2-5 each</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍔</div>
                     <h3>In-N-Out Burger</h3>
-                    <p>California's beloved burger chain with secret menu. West Coast institution.</p>
-                    <span class="food-price">$6-12</span>
+                    <p>California institution! Fresh burgers, "secret menu" (Animal Style!). Never frozen beef, hand-cut fries. Simple menu, perfect execution. Tourist must-do. Lines worth it!</p>
+                    <span class="food-price">$8-12</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🍣</div>
-                    <h3>Sushi & Asian Fusion</h3>
-                    <p>High-quality Japanese and Korean cuisine in Koreatown and Little Tokyo.</p>
-                    <span class="food-price">$15-40</span>
+                    <div class="food-icon">🥗</div>
+                    <h3>Health Food & Açaí Bowls</h3>
+                    <p>LA invented healthy-chic dining. Açaí bowls, avocado toast, cold-pressed juices. Erewhon, Urth Caffé, trendy cafés. Instagram-worthy and nutritious!</p>
+                    <span class="food-price">$12-18</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Coffee Culture</h3>
-                    <p>Third-wave coffee shops and artisanal roasters throughout the city.</p>
-                    <span class="food-price">$3-6</span>
+                    <div class="food-icon">🍜</div>
+                    <h3>Korean BBQ</h3>
+                    <p>Koreatown has best Korean BBQ outside Korea. All-you-can-eat options. Grill at your table. Kang Ho Dong Baekjeong popular. Fun, interactive dining experience!</p>
+                    <span class="food-price">$25-40</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">🥑</div>
-                    <h3>Avocado Toast</h3>
-                    <p>California classic at trendy brunch spots. Often served with local, organic ingredients.</p>
-                    <span class="food-price">$8-15</span>
+                    <div class="food-icon">🍕</div>
+                    <h3>Food Trucks & Street Food</h3>
+                    <p>Gourmet food trucks everywhere. Korean-Mexican fusion (Kogi BBQ), lobster rolls, artisan ice cream. Follow trucks on social media. Affordable innovation!</p>
+                    <span class="food-price">$10-15</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥞</div>
+                    <h3>Brunch Culture</h3>
+                    <p>Weekend brunch is serious business! Bottomless mimosas, creative pancakes, eggs benedict variations. Republique, Gjusta, The Ivy. Book ahead or expect waits!</p>
+                    <span class="food-price">$18-35</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Los Angeles</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (March-May)</h3>
+                        <div class="season-temp">15-24°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Perfect Weather:</strong> Wildflowers blooming, perfect beach weather before June gloom. Clear skies, comfortable temperatures. Great for outdoor activities and hiking. Ideal time overall!</p>
+                        <ul class="season-pros">
+                            <li>Excellent beach weather</li>
+                            <li>Super Bloom (if rainy winter)</li>
+                            <li>Lower hotel rates than summer</li>
+                            <li>Perfect for hiking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                        <div class="season-temp">18-29°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Peak Season:</strong> Warmest inland, coastal fog June-July ("June Gloom"). Tourist season. Theme parks crowded. Beach towns packed weekends. Hot in valleys, nice on coast.</p>
+                        <ul class="season-pros">
+                            <li>Longest days</li>
+                            <li>Outdoor concerts/festivals</li>
+                            <li>All attractions open</li>
+                            <li>Lively beach scene</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-November)</h3>
+                        <div class="season-temp">17-28°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Warmest, clearest weather. "LA Summer" actually in Sept-Oct! Beach perfect, no fog. Fewer tourists, lower prices. Ideal for everything - beach, hikes, sightseeing.</p>
+                        <ul class="season-pros">
+                            <li>Best beach weather all year</li>
+                            <li>Clearest skies</li>
+                            <li>Fewer crowds</li>
+                            <li>Comfortable temperatures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌤️</div>
+                        <h3>Winter (December-February)</h3>
+                        <div class="season-temp">10-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget & Mild:</strong> Rainy days possible (rare), but mild compared to most US. Ski nearby mountains! Fewer tourists. Holidays festive. Still beach-able on sunny days!</p>
+                        <ul class="season-pros">
+                            <li>Lowest prices</li>
+                            <li>Ski in mountains, beach same day</li>
+                            <li>Holiday decorations</li>
+                            <li>Still mostly sunny</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'disney-carousel',
+                'illusions-carousel',
+                'universal-carousel',
+                'santamonica-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --vatican-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -50,12 +50,6 @@
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
         }
 
         /* Navigation */
@@ -67,8 +61,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-light);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -78,6 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -88,17 +82,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -108,32 +103,152 @@
             color: #667eea;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .nav-links a:hover::after {
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--vatican-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--vatican-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
             width: 100%;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gallery-caption p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Destination Badge */
+        .destination-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--vatican-gradient);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--vatican-gradient);
+            color: var(--text-light);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Image Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -150,7 +265,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -172,242 +287,188 @@
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
         }
 
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
 
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+        .collage-image:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
         }
 
-        .content-section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description Card */
-        .description-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .description-card::before {
+        .hero::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
-        }
-
-        .description-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .gallery-image-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
             opacity: 1;
         }
 
-        .gallery-caption {
-            padding: 25px;
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        .gallery-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
         }
 
-        .gallery-caption p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        /* Travel Tips Grid */
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active,
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        /* Travel Tips */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: var(--border-radius);
-            padding: 2rem;
             box-shadow: var(--shadow-light);
+            transition: var(--transition);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,15 +477,15 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
@@ -433,181 +494,86 @@
             line-height: 1.6;
         }
 
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-        }
-
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .nav-links {
                 display: none;
             }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
+
             .image-gallery {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
             }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
             }
-            
-            .collage-container {
-                opacity: 0.2;
+
+            .collage-image:nth-child(2) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
             }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
+
+            .collage-image:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(5),
+            .collage-image:nth-child(6) {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-collage">
-            <img src="vatican/vatican-image-1.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-2.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-3.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-4.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-1.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-2.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-3.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-4.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-1.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-2.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-3.jpg" alt="" class="collage-image">
-            <img src="vatican/vatican-image-4.jpg" alt="" class="collage-image">
+            <img src="vatican/vatican-image-1.jpg" alt="Vatican City" class="collage-image" loading="lazy">
+            <img src="vatican/vatican-image-12.jpg" alt="St. Peter's Basilica" class="collage-image" loading="lazy">
+            <img src="vatican/vatican-image-3.jpg" alt="Vatican Museum" class="collage-image" loading="lazy">
+            <img src="vatican/vatican-image-2.jpg" alt="Sistine Chapel" class="collage-image" loading="lazy">
+            <img src="vatican/vatican-image-4.jpg" alt="Inside Vatican Museum" class="collage-image" loading="lazy">
+            <img src="vatican/vatican-image-13.jpg" alt="Vatican treasures" class="collage-image" loading="lazy">
         </div>
         <div class="hero-content">
-            <h1>Vatican City</h1>
-            <p class="hero-subtitle">Where Art Meets Divinity</p>
-            <p class="hero-description">Enter the world's smallest country and spiritual center of Catholicism. Home to the Sistine Chapel, St. Peter's Basilica, and incredible Renaissance art collections that represent humanity's greatest artistic achievements.</p>
+            <div class="destination-badge">
+                <i class="fas fa-church"></i>
+                Vatican City
+            </div>
+            <h1 class="hero-title">Spiritual Heart of the World</h1>
+            <p class="hero-subtitle">Where faith, art, and history converge in sacred magnificence</p>
         </div>
     </section>
 
-    <!-- Main Content -->
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Vatican City Adventure</h2>
+            <h2 class="section-title">A Sacred Journey</h2>
             <div class="description-card">
-                <p>Standing in the Sistine Chapel, looking up at Michelangelo's masterpiece, was one of the most awe-inspiring moments of my life. The Vatican Museums hold treasures that span centuries, and St. Peter's Basilica's grandeur is overwhelming. This tiny nation contains some of humanity's greatest artistic and spiritual treasures.</p>
+                <p>Vatican City is more than the world's smallest country—it's a treasure trove of art, faith, and history. Walking through its sacred halls, I was overwhelmed by centuries of human devotion and artistic genius. Every corner tells a story of faith, power, and the eternal human quest for the divine.</p>
             </div>
         </section>
 
@@ -615,187 +581,392 @@
         <section class="content-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Days Exploring</div>
+                    <div class="stat-number">0.17</div>
+                    <div class="stat-label">Square Miles</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Years of Art</div>
+                    <div class="stat-number">800</div>
+                    <div class="stat-label">Citizens</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Spiritual Wonder</div>
+                    <div class="stat-number">6M+</div>
+                    <div class="stat-label">Annual Visitors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">54</div>
+                    <div class="stat-label">Museums & Galleries</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Vatican Diary</h2>
+            <h2 class="section-title">Sacred Moments Captured</h2>
             <div class="image-gallery">
+                <!-- St. Peters Square -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-1.jpg" alt="First Glimpse of Vatican" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="stpeters-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vatican/vatican-image-1.jpg" alt="St. Peters Square" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="stpeters-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Vatican</h3>
-                        <p>My initial impression of Vatican was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>St. Peters Square</h3>
+                        <p>Standing in this magnificent square designed by Bernini, surrounded by towering colonnades, I felt the weight of history and the power of faith converging in one sacred space.</p>
                     </div>
                 </div>
+
+                <!-- Sistine Chapel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="sistine-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vatican/vatican-image-2.jpg" alt="Sistine Chapel" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="sistine-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Vatican adventure.</p>
+                        <h3>Sistine Chapel</h3>
+                        <p>Craning my neck to see Michelangelo's masterpiece on the ceiling, I was moved to tears. The silence in this sacred space where popes are elected is profound and transformative.</p>
                     </div>
                 </div>
+
+                <!-- Vatican Museum Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="museum-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vatican/vatican-image-3.jpg" alt="Vatican Museum view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vatican/vatican-image-4.jpg" alt="Inside Vatican Museum view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vatican/vatican-image-13.jpg" alt="Inside Vatican Museum view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('museum-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('museum-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="museum-carousel-indicators"></div>
+                            <div class="carousel-counter" id="museum-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Vatican's authentic character.</p>
+                        <h3>Vatican Museum</h3>
+                        <p>Lost for hours among the world's greatest art collection. Each hall revealed new treasures—from ancient Roman sculptures to Renaissance masterpieces that left me speechless.</p>
                     </div>
                 </div>
+
+                <!-- St. Peters Basilica -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="basilica-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vatican/vatican-image-12.jpg" alt="St. Peters Basilica" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-counter" id="basilica-carousel-counter">1 / 1</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>St. Peters Basilica</h3>
+                        <p>The grandeur of St. Peter's Basilica is beyond words. Standing beneath Michelangelo's dome and before Bernini's Baldachin, I understood why millions make this pilgrimage.</p>
                     </div>
                 </div>
+
+                <!-- Immigration into Vatican Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="immigration-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vatican/vatican-image-14.jpg" alt="Immigration into Vatican view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vatican/vatican-image-15.jpg" alt="Immigration into Vatican view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('immigration-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('immigration-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="immigration-carousel-indicators"></div>
+                            <div class="carousel-counter" id="immigration-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Vatican gave me many of these precious memories.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="vatican/vatican-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Vatican, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Immigration into Vatican</h3>
+                        <p>Crossing the border into the world's smallest nation felt surreal. The Swiss Guards in their colorful uniforms reminded me that this tiny state holds immense global influence.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Must-See Places Section -->
+        <!-- Travel Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Vatican City</h2>
+            <h2 class="section-title">Essential Vatican Tips</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">⛪</div>
-                    <h3>St. Peter's Basilica</h3>
-                    <p>One of the largest churches in the world. Climb the dome for panoramic Rome views.</p>
+                    <div class="tip-icon">🎫</div>
+                    <h3>Book in Advance</h3>
+                    <p>Reserve Vatican Museums tickets online weeks ahead. Skip-the-line access is essential during peak season.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🎨</div>
-                    <h3>Sistine Chapel</h3>
-                    <p>Michelangelo's ceiling and Last Judgment. Book early access tours to avoid crowds.</p>
+                    <div class="tip-icon">👗</div>
+                    <h3>Dress Code</h3>
+                    <p>Cover shoulders and knees. No shorts, mini-skirts, or sleeveless tops. Dress code is strictly enforced.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>Vatican Museums</h3>
-                    <p>Incredible collection of art and artifacts. Allow full day and book skip-the-line tickets.</p>
+                    <div class="tip-icon">📱</div>
+                    <h3>Audio Guide</h3>
+                    <p>Consider an audio guide or guided tour for Sistine Chapel. Photography is prohibited inside.</p>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-icon">🗿</div>
-                    <h3>Raphael Rooms</h3>
-                    <p>Stunning frescoes by Raphael in papal apartments. Masterpieces of Renaissance art.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🌟</div>
-                    <h3>Vatican Gardens</h3>
-                    <p>Peaceful gardens covering half of Vatican City. Guided tours available with advance booking.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">📿</div>
-                    <h3>Papal Audience</h3>
-                    <p>Wednesday audiences with the Pope when in residence. Free tickets required in advance.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>3-4 months ahead for peak season. Book early access tours and special experiences. Avoid major Catholic holidays for crowds.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Stay in Rome near Vatican - Prati, Borgo, or Trastevere neighborhoods. Vatican City has no hotels.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Book online for discounts. Visit on last Sunday morning of month for free museum entry. Bring water and snacks as Vatican food is expensive.</p>
-                    </div>
+                    <div class="tip-icon">⏰</div>
+                    <h3>Early Morning</h3>
+                    <p>Arrive early morning for smaller crowds. Wednesday papal audiences are at 10:30 AM in St. Peter's Square.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Vatican City</h2>
+            <h2 class="section-title">Must-Try Food Near Vatican</h2>
             <div class="cuisine-grid">
-                <div class="food-card">
-                    <div class="food-icon">🍝</div>
-                    <h3>Roman Pasta</h3>
-                    <p>Nearby Roman restaurants serve cacio e pepe, carbonara, and amatriciana. Traditional Roman flavors.</p>
-                    <span class="food-price">$10-18</span>
-                </div>
                 <div class="food-card">
                     <div class="food-icon">🍕</div>
                     <h3>Pizza al Taglio</h3>
-                    <p>Roman-style pizza by the slice. Thin, crispy crust perfect for quick Vatican area lunch.</p>
-                    <span class="food-price">$3-6</span>
+                    <p>Pizza by the slice near Vatican. Bonci Pizzarium famous (lines long!). Fresh toppings, crispy crust. Budget lunch option. Eat standing or takeaway!</p>
+                    <span class="food-price">€5-10</span>
                 </div>
                 <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Italian Coffee</h3>
-                    <p>Authentic espresso culture in cafes around Vatican. Stand at bar like locals.</p>
-                    <span class="food-price">$1-2</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍷</div>
-                    <h3>Italian Wine</h3>
-                    <p>Local Lazio wines and Italian classics at nearby restaurants. Perfect with Roman cuisine.</p>
-                    <span class="food-price">$5-15</span>
+                    <div class="food-icon">🍝</div>
+                    <h3>Cacio e Pepe</h3>
+                    <p>Simple Roman pasta - pecorino cheese and black pepper. Deceptively simple but delicious. Try at Ristorante dei Musei near Vatican. Authentic Roman!</p>
+                    <span class="food-price">€12-18</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍦</div>
                     <h3>Gelato</h3>
-                    <p>Artisanal gelato shops near Vatican offer refreshing break from sightseeing.</p>
-                    <span class="food-price">$3-6</span>
+                    <p>Authentic Italian ice cream! Old Bridge Gelateria near Vatican highly rated. Avoid bright colored gelato (artificial). Pistachio and hazelnut amazing!</p>
+                    <span class="food-price">€3-6</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Italian Espresso</h3>
+                    <p>Stand at bar like locals - cheaper than sitting! Quick espresso shot. Romans drink cappuccino only before 11am. Coffee culture essential experience!</p>
+                    <span class="food-price">€1-3</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🥖</div>
-                    <h3>Panini</h3>
-                    <p>Fresh sandwiches from local delis. Convenient, affordable option for Vatican area dining.</p>
-                    <span class="food-price">$4-8</span>
+                    <h3>Supplì</h3>
+                    <p>Fried rice balls with mozzarella center. Roman street food. Crispy outside, gooey cheese inside. Perfect snack between Vatican museums!</p>
+                    <span class="food-price">€2-4</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍷</div>
+                    <h3>Italian Wine</h3>
+                    <p>Even house wine is excellent! Try wines from Lazio region (Vatican's region). Frascati white wine classic. Affordable and delicious!</p>
+                    <span class="food-price">€5-15/glass</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See at Vatican City</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h3>Sistine Chapel</h3>
+                    <p>Michelangelo's ceiling masterpiece! Silence enforced. No photos allowed. Part of Vatican Museums tour. Save for last. Neck strain worth it! Book skip-line tickets!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>St. Peter's Basilica</h3>
+                    <p>Largest church in world! Free entry (long lines). Michelangelo's Pietà inside. Climb dome for views (€10). Dress code enforced - shoulders/knees covered!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Vatican Museums</h3>
+                    <p>Massive art collection! Raphael Rooms, ancient sculptures, Egyptian artifacts. Plan 3-4 hours minimum. Book online weeks ahead. Last Sunday free (insane crowds)!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌟</div>
+                    <h3>St. Peter's Square</h3>
+                    <p>Bernini's colonnade embraces world's Catholics. Free to enter. Wednesday papal audiences (free tickets online). Climb obelisk view from cafes around square.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📬</div>
+                    <h3>Vatican Post Office</h3>
+                    <p>Send postcards with Vatican stamps! More reliable than Italian post. Unique souvenir. Inside Vatican Museums and St. Peter's Square. Collectors love it!</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <h3>Timing Tips</h3>
+                    <p>Arrive 8am when museums open. Fridays quieter. Wednesday avoid if not seeing Pope. Audioguide helps. 3 hours minimum, 5 hours ideal. Wear comfy shoes!</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        // Parallax effect for hero collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-collage');
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Set initial active slide and preload images
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+                const img = slide.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', () => {
+                        slide.style.visibility = 'visible';
+                    });
+                } else {
+                    slide.style.visibility = 'visible';
+                }
+            });
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial counter
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'stpeters-carousel',
+                'sistine-carousel', 
+                'museum-carousel',
+                'basilica-carousel',
+                'immigration-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

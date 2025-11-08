@@ -136,7 +136,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -372,7 +372,8 @@
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .image-overlay {
+        /* Only apply overlay to non-carousel images */
+        .gallery-item:not(.has-carousel):hover .image-overlay {
             opacity: 1;
         }
 
@@ -625,6 +626,375 @@
                 transform: translateY(0);
             }
         }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            position: relative;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+            display: none;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            object-fit: contain;
+            
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 20;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 20;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 20;
+        }
+
+        /* Section Styling */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Cuisine Grid */
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--barcelona-gradient);
+        }
+
+        .food-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .food-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .food-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .food-price {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd89b 30%, #19547b 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: linear-gradient(135deg, #ffd89b 10%, #19547b 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -693,10 +1063,26 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Barcelona Diary</h2>
             <div class="image-gallery">
-                <div class="gallery-item">
+                <!-- Sagrada Familia Carousel -->
+                <div class="gallery-item has-carousel">
                     <div class="gallery-image-container">
-                        <img src="barcelona/barcelona-image-1.jpg" alt="Sagrada Família" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="sagrada-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="barcelona/barcelona-image-1.jpg" alt="Sagrada Família" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="barcelona/barcelona-image-9.jpg" alt="Sagrada Família" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="barcelona/barcelona-image-10.jpg" alt="Sagrada Família" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('sagrada-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('sagrada-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="sagrada-carousel-indicators"></div>
+                            <div class="carousel-counter" id="sagrada-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>Sagrada Família</h3>
@@ -704,9 +1090,58 @@
                     </div>
                 </div>
 
+                <!-- Barcelona Cathedral -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="barcelona/barcelona-image-2.jpg" alt="Park Güell" class="gallery-image" loading="lazy">
+                        <img src="barcelona/barcelona-image-2.jpg" alt="Barcelona Cathedral" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Barcelona Cathedral</h3>
+                        <p>The Gothic grandeur of Barcelona's cathedral stands majestically in the heart of the Gothic Quarter. Its soaring spires and intricate stone carvings tell centuries of stories, while the peaceful cloister offers a serene escape from the bustling city.</p>
+                    </div>
+                </div>
+
+                <!-- Columbus Monument -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="barcelona/barcelona-image-11.jpg" alt="Columbus Monument" class="gallery-image" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Columbus Monument</h3>
+                        <p>The Monument to Christopher Columbus stands tall at the end of Las Ramblas, marking the entrance to Barcelona's old port. This 60-meter column topped with a bronze statue of Columbus pointing towards the New World is an iconic symbol of Barcelona's maritime heritage.</p>
+                    </div>
+                </div>
+
+                <!-- Casa Mila Carousel -->
+                <div class="gallery-item has-carousel">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="casamila-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="barcelona/barcelona-image-4.jpg" alt="Casa Mila" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="barcelona/barcelona-image-5.jpg" alt="Casa Mila" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('casamila-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('casamila-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="casamila-carousel-indicators"></div>
+                            <div class="carousel-counter" id="casamila-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Casa Milà (La Pedrera)</h3>
+                        <p>Gaudí's Casa Milà defies conventional architecture with its undulating stone facade and imaginative rooftop. Known as 'La Pedrera' (The Stone Quarry), this UNESCO World Heritage site showcases the genius of modernist design with every curve and detail.</p>
+                    </div>
+                </div>
+
+                <!-- Park Güell -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="barcelona/barcelona-image-8.jpg" alt="Park Güell" class="gallery-image" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
@@ -715,10 +1150,10 @@
                     </div>
                 </div>
 
+                <!-- Gothic Quarter -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="barcelona/barcelona-image-3.jpg" alt="Gothic Quarter" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="barcelona/barcelona-image-7.jpg" alt="Gothic Quarter" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
                         <h3>Gothic Quarter</h3>
@@ -726,26 +1161,233 @@
                     </div>
                 </div>
 
+                <!-- Barcelona Square -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="barcelona/barcelona-image-4.jpg" alt="La Rambla" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="barcelona/barcelona-image-3.jpg" alt="Barcelona Square" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Las Ramblas</h3>
-                        <p>The energy of this famous boulevard is infectious. Street performers, flower vendors, and bustling cafés create a symphony of life. Even with the crowds, there's something magical about this beating heart of Barcelona.</p>
+                        <h3>Barcelona Square</h3>
+                        <p>The vibrant plazas of Barcelona are gathering places where locals and visitors alike come together. These spaces pulse with energy, featuring street performers, outdoor cafés, and the constant buzz of Catalan conversation.</p>
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <!-- Barcelona Port Vell Carousel -->
+                <div class="gallery-item has-carousel">
                     <div class="gallery-image-container">
-                        <img src="barcelona/barcelona-image-5.jpg" alt="Barcelona Beach" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="portvell-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="barcelona/barcelona-image-6.jpg" alt="Barcelona Port Vell" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="barcelona/barcelona-image-12.jpg" alt="Barcelona Port Vell" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('portvell-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('portvell-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="portvell-carousel-indicators"></div>
+                            <div class="carousel-counter" id="portvell-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Barceloneta Beach</h3>
-                        <p>Few cities offer both cultural richness and Mediterranean beaches. Watching the sunset from Barceloneta while sipping sangria reminded me why Barcelona is such a perfect blend of urban sophistication and coastal relaxation.</p>
+                        <h3>Barcelona Port Vell</h3>
+                        <p>Barcelona's old port has been transformed into a stunning waterfront destination. With its wooden walkways, modern marina, and panoramic views of the Mediterranean, Port Vell perfectly blends the city's maritime heritage with contemporary urban design.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Must-See Places Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-See Places in Barcelona</h2>
+            <div class="travel-tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>Sagrada Família</h3>
+                    <p>Gaudí's unfinished masterpiece. Book timed tickets online months in advance. The tower climb offers breathtaking city views. Visit early morning for the best light through stained glass.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏛️</div>
+                    <h3>Park Güell</h3>
+                    <p>Colorful mosaic park with iconic lizard sculpture. Upper area requires tickets - book ahead. Free areas still offer great views and Gaudí's unique architecture.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏠</div>
+                    <h3>Casa Milà & Casa Batlló</h3>
+                    <p>Two stunning Gaudí houses on Passeig de Gràcia. Casa Batlló's interior is more impressive, but both are worth the ticket. Visit at night for magical illumination.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏰</div>
+                    <h3>Gothic Quarter</h3>
+                    <p>Medieval heart of Barcelona with narrow streets and hidden plazas. Free to explore. Don't miss Barcelona Cathedral and Plaça Sant Jaume. Best experienced on foot.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🛍️</div>
+                    <h3>La Rambla</h3>
+                    <p>Famous tree-lined boulevard from Plaça de Catalunya to Port Vell. Visit La Boqueria market for food, but watch for pickpockets. Best in morning before crowds.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏖️</div>
+                    <h3>Barceloneta Beach</h3>
+                    <p>City beach with golden sand and Mediterranean views. Great seafood restaurants along the boardwalk. Swim, sunbathe, or enjoy beach volleyball and water sports.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Cuisine Section -->
+        <section class="content-section">
+            <h2 class="section-title">Must-Try Catalan Food</h2>
+            <div class="cuisine-grid">
+                <div class="food-card">
+                    <div class="food-icon">🥘</div>
+                    <h3>Paella</h3>
+                    <p>Traditional Spanish rice dish with seafood or meat. Best enjoyed at beachside restaurants in Barceloneta. Perfect for sharing with friends.</p>
+                    <span class="food-price">€12-20</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍤</div>
+                    <h3>Tapas</h3>
+                    <p>Small plates perfect for sharing. Try patatas bravas, jamón ibérico, pan con tomate, and croquetas. Visit El Born or Gràcia neighborhoods for authentic tapas bars.</p>
+                    <span class="food-price">€3-8 each</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍞</div>
+                    <h3>Pan con Tomate</h3>
+                    <p>Catalan breakfast staple - toasted bread rubbed with tomato, olive oil, and salt. Simple but incredibly delicious. Order with jamón for a heartier meal.</p>
+                    <span class="food-price">€3-6</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍰</div>
+                    <h3>Crema Catalana</h3>
+                    <p>Catalan version of crème brûlée with citrus flavor. Creamy custard with caramelized sugar top. The perfect ending to any meal.</p>
+                    <span class="food-price">€4-7</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🍷</div>
+                    <h3>Cava & Vermouth</h3>
+                    <p>Catalan sparkling wine similar to Champagne. Vermouth hour (5-8pm) is a Barcelona tradition. Enjoy with olives and potato chips at local bars.</p>
+                    <span class="food-price">€3-8</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🥖</div>
+                    <h3>Churros con Chocolate</h3>
+                    <p>Fried dough sticks with thick hot chocolate for dipping. Perfect late-night snack after exploring the city. Best at traditional churrerías.</p>
+                    <span class="food-price">€4-6</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Barcelona</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (March-May)</h3>
+                        <div class="season-temp">15-22°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Perfect weather, fewer crowds than summer. Flowers blooming in parks. Great for walking tours and outdoor dining.</p>
+                        <ul class="season-pros">
+                            <li>Pleasant temperatures</li>
+                            <li>Moderate tourist numbers</li>
+                            <li>Lower hotel prices than summer</li>
+                            <li>Sant Jordi festival in April</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                        <div class="season-temp">25-30°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Peak Season:</strong> Hot weather perfect for beaches. Crowded attractions. Book everything in advance. Many locals leave in August.</p>
+                        <ul class="season-pros">
+                            <li>Beach weather</li>
+                            <li>Long daylight hours</li>
+                            <li>Outdoor concerts and events</li>
+                            <li>Vibrant nightlife</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-November)</h3>
+                        <div class="season-temp">18-24°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Excellent Choice:</strong> Warm Mediterranean waters, fewer tourists. La Mercè festival in September. Perfect weather for sightseeing and hiking.</p>
+                        <ul class="season-pros">
+                            <li>Still warm enough for beach</li>
+                            <li>Fewer crowds post-summer</li>
+                            <li>Local festivals</li>
+                            <li>Best food season</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (December-February)</h3>
+                        <div class="season-temp">10-16°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget Travel:</strong> Mild winters, lowest prices. Christmas markets and lights. Some beach restaurants closed. Perfect for museums and indoor attractions.</p>
+                        <ul class="season-pros">
+                            <li>Cheapest accommodation</li>
+                            <li>No crowds at attractions</li>
+                            <li>Authentic local experience</li>
+                            <li>Mild compared to northern Europe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Tips Section -->
+        <section class="content-section">
+            <h2 class="section-title">Getting Around Barcelona</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚇</div>
+                    <h3>Metro</h3>
+                    <p><strong>Best for:</strong> Fast travel across the city. Extensive network covering all major areas. Runs 5am-midnight (2am on weekends). Clean, safe, and efficient.</p>
+                    <div class="transport-tip">💡 Get a T-10 ticket (10 rides) for €11.35 - works on metro, bus, and tram</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Bus</h3>
+                    <p><strong>Best for:</strong> Scenic routes and reaching areas metro doesn't cover. Night buses (Nitbus) run when metro is closed. Front boarding to pay or validate.</p>
+                    <div class="transport-tip">💡 Bus Turístic hop-on-hop-off covers all major sights - €31 for 1 day</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚲</div>
+                    <h3>Bicycle</h3>
+                    <p><strong>Best for:</strong> Exploring at your own pace. Bicing bike-share system requires local registration. Flat terrain makes cycling easy. Many dedicated bike lanes.</p>
+                    <div class="transport-tip">💡 Rent from shops for €10-15/day. Perfect for beach promenade rides</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxi & Uber</h3>
+                    <p><strong>Best for:</strong> Late nights, airport transfers, or traveling with luggage. Taxis are yellow/black and use meters. Uber and Cabify also available.</p>
+                    <div class="transport-tip">💡 Airport to city center: €30-40 by taxi, cheaper on Aerobús</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">🚶</div>
+                    <h3>Walking</h3>
+                    <p><strong>Best for:</strong> Gothic Quarter, El Born, and Gràcia neighborhoods. Many attractions are walkable. Download Google Maps offline for navigation.</p>
+                    <div class="transport-tip">💡 Wear comfortable shoes - Barcelona streets are full of surprises!</div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Airport Transfer</h3>
+                    <p><strong>Options:</strong> Aerobús (€5.90) to Plaça Catalunya every 5-10 mins. Metro L9 (€5.15) slower but cheaper. Train R2 Nord to city center (€4.60).</p>
+                    <div class="transport-tip">💡 Aerobús is fastest and most convenient for first-time visitors</div>
                 </div>
             </div>
         </section>
@@ -819,6 +1461,157 @@
             
             img.addEventListener('mouseleave', () => {
                 img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) {
+                console.log(`Carousel wrapper not found: ${carouselId}`);
+                return;
+            }
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            if (slides.length === 0) {
+                console.log(`No slides found for carousel: ${carouselId}`);
+                return;
+            }
+
+            console.log(`Initializing carousel ${carouselId} with ${slides.length} slides`);
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                indicatorsContainer.innerHTML = ''; // Clear existing indicators
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Hide navigation if only one slide
+            const prevBtn = wrapper.parentElement.querySelector('.carousel-prev');
+            const nextBtn = wrapper.parentElement.querySelector('.carousel-next');
+            
+            if (slides.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+                if (indicatorsContainer) indicatorsContainer.style.display = 'none';
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel || carousel.totalSlides <= 1) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) {
+                console.error('Carousel not found:', carouselId);
+                return;
+            }
+
+            // Update slide visibility
+            carousel.slides.forEach((slide, index) => {
+                const isActive = index === carousel.currentSlide;
+                slide.classList.toggle('active', isActive);
+                
+                // Ensure all images are loaded and visible
+                const img = slide.querySelector('img');
+                if (img) {
+                    img.style.display = 'block';
+                    if (!img.complete) {
+                        img.addEventListener('load', () => {
+                            console.log('Image loaded:', img.src);
+                        });
+                    }
+                }
+            });
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM Content Loaded - Initializing carousels');
+            
+            const carouselIds = [
+                'sagrada-carousel',
+                'casamila-carousel',
+                'portvell-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    console.log('Found carousel element:', id);
+                    initCarousel(id);
+                } else {
+                    console.log('Carousel element not found:', id);
+                }
+            });
+        });
+
+        // Also initialize when window loads to ensure images are ready
+        window.addEventListener('load', () => {
+            const carouselIds = [
+                'sagrada-carousel',
+                'casamila-carousel', 
+                'portvell-carousel'
+            ];
+            
+            carouselIds.forEach(id => {
+                if (carousels[id]) {
+                    updateCarousel(id);
+                }
             });
         });
     </script>

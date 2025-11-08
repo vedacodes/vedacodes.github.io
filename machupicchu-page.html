@@ -136,7 +136,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -340,21 +340,7 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(46,139,87,0.3), rgba(210,105,30,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
 
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
 
         .gallery-caption {
             padding: 25px;
@@ -372,6 +358,108 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
         }
 
         /* Stats Grid */
@@ -927,69 +1015,131 @@
         <section class="content-section">
             <h2 class="section-title">Sacred Memories</h2>
             <div class="image-gallery">
+                <!-- Aguas Calientes Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-1.jpg" alt="First glimpse of Machu Picchu" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="aguas-calientes-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="machupicchu/machupicchu-image-2.jpg" alt="Aguas Calientes view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="machupicchu/machupicchu-image-5.jpg" alt="Aguas Calientes view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="machupicchu/machupicchu-image-12.jpg" alt="Aguas Calientes view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('aguas-calientes-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('aguas-calientes-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="aguas-calientes-carousel-indicators"></div>
+                            <div class="carousel-counter" id="aguas-calientes-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>The Revelation</h3>
-                        <p>After hours of anticipation, the clouds parted to reveal this magnificent ancient city. Nothing can prepare you for this moment - when you realize you're standing before one of humanity's greatest achievements, hidden for centuries in the clouds.</p>
+                        <h3>Aguas Calientes</h3>
+                        <p>The charming town at the base of Machu Picchu, where hot springs meet mountain streams. This gateway town offers a peaceful respite before the sacred journey to the ancient citadel.</p>
                     </div>
                 </div>
 
+                <!-- Residential section of Machu Picchu Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-2.jpg" alt="Ancient terraces" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="residential-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="machupicchu/machupicchu-image-8.jpg" alt="Residential section view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="machupicchu/machupicchu-image-9.jpg" alt="Residential section view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('residential-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('residential-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="residential-carousel-indicators"></div>
+                            <div class="carousel-counter" id="residential-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Sacred Terraces</h3>
-                        <p>The agricultural terraces showcase the Incas' incredible engineering skills. These stepped gardens fed an entire civilization while preventing erosion on these steep mountain slopes. Every stone was placed with purpose and reverence.</p>
+                        <h3>Residential section of Machu Picchu</h3>
+                        <p>The living quarters where the Incan elite once resided. These terraced homes showcase sophisticated urban planning and demonstrate how the Incas lived in harmony with the mountain environment.</p>
                     </div>
                 </div>
 
+                <!-- Ancient houses in Machupicchu -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-3.jpg" alt="Intihuatana stone" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="machupicchu/machupicchu-image-1.jpg" alt="Ancient houses in Machupicchu" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Temple of the Sun</h3>
-                        <p>Standing in the sacred temple where Inca priests once tracked celestial movements was deeply moving. You can feel the spiritual energy that drew people to worship here, connected to both earth and sky.</p>
+                        <h3>Ancient houses in Machupicchu</h3>
+                        <p>The remarkable stonework of the ancient residential quarters showcases the incredible engineering skills of the Inca civilization. These structures have withstood centuries of weather and earthquakes.</p>
                     </div>
                 </div>
 
+                <!-- Walking through Machupicchu -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-4.jpg" alt="Mountain views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="machupicchu/machupicchu-image-3.jpg" alt="Walking through Machupicchu" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Huayna Picchu</h3>
-                        <p>The view from atop Huayna Picchu mountain reveals Machu Picchu's perfect integration with the natural landscape. The Incas didn't just build on this mountain - they became one with it.</p>
+                        <h3>Walking through Machupicchu</h3>
+                        <p>Every step through the ancient pathways reveals new wonders. The stone steps worn smooth by countless pilgrims lead to breathtaking views and spiritual discoveries.</p>
                     </div>
                 </div>
 
+                <!-- Machupicchu -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-5.jpg" alt="Sunrise over ruins" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="machupicchu/machupicchu-image-4.jpg" alt="Machupicchu" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Sacred Sunrise</h3>
-                        <p>Watching the sun rise over the ancient city was a spiritual experience. As golden light slowly illuminated the stone structures, I felt connected to centuries of pilgrims who witnessed this same sacred moment.</p>
+                        <h3>Machupicchu</h3>
+                        <p>The iconic view of the lost city that has captivated the world. This mystical place, perched high in the Andes, represents the pinnacle of Incan architecture and spiritual achievement.</p>
                     </div>
                 </div>
 
+                <!-- Peru Rail -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="machupicchu/machupicchu-image-6.jpg" alt="Llamas at Machu Picchu" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="machupicchu/machupicchu-image-6.jpg" alt="Peru Rail" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Guardians of the Ruins</h3>
-                        <p>The llamas that roam freely through Machu Picchu feel like ancient guardians watching over this sacred place. Their peaceful presence adds to the mystical atmosphere of this mountain sanctuary.</p>
+                        <h3>Peru Rail</h3>
+                        <p>The scenic train journey through the Sacred Valley is an adventure in itself. The railway winds through spectacular Andean landscapes, preparing visitors for the magic ahead.</p>
+                    </div>
+                </div>
+
+                <!-- Cataratas de Aguas Calientes -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="machupicchu/machupicchu-image-7.jpg" alt="Cataratas de Aguas Calientes" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Cataratas de Aguas Calientes</h3>
+                        <p>The beautiful waterfalls near Aguas Calientes offer a refreshing natural spa experience. These cascading waters have been considered sacred by indigenous peoples for centuries.</p>
+                    </div>
+                </div>
+
+                <!-- Gaining Insights -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="machupicchu/machupicchu-image-10.jpg" alt="Gaining Insights" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Gaining Insights</h3>
+                        <p>Moments of reflection and discovery throughout the sacred site. Each corner of Machu Picchu offers new perspectives on Incan culture, spirituality, and architectural mastery.</p>
+                    </div>
+                </div>
+
+                <!-- Llama -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="machupicchu/machupicchu-image-11.jpg" alt="Llama" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Llama</h3>
+                        <p>The gentle guardians of Machu Picchu roam freely throughout the ancient citadel. These sacred animals were revered by the Incas and continue to be symbols of Andean culture.</p>
                     </div>
                 </div>
             </div>
@@ -1192,6 +1342,101 @@
     </main>
 
     <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'aguas-calientes-carousel',
+                'residential-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

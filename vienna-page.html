@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #8B4513 0%, #DAA520 100%);
+            --vienna-gradient: linear-gradient(135deg, #8B4513 0%, #DAA520 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,200 +51,162 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
+            background: linear-gradient(135deg, #8B4513 0%, #DAA520 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 0 20px;
         }
 
-        .hero-collage {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139,69,19,0.8) 0%, rgba(218,165,32,0.6) 100%);
         }
 
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
+            z-index: 3;
             max-width: 800px;
-            padding: 0 2rem;
+            margin: 0 auto;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
+        /* Section Styling */
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: var(--vienna-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,64 +217,18 @@
         .description-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--vienna-gradient);
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         /* Image Gallery */
@@ -357,22 +273,6 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
             padding: 25px;
         }
@@ -391,23 +291,219 @@
             line-height: 1.6;
         }
 
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--vienna-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--vienna-gradient);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
         /* Travel Tips Grid */
         .travel-tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 30px;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
+            border-left: 4px solid;
+            border-left-color: transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--vienna-gradient);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
 
         .tip-card:hover {
@@ -416,15 +512,19 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            background: var(--vienna-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
             color: var(--text-primary);
         }
 
@@ -433,198 +533,193 @@
             line-height: 1.6;
         }
 
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cuisine Grid */
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .food-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: var(--text-light);
             text-align: center;
-            position: relative;
+            padding: 40px 20px;
+            margin-top: 80px;
         }
 
-        .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .food-card h3 {
+        .footer h3 {
             font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: var(--text-light);
             font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            transition: var(--transition);
         }
 
-        .food-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+        .social-link:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
         }
 
-        .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .gallery-item, .description-card, .stat-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .nav-container {
+                padding: 0 15px;
             }
-            
-            .hero-content {
-                padding: 0 1rem;
+
+            .home-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
-            
+
+            .hero {
+                padding: 0 15px;
+            }
+
             main {
-                padding: 2rem 1rem;
+                padding: 40px 15px;
             }
-            
+
             .description-card {
-                padding: 2rem;
+                padding: 30px 20px;
             }
-            
+
             .image-gallery {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
+            .gallery-caption {
+                padding: 20px;
+            }
+
+            .gallery-caption h3 {
+                font-size: 1.3rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
             .travel-tips-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
-            
-            .cuisine-grid {
+
+            .quote-section {
+                padding: 40px 20px;
+            }
+
+            .tip-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i>
+                <span>Back to Home</span>
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Vienna, Austria</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="vienna/vienna-image-1.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-2.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-3.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-4.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-5.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-6.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-7.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-8.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-9.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-10.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-1.jpg" alt="" class="collage-image">
-            <img src="vienna/vienna-image-2.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Vienna</h1>
-            <p class="hero-subtitle">Where Imperial Grandeur Meets Musical Heritage</p>
-            <p class="hero-description">Experience the elegant capital of Austria, where Habsburg palaces host classical concerts and historic coffeehouses serve perfect pastries. Vienna seamlessly blends imperial history with vibrant cultural life.</p>
+            <p class="hero-subtitle">City of Music & Imperial Grandeur</p>
+            <p class="hero-description">
+                Walking through Vienna feels like stepping into a living symphony, where every street corner whispers tales of imperial grandeur and musical genius that shaped the world.
+            </p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
-        <!-- Description Section -->
+        <!-- About Section -->
         <section class="content-section">
-            <h2 class="section-title">My Vienna Adventure</h2>
+            <h2 class="section-title">My Vienna Story</h2>
             <div class="description-card">
-                <p>Vienna enchanted me with its refined elegance and cultural richness. From the grandeur of Schönbrunn Palace to intimate concerts in historic venues, from traditional coffeehouses to world-class museums, this city celebrates both its imperial past and its ongoing cultural vitality. The music here truly does flow through the streets.</p>
+                <p>
+                    Vienna captured my heart from the moment I heard my first waltz echo through its grand palaces. This is a city where Mozart's genius still resonates through concert halls, where coffee culture is elevated to an art form, and where imperial architecture tells stories of a magnificent past. From the whimsical Hundertwasser House to the majestic Hofburg Palace, every step revealed another layer of this culturally rich capital. The blend of classical elegance and modern innovation, paired with the warmth of Viennese hospitality, created memories that continue to dance in my mind like a beautiful melody.
+                </p>
             </div>
-        </section>
 
-        <!-- Stats Section -->
-        <section class="content-section">
+            <!-- Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">5</div>
-                    <div class="stat-label">Days of Culture</div>
+                    <div class="stat-label">Days Exploring</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">300+</div>
-                    <div class="stat-label">Concerts Per Year</div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Museums Visited</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Concerts Attended</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Musical Magic</div>
+                    <div class="stat-label">Memories Created</div>
                 </div>
             </div>
         </section>
@@ -633,64 +728,109 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Vienna Diary</h2>
             <div class="image-gallery">
+                <!-- Hundertwasser House Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-1.jpg" alt="First Glimpse of Vienna" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hundertwasser-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vienna/vienna-image-1.jpg" alt="Hundertwasser House view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-2.jpg" alt="Hundertwasser House view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-3.jpg" alt="Hundertwasser House view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('hundertwasser-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('hundertwasser-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="hundertwasser-carousel-indicators"></div>
+                            <div class="carousel-counter" id="hundertwasser-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Vienna</h3>
-                        <p>My initial impression of Vienna was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Hundertwasser House</h3>
+                        <p>Standing before this colorful architectural masterpiece felt like entering a fairytale. Friedensreich Hundertwasser's vision of organic architecture, with its undulating floors, irregular windows, and rooftop gardens, challenges everything you think you know about building design. It's a joyful rebellion against straight lines that makes you smile just by looking at it.</p>
                     </div>
                 </div>
+
+                <!-- Hofburg Imperial Palace Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="hofburg-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vienna/vienna-image-4.jpg" alt="Hofburg Imperial Palace view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-5.jpg" alt="Hofburg Imperial Palace view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-7.jpg" alt="Hofburg Imperial Palace view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('hofburg-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('hofburg-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="hofburg-carousel-indicators"></div>
+                            <div class="carousel-counter" id="hofburg-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Vienna adventure.</p>
+                        <h3>Hofburg Imperial Palace</h3>
+                        <p>Walking through the Hofburg Complex was like stepping back into the Habsburg Empire. Every room whispers stories of emperors and empresses, of grand balls and political intrigue. The opulence is overwhelming, yet the history is humbling - this is where the fate of empires was decided over centuries.</p>
                     </div>
                 </div>
+
+                <!-- Vienna Streets -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="vienna/vienna-image-6.jpg" alt="Vienna Streets" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Vienna's authentic character.</p>
+                        <h3>Vienna Streets</h3>
+                        <p>Strolling through Vienna's elegant streets feels like walking through a living museum. The baroque facades, classical statues, and grand boulevards create an atmosphere of timeless sophistication that makes every moment feel cinematic.</p>
                     </div>
                 </div>
+
+                <!-- Wiener Pestsäule -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="vienna/vienna-image-8.jpg" alt="Wiener Pestsäule" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Wiener Pestsäule</h3>
+                        <p>The Plague Column stands as a baroque monument to survival and faith. Built to commemorate the end of the Great Plague, its intricate sculptures and golden details represent Vienna's resilience and the triumph of hope over despair.</p>
                     </div>
                 </div>
+
+                <!-- St. Stephen's Cathedral Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="cathedral-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="vienna/vienna-image-9.jpg" alt="Inside St. Stephen's Cathedral view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-10.jpg" alt="St. Stephen's Cathedral exterior" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-11.jpg" alt="Inside St. Stephen's Cathedral view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="vienna/vienna-image-12.jpg" alt="Inside St. Stephen's Cathedral view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('cathedral-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('cathedral-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="cathedral-carousel-indicators"></div>
+                            <div class="carousel-counter" id="cathedral-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Vienna gave me many of these precious memories.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <img src="vienna/vienna-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Vienna, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>St. Stephen's Cathedral</h3>
+                        <p>Stephansdom's Gothic spires pierce the Viennese sky like prayers made stone. Inside, the vaulted ceilings and stained glass windows create a cathedral of light that has watched over Vienna for over 800 years. The intricate details and sacred atmosphere remind you that some things truly are timeless.</p>
                     </div>
                 </div>
             </div>
@@ -701,101 +841,304 @@
             <h2 class="section-title">Must-See Places in Vienna</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">🏰</div>
-                    <h3>Schönbrunn Palace</h3>
-                    <p>Imperial summer palace with gorgeous gardens. Tour the opulent rooms and climb Gloriette for views.</p>
-                </div>
-                <div class="tip-card">
                     <div class="tip-icon">🎼</div>
                     <h3>Vienna State Opera</h3>
-                    <p>World-famous opera house with excellent acoustics. Book performance tickets or take guided tour.</p>
+                    <p>Experience world-class opera and ballet in one of the most prestigious venues in the world. Book tickets in advance for the best seats.</p>
                 </div>
+                
                 <div class="tip-card">
-                    <div class="tip-icon">⛪</div>
-                    <h3>St. Stephen's Cathedral</h3>
-                    <p>Gothic cathedral in city center. Climb the tower for panoramic Vienna views.</p>
+                    <div class="tip-icon">🏰</div>
+                    <h3>Schönbrunn Palace</h3>
+                    <p>Explore the imperial summer residence with its magnificent gardens. The palace tour reveals the opulent lifestyle of the Habsburg royalty.</p>
                 </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">☕</div>
+                    <h3>Viennese Coffee Houses</h3>
+                    <p>Indulge in the legendary coffee culture at historic cafés like Café Central or Café Sacher. Don't miss the original Sachertorte!</p>
+                </div>
+                
                 <div class="tip-card">
                     <div class="tip-icon">🎨</div>
                     <h3>Belvedere Palace</h3>
-                    <p>Baroque palace complex housing Austrian art including Klimt's "The Kiss."</p>
+                    <p>Marvel at Gustav Klimt's masterpieces, including "The Kiss," in this baroque palace complex with stunning gardens.</p>
                 </div>
+                
                 <div class="tip-card">
-                    <div class="tip-icon">☕</div>
-                    <h3>Historic Coffeehouses</h3>
-                    <p>UNESCO-listed coffee culture. Try Café Central, Café Sacher, or Café Demel for authentic experience.</p>
+                    <div class="tip-icon">🎯</div>
+                    <h3>Naschmarkt</h3>
+                    <p>Browse Vienna's most popular market for fresh produce, international cuisine, and unique finds. Perfect for Saturday morning explorations.</p>
                 </div>
+                
                 <div class="tip-card">
-                    <div class="tip-icon">🎭</div>
-                    <h3>Salzburg Day Trip</h3>
-                    <p>Mozart's birthplace is 2.5 hours by train. Beautiful alpine city with Sound of Music tours.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hotel Booking Tips Section -->
-        <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>3-4 months ahead for opera and concert season. Book palace tours and popular restaurants early. Christmas markets are very popular.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Innere Stadt: Historic center, walking distance to attractions. Leopoldstadt: Quieter, good restaurants. Margareten: Local atmosphere, great cafes.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Buy Vienna Card for discounts. Use public transportation. Visit free churches and parks. Eat at local markets like Naschmarkt.</p>
-                    </div>
+                    <div class="tip-icon">🚡</div>
+                    <h3>Prater & Giant Ferris Wheel</h3>
+                    <p>Ride the historic Riesenrad for panoramic city views and enjoy the nostalgic amusement park atmosphere of the Prater.</p>
                 </div>
             </div>
         </section>
 
         <!-- Local Cuisine Section -->
         <section class="content-section">
-            <h2 class="section-title">What to Eat in Vienna</h2>
+            <h2 class="section-title">Must-Try Viennese Food</h2>
             <div class="cuisine-grid">
                 <div class="food-card">
                     <div class="food-icon">🥩</div>
                     <h3>Wiener Schnitzel</h3>
-                    <p>Breaded veal cutlet, Vienna's most famous dish. Traditionally served with potato salad.</p>
-                    <span class="food-price">$15-25</span>
+                    <p>Breaded veal cutlet, Vienna's signature dish. Thin, crispy, served with potato salad and lingonberry jam. Try at Figlmüller (original) or Schnitzelwirt. Must-have experience!</p>
+                    <span class="food-price">€15-25</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍰</div>
                     <h3>Sachertorte</h3>
-                    <p>Chocolate cake with apricot jam invented at Hotel Sacher. Rich, decadent Viennese classic.</p>
-                    <span class="food-price">$6-12</span>
+                    <p>Legendary chocolate cake with apricot jam. Original at Hotel Sacher, but Demel's version equally delicious. Dense, rich, served with whipped cream. Vienna's sweetest pride!</p>
+                    <span class="food-price">€7-10</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">☕</div>
-                    <h3>Viennese Coffee</h3>
-                    <p>Historic coffee culture with many varieties. Try Melange or Einspänner with traditional pastries.</p>
-                    <span class="food-price">$3-6</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍖</div>
-                    <h3>Tafelspitz</h3>
-                    <p>Boiled beef with vegetables and horseradish. Traditional Austrian comfort food.</p>
-                    <span class="food-price">$18-25</span>
+                    <h3>Coffee & Café Culture</h3>
+                    <p>Viennese coffeehouse tradition is UNESCO heritage! Try Melange (cappuccino-style), Einspänner (with cream). Café Central, Café Hawelka are iconic. Spend hours reading!</p>
+                    <span class="food-price">€4-8</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🥨</div>
-                    <h3>Apple Strudel</h3>
-                    <p>Flaky pastry with spiced apples. Classic Austrian dessert, often served warm with cream.</p>
-                    <span class="food-price">$4-8</span>
+                    <h3>Apfelstrudel</h3>
+                    <p>Warm apple strudel with vanilla sauce or whipped cream. Café Landtmann does it perfectly. Flaky pastry, cinnamon apples. Best with afternoon coffee!</p>
+                    <span class="food-price">€6-9</span>
+                </div>
+                <div class="food-card">
+                    <div class="food-icon">🌭</div>
+                    <h3>Käsekrainer</h3>
+                    <p>Cheese-filled sausage from street stands. Authentic Vienna street food. Get it at Würstelstand (sausage stands). Perfect late-night snack after opera!</p>
+                    <span class="food-price">€4-6</span>
                 </div>
                 <div class="food-card">
                     <div class="food-icon">🍷</div>
-                    <h3>Austrian Wine</h3>
-                    <p>Excellent local wines, especially white varieties from Wachau Valley. Perfect with Austrian cuisine.</p>
-                    <span class="food-price">$5-12</span>
+                    <h3>Heuriger Wine Taverns</h3>
+                    <p>Traditional wine taverns in vineyard districts. Local wine, cold buffet. Grinzing and Neustift areas. Authentic Viennese evening experience. Live music often!</p>
+                    <span class="food-price">€15-30</span>
                 </div>
             </div>
         </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Vienna</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring (April-May)</h3>
+                        <div class="season-temp">10-20°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Excellent Choice:</strong> Gardens blooming, perfect weather. Outdoor cafés open, palace gardens stunning. Vienna Ball season ends but concert season continues. Lovely time for walking tours.</p>
+                        <ul class="season-pros">
+                            <li>Pleasant temperatures</li>
+                            <li>Schönbrunn gardens in bloom</li>
+                            <li>Fewer tourists than summer</li>
+                            <li>Great for outdoor activities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (June-August)</h3>
+                        <div class="season-temp">20-28°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Peak Season:</strong> Warmest weather, outdoor concerts and festivals. Many locals on vacation in August. Danube beaches open. Book ahead. Some venues closed for summer.</p>
+                        <ul class="season-pros">
+                            <li>Long sunny days</li>
+                            <li>Outdoor concerts</li>
+                            <li>Beer gardens thriving</li>
+                            <li>Perfect for park picnics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍂</div>
+                        <h3>Fall (September-October)</h3>
+                        <div class="season-temp">10-18°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Gorgeous fall colors, cultural season begins. Opera and concert halls reopen. Wine harvest festivals in suburbs. Ideal weather for museums and palaces.</p>
+                        <ul class="season-pros">
+                            <li>Beautiful autumn foliage</li>
+                            <li>Cultural events resume</li>
+                            <li>Comfortable sightseeing</li>
+                            <li>Wine harvest celebrations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter (November-March)</h3>
+                        <div class="season-temp">-2-6°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Magical & Cultural:</strong> Christmas markets November-December are enchanting! Ball season (Jan-Feb) if you want to waltz. Cold but cozy cafés perfect. Opera and theater peak season.</p>
+                        <ul class="season-pros">
+                            <li>Famous Christmas markets</li>
+                            <li>Vienna Ball season</li>
+                            <li>Lower accommodation prices</li>
+                            <li>Cozy café culture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <p class="quote-text">"Vienna is a handsome, lively city, and pleases me exceedingly."</p>
+            <p class="quote-author">— Wolfgang Amadeus Mozart</p>
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Vienna Memories</h3>
+            <p>Every street corner in Vienna tells a story of music, art, and imperial grandeur.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Veda's Travel Diary. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                slides: slides,
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                indicatorsContainer.innerHTML = '';
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = `carousel-indicator ${i === 0 ? 'active' : ''}`;
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                }
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            const wrapper = document.querySelector(`#${carouselId}`);
+            if (wrapper) {
+                wrapper.style.transform = `translateX(-${carousel.currentSlide * 100}%)`;
+            }
+
+            // Update active slide
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update indicators
+            const indicators = document.querySelectorAll(`#${carouselId}-indicators .carousel-indicator`);
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('hundertwasser-carousel');
+            initCarousel('hofburg-carousel');
+            initCarousel('cathedral-carousel');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

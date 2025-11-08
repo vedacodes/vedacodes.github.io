@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lima - Culinary Capital of South America | Veda's Travel Diary</title>
+    <title>Lima - City of Kings | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #D2691E 0%, #F4A460 100%);
+            --lima-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -49,27 +49,20 @@
             line-height: 1.6;
             color: var(--text-primary);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeInPage {
-            to { opacity: 1; }
+            transition: opacity 0.3s ease-in-out;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 1rem 0;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
@@ -78,34 +71,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             background: var(--primary-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
         }
 
         .nav-links a::after {
@@ -126,50 +117,12 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             overflow: hidden;
-            background: var(--city-gradient);
-        }
-
-        .hero-collage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            opacity: 0.8;
-        }
-
-        .collage-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            filter: brightness(0.8) contrast(1.1);
-            animation: subtleFloat 8s ease-in-out infinite;
-        }
-
-        .collage-image:nth-child(even) {
-            animation-direction: reverse;
-            animation-delay: -2s;
-        }
-
-        @keyframes subtleFloat {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: brightness(0.8) contrast(1.1);
-            }
-            50% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: brightness(0.85) contrast(1.15);
-            }
+            background: var(--lima-gradient);
         }
 
         .hero-content {
@@ -248,90 +201,47 @@
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: var(--transition);
         }
 
-        .description-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+        .description-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.5rem;
         }
 
-        /* Stats Grid */
-        .stats-grid {
+        /* Gallery Grid */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            align-items: start;
+            margin-top: 3rem;
         }
 
         .gallery-item {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
         }
 
         .gallery-item:hover {
@@ -353,35 +263,14 @@
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
-            padding: 25px;
+            padding: 1.5rem;
         }
 
         .gallery-caption h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
@@ -391,23 +280,144 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-image-container {
+                height: 250px;
+            }
+
+            .description-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +426,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,76 +469,197 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
@@ -569,35 +667,21 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
+            <a href="index.html" class="logo">Veda's Travel Diary</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-collage">
-            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-3.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-4.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-5.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-3.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-4.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-5.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-1.jpg" alt="" class="collage-image">
-            <img src="lima/lima-image-2.jpg" alt="" class="collage-image">
-        </div>
         <div class="hero-content">
             <h1>Lima</h1>
-            <p class="hero-subtitle">Where Ancient History Meets Modern Gastronomy</p>
-            <p class="hero-description">Explore Peru's vibrant capital, where pre-Columbian ruins stand alongside colonial mansions and world-renowned restaurants. Lima offers an incredible blend of history, culture, and some of the world's best cuisine.</p>
+            <p class="hero-subtitle">City of Kings</p>
+            <p class="hero-description">Where ancient history meets modern gastronomy, and ocean waves crash against dramatic cliffs while the heart of Peru beats with vibrant culture and warmth.</p>
         </div>
     </section>
 
@@ -605,197 +689,453 @@
     <main>
         <!-- Description Section -->
         <section class="content-section">
-            <h2 class="section-title">My Lima Adventure</h2>
             <div class="description-card">
-                <p>Lima surprised me with its sophistication and energy. Beyond being the gateway to Machu Picchu, this city has its own incredible character. From the colonial grandeur of the historic center to the modern clifftop neighborhoods of Miraflores, Lima offers layers of discovery. And the food - absolutely exceptional!</p>
+                <h2>Lima: Peru's Coastal Crown Jewel</h2>
+                <p>Lima surprised me at every turn. This sprawling metropolis perched on the Pacific coast is so much more than a gateway to Machu Picchu - it's a destination that deserves days of exploration. From the colorful street art of Barranco to the clifftop views of Miraflores, Lima pulses with a creative energy that's infectious.</p>
+                <p>The city taught me that Peru's treasures aren't just found in ancient ruins. Here, world-class cuisine meets indigenous traditions, creating a culinary scene that's conquered the globe. Whether you're cycling through seaside neighborhoods, exploring pre-Columbian pyramids right in the city center, or watching the sunset from Love Park, Lima offers experiences that are uniquely Peruvian.</p>
+                <p>What struck me most was how Lima embraces both its past and future. Ancient adobe structures stand proudly alongside modern shopping centers, while the ocean provides a constant backdrop to this city's endless stories.</p>
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Photo Gallery -->
         <section class="content-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Days Exploring</div>
+            <h2 class="section-title">Lima Through My Lens</h2>
+            <div class="gallery-grid">
+                
+                <!-- Cycling through the streets -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="lima/lima-image-1.jpg" alt="Cycling through the streets" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Cycling through the streets</h3>
+                        <p>Exploring Lima on two wheels was the perfect way to feel the city's rhythm. From bustling neighborhoods to quiet coastal paths, cycling revealed hidden corners and local life that you can only experience at street level.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">2000</div>
-                    <div class="stat-label">Years of History</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Culinary Discoveries</div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Image Gallery -->
-        <section class="content-section">
-            <h2 class="section-title">Pages from My Lima Diary</h2>
-            <div class="image-gallery">
+                <!-- La Marina Lighthouse Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-1.jpg" alt="First Glimpse of Lima" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="lighthouse-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-2.jpg" alt="La Marina Lighthouse view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-15.jpg" alt="La Marina Lighthouse view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('lighthouse-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('lighthouse-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="lighthouse-carousel-indicators"></div>
+                            <div class="carousel-counter" id="lighthouse-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Lima</h3>
-                        <p>My initial impression of Lima was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>La Marina Lighthouse</h3>
+                        <p>This charming lighthouse stands as a beacon overlooking Lima's coastline, offering panoramic views of the Pacific Ocean and serving as a perfect spot for watching the famous Lima sunsets.</p>
                     </div>
                 </div>
+
+                <!-- Love Park Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="love-park-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-3.jpg" alt="Love Park view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-10.jpg" alt="Love Park view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-11.jpg" alt="Love Park view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-12.jpg" alt="Love Park view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('love-park-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('love-park-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="love-park-carousel-indicators"></div>
+                            <div class="carousel-counter" id="love-park-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Lima adventure.</p>
+                        <h3>Love Park</h3>
+                        <p>Parque del Amor in Miraflores is Lima's romantic heart, featuring the famous "El Beso" sculpture and stunning cliff-top views. The park's colorful mosaics and ocean backdrop make it a favorite for locals and visitors alike.</p>
                     </div>
                 </div>
+
+                <!-- Street art in Barranco Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="street-art-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-4.jpg" alt="Street art in Barranco view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-5.jpg" alt="Street art in Barranco view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('street-art-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('street-art-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="street-art-carousel-indicators"></div>
+                            <div class="carousel-counter" id="street-art-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Lima's authentic character.</p>
+                        <h3>Street art in Barranco</h3>
+                        <p>Barranco's bohemian streets are an open-air gallery showcasing Peru's vibrant artistic soul. Every wall tells a story, blending traditional motifs with contemporary expression in explosions of color and creativity.</p>
                     </div>
                 </div>
+
+                <!-- Larcomar - cliffside open-air mall Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="larcomar-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-6.jpg" alt="Larcomar - cliffside open-air mall view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-7.jpg" alt="Larcomar - cliffside open-air mall view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('larcomar-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('larcomar-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="larcomar-carousel-indicators"></div>
+                            <div class="carousel-counter" id="larcomar-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Larcomar - cliffside open-air mall</h3>
+                        <p>This unique shopping center is built right into the cliff face, offering stunning Pacific views while you shop or dine. It's the perfect blend of modern convenience and natural beauty that defines Lima's character.</p>
                     </div>
                 </div>
+
+                <!-- Pollo a la Brasa Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="pollo-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-8.jpg" alt="Pollo a la Brasa view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-9.jpg" alt="Pollo a la Brasa view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('pollo-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('pollo-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="pollo-carousel-indicators"></div>
+                            <div class="carousel-counter" id="pollo-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Lima gave me many of these precious memories.</p>
+                        <h3>Pollo a la Brasa</h3>
+                        <p>Peru's national dish! This perfectly roasted chicken with its crispy skin and juicy meat, served with aji verde sauce, is comfort food at its finest. It's a taste of authentic Lima that locals and visitors can't get enough of.</p>
                     </div>
                 </div>
+
+                <!-- Miraflores Ocean View Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="lima/lima-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="ocean-view-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-13.jpg" alt="Miraflores Ocean View view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-14.jpg" alt="Miraflores Ocean View view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('ocean-view-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('ocean-view-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="ocean-view-carousel-indicators"></div>
+                            <div class="carousel-counter" id="ocean-view-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Lima, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Miraflores Ocean View</h3>
+                        <p>The dramatic cliffs of Miraflores offer some of the most spectacular coastal views in South America. Watching the Pacific waves crash against these ancient cliffs while surfers ride the waves below is mesmerizing.</p>
                     </div>
                 </div>
+
+                <!-- Huaca Pucllana Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="huaca-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="lima/lima-image-16.jpg" alt="Huaca Pucllana view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="lima/lima-image-17.jpg" alt="Huaca Pucllana view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('huaca-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('huaca-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="huaca-carousel-indicators"></div>
+                            <div class="carousel-counter" id="huaca-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Huaca Pucllana</h3>
+                        <p>This impressive pre-Columbian adobe pyramid sits right in the heart of modern Lima, a stunning reminder that this city has been home to advanced civilizations for over 1,500 years. It's history you can touch and feel.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Must-See Places Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Lima</h2>
+            <h2 class="section-title">Must-See in Lima</h2>
             <div class="travel-tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">🏛️</div>
-                    <h3>Historic Center</h3>
-                    <p>UNESCO World Heritage site with colonial architecture, Plaza Mayor, and beautiful churches.</p>
+                    <h3>Historic Center (Centro)</h3>
+                    <p>UNESCO World Heritage Site. Plaza Mayor, Cathedral, Government Palace. Colonial architecture, balconies, churches. Free walking tours available. Morning visit best to avoid afternoon heat.</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🌊</div>
-                    <h3>Miraflores Cliffs</h3>
-                    <p>Scenic coastal district with parks, shopping, and stunning Pacific Ocean views.</p>
+                    <h3>Miraflores & Malecón</h3>
+                    <p>Coastal cliffs with Pacific views. Paragliders, parks, shopping. Love Park (Parque del Amor) for sunset. Safe, modern district. Great restaurants and nightlife.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⛪</div>
+                    <h3>San Francisco Monastery</h3>
+                    <p>Colonial baroque architecture with catacombs underneath! Guided tours show underground bone chambers. Beautiful library. Yellow colonial facade iconic. $15 entrance, worth it!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏺</div>
                     <h3>Larco Museum</h3>
-                    <p>Excellent pre-Columbian art collection in beautiful colonial mansion with garden restaurant.</p>
+                    <p>Pre-Columbian art collection in beautiful mansion. Erotic pottery room (adults only!). Excellent introduction to Peru's ancient cultures. On-site restaurant in gardens.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h3>Barranco Bohemian District</h3>
+                    <p>Artsy neighborhood with street art, galleries, cafés. Bridge of Sighs popular photo spot. Nightlife hub with bars and live music. Romantic evening stroll!</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🏖️</div>
-                    <h3>Barranco District</h3>
-                    <p>Bohemian neighborhood with street art, galleries, bars, and romantic cliff-side walks.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🍽️</div>
-                    <h3>Central Market</h3>
-                    <p>Vibrant local market with fresh produce, street food, and authentic Peruvian ingredients.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏄</div>
-                    <h3>Costa Verde</h3>
-                    <p>Surfing beaches and beachfront restaurants along the Pacific coast. Perfect for sunset views.</p>
+                    <h3>Beaches & Surfing</h3>
+                    <p>Surf at Miraflores beaches. Not Caribbean-quality water but good waves. Locals surf year-round in wetsuits. Watch sunset from cliffs instead of swimming.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Booking Tips Section -->
+        <!-- Best Time to Visit Section -->
         <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>2-3 months ahead for peak season. Book renowned restaurants well in advance. Consider Lima as stopover to Cusco.</p>
+            <h2 class="section-title">Best Time to Visit Lima</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer (December-March)</h3>
+                        <div class="season-temp">22-29°C</div>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Miraflores: Safe, upscale, ocean views. Barranco: Artsy, nightlife, boutique hotels. Historic Center: Colonial charm, budget options.</p>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Warm, sunny, minimal fog. Beach weather! Limeños vacation in January. Higher prices but worth it for sunshine. Perfect for coastal activities and outdoor dining.</p>
+                        <ul class="season-pros">
+                            <li>Sunny skies</li>
+                            <li>Beach-worthy temperatures</li>
+                            <li>Vibrant outdoor life</li>
+                            <li>Festival season</li>
+                        </ul>
                     </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Use public transportation and walking. Eat at local markets and picanterías. Book domestic flights in advance. Exchange money at official cambios.</p>
+                </div>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌫️</div>
+                        <h3>Winter (May-November)</h3>
+                        <div class="season-temp">14-19°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Gray Season:</strong> Coastal fog ("garúa"), overcast skies, drizzle (rarely rain). Cooler but never cold. Lower prices, fewer tourists. Fine for city sightseeing and food tours!</p>
+                        <ul class="season-pros">
+                            <li>Lower hotel rates</li>
+                            <li>Fewer crowds</li>
+                            <li>Good for museums</li>
+                            <li>Still mild temperatures</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Local Cuisine Section -->
-        <section class="content-section">
-            <h2 class="section-title">What to Eat in Lima</h2>
-            <div class="cuisine-grid">
-                <div class="food-card">
-                    <div class="food-icon">🐟</div>
-                    <h3>Ceviche</h3>
-                    <p>Fresh fish cured in citrus acid with onions and chilies. Peru's signature dish and culinary pride.</p>
-                    <span class="food-price">$8-20</span>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌸</div>
+                        <h3>Shoulder (April, November)</h3>
+                        <div class="season-temp">18-24°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Good Balance:</strong> Transitional weather. April still has some sun. November fog lifting. Moderate prices and crowds. Decent compromise between weather and cost.</p>
+                        <ul class="season-pros">
+                            <li>Reasonable prices</li>
+                            <li>Moderate tourist numbers</li>
+                            <li>Improving weather (November)</li>
+                            <li>Good availability</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🍗</div>
-                    <h3>Pollo a la Brasa</h3>
-                    <p>Peruvian-style rotisserie chicken with special spices. Comfort food beloved by locals.</p>
-                    <span class="food-price">$6-12</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🥔</div>
-                    <h3>Papa a la Huancaína</h3>
-                    <p>Boiled potatoes in spicy, creamy yellow sauce. Traditional appetizer showcasing Peru's potato diversity.</p>
-                    <span class="food-price">$4-8</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍹</div>
-                    <h3>Pisco Sour</h3>
-                    <p>Peru's national cocktail with pisco brandy, lime juice, and egg white foam.</p>
-                    <span class="food-price">$5-10</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🌶️</div>
-                    <h3>Ají de Gallina</h3>
-                    <p>Creamy chicken stew with yellow peppers and spices over rice. Hearty, flavorful comfort food.</p>
-                    <span class="food-price">$8-15</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">☕</div>
-                    <h3>Peruvian Coffee</h3>
-                    <p>High-quality Arabica beans from the Andes. Rich, smooth coffee perfect for morning starts.</p>
-                    <span class="food-price">$2-5</span>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🍽️</div>
+                        <h3>Food Festival Season</h3>
+                        <div class="season-temp">Year-round</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Culinary Events:</strong> Mistura food festival (September). Lima Restaurant Week (various). Peru's culinary scene shines year-round. Book top restaurants months ahead!</p>
+                        <ul class="season-pros">
+                            <li>World-class dining</li>
+                            <li>Food festivals</li>
+                            <li>Cooking classes available</li>
+                            <li>Gastronomic tours</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer) {
+                indicatorsContainer.innerHTML = '';
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.onclick = () => goToSlide(carouselId, i);
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'lighthouse-carousel',
+                'love-park-carousel',
+                'street-art-carousel',
+                'larcomar-carousel',
+                'pollo-carousel',
+                'ocean-view-carousel',
+                'huaca-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>

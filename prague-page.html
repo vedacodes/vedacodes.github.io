@@ -150,7 +150,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -353,25 +353,7 @@
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
 
         .gallery-caption {
             padding: 25px;
@@ -389,6 +371,104 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
         }
 
         /* Travel Tips Grid */
@@ -633,64 +713,149 @@
         <section class="content-section">
             <h2 class="section-title">Pages from My Prague Diary</h2>
             <div class="image-gallery">
+                <!-- Fall Colors of Prague Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-1.jpg" alt="First Glimpse of Prague" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="fall-colors-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="prague/prague-image-1.jpg" alt="Fall Colors of Prague view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-4.jpg" alt="Fall Colors of Prague view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-14.jpg" alt="Fall Colors of Prague view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('fall-colors-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('fall-colors-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="fall-colors-carousel-indicators"></div>
+                            <div class="carousel-counter" id="fall-colors-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Prague</h3>
-                        <p>My initial impression of Prague was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Fall Colors of Prague</h3>
+                        <p>Prague in autumn is pure magic. The golden and amber leaves create a fairy tale backdrop to the already enchanting medieval architecture, making every street feel like a scene from a storybook.</p>
                     </div>
                 </div>
+
+                <!-- Vltava River -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="prague/prague-image-2.jpg" alt="Vltava River" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Prague adventure.</p>
+                        <h3>Vltava River</h3>
+                        <p>The Vltava River flows gracefully through Prague, reflecting the city's spires and bridges. Walking along its banks offers some of the most peaceful and romantic moments in this bustling city.</p>
                     </div>
                 </div>
+
+                <!-- Charles Bridge Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="charles-bridge-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="prague/prague-image-3.jpg" alt="Charles Bridge view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-7.jpg" alt="Charles Bridge view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-11.jpg" alt="Charles Bridge view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('charles-bridge-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('charles-bridge-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="charles-bridge-carousel-indicators"></div>
+                            <div class="carousel-counter" id="charles-bridge-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Prague's authentic character.</p>
+                        <h3>Charles Bridge</h3>
+                        <p>This iconic 14th-century stone bridge is Prague's crown jewel. Walking across at sunrise, with the morning mist rising from the Vltava and street musicians beginning their day, is an experience that stays with you forever.</p>
                     </div>
                 </div>
+
+                <!-- Lennon Wall -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="prague/prague-image-5.jpg" alt="Lennon Wall" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Lennon Wall</h3>
+                        <p>This colorful wall filled with John Lennon-inspired graffiti and lyrics represents freedom and peace. It's a powerful symbol of the peaceful Velvet Revolution and a testament to the power of music and hope.</p>
                     </div>
                 </div>
+
+                <!-- The Astronomical Clock Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="astronomical-clock-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="prague/prague-image-6.jpg" alt="The Astronomical Clock view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-13.jpg" alt="The Astronomical Clock view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('astronomical-clock-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('astronomical-clock-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="astronomical-clock-carousel-indicators"></div>
+                            <div class="carousel-counter" id="astronomical-clock-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Prague gave me many of these precious memories.</p>
+                        <h3>The Astronomical Clock</h3>
+                        <p>This medieval wonder from 1410 is not just a timepiece but a work of art. Watching the hourly show with the apostles appearing is magical, but the intricate astronomical details are what truly captivate the imagination.</p>
                     </div>
                 </div>
+
+                <!-- Prague Castle Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="prague/prague-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="prague-castle-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="prague/prague-image-8.jpg" alt="Prague Castle view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="prague/prague-image-9.jpg" alt="Prague Castle view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('prague-castle-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('prague-castle-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="prague-castle-carousel-indicators"></div>
+                            <div class="carousel-counter" id="prague-castle-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Prague, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Prague Castle</h3>
+                        <p>The largest ancient castle complex in the world dominates Prague's skyline. Walking through its courtyards and visiting St. Vitus Cathedral within, you can feel the weight of a thousand years of European history.</p>
+                    </div>
+                </div>
+
+                <!-- Kampa -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-10.jpg" alt="Kampa" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Kampa</h3>
+                        <p>This peaceful island park beneath Charles Bridge feels like a hidden garden in the heart of the city. Perfect for picnics and quiet contemplation while watching the world go by on the bridge above.</p>
+                    </div>
+                </div>
+
+                <!-- "Old New" Jewish Synagogue -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="prague/prague-image-12.jpg" alt="Old New Jewish Synagogue" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>"Old New" Jewish Synagogue</h3>
+                        <p>Europe's oldest active synagogue, dating to 1270, stands as a powerful reminder of Prague's rich Jewish heritage. The Gothic architecture and centuries of history within these walls are deeply moving.</p>
                     </div>
                 </div>
             </div>
@@ -797,5 +962,118 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'fall-colors-carousel',
+                'charles-bridge-carousel',
+                'astronomical-clock-carousel',
+                'prague-castle-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,480 @@
+barcelona:
+barcelona-image-1.jpg = Sagrada Familia
+barcelona-image-2.jpg = Barcelona Cathedral
+barcelona-image-3.jpg = barcelona sqare
+barcelona-image-4.jpg = Casa Mila
+barcelona-image-5.jpg = Casa Mila
+barcelona-image-6.jpg = barcelona port vell
+barcelona-image-7.jpg = Gothic Quarter
+barcelona-image-8.jpg = Park Guell
+barcelona-image-9.jpg = Sagrada Familia
+barcelona-image-10.jpg = Sagrada Familia
+barcelona-image-11.jpg = barcelona port vell
+barcelona-image-12.jpg = Columbus monument
+
+rome:
+rome-image-1.jpg = The Colosseum
+rome-image-2.jpg = Roman Streets
+rome-image-3.jpg = The Pantheon
+rome-image-4.jpg = Castel Sant'Angelo
+rome-image-5.jpg = Castel Sant'Angelo
+rome-image-6.jpg = Castel Sant'Angelo
+rome-image-7.jpg = Navona Square
+rome-image-8.jpg = Navona Square
+rome-image-9.jpg = Trevi Fountain
+rome-image-10.jpg = The Colosseum
+rome-image-11.jpg = The Colosseum
+rome-image-12.jpg = The Colosseum
+rome-image-14.jpg = Roman Forum
+rome-image-15.jpg = Roman Forum
+rome-image-16.jpg = The Pantheon
+rome-image-17.jpg = Roman Streets
+
+paris:
+paris-image-1.jpg = Nike Statue
+paris-image-2.jpg = Eiffel Tower
+paris-image-3.jpg = Eiffel Tower
+paris-image-4.jpg = On Top of Eiffel Tower
+paris-image-5.jpg = Monalisa
+paris-image-6.jpg = Notre Dame
+paris-image-7.jpg = Sacre Coeur
+paris-image-8.jpg = On Top of Eiffel Tower
+paris-image-9.jpg = On Top of Eiffel Tower
+paris-image-10.jpg = Louvre Museum
+paris-image-11.jpg = Last Supper in Louvre
+paris-image-12.jpg = Eiffel Views
+paris-image-13.jpg = Louvre Museum
+paris-image-14.jpg = Monalisa
+paris-image-15.jpg = Louvre Museum
+paris-image-16.jpg = Louvre Museum
+paris-image-17.jpg = Louvre Museum
+
+venice:
+venice-image-1.jpg = Grand Canal
+venice-image-2.jpg = St Mark's Basilica
+venice-image-3.jpg = Grand Canal 2
+venice-image-4.jpg = Grand Canal 2
+venice-image-5.jpg = Burano 2
+venice-image-6.jpg = Burano
+venice-image-7.jpg = Burano
+venice-image-19.jpg = St Mark's Square
+venice-image-20.jpg = Grand Canal
+venice-image-21.jpg = Burano 2
+venice-image-22.jpg = Burano
+venice-image-24.jpg = Burano
+
+amsterdam:
+amsterdam-image-1.jpg = Amsterdam Centraal
+amsterdam-image-2.jpg = Amsterdam Streets
+amsterdam-image-3.jpg = Amstel River Cruise
+amsterdam-image-4.jpg = Anne Frank House
+amsterdam-image-5.jpg = Amsterdam Streets
+amsterdam-image-6.jpg = Royal Palace
+amsterdam-image-7.jpg = Amsterdam Streets
+amsterdam-image-8.jpg = He Hua Temple
+amsterdam-image-9.jpg = Amsterdam Centraal
+amsterdam-image-10.jpg = Amsterdam Roaming
+amsterdam-image-11.jpg = Amstel River
+amsterdam-image-12.jpg = Amstel River
+amsterdam-image-13.jpg = Amsterdam Streets
+amsterdam-image-14.jpg = Amsterdam Roaming
+
+machupicchu:
+machupicchu-image-1.jpg = Ancient houses in Machupicchu
+machupicchu-image-2.jpg = Aguas Calientes
+machupicchu-image-3.jpg = Walking through Machupicchu
+machupicchu-image-4.jpg = Machupicchu
+machupicchu-image-5.jpg = Aguas Calientes
+machupicchu-image-6.jpg = Peru Rail
+machupicchu-image-7.jpg = Cataratas de Aguas Calientes
+machupicchu-image-8.jpg = Residential section of Machu Picchu
+machupicchu-image-9.jpg = Residential section of Machu Picchu
+machupicchu-image-10.jpg = Gaining Insights
+machupicchu-image-11.jpg = Llama
+machupicchu-image-12.jpg = Aguas Calientes
+
+grandcanyon:
+grandcanyon-image-1.jpg = Hualapai Indian Reservation
+grandcanyon-image-2.jpg = Hualapai Indian Reservation
+grandcanyon-image-3.jpg = Lake Mead National Recreation Area
+grandcanyon-image-4.jpg = Lake Mead National Recreation Area
+grandcanyon-image-5.jpg = Lake Mead National Recreation Area
+grandcanyon-image-6.jpg = Grand Canyon Village
+grandcanyon-image-7.jpg = Grand Canyon Village
+grandcanyon-image-8.jpg = Grand Canyon Village 2
+grandcanyon-image-9.jpg = Grand Canyon Village 2
+grandcanyon-image-10.jpg = Antelope Canyon
+grandcanyon-image-11.jpg = Antelope Canyon
+grandcanyon-image-12.jpg = Horseshoe Bend
+grandcanyon-image-13.jpg = Grand Canyon Village 2
+
+prague:
+prague-image-1.jpg = Fall Colors of Prague
+prague-image-2.jpg = Vltava River
+prague-image-3.jpg = Charles Bridge
+prague-image-4.jpg = Fall Colors of Prague
+prague-image-5.jpg = Lennon Wall
+prague-image-6.jpg = The Astronomical Clock
+prague-image-7.jpg = Charles Bridge
+prague-image-8.jpg = Prague Castle
+prague-image-9.jpg = Prague Castle
+prague-image-10.jpg = Kampa
+prague-image-11.jpg = Charles Bridge
+prague-image-12.jpg = “Old New” Jewish Synagogue
+prague-image-13.jpg =  The Astronomical Clock
+prague-image-14.jpg = Fall Colors of Prague
+
+santorini:
+santorini-image-1.jpg = Prehistoric town of Akrotiri
+santorini-image-2.jpg = Prehistoric town of Akrotiri
+santorini-image-3.jpg = Akrotiri
+santorini-image-4.jpg = Oia
+santorini-image-5.jpg = Iconic island views
+santorini-image-6.jpg = Iconic island views
+santorini-image-8.jpg = Ammoudi Bay
+santorini-image-9.jpg = Oia
+santorini-image-10.jpg = Meowgical Moment
+santorini-image-11.jpg = Oia
+santorini-image-12.jpg = Paradise found
+santorini-image-13.jpg = Stunning scenery
+santorini-image-14.jpg = Blue Domes
+santorini-image-15.jpg = Blue Domes
+santorini-image-16.jpg = Thira
+santorini-image-17.jpg = Thira
+santorini-image-18.jpg = Oia
+
+lima:
+lima-image-1.jpg = Cycling through the streets
+lima-image-2.jpg = La Marina Lighthouse
+lima-image-3.jpg = Love Park
+lima-image-4.jpg = Street art in Barranco
+lima-image-5.jpg = Street art in Barranco
+lima-image-6.jpg = Larcomar - cliffside open-air mall
+lima-image-7.jpg = Larcomar - cliffside open-air mall
+lima-image-8.jpg = Pollo a la Brasa
+lima-image-9.jpg = Pollo a la Brasa
+lima-image-10.jpg = Love Park
+lima-image-11.jpg = Love Park
+lima-image-12.jpg = Love Park
+lima-image-13.jpg = Miraflores Ocean View
+lima-image-14.jpg = Miraflores Ocean View
+lima-image-15.jpg = La Marina Lighthouse
+lima-image-16.jpg = Huaca Pucllana
+lima-image-17.jpg = Huaca Pucllana
+
+milan:
+milan-image-1.jpg = Over the Milan Cathedral
+milan-image-2.jpg = Duomo di Milano
+milan-image-3.jpg = Duomo di Milano
+milan-image-4.jpg = Milan City View
+milan-image-5.jpg = Inside Duomo Di Milano
+milan-image-6.jpg = Galleria Vittorio Emanuele II
+milan-image-7.jpg = Piazza del Duomo
+milan-image-8.jpg = Leonardo's Last Supper Museum
+milan-image-9.jpg = Inside Duomo Di Milano
+milan-image-10.jpg = Inside Duomo Di Milano
+milan-image-11.jpg = Over the Milan Cathedral
+
+pattaya:
+big-buddha-1.jpg = The Sanctuary of Truth
+big-buddha-2.jpg = Inside the Sanctuary of Truth
+pattaya-image-1.jpg = hand-carved wood structure
+pattaya-image-2.jpg = hand-carved wood structure
+pattaya-image-3.jpg = hand-carved wood structure
+pattaya-image-4.jpg = watch wood carvers constructing
+pattaya-image-5.jpg = watch wood carvers constructing
+temple-architecture.jpg = central apex structure
+temple-complex.jpg = Big buddha
+wooden-temple-1.jpg = Big buddha
+wooden-temple-2.jpg = hand-carved wood structure
+
+cancun:
+cancun-image-1.jpg = Cancun local life
+cancun-image-2.jpg = Ven a la Luz Tulum
+cancun-image-3.jpg = Tulum Ruins
+cancun-image-4.jpg = Tulum Beach
+cancun-image-5.jpg = Exploring Tulum Ruins
+cancun-image-6.jpg = Exploring Tulum Ruins
+cancun-image-7.jpg = Cenote Ik-Kil
+cancun-image-8.jpg = Cenotes
+cancun-image-9.jpg = Chichén-Itzá
+cancun-image-10.jpg = Chichén-Itzá view
+cancun-image-11.jpg = Cancun local life
+cancun-image-12.jpg = Isla Mujeres
+cancun-image-13.jpg = Local Sea Food
+cancun-image-14.jpg = Under Water Museum
+cancun-image-15.jpg = Cancun Beach
+cancun-image-16.jpg = Stone serpent's head
+cancun-image-17.jpg = Skull Stone engravings
+cancun-image-18.jpg = Mayan Ball Game
+cancun-image-19.jpg = Chichén-Itzá Fun
+cancun-image-20.jpg = Chichén-Itzá Fun
+cancun-image-21.jpg = Chichén-Itzá Fun
+cancun-image-22.jpg = Chichén-Itzá view
+cancun-image-23.jpg = Local Poke
+
+darjeeling:
+darjeeling-image-1.jpg = Zero Point at Nepal Border
+darjeeling-image-2.jpg = Zero Point at Nepal Border
+darjeeling-image-3.jpg = Mirik Lake
+darjeeling-image-4.jpg = Darjeeling Tea Gardens
+darjeeling-image-5.jpg = Peace Pagoda
+darjeeling-image-6.jpg = Tea Time!
+darjeeling-image-7.jpg = Tenzing Rock
+darjeeling-image-8.jpg = Darjeeling Tea Gardens
+darjeeling-image-9.jpg = Mt. Kangchenjunga
+darjeeling-image-10.jpg = Watching rise from Tiger Hill
+darjeeling-image-11.jpg = Peace Pagoda
+darjeeling-image-12.jpg = Mt. Kangchenjunga
+darjeeling-image-13.jpg = Siddheshwar Dham (Char Dham)
+darjeeling-image-14.jpg = Kedareshwara Jyothirlinga (Replica)
+darjeeling-image-15.jpg = Siddheshwar Dham (Char Dham)
+darjeeling-image-16.jpg = Samdruptse, Namchi
+darjeeling-image-17.jpg = Samdruptse, Namchi
+darjeeling-image-18.jpg = Prayer Wheel at Samdruptse
+darjeeling-image-20.jpg = Samdruptse, Namchi
+
+cusco:
+cusco-image-1.jpg = The Rainbow Mountain (Vinicunca)
+cusco-image-2.jpg = Scenic Andes mountains from 17000 feet!
+cusco-image-3.jpg = The Rainbow Mountain (Vinicunca)
+cusco-image-4.jpg = And the hike is not so easy :D
+cusco-image-5.jpg = With Incan natives and a cute Alapaca <3
+cusco-image-6.jpg = Cusco city square
+cusco-image-7.jpg = Alpacas
+cusco-image-8.jpg = Geared up to fly 
+cusco-image-9.jpg = Ziplining through the Andes
+cusco-image-10.jpg = Sacred Valley
+cusco-image-11.jpg = ATVing through Sacred Valley
+cusco-image-12.jpg = Riding the ATVs
+cusco-image-13.jpg = Salt Mines of Maras
+cusco-image-14.jpg = And the hike is not so easy :D
+cusco-image-15.jpg = Alpacas
+cusco-image-16.jpg = Lovely Airbnb
+cusco-image-17.jpg = Cusco city square
+cusco-image-18.jpg = Cusco city square
+cusco-image-19.jpg = twelve Angled Stone
+cusco-image-20.jpg = Cusco Railay station
+cusco-image-21.jpg = Narrow Streets of Cusco
+
+vatican:
+vatican-image-1.jpg = St. Peters Square
+vatican-image-2.jpg = Sistine Chapel
+vatican-image-3.jpg = Vatican Museum
+vatican-image-4.jpg = Inside Vatican Museum
+vatican-image-12.jpg = St. Peters Basilica
+vatican-image-13.jpg = Inside Vatican Museum
+vatican-image-14.jpg = Immigration into Vatican
+vatican-image-15.jpg = Immigration into Vatican
+
+mexicocity:
+mexicocity-image-1.jpg = Pyramid of the Sun, Teotihuacán
+mexicocity-image-2.jpg = Pyramid of the Sun, Teotihuacán
+mexicocity-image-3.jpg = Pyramid of Moon
+mexicocity-image-4.jpg = Pyramid of Moon
+mexicocity-image-5.jpg = Avenue of the Dead
+mexicocity-image-6.jpg = Hot air Balloon Carriage
+mexicocity-image-7.jpg = Hot air Balloons getting ready for Teotihuacán visit
+mexicocity-image-8.jpg = Mosaic stone Mural at the University of Mexico
+mexicocity-image-9.jpg = The Beautiful and Talented Frida
+mexicocity-image-10.jpg = Inside Frida's house
+mexicocity-image-11.jpg = Churros Time!!
+mexicocity-image-12.jpg = Coyoacán, CDMX
+mexicocity-image-13.jpg = With Frida and Diego Rivera
+mexicocity-image-14.jpg = The Parroquia, the parish church
+mexicocity-image-15.jpg = In the Vibrant Streets of San Miguel de Allende
+mexicocity-image-16.jpg = In the Vibrant Streets of San Miguel de Allende
+mexicocity-image-17.jpg = Grutas Tolantongo
+mexicocity-image-18.jpg = Heated pools of Tolantongo
+mexicocity-image-19.jpg = Heated pools of Tolantongo
+mexicocity-image-20.jpg = Art at Palacio de Bellas Artes
+mexicocity-image-36.jpg = Tolantongo Caves
+mexicocity-image-37.jpg = Grutas Tolantongo Waterfall
+mexicocity-image-21.jpg = The infamous Man at the Crossroads
+mexicocity-image-22.jpg = The Mayan Calendar
+mexicocity-image-23.jpg = National Museum of Anthropology
+mexicocity-image-25.jpg = Teotihuacán From the Hot air Balloon
+mexicocity-image-26.jpg = Palacio de Bellas Artes
+mexicocity-image-27.jpg = Xochimilco
+mexicocity-image-28.jpg = Xochimilco Floating Gardens
+mexicocity-image-29.jpg = Xochimilco Floating Gardens
+mexicocity-image-30.jpg = Xochimilco Floating Gardens
+mexicocity-image-31.jpg = Xochimilco Floating Gardens
+mexicocity-image-32.jpg = Inside Frida's house
+mexicocity-image-33.jpg = Inside Frida's house
+mexicocity-image-34.jpg = Inside Frida's house
+mexicocity-image-35.jpg = Inside Frida's house
+
+vienna:
+vienna-image-1.jpg = Hundertwasser House
+vienna-image-2.jpg = Hundertwasser House
+vienna-image-3.jpg = Hundertwasser House
+vienna-image-4.jpg = Hofburg Imperial Palace
+vienna-image-5.jpg = Hofburg Imperial Palace
+vienna-image-6.jpg = Vienna Streets
+vienna-image-7.jpg = Hofburg Imperial Palace
+vienna-image-8.jpg = Wiener Pestsäule
+vienna-image-9.jpg = Inside the St. Stephen's Cathedral
+vienna-image-10.jpg = St. Stephen's Cathedral
+vienna-image-11.jpg = Inside the St. Stephen's Cathedral
+vienna-image-12.jpg = Inside the St. Stephen's Cathedral
+
+losangeles:
+losangeles-image-1.jpg = Disney Land!
+losangeles-image-2.jpg = Disney Land!
+losangeles-image-3.jpg = Disney Land!
+losangeles-image-4.jpg = With my fav Disney film Coco
+losangeles-image-5.jpg = Hollywood Walk of Fame
+losangeles-image-6.jpg = Fun at Museum of Illusions 
+losangeles-image-7.jpg = Museum of Illusions 
+losangeles-image-8.jpg = Fun at Museum of Illusions 
+losangeles-image-9.jpg = Fun at Museum of Illusions 
+losangeles-image-10.jpg = Fun at Museum of Illusions 
+losangeles-image-11.jpg = Museum of Illusions 
+losangeles-image-12.jpg = Griffith Observatory
+losangeles-image-13.jpg = Universal Studios
+losangeles-image-14.jpg = Hogwarts at Universal Studios
+losangeles-image-15.jpg = Universal Studios
+losangeles-image-16.jpg = Universal Studios
+losangeles-image-17.jpg = Santa Monica Pier
+losangeles-image-18.jpg = Santa Monica Pier
+
+interlaken:
+interlaken-image-1.jpg = Interlaken Streets
+interlaken-image-2.jpg = Interlaken Streets
+interlaken-image-3.jpg = Switzerland Fall
+interlaken-image-4.jpg = Walking up to Harder Kulm
+interlaken-image-5.jpg = Harder Kulm 
+interlaken-image-6.jpg = Harder Kulm 
+interlaken-image-7.jpg = Harder Kulm Top
+interlaken-image-8.jpg = Random Churches in Interlaken
+interlaken-image-9.jpg = Random Churches in Interlaken
+interlaken-image-10.jpg = Schilthorn cable car ride
+interlaken-image-11.jpg = Alps from Piz Gloria
+interlaken-image-12.jpg = Spy World 007
+interlaken-image-13.jpg = 360° Revolving Restaurant
+interlaken-image-14.jpg = The Beautiful Aare River
+interlaken-image-15.jpg = Interlaken Seen from Harder Kulm
+interlaken-image-16.jpg = Interlaken Seen from Harder Kulm
+interlaken-image-17.jpg = Interlaken Seen from Harder Kulm
+interlaken-image-18.jpg = Beautiful Fall Landscape
+lauterbrunnen-image-5.jpg = Alps from Piz Gloria
+lauterbrunnen-image-6.jpg = Fall colors from Cable Car
+lauterbrunnen-image-7.jpg = Schilthorn cable car
+lauterbrunnen-image-8.jpg = Lauterbrunnen
+lauterbrunnen-image-9.jpg = Lauterbrunnen Falls
+lauterbrunnen-image-10.jpg = Lauterbrunnen
+lauterbrunnen-image-11.jpg = Magical Lauterbrunnen
+
+miami:
+miami-image-1.jpg = Snorkeling in the Atlantic
+miami-image-2.jpg = Miami Bayside
+miami-image-3.jpg = Speed boat ride in the Atlantic
+miami-image-4.jpg = Blue-and-yellow Macaws
+miami-image-5.jpg = Everglades
+miami-image-6.jpg = Nightlife in Miami
+miami-image-7.jpg = Key West Southernmost Point of U.S
+miami-image-8.jpg = Speed boat ride in the Atlantic
+
+berlin:
+berlin-image-2.jpg = Over the Berlin Cathedral
+berlin-image-3.jpg = Fernsehturm Berlin - Berlin TV Tower
+berlin-image-4.jpg = Berlin Fall
+berlin-image-5.jpg = Berlin Cathedral
+berlin-image-6.jpg = Berlin Cathedral
+berlin-image-7.jpg = Iconic Brandenburg Gate
+berlin-image-8.jpg = Berlin Fall
+berlin-image-9.jpg = Berlin Fall
+berlin-image-10.jpg = Art in Berlin
+
+lasvegas:
+lasvegas-image-1.jpg = Venitian Casino
+lasvegas-image-2.jpg = Venice city replica, almost close :D
+lasvegas-image-3.jpg = Nike (Winged Victory) - replica
+lasvegas-image-4.jpg = Fake Eiffel Tower
+lasvegas-image-5.jpg = Gordon Ramsay's Hells Kitchen
+lasvegas-image-6.jpg = At Venice (Replica)
+lasvegas-image-7.jpg = Hover Dam
+lasvegas-image-8.jpg = Hover Dam
+
+athens:
+athens-image-1.jpg = Panathenaic Stadium
+athens-image-2.jpg = Under Panathenaic Stadium
+athens-image-3.jpg = Panathenaic Stadium
+athens-image-4.jpg = Panathenaic Stadium
+athens-image-5.jpg = Temple of Hephaestus
+athens-image-6.jpg = Ancient Agora of Athens
+athens-image-7.jpg = Acropolis Museum
+athens-image-8.jpg = Acropolis Museum
+athens-image-9.jpg = Acropolis Museum
+athens-image-10.jpg = Entering the Acropolis of Athens
+athens-image-11.jpg = Acropolis of Athens
+athens-image-12.jpg = Acropolis of Athens
+athens-image-13.jpg = Odeon of Herodes Atticus
+athens-image-15.jpg = Panathenaic Stadium
+athens-image-16.jpg = Caryatids: The Daughters of Athens
+athens-image-17.jpg = Acropolis Museum Archeological Excavation Site
+
+brussels:
+brussels-image-1.jpg = Brussels Street Art
+brussels-image-2.jpg = Manneken Pis
+brussels-image-3.jpg = Grand Palace
+brussels-image-4.jpg = Mont des Arts
+brussels-image-5.jpg = Garden of Mont des Arts
+brussels-image-6.jpg = Mini Europe
+brussels-image-7.jpg = Eiffel Tower - replica
+brussels-image-8.jpg = Sacré-Cœur Basilica - replica
+brussels-image-9.jpg = Leaning tower of Pisa - replica
+brussels-image-11.jpg = Cobblestone heritage of Brussels
+brussels-image-12.jpg = Cobblestone heritage of Brussels
+
+bangkok:
+grand-palace.jpg = Grand Palace
+wat-pho.jpg = Wat Pho (Temple of the Reclining Buddha)
+temple-of-dawn.jpg = Wat Arun (Temple of Dawn)
+wat-arun.jpg = Wat Arun (Temple of Dawn)
+floating-market.jpg = Floating Markets
+sky-bar.jpg = Sky Bar Bangkok
+chatuchak-market.jpg = Chatuchak Weekend Market
+khao-san-road.jpg = Khao San Road
+chinatown.jpg = Chinatown Bangkok
+jim-thompson-house.jpg = Jim Thompson House
+lumpini-park.jpg = Lumpini Park
+bangkok-thumbnail.jpg = Bangkok Skyline
+
+nassau:
+nassau-image-1.jpg = Queen's Staircase
+nassau-image-2.jpg = The Straw Market
+nassau-image-3.jpg = Queen's Staircase carved out of solid rock
+nassau-image-4.jpg = Queen's Staircase carved out of solid rock
+nassau-image-5.jpg = Parliament Square
+nassau-image-6.jpg = Fresh Coconut water is a must at the Bahamas
+nassau-image-7.jpg = The Straw Market
+nassau-image-8.jpg = Nassau Cruise Port
+
+chicago:
+chicago-image-1.jpg = [Please add description]
+chicago-image-2.jpg = [Please add description]
+chicago-image-3.jpg = [Please add description]
+chicago-image-4.jpg = [Please add description]
+chicago-image-5.jpg = [Please add description]
+chicago-image-6.jpg = [Please add description]
+chicago-image-7.jpg = [Please add description]
+
+gangtok:
+gangtok-image-1.jpg = [Please add description]
+gangtok-image-2.jpg = [Please add description]
+gangtok-image-3.jpg = [Please add description]
+gangtok-image-4.jpg = [Please add description]
+gangtok-image-5.jpg = [Please add description]
+gangtok-image-6.jpg = [Please add description]
+gangtok-image-7.jpg = [Please add description]
+gangtok-image-8.jpg = [Please add description]
+gangtok-image-9.jpg = [Please add description]
+gangtok-image-11.jpg = [Please add description]
+gangtok-image-12.jpg = [Please add description]
+gangtok-image-14.jpg = [Please add description]
+gangtok-image-15.jpg = [Please add description]
+gangtok-image-16.jpg = [Please add description]
+gangtok-image-17.jpg = [Please add description]
+gangtok-image-18.jpg = [Please add description]

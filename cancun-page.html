@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancun - Caribbean Paradise | Veda's Travel Diary</title>
+    <title>Cancun - Caribbean Paradise & Maya Treasures | Veda's Travel Diary</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,7 +26,7 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --city-gradient: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
+            --cancun-gradient: linear-gradient(135deg, #00c9ff 0%, #92fe9d 50%, #ffcd3c 100%);
             --text-primary: #2c3e50;
             --text-secondary: #6c757d;
             --text-light: #ffffff;
@@ -51,89 +51,75 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             opacity: 0;
-            animation: fadeInPage 1s ease-in-out forwards;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
+        /* Navigation Bar */
+        .nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            padding: 1rem 2rem;
             box-shadow: var(--shadow-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
             background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-light);
         }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cancun-gradient);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            background: var(--cancun-gradient);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 160px 20px 100px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            background: var(--city-gradient);
+            margin-top: 70px;
         }
 
+        /* Cancun Collage Background */
         .hero-collage {
             position: absolute;
             top: 0;
@@ -144,13 +130,13 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 2px;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -161,90 +147,128 @@
             animation-delay: -2s;
         }
 
+        .collage-image:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .collage-image:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .collage-image:nth-child(4) {
+            grid-column: 3 / 5;
+            grid-row: 2 / 4;
+        }
+
+        .collage-image:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
         @keyframes subtleFloat {
             0%, 100% {
                 transform: scale(1) rotate(0deg);
                 filter: brightness(0.8) contrast(1.1);
             }
             50% {
-                transform: scale(1.02) rotate(0.5deg);
+                transform: scale(1.02) rotate(0.3deg);
                 filter: brightness(0.85) contrast(1.15);
             }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            padding: 0 2rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,201,255,0.3) 0%, rgba(146,254,157,0.4) 50%, rgba(255,205,60,0.3) 100%);
+            z-index: 1;
         }
 
-        .hero-content h1 {
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 90%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.5s both;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.7s both;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.8;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
+            padding: 60px 20px;
         }
 
+        /* Section Styling */
         .content-section {
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: var(--cancun-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        /* Description Card */
         .description-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 40px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-medium);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,64 +279,18 @@
         .description-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--city-gradient);
-            opacity: 0.03;
-            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--cancun-gradient);
         }
 
         .description-card p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--city-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         /* Image Gallery */
@@ -357,22 +335,6 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
-
         .gallery-caption {
             padding: 25px;
         }
@@ -391,23 +353,334 @@
             line-height: 1.6;
         }
 
-        /* Travel Tips Grid */
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--cancun-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--cancun-gradient);
+            opacity: 0.03;
+            transform: rotate(45deg);
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            background: var(--cancun-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero-collage {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 4;
+                grid-row: 4 / 5;
+            }
+            
+            .description-card {
+                padding: 25px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .quote-section {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero-collage {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .collage-image:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .collage-image:nth-child(2) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .collage-image:nth-child(4) {
+                grid-column: 1 / 3;
+                grid-row: 4 / 6;
+            }
+
+            .collage-image:nth-child(5) {
+                grid-column: 1 / 3;
+                grid-row: 6 / 7;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .gallery-item, .description-card, .stat-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .description-card { animation-delay: 0.2s; }
+        .stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
         .travel-tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .tip-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
         }
 
         .tip-card:hover {
@@ -416,75 +689,42 @@
         }
 
         .tip-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .tip-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .tip-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Booking Tips */
-        .booking-tips {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .booking-tip {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .booking-tip h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .booking-tip h4 i {
-            color: #667eea;
-        }
-
-        .booking-tip p {
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Cuisine Grid */
         .cuisine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 25px;
+            text-align: center;
             box-shadow: var(--shadow-light);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
-            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .food-card:hover {
@@ -492,89 +732,210 @@
             box-shadow: var(--shadow-medium);
         }
 
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
         .food-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .food-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
             color: var(--text-primary);
+            margin-bottom: 15px;
         }
 
         .food-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .food-price {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--city-gradient);
+            display: inline-block;
+            background: var(--primary-gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .description-card {
-                padding: 2rem;
-            }
-            
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .travel-tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cuisine-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .collage-container {
-                opacity: 0.2;
-            }
-            
-            .collage-image {
-                width: 180px;
-                height: 140px;
-            }
+        /* Seasons Grid */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .season-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .season-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .season-card:nth-child(1) .season-header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .season-card:nth-child(2) .season-header {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        }
+
+        .season-card:nth-child(3) .season-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+        }
+
+        .season-card:nth-child(4) .season-header {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .season-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .season-temp {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .season-content {
+            padding: 20px;
+        }
+
+        .season-content p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .season-pros {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .season-pros li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .season-pros li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Transport Grid */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .transport-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transport-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .transport-tip {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 15px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">Veda's Travel Diary</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#travel-tips">Tips</a></li>
-            </ul>
+            <a href="index.html" class="home-btn">
+                <i class="fas fa-home"></i> Back to Travel Diary
+            </a>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt"></i> Cancun, Mexico
+            </div>
         </div>
     </nav>
 
@@ -586,18 +947,11 @@
             <img src="cancun/cancun-image-3.jpg" alt="" class="collage-image">
             <img src="cancun/cancun-image-4.jpg" alt="" class="collage-image">
             <img src="cancun/cancun-image-5.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-6.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-7.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-8.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-9.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-10.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-11.jpg" alt="" class="collage-image">
-            <img src="cancun/cancun-image-12.jpg" alt="" class="collage-image">
         </div>
         <div class="hero-content">
             <h1>Cancun</h1>
-            <p class="hero-subtitle">Where Ancient Maya Meets Turquoise Waters</p>
-            <p class="hero-description">Experience the perfect blend of ancient Mayan culture and modern beach paradise. From pristine white sand beaches to mysterious cenotes, from vibrant nightlife to sacred archaeological sites, Cancun offers the ultimate tropical escape.</p>
+            <p class="hero-subtitle">Caribbean Paradise & Maya Treasures</p>
+            <p class="hero-description">Discover the magic of Cancun, where turquoise Caribbean waters meet ancient Maya heritage. From swimming in mystical cenotes to exploring magnificent ruins, this tropical paradise offers the perfect blend of relaxation and adventure.</p>
         </div>
     </section>
 
@@ -607,7 +961,7 @@
         <section class="content-section">
             <h2 class="section-title">My Cancun Adventure</h2>
             <div class="description-card">
-                <p>Cancun exceeded all my expectations. Beyond the stunning beaches and crystal-clear waters, I discovered a rich cultural heritage and incredible natural wonders. Swimming in cenotes felt like entering another world, and visiting nearby Mayan ruins gave me deep appreciation for this ancient civilization. The warmth of Mexican hospitality made every moment special.</p>
+                <p>Cancun exceeded every expectation I had. The contrast between the ultra-modern resort zone and the ancient Maya sites was breathtaking. Swimming in the crystal-clear cenotes felt like entering another world, while exploring Chichén-Itzá and Tulum connected me to civilizations thousands of years old. The local food was incredible - fresh seafood with a Mexican twist that made every meal an adventure. From snorkeling in underwater museums to dancing to live mariachi music, Cancun offered a perfect blend of relaxation, culture, and excitement.</p>
             </div>
         </section>
 
@@ -624,178 +978,540 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Beach Bliss</div>
+                    <div class="stat-label">Memories Made</div>
                 </div>
             </div>
         </section>
 
         <!-- Image Gallery -->
         <section class="content-section">
-            <h2 class="section-title">Pages from My Cancun Diary</h2>
+            <h2 class="section-title">Highlights from Cancun</h2>
             <div class="image-gallery">
+                <!-- Cancun local life Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-1.jpg" alt="First Glimpse of Cancun" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="local-life-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cancun/cancun-image-1.jpg" alt="Cancun local life 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-11.jpg" alt="Cancun local life 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('local-life-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('local-life-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="local-life-carousel-indicators"></div>
+                            <div class="carousel-counter" id="local-life-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>First Glimpse of Cancun</h3>
-                        <p>My initial impression of Cancun was absolutely magical. Every corner held a new surprise and wonder.</p>
+                        <h3>Cancun local life</h3>
+                        <p>Experiencing authentic Cancun beyond the resort zones was amazing. Meeting locals, trying street food, and understanding their vibrant culture made this trip so much richer than just beach time.</p>
                     </div>
                 </div>
+
+                <!-- Ven a la Luz Tulum -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-2.jpg" alt="Cultural Treasures" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="cancun/cancun-image-2.jpg" alt="Ven a la Luz Tulum" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Cultural Treasures</h3>
-                        <p>Discovering the rich cultural heritage and local traditions was one of the highlights of my Cancun adventure.</p>
+                        <h3>Ven a la Luz Tulum</h3>
+                        <p>This amazing art installation in Tulum perfectly captures the mystical energy of the place. The way it connects modern art with ancient wisdom was truly inspiring.</p>
                     </div>
                 </div>
+
+                <!-- Tulum Ruins Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-3.jpg" alt="Local Life" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="tulum-ruins-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cancun/cancun-image-3.jpg" alt="Tulum Ruins 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-5.jpg" alt="Exploring Tulum Ruins 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-6.jpg" alt="Exploring Tulum Ruins 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('tulum-ruins-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('tulum-ruins-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="tulum-ruins-carousel-indicators"></div>
+                            <div class="carousel-counter" id="tulum-ruins-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Local Life</h3>
-                        <p>Experiencing daily life and connecting with locals gave me a deeper appreciation for Cancun's authentic character.</p>
+                        <h3>Tulum Ruins</h3>
+                        <p>Standing before these ancient Maya structures overlooking the Caribbean was magical. The history, architecture, and natural beauty combined create an unforgettable experience.</p>
                     </div>
                 </div>
+
+                <!-- Tulum Beach -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-4.jpg" alt="Hidden Gems" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <img src="cancun/cancun-image-4.jpg" alt="Tulum Beach" class="gallery-image" loading="lazy">
                     </div>
                     <div class="gallery-caption">
-                        <h3>Hidden Gems</h3>
-                        <p>Finding those special, less touristy spots that only locals know about made my journey truly unique.</p>
+                        <h3>Tulum Beach</h3>
+                        <p>The pristine white sand beaches of Tulum with crystal-clear turquoise waters were like stepping into a postcard. Perfect for relaxing after exploring the ruins.</p>
                     </div>
                 </div>
+
+                <!-- Cenotes Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-5.jpg" alt="Unforgettable Moments" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="cenotes-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cancun/cancun-image-7.jpg" alt="Cenote Ik-Kil" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-8.jpg" alt="Cenotes" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('cenotes-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('cenotes-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="cenotes-carousel-indicators"></div>
+                            <div class="carousel-counter" id="cenotes-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Unforgettable Moments</h3>
-                        <p>Some moments are so perfect they stay with you forever. Cancun gave me many of these precious memories.</p>
+                        <h3>Cenotes</h3>
+                        <p>Swimming in these natural sinkholes filled with fresh water was otherworldly. The stalactites, crystal-clear water, and mystical atmosphere made it feel sacred.</p>
                     </div>
                 </div>
+
+                <!-- Chichén-Itzá Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="cancun/cancun-image-6.jpg" alt="Farewell Views" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="chichen-itza-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cancun/cancun-image-9.jpg" alt="Chichén-Itzá" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-10.jpg" alt="Chichén-Itzá view" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-22.jpg" alt="Chichén-Itzá view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('chichen-itza-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('chichen-itza-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="chichen-itza-carousel-indicators"></div>
+                            <div class="carousel-counter" id="chichen-itza-carousel-counter">1 / 3</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Farewell Views</h3>
-                        <p>As I prepared to leave Cancun, I knew this place had changed me and would always hold a special place in my heart.</p>
+                        <h3>Chichén-Itzá</h3>
+                        <p>Witnessing El Castillo pyramid, one of the New Seven Wonders of the World, was breathtaking. The precision of Maya engineering and astronomy still amazes me.</p>
+                    </div>
+                </div>
+
+                <!-- Isla Mujeres -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-12.jpg" alt="Isla Mujeres" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Isla Mujeres</h3>
+                        <p>This charming island just off Cancun's coast offered the perfect escape. Golf cart rides, colorful streets, and some of the best snorkeling I've ever experienced.</p>
+                    </div>
+                </div>
+
+                <!-- Local Sea Food -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-13.jpg" alt="Local Sea Food" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Local Sea Food</h3>
+                        <p>Fresh ceviche, grilled fish tacos, and local specialties made every meal an adventure. The coastal cuisine here is absolutely incredible.</p>
+                    </div>
+                </div>
+
+                <!-- Under Water Museum -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-14.jpg" alt="Under Water Museum" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Under Water Museum</h3>
+                        <p>MUSA, the underwater museum, was surreal. Snorkeling among life-sized sculptures that double as coral reefs was an unforgettable artistic and environmental experience.</p>
+                    </div>
+                </div>
+
+                <!-- Cancun Beach -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-15.jpg" alt="Cancun Beach" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Cancun Beach</h3>
+                        <p>The famous Hotel Zone beaches with their powdery white sand and brilliant blue water lived up to every expectation. Perfect for both relaxation and water sports.</p>
+                    </div>
+                </div>
+
+                <!-- Stone serpent's head -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-16.jpg" alt="Stone serpent's head" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Stone serpent's head</h3>
+                        <p>The intricate carvings at Chichén-Itzá showcase the incredible artistry and symbolism of Maya culture. Every detail tells a story of their beliefs and cosmology.</p>
+                    </div>
+                </div>
+
+                <!-- Skull Stone engravings -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-17.jpg" alt="Skull Stone engravings" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Skull Stone engravings</h3>
+                        <p>The Tzompantli or skull platform shows the complex spiritual beliefs of the Maya. These haunting yet beautiful carvings remind us of their sophisticated understanding of life and death.</p>
+                    </div>
+                </div>
+
+                <!-- Mayan Ball Game -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-18.jpg" alt="Mayan Ball Game" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Mayan Ball Game</h3>
+                        <p>Standing in the largest ball court in Mesoamerica was incredible. Imagining the ancient games played here, with their ritual significance, brought history to life.</p>
+                    </div>
+                </div>
+
+                <!-- Chichén-Itzá Fun Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="chichen-fun-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="cancun/cancun-image-19.jpg" alt="Chichén-Itzá Fun 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-20.jpg" alt="Chichén-Itzá Fun 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="cancun/cancun-image-21.jpg" alt="Chichén-Itzá Fun 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('chichen-fun-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('chichen-fun-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="chichen-fun-carousel-indicators"></div>
+                            <div class="carousel-counter" id="chichen-fun-carousel-counter">1 / 3</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Chichén-Itzá Fun</h3>
+                        <p>Exploring Chichén-Itzá with friends made the experience even more special. Learning about Maya astronomy, mathematics, and culture while having fun together was perfect.</p>
+                    </div>
+                </div>
+
+                <!-- Local Poke -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="cancun/cancun-image-23.jpg" alt="Local Poke" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Local Poke</h3>
+                        <p>The fusion of Mexican and Hawaiian flavors in local poke bowls was delicious. Fresh fish, tropical fruits, and Mexican spices created the perfect coastal cuisine.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Must-See Places Section -->
+        <!-- Quote Section -->
         <section class="content-section">
-            <h2 class="section-title">Must-See Places in Cancun</h2>
-            <div class="travel-tips-grid">
-                <div class="tip-card">
-                    <div class="tip-icon">🏖️</div>
-                    <h3>Playa Delfines</h3>
-                    <p>Best beach in Cancun with wide stretches of white sand and great waves for surfing. Perfect for sunset views.</p>
+            <div class="quote-section">
+                <div class="quote-text">"Cancun is where the Caribbean meets Maya magic"</div>
+                <div class="quote-author">Travel Enthusiast</div>
+            </div>
+        </section>
+
+        <!-- Best Time to Visit Section -->
+        <section class="content-section">
+            <h2 class="section-title">Best Time to Visit Cancun</h2>
+            <div class="seasons-grid">
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">☀️</div>
+                        <h3>Winter (December-April)</h3>
+                        <div class="season-temp">24-28°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Overall:</strong> Perfect weather, minimal rain, stunning beaches. Peak season means crowds and high prices. Book 3-6 months ahead. Spring Break (March) is especially busy!</p>
+                        <ul class="season-pros">
+                            <li>Ideal beach weather</li>
+                            <li>Minimal rainfall</li>
+                            <li>Clear turquoise waters</li>
+                            <li>Perfect for water sports</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🏛️</div>
-                    <h3>Chichen Itza</h3>
-                    <p>One of the New Seven Wonders of the World. Ancient Mayan pyramid and UNESCO World Heritage site.</p>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌺</div>
+                        <h3>Shoulder (May, November)</h3>
+                        <div class="season-temp">27-32°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Best Value:</strong> Great weather, lower prices, fewer crowds. May is hot but manageable. November after hurricane season ends. Excellent deals on hotels and tours!</p>
+                        <ul class="season-pros">
+                            <li>40-50% cheaper than winter</li>
+                            <li>Less crowded beaches</li>
+                            <li>Still good weather</li>
+                            <li>Better restaurant availability</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-icon">💎</div>
-                    <h3>Cenote Dos Ojos</h3>
-                    <p>Stunning underwater cave system perfect for snorkeling. Crystal-clear waters and incredible limestone formations.</p>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🌧️</div>
+                        <h3>Rainy Season (June-October)</h3>
+                        <div class="season-temp">28-33°C</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Budget Choice:</strong> Hurricane season, brief afternoon showers. June-July okay, August-October risky. Lowest prices. Still hot and humid. Monitor weather forecasts closely.</p>
+                        <ul class="season-pros">
+                            <li>Cheapest accommodation</li>
+                            <li>Fewer tourists</li>
+                            <li>Still plenty of sunshine</li>
+                            <li>Warm water year-round</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🐠</div>
-                    <h3>Mesoamerican Reef</h3>
-                    <p>Second-largest coral reef system in the world. Amazing snorkeling and diving with tropical fish.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🌴</div>
-                    <h3>Isla Mujeres</h3>
-                    <p>Charming island just 20 minutes by ferry. Beautiful beaches, golf carts, and laid-back Caribbean vibe.</p>
-                </div>
-                <div class="tip-card">
-                    <div class="tip-icon">🦈</div>
-                    <h3>Whale Shark Tours</h3>
-                    <p>Swim with gentle giants from June to September. Unforgettable wildlife encounter in open ocean.</p>
+                <div class="season-card">
+                    <div class="season-header">
+                        <div class="season-icon">🎉</div>
+                        <h3>Events to Consider</h3>
+                        <div class="season-temp">Year-round</div>
+                    </div>
+                    <div class="season-content">
+                        <p><strong>Special Times:</strong> Carnaval (Feb/Mar), Day of the Dead (Nov 1-2), Independence Day (Sep 16). BPM Music Festival (Jan). Avoid Spring Break unless you want the party scene!</p>
+                        <ul class="season-pros">
+                            <li>Cultural festivals</li>
+                            <li>Music and art events</li>
+                            <li>Local celebrations</li>
+                            <li>Unique experiences</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Booking Tips Section -->
+        <!-- Transportation Tips Section -->
         <section class="content-section">
-            <h2 class="section-title">When & Where to Book Accommodation</h2>
-            <div class="description-card">
-                <div class="booking-tips">
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📅 Best Time to Book</h4>
-                        <p>3-6 months ahead for winter season. Book cenote tours and Chichen Itza trips early. Whale shark tours fill up quickly.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 📍 Where to Stay</h4>
-                        <p>Hotel Zone: All-inclusive resorts, beaches, nightlife. Downtown Cancun: Authentic Mexican culture, local food. Playa del Carmen: Boutique hotels, easy access to ruins.</p>
-                    </div>
-                    <div class="booking-tip">
-                        <h4><i class="fas fa-calendar-alt"></i> 💰 Budget Tips</h4>
-                        <p>Stay downtown and take buses to beaches. Eat at local taquerias. Book tours through local operators. Visit cenotes independently for lower costs.</p>
-                    </div>
+            <h2 class="section-title">Getting Around Cancun</h2>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>ADO Buses</h3>
+                    <p><strong>Best for:</strong> Hotel Zone route. R1/R2 buses run every 5-10 mins. MX$12 per ride. Safe, air-conditioned. Stops at major hotels and malls. Downtown to Hotel Zone.</p>
+                    <div class="transport-tip">💡 Exact change helpful. Runs 24/7. Route maps at bus stops</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Local Cuisine Section -->
-        <section class="content-section">
-            <h2 class="section-title">What to Eat in Cancun</h2>
-            <div class="cuisine-grid">
-                <div class="food-card">
-                    <div class="food-icon">🌮</div>
-                    <h3>Fish Tacos</h3>
-                    <p>Fresh catch grilled with lime, cilantro, and spicy sauce. Best at beachside palapas.</p>
-                    <span class="food-price">$2-5</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxis</h3>
+                    <p><strong>Best for:</strong> Direct trips, groups, luggage. No meters - agree price first! Hotel Zone to Downtown MX$150-250. Official white taxis safer than unmarked ones.</p>
+                    <div class="transport-tip">💡 Ask hotel for fair price reference before taking taxi</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🥑</div>
-                    <h3>Guacamole</h3>
-                    <p>Freshly made tableside with avocados, lime, and chilies. Perfect with tortilla chips and cold beer.</p>
-                    <span class="food-price">$4-8</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚗</div>
+                    <h3>Rental Car</h3>
+                    <p><strong>Best for:</strong> Day trips to Tulum, Chichen Itza, cenotes. Not needed for Hotel Zone. Parking can be expensive. Compare prices online vs airport. Full insurance recommended!</p>
+                    <div class="transport-tip">💡 Book online for better rates. Watch for hidden insurance fees</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🍹</div>
-                    <h3>Margaritas</h3>
-                    <p>Classic tequila cocktails made with fresh lime juice. Try variations with different fruit flavors.</p>
-                    <span class="food-price">$5-12</span>
+                <div class="transport-card">
+                    <div class="transport-icon">🚐</div>
+                    <h3>Colectivos</h3>
+                    <p><strong>Best for:</strong> Budget travel to Playa del Carmen (MX$50), Tulum (MX$150). Shared vans, leave when full. Downtown bus terminal. Adventure but authentic!</p>
+                    <div class="transport-tip">💡 Cheaper than ADO but less comfortable. Cash only</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🐟</div>
-                    <h3>Ceviche</h3>
-                    <p>Raw fish "cooked" in citrus acid with onions and cilantro. Refreshing and perfect for hot days.</p>
-                    <span class="food-price">$8-15</span>
+                <div class="transport-card">
+                    <div class="transport-icon">⛴️</div>
+                    <h3>Ferry to Isla Mujeres</h3>
+                    <p><strong>Best for:</strong> Island day trips. Ferries from Puerto Juarez or Hotel Zone. MX$200-300 round trip. 20-30 mins. Multiple companies, similar prices. Golf carts on island!</p>
+                    <div class="transport-tip">💡 Morning departures less crowded. Return tickets slightly cheaper</div>
                 </div>
-                <div class="food-card">
-                    <div class="food-icon">🌶️</div>
-                    <h3>Cochinita Pibil</h3>
-                    <p>Slow-roasted pork in achiote and citrus, wrapped in banana leaves. Traditional Yucatecan specialty.</p>
-                    <span class="food-price">$10-18</span>
-                </div>
-                <div class="food-card">
-                    <div class="food-icon">🍫</div>
-                    <h3>Chocolate Abuelita</h3>
-                    <p>Traditional Mexican hot chocolate with cinnamon and spices. Perfect end to spicy meals.</p>
-                    <span class="food-price">$3-6</span>
+                <div class="transport-card">
+                    <div class="transport-icon">✈️</div>
+                    <h3>Airport Transfer</h3>
+                    <p><strong>From CUN:</strong> 15-20 mins to Hotel Zone. Shared shuttle MX$250pp, private MX$800-1,200. ADO bus MX$98 (budget option). Pre-book for best rates and safety.</p>
+                    <div class="transport-tip">💡 Avoid timeshare offers at airport - they're persistent!</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.gallery-item, .description-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading state
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Parallax effect for collage
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const collageImages = document.querySelectorAll('.collage-image');
+            
+            collageImages.forEach((img, index) => {
+                const speed = 0.1 + (index * 0.05);
+                img.style.transform = `translateY(${scrolled * speed}px) scale(${1 + (scrolled * 0.0001)})`;
+            });
+        });
+
+        // Add hover effect to collage images
+        document.querySelectorAll('.collage-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1) contrast(1.2)';
+                img.style.transform += ' scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'local-life-carousel',
+                'tulum-ruins-carousel',
+                'cenotes-carousel',
+                'chichen-itza-carousel',
+                'chichen-fun-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
+            });
+        });
+    </script>
+
 </body>
 </html>

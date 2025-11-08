@@ -136,7 +136,7 @@
         .collage-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
             filter: brightness(0.8) contrast(1.1);
             animation: subtleFloat 8s ease-in-out infinite;
@@ -340,21 +340,6 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,107,53,0.3), rgba(247,147,30,0.3));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
-        }
 
         .gallery-caption {
             padding: 25px;
@@ -372,6 +357,108 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 10;
         }
 
         /* Quote Section */
@@ -925,32 +1012,91 @@
         <section class="content-section">
             <h2 class="section-title">Canal Stories & City Moments</h2>
             <div class="image-gallery">
+                <!-- Amsterdam Centraal Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-1.jpg" alt="Amsterdam Central Station" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="centraal-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="amsterdam/amsterdam-image-1.jpg" alt="Amsterdam Centraal view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-9.jpg" alt="Amsterdam Centraal view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('centraal-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('centraal-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="centraal-carousel-indicators"></div>
+                            <div class="carousel-counter" id="centraal-carousel-counter">1 / 2</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Amsterdam Central</h3>
+                        <h3>Amsterdam Centraal</h3>
                         <p>First impressions matter, and Amsterdam Central Station didn't disappoint. The grand architecture combined with the energy of travelers from around the world set the perfect tone for my Dutch adventure.</p>
                     </div>
                 </div>
 
+                <!-- Amsterdam Streets Carousel -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
-                        <img src="amsterdam/amsterdam-image-3.jpg" alt="Canal boat tour" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="streets-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="amsterdam/amsterdam-image-2.jpg" alt="Amsterdam Streets view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-5.jpg" alt="Amsterdam Streets view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-7.jpg" alt="Amsterdam Streets view 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-13.jpg" alt="Amsterdam Streets view 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('streets-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('streets-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="streets-carousel-indicators"></div>
+                            <div class="carousel-counter" id="streets-carousel-counter">1 / 4</div>
+                        </div>
                     </div>
                     <div class="gallery-caption">
-                        <h3>Amstel River Cruise</h3>
+                        <h3>Amsterdam Streets</h3>
+                        <p>Wandering through Amsterdam's charming streets was like stepping into a postcard. Every corner revealed picturesque canals, historic architecture, and the distinctive Dutch charm that makes this city so enchanting.</p>
+                    </div>
+                </div>
+
+                <!-- Amstel River Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="amstel-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="amsterdam/amsterdam-image-3.jpg" alt="Amstel River Cruise view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-11.jpg" alt="Amstel River view 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-12.jpg" alt="Amstel River view 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('amstel-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('amstel-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="amstel-carousel-indicators"></div>
+                            <div class="carousel-counter" id="amstel-carousel-counter">1 / 3</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Amstel River</h3>
                         <p>Seeing Amsterdam from the water gave me a completely different perspective. The canal houses looked like a fairy tale, and I finally understood why they call this the Venice of the North.</p>
                     </div>
                 </div>
 
+                <!-- Anne Frank House -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
                         <img src="amsterdam/amsterdam-image-4.jpg" alt="Anne Frank House" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
                         <h3>Anne Frank House</h3>
@@ -958,14 +1104,49 @@
                     </div>
                 </div>
 
+                <!-- Royal Palace -->
                 <div class="gallery-item">
                     <div class="gallery-image-container">
                         <img src="amsterdam/amsterdam-image-6.jpg" alt="Royal Palace Amsterdam" class="gallery-image" loading="lazy">
-                        <div class="image-overlay"></div>
                     </div>
                     <div class="gallery-caption">
                         <h3>Royal Palace</h3>
                         <p>The grandeur of Dam Square and the Royal Palace showcased Amsterdam's royal heritage. The contrast between the formal palace and the lively square perfectly captured the city's dual nature.</p>
+                    </div>
+                </div>
+
+                <!-- He Hua Temple -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="amsterdam/amsterdam-image-8.jpg" alt="He Hua Temple" class="gallery-image" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>He Hua Temple</h3>
+                        <p>Discovering this beautiful Buddhist temple in the heart of Amsterdam was unexpected and peaceful. The contrast between Eastern spirituality and Western architecture created a unique cultural experience.</p>
+                    </div>
+                </div>
+
+                <!-- Amsterdam Roaming Carousel -->
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper" id="roaming-carousel">
+                                <div class="carousel-slide active">
+                                    <img src="amsterdam/amsterdam-image-10.jpg" alt="Amsterdam Roaming view 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="amsterdam/amsterdam-image-14.jpg" alt="Amsterdam Roaming view 2" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-nav carousel-prev" onclick="moveCarousel('roaming-carousel', -1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="moveCarousel('roaming-carousel', 1)">›</button>
+                            <div class="carousel-indicators" id="roaming-carousel-indicators"></div>
+                            <div class="carousel-counter" id="roaming-carousel-counter">1 / 2</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Amsterdam Roaming</h3>
+                        <p>Getting lost in Amsterdam's winding streets and discovering hidden corners was one of my favorite experiences. Every turn revealed new surprises, from cozy cafés to stunning canal views.</p>
                     </div>
                 </div>
             </div>
@@ -1227,6 +1408,103 @@
             
             img.addEventListener('mouseleave', () => {
                 img.style.filter = 'brightness(0.8) contrast(1.1)';
+            });
+        });
+
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(carouselId) {
+            const wrapper = document.getElementById(carouselId);
+            if (!wrapper) return;
+
+            const slides = wrapper.querySelectorAll('.carousel-slide');
+            const indicatorsContainer = document.getElementById(carouselId + '-indicators');
+            const counter = document.getElementById(carouselId + '-counter');
+            
+            carousels[carouselId] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                wrapper: wrapper,
+                slides: slides,
+                indicators: [],
+                counter: counter
+            };
+
+            // Create indicators
+            if (indicatorsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToSlide(carouselId, i));
+                    indicatorsContainer.appendChild(indicator);
+                    carousels[carouselId].indicators.push(indicator);
+                }
+            }
+
+            // Set initial position
+            updateCarousel(carouselId);
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            } else if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+
+            // Update slides
+            carousel.slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update wrapper position
+            const translateX = -carousel.currentSlide * 100;
+            carousel.wrapper.style.transform = `translateX(${translateX}%)`;
+
+            // Update indicators
+            carousel.indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === carousel.currentSlide);
+            });
+
+            // Update counter
+            if (carousel.counter) {
+                carousel.counter.textContent = `${carousel.currentSlide + 1} / ${carousel.totalSlides}`;
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselIds = [
+                'centraal-carousel',
+                'streets-carousel',
+                'amstel-carousel',
+                'roaming-carousel'
+            ];
+
+            carouselIds.forEach(id => {
+                initCarousel(id);
             });
         });
     </script>
