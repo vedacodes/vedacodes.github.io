@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rome itinerary: 4 days, food, map, and visa notes | Veda</title>
-    <meta name="description" content="A 4-day Rome itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports — written by Veda, who actually went.">
-    <link rel="canonical" href="https://globetrotwithveda.com/rome/">
+    <title>Grand Canyon itinerary: rim days, side trips, map, and visa notes | Veda</title>
+    <meta name="description" content="A Grand Canyon South Rim itinerary with Village viewpoints, Antelope Canyon and Horseshoe Bend day trips, food, when to go, and US visa notes for Indian and US passports — written by Veda.">
+    <link rel="canonical" href="https://globetrotwithveda.com/grandcanyon/">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Veda">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Rome itinerary: 4 days, food, map, and visa notes">
-    <meta property="og:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Rome page.">
-    <meta property="og:url" content="https://globetrotwithveda.com/rome/">
-    <meta property="og:image" content="https://globetrotwithveda.com/rome-image.jpg">
-    <meta property="og:image:alt" content="Veda standing in front of the Colosseum in Rome">
+    <meta property="og:title" content="Grand Canyon itinerary: rim days, side trips, map, and visa notes">
+    <meta property="og:description" content="South Rim viewpoints, Antelope Canyon, Horseshoe Bend, and US visa notes — in one Grand Canyon page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/grandcanyon/">
+    <meta property="og:image" content="https://globetrotwithveda.com/grandcanyon-image.jpg">
+    <meta property="og:image:alt" content="Grand Canyon layered red rock from the rim">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rome itinerary: 4 days, food, map, and visa notes">
-    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — written by Veda.">
-    <meta name="twitter:image" content="https://globetrotwithveda.com/rome-image.jpg">
+    <meta name="twitter:title" content="Grand Canyon itinerary: rim days, side trips, map, and visa notes">
+    <meta name="twitter:description" content="South Rim viewpoints, Antelope Canyon, Horseshoe Bend, and US visa notes — written by Veda.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/grandcanyon-image.jpg">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="shortcut icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
@@ -46,15 +46,15 @@
             },
             {
                 "@type": "WebPage",
-                "@id": "https://globetrotwithveda.com/rome/",
-                "url": "https://globetrotwithveda.com/rome/",
-                "name": "Rome itinerary: 4 days, food, map, and visa notes",
-                "description": "A 4-day Rome itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports.",
+                "@id": "https://globetrotwithveda.com/grandcanyon/",
+                "url": "https://globetrotwithveda.com/grandcanyon/",
+                "name": "Grand Canyon itinerary: rim days, side trips, map, and visa notes",
+                "description": "A Grand Canyon South Rim itinerary with Village viewpoints, Antelope Canyon and Horseshoe Bend day trips, food, when to go, and US visa notes.",
                 "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
                 "about": {
-                    "@type": "City",
-                    "name": "Rome",
-                    "containedInPlace": { "@type": "Country", "name": "Italy" }
+                    "@type": "TouristAttraction",
+                    "name": "Grand Canyon",
+                    "containedInPlace": { "@type": "Country", "name": "United States" }
                 },
                 "author": { "@type": "Person", "name": "Veda" }
             },
@@ -62,7 +62,7 @@
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
-                    { "@type": "ListItem", "position": 2, "name": "Rome", "item": "https://globetrotwithveda.com/rome/" }
+                    { "@type": "ListItem", "position": 2, "name": "Grand Canyon", "item": "https://globetrotwithveda.com/grandcanyon/" }
                 ]
             }
         ]
@@ -70,6 +70,7 @@
     </script>
 
     <style>
+
         :root {
             --void: #07080c;
             --void-2: #101218;
@@ -190,6 +191,14 @@
             font-size: clamp(4.2rem, 16vw, 11rem);
             line-height: 0.82;
             letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
         }
         .hero h1 span {
             display: block;
@@ -317,7 +326,7 @@
             background: var(--void-2);
             z-index: 1;
         }
-        #rome-map {
+        #grandcanyon-map {
             width: 100%;
             height: 480px;
             background: var(--void-2);
@@ -652,14 +661,14 @@
             .detail { grid-template-columns: 1fr; }
             .nav { padding: 14px 18px; }
             .coords { display: none; }
-            #rome-map { height: 360px; }
+            #grandcanyon-map { height: 360px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .film img { transition: none; }
         }
-    </style>
+        </style>
 </head>
 <body>
     <a class="skip" href="#notes">Skip to notes</a>
@@ -668,23 +677,23 @@
     <header class="nav">
         <a class="wordmark" href="../index.html">Veda</a>
         <div class="nav-meta">
-            <span class="coords">41.9028° N · 12.4964° E</span>
+            <span class="coords">36.0544° N · 112.1401° W</span>
             <a href="../index.html">Atlas</a>
         </div>
     </header>
 
-    <section class="hero" id="rome" aria-label="Rome">
+    <section class="hero" id="grandcanyon" aria-label="Grand Canyon">
         <div class="hero-media">
-            <img src="../rome-image.jpg" alt="Veda standing in front of the Colosseum">
+            <img src="../grandcanyon-image.jpg" alt="Grand Canyon layered red rock from the rim">
         </div>
         <div class="hero-copy">
-            <p class="kicker">Italy · Field notes</p>
-            <h1>ROME<span>I showed up.<br>The city did the rest.</span></h1>
-            <p class="hero-lead">The city that has been waiting two thousand years for you to show up. Four days of stone, espresso, and getting lost on purpose.</p>
+            <p class="kicker">USA · Field notes</p>
+            <h1 class="is-long">GRAND CANYON<span>Red rock stacked like a book you can’t finish.</span></h1>
+            <p class="hero-lead">South Rim light, a village that exists for the view, then the side chapters — Lake Mead blue, Hualapai glass, Antelope stone, Horseshoe Bend’s curve. Two or three days at the rim, more if Page is on the route.</p>
             <div class="hero-stats">
-                <div><strong>4</strong><span>Days</span></div>
-                <div><strong>25+</strong><span>Miles walked</span></div>
-                <div><strong>7</strong><span>Places that stuck</span></div>
+                <div><strong>2–3</strong><span>Days at the rim</span></div>
+                <div><strong>6</strong><span>Chapters on the roll</span></div>
+                <div><strong>1.6B</strong><span>Years underfoot</span></div>
             </div>
         </div>
     </section>
@@ -699,204 +708,190 @@
     </nav>
 
     <section class="intro" id="notes">
-        <h2>Not a checklist.<br>A walking fever.</h2>
-        <p>Rome wasn’t just a destination — it was a revelation. History lives in the streets here. Every piazza told a story, every fountain whispered. This city changed something in me, and I still carry that deeper hunger for discovery.</p>
+        <h2>The first look<br>makes your voice smaller.</h2>
+        <p>Nothing prepared me for the rim. Scale that turns conversation into a whisper, layers that change color by the hour, a village built so you can stand there again at sunrise. The canyon is the main act. Antelope and Horseshoe Bend are the day-trip chapters that refuse to stay optional.</p>
     </section>
 
     <section class="atlas-map" id="map">
-        <h2>Where I actually walked.</h2>
-        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
-        <div class="map-pins" role="group" aria-label="Rome locations">
+        <h2>Where I actually stood.</h2>
+        <p>Rim pins plus the Page side trips. <strong>All pins</strong> shows the spread — tap a name to zoom. Popups open Google Maps. The combined route is driving mode; these distances are not a walk.</p>
+        <div class="map-pins" role="group" aria-label="Grand Canyon locations">
             <button type="button" aria-pressed="true" data-place="all">All pins</button>
-            <button type="button" aria-pressed="false" data-place="colosseum">Colosseum</button>
-            <button type="button" aria-pressed="false" data-place="forum">Forum</button>
-            <button type="button" aria-pressed="false" data-place="pantheon">Pantheon</button>
-            <button type="button" aria-pressed="false" data-place="navona">Navona</button>
-            <button type="button" aria-pressed="false" data-place="trevi">Trevi</button>
-            <button type="button" aria-pressed="false" data-place="castel">Castel</button>
-            <button type="button" aria-pressed="false" data-place="steps">Spanish Steps</button>
+            <button type="button" aria-pressed="false" data-place="mather">Mather / Village</button>
+            <button type="button" aria-pressed="false" data-place="brightangel">Bright Angel</button>
+            <button type="button" aria-pressed="false" data-place="desertview">Desert View</button>
+            <button type="button" aria-pressed="false" data-place="antelope">Antelope Canyon</button>
+            <button type="button" aria-pressed="false" data-place="horseshoe">Horseshoe Bend</button>
         </div>
         <div class="map-frame">
-            <div id="rome-map" role="region" aria-label="Map of Rome with tagged locations"></div>
+            <div id="grandcanyon-map" role="region" aria-label="Map of Grand Canyon with tagged locations"></div>
         </div>
-        <a class="map-open" id="rome-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Colosseum%2C%20Rome&destination=Spanish%20Steps%2C%20Rome&waypoints=Roman%20Forum%2C%20Rome%7CPantheon%2C%20Rome%7CPiazza%20Navona%2C%20Rome%7CTrevi%20Fountain%2C%20Rome%7CCastel%20Sant%27Angelo%2C%20Rome&travelmode=walking" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+        <a class="map-open" id="grandcanyon-map-link" href="https://www.google.com/maps/search/?api=1&query=Grand%20Canyon%20Village" target="_blank" rel="noopener noreferrer">Open a driving route in Google Maps ↗</a>
     </section>
 
     <section class="intel" id="intel">
         <h2>Intel</h2>
-        <p class="intel-lead">The useful layer — tickets to book, bowls of carbonara, and how not to melt in August.</p>
-        <div class="tabs" role="tablist" aria-label="Rome practical notes">
+        <p class="intel-lead">The useful layer — lodge bookings months out, free shuttles on the rim, timed Antelope tours, and water before you pretend the trail is casual.</p>
+        <div class="tabs" role="tablist" aria-label="Grand Canyon practical notes">
             <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
             <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
-            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍝</span> Eat</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🌮</span> Eat</button>
             <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
             <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
-            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚗</span> Move</button>
             <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
         </div>
 
         <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏛️</span> Colosseum</h3>
-                <p>Skip-the-line in advance. Early morning or late afternoon — fewer people, better light.</p>
+                <h3><span class="emo" aria-hidden="true">🌅</span> South Rim viewpoints</h3>
+                <p>Mather Point, Hopi Point, the classic sunrise circuit. Arrive early for parking and light that turns the layers into a different canyon every ten minutes.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛪</span> Vatican Museums</h3>
-                <p>Book weeks ahead. Guided tour helps for the Sistine Chapel. Dress code is not a suggestion.</p>
+                <h3><span class="emo" aria-hidden="true">🥾</span> Bright Angel Trail</h3>
+                <p>The popular descent with rest houses and water (seasonal). Day-hike down and back — rim-to-rim is a different animal. Start early; heat climbs with you.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🛕</span> Pantheon</h3>
-                <p>Arrive early. The oculus does different work all day. Rain makes it stranger, in a good way.</p>
+                <h3><span class="emo" aria-hidden="true">🗼</span> Desert View Watchtower</h3>
+                <p>Mary Colter’s stone tower on the east rim drive. Panorama, Native American motifs, a stop that earns the miles from Village.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛲</span> Trevi Fountain</h3>
-                <p>Sunrise if you want the photo without a hundred shoulders. Right hand, over the left shoulder.</p>
+                <h3><span class="emo" aria-hidden="true">🏘️</span> Grand Canyon Village</h3>
+                <p>El Tovar, the depot, rim walks between lodges. Base camp with history baked into the porches. The canyon is still the reason you came.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🌸</span> Spanish Steps</h3>
-                <p>Spring azaleas if you can time it. Otherwise: sit, watch, then wander the shops.</p>
+                <h3><span class="emo" aria-hidden="true">🌀</span> Antelope Canyon</h3>
+                <p>Slot-canyon light near Page — a day trip or separate chapter. Navajo-guided tours only. Book the time slot; walk-up is a fantasy in season.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏺</span> Roman Forum</h3>
-                <p>Same ticket as the Colosseum. Water, decent shoes, audio guide. The ruins need a narrator.</p>
+                <h3><span class="emo" aria-hidden="true">🐴</span> Horseshoe Bend</h3>
+                <p>The Colorado’s 270° curve, a short walk from the parking lot near Page. Crowded at sunset. The cliff edge does not care about your photo.</p>
             </div>
         </div>
 
         <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏛️</span> Colosseum &amp; Forum</h3>
-                <p>Timed ticket on the official site. Peak months: 2–4 weeks out. Forum and Palatine are on the same ticket — don’t buy them twice.</p>
-                <span class="price">Book ahead</span>
-                <a class="book-link" href="https://ticketing.colosseo.it/en" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🛏️</span> In-park lodges</h3>
+                <p>Book 6–12 months ahead for peak season. Village lodges sell out first. Recreation.gov / park lodge operators are the path — not a last-week hope.</p>
+                <span class="price">6–12 months</span>
+                <a class="book-link" href="https://www.nps.gov/grca/planyourvisit/lodging.htm" target="_blank" rel="noopener noreferrer">NPS lodging ↗</a>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛪</span> Vatican Museums</h3>
-                <p>Weeks ahead, not the morning of. The Sistine Chapel is inside this ticket. The dress code is not a suggestion.</p>
-                <span class="price">Weeks ahead</span>
-                <a class="book-link" href="https://tickets.museivaticani.va/home/" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🌀</span> Antelope Canyon tours</h3>
+                <p>Upper or Lower — both need authorized Navajo guides. Timed entry. Midday light for Upper is the famous beam window; book early.</p>
+                <span class="price">Timed tour</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🛕</span> Pantheon</h3>
-                <p>It’s a ticket now. Cheap, timed, and Saturday still sells out. Don’t assume you can walk straight in.</p>
-                <span class="price">Timed ticket</span>
-                <a class="book-link" href="https://portale.museiitaliani.it" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🚁</span> Helicopter / Skywalk</h3>
+                <p>Aerial canyon or Hualapai Skywalk glass — separate operators, separate wallets. Book ahead; weather cancels. Not a walk-up souvenir.</p>
+                <span class="price">Tour ticket</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🌅</span> Castel Sant’Angelo</h3>
-                <p>Timed entry. The sunrise slot is the one worth setting an alarm for.</p>
-                <span class="price">Timed entry</span>
-                <a class="book-link" href="https://ticketing.coopculture.it/catalog/BE90C17E-A60E-F8ED-3736-0198628DEE88" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🎟️</span> Park entrance</h3>
+                <p>Vehicle or per-person fee, or America the Beautiful pass. Valid days cover re-entry. Keep the receipt on the dash.</p>
+                <span class="price">Entrance fee</span>
+                <a class="book-link" href="https://www.nps.gov/grca/planyourvisit/fees.htm" target="_blank" rel="noopener noreferrer">NPS fees ↗</a>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🖼️</span> Galleria Borghese</h3>
-                <p>The strictest booking in Rome. Named ticket, two-hour slot, they check ID. Walk-up is a story people tell after they didn’t get in.</p>
-                <span class="price">Must book</span>
-                <a class="book-link" href="https://galleriaborghese.cultura.gov.it/en/visita/info-biglietti/" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛲</span> No reservation</h3>
-                <p>Trevi, Navona, Spanish Steps. Show up. Sunrise is the only queue that matters.</p>
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>Many rim overlooks, shuttle stops, Desert View exterior, Horseshoe Bend trail (parking fee may apply). Show up early. Sunset is a crowd, not a secret.</p>
                 <span class="price">Walk up</span>
             </div>
         </div>
 
         <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍝</span> Carbonara</h3>
-                <p>Eggs, pecorino, guanciale, pepper. If there’s cream, you’re in a different city.</p>
-                <span class="price">€12–18</span>
+                <h3><span class="emo" aria-hidden="true">🌮</span> Southwestern plates</h3>
+                <p>Mexican-influenced, local ingredients, spice after a rim day. Lodge restaurants and Tusayan both do versions. Not fine dining — fuel with flavor.</p>
+                <span class="price">$12–20</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🧀</span> Cacio e pepe</h3>
-                <p>Looks simple. Isn’t. Cheese and pepper in the right emulsion is a magic trick.</p>
-                <span class="price">€10–15</span>
+                <h3><span class="emo" aria-hidden="true">🍞</span> Navajo fry bread</h3>
+                <p>Traditional bread, honey or taco-style. When you find it near Page or tribal vendors, get it. Simple. Memorable.</p>
+                <span class="price">$5–10</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍚</span> Supplì</h3>
-                <p>Fried rice, mozzarella heart. Eat it walking. That’s the correct protocol.</p>
-                <span class="price">€2–4</span>
+                <h3><span class="emo" aria-hidden="true">🥩</span> Arizona beef</h3>
+                <p>Hearty steaks at canyon restaurants after long hiking days. Lodge prices match the view rent.</p>
+                <span class="price">$20–35</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍖</span> Saltimbocca</h3>
-                <p>Veal, prosciutto, sage. The name means it jumps in the mouth. Believe it.</p>
-                <span class="price">€18–25</span>
+                <h3><span class="emo" aria-hidden="true">🌵</span> Prickly pear</h3>
+                <p>Drinks and candy from desert cactus fruit. Touristy. Still the southwestern flavor you only get here.</p>
+                <span class="price">$3–8</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍨</span> Gelato</h3>
-                <p>Natural color, lids on the tubs, made that day. Tourist neon is a warning label.</p>
-                <span class="price">€3–6</span>
+                <h3><span class="emo" aria-hidden="true">☕</span> Cowboy coffee</h3>
+                <p>Strong and black for pre-dawn Mather Point. The correct hour is before the lot fills.</p>
+                <span class="price">$2–5</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">☕</span> Espresso</h3>
-                <p>Stand at the bar. Cappuccino is a morning animal. After 11, don’t.</p>
-                <span class="price">€1–2</span>
+                <h3><span class="emo" aria-hidden="true">🥜</span> Trail snacks</h3>
+                <p>Nuts, dried fruit, electrolytes. Bring more water than you think. Rim air lies about how hard the climb back will feel.</p>
+                <span class="price">$3–8</span>
             </div>
         </div>
 
         <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
-                <p>3–4 months ahead for April–June and September–October. 6–8 weeks for winter. Easter and Christmas: book the second you know you’re going.</p>
+                <p>6–12 months for peak lodges, helicopter tours, and popular Antelope slots. River trips can need a year. Shoulder seasons breathe a little.</p>
             </div>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
-                <p><strong>Historic center</strong> — walk everywhere, pay for it. <strong>Trastevere</strong> — evenings, trattorie, actual neighborhood. <strong>Near the Vatican</strong> — art days. <strong>Termini</strong> — cheaper, easy trains.</p>
+                <p><strong>Grand Canyon Village</strong> — historic lodges, walk to the rim, sells out first. <strong>Tusayan</strong> — more rooms, about 7 miles south, drive or shuttle into the park. <strong>Camping</strong> — Mather and Desert View when you book early enough.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">💶</span> Spend less</h3>
-                <p>Skip the hotels glued to monuments. Boutique B&amp;Bs in residential streets. Sunday–Thursday is kinder. Breakfast included is not a small line item.</p>
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Shoulder seasons, own food and water, free park shuttles, sleep in Tusayan if Village rates hurt. The canyon does not charge extra for sunrise.</p>
             </div>
         </div>
 
         <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🌸</span> April–May</h3>
-                <p>18–23°C, flowers, Easter crowds. Peak prices. Still the easiest Rome to love.</p>
+                <h3><span class="emo" aria-hidden="true">🌸</span> Spring</h3>
+                <p>Best window for many hikers — milder rim temps, fewer monsoon cells. Crowds build toward summer. Book lodging early anyway.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">☀️</span> June–August</h3>
-                <p>25–35°C. Long days, outdoor tables, and heat that files a complaint. Go if you must; hide at noon.</p>
+                <h3><span class="emo" aria-hidden="true">☀️</span> Summer</h3>
+                <p>Hot on the trails, thunderstorms in monsoon season, packed overlooks. Start hikes at dawn. Carry water like it is the itinerary.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍂</span> September–October</h3>
-                <p>20–25°C, crisp, still busy in September. One of the two best windows.</p>
+                <h3><span class="emo" aria-hidden="true">🍂</span> Fall</h3>
+                <p>The other best window — cooler air, clear light, still busy on weekends. A strong bet for rim walks and photography.</p>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">❄️</span> November–March</h3>
-                <p>8–15°C, shorter days, fewer people, lower rates. Some hours shrink. Cozy, if you pack a coat.</p>
+                <h3><span class="emo" aria-hidden="true">❄️</span> Winter</h3>
+                <p>Snow possible on the rim, quieter trails, icy viewpoints. Beautiful and slippery. Check road closures before you commit.</p>
             </div>
         </div>
 
         <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🚶</span> Walk</h3>
-                <p>The historic center is a pedestrian argument you will lose, happily. Shoes, water, done.</p>
+                <h3><span class="emo" aria-hidden="true">🚌</span> Park shuttle</h3>
+                <p>Free South Rim shuttles link Village, viewpoints, and trailheads in season. Park once. Ride. The lot wars are optional.</p>
+                <span class="price">Free</span>
+                <a class="book-link" href="https://www.nps.gov/grca/planyourvisit/shuttle-buses.htm" target="_blank" rel="noopener noreferrer">Shuttle info ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk the rim</h3>
+                <p>Rim Trail segments between viewpoints are the point. Flat compared to Bright Angel. Still altitude — hydrate.</p>
                 <span class="price">Free</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🚇</span> Metro</h3>
-                <p>Line A: Spanish Steps, Vatican. Line B: Colosseum. 5:30am–11:30pm (12:30am weekends). BIT is €1.50 for 100 minutes — machines in every station, tabacchi with a T, or tap a contactless card at the gate.</p>
-                <span class="price">€1.50</span>
-                <a class="book-link" href="https://www.atac.roma.it/en/tickets-and-passes" target="_blank" rel="noopener noreferrer">ATAC tickets ↗</a>
-                <a class="book-link" href="https://www.atac.roma.it/en/tickets-and-passes/tap-go" target="_blank" rel="noopener noreferrer">Tap &amp; Go ↗</a>
+                <h3><span class="emo" aria-hidden="true">🚗</span> Rental car</h3>
+                <p>Required logic for Antelope Canyon, Horseshoe Bend, and Page. Desert View Drive is also better with your own wheels. Fuel in Tusayan or Page.</p>
+                <span class="price">Day rate</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🚌</span> Bus &amp; tram</h3>
-                <p>Same BIT as the metro. Validate on board. #64 is useful and packed. Tram #8 is the scenic cousin. Machines, tabacchi, or tap the reader.</p>
-                <span class="price">€1.50</span>
-                <a class="book-link" href="https://www.atac.roma.it/en/tickets-and-passes" target="_blank" rel="noopener noreferrer">ATAC tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🚁</span> Helicopter tours</h3>
+                <p>Scale you cannot walk. Book operators carefully; weather and weight limits are real. Pair with Las Vegas or South Rim bases.</p>
+                <span class="price">Tour</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🚕</span> Taxi</h3>
-                <p>Official white cars only. Ranks at Termini, Fiumicino, Ciampino. Fixed airport rates. Apps exist. Still not cheap.</p>
-                <span class="price">€3–4 + €1.10/km</span>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">🎫</span> Roma Pass</h3>
-                <p>72 hours: transit plus the first two attractions. Buy on the official site, then activate in the app. In person: Fiumicino T3 arrivals, Ciampino arrivals, Infopoint Minghetti (Via del Corso). Termini’s tourist desks do not sell it.</p>
-                <span class="price">€38.50</span>
-                <a class="book-link" href="https://www.romapass.it/en/card-roma-pass" target="_blank" rel="noopener noreferrer">Buy Roma Pass ↗</a>
-                <a class="book-link" href="https://turismoroma.it/en/page/tourist-infopoints" target="_blank" rel="noopener noreferrer">Infopoints ↗</a>
+                <h3><span class="emo" aria-hidden="true">🚕</span> Tours from Vegas</h3>
+                <p>Common day-trip buses to West Rim / Skywalk. Different canyon face than the South Rim Village experience — know which trip you bought.</p>
+                <span class="price">Day tour</span>
             </div>
         </div>
 
@@ -909,7 +904,7 @@
 
             <div class="visa-block" id="visa-indian">
                 <div class="visa-alert">
-                    <strong>Schengen visa required.</strong> Indian citizens need a Type C visa to visit Italy.
+                    <strong>US entry first — then domestic travel.</strong> The Grand Canyon is inside the United States. Indian citizens need valid US admission (typically B1/B2 for tourism from India). Once you are lawfully in the US, the rim is a domestic trip.
                 </div>
 
                 <p class="choice-label">Where are you currently residing?</p>
@@ -921,182 +916,127 @@
                 <div class="visa-block" id="indian-india">
                     <div class="visa-grid">
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">📅</span> Tourist visa (Type C)</h3>
-                            <div class="detail"><strong>Validity</strong><span>Up to 90 days within a 180-day period</span></div>
-                            <div class="detail"><strong>Processing</strong><span>15–20 working days (can extend to 30–45)</span></div>
-                            <div class="detail"><strong>Fee</strong><span>€80 (approx ₹7,200) + VFS service charges</span></div>
-                            <div class="detail"><strong>Entry</strong><span>Single, double, or multiple</span></div>
+                            <h3><span class="emo" aria-hidden="true">📅</span> B1/B2 tourist visa</h3>
+                            <div class="detail"><strong>What</strong><span>US visitor visa for tourism / short business (B1/B2)</span></div>
+                            <div class="detail"><strong>Grand Canyon</strong><span>No separate park visa — enter the US first, then travel domestically</span></div>
+                            <div class="detail"><strong>Validity</strong><span>Visa validity ≠ length of stay; admission is decided at the port of entry (I-94)</span></div>
+                            <div class="detail"><strong>Interview</strong><span>US Embassy/Consulate in India; DS-160 + appointment</span></div>
                         </div>
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <h3><span class="emo" aria-hidden="true">📄</span> Typical documents</h3>
                             <ul>
-                                <li>Valid passport (min. 6 months validity)</li>
-                                <li>Completed visa application form</li>
-                                <li>Recent passport-size photographs</li>
-                                <li>Flight reservation / itinerary</li>
-                                <li>Hotel bookings / accommodation proof</li>
-                                <li>Travel insurance (min. €30,000 coverage)</li>
-                                <li>Bank statements (last 6 months)</li>
-                                <li>Income tax returns / employment letter</li>
-                                <li>Cover letter explaining trip purpose</li>
+                                <li>Valid Indian passport</li>
+                                <li>DS-160 confirmation and visa fee receipt</li>
+                                <li>Appointment confirmation</li>
+                                <li>Photo meeting US visa specs</li>
+                                <li>Proof of ties to India (job, property, family)</li>
+                                <li>Travel itinerary and funds evidence</li>
+                                <li>Hotel or tour bookings help; they do not guarantee a visa</li>
                             </ul>
                         </div>
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">📍</span> Application centers</h3>
-                            <div class="detail"><strong>VFS in India</strong><span>New Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Pune, Ahmedabad, Chandigarh, Kochi, Jalandhar, Goa</span></div>
-                            <div class="detail"><strong>Appointment</strong><span>Book online at italy.vfsglobal.co.in</span></div>
-                            <div class="detail"><strong>Biometrics</strong><span>Required (valid for 5 years)</span></div>
+                            <h3><span class="emo" aria-hidden="true">📍</span> Application</h3>
+                            <div class="detail"><strong>Where</strong><span>US Embassy/Consulates in India (New Delhi, Mumbai, Chennai, Hyderabad, Kolkata)</span></div>
+                            <div class="detail"><strong>Site</strong><span>travel.state.gov and the US travel docs / CGI portal for India</span></div>
+                            <div class="detail"><strong>After visa</strong><span>Fly into a US airport, then connect or drive to Arizona</span></div>
                         </div>
                         <div class="card">
                             <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
                             <ul>
-                                <li>Apply 3–4 weeks before travel (not more than 3 months in advance)</li>
-                                <li>A Schengen visa covers all 27 Schengen countries</li>
-                                <li>Show strong ties to India (job, property, family)</li>
-                                <li>Sufficient funds: about €50–60 per day is a common benchmark</li>
-                                <li>Insurance must cover the entire Schengen area</li>
-                                <li>Keep documents in one folder</li>
+                                <li>Apply well before peak summer travel — appointment waits vary</li>
+                                <li>Grand Canyon lodging is separate from the visa process — book both tracks</li>
+                                <li>ESTA is not for Indian passports</li>
+                                <li>Park entrance fees are not immigration</li>
+                                <li>Carry the same passport you used for the visa</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. Always check the Italian Embassy/Consulate or VFS Global for current requirements and fees. Visa rules can change.</div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. Always check travel.state.gov and the US Embassy/Consulate for current B1/B2 rules. Visa decisions are individual.</div>
                 </div>
 
                 <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert ok">
+                        <strong>Domestic travel.</strong> If you are already in the United States in valid status (H1B/H4/OPT, etc.), visiting the Grand Canyon is domestic — no additional US visa for the park itself.
+                    </div>
                     <div class="visa-grid">
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">📅</span> Tourist visa (Type C)</h3>
-                            <div class="detail"><strong>Validity</strong><span>Up to 90 days within a 180-day period</span></div>
-                            <div class="detail"><strong>Processing</strong><span>10–15 working days (faster than from India)</span></div>
-                            <div class="detail"><strong>Fee</strong><span>€80 (approx $85) + service charges</span></div>
-                            <div class="detail"><strong>Entry</strong><span>Single, double, or multiple</span></div>
+                            <h3><span class="emo" aria-hidden="true">✈️</span> H1B / H4 / OPT on a US trip</h3>
+                            <div class="detail"><strong>Park visit</strong><span>Treat it like any domestic US destination</span></div>
+                            <div class="detail"><strong>ID</strong><span>Carry passport and proof of status if you fly (airline REAL ID / passport rules still apply)</span></div>
+                            <div class="detail"><strong>I-94</strong><span>Confirm your status remains valid for the whole trip</span></div>
+                            <div class="detail"><strong>No second visa</strong><span>You do not apply for a canyon visa</span></div>
                         </div>
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry these</h3>
                             <ul>
-                                <li>Valid Indian passport (min. 6 months validity)</li>
-                                <li>Valid US visa (H1B/H4/OPT) with validity beyond the trip</li>
-                                <li>I-797 approval notice (for H1B/H4)</li>
-                                <li>EAD card (for OPT/H4 EAD)</li>
-                                <li>Recent pay stubs (last 3 months)</li>
-                                <li>Employment verification letter</li>
-                                <li>Completed visa application form</li>
-                                <li>Recent passport-size photographs</li>
-                                <li>Flight reservation / itinerary</li>
-                                <li>Hotel bookings / accommodation proof</li>
-                                <li>Travel insurance (min. €30,000 coverage)</li>
-                                <li>US bank statements (last 3 months)</li>
-                                <li>Cover letter explaining trip purpose</li>
+                                <li>Passport</li>
+                                <li>Visa stamp / I-797 / EAD as applicable</li>
+                                <li>Driver’s license or passport for airport security</li>
+                                <li>Hotel and rental-car confirmations</li>
                             </ul>
                         </div>
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">🇺🇸</span> Application in USA</h3>
-                            <div class="detail"><strong>Centers</strong><span>Italian consulates in Washington DC, New York, Los Angeles, San Francisco, Houston, Miami, Chicago, Detroit, Boston</span></div>
-                            <div class="detail"><strong>Jurisdiction</strong><span>Apply at the consulate that covers your state</span></div>
-                            <div class="detail"><strong>Appointment</strong><span>Book through the consulate site or an authorized service center</span></div>
-                            <div class="detail"><strong>Biometrics</strong><span>Required at appointment (valid for 5 years)</span></div>
-                            <div class="detail"><strong>Advantage</strong><span>Higher approval rate and faster processing for H1B/H4 holders</span></div>
-                        </div>
-                        <div class="card">
-                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips</h3>
                             <ul>
-                                <li>Apply 3–4 weeks before travel</li>
-                                <li>US visa status strengthens the application</li>
-                                <li>Show ties to the USA (job, lease, return ticket)</li>
-                                <li>Keep I-797 and recent pay stubs ready</li>
-                                <li>Multiple-entry Schengen visas are commonly granted to H1B holders</li>
-                                <li>Insurance must cover the entire Schengen area</li>
-                                <li>Make sure the US visa is valid for re-entry to the USA</li>
-                                <li>Appointments are recommended even if some consulates take walk-ins</li>
-                                <li>Processing is generally faster than applying from India</li>
+                                <li>Domestic flights still need REAL ID-compliant ID or a passport</li>
+                                <li>If your status is close to expiry, do not plan a long road trip without checking dates</li>
+                                <li>Leaving the US (e.g. a Mexico add-on) restarts border rules — Grand Canyon alone does not</li>
+                                <li>NPS fees are separate from immigration</li>
                             </ul>
                         </div>
                         <div class="card">
-                            <h3><span class="emo" aria-hidden="true">⚠️</span> Important considerations</h3>
-                            <div class="detail"><strong>US visa validity</strong><span>The H1B/H4/OPT stamp must be valid for re-entry if you return to the USA from Europe. If expired, you may need a stamp at a US consulate abroad.</span></div>
-                            <div class="detail"><strong>I-94</strong><span>Confirm it stays valid during and after the trip</span></div>
-                            <div class="detail"><strong>Employment letter</strong><span>Should state you’ll return to work after vacation</span></div>
-                            <div class="detail"><strong>Timing</strong><span>Don’t plan this trip during a US visa stamping window — finish that first</span></div>
+                            <h3><span class="emo" aria-hidden="true">⚠️</span> If you leave the US</h3>
+                            <div class="detail"><strong>Re-entry</strong><span>A side trip outside the US requires a valid visa stamp / status documents to return</span></div>
+                            <div class="detail"><strong>This page</strong><span>Assumes Grand Canyon as a domestic US destination from inside the country</span></div>
                         </div>
                     </div>
-                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Indian citizens on US work visas have high Schengen approval rates. Verify US immigration status for re-entry before Europe. Check the Italian consulate that covers your state.</div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status rules are personal. Confirm your I-94 and documents before you fly. This is general guidance, not legal advice.</div>
                 </div>
             </div>
 
             <div class="visa-block" id="visa-us" hidden>
                 <div class="visa-alert ok">
-                    <strong>No visa required.</strong> US citizens can visit Italy visa-free for tourism or business.
+                    <strong>Domestic travel.</strong> US citizens do not need a visa for the Grand Canyon — it is inside the United States.
                 </div>
                 <div class="visa-grid">
                     <div class="card">
-                        <h3><span class="emo" aria-hidden="true">✈️</span> Visa-free entry</h3>
-                        <div class="detail"><strong>Duration</strong><span>Up to 90 days within any 180-day period</span></div>
-                        <div class="detail"><strong>Purpose</strong><span>Tourism, business, family visits</span></div>
-                        <div class="detail"><strong>Passport</strong><span>Valid at least 3 months beyond the stay</span></div>
-                        <div class="detail"><strong>Schengen</strong><span>Entry covers all 27 Schengen countries</span></div>
+                        <h3><span class="emo" aria-hidden="true">✈️</span> What you need</h3>
+                        <div class="detail"><strong>ID</strong><span>REAL ID-compliant license or passport for domestic flights</span></div>
+                        <div class="detail"><strong>Park</strong><span>Entrance fee or annual pass at the gate</span></div>
+                        <div class="detail"><strong>Driving</strong><span>Standard US license / rental rules</span></div>
                     </div>
                     <div class="card">
-                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry requirements</h3>
+                        <h3><span class="emo" aria-hidden="true">🛂</span> At the park</h3>
                         <ul>
-                            <li>Valid US passport (min. 3 months after departure)</li>
-                            <li>Return / onward ticket</li>
-                            <li>Proof of accommodation</li>
-                            <li>Sufficient funds for the stay</li>
-                            <li>Travel insurance (recommended, not mandatory)</li>
+                            <li>No immigration checkpoint for domestic visitors</li>
+                            <li>Pay entrance or show America the Beautiful pass</li>
+                            <li>Follow NPS rules on drones, trails, and wildlife</li>
+                            <li>Cell service is patchy — download maps offline</li>
                         </ul>
-                    </div>
-                    <div class="card">
-                        <h3><span class="emo" aria-hidden="true">🇪🇺</span> ETIAS (coming online)</h3>
-                        <div class="detail"><strong>What</strong><span>European Travel Information and Authorization System</span></div>
-                        <div class="detail"><strong>Cost</strong><span>€7 (valid 3 years or until passport expiry)</span></div>
-                        <div class="detail"><strong>Application</strong><span>Online, about 10–15 minutes</span></div>
-                        <div class="detail"><strong>Processing</strong><span>Often minutes; can take up to 30 days</span></div>
                     </div>
                     <div class="card">
                         <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
                         <ul>
-                            <li>Track the 90/180-day limit across all Schengen countries</li>
-                            <li>Keep accommodation and return-flight proof handy</li>
-                            <li>Insurance is still a good idea</li>
-                            <li>Register for ETIAS once it is mandatory</li>
-                            <li>Officers may ask purpose and duration</li>
-                            <li>Leave blank passport pages for stamps</li>
+                            <li>Book lodging early regardless of citizenship</li>
+                            <li>Summer heat and monsoon storms are the real gatekeepers</li>
+                            <li>Combine with Las Vegas only if you accept the drive or a tour day</li>
                         </ul>
                     </div>
                 </div>
-                <div class="note"><strong>Note:</strong> Visa-free still means Schengen rules. ETIAS will be required when it launches. Check official sources for the latest dates.</div>
+                <div class="note"><strong>Note:</strong> Domestic trip, still a national park. Check nps.gov/grca for alerts, closures, and fees before you go.</div>
             </div>
         </div>
     </section>
 
     <section class="frames" id="frames">
         <h2>What stayed on the roll.</h2>
-        <p class="frames-lead">Seven places I actually stood in. Not a complete Rome — just the frames I kept.</p>
+        <p class="frames-lead">Six chapters — Hualapai glass, Lake Mead blue, Village rim light, slot-canyon stone, and the river’s horseshoe.</p>
     </section>
 
-    <article class="chapter" id="colosseum">
+    <article class="chapter" id="hualapai">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-1.jpg" alt="The Colosseum, first look">
-            <img src="rome-image-10.jpg" alt="The Colosseum, another angle" loading="lazy">
-            <img src="rome-image-11.jpg" alt="The Colosseum, close stone" loading="lazy">
-            <img src="rome-image-12.jpg" alt="The Colosseum, wide view" loading="lazy">
-            <div class="film-ui">
-                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
-                <span class="count">01 / 04</span>
-                <button type="button" data-dir="1" aria-label="Next photo">→</button>
-            </div>
-        </div>
-        <div>
-            <p class="index">01 / 07</p>
-            <h2>The Colosseum, before the crowds</h2>
-            <p>Standing in front of it for the first time was overwhelming. The scale hits immediately — you can almost hear the old roar. This is the photograph that still looks like a dare, and the reason I fell in love with traveling like this.</p>
-        </div>
-    </article>
-
-    <article class="chapter is-flip" id="streets">
-        <div class="film" data-film>
-            <img class="is-on" src="rome-image-2.jpg" alt="A narrow Roman street">
-            <img src="rome-image-17.jpg" alt="Another Roman street" loading="lazy">
+            <img class="is-on" src="grandcanyon-image-1.jpg" alt="Hualapai Indian Reservation view">
+            <img src="grandcanyon-image-2.jpg" alt="Hualapai Indian Reservation, another view" loading="lazy">
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1104,34 +1044,16 @@
             </div>
         </div>
         <div>
-            <p class="index">02 / 07</p>
-            <h2>Lost on cobbles</h2>
-            <p>I got completely lost in the narrow streets. That was the point. The best hours had no map — just stone underfoot and a corner that turned into something I hadn’t planned to find.</p>
+            <p class="index">01 / 06</p>
+            <h2>Hualapai land, glass edge</h2>
+            <p>The West Rim is a different negotiation with the canyon — Hualapai land, Skywalk glass, a drop that makes your stomach vote. Sacred ground with a tourist ticket. I stood there quieter than the brochure expected.</p>
         </div>
     </article>
-
-    <article class="chapter" id="pantheon">
+    <article class="chapter is-flip" id="lakemead">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-3.jpg" alt="The Pantheon portico">
-            <img src="rome-image-16.jpg" alt="The Pantheon at another hour" loading="lazy">
-            <div class="film-ui">
-                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
-                <span class="count">01 / 02</span>
-                <button type="button" data-dir="1" aria-label="Next photo">→</button>
-            </div>
-        </div>
-        <div>
-            <p class="index">03 / 07</p>
-            <h2>The Pantheon, a hole in the sky</h2>
-            <p>Alone here at sunset. Light through the oculus, Agrippa’s name still cut into the stone, and a chill I didn’t expect. Some rooms don’t need a caption. This one already had an inscription.</p>
-        </div>
-    </article>
-
-    <article class="chapter is-flip" id="castel">
-        <div class="film" data-film>
-            <img class="is-on" src="rome-image-4.jpg" alt="Castel Sant’Angelo">
-            <img src="rome-image-5.jpg" alt="Castel Sant’Angelo, second view" loading="lazy">
-            <img src="rome-image-6.jpg" alt="Castel Sant’Angelo, third view" loading="lazy">
+            <img class="is-on" src="grandcanyon-image-3.jpg" alt="Lake Mead National Recreation Area">
+            <img src="grandcanyon-image-4.jpg" alt="Lake Mead shoreline" loading="lazy">
+            <img src="grandcanyon-image-5.jpg" alt="Lake Mead desert water" loading="lazy">
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1139,16 +1061,15 @@
             </div>
         </div>
         <div>
-            <p class="index">04 / 07</p>
-            <h2>Castel Sant’Angelo, sunrise</h2>
-            <p>Woke up early for this. Rome coming online slowly, the Tiber holding the gold. These are the quiet minutes between the chaos — the reason the alarm was worth it.</p>
+            <p class="index">02 / 06</p>
+            <h2>Lake Mead blue</h2>
+            <p>Reservoir against desert — Hoover Dam’s consequence, azure where you expect brown. A different Southwest sentence between Vegas and the rim. I kept the contrast more than any single overlook name.</p>
         </div>
     </article>
-
-    <article class="chapter" id="navona">
+    <article class="chapter" id="village">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-7.jpg" alt="Piazza Navona">
-            <img src="rome-image-8.jpg" alt="Piazza Navona, another view" loading="lazy">
+            <img class="is-on" src="grandcanyon-image-6.jpg" alt="Grand Canyon Village">
+            <img src="grandcanyon-image-7.jpg" alt="Grand Canyon Village rim" loading="lazy">
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1156,15 +1077,47 @@
             </div>
         </div>
         <div>
-            <p class="index">05 / 07</p>
-            <h2>Navona, an open-air theater</h2>
-            <p>Hours of people-watching. Baroque fountains, street artists, a square that never drops its volume. It felt less like a piazza and more like a stage that forgot the curtain.</p>
+            <p class="index">03 / 06</p>
+            <h2>Village on the edge</h2>
+            <p>El Tovar porches, the depot, a town that exists so you can walk fifty steps and lose your sense of scale. Grand Canyon Village is logistics with a soul. The canyon does the rest.</p>
         </div>
     </article>
-
-    <article class="chapter is-flip" id="trevi">
+    <article class="chapter is-flip" id="rim">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-9.jpg" alt="Trevi Fountain at night">
+            <img class="is-on" src="grandcanyon-image-8.jpg" alt="South Rim canyon view">
+            <img src="grandcanyon-image-9.jpg" alt="South Rim light on rock layers" loading="lazy">
+            <img src="grandcanyon-image-13.jpg" alt="South Rim another overlook" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 06</p>
+            <h2>Rim light, again</h2>
+            <p>Every overlook rewrites the same mile of geology. Reds, oranges, a purple hour I did not earn — I just stood still. South Rim light is the reason people miss dinner reservations.</p>
+        </div>
+    </article>
+    <article class="chapter" id="antelope">
+        <div class="film" data-film>
+            <img class="is-on" src="grandcanyon-image-10.jpg" alt="Antelope Canyon slot canyon">
+            <img src="grandcanyon-image-11.jpg" alt="Antelope Canyon light beams" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 06</p>
+            <h2>Stone cathedral</h2>
+            <p>Antelope Canyon is a corridor of sandstone and timed light. Beams if you luck the hour, curves either way. Guided, crowded, still one of the quietest loud places I have stood.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="horseshoe">
+        <div class="film" data-film>
+            <img class="is-on" src="grandcanyon-image-12.jpg" alt="Horseshoe Bend on the Colorado River">
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1172,123 +1125,80 @@
             </div>
         </div>
         <div>
-            <p class="index">06 / 07</p>
-            <h2>Trevi, after dark</h2>
-            <p>A coin, a wish, marble lit like a film set. The water goes teal at night. I stayed longer than the crowd wanted me to, reading the stone the way you read a letter you already know by heart.</p>
-        </div>
-    </article>
-
-    <article class="chapter" id="forum">
-        <div class="film" data-film>
-            <img class="is-on" src="rome-image-14.jpg" alt="The Roman Forum">
-            <img src="rome-image-15.jpg" alt="The Roman Forum, second view" loading="lazy">
-            <div class="film-ui">
-                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
-                <span class="count">01 / 02</span>
-                <button type="button" data-dir="1" aria-label="Next photo">→</button>
-            </div>
-        </div>
-        <div>
-            <p class="index">07 / 07</p>
-            <h2>The Forum, time travel without a machine</h2>
-            <p>Walking where Caesar walked is a sentence that should sound like a brochure. It doesn’t, not when the stones are under you. Two thousand years, still taking attendance.</p>
+            <p class="index">06 / 06</p>
+            <h2>The river’s horseshoe</h2>
+            <p>A thousand feet down, the Colorado draws a near-circle and keeps going. Horseshoe Bend is a short walk and a long stare. I backed up from the edge. The photo still looks like a dare.</p>
         </div>
     </article>
 
     <section class="unfinished" id="unfinished">
         <h2>Still on the list.</h2>
-        <p class="unfinished-lead">Four days is a first draft. These are the important rooms I didn’t get into — the ones I’d book first if I went back tomorrow.</p>
+        <p class="unfinished-lead">Rim days fill fast. These are the chapters I owe another trip.</p>
         <div class="grid-3">
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🖼️</span> Galleria Borghese</h3>
-                <p>Bernini, Caravaggio, two-hour slots, they check ID. The one everyone says to book first. I didn’t, and the city noticed.</p>
-                <span class="price">Must book</span>
-                <a class="book-link" href="https://galleriaborghese.cultura.gov.it/en/visita/info-biglietti/" target="_blank" rel="noopener noreferrer">Official tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🌊</span> Colorado River trip</h3>
+                <p>Multi-day rafting or even a shorter float — the canyon from water level. Needs planning measured in months, not weekends.</p>
+                <span class="price">Book early</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🔑</span> Aventine Keyhole</h3>
-                <p>A garden door on the Aventine. Look through it and St. Peter’s sits in the hedge like a secret. Free, and I still missed it.</p>
-                <span class="price">Walk up</span>
+                <h3><span class="emo" aria-hidden="true">⭐</span> Ranger stargazing</h3>
+                <p>Dark-sky programs on the rim. I watched sunset and slept. The Milky Way over the gorge is still unpaid.</p>
+                <span class="price">Night</span>
+                <a class="book-link" href="https://www.nps.gov/grca/planyourvisit/astronomy-programs.htm" target="_blank" rel="noopener noreferrer">Astronomy programs ↗</a>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🌙</span> Trastevere</h3>
-                <p>The other bank. Lanterns, laundry lines, trattorie that don’t need a monument. I stayed on the tourist side of the river.</p>
-                <span class="price">Evenings</span>
+                <h3><span class="emo" aria-hidden="true">🥾</span> Deeper Bright Angel</h3>
+                <p>I sampled the trail. Not the full day the legs wanted. Next time: earlier start, more water, turnaround discipline.</p>
+                <span class="price">Dawn start</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏛️</span> Capitoline Museums</h3>
-                <p>Michelangelo’s square, then the oldest public museum in the world. The bronze Marcus Aurelius is still up there, waiting.</p>
-                <span class="price">Timed ticket</span>
-                <a class="book-link" href="https://www.museicapitolini.org/en/" target="_blank" rel="noopener noreferrer">Official site ↗</a>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">🛣️</span> Appian Way &amp; Catacombs</h3>
-                <p>The old road out of the city, cypress, and underground Rome. A half-day that doesn’t fit between Trevi and dinner.</p>
-                <span class="price">Half day</span>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏺</span> Ostia Antica</h3>
-                <p>Pompeii without the crush — a whole Roman town, 30 minutes by train. I ran out of days before I ran out of city.</p>
-                <span class="price">Day trip</span>
-                <a class="book-link" href="https://www.ostiaantica.beniculturali.it/en/" target="_blank" rel="noopener noreferrer">Official site ↗</a>
+                <h3><span class="emo" aria-hidden="true">🚁</span> Helicopter hour</h3>
+                <p>Aerial scale I only approximated from the rim. Weather and budget decide. Still on the wish list.</p>
+                <span class="price">Tour</span>
             </div>
         </div>
     </section>
 
     <section class="day-tours" id="day-tours">
-        <h2>If you have a fifth day.</h2>
-        <p class="day-tours-lead">I stayed inside the walls. These are the day trips that actually fit from Rome — train if you can, a tour only if you don’t want to assemble it yourself.</p>
+        <h2>Side trips worth the drive.</h2>
+        <p class="day-tours-lead">Page for Antelope and Horseshoe. West Rim for Hualapai / Skywalk. Lake Mead if you are stitching Vegas to the canyon.</p>
         <div class="grid-3">
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🏺</span> Ostia Antica</h3>
-                <p>The easiest leave. Roma–Lido train from Porta San Paolo, about 30 minutes. A whole Roman town, almost empty compared with Pompeii. Do it yourself.</p>
-                <span class="price">Half day · train</span>
-                <a class="book-link" href="https://www.ostiaantica.beniculturali.it/en/" target="_blank" rel="noopener noreferrer">Official site ↗</a>
+                <h3><span class="emo" aria-hidden="true">🌀</span> Antelope Canyon</h3>
+                <p>From South Rim, a real drive to Page — or base in Page overnight. Guided slots only. Pair with Horseshoe Bend the same afternoon if energy holds.</p>
+                <span class="price">Day · car</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛲</span> Tivoli</h3>
-                <p>Villa d’Este’s fountains, then Hadrian’s Villa if you still have legs. Regional train or a bus from Ponte Mammolo. Book the villas; the town is walk-up.</p>
-                <span class="price">Full day</span>
-                <a class="book-link" href="https://villadestetivoli.cultura.gov.it/en/" target="_blank" rel="noopener noreferrer">Villa d’Este ↗</a>
+                <h3><span class="emo" aria-hidden="true">🐴</span> Horseshoe Bend</h3>
+                <p>Short hike, big payoff, parking fee. Sunset is beautiful and packed. Midday is hotter and sometimes kinder for space.</p>
+                <span class="price">Half day · Page</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🌋</span> Pompeii</h3>
-                <p>Frecciarossa to Naples, then the Circumvesuviana. A long day. A tour is the lazy version — same ruins, less timetable anxiety. Book the site either way.</p>
-                <span class="price">Long day</span>
-                <a class="book-link" href="https://pompeiisites.org/en/" target="_blank" rel="noopener noreferrer">Pompeii tickets ↗</a>
+                <h3><span class="emo" aria-hidden="true">🌉</span> Skywalk / West Rim</h3>
+                <p>Hualapai territory, glass bridge, often sold as a Vegas day tour. Different face of the canyon than Village sunrise — know which trip you want.</p>
+                <span class="price">Day · tour or car</span>
             </div>
             <div class="card">
-                <h3><span class="emo" aria-hidden="true">🚄</span> Florence</h3>
-                <p>Ninety minutes on a fast train if the timetable behaves. Duomo, Ponte Vecchio, one museum — not a second city in a day. First train out, last train back.</p>
-                <span class="price">Long day · train</span>
-                <a class="book-link" href="https://www.trenitalia.com/en.html" target="_blank" rel="noopener noreferrer">Trenitalia ↗</a>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">⛪</span> Orvieto</h3>
-                <p>An hour north. The duomo facade does the work. Cable car up from the station. Slow lunch, back before dark. Kinder than Florence.</p>
-                <span class="price">Day · train</span>
-                <a class="book-link" href="https://www.trenitalia.com/en.html" target="_blank" rel="noopener noreferrer">Trenitalia ↗</a>
-            </div>
-            <div class="card">
-                <h3><span class="emo" aria-hidden="true">🍷</span> Castelli Romani</h3>
-                <p>Frascati, Castel Gandolfo, a view of the lakes. Regional trains and a short bus. Wine, not ruins. The day trip if you’ve already had enough marble.</p>
-                <span class="price">Half day</span>
+                <h3><span class="emo" aria-hidden="true">💧</span> Lake Mead</h3>
+                <p>On the Vegas–canyon corridor. Blue water, desert rock, a stop that resets the eyes before or after the rim.</p>
+                <span class="price">Stop · drive</span>
             </div>
         </div>
     </section>
 
     <div class="next">
         <a href="../index.html">← Back to the atlas</a>
-        <a href="../vatican/">Vatican City is next →</a>
+        <a href="../lasvegas/">Las Vegas is next →</a>
     </div>
 
     <footer>
-        <span>Rome · Italy</span>
+        <span>Grand Canyon · USA</span>
         <span>globetrotwithveda.com</span>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
+
         const progress = document.getElementById('progress');
         const onScroll = () => {
             const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -1298,7 +1208,7 @@
         window.addEventListener('scroll', onScroll, { passive: true });
 
         const links = [...document.querySelectorAll('.rail a')];
-        const photoIds = new Set(['frames', 'colosseum', 'streets', 'pantheon', 'castel', 'navona', 'trevi', 'forum']);
+        const photoIds = new Set(['frames', 'hualapai', 'lakemead', 'village', 'rim', 'antelope', 'horseshoe']);
         const railHref = (id) => {
             if (photoIds.has(id)) return '#frames';
             const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
@@ -1408,21 +1318,19 @@
         });
 
         const places = [
-            { id: 'colosseum', name: 'Colosseum', n: '01', lat: 41.8902, lng: 12.4924, query: 'Colosseum, Rome, Italy' },
-            { id: 'forum', name: 'Roman Forum', n: '02', lat: 41.8925, lng: 12.4853, query: 'Roman Forum, Rome, Italy' },
-            { id: 'pantheon', name: 'Pantheon', n: '03', lat: 41.8986, lng: 12.4769, query: 'Pantheon, Rome, Italy' },
-            { id: 'navona', name: 'Piazza Navona', n: '04', lat: 41.8992, lng: 12.4731, query: 'Piazza Navona, Rome, Italy' },
-            { id: 'trevi', name: 'Trevi Fountain', n: '05', lat: 41.9009, lng: 12.4833, query: 'Trevi Fountain, Rome, Italy' },
-            { id: 'castel', name: "Castel Sant'Angelo", n: '06', lat: 41.9031, lng: 12.4663, query: "Castel Sant'Angelo, Rome, Italy" },
-            { id: 'steps', name: 'Spanish Steps', n: '07', lat: 41.9060, lng: 12.4828, query: 'Spanish Steps, Rome, Italy' }
+            { id: 'mather', name: 'Mather Point / Village', n: '01', lat: 36.0586, lng: -112.1079, query: 'Mather Point, Grand Canyon Village, AZ' },
+            { id: 'brightangel', name: 'Bright Angel trailhead', n: '02', lat: 36.0575, lng: -112.1434, query: 'Bright Angel Trailhead, Grand Canyon' },
+            { id: 'desertview', name: 'Desert View Watchtower', n: '03', lat: 36.0446, lng: -111.8260, query: 'Desert View Watchtower, Grand Canyon' },
+            { id: 'antelope', name: 'Antelope Canyon', n: '04', lat: 36.8619, lng: -111.3743, query: 'Upper Antelope Canyon, Page, AZ' },
+            { id: 'horseshoe', name: 'Horseshoe Bend', n: '05', lat: 36.8791, lng: -111.5104, query: 'Horseshoe Bend, Page, AZ' }
         ];
 
-        const mapLink = document.getElementById('rome-map-link');
+        const mapLink = document.getElementById('grandcanyon-map-link');
         const pinButtons = [...document.querySelectorAll('.map-pins button')];
         const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Colosseum%2C%20Rome&destination=Spanish%20Steps%2C%20Rome&waypoints=Roman%20Forum%2C%20Rome%7CPantheon%2C%20Rome%7CPiazza%20Navona%2C%20Rome%7CTrevi%20Fountain%2C%20Rome%7CCastel%20Sant%27Angelo%2C%20Rome&travelmode=walking';
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Mather%20Point%2C%20Grand%20Canyon&destination=Horseshoe%20Bend%2C%20Page%20AZ&waypoints=Bright%20Angel%20Trailhead%2C%20Grand%20Canyon%7CDesert%20View%20Watchtower%2C%20Grand%20Canyon%7CUpper%20Antelope%20Canyon%2C%20Page%20AZ&travelmode=driving';
 
-        const map = L.map('rome-map', {
+        const map = L.map('grandcanyon-map', {
             scrollWheelZoom: false,
             attributionControl: true
         });
@@ -1460,7 +1368,7 @@
         group.addTo(map);
         map.fitBounds(group.getBounds().pad(0.18));
         mapLink.href = googleAll;
-        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+        mapLink.textContent = 'Open a driving route in Google Maps ↗';
 
         const showPlace = (id) => {
             if (id === 'all') {
@@ -1468,13 +1376,13 @@
                 map.fitBounds(group.getBounds().pad(0.18));
                 map.closePopup();
                 mapLink.href = googleAll;
-                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                mapLink.textContent = 'Open a driving route in Google Maps ↗';
                 return;
             }
             const place = places.find((p) => p.id === id);
             if (!place) return;
             paintPins(id);
-            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            map.flyTo([place.lat, place.lng], 12, { duration: 0.6 });
             markers[id].openPopup();
             mapLink.href = googleSearch(place.query);
             mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
@@ -1501,6 +1409,7 @@
             }, { threshold: 0.2 });
             mapSpy.observe(mapSection);
         }
+
     </script>
 </body>
 </html>
