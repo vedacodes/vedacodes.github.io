@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome itinerary: 4 days, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A 4-day Rome itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/rome/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Rome itinerary: 4 days, food, map, and visa notes">
+    <meta property="og:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Rome page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/rome/">
+    <meta property="og:image" content="https://globetrotwithveda.com/rome-image.jpg">
+    <meta property="og:image:alt" content="Veda standing in front of the Colosseum in Rome">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rome itinerary: 4 days, food, map, and visa notes">
+    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — written by Veda.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/rome-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/rome/",
+                "url": "https://globetrotwithveda.com/rome/",
+                "name": "Rome itinerary: 4 days, food, map, and visa notes",
+                "description": "A 4-day Rome itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Rome",
+                    "containedInPlace": { "@type": "Country", "name": "Italy" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Rome", "item": "https://globetrotwithveda.com/rome/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1 span {
+            display: block;
+            font-size: 0.22em;
+            letter-spacing: 0.18em;
+            font-weight: 500;
+            color: var(--teal);
+            margin-top: 12px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #rome-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .intel h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead { color: var(--mute); margin-bottom: 28px; }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #rome-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">41.9028° N · 12.4964° E</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="rome" aria-label="Rome">
+        <div class="hero-media">
+            <img src="../rome-image.jpg" alt="Veda standing in front of the Colosseum">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">Italy · Field notes</p>
+            <h1>ROME<span>When in Rome — then write it down.</span></h1>
+            <p class="hero-lead">The city that has been waiting two thousand years for you to show up. Four days of stone, espresso, and getting lost on purpose.</p>
+            <div class="hero-stats">
+                <div><strong>4</strong><span>Days</span></div>
+                <div><strong>25+</strong><span>Miles walked</span></div>
+                <div><strong>7</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="Places in Rome">
+        <a href="#colosseum">01 Colosseum</a>
+        <a href="#streets">02 Streets</a>
+        <a href="#pantheon">03 Pantheon</a>
+        <a href="#castel">04 Castel</a>
+        <a href="#navona">05 Navona</a>
+        <a href="#trevi">06 Trevi</a>
+        <a href="#forum">07 Forum</a>
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>Not a checklist.<br>A walking fever.</h2>
+        <p>Rome wasn’t just a destination — it was a revelation. History lives in the streets here. Every piazza told a story, every fountain whispered. This city changed something in me, and I still carry that deeper hunger for discovery.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually walked.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Rome locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="colosseum">Colosseum</button>
+            <button type="button" aria-pressed="false" data-place="forum">Forum</button>
+            <button type="button" aria-pressed="false" data-place="pantheon">Pantheon</button>
+            <button type="button" aria-pressed="false" data-place="navona">Navona</button>
+            <button type="button" aria-pressed="false" data-place="trevi">Trevi</button>
+            <button type="button" aria-pressed="false" data-place="castel">Castel</button>
+            <button type="button" aria-pressed="false" data-place="steps">Spanish Steps</button>
+        </div>
+        <div class="map-frame">
+            <div id="rome-map" role="application" aria-label="Map of Rome with tagged locations"></div>
+        </div>
+        <a class="map-open" id="rome-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Colosseum%2C%20Rome&destination=Spanish%20Steps%2C%20Rome&waypoints=Roman%20Forum%2C%20Rome%7CPantheon%2C%20Rome%7CPiazza%20Navona%2C%20Rome%7CTrevi%20Fountain%2C%20Rome%7CCastel%20Sant%27Angelo%2C%20Rome&travelmode=walking" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <article class="chapter" id="colosseum">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-1.jpg" alt="The Colosseum, first look">
+            <img src="rome-image-10.jpg" alt="The Colosseum, another angle" loading="lazy">
+            <img src="rome-image-11.jpg" alt="The Colosseum, close stone" loading="lazy">
+            <img src="rome-image-12.jpg" alt="The Colosseum, wide view" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 04</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 07</p>
+            <h2>The Colosseum, before the crowds</h2>
+            <p>Standing in front of it for the first time was overwhelming. The scale hits immediately — you can almost hear the old roar. This is the photograph that still looks like a dare, and the reason I fell in love with traveling like this.</p>
+        </div>
+    </article>
+
+    <article class="chapter is-flip" id="streets">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-2.jpg" alt="A narrow Roman street">
+            <img src="rome-image-17.jpg" alt="Another Roman street" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 07</p>
+            <h2>Lost on cobbles</h2>
+            <p>I got completely lost in the narrow streets. That was the point. The best hours had no map — just stone underfoot and a corner that turned into something I hadn’t planned to find.</p>
+        </div>
+    </article>
+
+    <article class="chapter" id="pantheon">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-3.jpg" alt="The Pantheon portico">
+            <img src="rome-image-16.jpg" alt="The Pantheon at another hour" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 07</p>
+            <h2>The Pantheon, a hole in the sky</h2>
+            <p>Alone here at sunset. Light through the oculus, Agrippa’s name still cut into the stone, and a chill I didn’t expect. Some rooms don’t need a caption. This one already had an inscription.</p>
+        </div>
+    </article>
+
+    <article class="chapter is-flip" id="castel">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-4.jpg" alt="Castel Sant’Angelo">
+            <img src="rome-image-5.jpg" alt="Castel Sant’Angelo, second view" loading="lazy">
+            <img src="rome-image-6.jpg" alt="Castel Sant’Angelo, third view" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 07</p>
+            <h2>Castel Sant’Angelo, sunrise</h2>
+            <p>Woke up early for this. Rome coming online slowly, the Tiber holding the gold. These are the quiet minutes between the chaos — the reason the alarm was worth it.</p>
+        </div>
+    </article>
+
+    <article class="chapter" id="navona">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-7.jpg" alt="Piazza Navona">
+            <img src="rome-image-8.jpg" alt="Piazza Navona, another view" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 07</p>
+            <h2>Navona, an open-air theater</h2>
+            <p>Hours of people-watching. Baroque fountains, street artists, a square that never drops its volume. It felt less like a piazza and more like a stage that forgot the curtain.</p>
+        </div>
+    </article>
+
+    <article class="chapter is-flip" id="trevi">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-9.jpg" alt="Trevi Fountain at night">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 07</p>
+            <h2>Trevi, after dark</h2>
+            <p>A coin, a wish, marble lit like a film set. The water goes teal at night. I stayed longer than the crowd wanted me to, reading the stone the way you read a letter you already know by heart.</p>
+        </div>
+    </article>
+
+    <article class="chapter" id="forum">
+        <div class="film" data-film>
+            <img class="is-on" src="rome-image-14.jpg" alt="The Roman Forum">
+            <img src="rome-image-15.jpg" alt="The Roman Forum, second view" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 07</p>
+            <h2>The Forum, time travel without a machine</h2>
+            <p>Walking where Caesar walked is a sentence that should sound like a brochure. It doesn’t, not when the stones are under you. Two thousand years, still taking attendance.</p>
+        </div>
+    </article>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">The useful layer — tickets, bowls of carbonara, and how not to melt in August.</p>
+        <div class="tabs" role="tablist" aria-label="Rome practical notes">
+            <button type="button" role="tab" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍝</span> Eat</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Colosseum</h3>
+                <p>Skip-the-line in advance. Early morning or late afternoon — fewer people, better light.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛪</span> Vatican Museums</h3>
+                <p>Book weeks ahead. Guided tour helps for the Sistine Chapel. Dress code is not a suggestion.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛕</span> Pantheon</h3>
+                <p>Arrive early. The oculus does different work all day. Rain makes it stranger, in a good way.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛲</span> Trevi Fountain</h3>
+                <p>Sunrise if you want the photo without a hundred shoulders. Right hand, over the left shoulder.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> Spanish Steps</h3>
+                <p>Spring azaleas if you can time it. Otherwise: sit, watch, then wander the shops.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Roman Forum</h3>
+                <p>Same ticket as the Colosseum. Water, decent shoes, audio guide. The ruins need a narrator.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍝</span> Carbonara</h3>
+                <p>Eggs, pecorino, guanciale, pepper. If there’s cream, you’re in a different city.</p>
+                <span class="price">€12–18</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧀</span> Cacio e pepe</h3>
+                <p>Looks simple. Isn’t. Cheese and pepper in the right emulsion is a magic trick.</p>
+                <span class="price">€10–15</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍚</span> Supplì</h3>
+                <p>Fried rice, mozzarella heart. Eat it walking. That’s the correct protocol.</p>
+                <span class="price">€2–4</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍖</span> Saltimbocca</h3>
+                <p>Veal, prosciutto, sage. The name means it jumps in the mouth. Believe it.</p>
+                <span class="price">€18–25</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍨</span> Gelato</h3>
+                <p>Natural color, lids on the tubs, made that day. Tourist neon is a warning label.</p>
+                <span class="price">€3–6</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☕</span> Espresso</h3>
+                <p>Stand at the bar. Cappuccino is a morning animal. After 11, don’t.</p>
+                <span class="price">€1–2</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>3–4 months ahead for April–June and September–October. 6–8 weeks for winter. Easter and Christmas: book the second you know you’re going.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>Historic center</strong> — walk everywhere, pay for it. <strong>Trastevere</strong> — evenings, trattorie, actual neighborhood. <strong>Near the Vatican</strong> — art days. <strong>Termini</strong> — cheaper, easy trains.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💶</span> Spend less</h3>
+                <p>Skip the hotels glued to monuments. Boutique B&amp;Bs in residential streets. Sunday–Thursday is kinder. Breakfast included is not a small line item.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> April–May</h3>
+                <p>18–23°C, flowers, Easter crowds. Peak prices. Still the easiest Rome to love.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> June–August</h3>
+                <p>25–35°C. Long days, outdoor tables, and heat that files a complaint. Go if you must; hide at noon.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> September–October</h3>
+                <p>20–25°C, crisp, still busy in September. One of the two best windows.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">❄️</span> November–March</h3>
+                <p>8–15°C, shorter days, fewer people, lower rates. Some hours shrink. Cozy, if you pack a coat.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk</h3>
+                <p>The historic center is a pedestrian argument you will lose, happily. Shoes, water, done.</p>
+                <span class="price">Free</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> Metro</h3>
+                <p>Line A: Spanish Steps, Vatican. Line B: Colosseum. 5:30am–11:30pm (12:30am weekends).</p>
+                <span class="price">€1.50</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚌</span> Bus &amp; tram</h3>
+                <p>Validate on board. #64 is useful and packed. Tram #8 is the scenic cousin.</p>
+                <span class="price">€1.50</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Taxi</h3>
+                <p>Official white cars only. Fixed airport rates. Apps exist. Still not cheap.</p>
+                <span class="price">€3–4 + €1.10/km</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎫</span> Roma Pass</h3>
+                <p>72 hours: transit plus the first two attractions. Worth it if you’re stacking paid sites.</p>
+                <span class="price">€38.50</span>
+            </div>
+        </div>
+
+        <div class="panel visa-stack" id="visa" role="tabpanel" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>Schengen visa required.</strong> Indian citizens need a Type C visa to visit Italy.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> Tourist visa (Type C)</h3>
+                            <div class="detail"><strong>Validity</strong><span>Up to 90 days within a 180-day period</span></div>
+                            <div class="detail"><strong>Processing</strong><span>15–20 working days (can extend to 30–45)</span></div>
+                            <div class="detail"><strong>Fee</strong><span>€80 (approx ₹7,200) + VFS service charges</span></div>
+                            <div class="detail"><strong>Entry</strong><span>Single, double, or multiple</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <ul>
+                                <li>Valid passport (min. 6 months validity)</li>
+                                <li>Completed visa application form</li>
+                                <li>Recent passport-size photographs</li>
+                                <li>Flight reservation / itinerary</li>
+                                <li>Hotel bookings / accommodation proof</li>
+                                <li>Travel insurance (min. €30,000 coverage)</li>
+                                <li>Bank statements (last 6 months)</li>
+                                <li>Income tax returns / employment letter</li>
+                                <li>Cover letter explaining trip purpose</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> Application centers</h3>
+                            <div class="detail"><strong>VFS in India</strong><span>New Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Pune, Ahmedabad, Chandigarh, Kochi, Jalandhar, Goa</span></div>
+                            <div class="detail"><strong>Appointment</strong><span>Book online at italy.vfsglobal.co.in</span></div>
+                            <div class="detail"><strong>Biometrics</strong><span>Required (valid for 5 years)</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Apply 3–4 weeks before travel (not more than 3 months in advance)</li>
+                                <li>A Schengen visa covers all 27 Schengen countries</li>
+                                <li>Show strong ties to India (job, property, family)</li>
+                                <li>Sufficient funds: about €50–60 per day is a common benchmark</li>
+                                <li>Insurance must cover the entire Schengen area</li>
+                                <li>Keep documents in one folder</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. Always check the Italian Embassy/Consulate or VFS Global for current requirements and fees. Visa rules can change.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> Tourist visa (Type C)</h3>
+                            <div class="detail"><strong>Validity</strong><span>Up to 90 days within a 180-day period</span></div>
+                            <div class="detail"><strong>Processing</strong><span>10–15 working days (faster than from India)</span></div>
+                            <div class="detail"><strong>Fee</strong><span>€80 (approx $85) + service charges</span></div>
+                            <div class="detail"><strong>Entry</strong><span>Single, double, or multiple</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <ul>
+                                <li>Valid Indian passport (min. 6 months validity)</li>
+                                <li>Valid US visa (H1B/H4/OPT) with validity beyond the trip</li>
+                                <li>I-797 approval notice (for H1B/H4)</li>
+                                <li>EAD card (for OPT/H4 EAD)</li>
+                                <li>Recent pay stubs (last 3 months)</li>
+                                <li>Employment verification letter</li>
+                                <li>Completed visa application form</li>
+                                <li>Recent passport-size photographs</li>
+                                <li>Flight reservation / itinerary</li>
+                                <li>Hotel bookings / accommodation proof</li>
+                                <li>Travel insurance (min. €30,000 coverage)</li>
+                                <li>US bank statements (last 3 months)</li>
+                                <li>Cover letter explaining trip purpose</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🇺🇸</span> Application in USA</h3>
+                            <div class="detail"><strong>Centers</strong><span>Italian consulates in Washington DC, New York, Los Angeles, San Francisco, Houston, Miami, Chicago, Detroit, Boston</span></div>
+                            <div class="detail"><strong>Jurisdiction</strong><span>Apply at the consulate that covers your state</span></div>
+                            <div class="detail"><strong>Appointment</strong><span>Book through the consulate site or an authorized service center</span></div>
+                            <div class="detail"><strong>Biometrics</strong><span>Required at appointment (valid for 5 years)</span></div>
+                            <div class="detail"><strong>Advantage</strong><span>Higher approval rate and faster processing for H1B/H4 holders</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>Apply 3–4 weeks before travel</li>
+                                <li>US visa status strengthens the application</li>
+                                <li>Show ties to the USA (job, lease, return ticket)</li>
+                                <li>Keep I-797 and recent pay stubs ready</li>
+                                <li>Multiple-entry Schengen visas are commonly granted to H1B holders</li>
+                                <li>Insurance must cover the entire Schengen area</li>
+                                <li>Make sure the US visa is valid for re-entry to the USA</li>
+                                <li>Appointments are recommended even if some consulates take walk-ins</li>
+                                <li>Processing is generally faster than applying from India</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">⚠️</span> Important considerations</h3>
+                            <div class="detail"><strong>US visa validity</strong><span>The H1B/H4/OPT stamp must be valid for re-entry if you return to the USA from Europe. If expired, you may need a stamp at a US consulate abroad.</span></div>
+                            <div class="detail"><strong>I-94</strong><span>Confirm it stays valid during and after the trip</span></div>
+                            <div class="detail"><strong>Employment letter</strong><span>Should state you’ll return to work after vacation</span></div>
+                            <div class="detail"><strong>Timing</strong><span>Don’t plan this trip during a US visa stamping window — finish that first</span></div>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Indian citizens on US work visas have high Schengen approval rates. Verify US immigration status for re-entry before Europe. Check the Italian consulate that covers your state.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>No visa required.</strong> US citizens can visit Italy visa-free for tourism or business.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Visa-free entry</h3>
+                        <div class="detail"><strong>Duration</strong><span>Up to 90 days within any 180-day period</span></div>
+                        <div class="detail"><strong>Purpose</strong><span>Tourism, business, family visits</span></div>
+                        <div class="detail"><strong>Passport</strong><span>Valid at least 3 months beyond the stay</span></div>
+                        <div class="detail"><strong>Schengen</strong><span>Entry covers all 27 Schengen countries</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry requirements</h3>
+                        <ul>
+                            <li>Valid US passport (min. 3 months after departure)</li>
+                            <li>Return / onward ticket</li>
+                            <li>Proof of accommodation</li>
+                            <li>Sufficient funds for the stay</li>
+                            <li>Travel insurance (recommended, not mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🇪🇺</span> ETIAS (coming online)</h3>
+                        <div class="detail"><strong>What</strong><span>European Travel Information and Authorization System</span></div>
+                        <div class="detail"><strong>Cost</strong><span>€7 (valid 3 years or until passport expiry)</span></div>
+                        <div class="detail"><strong>Application</strong><span>Online, about 10–15 minutes</span></div>
+                        <div class="detail"><strong>Processing</strong><span>Often minutes; can take up to 30 days</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Track the 90/180-day limit across all Schengen countries</li>
+                            <li>Keep accommodation and return-flight proof handy</li>
+                            <li>Insurance is still a good idea</li>
+                            <li>Register for ETIAS once it is mandatory</li>
+                            <li>Officers may ask purpose and duration</li>
+                            <li>Leave blank passport pages for stamps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> Visa-free still means Schengen rules. ETIAS will be required when it launches. Check official sources for the latest dates.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../vatican-page.html">Vatican City is next →</a>
+    </div>
+
+    <footer>
+        <span>Rome · Italy</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const sections = links
+            .map((link) => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                links.forEach((link) => {
+                    link.classList.toggle('is-on', link.getAttribute('href') === `#${entry.target.id}`);
+                });
+            });
+        }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 });
+        sections.forEach((section) => spy.observe(section));
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        document.querySelector('.rail a[href="#visa"]')?.addEventListener('click', () => {
+            document.querySelector('.tabs button[data-tab="visa"]')?.click();
+        });
+
+        const places = [
+            { id: 'colosseum', name: 'Colosseum', n: '01', lat: 41.8902, lng: 12.4924, query: 'Colosseum, Rome, Italy' },
+            { id: 'forum', name: 'Roman Forum', n: '02', lat: 41.8925, lng: 12.4853, query: 'Roman Forum, Rome, Italy' },
+            { id: 'pantheon', name: 'Pantheon', n: '03', lat: 41.8986, lng: 12.4769, query: 'Pantheon, Rome, Italy' },
+            { id: 'navona', name: 'Piazza Navona', n: '04', lat: 41.8992, lng: 12.4731, query: 'Piazza Navona, Rome, Italy' },
+            { id: 'trevi', name: 'Trevi Fountain', n: '05', lat: 41.9009, lng: 12.4833, query: 'Trevi Fountain, Rome, Italy' },
+            { id: 'castel', name: "Castel Sant'Angelo", n: '06', lat: 41.9031, lng: 12.4663, query: "Castel Sant'Angelo, Rome, Italy" },
+            { id: 'steps', name: 'Spanish Steps', n: '07', lat: 41.9060, lng: 12.4828, query: 'Spanish Steps, Rome, Italy' }
+        ];
+
+        const mapLink = document.getElementById('rome-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Colosseum%2C%20Rome&destination=Spanish%20Steps%2C%20Rome&waypoints=Roman%20Forum%2C%20Rome%7CPantheon%2C%20Rome%7CPiazza%20Navona%2C%20Rome%7CTrevi%20Fountain%2C%20Rome%7CCastel%20Sant%27Angelo%2C%20Rome&travelmode=walking';
+
+        const map = L.map('rome-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+    </script>
+</body>
+</html>
