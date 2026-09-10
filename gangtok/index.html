@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangtok itinerary: MG Marg, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A Gangtok itinerary with MG Marg, monasteries, what to eat, when to go, India visa notes, and Sikkim permit reminders for foreign visitors — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/gangtok/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Gangtok itinerary: MG Marg, food, map, and visa notes">
+    <meta property="og:description" content="MG Marg nights, ropeway views, momos, and visa notes for Indian and US passports — in one Gangtok page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/gangtok/">
+    <meta property="og:image" content="https://globetrotwithveda.com/gangtok-image.jpg">
+    <meta property="og:image:alt" content="Gangtok hillside capital in Sikkim">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gangtok itinerary: MG Marg, food, map, and visa notes">
+    <meta name="twitter:description" content="MG Marg nights, ropeway views, momos, and visa notes for Indian and US passports — in one Gangtok page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/gangtok-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/gangtok/",
+                "url": "https://globetrotwithveda.com/gangtok/",
+                "name": "Gangtok itinerary: MG Marg, food, map, and visa notes",
+                "description": "A Gangtok itinerary with MG Marg, monasteries, what to eat, when to go, India visa notes, and Sikkim permit reminders for foreign visitors — written by Veda, who actually went.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Gangtok",
+                    "containedInPlace": { "@type": "Country", "name": "India" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Gangtok", "item": "https://globetrotwithveda.com/gangtok/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #gangtok-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #gangtok-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        
+        </style>
+</head>
+
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">27.3389° N · 88.6065° E</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="gangtok" aria-label="Gangtok">
+        <div class="hero-media">
+            <img src="../gangtok-image.jpg" alt="Gangtok hillside capital in Sikkim">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">India · Sikkim · Field notes</p>
+            <h1>GANGTOK<span>Prayer flags, MG Marg nights, and a capital in the clouds.</span></h1>
+            <p class="hero-lead">Pedestrian lamps on MG Marg, a ropeway over colored roofs, flower-house humidity, waterfalls under lungta flags, and momos that taste like the altitude. Sikkim’s capital — crisp air, monastery quiet, shared taxis for the lakes.</p>
+            <div class="hero-stats">
+                <div><strong>5</strong><span>Days in the mountains</span></div>
+                <div><strong>1650m</strong><span>Above sea level</span></div>
+                <div><strong>∞</strong><span>Prayer flags</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>A fairy-tale capital.<br>Then the real hills.</h2>
+        <p>Gangtok felt like stepping into clean mountain air and colorful flags. MG Marg at night is the town’s living room; Rumtek and the ropeway pull you outward. I ate momos and thukpa until the cold made sense, and left knowing Sikkim asks foreigners to check permits — and asks everyone to watch the weather.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually went.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Gangtok locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="mg-marg">MG Marg</button>
+            <button type="button" aria-pressed="false" data-place="rumtek">Rumtek</button>
+            <button type="button" aria-pressed="false" data-place="flower">Flowers</button>
+            <button type="button" aria-pressed="false" data-place="ropeway">Ropeway</button>
+            <button type="button" aria-pressed="false" data-place="tsomgo">Tsomgo</button>
+            <button type="button" aria-pressed="false" data-place="falls">Ban Jhakri</button>
+        </div>
+        <div class="map-frame">
+            <div id="gangtok-map" role="region" aria-label="Map of Gangtok with tagged locations"></div>
+        </div>
+        <a class="map-open" id="gangtok-map-link" href="https://www.google.com/maps/search/?api=1&query=Gangtok" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">The useful layer — MG Marg evenings, ropeway tickets, shared taxis for Tsomgo, and permit notes if your passport is not Indian.</p>
+        <div class="tabs" role="tablist" aria-label="Gangtok practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🥟</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚕</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛍️</span> MG Marg</h3>
+                <p>Pedestrian main street — shops, lamps, Gandhi statue, evening air without engines. Start here. End here. People-watch like it is a sport.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🙏</span> Rumtek Monastery</h3>
+                <p>Tibetan Buddhist complex outside town — architecture, meditation halls, a quieter spiritual register than the mall.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌺</span> Flower Exhibition Centre</h3>
+                <p>Indoor Himalayan flora, especially when rhododendrons show off. Humid glasshouse contrast to the ridge wind.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚡</span> Ropeway</h3>
+                <p>Cable cabin over colored roofs and green ridges. Photography from a moving window. Short ride, long view.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏞️</span> Tsomgo Lake</h3>
+                <p>Sacred glacial lake on a day trip — snow peaks, yak photo ops, permits for some nationalities. Dress warmer than Gangtok town.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💦</span> Waterfalls & flags</h3>
+                <p>Ban Jhakri and similar stops — moss, spray, lungta strings across the sky. Easy add-ons between town and longer lake days.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛂</span> Permits for day trips</h3>
+                <p>Tsomgo / higher areas can need paperwork for foreign nationals. Hotels and tour desks often help. Indian citizens usually skip ILP — still carry ID.</p>
+                <span class="price">Verify</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚡</span> Ropeway tickets</h3>
+                <p>Buy at the station when queues are short. Cloudy days still show the hillside town; clear days show ridges.</p>
+                <span class="price">Same day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Shared taxis</h3>
+                <p>Day trips leave when full. Book through your hotel for Tsomgo packages if you want a fixed pickup.</p>
+                <span class="price">Shared / package</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>MG Marg, flower centre hours, most in-town viewpoints. Show up; walk; eat when hungry.</p>
+                <span class="price">Walk up</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥟</span> Momos</h3>
+                <p>Steamed or fried — vegetables, chicken, or yak. Mountain comfort food. MG Marg and side lanes keep the steam going.</p>
+                <span class="price">₹80–200</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍜</span> Thukpa</h3>
+                <p>Hearty noodle soup for cold evenings. Warming, filling, correct after a ropeway wind.</p>
+                <span class="price">₹100–250</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🫖</span> Butter tea</h3>
+                <p>Tibetan tea with yak butter and salt. Acquired taste; essential high-altitude ritual if you let it be.</p>
+                <span class="price">₹40–100</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍛</span> Gundruk soup</h3>
+                <p>Fermented leafy vegetable soup — tangy Nepali classic. Healthy, warming, less touristy than another pizza.</p>
+                <span class="price">₹80–150</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥩</span> Yak meat</h3>
+                <p>Local high-altitude protein when you find it on a menu. Rich, filling, very Sikkim.</p>
+                <span class="price">₹400–800</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧀</span> Chhurpi</h3>
+                <p>Hard yak cheese snack — lasts forever, fuels walks. Buy small; your jaw will negotiate.</p>
+                <span class="price">₹100–300</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>2–3 months ahead for March–May and October–December. Book permits and lake transport early. Weather flips fast.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>MG Marg</strong> — restaurants and lamps. <strong>Development Area</strong> — quieter, mountain views. <strong>Tibet Road</strong> — budget and local atmosphere. Homestays beat anonymous mid-rises if you want conversation.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Shared taxis for day trips. Markets for momos. Homestays over view premiums if MG Marg is a short walk.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> Mar–May</h3>
+                <p>Peak clarity and flowers. Book early. Excellent for ropeway views and monastery walks.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌧️</span> Monsoon</h3>
+                <p>Lush, slippery, landslide risk on lake roads. Soft light for town; hard for Tsomgo plans.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> Oct–Dec</h3>
+                <p>Post-monsoon clarity, festive energy, cold nights. Strong window with spring.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">❄️</span> Jan–Feb</h3>
+                <p>Cold, quieter, possible snow on higher day trips. Pack layers; enjoy empty MG Marg mornings.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk MG Marg</h3>
+                <p>The pedestrian spine. Evening is the point. Daytime for errands and cafés.</p>
+                <span class="price">Free</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Shared taxis</h3>
+                <p>In-town hops and day trips. Leave when full. Hotel desks arrange reliable drivers for lakes.</p>
+                <span class="price">Shared</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚡</span> Ropeway</h3>
+                <p>Not transit — the view product. One ticket, one hillside explained from above.</p>
+                <span class="price">Ticket</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">✈️</span> Getting there</h3>
+                <p>Bagdogra + road into Sikkim, or connections via Siliguri. Pad time for mountain traffic and fog.</p>
+                <span class="price">IXB + road</span>
+            </div>
+        </div>
+
+<div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India / abroad</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Already in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-alert ok">
+                        <strong>Domestic travel within India.</strong> Indian citizens do not need a visa for Gangtok — this is not an international entry.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> Domestic trip</h3>
+                            <div class="detail"><strong>Visa</strong><span>None for Indian citizens traveling inside India</span></div>
+                            <div class="detail"><strong>ID</strong><span>Aadhaar, passport, or other accepted domestic ID for flights / hotels as required</span></div>
+                            <div class="detail"><strong>Gateway</strong><span>Bagdogra (IXB) or New Jalpaiguri (NJP), then shared jeep / taxi into the hills</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🪪</span> Carry anyway</h3>
+                            <ul>
+                                <li>Government photo ID</li>
+                                <li>Flight / train tickets to Bagdogra or NJP</li>
+                                <li>Hotel booking confirmation (hotels often ask at check-in)</li>
+                                <li>Cash for shared jeeps — apps are patchy in the hills</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips</h3>
+                            <ul>
+                                <li>This is India domestic — not a US / Schengen problem</li>
+                                <li>Altitude and winding roads matter more than paperwork</li>
+                                <li>Book early-morning jeeps the night before in peak season</li>
+                                <li>Monsoon can wash out plans — check road status</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> Local note</h3>
+                            <p>Once cleared into India, Gangtok is hill travel — MG Marg on foot, shared taxis for lakes, ropeway for the postcard. Foreign visitors should verify Sikkim Inner Line Permit rules.</p>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Hotel and airline ID rules still apply. Carry a government photo ID even on domestic hops.
+                    <div class="note" style="margin-top:14px"><strong>Sikkim:</strong> Foreign nationals may need an Inner Line Permit (ILP) / protected-area paperwork for parts of Sikkim. Indian citizens generally do not. Rules and checkpoints change — verify current requirements for non-Indians before you travel.</div></div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert">
+                        <strong>Entering India — not US domestic travel.</strong> If you are an Indian citizen on H-1B, H-4, OPT, or similar in the United States, a trip to Gangtok means an international flight into India. Use your Indian passport (or OCI / applicable documents as your status requires). This is not US domestic travel.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> India entry</h3>
+                            <div class="detail"><strong>Visa</strong><span>Indian citizens enter India on an Indian passport — no tourist visa required</span></div>
+                            <div class="detail"><strong>OCI</strong><span>If you hold OCI (or another applicable document), follow current Bureau of Immigration rules</span></div>
+                            <div class="detail"><strong>US status</strong><span>Keep H-1B/H-4/OPT valid for US re-entry; India does not fix US visa stamp problems</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🪪</span> Carry anyway</h3>
+                            <ul>
+                                <li>Indian passport (valid)</li>
+                                <li>US visa stamp / I-797 / EAD as relevant for return to the US</li>
+                                <li>Return ticket to the United States</li>
+                                <li>Hotel bookings in the hills</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Re-entering the US</h3>
+                            <ul>
+                                <li>Valid US visa stamp in passport if your category needs one</li>
+                                <li>Do not assume automatic re-entry — check your status before you leave the US</li>
+                                <li>OCI holders who are foreign nationals follow foreign-national entry rules into India</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips</h3>
+                            <ul>
+                                <li>Bagdogra and NJP are the usual gateways — pad connection time</li>
+                                <li>Shared jeeps leave when full; private taxis cost more</li>
+                                <li>This trip is international immigration into India, then domestic hills travel</li>
+                                <li>Rules change — indianvisaonline.gov.in / BOI for foreigners; passport.gov.in for citizens</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status questions are individual. When in doubt, check Bureau of Immigration / your counsel — not a blog comment thread.
+                    <div class="note" style="margin-top:14px"><strong>Sikkim:</strong> Foreign nationals may need an Inner Line Permit (ILP) / protected-area paperwork for parts of Sikkim. Indian citizens generally do not. Rules and checkpoints change — verify current requirements for non-Indians before you travel.</div></div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert">
+                    <strong>Indian visa / eVisa required.</strong> US citizens need a valid Indian visa or eVisa before flying to India. Gangtok is not US domestic travel.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">📅</span> eVisa / visa</h3>
+                        <div class="detail"><strong>What</strong><span>Indian eVisa (tourist) or visa from an Indian consulate — confirm eligibility on the official portal</span></div>
+                        <div class="detail"><strong>Apply</strong><span>indianvisaonline.gov.in (official eVisa) or a consulate for stamp visas</span></div>
+                        <div class="detail"><strong>Passport</strong><span>Valid; check remaining validity and blank pages before you apply</span></div>
+                        <div class="detail"><strong>Entry</strong><span>Immigration decides at the airport — a visa is not a guarantee of entry</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry checklist</h3>
+                        <ul>
+                            <li>Valid US passport</li>
+                            <li>Approved eVisa / visa printout or digital copy</li>
+                            <li>Return / onward ticket</li>
+                            <li>Hotel proof for the hills</li>
+                            <li>Enough funds for the stay</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Apply before you buy nonrefundable hill transport</li>
+                            <li>Bagdogra (IXB) is the usual air gateway</li>
+                            <li>Carry warm layers for early mountain mornings</li>
+                            <li>Verify current eVisa categories on the official site only</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">📍</span> Local note</h3>
+                        <p>Once cleared into India, Gangtok is hill travel — MG Marg on foot, shared taxis for lakes, ropeway for the postcard. Foreign visitors should verify Sikkim Inner Line Permit rules.</p>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> Visa rules change. Check indianvisaonline.gov.in and travel.state.gov before you book.
+                    <div class="note" style="margin-top:14px"><strong>Sikkim:</strong> Foreign nationals may need an Inner Line Permit (ILP) / protected-area paperwork for parts of Sikkim. Indian citizens generally do not. Rules and checkpoints change — verify current requirements for non-Indians before you travel.</div></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Eight chapters from the diary — MG Marg lamps, a flower house, ridge paths, prayer-flag waterfalls, a ropeway cabin, a plate with steam, Namchi’s stadium green, and moss forests on the climb.</p>
+    </section>
+
+    <article class="chapter" id="mg-marg">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-1.jpg" alt="Evening on MG Marg, Gangtok's pedestrian main street">
+            <img src="gangtok-image-16.jpg" alt="Sitting on MG Marg at night" loading="lazy">
+            <img src="gangtok-image-17.jpg" alt="Gandhi statue on MG Marg, Gangtok" loading="lazy">
+            <img src="gangtok-image-18.jpg" alt="Cheer for India photo cutout on MG Marg" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 04</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 08</p>
+            <h2>MG Marg after dark</h2>
+            <p>First glimpse of Gangtok is often this clean pedestrian mall — lamps, shop signs, Gandhi in bronze, strangers walking without horns. The capital’s living room. I came back every night.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="flower-centre">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-2.jpg" alt="Inside the Flower Exhibition Centre in Gangtok">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 08</p>
+            <h2>Flower house humidity</h2>
+            <p>Cultural treasure in glass — ferns, palms, a “don’t pluck” sign, and Himalayan blooms when the season agrees. Soft contrast to the ridge wind outside.</p>
+        </div>
+    </article>
+    <article class="chapter" id="paths">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-3.jpg" alt="Covered hillside staircase with yellow railings">
+            <img src="gangtok-image-4.jpg" alt="Park path with prayer flags in Gangtok" loading="lazy">
+            <img src="gangtok-image-5.jpg" alt="Overlook across misty Sikkim valleys" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 08</p>
+            <h2>Paths, flags, overlooks</h2>
+            <p>Covered stairs up green banks, mossy trees, prayer flags in the distance, a valley that drops forever. Local life is vertical. Hidden gems are often just one more flight of steps.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="waterfall">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-6.jpg" alt="Prayer flags over a mossy waterfall near Gangtok">
+            <img src="gangtok-image-7.jpg" alt="Traditional dress beside a waterfall in Sikkim" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 08</p>
+            <h2>Waterfall under lungta</h2>
+            <p>Unforgettable: spray, moss, and strings of prayer flags cutting the sky. Traditional dress for a photo, then cold hands again. Sikkim’s soft power is color against green stone.</p>
+        </div>
+    </article>
+    <article class="chapter" id="ropeway">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-8.jpg" alt="Looking out from the Gangtok ropeway cabin">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 08</p>
+            <h2>Ropeway over the roofs</h2>
+            <p>A cabin window, colored tin roofs, ridges beyond. The town finally reads as a map. Farewell views started here long before the airport road.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="plate">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-9.jpg" alt="Momos and a sizzling platter with hillside town views">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 08</p>
+            <h2>A plate with a view</h2>
+            <p>Fried momos, a sizzling platter throwing steam, hillside buildings through the glass. Mountain hunger is specific — dumpling, spice, then another walk in the cold.</p>
+        </div>
+    </article>
+    <article class="chapter" id="namchi-day">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-11.jpg" alt="Bhaichung Stadium in Namchi, Sikkim">
+            <img src="gangtok-image-12.jpg" alt="Misty tea gardens on a Sikkim hillside" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 08</p>
+            <h2>Namchi green, tea mist</h2>
+            <p>Bhaichung Stadium’s yellow seats under cloud, then tea terraces swallowing a valley. Day-trip Sikkim — football pride and plantation fog on the same road.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="moss-forest">
+        <div class="film" data-film>
+            <img class="is-on" src="gangtok-image-14.jpg" alt="Looking up through a moss-covered forest canopy">
+            <img src="gangtok-image-15.jpg" alt="Standing in a mossy Himalayan forest" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">08 / 08</p>
+            <h2>Moss forest vertical</h2>
+            <p>Look up: trunks in green velvet, canopy closing the sky. The hills’ quieter frames — not a landmark with a ticket, just humidity and height.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Five days filled MG Marg and the ropeway. These are the rooms and ridges I still owe Sikkim.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🙏</span> Rumtek, slower</h3>
+                <p>I skimmed the monastery rhythm. A morning without a lake-clock running is unfinished.</p>
+                <span class="price">Morning</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏞️</span> Tsomgo on a clear day</h3>
+                <p>Weather stole the postcard once. A blue-sky lake day is still owed.</p>
+                <span class="price">Day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎭</span> A cultural show</h3>
+                <p>I talked about Sikkimese dance more than I sat for it. One evening performance remains.</p>
+                <span class="price">Night</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏔️</span> Higher permit country</h3>
+                <p>Nathula and farther ridges when paperwork and season align. Not every trip earns the pass.</p>
+                <span class="price">Permit day</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have another day.</h2>
+        <p class="day-tours-lead">Tsomgo for the glacial lake, Rumtek for monastery quiet, or Namchi if you want stadium green and Samdruptse on a longer loop.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏞️</span> Tsomgo Lake</h3>
+                <p>Shared taxi packages, warm layers, yak photos. Confirm permits if your passport is not Indian.</p>
+                <span class="price">Day · taxi</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🙏</span> Rumtek Monastery</h3>
+                <p>Half day outside town. Architecture, quiet halls, a different pace than MG Marg.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💦</span> Ban Jhakri Falls</h3>
+                <p>Easy waterfall stop with prayer-flag energy. Soft day when altitude already taxed you.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛕</span> Namchi loop</h3>
+                <p>Samdruptse, Char Dham approaches, stadium green. Longer road day from Gangtok.</p>
+                <span class="price">Day · jeep</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../darjeeling/">← Darjeeling</a>
+        <a href="../index.html">More of the atlas →</a>
+    </div>
+
+    <footer>
+        <span>Gangtok · Sikkim · India</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'mg-marg', 'flower-centre', 'paths', 'waterfall', 'ropeway', 'plate', 'namchi-day', 'moss-forest']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'mg-marg', name: 'MG Marg', n: '01', lat: 27.3284, lng: 88.6122, query: 'MG Marg, Gangtok' },
+            { id: 'rumtek', name: 'Rumtek Monastery', n: '02', lat: 27.2885, lng: 88.5616, query: 'Rumtek Monastery, Sikkim' },
+            { id: 'flower', name: 'Flower Exhibition Centre', n: '03', lat: 27.3255, lng: 88.6135, query: 'Flower Exhibition Centre, Gangtok' },
+            { id: 'ropeway', name: 'Gangtok Ropeway', n: '04', lat: 27.331, lng: 88.6138, query: 'Gangtok Ropeway' },
+            { id: 'tsomgo', name: 'Tsomgo Lake', n: '05', lat: 27.375, lng: 88.762, query: 'Tsomgo Lake, Sikkim' },
+            { id: 'falls', name: 'Ban Jhakri Falls', n: '06', lat: 27.343, lng: 88.596, query: 'Ban Jhakri Falls, Gangtok' }
+        ];
+
+        const mapLink = document.getElementById('gangtok-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=MG%20Marg%2C%20Gangtok&destination=Gangtok%20Ropeway&waypoints=Flower%20Exhibition%20Centre%2C%20Gangtok%7CBan%20Jhakri%20Falls%2C%20Gangtok&travelmode=driving';
+
+        const map = L.map('gangtok-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>

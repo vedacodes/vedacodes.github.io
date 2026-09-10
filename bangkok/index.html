@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok itinerary: temples, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A Bangkok itinerary with temple stops, street food, a walking map, and visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/bangkok/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Bangkok itinerary: temples, food, map, and visa notes">
+    <meta property="og:description" content="Places to walk, what to eat, when to go, and Thailand visa notes for Indian and US passports — in one Bangkok page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/bangkok/">
+    <meta property="og:image" content="https://globetrotwithveda.com/bangkok-image.jpg">
+    <meta property="og:image:alt" content="Bangkok temples and city skyline">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bangkok itinerary: temples, food, map, and visa notes">
+    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and Thailand visa notes for Indian and US passports — in one Bangkok page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/bangkok-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/bangkok/",
+                "url": "https://globetrotwithveda.com/bangkok/",
+                "name": "Bangkok itinerary: temples, food, map, and visa notes",
+                "description": "A Bangkok itinerary with temple stops, street food, a walking map, and visa notes for Indian and US passports — written by Veda, who actually went.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Bangkok",
+                    "containedInPlace": { "@type": "Country", "name": "Thailand" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Bangkok", "item": "https://globetrotwithveda.com/bangkok/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #bangkok-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #bangkok-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        
+        </style>
+</head>
+
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">13.7563° N · 100.5018° E</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="bangkok" aria-label="Bangkok">
+        <div class="hero-media">
+            <img src="../bangkok-image.jpg" alt="Bangkok temples and city skyline">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">Thailand · Field notes</p>
+            <h1>BANGKOK<span>Temples, tuk-tuks, and a skyline that never sleeps.</span></h1>
+            <p class="hero-lead">Golden spires, Chao Phraya boats, street smoke thick with pad thai, and nights that end 63 floors up. Bangkok is organized chaos that somehow works — and it changed how I travel.</p>
+            <div class="hero-stats">
+                <div><strong>4</strong><span>Days</span></div>
+                <div><strong>∞</strong><span>Street meals</span></div>
+                <div><strong>~7</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>The city is a sensory explosion.<br>The temples are the quiet.</h2>
+        <p>Bangkok overwhelmed me in the most beautiful way — golden temples in hard sun, floating markets that smell like lime and diesel, tuk-tuks negotiating every intersection. I got lost on purpose between the Grand Palace and Wat Pho, watched dawn hit Wat Arun across the river, and still made room for Chatuchak’s endless aisles. Four days is a first draft of the City of Angels.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually walked.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Bangkok locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="grand-palace">Grand Palace</button>
+            <button type="button" aria-pressed="false" data-place="wat-pho">Wat Pho</button>
+            <button type="button" aria-pressed="false" data-place="wat-arun">Wat Arun</button>
+            <button type="button" aria-pressed="false" data-place="floating">Floating market</button>
+            <button type="button" aria-pressed="false" data-place="chatuchak">Chatuchak</button>
+            <button type="button" aria-pressed="false" data-place="chinatown">Chinatown</button>
+            <button type="button" aria-pressed="false" data-place="sky-bar">Sky Bar</button>
+        </div>
+        <div class="map-frame">
+            <div id="bangkok-map" role="region" aria-label="Map of Bangkok with tagged locations"></div>
+        </div>
+        <a class="map-open" id="bangkok-map-link" href="https://www.google.com/maps/search/?api=1&query=Bangkok" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">Temple dress codes, a river crossing for dawn, and the BTS without buying a pass you will not finish.</p>
+        <div class="tabs" role="tablist" aria-label="Bangkok practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍜</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚇</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">👑</span> Grand Palace</h3>
+                <p>Intricate gold, towering spires, Thai craftsmanship that stops conversation. Dress for shoulders and knees. Go early before the heat and the tour groups stack.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧘</span> Wat Pho</h3>
+                <p>Home of the 46-meter Reclining Buddha. Impossible to fit in one frame. The serenity fills the whole complex — plan time after the Palace next door.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌅</span> Wat Arun</h3>
+                <p>Temple of Dawn across the Chao Phraya. Porcelain spires at sunrise are worth the early boat. Climb carefully; the river view is the prize.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Floating market</h3>
+                <p>Vendors paddling boats of fruit and noodles — a different century of commerce. Touristy, still authentic enough if you go for the boat ride and the aromas.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛍️</span> Chatuchak</h3>
+                <p>Fifteen thousand stalls on weekend energy. Vintage, street food, chaos with a map. Getting lost is the activity.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏮</span> Chinatown</h3>
+                <p>Yaowarat at night — neon, sizzling woks, gold shops. A food crawl that feels both exotic and comforting.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍸</span> Sky Bar</h3>
+                <p>Cocktails 63 floors up, 360° of city light. Soft booking window; dress code is real. Bangkok looks heavenly from here.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧵</span> Jim Thompson House</h3>
+                <p>Traditional Thai houses and silk heritage. A quieter cultural hour when the temples have filled your roll.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌳</span> Lumpini Park</h3>
+                <p>Green oasis, tai chi at sunrise, monitor lizards by the lake. The city’s exhale between malls and markets.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">👑</span> Grand Palace & temples</h3>
+                <p>Buy tickets on site or via reputable operators. Combine with Wat Pho on foot. Cover shoulders and knees — rent a wrap if you forgot.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://www.royalgrandpalace.th/" target="_blank" rel="noopener noreferrer">Grand Palace ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍸</span> Sky Bar / rooftop</h3>
+                <p>Reserve a slot for sunset if you can. Walk-up is a gamble on busy nights. Check the current dress code before you climb.</p>
+                <span class="price">Reserve</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Floating market tour</h3>
+                <p>Day tours from Bangkok fill Damnoen Saduak seats. Book if you want hotel pickup; DIY is cheaper and messier.</p>
+                <span class="price">Day tour</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> BTS / MRT</h3>
+                <p>Skytrain and subway for the modern city. Rabbit card or ticket machines. River boats for the old city axis.</p>
+                <span class="price">Card / ticket</span>
+                <a class="book-link" href="https://www.bts.co.th/" target="_blank" rel="noopener noreferrer">BTS ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>Chatuchak (weekends), Chinatown nights, Lumpini walks, most street-food rows. Show up early for temples.</p>
+                <span class="price">Walk up</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍜</span> Pad Thai</h3>
+                <p>Iconic stir-fried noodles — street vendors for authenticity. Lime, peanuts, chili: assemble at the table.</p>
+                <span class="price">฿40–120</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥭</span> Mango sticky rice</h3>
+                <p>The dessert that ends arguments. Best in mango season. Coconut milk, ripe mango, sticky rice done right.</p>
+                <span class="price">฿60–150</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍲</span> Boat noodles</h3>
+                <p>Small bowls, intense broth, floating-market energy even on dry land. Order more than one.</p>
+                <span class="price">฿40–80</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧋</span> Thai iced tea</h3>
+                <p>Sweet, creamy, orange, cold. The heat antidote on every corner.</p>
+                <span class="price">฿30–60</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🦐</span> Tom Yum Goong</h3>
+                <p>Spicy-sour shrimp soup that defines Thai tables. Adjust the chili or regret nothing.</p>
+                <span class="price">฿120–250</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥗</span> Som Tam</h3>
+                <p>Green papaya salad — crunch, lime, heat. Perfect lunch in 35°C.</p>
+                <span class="price">฿40–100</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍛</span> Street food crawl</h3>
+                <p>Yaowarat and roadside stalls beat another mall food court. Small bills. Follow the crowd with the wok fire.</p>
+                <span class="price">฿20–80</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>Cool season (Nov–Feb) needs a head start. Hot and rainy seasons are kinder on rates. Chinese New Year and Christmas spike everything.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>Rattanakosin</strong> — temples on foot. <strong>Sukhumvit</strong> — BTS, malls, nightlife. <strong>Silom / Sathorn</strong> — business and river access. <strong>Khao San area</strong> — backpacker budget, louder nights.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Do not pay river-view premiums if a Chao Phraya boat is ฿15. A solid mid-rise near a BTS stop beats a lobby you Instagram once.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">❄️</span> Cool season (Nov–Feb)</h3>
+                <p>20–30°C, peak tourism, the brochure weather. Book 2–3 months ahead. My preferred window for walking temples.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🔥</span> Hot season (Mar–May)</h3>
+                <p>30–40°C, fewer crowds, real savings. Start at dawn, hide midday. Songkran water fights in April.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌧️</span> Rainy season (Jun–Oct)</h3>
+                <p>Afternoon showers, lush parks, best hotel deals. Mornings are often clear — plan temples early.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎉</span> Festival spikes</h3>
+                <p>Chinese New Year, Loy Krathong, New Year’s Eve — book early or accept chaos as the itinerary.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> BTS & MRT</h3>
+                <p>Elevated and underground spines for Sukhumvit, Silom, Chatuchak. Avoid rush hour with luggage.</p>
+                <span class="price">Card / ticket</span>
+                <a class="book-link" href="https://www.bts.co.th/" target="_blank" rel="noopener noreferrer">BTS ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛵</span> Chao Phraya boats</h3>
+                <p>Orange/blue flag boats and tourist boats link Palace, Wat Arun, and Chinatown without traffic.</p>
+                <span class="price">From ฿15</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛺</span> Tuk-tuk</h3>
+                <p>Short hops and postcard rides. Agree the price first. Metro wins for distance.</p>
+                <span class="price">Negotiate</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Grab</h3>
+                <p>Metered, AC, no haggling. Best late night or when rain wins.</p>
+                <span class="price">App</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk the old city</h3>
+                <p>Grand Palace → Wat Pho is a walking pair. Shoes you can remove at temple doors.</p>
+                <span class="price">Free</span>
+            </div>
+        </div>
+
+
+<div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>Often visa-exempt or VOA for short tourism</strong> — rules change. Indian citizens frequently enter Thailand visa-free for short stays or via visa on arrival, depending on current Thai Immigration policy. Always verify with Thai Immigration / the Royal Thai Embassy or Consulate before you fly.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> Tourism entry</h3>
+                            <div class="detail"><strong>Pattern</strong><span>Short tourism often visa-exempt or VOA — confirm the current list and stay length</span></div>
+                            <div class="detail"><strong>Purpose</strong><span>Tourism / leisure — not permission to work</span></div>
+                            <div class="detail"><strong>Passport</strong><span>Valid Indian passport with blank pages; 6 months validity is common practice</span></div>
+                            <div class="detail"><strong>Source of truth</strong><span>Thai Immigration + Royal Thai Embassy / Consulate</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Typical documents</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>Return / onward ticket</li>
+                                <li>Hotel bookings / lodging proof</li>
+                                <li>Proof of funds</li>
+                                <li>Passport photos if VOA applies</li>
+                                <li>Travel insurance (recommended)</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🛂</span> At the border</h3>
+                            <div class="detail"><strong>Stamp</strong><span>Officer sets the permitted stay — photograph it</span></div>
+                            <div class="detail"><strong>Fees</strong><span>VOA (if required) has a fee — cash in THB may be needed; confirm current amount</span></div>
+                            <div class="detail"><strong>TM6</strong><span>Arrival card / digital form rules change — follow airline and airport signs</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Exemption lists and stay lengths move — check the week you travel</li>
+                                <li>Entry is never guaranteed; carry return ticket and lodging proof</li>
+                                <li>Do not overstay the stamp</li>
+                                <li>Verify Thai Immigration / embassy pages — not a blog comment thread</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. Fees, exemption windows, and VOA rules change. Always verify with Thai Immigration and the Royal Thai Embassy/Consulate before you apply or fly.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert">
+                        <strong>Still entering Thailand — not US domestic travel.</strong> Living in the USA on H-1B, H-4, or OPT does not make Bangkok or Pattaya a domestic hop. You are leaving the US and entering Thailand under Thai rules. Verify Thai Immigration / embassy guidance for your passport.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> International trip</h3>
+                            <div class="detail"><strong>Thai entry</strong><span>Same Indian-passport pattern as above — often visa-exempt short tourism or VOA; confirm current rules</span></div>
+                            <div class="detail"><strong>US status</strong><span>Keep H-1B/H-4/OPT valid for return; this is not a US domestic weekend</span></div>
+                            <div class="detail"><strong>Re-entry to USA</strong><span>Your US visa/stamp must still work when you fly back</span></div>
+                            <div class="detail"><strong>Verify</strong><span>Thai Immigration + USCIS / your counsel for status questions</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry these</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>Valid US visa stamp / status docs (I-797, EAD as relevant)</li>
+                                <li>Return ticket to the USA (or onward)</li>
+                                <li>Hotel bookings in Thailand</li>
+                                <li>Proof of funds / recent pay stubs</li>
+                                <li>Travel insurance (recommended)</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🇺🇸</span> US status while abroad</h3>
+                            <div class="detail"><strong>Re-entry</strong><span>Confirm your US visa/stamp and I-94 window before you leave</span></div>
+                            <div class="detail"><strong>H1B travel</strong><span>Don’t sandwich Thailand into a stamp crisis</span></div>
+                            <div class="detail"><strong>Not domestic</strong><span>CBP will process you on return — plan documents accordingly</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>Photograph passport + US visa pages before you fly</li>
+                                <li>Thai entry rules are separate from your US status</li>
+                                <li>If Thai exemption/VOA terms changed, fix that before booking nonrefundable hotels</li>
+                                <li>Verify official sources the week you travel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> You are entering Thailand internationally. Confirm Thai Immigration / embassy rules and your US re-entry documents before purchase.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>Typically visa-exempt for tourism.</strong> US citizens usually enter Thailand without a visa for short tourist stays. Confirm the current permitted length with Thai Immigration before you fly — rules change.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Visa-free tourism</h3>
+                        <div class="detail"><strong>Pattern</strong><span>Short tourism stays are typically visa-exempt for US passports</span></div>
+                        <div class="detail"><strong>Duration</strong><span>Officer / current policy sets the days — verify before travel</span></div>
+                        <div class="detail"><strong>Passport</strong><span>Valid US passport for the trip</span></div>
+                        <div class="detail"><strong>Purpose</strong><span>Tourism — not a work permit</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry checklist</h3>
+                        <ul>
+                            <li>Valid US passport</li>
+                            <li>Return / onward ticket</li>
+                            <li>Proof of accommodation</li>
+                            <li>Sufficient funds for the stay</li>
+                            <li>Travel insurance (recommended)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🧾</span> At immigration</h3>
+                        <div class="detail"><strong>Stamp</strong><span>Photograph the entry stamp and permitted days</span></div>
+                        <div class="detail"><strong>Forms</strong><span>Follow current TM6 / digital arrival-card instructions</span></div>
+                        <div class="detail"><strong>Overstay</strong><span>Fines and future entry problems — leave on time</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Exemption length can change — check Thai Immigration the week you go</li>
+                            <li>Tourist status is not permission to work</li>
+                            <li>If you continue to another country after Thailand, that leg needs its own documents</li>
+                            <li>Verify embassy / immigration pages — not secondary blogs alone</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> Visa-exempt still means immigration rules. Always verify with Thai Immigration / the Royal Thai Embassy before you travel.</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Seven chapters from the diary — gold at the Palace, dawn on the river, a Buddha too long for one frame, markets on water and asphalt, Chinatown neon, and a skyline from sixty-three floors up.</p>
+    </section>
+
+    <article class="chapter" id="grand-palace">
+        <div class="film" data-film>
+            <img class="is-on" src="grand-palace.jpg" alt="Grand Palace in Bangkok">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 07</p>
+            <h2>Gold that stops you</h2>
+            <p>Standing before the Grand Palace felt like stepping into a fairy tale. Intricate detail, towering spires, craftsmanship that does not apologize. This is where Thai magnificence stopped being a brochure.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="wat-arun">
+        <div class="film" data-film>
+            <img class="is-on" src="temple-of-dawn.jpg" alt="Wat Arun Temple of Dawn">
+            <img src="wat-arun.jpg" alt="Wat Arun close-up" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 07</p>
+            <h2>Dawn across the river</h2>
+            <p>Watching light hit Wat Arun’s porcelain spires from across the Chao Phraya was worth the early boat. Two frames — wide dawn and close tile — and the city finally quieted.</p>
+        </div>
+    </article>
+    <article class="chapter" id="wat-pho">
+        <div class="film" data-film>
+            <img class="is-on" src="wat-pho.jpg" alt="Wat Pho Temple of the Reclining Buddha">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 07</p>
+            <h2>A Buddha that fills the room</h2>
+            <p>Forty-six meters of Reclining Buddha. You cannot photograph the whole thing honestly. The serenity still fills the complex after you leave.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="sky-bar">
+        <div class="film" data-film>
+            <img class="is-on" src="sky-bar.jpg" alt="Sky Bar Bangkok at night">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 07</p>
+            <h2>Sixty-three floors of angels</h2>
+            <p>Cocktails above the sprawl, city lights in every direction. From up here Bangkok earns the City of Angels nickname — heaven with traffic somewhere far below.</p>
+        </div>
+    </article>
+    <article class="chapter" id="floating-market">
+        <div class="film" data-film>
+            <img class="is-on" src="floating-market.jpg" alt="Floating market near Bangkok">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 07</p>
+            <h2>Commerce on water</h2>
+            <p>Colorful boats, fruit stacked to the gunwales, noodles handed across the gunwale. Navigating a floating market felt like time travel with a paddle.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="markets">
+        <div class="film" data-film>
+            <img class="is-on" src="chatuchak-market.jpg" alt="Chatuchak Weekend Market">
+            <img src="khao-san-road.jpg" alt="Khao San Road" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 07</p>
+            <h2>Chatuchak to Khao San</h2>
+            <p>Fifteen thousand stalls at Chatuchak, then the backpacker thrum of Khao San. One day for getting lost on purpose; one night for street food and strangers from everywhere.</p>
+        </div>
+    </article>
+    <article class="chapter" id="chinatown-lumpini">
+        <div class="film" data-film>
+            <img class="is-on" src="chinatown.jpg" alt="Chinatown Bangkok at night">
+            <img src="jim-thompson-house.jpg" alt="Jim Thompson House" loading="lazy">
+            <img src="lumpini-park.jpg" alt="Lumpini Park" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 07</p>
+            <h2>Neon, silk, and green</h2>
+            <p>Yaowarat neon and wok smoke, Jim Thompson’s teak houses, Lumpini’s monitor lizards at dawn. Bangkok’s quieter and louder selves in three frames.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Four days filled temples and markets. These are the rooms and rides I still owe Bangkok.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Ayutthaya ruins</h3>
+                <p>The old capital is a day trip I talked about more than I took. Temples in brick and banyan roots — next time.</p>
+                <span class="price">Day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🧵</span> Jim Thompson, slower</h3>
+                <p>I skimmed the silk story. A guided house tour without a palace clock running is unfinished.</p>
+                <span class="price">Morning</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍜</span> Michelin street stalls</h3>
+                <p>I ate well and still missed the famous carts everyone names. A dedicated food map is owed.</p>
+                <span class="price">Night</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Full canal khlong tour</h3>
+                <p>I tasted the river. The long-tail maze through residential khlongs is still on the list.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎭</span> Traditional khon / dance</h3>
+                <p>A proper cultural show instead of another rooftop. Quiet unfinished business.</p>
+                <span class="price">Evening</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have a fifth day.</h2>
+        <p class="day-tours-lead">Ayutthaya for ruins, a deeper floating-market morning, or Pattaya if the coast is calling next.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Ayutthaya</h3>
+                <p>UNESCO ruins north of the city. Train or tour. Go early; bring water and temple-appropriate clothes.</p>
+                <span class="price">Day · train / tour</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Floating market deeper</h3>
+                <p>More boat, less rush. Combine with a Maeklong railway market stop if the schedule lands.</p>
+                <span class="price">Day · tour</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌴</span> Pattaya / coast</h3>
+                <p>Sanctuary of Truth and Big Buddha are a different Thailand — wood, carving, and Gulf light.</p>
+                <span class="price">Day+ · bus / car</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌳</span> Lumpini + museums</h3>
+                <p>Soft day when feet refuse another spire. Park, gallery, early dinner in Chinatown.</p>
+                <span class="price">Half day · walk / BTS</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../pattaya/">Pattaya is next →</a>
+    </div>
+
+    <footer>
+        <span>Bangkok · Thailand</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'grand-palace', 'wat-arun', 'wat-pho', 'sky-bar', 'floating-market', 'markets', 'chinatown-lumpini']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'grand-palace', name: 'Grand Palace', n: '01', lat: 13.7500, lng: 100.4913, query: 'Grand Palace, Bangkok' },
+            { id: 'wat-pho', name: 'Wat Pho', n: '02', lat: 13.7465, lng: 100.4928, query: 'Wat Pho, Bangkok' },
+            { id: 'wat-arun', name: 'Wat Arun', n: '03', lat: 13.7437, lng: 100.4888, query: 'Wat Arun, Bangkok' },
+            { id: 'floating', name: 'Floating market', n: '04', lat: 13.7195, lng: 100.4910, query: 'Damnoen Saduak Floating Market' },
+            { id: 'chatuchak', name: 'Chatuchak Weekend Market', n: '05', lat: 13.7999, lng: 100.5503, query: 'Chatuchak Weekend Market, Bangkok' },
+            { id: 'chinatown', name: 'Chinatown (Yaowarat)', n: '06', lat: 13.7395, lng: 100.5085, query: 'Yaowarat Road, Bangkok' },
+            { id: 'sky-bar', name: 'Sky Bar', n: '07', lat: 13.7234, lng: 100.5300, query: 'Sky Bar, Lebua, Bangkok' }
+        ];
+
+        const mapLink = document.getElementById('bangkok-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Grand%20Palace%2C%20Bangkok&destination=Sky%20Bar%2C%20Lebua%2C%20Bangkok&waypoints=Wat%20Pho%2C%20Bangkok%7CWat%20Arun%2C%20Bangkok%7CYaowarat%20Road%2C%20Bangkok%7CChatuchak%20Weekend%20Market%2C%20Bangkok&travelmode=transit';
+
+        const map = L.map('bangkok-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>
