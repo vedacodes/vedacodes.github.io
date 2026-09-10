@@ -172,6 +172,12 @@
             margin-bottom: 18px;
         }
 
+        .hero .kicker {
+            color: var(--white);
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(14,12,10,0.55), 0 4px 16px rgba(14,12,10,0.5);
+        }
+
         .hero h1 {
             font-family: Fraunces, Georgia, serif;
             font-weight: 500;
@@ -360,21 +366,6 @@
             line-height: 1.55;
         }
 
-        .kit-cta {
-            display: inline-flex;
-            margin-top: 28px;
-            padding: 14px 22px;
-            border-radius: 999px;
-            border: 1px solid var(--ink);
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .kit-cta:hover { background: var(--ink); color: var(--cream); }
-
         /* Filters */
         .atlas-head {
             padding: 48px 7vw 28px;
@@ -463,7 +454,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 35%, rgba(14,12,10,0.82) 100%);
+            background: linear-gradient(180deg, transparent 22%, rgba(14,12,10,0.42) 58%, rgba(14,12,10,0.88) 100%);
             z-index: 0;
         }
 
@@ -478,7 +469,9 @@
             font-size: 0.7rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--sand);
+            font-weight: 500;
+            color: var(--white);
+            text-shadow: 0 1px 2px rgba(14,12,10,0.55), 0 4px 16px rgba(14,12,10,0.5);
             margin-bottom: 8px;
         }
 
@@ -696,7 +689,7 @@
                 <h2>One stop. Not twelve tabs.</h2>
                 <p class="kit-punch">No need to scroll through pages of ChatGPT chats to find what you already asked.</p>
             </div>
-            <p>Open a destination and you get the whole bag: tagged places on a map, how the days actually went, what to order, when to go, and visa notes for Indian and US passports. Rome is packed this way first — the rest of the atlas is catching up.</p>
+            <p>Open a destination and you get the whole bag: tagged places on a map, how the days actually went, what to order, when to go, and visa notes for Indian and US passports. Europe is packed this way — the rest of the atlas is catching up.</p>
         </div>
         <ul class="kit-grid">
             <li>
@@ -725,7 +718,6 @@
                 <p>When the light is kind, where to sleep, and how to move without melting or overpaying.</p>
             </li>
         </ul>
-        <a class="kit-cta" href="rome/index.html">See it packed in Rome</a>
     </section>
 
     <div class="atlas-head" id="atlas">
@@ -748,7 +740,7 @@
                 <p>The Colosseum in morning light, and the feeling that the city has been waiting two thousand years for you to show up.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="paris-page.html#paris">
+        <a class="story" data-continent="europe" href="paris/index.html">
             <img src="paris-image.jpg" alt="Veda in front of the Eiffel Tower, Paris" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · France</p>
@@ -764,7 +756,7 @@
                 <p>Stone fitted so tightly it feels like the mountain grew a city.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="venice-page.html#venice">
+        <a class="story" data-continent="europe" href="venice/index.html">
             <img src="venice-image.jpg" alt="Venice canals" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Italy</p>
@@ -772,7 +764,7 @@
                 <p>A city that forgot how to be land. You stop looking for sidewalks and start listening for water.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="barcelona-page.html#barcelona">
+        <a class="story" data-continent="europe" href="barcelona/index.html">
             <img src="barcelona-image.jpg" alt="Gaudí’s mosaics in Barcelona" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Spain</p>
@@ -780,7 +772,7 @@
                 <p>Gaudí under a winter sky. After this, every other skyline looks a little too serious.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="grandcanyon-page.html#grandcanyon">
+        <a class="story" data-continent="north-america" href="grandcanyon/index.html">
             <img src="grandcanyon-image.jpg" alt="Grand Canyon" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Arizona</p>
@@ -788,7 +780,7 @@
                 <p>Red rock stacked like a book you can’t finish. The scale makes your voice come out smaller.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="santorini-page.html#santorini">
+        <a class="story" data-continent="europe" href="santorini/index.html">
             <img src="santorini-image.jpg" alt="Walking the whitewashed lanes of Santorini" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Greece</p>
@@ -796,7 +788,7 @@
                 <p>A cobbled lane, a Greek flag, and the island at walking speed. The caldera can wait.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="prague-page.html#prague">
+        <a class="story" data-continent="europe" href="prague/index.html">
             <img src="prague-image.jpg" alt="Charles Bridge with Prague Castle beyond" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Czechia</p>
@@ -804,7 +796,7 @@
                 <p>Orange against the grey stone. The castle still sitting on the hill like it owns the weather.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="interlaken-page.html#interlaken">
+        <a class="story" data-continent="europe" href="interlaken/index.html">
             <img src="interlaken-image.jpg" alt="A red bench by the water in Interlaken" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Switzerland</p>
@@ -820,7 +812,7 @@
                 <p>Toy-train tracks disappearing into mist. Kanchenjunga is up there. Today it declined to appear.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="amsterdam-page.html#amsterdam">
+        <a class="story" data-continent="europe" href="amsterdam/index.html">
             <img src="amsterdam-image.jpg" alt="On a canal bridge in Amsterdam" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Netherlands</p>
@@ -828,7 +820,7 @@
                 <p>A Dutch sky, sightseeing boats, and a basilica pretending to be a skyline.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="milan-page.html#milan">
+        <a class="story" data-continent="europe" href="milan/index.html">
             <img src="milan-image.jpg" alt="On the rooftop terraces of the Duomo" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Italy</p>
@@ -836,7 +828,7 @@
                 <p>Marble lace against a hard blue sky. Fashion can wait downstairs.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="athens-page.html#athens">
+        <a class="story" data-continent="europe" href="athens/index.html">
             <img src="athens-image.jpg" alt="The Parthenon at the Acropolis" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Greece</p>
@@ -844,7 +836,7 @@
                 <p>The Parthenon still running the weather. Two thousand years, and the sky is the same color.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="vienna-page.html#vienna">
+        <a class="story" data-continent="europe" href="vienna/index.html">
             <img src="vienna-image.jpg" alt="Hundertwasserhaus in Vienna" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Austria</p>
@@ -852,7 +844,7 @@
                 <p>Hundertwasser’s house refusing to sit still. Mozart can have the palaces.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="berlin-page.html#berlin">
+        <a class="story" data-continent="europe" href="berlin/index.html">
             <img src="berlin-image.jpg" alt="Brandenburg Gate in Berlin" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Germany</p>
@@ -860,7 +852,7 @@
                 <p>Cobbles, a chariot on top, and a city that learned how to come back together.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="brussels-page.html#brussels">
+        <a class="story" data-continent="europe" href="brussels/index.html">
             <img src="brussels-image.jpg" alt="Manneken Pis in Brussels" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Belgium</p>
@@ -868,7 +860,7 @@
                 <p>An umbrella, a trench coat, and a statue that has been famous longer than it should be.</p>
             </div>
         </a>
-        <a class="story" data-continent="europe" href="vatican-page.html#vatican">
+        <a class="story" data-continent="europe" href="vatican/index.html">
             <img src="vatican-image.jpg" alt="Inside St. Peter’s Basilica" loading="lazy">
             <div class="story-body">
                 <p class="place">Europe · Vatican City</p>
@@ -876,7 +868,7 @@
                 <p>Bernini’s marble, and Death holding time in a chapel that doesn’t blink.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="chicago-page.html#chicago">
+        <a class="story" data-continent="north-america" href="chicago/index.html">
             <img src="chicago-image.jpg" alt="Chicago riverwalk and skyline" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Illinois</p>
@@ -884,7 +876,7 @@
                 <p>Marina City’s corncobs, late light, and a skyline that knows it’s handsome.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="miami-page.html#miami">
+        <a class="story" data-continent="north-america" href="miami/index.html">
             <img src="miami-image.jpg" alt="On the water off Miami" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Florida</p>
@@ -892,7 +884,7 @@
                 <p>Sunglasses, a white deck, and the horizon doing what Florida does best.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="nassau-page.html#nassau">
+        <a class="story" data-continent="north-america" href="nassau/index.html">
             <img src="nassau-image.jpg" alt="Tropical rock wall in Nassau" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Bahamas</p>
@@ -900,7 +892,7 @@
                 <p>A curtain of trees on stone. The beach is nearby. This is the quieter Bahamas.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="cancun-page.html#cancun">
+        <a class="story" data-continent="north-america" href="cancun/index.html">
             <img src="cancun-image.jpg" alt="El Castillo at Chichén Itzá" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Mexico</p>
@@ -908,7 +900,7 @@
                 <p>El Castillo in the heat, hands on hips, and the jungle keeping its distance.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="mexicocity-page.html#mexicocity">
+        <a class="story" data-continent="north-america" href="mexicocity/index.html">
             <img src="mexicocity-image.jpg" alt="Casa Azul, Frida Kahlo’s house" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Mexico</p>
@@ -916,7 +908,7 @@
                 <p>Frida’s blue wall, 1929–1954, and a city that still paints in that color.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="losangeles-page.html#losangeles">
+        <a class="story" data-continent="north-america" href="losangeles/index.html">
             <img src="losangeles-image.jpg" alt="Overlook of the Hollywood sign" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · California</p>
@@ -924,7 +916,7 @@
                 <p>The letters on the hill, a railing, and light that has been rehearsing all century.</p>
             </div>
         </a>
-        <a class="story" data-continent="north-america" href="lasvegas-page.html#lasvegas">
+        <a class="story" data-continent="north-america" href="lasvegas/index.html">
             <img src="lasvegas-image.jpg" alt="The Las Vegas Strip at night" loading="lazy">
             <div class="story-body">
                 <p class="place">North America · Nevada</p>
