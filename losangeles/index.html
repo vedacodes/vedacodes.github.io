@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Angeles itinerary: 7 days, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A 7-day Los Angeles itinerary with a driving map, what to eat, when to go, and US domestic visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/losangeles/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Los Angeles itinerary: 7 days, food, map, and visa notes">
+    <meta property="og:description" content="Places to go, what to eat, when to go, and visa notes for Indian and US passports — in one Los Angeles page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/losangeles/">
+    <meta property="og:image" content="https://globetrotwithveda.com/losangeles-image.jpg">
+    <meta property="og:image:alt" content="Veda with the Hollywood sign in Los Angeles">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Los Angeles itinerary: 7 days, food, map, and visa notes">
+    <meta name="twitter:description" content="Places to go, what to eat, when to go, and visa notes for Indian and US passports — in one Los Angeles page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/losangeles-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/losangeles/",
+                "url": "https://globetrotwithveda.com/losangeles/",
+                "name": "Los Angeles itinerary: 7 days, food, map, and visa notes",
+                "description": "A 7-day Los Angeles itinerary with a driving map, what to eat, when to go, and US domestic visa notes for Indian and US passports.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Los Angeles",
+                    "containedInPlace": { "@type": "Country", "name": "United States" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Los Angeles", "item": "https://globetrotwithveda.com/losangeles/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #losangeles-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #losangeles-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        </style>
+</head>
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">34.0522° N · 118.2437° W</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="losangeles" aria-label="Los Angeles">
+        <div class="hero-media">
+            <img src="../losangeles-image.jpg" alt="Veda with the Hollywood sign behind her">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">USA · Field notes</p>
+            <h1 class="is-longer">LOS ANGELES<span>A week of parks, hills, and a pier at the end.</span></h1>
+            <p class="hero-lead">Disneyland to Hogwarts, a boulevard of stars, illusions that break your brain, and the Pacific when you finally need air.</p>
+            <div class="hero-stats">
+                <div><strong>7</strong><span>Days</span></div>
+                <div><strong>30+</strong><span>Miles</span></div>
+                <div><strong>6</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>Not only Hollywood.<br>A city that takes a week to admit its size.</h2>
+        <p>LA captured me across freeways: a mouse-eared day in Anaheim, stars underfoot on Hollywood Boulevard, rooms that lie to your eyes, a hill with the sign, a studio that sells the movies back to you, and a pier when the week finally exhaled. A rental car is not optional. Seven days is a first honest pass.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually went.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Disneyland sits in Anaheim; treat it as its own day. Driving, not walking, connects most of this.</p>
+        <div class="map-pins" role="group" aria-label="Los Angeles locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="walkoffame">Walk of Fame</button>
+            <button type="button" aria-pressed="false" data-place="griffith">Griffith</button>
+            <button type="button" aria-pressed="false" data-place="santamonica">Santa Monica</button>
+            <button type="button" aria-pressed="false" data-place="universal">Universal</button>
+            <button type="button" aria-pressed="false" data-place="disneyland">Disneyland</button>
+        </div>
+        <div class="map-frame">
+            <div id="losangeles-map" role="region" aria-label="Map of Los Angeles with tagged locations"></div>
+        </div>
+        <a class="map-open" id="losangeles-map-link" href="https://www.google.com/maps/search/?api=1&query=Los%20Angeles" target="_blank" rel="noopener noreferrer">Open a driving route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">The useful layer — park tickets, Genie-style line-skipping, and why Metro alone will not save a week here.</p>
+        <div class="tabs" role="tablist" aria-label="Los Angeles practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🥐</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏰</span> Disneyland</h3>
+                <p>Anaheim, not LA proper. A full day minimum. Childhood, engineered. Coco found me in the park whether I planned it or not.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⭐</span> Walk of Fame</h3>
+                <p>Hollywood Boulevard, stars underfoot, tourist density maxed. Go once. Hunt your people. Leave before the street performers own you.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🪞</span> Museum of Illusions</h3>
+                <p>Rooms that argue with your eyes. Photos required. Laughing is the correct research method.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🔭</span> Griffith Observatory</h3>
+                <p>The city below, the sign on the ridge. Free grounds. Sunset is a pilgrimage. Parking is the boss fight.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎬</span> Universal Studios</h3>
+                <p>Hogwarts on a hill, studio tour, rides that sell the movies back. A full day if you want more than a photo.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎡</span> Santa Monica Pier</h3>
+                <p>Ferris wheel, Pacific air, the week exhaling. Best at golden hour. The carnival is the point, not a bug.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏰</span> Disneyland tickets</h3>
+                <p>Date-based tickets on the Disney site. Genie+ / Lightning Lane if you hate standing still. Park Hopper only if you will actually use California Adventure the same day. Buy before you fly.</p>
+                <span class="price">Date ticket</span>
+                <a class="book-link" href="https://disneyland.disney.go.com/tickets/" target="_blank" rel="noopener noreferrer">Disneyland tickets ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎬</span> Universal Hollywood</h3>
+                <p>Timed tickets online. Express Pass if crowds are ugly — math it against your patience. Early entry beats noon.</p>
+                <span class="price">Timed ticket</span>
+                <a class="book-link" href="https://www.universalstudioshollywood.com/web/en/us/tickets" target="_blank" rel="noopener noreferrer">Universal tickets ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🪞</span> Museum of Illusions</h3>
+                <p>Buy a slot online. Weekends sell. Walk-up possible on quiet weekdays; do not bet a tight schedule on it.</p>
+                <span class="price">Timed ticket</span>
+                <a class="book-link" href="https://museumofillusions.com/los-angeles/" target="_blank" rel="noopener noreferrer">MOI Los Angeles ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🔭</span> Griffith</h3>
+                <p>Grounds and most exhibits are free. Planetarium shows need tickets — grab them on the site when you care about a seat. Parking fills before sunset; rideshare or the DASH bus helps.</p>
+                <span class="price">Free / show ticket</span>
+                <a class="book-link" href="https://griffithobservatory.org/" target="_blank" rel="noopener noreferrer">Griffith Observatory ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥞</span> Brunch</h3>
+                <p>Republique, Gjusta, The Ivy — book or accept a wait. Weekend brunch is a competitive sport here.</p>
+                <span class="price">Reserve</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>Walk of Fame, Santa Monica Pier boardwalk, most of Griffith's outdoor decks. Show up. Bring water.</p>
+                <span class="price">Walk up</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌮</span> Tacos</h3>
+                <p>Street tacos, al pastor, carne asada, fish on the coast. Food trucks often win. East LA and the trucks beat the polished versions.</p>
+                <span class="price">$2–5 each</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍔</span> In-N-Out</h3>
+                <p>Animal Style if you know. Never-frozen, hand-cut fries, a line that is information. Tourist duty that still tastes right.</p>
+                <span class="price">$8–12</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍜</span> Koreatown</h3>
+                <p>KBBQ you grill yourself. All-you-can-eat options. Kang Ho Dong Baekjeong if you want the loud table. Go hungry.</p>
+                <span class="price">$25–40</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚚</span> Food trucks</h3>
+                <p>Kogi and friends — Korean-Mexican fusion, lobster rolls, soft serve that should not work. Follow where they park.</p>
+                <span class="price">$10–15</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥞</span> Brunch</h3>
+                <p>Bottomless mimosas, serious pancakes, eggs under many names. Book ahead or wait. Weekends are not casual.</p>
+                <span class="price">$18–35</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥗</span> Açaí &amp; health-chic</h3>
+                <p>Bowls, avocado toast, cold-pressed everything. Erewhon if you want the stereotype. Fine fuel between freeways.</p>
+                <span class="price">$12–18</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>Summer and holidays fill Anaheim and Hollywood. Fall (the real "LA summer") is kinder on rates and fog. Book park-adjacent hotels with free cancellation when you can.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>Hollywood / Los Feliz</strong> — Walk of Fame, Griffith access. <strong>Santa Monica / Westside</strong> — pier, beach evenings. <strong>Anaheim</strong> — only if Disneyland owns a night or two. <strong>Near Universal</strong> — if the studio is the center of gravity.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Do not sleep in three neighborhoods in one week unless you like packing. One base + a car beats three Airbnbs. Parking is a line item — ask before you book.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> March–May</h3>
+                <p>15–24°C, clear before June Gloom, wildflowers after wet winters. Strong hiking and beach window.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> June–August</h3>
+                <p>18–29°C coast, hotter inland. June Gloom is real — gray mornings, clearer afternoons. Parks crowded. Valleys bake.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> September–November</h3>
+                <p>17–28°C. Best overall. "LA summer" is Sept–Oct: warm, clear, less fog. Fewer tourists. My preferred week.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌤️</span> December–February</h3>
+                <p>10–20°C, possible rain, still mild. Ski in the mountains and beach the same day if the sky allows. Lowest prices.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚗</span> Rental car</h3>
+                <p>Almost required for a week that includes Anaheim, Griffith, Santa Monica, and Universal. Budget parking everywhere. Freeways are the transit system.</p>
+                <span class="price">Nearly required</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Rideshare</h3>
+                <p>Uber/Lyft for nights out and Griffith when parking is hopeless. Adds up fast across a week — better as a supplement than a plan.</p>
+                <span class="price">Per ride</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> Metro</h3>
+                <p>Useful on a few corridors (Hollywood, Santa Monica Expo Line). Not a full substitute for Disneyland + hills + studios. TAP card, limited hours mindset.</p>
+                <span class="price">Limited</span>
+                <a class="book-link" href="https://www.metro.net/" target="_blank" rel="noopener noreferrer">LA Metro ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk</h3>
+                <p>Neighborhoods yes. City-wide no. Hollywood Boulevard and the pier are walkable clusters. Everything else is a drive.</p>
+                <span class="price">Local only</span>
+            </div>
+        </div>
+
+
+<div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>US entry first.</strong> Indian citizens need a valid US visa (usually B1/B2) to enter the United States. Once you are in the US, Los Angeles is domestic travel.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> B1/B2 tourist / business</h3>
+                            <div class="detail"><strong>What</strong><span>Visitor visa to enter the US; then fly domestically to Los Angeles</span></div>
+                            <div class="detail"><strong>Validity</strong><span>Often multi-year / multiple-entry (consulate decides)</span></div>
+                            <div class="detail"><strong>Stay</strong><span>Usually up to 6 months per entry (CBP decides at the border)</span></div>
+                            <div class="detail"><strong>Fee</strong><span>MRV fee (check travel.state.gov for current amount)</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>DS-160 confirmation page</li>
+                                <li>Visa interview appointment confirmation</li>
+                                <li>MRV fee payment receipt</li>
+                                <li>Photo meeting US visa specs</li>
+                                <li>Travel itinerary / hotel bookings (helpful)</li>
+                                <li>Proof of ties to India (job, property, family)</li>
+                                <li>Bank statements / financial proof</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> How to apply</h3>
+                            <div class="detail"><strong>Form</strong><span>DS-160 online</span></div>
+                            <div class="detail"><strong>Interview</strong><span>US Embassy/Consulate in India (Delhi, Mumbai, Chennai, Hyderabad, Kolkata)</span></div>
+                            <div class="detail"><strong>Appointments</strong><span>Book via the official US visa scheduling site</span></div>
+                            <div class="detail"><strong>After visa</strong><span>Fly into any US port of entry, then a domestic flight to Los Angeles</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Apply well before travel — interview wait times vary by city</li>
+                                <li>B1/B2 is for temporary visits; do not overstay your I-94</li>
+                                <li>Domestic US flights need REAL ID-compliant ID or a passport</li>
+                                <li>Keep hotel and return plans handy for CBP</li>
+                                <li>ESTA is not for Indian passports — you need a visa stamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Guidance only. Check travel.state.gov and the US Embassy/Consulate for current fees, wait times, and rules.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert ok">
+                        <strong>Domestic trip.</strong> If you already hold valid US status (H1B/H4/OPT and a valid I-94), Los Angeles is a domestic flight — no new visa for this city.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> What you need</h3>
+                            <div class="detail"><strong>Status</strong><span>Valid H1B/H4/OPT (or other) with unexpired I-94</span></div>
+                            <div class="detail"><strong>ID for flying</strong><span>Passport or REAL ID-compliant driver's license</span></div>
+                            <div class="detail"><strong>Extra visa</strong><span>None for domestic US travel</span></div>
+                            <div class="detail"><strong>Re-entry</strong><span>Only matters if you leave the US and come back</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry anyway</h3>
+                            <ul>
+                                <li>Passport with visa stamp (if you have one)</li>
+                                <li>I-797 (H1B/H4) or EAD (OPT/H4 EAD)</li>
+                                <li>Recent pay stub or employment letter (optional but useful)</li>
+                                <li>Government photo ID for TSA</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>No new US visa for a domestic hop to Los Angeles — you already entered the country</li>
+                                <li>Watch your I-94 end date; domestic travel does not extend status</li>
+                                <li>If your visa stamp is expired but I-94 is valid, you can stay/travel inside the US; leaving requires a new stamp to return</li>
+                                <li>Book refundable hotels around awards season and major LA events</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">⚠️</span> Important</h3>
+                            <div class="detail"><strong>Leaving the US</strong><span>A side trip to Mexico/Canada may still need a valid visa stamp to re-enter — check before you book</span></div>
+                            <div class="detail"><strong>TSA</strong><span>REAL ID rules apply for domestic boarding</span></div>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status rules change. Confirm I-94 at i94.cbp.dhs.gov and TSA ID rules before you fly.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>Domestic travel.</strong> US citizens do not need a visa for Los Angeles.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Flying domestically</h3>
+                        <div class="detail"><strong>ID</strong><span>REAL ID-compliant license or US passport</span></div>
+                        <div class="detail"><strong>Visa</strong><span>Not required</span></div>
+                        <div class="detail"><strong>Duration</strong><span>No immigration limit inside the US</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Carry a government photo ID that TSA accepts</li>
+                            <li>Book hotels early around major conventions and holidays</li>
+                            <li>Domestic flight delays are common — leave buffer for shows and park tickets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> This page is about visiting Los Angeles inside the United States. International trips still follow the destination country's rules.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Six chapters from a week that still felt unfinished. Not all of LA — just the frames I kept.</p>
+    </section>
+
+    <article class="chapter" id="disneyland">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-1.jpg" alt="Disneyland">
+            <img src="losangeles-image-2.jpg" alt="Disneyland, another view" loading="lazy">
+            <img src="losangeles-image-3.jpg" alt="Disneyland streets" loading="lazy">
+            <img src="losangeles-image-4.jpg" alt="With Coco at Disneyland" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 04</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 06</p>
+            <h2>Disneyland</h2>
+            <p>Gates, characters, a day that refuses to be ironic. Coco found me whether I planned it. Anaheim is a freeway away and worth the full day.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="walkoffame">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-5.jpg" alt="Hollywood Walk of Fame">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 06</p>
+            <h2>Stars underfoot</h2>
+            <p>Hollywood Boulevard is crowded on purpose. You hunt a name, take the photo, keep walking. Entertainment history as sidewalk.</p>
+        </div>
+    </article>
+    <article class="chapter" id="illusions">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-6.jpg" alt="Museum of Illusions">
+            <img src="losangeles-image-7.jpg" alt="Museum of Illusions room" loading="lazy">
+            <img src="losangeles-image-8.jpg" alt="Fun at Museum of Illusions" loading="lazy">
+            <img src="losangeles-image-9.jpg" alt="Museum of Illusions pose" loading="lazy">
+            <img src="losangeles-image-10.jpg" alt="Museum of Illusions exhibit" loading="lazy">
+            <img src="losangeles-image-11.jpg" alt="Museum of Illusions another room" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 06</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 06</p>
+            <h2>Rooms that lie</h2>
+            <p>Museum of Illusions — every chamber a dare to your eyes. Laughing is research. I left questioning doorframes.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="griffith">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-12.jpg" alt="Griffith Observatory view toward the Hollywood sign">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 06</p>
+            <h2>The sign, from the hill</h2>
+            <p>Griffith Observatory with the city below and HOLLYWOOD on the ridge. Free air. The view that explains why people stay.</p>
+        </div>
+    </article>
+    <article class="chapter" id="universal">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-13.jpg" alt="Universal Studios">
+            <img src="losangeles-image-14.jpg" alt="Hogwarts at Universal Studios" loading="lazy">
+            <img src="losangeles-image-15.jpg" alt="Universal Studios view" loading="lazy">
+            <img src="losangeles-image-16.jpg" alt="Universal Studios another view" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 04</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 06</p>
+            <h2>Hogwarts on a hill</h2>
+            <p>Universal sold the movies back to me. Studio tour, sets, a castle that should not exist in California and somehow does.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="santamonica">
+        <div class="film" data-film>
+            <img class="is-on" src="losangeles-image-17.jpg" alt="Santa Monica Pier">
+            <img src="losangeles-image-18.jpg" alt="Santa Monica Pier Ferris wheel" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 06</p>
+            <h2>Pier at the end</h2>
+            <p>Santa Monica — ocean, carnival, a Ferris wheel against the light. The week finally breathing. Pure California on purpose.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Seven days and the map still has holes. These are the ones I owe a return.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌴</span> Malibu</h3>
+                <p>Coast north of Santa Monica. Beaches without the pier carnival. I stopped at the Ferris wheel and called the Pacific done.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> The Getty</h3>
+                <p>Architecture, gardens, a tram. Free entry, paid parking. A quiet I did not schedule between parks.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏀</span> Downtown / Arts District</h3>
+                <p>Murals, food halls, a different LA than Hollywood Boulevard. I stayed west and north.</p>
+                <span class="price">Evening</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥾</span> Runyon / Hollywood sign hike</h3>
+                <p>I photographed the sign from Griffith. I did not earn it on foot. Next time.</p>
+                <span class="price">Morning</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have another day.</h2>
+        <p class="day-tours-lead">Disneyland already ate one. These are the leaves that are not Hollywood Boulevard.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏰</span> Disneyland (Anaheim)</h3>
+                <p>Already on the map for a reason. Full day. Traffic both ways. Stay nearby if you hate early alarms after late fireworks.</p>
+                <span class="price">Full day · drive</span>
+                <a class="book-link" href="https://disneyland.disney.go.com/" target="_blank" rel="noopener noreferrer">Disneyland ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌴</span> Malibu / PCH</h3>
+                <p>Pacific Coast Highway north. Beaches, overlooks, a slower California. Pair with Santa Monica if you only have half a day.</p>
+                <span class="price">Half–full day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎢</span> Second park day</h3>
+                <p>California Adventure after Disneyland, or a deeper Universal with Express. Only if the first day felt truncated.</p>
+                <span class="price">Full day</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../chicago/">Chicago is next →</a>
+    </div>
+
+    <footer>
+        <span>Los Angeles · USA</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'disneyland', 'walkoffame', 'illusions', 'griffith', 'universal', 'santamonica']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'walkoffame', name: 'Walk of Fame', n: '01', lat: 34.1016, lng: -118.3267, query: 'Hollywood Walk of Fame' },
+            { id: 'griffith', name: 'Griffith Observatory', n: '02', lat: 34.1184, lng: -118.3004, query: 'Griffith Observatory' },
+            { id: 'santamonica', name: 'Santa Monica Pier', n: '03', lat: 34.01, lng: -118.4965, query: 'Santa Monica Pier' },
+            { id: 'universal', name: 'Universal Studios', n: '04', lat: 34.1381, lng: -118.3534, query: 'Universal Studios Hollywood' },
+            { id: 'disneyland', name: 'Disneyland', n: '05', lat: 33.8121, lng: -117.919, query: 'Disneyland Park Anaheim' }
+        ];
+
+        const mapLink = document.getElementById('losangeles-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Hollywood%20Walk%20of%20Fame&destination=Santa%20Monica%20Pier&waypoints=Griffith%20Observatory%7CUniversal%20Studios%20Hollywood&travelmode=driving';
+
+        const map = L.map('losangeles-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a driving route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a driving route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>
