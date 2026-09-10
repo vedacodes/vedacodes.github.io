@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago itinerary: 4 days, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A 4-day Chicago itinerary with a walking map, what to eat, when to go, and US domestic visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/chicago/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Chicago itinerary: 4 days, food, map, and visa notes">
+    <meta property="og:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Chicago page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/chicago/">
+    <meta property="og:image" content="https://globetrotwithveda.com/chicago-image.jpg">
+    <meta property="og:image:alt" content="Veda on the Chicago Riverwalk with the skyline behind her">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chicago itinerary: 4 days, food, map, and visa notes">
+    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Chicago page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/chicago-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/chicago/",
+                "url": "https://globetrotwithveda.com/chicago/",
+                "name": "Chicago itinerary: 4 days, food, map, and visa notes",
+                "description": "A 4-day Chicago itinerary with a walking map, what to eat, when to go, and US domestic visa notes for Indian and US passports — written by Veda, who actually went.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Chicago",
+                    "containedInPlace": { "@type": "Country", "name": "United States" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Chicago", "item": "https://globetrotwithveda.com/chicago/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #chicago-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #chicago-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        </style>
+</head>
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">41.8781° N · 87.6298° W</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="chicago" aria-label="Chicago">
+        <div class="hero-media">
+            <img src="../chicago-image.jpg" alt="Veda on the Chicago Riverwalk with the skyline behind her">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">United States · Field notes</p>
+            <h1>CHICAGO<span>Steel, lake wind, and a bean that steals every photo.</span></h1>
+            <p class="hero-lead">Four days of the Loop on foot, Cloud Gate, deep dish at Giordano’s, a river architecture cruise at dusk, and the CTA L stitching it together.</p>
+            <div class="hero-stats">
+                <div><strong>4</strong><span>Days</span></div>
+                <div><strong>Loop</strong><span>Walked hard</span></div>
+                <div><strong>5</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>The skyline is the postcard.<br>The river is the tour.</h2>
+        <p>Chicago got me with Midwestern warmth under a serious skyline. Millennium Park for the Bean, the Art Institute for a half-day, Navy Pier when I wanted lake air, and a river cruise that makes the architecture make sense. Deep dish is a commitment. Blues clubs still earn the night.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually walked.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Chicago locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="millennium">Millennium</button>
+            <button type="button" aria-pressed="false" data-place="artinstitute">Art Institute</button>
+            <button type="button" aria-pressed="false" data-place="navypier">Navy Pier</button>
+            <button type="button" aria-pressed="false" data-place="river">River</button>
+        </div>
+        <div class="map-frame">
+            <div id="chicago-map" role="region" aria-label="Map of Chicago with tagged locations"></div>
+        </div>
+        <a class="map-open" id="chicago-map-link" href="https://www.google.com/maps/search/?api=1&query=Chicago" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">The useful layer — museum tickets, a river cruise slot, CTA without overbuying, and where to sit for deep dish.</p>
+        <div class="tabs" role="tablist" aria-label="Chicago practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🥐</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🪞</span> Millennium Park / Cloud Gate</h3>
+                <p>The Bean. Mirror steel, skyline upside down, a plaza that never empties. Go early if you want a frame without a hundred phones.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> Art Institute</h3>
+                <p>Impressionists, lions out front, a half-day that still feels short. Timed tickets. Wear shoes you can stand in.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎡</span> Navy Pier</h3>
+                <p>Lake Michigan, the Centennial Wheel, tourist on purpose. Sunset from the pier is the soft version of the skyline.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚢</span> Architecture river cruise</h3>
+                <p>The city from water level. Guides who know their steel. Book dusk if you can — lights on glass beat noon glare.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍕</span> Deep dish</h3>
+                <p>Not a slice you fold. A pie you schedule. Giordano’s was my stop; Lou Malnati’s is the other religion.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎵</span> Blues</h3>
+                <p>Chicago’s soundtrack is still live. South Side clubs and downtown rooms — pick a night and stay for a set.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> Art Institute tickets</h3>
+                <p>Buy timed entry online. Weekends sell. Members skip some of the wait; I paid and planned a half day.</p>
+                <span class="price">Timed ticket</span>
+                <a class="book-link" href="https://www.artic.edu/visit" target="_blank" rel="noopener noreferrer">Art Institute ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚢</span> Architecture cruise</h3>
+                <p>Chicago Architecture Center or similar. Sunset slots go first. Rain jackets still worth it on the river.</p>
+                <span class="price">Book ahead</span>
+                <a class="book-link" href="https://www.architecture.org/tours" target="_blank" rel="noopener noreferrer">CAC tours ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> CTA Ventra</h3>
+                <p>L trains and buses. Ventra card or contactless. Day passes exist — do the math for your hops.</p>
+                <span class="price">App / tap</span>
+                <a class="book-link" href="https://www.transitchicago.com/" target="_blank" rel="noopener noreferrer">CTA ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎡</span> Navy Pier wheel</h3>
+                <p>Optional. The pier is free to walk. The wheel is the postcard upgrade.</p>
+                <span class="price">Timed ticket</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>Millennium Park, the Riverwalk, most of the Loop exterior. Show up. The Bean at 8am is a different city.</p>
+                <span class="price">Walk up</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍕</span> Deep-dish pizza</h3>
+                <p>Giordano’s for the stuffed pie I actually ate. Share. Order, then walk the Riverwalk while it bakes.</p>
+                <span class="price">$18–30</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌭</span> Chicago hot dog</h3>
+                <p>Garden on a bun. No ketchup if you want the local rule. Portillo’s or a corner stand.</p>
+                <span class="price">$5–8</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🇮🇹</span> Italian beef</h3>
+                <p>Dipped, spicy giardiniera, napkins you will need. A lunch that is also a workout.</p>
+                <span class="price">$10–14</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍿</span> Garrett popcorn</h3>
+                <p>Cheese and caramel mixed. Sticky fingers on Michigan Avenue. Tourist and correct.</p>
+                <span class="price">$10–15</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥩</span> Steakhouse night</h3>
+                <p>If deep dish already won lunch, spend one evening on a classic Chicago chop.</p>
+                <span class="price">$$$</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍩</span> Doughnut / bakery</h3>
+                <p>Neighborhood bakeries beat hotel breakfast. Fuel before the Art Institute.</p>
+                <span class="price">$3–6</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>Summer festivals and marathon weekend need a head start. Fall is kinder. A few weeks usually covers spring.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>Loop / River North</strong> — walk to the Bean and the river. <strong>Near North / Mag Mile</strong> — shopping and hotels. <strong>West Loop</strong> — dinner, still a short rideshare downtown.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>You do not need a lake-view room. The L is the view. Stay on a train line and walk the rest.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> Spring (Apr–May)</h3>
+                <p>8–20°C. City waking up, patios opening, fewer crowds than summer. Fine walking weather.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> Summer (Jun–Aug)</h3>
+                <p>20–30°C. Festivals, lake beaches, long light — and hot. Book early. Hide at noon if you melt.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> Fall (Sep–Oct)</h3>
+                <p>10–22°C. Best overall for me — architecture tours, foliage, marathon energy without July humidity.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">❄️</span> Winter (Nov–Mar)</h3>
+                <p>−10–5°C. Brutal wind off the lake. Museums, theaters, holiday lights. Budget rates if you pack layers.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk the Loop</h3>
+                <p>Millennium Park to the Riverwalk is a pedestrian day. Shoes. Then the L when the next pin is a neighborhood away.</p>
+                <span class="price">Free</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> CTA L</h3>
+                <p>Elevated trains that define the Loop. Ventra or contactless. Inspectors exist — tap honestly.</p>
+                <span class="price">Ventra</span>
+                <a class="book-link" href="https://www.transitchicago.com/" target="_blank" rel="noopener noreferrer">CTA ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Rideshare</h3>
+                <p>For late blues clubs, luggage, or when the L map confuses you at midnight.</p>
+                <span class="price">App</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚲</span> Divvy bikes</h3>
+                <p>Blue bikes along the river. Fine for short hops if wind allows.</p>
+                <span class="price">From a few $/ride</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">✈️</span> Airports</h3>
+                <p>ORD or MDW. Blue Line from O’Hare is the adult choice. Rideshare if you land late with bags.</p>
+                <span class="price">Train / car</span>
+            </div>
+        </div>
+
+<div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>US entry first.</strong> Indian citizens need a valid US visa (usually B1/B2) to enter the United States. Once you are in the US, Chicago is domestic travel.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> B1/B2 tourist / business</h3>
+                            <div class="detail"><strong>What</strong><span>Visitor visa to enter the US; then fly domestically to Chicago</span></div>
+                            <div class="detail"><strong>Validity</strong><span>Often multi-year / multiple-entry (consulate decides)</span></div>
+                            <div class="detail"><strong>Stay</strong><span>Usually up to 6 months per entry (CBP decides at the border)</span></div>
+                            <div class="detail"><strong>Fee</strong><span>MRV fee (check travel.state.gov for current amount)</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>DS-160 confirmation page</li>
+                                <li>Visa interview appointment confirmation</li>
+                                <li>MRV fee payment receipt</li>
+                                <li>Photo meeting US visa specs</li>
+                                <li>Travel itinerary / hotel bookings (helpful)</li>
+                                <li>Proof of ties to India (job, property, family)</li>
+                                <li>Bank statements / financial proof</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> How to apply</h3>
+                            <div class="detail"><strong>Form</strong><span>DS-160 online</span></div>
+                            <div class="detail"><strong>Interview</strong><span>US Embassy/Consulate in India (Delhi, Mumbai, Chennai, Hyderabad, Kolkata)</span></div>
+                            <div class="detail"><strong>Appointments</strong><span>Book via the official US visa scheduling site</span></div>
+                            <div class="detail"><strong>After visa</strong><span>Fly into any US port of entry, then a domestic flight to Chicago</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Apply well before travel — interview wait times vary by city</li>
+                                <li>B1/B2 is for temporary visits; do not overstay your I-94</li>
+                                <li>Domestic US flights need REAL ID-compliant ID or a passport</li>
+                                <li>Keep hotel and return plans handy for CBP</li>
+                                <li>ESTA is not for Indian passports — you need a visa stamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Guidance only. Check travel.state.gov and the US Embassy/Consulate for current fees, wait times, and rules.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert ok">
+                        <strong>Domestic trip.</strong> If you already hold valid US status (H1B/H4/OPT and a valid I-94), Chicago is a domestic flight — no new visa for this city.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> What you need</h3>
+                            <div class="detail"><strong>Status</strong><span>Valid H1B/H4/OPT (or other) with unexpired I-94</span></div>
+                            <div class="detail"><strong>ID for flying</strong><span>Passport or REAL ID-compliant driver's license</span></div>
+                            <div class="detail"><strong>Extra visa</strong><span>None for domestic US travel</span></div>
+                            <div class="detail"><strong>Re-entry</strong><span>Only matters if you leave the US and come back</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry anyway</h3>
+                            <ul>
+                                <li>Passport with visa stamp (if you have one)</li>
+                                <li>I-797 (H1B/H4) or EAD (OPT/H4 EAD)</li>
+                                <li>Recent pay stub or employment letter (optional but useful)</li>
+                                <li>Government photo ID for TSA</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>No embassy appointment for a domestic US city once your status is valid</li>
+                                <li>Watch your I-94 end date; domestic travel does not extend status</li>
+                                <li>If your visa stamp is expired but I-94 is valid, you can stay/travel inside the US; leaving requires a new stamp to return</li>
+                                <li>Carry passport or REAL ID for TSA at the airport</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">⚠️</span> Important</h3>
+                            <div class="detail"><strong>Leaving the US</strong><span>A side trip abroad may still need a valid visa stamp to re-enter — check before you book</span></div>
+                            <div class="detail"><strong>TSA</strong><span>REAL ID rules apply for domestic boarding</span></div>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status rules change. Confirm I-94 at i94.cbp.dhs.gov and TSA ID rules before you fly.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>Domestic travel.</strong> US citizens do not need a visa for Chicago.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Flying domestically</h3>
+                        <div class="detail"><strong>ID</strong><span>REAL ID-compliant license or US passport</span></div>
+                        <div class="detail"><strong>Visa</strong><span>Not required</span></div>
+                        <div class="detail"><strong>Duration</strong><span>No immigration limit inside the US</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Carry a government photo ID that TSA accepts</li>
+                            <li>Book hotels early around big weekends and festivals</li>
+                            <li>Domestic flight delays are common — leave buffer for timed tickets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> This page is about visiting Chicago inside the United States. International trips still follow the destination country's rules.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Five frames from the river, the Bean, a pizza stand, and Lincoln Park. Not a complete Chicago — just what I kept.</p>
+    </section>
+
+    <article class="chapter" id="bean">
+        <div class="film" data-film>
+            <img class="is-on" src="chicago-image-4.jpg" alt="Cloud Gate at Millennium Park">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 05</p>
+            <h2>The Bean</h2>
+            <p>Cloud Gate does not pretend to be subtle. Skyline bent into steel, plaza full of phones, a sculpture that still works when you stand under it. Millennium Park is the correct first stop.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="riverwalk">
+        <div class="film" data-film>
+            <img class="is-on" src="chicago-image-1.jpg" alt="On the Chicago Riverwalk with the skyline">
+            <img src="chicago-image-5.jpg" alt="Riverwalk walkway and towers" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 05</p>
+            <h2>Riverwalk, daylight</h2>
+            <p>Concrete path, glass towers, Marina City’s corn cobs in the distance. The lower level is where the city feels walkable. I kept circling the same stretch because the light kept changing.</p>
+        </div>
+    </article>
+    <article class="chapter" id="deepdish">
+        <div class="film" data-film>
+            <img class="is-on" src="chicago-image-3.jpg" alt="Deep-dish pizza at Giordano's">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 05</p>
+            <h2>Deep dish, Giordano’s</h2>
+            <p>A pie on a stand, olives, a crust you schedule around. This is not foldable street pizza. Share it. Then walk it off on the river.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="lincolnpark">
+        <div class="film" data-film>
+            <img class="is-on" src="chicago-image-2.jpg" alt="Lincoln Park afternoon">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 05</p>
+            <h2>Lincoln Park pause</h2>
+            <p>Grass, trees, a free zoo if you want animals. After the Loop’s steel, this is the green lung. Temporary tattoos optional. The breeze is not.</p>
+        </div>
+    </article>
+    <article class="chapter" id="cruise">
+        <div class="film" data-film>
+            <img class="is-on" src="chicago-image-6.jpg" alt="Chicago Riverwalk at night">
+            <img src="chicago-image-7.jpg" alt="Architecture river cruise at dusk" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 05</p>
+            <h2>Lights on the river</h2>
+            <p>Wrigley Building lit, a boat sliding under the bridges, the skyline doing its night job. The architecture cruise is how the map finally clicks.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Four days is a first draft. These are the rooms I didn’t finish — worth a return ticket.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏢</span> Willis Tower skydeck</h3>
+                <p>The glass box over the Loop. I stayed at river level. Next time I go up.</p>
+                <span class="price">Ticket</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎸</span> Longer blues night</h3>
+                <p>One set is not enough. I owe Chicago a late last train.</p>
+                <span class="price">Night</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏘️</span> Pilsen murals</h3>
+                <p>Neighborhood color beyond downtown. On the list for a slower trip.</p>
+                <span class="price">Walk</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⚾</span> Cubs at Wrigley</h3>
+                <p>If the season lines up. Ivy, a crowd, a different Chicago afternoon.</p>
+                <span class="price">Seasonal</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have a fifth day.</h2>
+        <p class="day-tours-lead">Oak Park for Wright, a longer lakefront ride, or a museum you skipped downtown.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏠</span> Oak Park</h3>
+                <p>Frank Lloyd Wright homes on a Green Line / bus combo. Architecture without the riverboat.</p>
+                <span class="price">Day · transit</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🔬</span> Museum Campus</h3>
+                <p>Shedd, Field, Adler — pick one. Do not try all three unless you enjoy lines.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌊</span> Lakefront trail</h3>
+                <p>Bike or walk along Michigan. Soft day after deep dish and museums.</p>
+                <span class="price">Half day</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../miami/">Miami is next →</a>
+    </div>
+
+    <footer>
+        <span>Chicago · United States</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'bean', 'riverwalk', 'deepdish', 'lincolnpark', 'cruise']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'millennium', name: 'Millennium Park', n: '01', lat: 41.8826, lng: -87.6226, query: 'Millennium Park, Chicago, IL' },
+            { id: 'artinstitute', name: 'Art Institute', n: '02', lat: 41.8796, lng: -87.6237, query: 'Art Institute of Chicago, Chicago, IL' },
+            { id: 'navypier', name: 'Navy Pier', n: '03', lat: 41.8917, lng: -87.6086, query: 'Navy Pier, Chicago, IL' },
+            { id: 'river', name: 'River architecture', n: '04', lat: 41.8892, lng: -87.6242, query: 'Chicago Riverwalk architecture tour, Chicago, IL' }
+        ];
+
+        const mapLink = document.getElementById('chicago-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Millennium%20Park%2C%20Chicago&destination=Navy%20Pier%2C%20Chicago&waypoints=Art%20Institute%20of%20Chicago%7CChicago%20Riverwalk&travelmode=walking';
+
+        const map = L.map('chicago-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>

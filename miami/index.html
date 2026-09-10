@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami itinerary: food, map, Everglades, Keys, and visa notes | Veda</title>
+    <meta name="description" content="A Miami itinerary with snorkeling, Bayside, Everglades, Key West, food, and US domestic visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/miami/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Miami itinerary: food, map, Everglades, Keys, and visa notes">
+    <meta property="og:description" content="Places to go, what to eat, when to visit, and visa notes for Indian and US passports — in one Miami page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/miami/">
+    <meta property="og:image" content="https://globetrotwithveda.com/miami-image.jpg">
+    <meta property="og:image:alt" content="Miami waterfront and tropical sky">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miami itinerary: food, map, Everglades, Keys, and visa notes">
+    <meta name="twitter:description" content="Places to go, what to eat, when to visit, and visa notes for Indian and US passports — in one Miami page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/miami-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/miami/",
+                "url": "https://globetrotwithveda.com/miami/",
+                "name": "Miami itinerary: food, map, Everglades, Keys, and visa notes",
+                "description": "A Miami itinerary with snorkeling, Bayside, Everglades, Key West, food, and US domestic visa notes for Indian and US passports — written by Veda, who actually went.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Miami",
+                    "containedInPlace": { "@type": "Country", "name": "United States" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Miami", "item": "https://globetrotwithveda.com/miami/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #miami-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #miami-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        </style>
+</head>
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">25.7617° N · 80.1918° W</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="miami" aria-label="Miami">
+        <div class="hero-media">
+            <img src="../miami-image.jpg" alt="Miami waterfront and tropical sky">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">United States · Field notes</p>
+            <h1>MIAMI<span>Salt air, neon nights, and a day that ends in Key West.</span></h1>
+            <p class="hero-lead">Snorkel mornings, speedboats on the Atlantic, Bayside docks, Everglades airboats, cafecito, and the southernmost buoy when the Keys call.</p>
+            <div class="hero-stats">
+                <div><strong>4+</strong><span>Days</span></div>
+                <div><strong>Atlantic</strong><span>In the water</span></div>
+                <div><strong>8</strong><span>Frames kept</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>Paradise is not only the beach.<br>It is the mix.</h2>
+        <p>Miami hit me as Art Deco plus humidity plus Cuban coffee. One day in the Atlantic, one on an airboat in the River of Grass, one racing a speedboat past the skyline, and a Key West marker that feels like the edge of the map. Nightlife is not optional here — it is the city’s second shift.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually went.</h2>
+        <p>Tagged stops on the map. <strong>All pins</strong> shows them together — tap a name to zoom. Popups open Google Maps. Key West is a drive or tour day, not a walk from South Beach.</p>
+        <div class="map-pins" role="group" aria-label="Miami locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="bayside">Bayside</button>
+            <button type="button" aria-pressed="false" data-place="southbeach">South Beach</button>
+            <button type="button" aria-pressed="false" data-place="everglades">Everglades</button>
+            <button type="button" aria-pressed="false" data-place="keywest">Key West</button>
+        </div>
+        <div class="map-frame">
+            <div id="miami-map" role="region" aria-label="Map of Miami-area stops with tagged locations"></div>
+        </div>
+        <a class="map-open" id="miami-map-link" href="https://www.google.com/maps/search/?api=1&query=Miami" target="_blank" rel="noopener noreferrer">Open a route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">Boat slots, hurricane season honesty, Cuban sandwiches, and how to move without living in traffic.</p>
+        <div class="tabs" role="tablist" aria-label="Miami practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🥐</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤿</span> Snorkel the Atlantic</h3>
+                <p>Warm water, reef time, salt in your hair. Book a boat that actually puts you in the water, not just past it.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛥️</span> Bayside &amp; bay boats</h3>
+                <p>Yachts and fishing boats sharing a dock. Star Island tours leave from here. Sunset is the soft sell.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Speedboat</h3>
+                <p>Spray, skyline, open Atlantic. Loud and worth it once. Hold the rail.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🦜</span> Macaws &amp; color</h3>
+                <p>Tropical birds that look Photoshopped until they aren’t. Miami’s palette is not subtle.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🐊</span> Everglades</h3>
+                <p>Airboat, sawgrass, alligators that ignore your schedule. A different Florida than Ocean Drive.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌴</span> Key West day</h3>
+                <p>Southernmost Point buoy, 90 miles from Cuba on the sign. Long day from Miami — leave early or overnight.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚤</span> Speedboat / snorkel</h3>
+                <p>Morning slots are kinder. Confirm gear and reef stops. Seasick tablets if you are that person.</p>
+                <span class="price">Book ahead</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🐊</span> Everglades airboat</h3>
+                <p>Operators west of the city. Bring ear protection and something that can get wet.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚌</span> Key West tour or drive</h3>
+                <p>Overseas Highway is the point. Day tours exist; overnight is saner if you want Duval after dark.</p>
+                <span class="price">Day · long</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Vizcaya</h3>
+                <p>Villa and gardens on the bay. Timed tickets help on weekends.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://vizcaya.org/" target="_blank" rel="noopener noreferrer">Vizcaya ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> Walk-up</h3>
+                <p>South Beach, Wynwood Walls exterior, Little Havana sidewalks. Show up. Bring sunscreen that means it.</p>
+                <span class="price">Free</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥪</span> Cuban sandwich</h3>
+                <p>Ham, roast pork, Swiss, pickles, mustard, pressed. Versailles or a serious ventanita line.</p>
+                <span class="price">$8–12</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🦞</span> Stone crab</h3>
+                <p>In season roughly Oct–May. Cold claws, mustard sauce. Joe’s if you accept the wait.</p>
+                <span class="price">$40–60</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍋</span> Ceviche</h3>
+                <p>Citrus, cilantro, ocean-fresh fish. Beach lunch energy without the sand in your teeth.</p>
+                <span class="price">$15–25</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☕</span> Cafecito</h3>
+                <p>Sweet, strong, window service. Colada if you are sharing. Morning ritual, not a latte.</p>
+                <span class="price">$1–2</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥧</span> Key lime pie</h3>
+                <p>Tart, graham crust, the Keys on a plate. Save room even after seafood.</p>
+                <span class="price">$8–12</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍹</span> Mojitos</h3>
+                <p>Mint, lime, beach-bar logic. One after the boat. Hydrate either way.</p>
+                <span class="price">$12–18</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>Winter peak and Art Basel week need lead time. Summer is cheaper and stormier. Shoulder spring is the value play.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>South Beach</strong> — walk to sand and Art Deco. <strong>Brickell / downtown</strong> — bay and Bayside access. <strong>Wynwood</strong> — murals and evenings that are not Ocean Drive.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Oceanfront premiums are real. One neighborhood inland plus rideshare still gets you the water.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> Winter (Dec–Mar)</h3>
+                <p>18–26°C. Best overall — beach weather, lower humidity, peak prices and crowds. Book early.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌺</span> Spring (Apr–May)</h3>
+                <p>22–29°C. Still excellent, fewer crowds, better rates after spring break.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌧️</span> Summer (Jun–Sep)</h3>
+                <p>26–33°C. Hurricane season. Hot, humid, afternoon storms, lowest rates. Watch forecasts.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> Fall (Oct–Nov)</h3>
+                <p>23–29°C. Risk easing, still warm, deals before winter rush. November is a sweet spot.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk pockets</h3>
+                <p>South Beach, Wynwood, Little Havana work on foot. Cross-town is not a stroll.</p>
+                <span class="price">Free</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Rideshare</h3>
+                <p>Default between neighborhoods. Traffic is the tax. Budget time, not just money.</p>
+                <span class="price">App</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚇</span> Metromover / Metrorail</h3>
+                <p>Downtown Metromover is free. Useful near Brickell and Bayside — not a full city network.</p>
+                <span class="price">Free / cheap</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚗</span> Car for Keys / Glades</h3>
+                <p>Rent if Everglades or Key West are on the plan. Parking in South Beach is its own adventure.</p>
+                <span class="price">Day rate</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">✈️</span> MIA / FLL</h3>
+                <p>Either airport works. Rideshare or rental after landing. Domestic connections are normal.</p>
+                <span class="price">Airport</span>
+            </div>
+        </div>
+
+<div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>US entry first.</strong> Indian citizens need a valid US visa (usually B1/B2) to enter the United States. Once you are in the US, Miami is domestic travel.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> B1/B2 tourist / business</h3>
+                            <div class="detail"><strong>What</strong><span>Visitor visa to enter the US; then fly domestically to Miami</span></div>
+                            <div class="detail"><strong>Validity</strong><span>Often multi-year / multiple-entry (consulate decides)</span></div>
+                            <div class="detail"><strong>Stay</strong><span>Usually up to 6 months per entry (CBP decides at the border)</span></div>
+                            <div class="detail"><strong>Fee</strong><span>MRV fee (check travel.state.gov for current amount)</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Required documents</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>DS-160 confirmation page</li>
+                                <li>Visa interview appointment confirmation</li>
+                                <li>MRV fee payment receipt</li>
+                                <li>Photo meeting US visa specs</li>
+                                <li>Travel itinerary / hotel bookings (helpful)</li>
+                                <li>Proof of ties to India (job, property, family)</li>
+                                <li>Bank statements / financial proof</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> How to apply</h3>
+                            <div class="detail"><strong>Form</strong><span>DS-160 online</span></div>
+                            <div class="detail"><strong>Interview</strong><span>US Embassy/Consulate in India (Delhi, Mumbai, Chennai, Hyderabad, Kolkata)</span></div>
+                            <div class="detail"><strong>Appointments</strong><span>Book via the official US visa scheduling site</span></div>
+                            <div class="detail"><strong>After visa</strong><span>Fly into any US port of entry, then a domestic flight to Miami</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Apply well before travel — interview wait times vary by city</li>
+                                <li>B1/B2 is for temporary visits; do not overstay your I-94</li>
+                                <li>Domestic US flights need REAL ID-compliant ID or a passport</li>
+                                <li>Keep hotel and return plans handy for CBP</li>
+                                <li>ESTA is not for Indian passports — you need a visa stamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Guidance only. Check travel.state.gov and the US Embassy/Consulate for current fees, wait times, and rules.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert ok">
+                        <strong>Domestic trip.</strong> If you already hold valid US status (H1B/H4/OPT and a valid I-94), Miami is a domestic flight — no new visa for this city.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> What you need</h3>
+                            <div class="detail"><strong>Status</strong><span>Valid H1B/H4/OPT (or other) with unexpired I-94</span></div>
+                            <div class="detail"><strong>ID for flying</strong><span>Passport or REAL ID-compliant driver's license</span></div>
+                            <div class="detail"><strong>Extra visa</strong><span>None for domestic US travel</span></div>
+                            <div class="detail"><strong>Re-entry</strong><span>Only matters if you leave the US and come back</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry anyway</h3>
+                            <ul>
+                                <li>Passport with visa stamp (if you have one)</li>
+                                <li>I-797 (H1B/H4) or EAD (OPT/H4 EAD)</li>
+                                <li>Recent pay stub or employment letter (optional but useful)</li>
+                                <li>Government photo ID for TSA</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>No embassy appointment for a domestic US city once your status is valid</li>
+                                <li>Watch your I-94 end date; domestic travel does not extend status</li>
+                                <li>If your visa stamp is expired but I-94 is valid, you can stay/travel inside the US; leaving requires a new stamp to return</li>
+                                <li>Carry passport or REAL ID for TSA at the airport</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">⚠️</span> Important</h3>
+                            <div class="detail"><strong>Leaving the US</strong><span>A side trip abroad may still need a valid visa stamp to re-enter — check before you book</span></div>
+                            <div class="detail"><strong>TSA</strong><span>REAL ID rules apply for domestic boarding</span></div>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status rules change. Confirm I-94 at i94.cbp.dhs.gov and TSA ID rules before you fly.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>Domestic travel.</strong> US citizens do not need a visa for Miami.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Flying domestically</h3>
+                        <div class="detail"><strong>ID</strong><span>REAL ID-compliant license or US passport</span></div>
+                        <div class="detail"><strong>Visa</strong><span>Not required</span></div>
+                        <div class="detail"><strong>Duration</strong><span>No immigration limit inside the US</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Carry a government photo ID that TSA accepts</li>
+                            <li>Book hotels early around big weekends and festivals</li>
+                            <li>Domestic flight delays are common — leave buffer for timed tickets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> This page is about visiting Miami inside the United States. International trips still follow the destination country's rules.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Eight frames from water, birds, neon, and the Keys. Not a complete Miami — just what I kept.</p>
+    </section>
+
+    <article class="chapter" id="snorkel">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-1.jpg" alt="Snorkeling in the Atlantic">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 07</p>
+            <h2>Under the Atlantic</h2>
+            <p>Mask on, reef below, Miami sun above the surface. Snorkeling here is the quiet hour before the speedboats start arguing with the horizon.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="bayside">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-2.jpg" alt="Miami Bayside waterfront">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 07</p>
+            <h2>Bayside docks</h2>
+            <p>Luxury hulls next to working boats. The waterfront where tours leave and people watch. Glamour and bait shops sharing a zip code.</p>
+        </div>
+    </article>
+    <article class="chapter" id="speedboat">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-3.jpg" alt="Speed boat ride in the Atlantic">
+            <img src="miami-image-8.jpg" alt="Speed boat on the Atlantic, another run" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 07</p>
+            <h2>Throttle up</h2>
+            <p>Skyline as backdrop, spray in your face, a boat that does not do subtle. I went twice on the roll — same adrenaline, different light.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="macaws">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-4.jpg" alt="Blue-and-yellow macaws">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 07</p>
+            <h2>Blue and yellow</h2>
+            <p>Macaws that look like the city’s color wheel came alive. Tropical on purpose. A reminder Miami is not only concrete and neon.</p>
+        </div>
+    </article>
+    <article class="chapter" id="everglades">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-5.jpg" alt="Everglades wetlands">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 07</p>
+            <h2>River of Grass</h2>
+            <p>Airboat noise, then sudden quiet over sawgrass. Alligators that do not care about your itinerary. The wild Florida next to the Magic City.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="nightlife">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-6.jpg" alt="Nightlife in Miami">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 07</p>
+            <h2>Second shift</h2>
+            <p>When the sun drops, Miami clocks in again. Neon, bass, a sidewalk that does not empty. Sleep is optional; cafecito is not.</p>
+        </div>
+    </article>
+    <article class="chapter" id="keywest">
+        <div class="film" data-film>
+            <img class="is-on" src="miami-image-7.jpg" alt="Key West Southernmost Point of the U.S.">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 07</p>
+            <h2>Southernmost</h2>
+            <p>The buoy, the queue, the sign that says Cuba is ninety miles. Standing at the continental edge after a Keys highway day still feels like a dare you already won.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">I covered water and neon. These are the next tickets.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> Longer Wynwood night</h3>
+                <p>Murals by day, galleries and bars after. I skimmed. Next time I stay.</p>
+                <span class="price">Evening</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎺</span> Little Havana deeper</h3>
+                <p>Calle Ocho, domino park, a longer cafecito crawl. Cultural heartbeat worth more than a drive-by.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏝️</span> Key Biscayne slow day</h3>
+                <p>Quieter sand than South Beach. Lighthouse, bikes, fewer poses.</p>
+                <span class="price">Day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Full Vizcaya morning</h3>
+                <p>Gardens without rushing. I owe the villa a quieter hour.</p>
+                <span class="price">Ticket</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you stretch the trip.</h2>
+        <p class="day-tours-lead">Keys overnight, a second Everglades angle, or just more boat days.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌴</span> Key West overnight</h3>
+                <p>Duval after dark beats a same-day turnaround. Southernmost at sunrise if you hate the midday line.</p>
+                <span class="price">1–2 nights</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🐊</span> Everglades longer</h3>
+                <p>National Park trails beyond the airboat loop. Bring water and respect for wildlife.</p>
+                <span class="price">Full day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛵</span> Biscayne boat day</h3>
+                <p>Islands, sandbars, another excuse to be on the water. Book when seas look kind.</p>
+                <span class="price">Day</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../nassau/">Nassau is next →</a>
+    </div>
+
+    <footer>
+        <span>Miami · United States</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'snorkel', 'bayside', 'speedboat', 'macaws', 'everglades', 'nightlife', 'keywest']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'bayside', name: 'Bayside Marketplace', n: '01', lat: 25.7781, lng: -80.1867, query: 'Bayside Marketplace, Miami, FL' },
+            { id: 'southbeach', name: 'South Beach', n: '02', lat: 25.7826, lng: -80.1341, query: 'South Beach, Miami Beach, FL' },
+            { id: 'everglades', name: 'Everglades', n: '03', lat: 25.7459, lng: -80.5544, query: 'Everglades National Park, Florida' },
+            { id: 'keywest', name: 'Key West southernmost', n: '04', lat: 24.5465, lng: -81.7975, query: 'Southernmost Point Buoy, Key West, FL' }
+        ];
+
+        const mapLink = document.getElementById('miami-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Bayside%20Marketplace%2C%20Miami&destination=Southernmost%20Point%20Buoy%2C%20Key%20West&waypoints=South%20Beach%2C%20Miami%20Beach%7CEverglades%20National%20Park&travelmode=driving';
+
+        const map = L.map('miami-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a driving route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a driving route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>
