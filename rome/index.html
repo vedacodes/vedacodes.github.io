@@ -687,7 +687,7 @@
             <button type="button" aria-pressed="false" data-place="steps">Spanish Steps</button>
         </div>
         <div class="map-frame">
-            <div id="rome-map" role="application" aria-label="Map of Rome with tagged locations"></div>
+            <div id="rome-map" role="region" aria-label="Map of Rome with tagged locations"></div>
         </div>
         <a class="map-open" id="rome-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Colosseum%2C%20Rome&destination=Spanish%20Steps%2C%20Rome&waypoints=Roman%20Forum%2C%20Rome%7CPantheon%2C%20Rome%7CPiazza%20Navona%2C%20Rome%7CTrevi%20Fountain%2C%20Rome%7CCastel%20Sant%27Angelo%2C%20Rome&travelmode=walking" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
     </section>
@@ -817,15 +817,15 @@
         <h2>Intel</h2>
         <p class="intel-lead">The useful layer — tickets, bowls of carbonara, and how not to melt in August.</p>
         <div class="tabs" role="tablist" aria-label="Rome practical notes">
-            <button type="button" role="tab" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
-            <button type="button" role="tab" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍝</span> Eat</button>
-            <button type="button" role="tab" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
-            <button type="button" role="tab" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
-            <button type="button" role="tab" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
-            <button type="button" role="tab" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍝</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚶</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
         </div>
 
-        <div class="panel is-on grid-3" id="panel-see" role="tabpanel">
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">🏛️</span> Colosseum</h3>
                 <p>Skip-the-line in advance. Early morning or late afternoon — fewer people, better light.</p>
@@ -852,7 +852,7 @@
             </div>
         </div>
 
-        <div class="panel grid-3" id="panel-eat" role="tabpanel" hidden>
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">🍝</span> Carbonara</h3>
                 <p>Eggs, pecorino, guanciale, pepper. If there’s cream, you’re in a different city.</p>
@@ -885,7 +885,7 @@
             </div>
         </div>
 
-        <div class="panel" id="panel-stay" role="tabpanel" hidden>
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
                 <p>3–4 months ahead for April–June and September–October. 6–8 weeks for winter. Easter and Christmas: book the second you know you’re going.</p>
@@ -900,7 +900,7 @@
             </div>
         </div>
 
-        <div class="panel grid-2" id="panel-when" role="tabpanel" hidden>
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">🌸</span> April–May</h3>
                 <p>18–23°C, flowers, Easter crowds. Peak prices. Still the easiest Rome to love.</p>
@@ -919,7 +919,7 @@
             </div>
         </div>
 
-        <div class="panel grid-3" id="panel-move" role="tabpanel" hidden>
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
             <div class="card">
                 <h3><span class="emo" aria-hidden="true">🚶</span> Walk</h3>
                 <p>The historic center is a pedestrian argument you will lose, happily. Shoes, water, done.</p>
@@ -947,7 +947,7 @@
             </div>
         </div>
 
-        <div class="panel visa-stack" id="visa" role="tabpanel" hidden>
+        <div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
             <p class="choice-label">Select your citizenship</p>
             <div class="choice" role="group" aria-label="Citizenship">
                 <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
@@ -1239,7 +1239,7 @@
             attributionControl: true
         });
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 19
         }).addTo(map);
         map.scrollWheelZoom.disable();

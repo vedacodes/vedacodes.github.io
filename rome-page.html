@@ -6,10 +6,15 @@
     <title>Rome has moved | Veda</title>
     <link rel="canonical" href="https://globetrotwithveda.com/rome/">
     <meta name="robots" content="noindex, follow">
-    <meta http-equiv="refresh" content="0; url=rome/index.html">
-    <script>location.replace("rome/index.html" + location.hash);</script>
+    <meta http-equiv="refresh" content="0; url=/rome/">
+    <script>
+        (function () {
+            var dest = location.protocol === 'file:' ? 'rome/index.html' : '/rome/';
+            location.replace(dest + location.hash);
+        })();
+    </script>
 </head>
 <body>
-    <p><a href="rome/index.html">Rome now lives at /rome/</a></p>
+    <p><a href="/rome/">Rome now lives at /rome/</a></p>
 </body>
 </html>
