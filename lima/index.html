@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima itinerary: coastal days, food, map, and visa notes | Veda</title>
+    <meta name="description" content="A Lima itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/lima/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Lima itinerary: coastal days, food, map, and visa notes">
+    <meta property="og:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Lima page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/lima/">
+    <meta property="og:image" content="https://globetrotwithveda.com/lima-image.jpg">
+    <meta property="og:image:alt" content="Miraflores cliffs and the Pacific in Lima">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lima itinerary: coastal days, food, map, and visa notes">
+    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and visa notes for Indian and US passports — in one Lima page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/lima-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/lima/",
+                "url": "https://globetrotwithveda.com/lima/",
+                "name": "Lima itinerary: coastal days, food, map, and visa notes",
+                "description": "A Lima itinerary with a walking map, what to eat, when to go, and visa notes for Indian and US passports.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Lima",
+                    "containedInPlace": { "@type": "Country", "name": "Peru" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lima", "item": "https://globetrotwithveda.com/lima/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(4.2rem, 16vw, 11rem);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(2.6rem, 11vw, 7.4rem);
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(2.15rem, 9vw, 6.1rem);
+            letter-spacing: -0.055em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #lima-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #lima-map { height: 360px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        </style>
+</head>
+
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">12.0464° S · 77.0428° W</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="lima" aria-label="Lima">
+        <div class="hero-media">
+            <img src="../lima-image.jpg" alt="Miraflores cliffs and the Pacific in Lima">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">Peru · Field notes</p>
+            <h1>LIMA<span>Pacific cliffs, world-class plates, and a city that is more than a gateway.</span></h1>
+            <p class="hero-lead">Miraflores ocean light, Barranco murals, Love Park mosaics, Huaca Pucllana adobe in the middle of the city, and the smell of pollo a la brasa when the day finally slows down.</p>
+            <div class="hero-stats">
+                <div><strong>3</strong><span>Days</span></div>
+                <div><strong>12+</strong><span>Miles walked</span></div>
+                <div><strong>~8</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>Not just a stopover.<br>The coast is the story.</h2>
+        <p>Lima surprised me at every turn. This sprawling Pacific capital is so much more than a gateway to Machu Picchu — Barranco color, Miraflores cliffs, a pre-Columbian pyramid in the neighborhood, and a food scene that has quietly conquered the globe. Three days is a first draft of a city built to be walked along the malecón and eaten through.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually walked.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Lima locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="love-park">Love Park</button>
+            <button type="button" aria-pressed="false" data-place="faro">La Marina</button>
+            <button type="button" aria-pressed="false" data-place="larcomar">Larcomar</button>
+            <button type="button" aria-pressed="false" data-place="barranco">Barranco</button>
+            <button type="button" aria-pressed="false" data-place="huaca">Huaca Pucllana</button>
+            <button type="button" aria-pressed="false" data-place="centro">Historic Center</button>
+        </div>
+        <div class="map-frame">
+            <div id="lima-map" role="region" aria-label="Map of Lima with tagged locations"></div>
+        </div>
+        <a class="map-open" id="lima-map-link" href="https://www.google.com/maps/search/?api=1&query=Lima%2C%20Peru" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">The useful layer — coastal walks, museum tickets, where to stay between Miraflores and Barranco, and how to move without wasting a day in traffic.</p>
+        <div class="tabs" role="tablist" aria-label="Lima practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍽️</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚇</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌊</span> Miraflores &amp; Malecón</h3>
+                <p>Coastal cliffs, parks, paragliders, Pacific views. Love Park (Parque del Amor) for sunset. Safe, modern, and the easiest base for a first Lima.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> Barranco</h3>
+                <p>Bohemian streets, murals, galleries, Bridge of Sighs. Nightlife and cafés. Best as an afternoon that turns into evening.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Huaca Pucllana</h3>
+                <p>Pre-Columbian adobe pyramid right in Miraflores. History you can walk around before dinner. Guided visits make the bricks speak.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Historic Center</h3>
+                <p>UNESCO Plaza Mayor, Cathedral, Government Palace, balconied streets. Morning visit beats afternoon heat and thicker crowds.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛍️</span> Larcomar</h3>
+                <p>Cliffside open-air mall carved into the bluff — shops, cinema, Pacific views while you eat. Touristy. Still correct for a Miraflores evening.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💡</span> La Marina Lighthouse</h3>
+                <p>Faro La Marina on the malecón — a coastal landmark and an easy stop between parks and ocean overlooks.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Huaca Pucllana</h3>
+                <p>Buy tickets on site or check current hours online. Guided tours are worth it. Pair with a Miraflores dinner nearby.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://www.huacapucllanamiraflores.pe/" target="_blank" rel="noopener noreferrer">Huaca Pucllana ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Larco Museum</h3>
+                <p>Pre-Columbian collection in a mansion with gardens. Excellent intro before Cusco. Book ahead on busy weekends.</p>
+                <span class="price">Timed / walk-up</span>
+                <a class="book-link" href="https://www.museolarco.org/" target="_blank" rel="noopener noreferrer">Museo Larco ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛪</span> San Francisco Monastery</h3>
+                <p>Colonial baroque plus catacombs. Guided tours only for the underground. Yellow facade is the photo; the bones are the story.</p>
+                <span class="price">Guided ticket</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍽️</span> Top restaurants</h3>
+                <p>Lima’s fine dining sells out. If you want Central, Maido, or similar, reserve weeks or months ahead — not the night before.</p>
+                <span class="price">Reserve</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> No reservation</h3>
+                <p>Malecón walks, Love Park, Barranco murals, Larcomar views. Show up early for soft light on the cliffs.</p>
+                <span class="price">Walk up</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍋</span> Ceviche</h3>
+                <p>Raw fish cured in citrus, chili, onions. Lunch tradition — many places stop serving late afternoon. Order early.</p>
+                <span class="price">S/ 30–60</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥔</span> Causa</h3>
+                <p>Layered potato terrine with avocado, chicken, or seafood. Cold, bright, and very Limeño.</p>
+                <span class="price">S/ 20–40</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍗</span> Pollo a la brasa</h3>
+                <p>Peru’s rotisserie chicken — crispy skin, aji verde, fries. Comfort food that locals and visitors argue about by brand.</p>
+                <span class="price">S/ 25–45</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍸</span> Pisco sour</h3>
+                <p>National cocktail — pisco, lime, egg white, bitters. One at a Barranco bar after the murals.</p>
+                <span class="price">S/ 20–35</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌽</span> Anticuchos &amp; street snacks</h3>
+                <p>Skewered heart, choclo, emoliente carts. Ask a local stall, not a hotel lobby.</p>
+                <span class="price">S/ 8–20</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☕</span> Coffee &amp; dessert</h3>
+                <p>Peruvian beans, lucuma ice cream, suspiro. Soft landing after a cliff walk.</p>
+                <span class="price">S/ 10–25</span>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📅</span> When to book</h3>
+                <p>December–March (sunny season) fills first. Garúa months are easier on rates. Book Miraflores or Barranco early if you want walkable coast.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Where</h3>
+                <p><strong>Miraflores</strong> — malecón, parks, restaurants, safest first stay. <strong>Barranco</strong> — artsy nights, shorter walk to murals. <strong>San Isidro</strong> — quieter, business-hotel energy. Historic Center is atmospheric but plan evenings carefully.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💵</span> Spend less</h3>
+                <p>Skip ocean-view premiums if the malecón is two blocks away. Uber between Barranco and Miraflores is cheap; a mid-rise near parks beats a lobby you will Instagram once.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-2" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> Summer (Dec–Mar)</h3>
+                <p>22–29°C, warmer, sunnier, beach energy. Peak for outdoor dining and cliff walks. Higher rates; Limeños vacation in January.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌫️</span> Winter / garúa (May–Nov)</h3>
+                <p>14–19°C, coastal fog, grey skies, drizzle that rarely becomes real rain. Cooler, never freezing. Fine for food and museums; softer light for Barranco.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> Shoulder (Apr, Nov)</h3>
+                <p>18–24°C transitional weather. April still has sun; November fog lifting. Moderate prices and a good compromise.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍽️</span> Food year-round</h3>
+                <p>Culinary scene does not wait for blue skies. Mistura and restaurant weeks spike demand — book top tables early whenever you come.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk Miraflores / Barranco</h3>
+                <p>Malecón parks, Love Park, Larcomar, Barranco murals — this is a walking coast. Comfortable shoes for cliffs and cobbles.</p>
+                <span class="price">Free</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Uber</h3>
+                <p>Reliable for airport, Historic Center, and evening hops. Safer and clearer than street taxis for most visitors.</p>
+                <span class="price">App</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚌</span> Metropolitano</h3>
+                <p>BRT spine through the city. Useful if you learn a few stations; not as tourist-simple as a European metro.</p>
+                <span class="price">Card / fare</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚲</span> Bike the malecón</h3>
+                <p>Cycle paths along Miraflores cliffs. Rent for a sunny hour; foggy winter mornings are less fun.</p>
+                <span class="price">Rental</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">✈️</span> Airport (LIM)</h3>
+                <p>Jorge Chávez — Uber or official transfer. Traffic is real; pad time for flights out to Cusco.</p>
+                <span class="price">Transfer</span>
+            </div>
+        </div>
+
+        <div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>Usually a Peruvian visa — or a conditional exemption.</strong> Indian ordinary-passport holders typically need a tourist visa unless they qualify for Peru’s exemption (valid US/UK/Canada/Australia/Schengen visa with enough remaining validity, or permanent residence in those places). Always verify with Migraciones Perú / the Peruvian consulate before you fly.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India / abroad</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Already in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> Tourist visa (if no exemption)</h3>
+                            <div class="detail"><strong>What</strong><span>Peruvian tourist visa via a Peruvian consulate (e.g. New Delhi)</span></div>
+                            <div class="detail"><strong>Stay</strong><span>Authorized length is set at entry — often up to ~180 days in a year for tourism categories; officer decides</span></div>
+                            <div class="detail"><strong>Processing</strong><span>Often about 7–10 working days after interview — confirm locally</span></div>
+                            <div class="detail"><strong>Apply</strong><span>Start at least 15 days before travel; earlier is safer</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🪪</span> Conditional visa-free?</h3>
+                            <ul>
+                                <li>Valid visa from USA, UK, Canada, Australia, or Schengen with typically 6+ months remaining at entry</li>
+                                <li>Or permanent residence in those countries/areas</li>
+                                <li>Airlines may interpret Timatic differently — print official guidance</li>
+                                <li>Transit rules can differ from entry rules — check your routing</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Typical documents</h3>
+                            <ul>
+                                <li>Passport valid 6+ months</li>
+                                <li>Visa application (DGC-005) if applying</li>
+                                <li>Photos, itinerary, lodging proof</li>
+                                <li>Funds / employment / ties evidence</li>
+                                <li>Return or onward ticket</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Confirm with the Embassy of Peru / Migraciones Perú — not a blog comment</li>
+                                <li>Carry printed exemption proof if you rely on a US/Schengen visa</li>
+                                <li>Boarding denial can happen even when entry rules look clear</li>
+                                <li>TAM / Andean migration card processes change — follow current airport instructions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. Fees, exemptions, and document lists change. Verify on consulado.pe / Migraciones Perú before you book nonrefundable tickets.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert ok">
+                        <strong>Often visa-free for short tourism if your US visa qualifies.</strong> Indian nationals with a valid US visa (commonly needing ~6 months remaining validity at entry) or US permanent residence are frequently exempt from a separate Peruvian tourist visa. H-1B/H-4/OPT holders usually rely on the valid US visa stamp/status — still verify Migraciones Perú and your airline before departure.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> Typical exemption path</h3>
+                            <div class="detail"><strong>Visa</strong><span>Often no Peruvian visa if US (or other listed) visa meets the minimum remaining validity</span></div>
+                            <div class="detail"><strong>Stay</strong><span>Up to ~180 days/year tourism categories are commonly cited; entry officer decides</span></div>
+                            <div class="detail"><strong>Status</strong><span>Keep H-1B/H-4/OPT (or other) valid for the whole trip and for US re-entry</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🪪</span> Carry anyway</h3>
+                            <ul>
+                                <li>Indian passport</li>
+                                <li>Valid US visa stamp / green card if applicable</li>
+                                <li>I-797 / EAD as relevant</li>
+                                <li>Return ticket to the US</li>
+                                <li>Lodging proof and sufficient funds evidence</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> If exemption does not apply</h3>
+                            <ul>
+                                <li>Apply for a Peruvian tourist visa at a consulate with jurisdiction over your US state</li>
+                                <li>Do not assume every US visa category qualifies — confirm</li>
+                                <li>Student/short visas are sometimes treated more strictly than travel/business visas</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips</h3>
+                            <ul>
+                                <li>Screenshot or print the official exemption language for airline desks</li>
+                                <li>US re-entry needs a valid US visa/stamp — Peru does not fix that</li>
+                                <li>Pad LIM connection time if continuing to Cusco the same day</li>
+                                <li>Rules change — Migraciones Perú is the source of truth</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> Status and exemption questions are individual. When in doubt, check Migraciones Perú / the Peruvian consulate and your airline — not a comment thread.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>No visa required for tourism.</strong> US citizens can typically visit Peru visa-free for short tourism stays. Authorized length is set at entry.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Visa-free entry</h3>
+                        <div class="detail"><strong>Visa</strong><span>None for ordinary tourism (confirm current MFA matrix)</span></div>
+                        <div class="detail"><strong>Passport</strong><span>Valid; 6 months remaining is a common airline/consular expectation</span></div>
+                        <div class="detail"><strong>Purpose</strong><span>Tourism, short visits — not work</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry checklist</h3>
+                        <ul>
+                            <li>Valid US passport</li>
+                            <li>Return / onward ticket</li>
+                            <li>Proof of accommodation</li>
+                            <li>Sufficient funds for the stay</li>
+                            <li>Follow current TAM / arrival form instructions</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Peak Dec–Mar spikes hotels in Miraflores</li>
+                            <li>If you continue to another country, that leg needs its own documents</li>
+                            <li>Altitude plans for Cusco are a health question, not a visa one</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">📍</span> Local note</h3>
+                        <p>LIM is the usual gateway. Know whether your next flight is domestic to Cusco — different terminal timing and bag rules.</p>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> Visa-free still means immigration rules. Check travel.state.gov / Migraciones Perú for the latest stay limits and entry forms.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Eight chapters from the coast — bikes on city streets, a lighthouse, Love Park mosaics, Barranco walls, Larcomar cliffs, pollo a la brasa, Pacific overlooks, and adobe at Huaca Pucllana.</p>
+    </section>
+
+    <article class="chapter" id="cycling">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-1.jpg" alt="Cycling through the streets of Lima">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 01</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 08</p>
+            <h2>Cycling the streets</h2>
+            <p>Exploring Lima on two wheels was the perfect way to feel the city’s rhythm. From busy neighborhoods to quiet coastal paths, cycling revealed corners you only get at street level.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="faro">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-2.jpg" alt="La Marina Lighthouse on the Lima coast">
+            <img src="lima-image-15.jpg" alt="Another view of La Marina Lighthouse" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 08</p>
+            <h2>La Marina Lighthouse</h2>
+            <p>Faro La Marina stands as a beacon on the malecón — Pacific horizon, cliff edge, and a clean stop for watching Lima’s light change.</p>
+        </div>
+    </article>
+    <article class="chapter" id="love-park">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-3.jpg" alt="Love Park in Miraflores">
+            <img src="lima-image-10.jpg" alt="Love Park mosaics and ocean view" loading="lazy">
+            <img src="lima-image-11.jpg" alt="Parque del Amor sculpture and coast" loading="lazy">
+            <img src="lima-image-12.jpg" alt="Love Park overlooking the Pacific" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 04</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 08</p>
+            <h2>Love Park</h2>
+            <p>Parque del Amor in Miraflores — El Beso, colorful mosaics, cliff-top Pacific. Locals and visitors share the same sunset rail. Romantic without needing a script.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="barranco">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-4.jpg" alt="Street art in Barranco">
+            <img src="lima-image-5.jpg" alt="More Barranco murals" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 08</p>
+            <h2>Barranco street art</h2>
+            <p>Barranco’s bohemian streets are an open-air gallery — traditional motifs and contemporary color on every wall. Walk slow. The neighborhood rewards looking up.</p>
+        </div>
+    </article>
+    <article class="chapter" id="larcomar">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-6.jpg" alt="Larcomar cliffside open-air mall">
+            <img src="lima-image-7.jpg" alt="Larcomar overlooking the Pacific" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 08</p>
+            <h2>Larcomar</h2>
+            <p>A shopping center built into the cliff face — Pacific views while you shop or dine. Modern Lima stacked against old geology. Touristy and still worth the overlook.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="pollo">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-8.jpg" alt="Pollo a la brasa in Lima">
+            <img src="lima-image-9.jpg" alt="Pollo a la brasa with sides" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 08</p>
+            <h2>Pollo a la brasa</h2>
+            <p>Peru’s national comfort plate — crispy skin, juicy meat, aji verde. After museums and cliffs, this is the meal that feels like the city exhaling.</p>
+        </div>
+    </article>
+    <article class="chapter" id="ocean">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-13.jpg" alt="Miraflores ocean view from the cliffs">
+            <img src="lima-image-14.jpg" alt="Pacific waves below Miraflores" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 08</p>
+            <h2>Miraflores ocean</h2>
+            <p>Dramatic cliffs, surfers below, Pacific that never stops. Watching waves from the malecón is half the reason to stay in Miraflores instead of treating Lima as a layover.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="huaca">
+        <div class="film" data-film>
+            <img class="is-on" src="lima-image-16.jpg" alt="Huaca Pucllana adobe pyramid">
+            <img src="lima-image-17.jpg" alt="Huaca Pucllana in Miraflores" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">08 / 08</p>
+            <h2>Huaca Pucllana</h2>
+            <p>A pre-Columbian adobe pyramid in the middle of modern Miraflores — more than a thousand years of city underneath the traffic. History you can touch before dinner.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Three coastal days filled Miraflores and Barranco. These are the rooms and streets I still owe Lima.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Historic Center, slower</h3>
+                <p>I skimmed Plaza Mayor. The balconies and churches deserve a morning without a Cusco flight clock running.</p>
+                <span class="price">Morning</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Larco Museum</h3>
+                <p>The pre-Columbian collection and garden restaurant are unfinished business before the Andes.</p>
+                <span class="price">Half day</span>
+                <a class="book-link" href="https://www.museolarco.org/" target="_blank" rel="noopener noreferrer">Museo Larco ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛪</span> San Francisco catacombs</h3>
+                <p>I saw the yellow facade more than the underground. A guided catacomb hour is still owed.</p>
+                <span class="price">Tour</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍽️</span> One fine-dining night</h3>
+                <p>I ate well. I did not chase the global ranking tables. Next time, one reserved tasting.</p>
+                <span class="price">Night</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏄</span> Surf lesson</h3>
+                <p>I watched from the cliffs. Getting in the water in a wetsuit is still on the list.</p>
+                <span class="price">Morning</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have another day.</h2>
+        <p class="day-tours-lead">Larco for museums, Centro for colonial streets, or start the Andes arc toward Cusco when Lima has filled the roll.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Museo Larco</h3>
+                <p>Mansion, gardens, pottery that explains Peru before the Inca story. Soft day when your feet refuse another cliff.</p>
+                <span class="price">Half day · Uber</span>
+                <a class="book-link" href="https://www.museolarco.org/" target="_blank" rel="noopener noreferrer">Larco ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Centro Histórico</h3>
+                <p>Plaza Mayor, Cathedral, San Francisco. Go early, stay aware, Uber back to Miraflores for evening.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛰️</span> Fly to Cusco</h3>
+                <p>Lima is often day one of a Peru arc. Next stop: altitude, plazas, and the Sacred Valley approach.</p>
+                <span class="price">Flight · next chapter</span>
+                <a class="book-link" href="../cusco/">Cusco notes →</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌊</span> Malecón full loop</h3>
+                <p>Walk Love Park to Larcomar to the lighthouse without rushing. Treat the sunset selfie as the door, not the whole visit.</p>
+                <span class="price">Half day · walk</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../cusco/">Cusco is next →</a>
+    </div>
+
+    <footer>
+        <span>Lima · Peru</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'cycling', 'faro', 'love-park', 'barranco', 'larcomar', 'pollo', 'ocean', 'huaca']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'love-park', name: 'Parque del Amor (Love Park)', n: '01', lat: -12.1272, lng: -77.0337, query: 'Parque del Amor, Miraflores, Lima' },
+            { id: 'faro', name: 'Faro La Marina', n: '02', lat: -12.1228, lng: -77.0395, query: 'Faro La Marina, Miraflores, Lima' },
+            { id: 'larcomar', name: 'Larcomar', n: '03', lat: -12.1319, lng: -77.0305, query: 'Larcomar, Miraflores, Lima' },
+            { id: 'barranco', name: 'Barranco', n: '04', lat: -12.1490, lng: -77.0215, query: 'Barranco, Lima' },
+            { id: 'huaca', name: 'Huaca Pucllana', n: '05', lat: -12.1112, lng: -77.0336, query: 'Huaca Pucllana, Lima' },
+            { id: 'centro', name: 'Plaza Mayor / Historic Center', n: '06', lat: -12.0464, lng: -77.0428, query: 'Plaza Mayor, Lima' }
+        ];
+
+        const mapLink = document.getElementById('lima-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Parque%20del%20Amor%2C%20Miraflores%2C%20Lima&destination=Plaza%20Mayor%2C%20Lima&waypoints=Faro%20La%20Marina%2C%20Miraflores%7CLarcomar%2C%20Miraflores%7CBarranco%2C%20Lima%7CHuaca%20Pucllana%2C%20Lima&travelmode=walking';
+
+        const map = L.map('lima-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a walking route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a walking route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+        </script>
+</body>
+</html>
