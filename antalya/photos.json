@@ -1,0 +1,227 @@
+{
+  "city": "antalya",
+  "country": "Turkey",
+  "continent": "asia",
+  "coords": {
+    "lat": 36.8969,
+    "lng": 30.7133,
+    "label": "36.8969° N · 30.7133° E"
+  },
+  "hero": {
+    "file": "../antalya-image.jpg",
+    "source_file": "antalya-image-18.jpg",
+    "original_name": "hadrians gate.jpeg",
+    "caption": "Hadrian’s Gate",
+    "alt": "Veda in front of Hadrian’s Gate in Kaleiçi"
+  },
+  "note": "Original descriptive filenames are preserved in original_name. Files were renamed to antalya-image-N.jpg. Do not delete this file; it is the caption source for later edits.",
+  "images": [
+    {
+      "n": 1,
+      "file": "antalya-image-1.jpg",
+      "original_name": "perge with pillars.jpeg",
+      "chapter": "perge-pillars",
+      "place": "Perge",
+      "caption": "Sitting among Perge’s standing columns",
+      "alt": "Veda sitting among ancient columns at Perge"
+    },
+    {
+      "n": 2,
+      "file": "antalya-image-2.jpg",
+      "original_name": "perge with pillars 2.jpeg",
+      "chapter": "perge-pillars",
+      "place": "Perge",
+      "caption": "More of Perge’s colonnade",
+      "alt": "Ancient columns at Perge, frame 2"
+    },
+    {
+      "n": 3,
+      "file": "antalya-image-3.jpg",
+      "original_name": "perge with pillars 3.jpeg",
+      "chapter": "perge-pillars",
+      "place": "Perge",
+      "caption": "The colonnade again, another walk",
+      "alt": "Ancient columns at Perge, frame 3"
+    },
+    {
+      "n": 4,
+      "file": "antalya-image-4.jpg",
+      "original_name": "perge.jpeg",
+      "chapter": "perge-ruins",
+      "place": "Perge",
+      "caption": "Perge in the sun",
+      "alt": "The ruins of Perge"
+    },
+    {
+      "n": 5,
+      "file": "antalya-image-5.jpg",
+      "original_name": "walking through perge.jpeg",
+      "chapter": "perge-ruins",
+      "place": "Perge",
+      "caption": "Walking the street the Romans left",
+      "alt": "Walking through Perge"
+    },
+    {
+      "n": 6,
+      "file": "antalya-image-6.jpg",
+      "original_name": "perge ruins.jpeg",
+      "chapter": "perge-ruins",
+      "place": "Perge",
+      "caption": "Towers and a step in the shade",
+      "alt": "Hellenistic towers and ruins at Perge"
+    },
+    {
+      "n": 7,
+      "file": "antalya-image-7.jpg",
+      "original_name": "anicient carved stones at perge entrance.jpeg",
+      "chapter": "perge-ruins",
+      "place": "Perge entrance",
+      "caption": "Carved stones at the gate (filename said anicient)",
+      "alt": "Carved stones at the entrance to Perge"
+    },
+    {
+      "n": 8,
+      "file": "antalya-image-8.jpg",
+      "original_name": "perge entrance wall.jpeg",
+      "chapter": "perge-ruins",
+      "place": "Perge entrance",
+      "caption": "The entrance wall",
+      "alt": "Entrance wall at Perge"
+    },
+    {
+      "n": 9,
+      "file": "antalya-image-9.jpg",
+      "original_name": "stadium oustide perge.jpeg",
+      "chapter": "perge-stadium",
+      "place": "Perge stadium",
+      "caption": "The stadium outside the city (filename said oustide)",
+      "alt": "Veda beside the stone wall of the stadium at Perge"
+    },
+    {
+      "n": 10,
+      "file": "antalya-image-10.jpg",
+      "original_name": "old marina.JPG",
+      "chapter": "harbor",
+      "place": "Old marina",
+      "caption": "The old marina in late light",
+      "alt": "Boats at Antalya’s old marina"
+    },
+    {
+      "n": 11,
+      "file": "antalya-image-11.jpg",
+      "original_name": "marina.JPG",
+      "chapter": "harbor",
+      "place": "Antalya marina",
+      "caption": "The marina under the cliff houses",
+      "alt": "Fishing boats and yachts in Antalya marina"
+    },
+    {
+      "n": 12,
+      "file": "antalya-image-12.jpg",
+      "original_name": "harbor.JPG",
+      "chapter": "harbor",
+      "place": "Harbor",
+      "caption": "The harbor from the water",
+      "alt": "Antalya harbor"
+    },
+    {
+      "n": 13,
+      "file": "antalya-image-13.jpg",
+      "original_name": "harbor 2.JPG",
+      "chapter": "harbor",
+      "place": "Harbor",
+      "caption": "The harbor, second pass",
+      "alt": "Antalya harbor, frame 2"
+    },
+    {
+      "n": 14,
+      "file": "antalya-image-14.jpg",
+      "original_name": "boat ride.jpg",
+      "chapter": "harbor",
+      "place": "Marina boat",
+      "caption": "A boat ride that left from the marina",
+      "alt": "On a boat in Antalya marina"
+    },
+    {
+      "n": 15,
+      "file": "antalya-image-15.jpg",
+      "original_name": "boat ride 2.jpg",
+      "chapter": "harbor",
+      "place": "Marina boat",
+      "caption": "Still on the water",
+      "alt": "On a boat in Antalya marina, frame 2"
+    },
+    {
+      "n": 16,
+      "file": "antalya-image-16.jpg",
+      "original_name": "sea.JPG",
+      "chapter": "sea",
+      "place": "Mediterranean",
+      "caption": "Rocks and the Mediterranean",
+      "alt": "Rocky Mediterranean coast near Antalya"
+    },
+    {
+      "n": 17,
+      "file": "antalya-image-17.jpg",
+      "original_name": "sea 2.JPG",
+      "chapter": "sea",
+      "place": "Mediterranean",
+      "caption": "The sea again",
+      "alt": "Mediterranean coast near Antalya, frame 2"
+    },
+    {
+      "n": 18,
+      "file": "antalya-image-18.jpg",
+      "original_name": "hadrians gate.jpeg",
+      "chapter": "hadrian",
+      "place": "Hadrian's Gate",
+      "caption": "Hadrian’s Gate — three arches, one city",
+      "alt": "Veda in front of Hadrian’s Gate in Kaleiçi"
+    },
+    {
+      "n": 19,
+      "file": "antalya-image-19.jpg",
+      "original_name": "kaleici streets.jpeg",
+      "chapter": "kaleici",
+      "place": "Kaleiçi",
+      "caption": "Kaleiçi at night, tables in the street",
+      "alt": "Evening street in Kaleiçi, Antalya"
+    },
+    {
+      "n": 20,
+      "file": "antalya-image-20.jpg",
+      "original_name": "kaleici.JPG",
+      "chapter": "kaleici",
+      "place": "Kaleiçi",
+      "caption": "Kaleiçi in daylight",
+      "alt": "Kaleiçi old town, Antalya"
+    },
+    {
+      "n": 21,
+      "file": "antalya-image-21.jpg",
+      "original_name": "kaleici streets 2.jpeg",
+      "chapter": "kaleici",
+      "place": "Kaleiçi",
+      "caption": "Another Kaleiçi street",
+      "alt": "Kaleiçi streets, frame 2"
+    },
+    {
+      "n": 22,
+      "file": "antalya-image-22.jpg",
+      "original_name": "historic houses of kaleici.jpg",
+      "chapter": "kaleici",
+      "place": "Kaleiçi",
+      "caption": "Ottoman houses that kept the timber",
+      "alt": "Historic houses in Kaleiçi"
+    },
+    {
+      "n": 23,
+      "file": "antalya-image-23.jpg",
+      "original_name": "with turkish flag in kaleici streets.jpeg",
+      "chapter": "kaleici",
+      "place": "Kaleiçi",
+      "caption": "A flag hung over the alley",
+      "alt": "Turkish flag over a Kaleiçi street"
+    }
+  ]
+}

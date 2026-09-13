@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cappadocia itinerary: balloons, valleys, map, and visa notes | Veda</title>
+    <meta name="description" content="A Cappadocia itinerary with balloon mornings, valley walks, cave hotels, and visa notes for Indian and US passports — written by Veda, who actually went.">
+    <link rel="canonical" href="https://globetrotwithveda.com/cappadocia/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Veda">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Cappadocia itinerary: balloons, valleys, map, and visa notes">
+    <meta property="og:description" content="Places to walk, what to eat, when to go, and Turkey visa notes for Indian and US passports — in one Cappadocia page.">
+    <meta property="og:url" content="https://globetrotwithveda.com/cappadocia/">
+    <meta property="og:image" content="https://globetrotwithveda.com/cappadocia-image.jpg">
+    <meta property="og:image:alt" content="Veda overlooking Göreme with Mount Erciyes in the background">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cappadocia itinerary: balloons, valleys, map, and visa notes">
+    <meta name="twitter:description" content="Places to walk, what to eat, when to go, and Turkey visa notes for Indian and US passports — in one Cappadocia page.">
+    <meta name="twitter:image" content="https://globetrotwithveda.com/cappadocia-image.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCWL3V5TW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYCWL3V5TW');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://globetrotwithveda.com/#site",
+                "name": "Veda",
+                "url": "https://globetrotwithveda.com/"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://globetrotwithveda.com/cappadocia/",
+                "url": "https://globetrotwithveda.com/cappadocia/",
+                "name": "Cappadocia itinerary: balloons, valleys, map, and visa notes",
+                "description": "A Cappadocia itinerary with balloon mornings, valley walks, cave hotels, and visa notes for Indian and US passports — written by Veda, who actually went.",
+                "isPartOf": { "@id": "https://globetrotwithveda.com/#site" },
+                "about": {
+                    "@type": "City",
+                    "name": "Cappadocia",
+                    "containedInPlace": { "@type": "Country", "name": "Turkey" }
+                },
+                "author": { "@type": "Person", "name": "Veda" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Atlas", "item": "https://globetrotwithveda.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Cappadocia", "item": "https://globetrotwithveda.com/cappadocia/" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+
+
+        :root {
+            --void: #07080c;
+            --void-2: #101218;
+            --line: rgba(232, 227, 214, 0.12);
+            --paper: #e8e3d6;
+            --mute: rgba(232, 227, 214, 0.62);
+            --gold: #e2b15a;
+            --teal: #6ee7d2;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--void);
+            color: var(--paper);
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        .skip {
+            position: absolute;
+            left: 12px;
+            top: -40px;
+            background: var(--paper);
+            color: var(--void);
+            padding: 8px 12px;
+            z-index: 3000;
+        }
+        .skip:focus { top: 12px; }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), var(--teal));
+            z-index: 2000;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
+        }
+        .wordmark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+        .nav-meta a { text-decoration: none; color: var(--paper); }
+        .coords { color: var(--gold); }
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+            display: grid;
+            place-items: end start;
+            isolation: isolate;
+        }
+        .hero-media, .hero-media img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-media img { filter: saturate(1.05) contrast(1.08); }
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7,8,12,0.35) 0%, rgba(7,8,12,0.15) 40%, rgba(7,8,12,0.88) 100%),
+                linear-gradient(90deg, rgba(7,8,12,0.55), transparent 50%),
+                repeating-linear-gradient(0deg, transparent, transparent 47px, var(--line) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, var(--line) 48px);
+            pointer-events: none;
+        }
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            padding: 0 7vw 10vh;
+            max-width: 56rem;
+        }
+        .kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.35rem, 16vw, 11rem);
+            line-height: 0.88;
+            letter-spacing: -0.07em;
+            max-width: 100%;
+            overflow: visible;
+            padding-right: 0.06em;
+        }
+        .hero h1.is-long {
+            font-size: clamp(1.7rem, 11vw, 7.4rem);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+        }
+        .hero h1.is-longer {
+            font-size: clamp(1.5rem, 7.2vw, 6.1rem);
+            line-height: 1.02;
+            letter-spacing: -0.05em;
+            padding-right: 0.08em;
+        }
+        .hero h1 span {
+            display: block;
+            font-family: Outfit, system-ui, sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--teal);
+            margin-top: 18px;
+        }
+        .hero-lead {
+            margin-top: 22px;
+            max-width: 34rem;
+            color: var(--mute);
+            font-weight: 300;
+            font-size: 1.08rem;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 36px;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: Syne, sans-serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+        }
+        .hero-stats span {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mute);
+        }
+
+        .rail {
+            position: sticky;
+            top: 58px;
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 7vw 14px;
+            background: rgba(7,8,12,0.78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            scrollbar-width: none;
+        }
+        .rail::-webkit-scrollbar { display: none; }
+        .rail a {
+            flex: 0 0 auto;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--mute);
+        }
+        .rail a.is-on, .rail a:hover {
+            color: var(--void);
+            background: var(--paper);
+            border-color: var(--paper);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 48px;
+            padding: 88px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .intro h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+        .intro p { color: var(--mute); font-size: 1.12rem; max-width: 40rem; }
+
+        .atlas-map {
+            padding: 72px 7vw 56px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+        }
+        .atlas-map h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        .atlas-map > p { color: var(--mute); margin-bottom: 22px; max-width: 38rem; }
+        .map-pins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .map-pins button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 9px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .map-pins button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .map-frame {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+            z-index: 1;
+        }
+        #cappadocia-map {
+            width: 100%;
+            height: 480px;
+            background: var(--void-2);
+        }
+        .map-frame .leaflet-container { font-family: Outfit, sans-serif; background: var(--void-2); }
+        .map-frame .leaflet-tile-pane {
+            filter: invert(1) hue-rotate(180deg) saturate(0.45) brightness(0.92);
+        }
+        .map-frame .leaflet-control-zoom a {
+            background: var(--void);
+            color: var(--paper);
+            border: 1px solid var(--line);
+        }
+        .map-frame .leaflet-control-attribution {
+            background: rgba(7,8,12,0.75);
+            color: var(--mute);
+        }
+        .map-frame .leaflet-control-attribution a { color: var(--gold); }
+        .map-frame .leaflet-div-icon {
+            background: transparent;
+            border: none;
+        }
+        .pin {
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--gold);
+            color: var(--void);
+            font-family: Syne, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            transform: rotate(-45deg);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+        }
+        .pin span { transform: rotate(45deg); }
+        .pin.is-on { background: var(--teal); }
+        .map-popup .leaflet-popup-content-wrapper,
+        .map-popup .leaflet-popup-tip {
+            background: var(--void);
+            color: var(--paper);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .map-popup h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .map-popup a { color: var(--gold); }
+        .map-open {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .map-open:hover { color: var(--teal); }
+        .book-link {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .book-link:hover { color: var(--teal); }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding: 72px 7vw;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .chapter.is-flip { grid-template-columns: 0.85fr 1.15fr; }
+        .chapter.is-flip .film { order: 2; }
+        .index {
+            font-family: Syne, sans-serif;
+            color: var(--teal);
+            letter-spacing: 0.2em;
+            font-size: 0.78rem;
+            margin-bottom: 12px;
+        }
+        .chapter h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 16px;
+        }
+        .chapter p { color: var(--mute); max-width: 36rem; }
+
+        .film {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--void-2);
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+        }
+        .film img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.45s var(--ease);
+        }
+        .film img.is-on { opacity: 1; }
+        .film-ui {
+            position: absolute;
+            inset: auto 12px 12px 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .film-ui button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(232,227,214,0.25);
+            background: rgba(7,8,12,0.55);
+            backdrop-filter: blur(10px);
+        }
+        .film-ui button:hover { background: var(--paper); color: var(--void); }
+        .count {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--paper);
+            background: rgba(7,8,12,0.5);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .intel {
+            padding: 88px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .intel h2, .frames h2, .unfinished h2, .day-tours h2 {
+            font-family: Syne, sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+        }
+        .intel-lead, .frames-lead, .unfinished-lead, .day-tours-lead { color: var(--mute); margin-bottom: 28px; max-width: 40rem; }
+        .frames {
+            padding: 88px 7vw 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 118px;
+        }
+        .unfinished, .day-tours {
+            padding: 72px 7vw 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            scroll-margin-top: 118px;
+        }
+        .unfinished .grid-3, .day-tours .grid-3 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .tabs button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tabs button[aria-selected="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .panel { display: none; gap: 14px; }
+        .panel.is-on { display: grid; }
+        .panel.grid-2.is-on { grid-template-columns: 1fr 1fr; }
+        .panel.grid-3.is-on { grid-template-columns: repeat(3, 1fr); }
+        .card {
+            background: var(--void-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 22px;
+        }
+        .card h3 {
+            font-family: Syne, sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .emo {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .card p, .card li { color: var(--mute); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; }
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+        .visa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .choice-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--mute);
+            margin-bottom: 8px;
+        }
+        .choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .choice button {
+            border: 1px solid var(--line);
+            background: transparent;
+            padding: 10px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .choice button[aria-pressed="true"] {
+            background: var(--paper);
+            color: var(--void);
+            border-color: var(--paper);
+        }
+        .visa-alert {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: var(--mute);
+        }
+        .visa-alert strong { color: var(--gold); }
+        .visa-alert.ok strong { color: var(--teal); }
+        .visa-block[hidden] { display: none; }
+        .detail {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .detail:last-child { border-bottom: none; }
+        .detail strong { color: var(--paper); font-weight: 500; }
+        .card ul { list-style: none; padding: 0; }
+        .card li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+        .card li:last-child { border-bottom: none; }
+        .note {
+            border: 1px dashed rgba(226, 177, 90, 0.45);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: var(--mute);
+            font-size: 0.92rem;
+        }
+        .note strong { color: var(--gold); }
+
+        .next {
+            margin: 40px 7vw 80px;
+            max-width: 1400px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .next a {
+            text-decoration: none;
+            font-family: Syne, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .next a:hover { color: var(--gold); }
+
+        footer {
+            padding: 24px 7vw 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--mute);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 960px) {
+            .intro, .chapter, .chapter.is-flip { grid-template-columns: 1fr; }
+            .chapter.is-flip .film { order: 0; }
+            .panel.grid-2.is-on,
+            .panel.grid-3.is-on,
+            .unfinished .grid-3,
+            .day-tours .grid-3,
+            .visa-grid { grid-template-columns: 1fr; }
+            .detail { grid-template-columns: 1fr; }
+            .nav { padding: 14px 18px; }
+            .coords { display: none; }
+            #cappadocia-map { height: 360px; }
+            .hero-copy {
+                padding: 0 20px calc(10vh + env(safe-area-inset-bottom, 0px));
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: clamp(2.2rem, 13vw, 5.5rem);
+                line-height: 0.92;
+            }
+            .hero h1.is-long {
+                font-size: clamp(1.6rem, 8.5vw, 3.8rem);
+                line-height: 1;
+            }
+            .hero h1.is-longer {
+                font-size: clamp(1.5rem, 7.1vw, 3.2rem);
+                line-height: 1.05;
+                letter-spacing: -0.045em;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .film img { transition: none; }
+        }
+        
+        </style>
+</head>
+
+<body>
+    <a class="skip" href="#notes">Skip to notes</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="nav">
+        <a class="wordmark" href="../index.html">Veda</a>
+        <div class="nav-meta">
+            <span class="coords">38.6431° N · 34.8289° E</span>
+            <a href="../index.html">Atlas</a>
+        </div>
+    </header>
+
+    <section class="hero" id="cappadocia" aria-label="Cappadocia">
+        <div class="hero-media">
+            <img src="../cappadocia-image.jpg" alt="Veda overlooking Göreme with Mount Erciyes in the background">
+        </div>
+        <div class="hero-copy">
+            <p class="kicker">Turkey · Field notes</p>
+            <h1 class="is-longer">CAPPADOCIA<span>The valley woke up first.</span></h1>
+            <p class="hero-lead">Balloons at an hour that should be illegal, chimneys that look posed, a cave you sleep in. Göreme is the base. The rest of Cappadocia is a series of walks that keep pretending they are the same landscape.</p>
+            <div class="hero-stats">
+                <div><strong>4</strong><span>Days</span></div>
+                <div><strong>18+</strong><span>Miles walked</span></div>
+                <div><strong>10</strong><span>Places that stuck</span></div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="rail" aria-label="On this page">
+        <a href="#map">Map</a>
+        <a href="#intel">Intel</a>
+        <a href="#frames">Photos</a>
+        <a href="#unfinished">Still</a>
+        <a href="#day-tours">Trips</a>
+        <a href="#visa">Visa</a>
+    </nav>
+
+    <section class="intro" id="notes">
+        <h2>Not a postcard with a basket.<br>A geology that learned hotels.</h2>
+        <p>I came for the balloons. I stayed for the hour after they leave, when Göreme is just a village cut into rock and a cat who owns a doorway. Paşabağ, Pigeon Valley, Love Valley, Uçhisar — they look like one photograph until you walk them. The underground city is a different country under your feet. Four days is a first draft of a region that is not a city.</p>
+    </section>
+
+    <section class="atlas-map" id="map">
+        <h2>Where I actually walked.</h2>
+        <p>Every tagged stop is on the map. <strong>All pins</strong> shows them together — tap a name to zoom in. Each popup opens the same place in Google Maps.</p>
+        <div class="map-pins" role="group" aria-label="Cappadocia locations">
+            <button type="button" aria-pressed="true" data-place="all">All pins</button>
+            <button type="button" aria-pressed="false" data-place="goreme">Göreme</button>
+            <button type="button" aria-pressed="false" data-place="pasabag">Paşabağ</button>
+            <button type="button" aria-pressed="false" data-place="pigeon">Pigeon Valley</button>
+            <button type="button" aria-pressed="false" data-place="love">Love Valley</button>
+            <button type="button" aria-pressed="false" data-place="uchisar">Uçhisar</button>
+            <button type="button" aria-pressed="false" data-place="zelve">Zelve</button>
+            <button type="button" aria-pressed="false" data-place="underground">Underground city</button>
+        </div>
+        <div class="map-frame">
+            <div id="cappadocia-map" role="region" aria-label="Map of Cappadocia with tagged locations"></div>
+        </div>
+        <a class="map-open" id="cappadocia-map-link" href="https://www.google.com/maps/search/?api=1&query=Goreme%20Cappadocia" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="intel">
+        <h2>Intel</h2>
+        <p class="intel-lead">A balloon that cancels for wind, museum tickets that are not a tour bus, and a visa that is not Schengen.</p>
+        <div class="tabs" role="tablist" aria-label="Cappadocia practical notes">
+            <button type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true" data-tab="see"><span class="emo" aria-hidden="true">👀</span> See</button>
+            <button type="button" role="tab" id="tab-book" aria-controls="panel-book" aria-selected="false" data-tab="book"><span class="emo" aria-hidden="true">🎟️</span> Book</button>
+            <button type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" data-tab="eat"><span class="emo" aria-hidden="true">🍜</span> Eat</button>
+            <button type="button" role="tab" id="tab-stay" aria-controls="panel-stay" aria-selected="false" data-tab="stay"><span class="emo" aria-hidden="true">🛏️</span> Stay</button>
+            <button type="button" role="tab" id="tab-when" aria-controls="panel-when" aria-selected="false" data-tab="when"><span class="emo" aria-hidden="true">📅</span> When</button>
+            <button type="button" role="tab" id="tab-move" aria-controls="panel-move" aria-selected="false" data-tab="move"><span class="emo" aria-hidden="true">🚗</span> Move</button>
+            <button type="button" role="tab" id="tab-visa" aria-controls="visa" aria-selected="false" data-tab="visa"><span class="emo" aria-hidden="true">🛂</span> Visa</button>
+        </div>
+
+        <div class="panel is-on grid-3" id="panel-see" role="tabpanel" aria-labelledby="tab-see">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎈</span> Balloon morning</h3>
+                <p>The valley fills before the sun does. You can ride or watch from a rooftop. Wind cancels more often than Instagram admits. If you fly, pick a licensed operator and treat the alarm as part of the ticket.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏘️</span> Göreme</h3>
+                <p>The base. Rooftops, cave rooms, a cat, chimneys you walk between to buy water. The open-air museum is next door. The village is the rest of the day.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🪨</span> Paşabağ</h3>
+                <p>Monks Valley. Fairy chimneys with hats. A short walk that photographs like a longer one. Go when the buses have a gap.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🕊️</span> Pigeon Valley</h3>
+                <p>A lookout, then a walk if you have the legs. Dovecotes in the cliff. Göreme on one side, the rest of the geology on the other.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💗</span> Love Valley</h3>
+                <p>The formations have a reputation. The walk is still a walk. Late light is kinder than noon.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏰</span> Uçhisar</h3>
+                <p>The castle is a rock the town grew around. Climb for the map of the region. The village below is the part I would sleep in next time.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🕳️</span> Underground city</h3>
+                <p>Kaymaklı or Derinkuyu — pick one. Low ceilings, a model at the door that makes the maze honest. Not a casual stroll. Watch your head.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏛️</span> Zelve</h3>
+                <p>An open-air museum that used to be a village. Quieter than Göreme’s museum if the buses went to the other lot.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-book" role="tabpanel" aria-labelledby="tab-book" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎈</span> Balloon</h3>
+                <p>Book a TURSAB-licensed operator. Weather is the real ticket office. Confirm cancellation terms in writing. Rooftop watching is free and still a show.</p>
+                <span class="price">Book · weather</span>
+                <a class="book-link" href="https://www.tursab.org.tr/" target="_blank" rel="noopener noreferrer">TURSAB ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎫</span> Museums</h3>
+                <p>Göreme Open Air Museum, Zelve, underground cities — official museum tickets, not a man with a laminated sheet at the parking lot.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://muze.gov.tr/" target="_blank" rel="noopener noreferrer">muze.gov.tr ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏞️</span> Göreme Open Air</h3>
+                <p>The frescoed churches. Go early. Dress for sun. The village is free; this ticket is the painted rooms.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://muze.gov.tr/muze-detay?SectionId=GRM01&amp;DistId=GRM" target="_blank" rel="noopener noreferrer">Göreme museum ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🕳️</span> Underground city</h3>
+                <p>Kaymaklı or Derinkuyu on the same museum network. One is enough unless you collect tunnels.</p>
+                <span class="price">Ticket</span>
+                <a class="book-link" href="https://muze.gov.tr/" target="_blank" rel="noopener noreferrer">Official museums ↗</a>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🤍</span> Walk-up</h3>
+                <p>Pigeon Valley lookout, Love Valley rim, Göreme rooftops, Uçhisar village streets. Paşabağ has a site fee some seasons — check the booth.</p>
+                <span class="price">Walk up</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">✈️</span> Getting here</h3>
+                <p>Kayseri (ASR) or Nevşehir (NAV), then a transfer to Göreme. The region is not a metro map.</p>
+                <span class="price">Flight + transfer</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-eat" role="tabpanel" aria-labelledby="tab-eat" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🔥</span> Turkish barbecue</h3>
+                <p>I ate it in Göreme. Meat, fire, bread. The hotel breakfast is a different meal. This is the evening.</p>
+                <span class="price">TRY</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍲</span> Testi kebab</h3>
+                <p>Meat sealed in a clay pot, broken at the table. Tourist-famous. Still worth it if the kitchen is doing the work, not a microwave.</p>
+                <span class="price">TRY</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🫓</span> Gözleme</h3>
+                <p>Stuffed flatbread, made in front of you. Lunch that does not need a white tablecloth.</p>
+                <span class="price">TRY</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥚</span> Village breakfast</h3>
+                <p>Cheese, honey, olives, eggs, tea in a tulip glass. Cave-hotel mornings are the reason you booked the cave.</p>
+                <span class="price">Often included</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥛</span> Ayran</h3>
+                <p>Salted yogurt drink. The heat antidote after a valley.</p>
+                <span class="price">TRY</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🫖</span> Çay</h3>
+                <p>Tea is not a course. It is the pause. Accept it.</p>
+                <span class="price">TRY</span>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🪨</span> Osmanbey Cave Hotel</h3>
+                <p>I slept here. Soft rock, thick walls, a courtyard hung with carpets. Book the cave, not the “cave-style concrete” next door. Ask.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">📍</span> Göreme</h3>
+                <p>Walkable, balloon pickup, restaurants. The practical base. Rooftops for the morning you do not fly.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏰</span> Uçhisar</h3>
+                <p>Quieter nights, castle views, a short drive to the valleys. I would try it on a second pass.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">💶</span> Spend less</h3>
+                <p>Prices are in lira. A balloon is the line item that eats the week. The valleys are cheap once you have a ride.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-when" role="tabpanel" aria-labelledby="tab-when" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌸</span> April–June</h3>
+                <p>Green valleys, balloon season that behaves, crowds that have started. One of the two windows.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">☀️</span> July–August</h3>
+                <p>Hot stone. Walk at dawn. Hide at noon. Balloons still fly when the wind agrees.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🍂</span> September–October</h3>
+                <p>The other window. Softer light, harvest, fewer tour buses if you are lucky.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">❄️</span> November–March</h3>
+                <p>Snow on chimneys is a different postcard. Some hotels close. Balloon mornings get cancelled more. Bring a coat that covers the cave chill.</p>
+            </div>
+        </div>
+
+        <div class="panel grid-3" id="panel-move" role="tabpanel" aria-labelledby="tab-move" hidden>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚶</span> Walk Göreme</h3>
+                <p>The village is the transit. Valleys need a scooter, car, or a tour van. Shoes that forgive dust.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🛵</span> Scooter / ATV</h3>
+                <p>The tourist default. Helmet. Dust. A map that actually loads. Not a toy if you have never ridden.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚐</span> Day tour</h3>
+                <p>Red/green/blue tour colors are a sales language. Check the stop list. I used them for distance, walked when the van parked.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚕</span> Taxi / transfer</h3>
+                <p>Airport runs and late valleys. Agree the price. Dolmuş exists between towns if you like a puzzle.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🚗</span> Rental car</h3>
+                <p>Useful if you want Zelve and an underground city without a group. Parking in Göreme is a mood.</p>
+            </div>
+        </div>
+
+        <div class="panel visa-stack" id="visa" role="tabpanel" aria-labelledby="tab-visa" hidden>
+            <p class="choice-label">Select your citizenship</p>
+            <div class="choice" role="group" aria-label="Citizenship">
+                <button type="button" class="citizenship-btn" data-citizenship="indian" aria-pressed="true"><span class="emo" aria-hidden="true">🇮🇳</span> Indian citizen</button>
+                <button type="button" class="citizenship-btn" data-citizenship="us" aria-pressed="false"><span class="emo" aria-hidden="true">🇺🇸</span> US citizen</button>
+            </div>
+
+            <div class="visa-block" id="visa-indian">
+                <div class="visa-alert">
+                    <strong>Turkey is not Schengen.</strong> Indian citizens typically need an e-Visa (or a sticker visa) to visit Cappadocia. Apply only on the official e-Visa site. ETIAS does not apply here.
+                </div>
+
+                <p class="choice-label">Where are you currently residing?</p>
+                <div class="choice" role="group" aria-label="Residency">
+                    <button type="button" class="residency-btn" data-residency="india" aria-pressed="true"><span class="emo" aria-hidden="true">🏠</span> Living in India</button>
+                    <button type="button" class="residency-btn" data-residency="usa" aria-pressed="false"><span class="emo" aria-hidden="true">✈️</span> Living in USA (H1B/H4/OPT)</button>
+                </div>
+
+                <div class="visa-block" id="indian-india">
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📅</span> e-Visa</h3>
+                            <div class="detail"><strong>Where</strong><span>evisa.gov.tr — the Republic of Türkiye site, not a lookalike</span></div>
+                            <div class="detail"><strong>Purpose</strong><span>Tourism / leisure</span></div>
+                            <div class="detail"><strong>Passport</strong><span>Valid Indian passport; follow the form’s validity rules</span></div>
+                            <div class="detail"><strong>Sticker visa</strong><span>If e-Visa is not offered for your case: Turkish Embassy / Consulate or VFS</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Typical documents</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>Completed e-Visa application</li>
+                                <li>Payment card that works on the official site</li>
+                                <li>Flight reservation / itinerary</li>
+                                <li>Hotel bookings</li>
+                                <li>Travel insurance (recommended)</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📍</span> If you need a sticker</h3>
+                            <div class="detail"><strong>VFS</strong><span>visa.vfsglobal.com/ind/en/tur</span></div>
+                            <div class="detail"><strong>Embassy</strong><span>Turkish Embassy / Consulate in India</span></div>
+                            <div class="detail"><strong>Source of truth</strong><span>mfa.gov.tr + evisa.gov.tr</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Pro tips</h3>
+                            <ul>
+                                <li>Print or save the e-Visa PDF; keep it offline at the airport</li>
+                                <li>Phishing clones of evisa.gov.tr are common — check the URL</li>
+                                <li>Turkey does not use ETIAS</li>
+                                <li>Prices on the ground are lira (TRY), not euros</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> General guidance only. e-Visa eligibility and fees change. Verify with evisa.gov.tr and the Turkish MFA before you pay anyone else.</div>
+                </div>
+
+                <div class="visa-block" id="indian-usa" hidden>
+                    <div class="visa-alert">
+                        <strong>Still entering Türkiye — not US domestic travel.</strong> H-1B, H-4, or OPT does not change the Indian-passport e-Visa. Confirm evisa.gov.tr for your passport, and keep US re-entry documents valid.
+                    </div>
+                    <div class="visa-grid">
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">✈️</span> International trip</h3>
+                            <div class="detail"><strong>Turkish entry</strong><span>Same Indian-passport e-Visa / sticker pattern</span></div>
+                            <div class="detail"><strong>US status</strong><span>Keep H-1B/H-4/OPT valid for return</span></div>
+                            <div class="detail"><strong>Apply from</strong><span>evisa.gov.tr works from the US; sticker visas go through the Turkish Consulate / Embassy in the USA if needed</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">📄</span> Carry these</h3>
+                            <ul>
+                                <li>Valid Indian passport</li>
+                                <li>Turkish e-Visa printout / PDF</li>
+                                <li>Valid US visa stamp / I-797 / EAD as relevant</li>
+                                <li>Return ticket to the USA</li>
+                                <li>Hotel bookings in Cappadocia</li>
+                                <li>Travel insurance (recommended)</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">🇺🇸</span> US status while abroad</h3>
+                            <div class="detail"><strong>Re-entry</strong><span>Confirm your US visa/stamp before you leave</span></div>
+                            <div class="detail"><strong>Not domestic</strong><span>CBP processes you on return</span></div>
+                            <div class="detail"><strong>Consulate</strong><span>Turkish Consulates in the USA if the e-Visa form refuses you</span></div>
+                        </div>
+                        <div class="card">
+                            <h3><span class="emo" aria-hidden="true">💡</span> Tips for H1B/H4/OPT</h3>
+                            <ul>
+                                <li>Do the e-Visa on the official site before you buy a nonrefundable balloon</li>
+                                <li>Photograph passport + US visa pages</li>
+                                <li>Turkish rules and US status are separate stacks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="note" style="margin-top:14px"><strong>Important:</strong> You are entering Türkiye internationally. Confirm evisa.gov.tr and your US re-entry documents before purchase.</div>
+                </div>
+            </div>
+
+            <div class="visa-block" id="visa-us" hidden>
+                <div class="visa-alert ok">
+                    <strong>Typically visa-free for tourism.</strong> US citizens usually enter Türkiye without a visa for short tourist stays (commonly up to 90 days). Confirm the current permitted length with the Turkish MFA before you fly. This is not Schengen and not ETIAS.
+                </div>
+                <div class="visa-grid">
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">✈️</span> Visa-free tourism</h3>
+                        <div class="detail"><strong>Pattern</strong><span>Short tourism stays are typically visa-exempt for US passports</span></div>
+                        <div class="detail"><strong>Duration</strong><span>Often 90 days in 180 — verify current MFA wording</span></div>
+                        <div class="detail"><strong>Passport</strong><span>Valid US passport for the trip</span></div>
+                        <div class="detail"><strong>Purpose</strong><span>Tourism — not a work permit</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🛂</span> Entry checklist</h3>
+                        <ul>
+                            <li>Valid US passport</li>
+                            <li>Return / onward ticket</li>
+                            <li>Proof of accommodation</li>
+                            <li>Sufficient funds for the stay</li>
+                            <li>Travel insurance (recommended)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">🧾</span> At immigration</h3>
+                        <div class="detail"><strong>Stamp</strong><span>Photograph the entry stamp</span></div>
+                        <div class="detail"><strong>e-Visa</strong><span>Usually not required for US tourist passports — do not buy one from a third party “just in case”</span></div>
+                        <div class="detail"><strong>Overstay</strong><span>Fines and future entry problems</span></div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="emo" aria-hidden="true">💡</span> Travel tips</h3>
+                        <ul>
+                            <li>Check mfa.gov.tr the week you go</li>
+                            <li>Turkey is not the Schengen area</li>
+                            <li>If you continue to the EU after this, that is a different visa stack</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="note"><strong>Note:</strong> Visa-exempt still means immigration rules. Verify with the Turkish MFA / embassy before you travel.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frames" id="frames">
+        <h2>What stayed on the roll.</h2>
+        <p class="frames-lead">Ten chapters. Balloons, Göreme, a cave I slept in, three valleys, Uçhisar, the underground, Zelve, mosaic lamps, the courtyard of carpets at Osmanbey, and the rest of the crafts that followed me home in the photographs.</p>
+    </section>
+
+    <article class="chapter" id="balloons">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-1.jpg" alt="Hot air balloons including a red Juan Valdez balloon over Cappadocia">
+            <img src="cappadocia-image-2.jpg" alt="Sunrise photography with hot air balloons over Cappadocia" loading="lazy">
+            <img src="cappadocia-image-3.jpg" alt="Sunrise hot air balloons over Cappadocia" loading="lazy">
+            <img src="cappadocia-image-4.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 3" loading="lazy">
+            <img src="cappadocia-image-5.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 4" loading="lazy">
+            <img src="cappadocia-image-6.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 5" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 06</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">01 / 10</p>
+            <h2>The valley woke up first</h2>
+            <p>Balloons are a crowd in the sky that still looks quiet from the ground. I kept shooting after the first lift. The light changes faster than the baskets do.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="goreme">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-7.jpg" alt="Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes">
+            <img src="cappadocia-image-8.jpg" alt="Göreme panorama looking across fairy chimneys" loading="lazy">
+            <img src="cappadocia-image-9.jpg" alt="360 panorama of Göreme and the surrounding valleys" loading="lazy">
+            <img src="cappadocia-image-10.jpg" alt="Rooftop view over Göreme" loading="lazy">
+            <img src="cappadocia-image-11.jpg" alt="Second rooftop view over Göreme" loading="lazy">
+            <img src="cappadocia-image-12.jpg" alt="Cave dwellings cut into the rock in Göreme" loading="lazy">
+            <img src="cappadocia-image-27.jpg" alt="A cat in Göreme" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 07</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">02 / 10</p>
+            <h2>Göreme, with a mountain watching</h2>
+            <p>Erciyes sits in the back of the frame like it owns the weather. The red dress was for the photograph. The village is stone, caves, rooftops, and one cat who did not care about the panorama.</p>
+        </div>
+    </article>
+    <article class="chapter" id="cave-hotel">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-13.jpg" alt="Interior of a cave hotel in Göreme">
+            <img src="cappadocia-image-14.jpg" alt="Interior of a cave hotel in Göreme, frame 2" loading="lazy">
+            <img src="cappadocia-image-15.jpg" alt="Interior of a cave hotel in Göreme, frame 3" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">03 / 10</p>
+            <h2>A room that used to be rock</h2>
+            <p>Osmanbey Cave Hotel. Sleeping in a cave is a sentence until you do it. Thick walls, a cool room, furniture that looks borrowed from a different century. I would book the cave again before I booked the view.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="valleys">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-16.jpg" alt="Paşabağ valley fairy chimneys">
+            <img src="cappadocia-image-17.jpg" alt="Paşabağ valley fairy chimneys, frame 2" loading="lazy">
+            <img src="cappadocia-image-18.jpg" alt="Pigeon Valley near Göreme" loading="lazy">
+            <img src="cappadocia-image-19.jpg" alt="Pigeon Valley near Göreme, frame 2" loading="lazy">
+            <img src="cappadocia-image-20.jpg" alt="Love Valley in Cappadocia" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 05</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">04 / 10</p>
+            <h2>Three valleys, one dust</h2>
+            <p>Paşabağ for the chimneys with hats. Pigeon Valley for the cliff and the lookout. Love Valley for the joke in the geology. They are close on a map and far on the legs.</p>
+        </div>
+    </article>
+    <article class="chapter" id="uchisar">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-21.jpg" alt="Uçhisar fortress and village">
+            <img src="cappadocia-image-22.jpg" alt="Uçhisar fortress and village, frame 2" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">05 / 10</p>
+            <h2>Uçhisar, not Uchaisir</h2>
+            <p>The filenames guessed. The castle is a rock the size of a town. From the top, Cappadocia finally looks like a map instead of a maze.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="underground">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-23.jpg" alt="Tunnels of a Cappadocia underground city">
+            <img src="cappadocia-image-24.jpg" alt="Scale model of a Cappadocia underground city" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">06 / 10</p>
+            <h2>A city that hid</h2>
+            <p>The model at the entrance is the honest photograph. Inside is a corridor that keeps choosing down. I ducked more than I walked.</p>
+        </div>
+    </article>
+    <article class="chapter" id="zelve">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-25.jpg" alt="Zelve Open Air Museum">
+            <img src="cappadocia-image-26.jpg" alt="A cave near Göreme" loading="lazy">
+            <img src="cappadocia-image-34.jpg" alt="A second cave near Göreme" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">07 / 10</p>
+            <h2>Zelve, then a cave we weren’t looking for</h2>
+            <p>Zelve is a village that emptied into a museum. Near Göreme we walked into a cave that was not on the ticket — twice. All of it counted.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="lamps">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-30.jpg" alt="Ottoman mosaic lamps">
+            <img src="cappadocia-image-31.jpg" alt="Ottoman mosaic lamps, frame 2" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 02</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">08 / 10</p>
+            <h2>Glass that swallowed mosaics</h2>
+            <p>A shop of Ottoman lamps — each one a small stained-glass planet. I reached up to one and the ceiling kept offering more.</p>
+        </div>
+    </article>
+    <article class="chapter" id="carpets">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-32.jpg" alt="Carpet courtyard at Osmanbey Cave Hotel">
+            <img src="cappadocia-image-35.jpg" alt="Veda in the carpet courtyard at Osmanbey Cave Hotel" loading="lazy">
+            <img src="cappadocia-image-36.jpg" alt="Sitting among kilims at Osmanbey Cave Hotel" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">09 / 10</p>
+            <h2>The courtyard at Osmanbey</h2>
+            <p>Osmanbey Cave Hotel hung the kilims like another geology. I stood in it. I sat in it. The walls were wool.</p>
+        </div>
+    </article>
+    <article class="chapter is-flip" id="crafts">
+        <div class="film" data-film>
+            <img class="is-on" src="cappadocia-image-28.jpg" alt="Turkish barbecue meal in Göreme">
+            <img src="cappadocia-image-29.jpg" alt="Turkish pottery" loading="lazy">
+            <img src="cappadocia-image-33.jpg" alt="Whirling dervish dance" loading="lazy">
+            <div class="film-ui">
+                <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
+                <span class="count">01 / 03</span>
+                <button type="button" data-dir="1" aria-label="Next photo">→</button>
+            </div>
+        </div>
+        <div>
+            <p class="index">10 / 10</p>
+            <h2>Fire, clay, and a turn</h2>
+            <p>Barbecue in Göreme. Pottery. A dervish who turned until the room forgot the souvenir shops.</p>
+        </div>
+    </article>
+
+    <section class="unfinished" id="unfinished">
+        <h2>Still on the list.</h2>
+        <p class="unfinished-lead">Four days is a first draft. These are the rooms I didn’t get into — the ones I’d book first if I went back tomorrow.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">⛪</span> Göreme Open Air interiors</h3>
+                <p>I did the village and the views. The frescoed churches are the ticket I would buy on day one next time.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎈</span> A flight that isn’t cancelled</h3>
+                <p>Watching from a rooftop is still a show. Riding is a different sentence. Wind is the editor.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥾</span> Ihlara Valley</h3>
+                <p>A canyon walk with a river. Too far for the Göreme loop I ran. Next time, a full day.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🎨</span> Avanos pottery wheel</h3>
+                <p>I photographed the pots. I did not sit at the wheel. The Red River town is the afternoon after the valleys.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🕳️</span> The other underground city</h3>
+                <p>I did one maze. Derinkuyu and Kaymaklı are not the same hole. One is enough; both is a personality.</p>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🌙</span> Uçhisar at night</h3>
+                <p>I saw the castle in daylight. The village after the day-trippers leave is the stay I sketched and didn’t book.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-tours" id="day-tours">
+        <h2>If you have a fifth day.</h2>
+        <p class="day-tours-lead">The region is larger than Göreme’s postcard. These are the leaves that actually fit.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🥾</span> Ihlara</h3>
+                <p>Canyon, churches in the rock, a river. A van or a rental, not a stroll from the cave hotel.</p>
+                <span class="price">Day · transfer</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏺</span> Avanos</h3>
+                <p>Pottery town on the Kızılırmak. Combine with a valley you skipped. Walk the workshops, don’t only the showroom.</p>
+                <span class="price">Half day</span>
+            </div>
+            <div class="card">
+                <h3><span class="emo" aria-hidden="true">🏙️</span> Soğanlı / Mustafapaşa</h3>
+                <p>Quieter valleys and a Greek town that kept the stone. Only if Göreme already felt small.</p>
+                <span class="price">Day · car or tour</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="next">
+        <a href="../index.html">← Back to the atlas</a>
+        <a href="../antalya/">Antalya is next →</a>
+    </div>
+
+    <footer>
+        <span>Cappadocia · Turkey</span>
+        <span>globetrotwithveda.com</span>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const progress = document.getElementById('progress');
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.rail a')];
+        const photoIds = new Set(['frames', 'balloons', 'goreme', 'cave-hotel', 'valleys', 'uchisar', 'underground', 'zelve', 'lamps', 'carpets', 'crafts']);
+        const railHref = (id) => {
+            if (photoIds.has(id)) return '#frames';
+            const visaOn = document.querySelector('.tabs button[data-tab="visa"]')?.getAttribute('aria-selected') === 'true';
+            if (id === 'intel' && visaOn) return '#visa';
+            return `#${id}`;
+        };
+        const setRail = (href) => {
+            links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
+        };
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const updateRail = () => {
+            const lock = 130;
+            let winner = null;
+            let best = Infinity;
+            spyTargets.forEach((el) => {
+                if (el.id === 'visa' && el.hidden) return;
+                const r = el.getBoundingClientRect();
+                if (r.bottom <= lock || r.top >= window.innerHeight * 0.55) return;
+                const dist = r.top <= lock ? 0 : r.top - lock;
+                if (dist < best) {
+                    best = dist;
+                    winner = el;
+                }
+            });
+            if (winner) setRail(railHref(winner.id));
+        };
+        const spy = new IntersectionObserver(updateRail, { rootMargin: '-20% 0px -45% 0px', threshold: [0, 0.1, 0.25] });
+        spyTargets.forEach((section) => spy.observe(section));
+        window.addEventListener('scroll', updateRail, { passive: true });
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                setRail(href);
+                if (href !== '#visa') return;
+                event.preventDefault();
+                document.querySelector('.tabs button[data-tab="visa"]')?.click();
+                document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', '#visa');
+            });
+        });
+
+        document.querySelectorAll('[data-film]').forEach((film) => {
+            const slides = [...film.querySelectorAll('img')];
+            const count = film.querySelector('.count');
+            const ui = film.querySelector('.film-ui');
+            if (slides.length < 2 && ui) ui.style.display = 'none';
+            let i = 0;
+            const show = (next) => {
+                slides[i].classList.remove('is-on');
+                i = (next + slides.length) % slides.length;
+                slides[i].classList.add('is-on');
+                count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            film.querySelectorAll('[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => show(i + Number(btn.dataset.dir)));
+            });
+        });
+
+        const tabs = [...document.querySelectorAll('.tabs button')];
+        const panels = {
+            see: document.getElementById('panel-see'),
+            book: document.getElementById('panel-book'),
+            eat: document.getElementById('panel-eat'),
+            stay: document.getElementById('panel-stay'),
+            when: document.getElementById('panel-when'),
+            move: document.getElementById('panel-move'),
+            visa: document.getElementById('visa')
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+                Object.entries(panels).forEach(([key, panel]) => {
+                    const on = key === tab.dataset.tab;
+                    panel.classList.toggle('is-on', on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        const setPressed = (buttons, active) => {
+            buttons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn === active)));
+        };
+
+        const citizenshipButtons = [...document.querySelectorAll('.citizenship-btn')];
+        const visaIndian = document.getElementById('visa-indian');
+        const visaUs = document.getElementById('visa-us');
+        citizenshipButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(citizenshipButtons, button);
+                const indian = button.dataset.citizenship === 'indian';
+                visaIndian.hidden = !indian;
+                visaUs.hidden = indian;
+            });
+        });
+
+        const residencyButtons = [...document.querySelectorAll('.residency-btn')];
+        const indianIndia = document.getElementById('indian-india');
+        const indianUsa = document.getElementById('indian-usa');
+        residencyButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setPressed(residencyButtons, button);
+                const inIndia = button.dataset.residency === 'india';
+                indianIndia.hidden = !inIndia;
+                indianUsa.hidden = inIndia;
+            });
+        });
+
+        const places = [
+            { id: 'goreme', name: 'Göreme', n: '01', lat: 38.6431, lng: 34.8289, query: 'Goreme, Cappadocia' },
+            { id: 'pasabag', name: 'Paşabağ', n: '02', lat: 38.6708, lng: 34.8519, query: 'Pasabag Valley, Cappadocia' },
+            { id: 'pigeon', name: 'Pigeon Valley', n: '03', lat: 38.6335, lng: 34.8180, query: 'Pigeon Valley, Goreme' },
+            { id: 'love', name: 'Love Valley', n: '04', lat: 38.6555, lng: 34.8450, query: 'Love Valley, Cappadocia' },
+            { id: 'uchisar', name: 'Uçhisar', n: '05', lat: 38.6294, lng: 34.8056, query: 'Uchisar Castle, Cappadocia' },
+            { id: 'zelve', name: 'Zelve', n: '06', lat: 38.6689, lng: 34.8639, query: 'Zelve Open Air Museum' },
+            { id: 'underground', name: 'Underground city', n: '07', lat: 38.4594, lng: 34.7536, query: 'Kaymakli Underground City' }
+        ];
+
+        const mapLink = document.getElementById('cappadocia-map-link');
+        const pinButtons = [...document.querySelectorAll('.map-pins button')];
+        const googleSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        const googleAll = 'https://www.google.com/maps/dir/?api=1&origin=Goreme%2C%20Cappadocia&destination=Kaymakli%20Underground%20City&waypoints=Pasabag%20Valley%2C%20Cappadocia%7CPigeon%20Valley%2C%20Goreme%7CLove%20Valley%2C%20Cappadocia%7CUchisar%20Castle%2C%20Cappadocia%7CZelve%20Open%20Air%20Museum&travelmode=driving';
+
+        const map = L.map('cappadocia-map', {
+            scrollWheelZoom: false,
+            attributionControl: true
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+        map.once('click', () => map.scrollWheelZoom.enable());
+
+        const pinIcon = (n, on) => L.divIcon({
+            className: '',
+            html: `<div class="pin${on ? ' is-on' : ''}"><span>${n}</span></div>`,
+            iconSize: [32, 32],
+            iconAnchor: [8, 32],
+            popupAnchor: [8, -28]
+        });
+
+        const markers = {};
+        const group = L.featureGroup();
+        const paintPins = (activeId) => {
+            places.forEach((place) => {
+                markers[place.id].setIcon(pinIcon(place.n, !activeId || place.id === activeId));
+            });
+        };
+        places.forEach((place) => {
+            const marker = L.marker([place.lat, place.lng], { icon: pinIcon(place.n, true), title: place.name })
+                .bindPopup(
+                    `<div class="map-popup-body"><h3>${place.name}</h3><a href="${googleSearch(place.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div>`,
+                    { className: 'map-popup' }
+                );
+            marker.addTo(group);
+            markers[place.id] = marker;
+        });
+        group.addTo(map);
+        map.fitBounds(group.getBounds().pad(0.18));
+        mapLink.href = googleAll;
+        mapLink.textContent = 'Open a driving route in Google Maps ↗';
+
+        const showPlace = (id) => {
+            if (id === 'all') {
+                paintPins(null);
+                map.fitBounds(group.getBounds().pad(0.18));
+                map.closePopup();
+                mapLink.href = googleAll;
+                mapLink.textContent = 'Open a driving route in Google Maps ↗';
+                return;
+            }
+            const place = places.find((p) => p.id === id);
+            if (!place) return;
+            paintPins(id);
+            map.flyTo([place.lat, place.lng], 14, { duration: 0.6 });
+            markers[id].openPopup();
+            mapLink.href = googleSearch(place.query);
+            mapLink.textContent = `Open ${place.name} in Google Maps ↗`;
+        };
+
+        pinButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                pinButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+                showPlace(button.dataset.place);
+            });
+        });
+
+        const resizeMap = () => map.invalidateSize();
+        setTimeout(resizeMap, 300);
+        window.addEventListener('resize', resizeMap);
+        const mapSection = document.getElementById('map');
+        if (mapSection && 'IntersectionObserver' in window) {
+            const mapSpy = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    resizeMap();
+                    const allOn = pinButtons.find((b) => b.dataset.place === 'all')?.getAttribute('aria-pressed') === 'true';
+                    if (allOn) map.fitBounds(group.getBounds().pad(0.18));
+                }
+            }, { threshold: 0.2 });
+            mapSpy.observe(mapSection);
+        }
+    </script>
+</body>
+</html>

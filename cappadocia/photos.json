@@ -1,0 +1,344 @@
+{
+  "city": "cappadocia",
+  "country": "Turkey",
+  "continent": "asia",
+  "coords": {
+    "lat": 38.6431,
+    "lng": 34.8289,
+    "label": "38.6431° N · 34.8289° E"
+  },
+  "hero": {
+    "file": "../cappadocia-image.jpg",
+    "source_file": "cappadocia-image-7.jpg",
+    "original_name": "goreme panorama with mt erciyes in background.jpeg",
+    "caption": "Göreme with Mount Erciyes in the background",
+    "alt": "Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes"
+  },
+  "note": "Original descriptive filenames are preserved in original_name. Files were renamed to cappadocia-image-N.jpg to match other city folders. Do not delete this file; it is the caption source for later edits.",
+  "images": [
+    {
+      "n": 1,
+      "file": "cappadocia-image-1.jpg",
+      "original_name": "balloons.jpeg",
+      "chapter": "balloons",
+      "place": "Göreme valley",
+      "caption": "Hot air balloons over fairy chimneys at dusk",
+      "alt": "Hot air balloons including a red Juan Valdez balloon over Cappadocia"
+    },
+    {
+      "n": 2,
+      "file": "cappadocia-image-2.jpg",
+      "original_name": "sunrise photography with balloons.JPG",
+      "chapter": "balloons",
+      "place": "Göreme sunrise",
+      "caption": "Sunrise balloon flight over the valley",
+      "alt": "Sunrise photography with hot air balloons over Cappadocia"
+    },
+    {
+      "n": 3,
+      "file": "cappadocia-image-3.jpg",
+      "original_name": "sunrise photography with balloons.JPEG",
+      "chapter": "balloons",
+      "place": "Göreme sunrise",
+      "caption": "Another sunrise balloon frame",
+      "alt": "Sunrise hot air balloons over Cappadocia"
+    },
+    {
+      "n": 4,
+      "file": "cappadocia-image-4.jpg",
+      "original_name": "sunrise photography with balloons 3.JPG",
+      "chapter": "balloons",
+      "place": "Göreme sunrise",
+      "caption": "Balloons filling the morning sky",
+      "alt": "Sunrise hot air balloons over Cappadocia, frame 3"
+    },
+    {
+      "n": 5,
+      "file": "cappadocia-image-5.jpg",
+      "original_name": "sunrise photography with balloons 4.JPG",
+      "chapter": "balloons",
+      "place": "Göreme sunrise",
+      "caption": "Balloons over the chimneys",
+      "alt": "Sunrise hot air balloons over Cappadocia, frame 4"
+    },
+    {
+      "n": 6,
+      "file": "cappadocia-image-6.jpg",
+      "original_name": "sunrise photography with balloons 5.JPG",
+      "chapter": "balloons",
+      "place": "Göreme sunrise",
+      "caption": "Last balloon frames before the light went ordinary",
+      "alt": "Sunrise hot air balloons over Cappadocia, frame 5"
+    },
+    {
+      "n": 7,
+      "file": "cappadocia-image-7.jpg",
+      "original_name": "goreme panorama with mt erciyes in background.jpeg",
+      "chapter": "goreme",
+      "place": "Göreme panorama",
+      "caption": "Göreme with Mount Erciyes in the background",
+      "alt": "Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes"
+    },
+    {
+      "n": 8,
+      "file": "cappadocia-image-8.jpg",
+      "original_name": "goreme panorama 2.jpeg",
+      "chapter": "goreme",
+      "place": "Göreme panorama",
+      "caption": "A second Göreme overlook",
+      "alt": "Göreme panorama looking across fairy chimneys"
+    },
+    {
+      "n": 9,
+      "file": "cappadocia-image-9.jpg",
+      "original_name": "goreme 360 panorama.JPG",
+      "chapter": "goreme",
+      "place": "Göreme 360",
+      "caption": "A 360-degree Göreme view",
+      "alt": "360 panorama of Göreme and the surrounding valleys"
+    },
+    {
+      "n": 10,
+      "file": "cappadocia-image-10.jpg",
+      "original_name": "goreme rooftop.JPG",
+      "chapter": "goreme",
+      "place": "Göreme rooftop",
+      "caption": "From a Göreme rooftop",
+      "alt": "Rooftop view over Göreme"
+    },
+    {
+      "n": 11,
+      "file": "cappadocia-image-11.jpg",
+      "original_name": "goreme rooftop 2.JPG",
+      "chapter": "goreme",
+      "place": "Göreme rooftop",
+      "caption": "Another rooftop hour",
+      "alt": "Second rooftop view over Göreme"
+    },
+    {
+      "n": 12,
+      "file": "cappadocia-image-12.jpg",
+      "original_name": "cappadocia goreme caves.JPEG",
+      "chapter": "goreme",
+      "place": "Göreme caves",
+      "caption": "Cave dwellings in Göreme",
+      "alt": "Cave dwellings cut into the rock in Göreme"
+    },
+    {
+      "n": 13,
+      "file": "cappadocia-image-13.jpg",
+      "original_name": "inside cave hotel.jpeg",
+      "chapter": "cave-hotel",
+      "place": "Cave hotel",
+      "caption": "Inside a cave hotel room",
+      "alt": "Interior of a cave hotel in Göreme"
+    },
+    {
+      "n": 14,
+      "file": "cappadocia-image-14.jpg",
+      "original_name": "inside cave hotel 2.jpeg",
+      "chapter": "cave-hotel",
+      "place": "Cave hotel",
+      "caption": "Cave hotel, another room",
+      "alt": "Interior of a cave hotel in Göreme, frame 2"
+    },
+    {
+      "n": 15,
+      "file": "cappadocia-image-15.jpg",
+      "original_name": "inside cave hotel 3.jpeg",
+      "chapter": "cave-hotel",
+      "place": "Cave hotel",
+      "caption": "Cave hotel, the last interior",
+      "alt": "Interior of a cave hotel in Göreme, frame 3"
+    },
+    {
+      "n": 16,
+      "file": "cappadocia-image-16.jpg",
+      "original_name": "pasabag valley.jpeg",
+      "chapter": "pasabag",
+      "place": "Paşabağ (Monks Valley)",
+      "caption": "Fairy chimneys in Paşabağ",
+      "alt": "Paşabağ valley fairy chimneys"
+    },
+    {
+      "n": 17,
+      "file": "cappadocia-image-17.jpg",
+      "original_name": "pasabag valley 2.jpeg",
+      "chapter": "pasabag",
+      "place": "Paşabağ (Monks Valley)",
+      "caption": "Paşabağ, second walk",
+      "alt": "Paşabağ valley fairy chimneys, frame 2"
+    },
+    {
+      "n": 18,
+      "file": "cappadocia-image-18.jpg",
+      "original_name": "pigeon valley.jpeg",
+      "chapter": "pigeon-valley",
+      "place": "Pigeon Valley",
+      "caption": "Pigeon Valley lookout",
+      "alt": "Pigeon Valley near Göreme"
+    },
+    {
+      "n": 19,
+      "file": "cappadocia-image-19.jpg",
+      "original_name": "pigeon valley 2.jpeg",
+      "chapter": "pigeon-valley",
+      "place": "Pigeon Valley",
+      "caption": "Pigeon Valley, the second overlook",
+      "alt": "Pigeon Valley near Göreme, frame 2"
+    },
+    {
+      "n": 20,
+      "file": "cappadocia-image-20.jpg",
+      "original_name": "love valley.JPG",
+      "chapter": "love-valley",
+      "place": "Love Valley",
+      "caption": "Love Valley from the rim",
+      "alt": "Love Valley in Cappadocia"
+    },
+    {
+      "n": 21,
+      "file": "cappadocia-image-21.jpg",
+      "original_name": "Uchaisir.JPG",
+      "chapter": "uchisar",
+      "place": "Uçhisar",
+      "caption": "Uçhisar castle town (filename said Uchaisir)",
+      "alt": "Uçhisar fortress and village"
+    },
+    {
+      "n": 22,
+      "file": "cappadocia-image-22.jpg",
+      "original_name": "uchaisir 2.JPG",
+      "chapter": "uchisar",
+      "place": "Uçhisar",
+      "caption": "Uçhisar, second frame",
+      "alt": "Uçhisar fortress and village, frame 2"
+    },
+    {
+      "n": 23,
+      "file": "cappadocia-image-23.jpg",
+      "original_name": "underground city.jpeg",
+      "chapter": "underground-city",
+      "place": "Underground city",
+      "caption": "Inside an underground city",
+      "alt": "Tunnels of a Cappadocia underground city"
+    },
+    {
+      "n": 24,
+      "file": "cappadocia-image-24.jpg",
+      "original_name": "underground city model image.jpeg",
+      "chapter": "underground-city",
+      "place": "Underground city",
+      "caption": "A model of the underground city",
+      "alt": "Scale model of a Cappadocia underground city"
+    },
+    {
+      "n": 25,
+      "file": "cappadocia-image-25.jpg",
+      "original_name": "zelve open air museum.jpeg",
+      "chapter": "zelve",
+      "place": "Zelve Open Air Museum",
+      "caption": "Zelve’s abandoned village in the rock",
+      "alt": "Zelve Open Air Museum"
+    },
+    {
+      "n": 26,
+      "file": "cappadocia-image-26.jpg",
+      "original_name": "random cave near goreme.JPEG",
+      "chapter": "goreme",
+      "place": "Cave near Göreme",
+      "caption": "A cave we walked into near Göreme",
+      "alt": "A cave near Göreme"
+    },
+    {
+      "n": 27,
+      "file": "cappadocia-image-27.jpg",
+      "original_name": "a cat in goreme.jpeg",
+      "chapter": "goreme",
+      "place": "Göreme",
+      "caption": "A cat who lives in Göreme",
+      "alt": "A cat in Göreme"
+    },
+    {
+      "n": 28,
+      "file": "cappadocia-image-28.jpg",
+      "original_name": "turkish barbecue in goreme.jpeg",
+      "chapter": "food",
+      "place": "Göreme",
+      "caption": "Turkish barbecue in Göreme",
+      "alt": "Turkish barbecue meal in Göreme"
+    },
+    {
+      "n": 29,
+      "file": "cappadocia-image-29.jpg",
+      "original_name": "turkish pottery.jpeg",
+      "chapter": "crafts",
+      "place": "Avanos / Göreme",
+      "caption": "Turkish pottery",
+      "alt": "Turkish pottery"
+    },
+    {
+      "n": 30,
+      "file": "cappadocia-image-30.jpg",
+      "original_name": "ottoman lamps.jpg",
+      "chapter": "lamps",
+      "place": "Göreme",
+      "caption": "Ottoman lamps",
+      "alt": "Ottoman mosaic lamps"
+    },
+    {
+      "n": 31,
+      "file": "cappadocia-image-31.jpg",
+      "original_name": "ottoman lamps 2.JPG",
+      "chapter": "lamps",
+      "place": "Göreme",
+      "caption": "More Ottoman lamps",
+      "alt": "Ottoman mosaic lamps, frame 2"
+    },
+    {
+      "n": 32,
+      "file": "cappadocia-image-32.jpg",
+      "original_name": "carpets.jpeg",
+      "chapter": "carpets",
+      "place": "Osmanbey Cave Hotel",
+      "caption": "Carpet courtyard at Osmanbey Cave Hotel",
+      "alt": "Carpet courtyard at Osmanbey Cave Hotel"
+    },
+    {
+      "n": 33,
+      "file": "cappadocia-image-33.jpg",
+      "original_name": "dervish dance.jpg",
+      "chapter": "culture",
+      "place": "Cappadocia",
+      "caption": "A whirling dervish performance",
+      "alt": "Whirling dervish dance"
+    },
+    {
+      "n": 34,
+      "file": "cappadocia-image-34.jpg",
+      "original_name": "random cave near goreme 2.jpg",
+      "chapter": "goreme",
+      "place": "Cave near Göreme",
+      "caption": "Another cave we walked into near Göreme",
+      "alt": "A second cave near Göreme"
+    },
+    {
+      "n": 35,
+      "file": "cappadocia-image-35.jpg",
+      "original_name": "IMG_1121.jpg",
+      "chapter": "carpets",
+      "place": "Osmanbey Cave Hotel",
+      "caption": "In the carpet courtyard at Osmanbey",
+      "alt": "Veda in the carpet courtyard at Osmanbey Cave Hotel"
+    },
+    {
+      "n": 36,
+      "file": "cappadocia-image-36.jpg",
+      "original_name": "IMG_1139.JPG",
+      "chapter": "carpets",
+      "place": "Osmanbey Cave Hotel",
+      "caption": "Sitting among the kilims at Osmanbey",
+      "alt": "Sitting among kilims at Osmanbey Cave Hotel"
+    }
+  ]
+}
