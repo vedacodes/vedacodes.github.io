@@ -128,11 +128,23 @@
             background: linear-gradient(180deg, rgba(7,8,12,0.92), rgba(7,8,12,0.35) 70%, transparent);
         }
         .wordmark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-family: Syne, sans-serif;
             font-weight: 800;
             letter-spacing: -0.04em;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
+            white-space: nowrap;
+        }
+        .wordmark img {
+            width: 32px;
+            height: 32px;
+            max-width: none;
+            object-fit: contain;
+            flex-shrink: 0;
+            display: block;
         }
         .nav-meta {
             display: flex;
@@ -666,6 +678,8 @@
             .visa-grid { grid-template-columns: 1fr; }
             .detail { grid-template-columns: 1fr; }
             .nav { padding: 14px 18px; }
+            .wordmark { font-size: 0.82rem; gap: 8px; }
+            .wordmark img { width: 26px; height: 26px; }
             .coords { display: none; }
             #grandcanyon-map { height: 360px; }
             .hero-copy {
@@ -698,7 +712,7 @@
     <div class="progress" id="progress"></div>
 
     <header class="nav">
-        <a class="wordmark" href="../index.html">Veda</a>
+        <a class="wordmark" href="../index.html"><img src="../logo.png" width="32" height="32" alt="">GlobetrotWithVeda</a>
         <div class="nav-meta">
             <span class="coords">36.0544° N · 112.1401° W</span>
             <a href="../index.html">Atlas</a>
