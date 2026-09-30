@@ -56,7 +56,17 @@
                     "name": "Cappadocia",
                     "containedInPlace": { "@type": "Country", "name": "Turkey" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/cappadocia/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/cappadocia/#hero",
+                "url": "https://globetrotwithveda.com/cappadocia-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/cappadocia-image.jpg",
+                "caption": "Veda overlooking Göreme with Mount Erciyes in the background",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -449,32 +459,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -704,7 +748,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         
         </style>
@@ -1097,12 +1141,31 @@
 
     <article class="chapter" id="balloons">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-1.jpg" alt="Hot air balloons including a red Juan Valdez balloon over Cappadocia">
-            <img src="cappadocia-image-2.jpg" alt="Sunrise photography with hot air balloons over Cappadocia" loading="lazy">
-            <img src="cappadocia-image-3.jpg" alt="Sunrise hot air balloons over Cappadocia" loading="lazy">
-            <img src="cappadocia-image-4.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 3" loading="lazy">
-            <img src="cappadocia-image-5.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 4" loading="lazy">
-            <img src="cappadocia-image-6.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 5" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-1.jpg" alt="Hot air balloons including a red Juan Valdez balloon over Cappadocia">
+                <figcaption>Hot air balloons over fairy chimneys at dusk</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-2.jpg" alt="Sunrise photography with hot air balloons over Cappadocia" loading="lazy">
+                <figcaption>Sunrise balloon flight over the valley</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-3.jpg" alt="Sunrise hot air balloons over Cappadocia" loading="lazy">
+                <figcaption>Another sunrise balloon frame</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-4.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 3" loading="lazy">
+                <figcaption>Balloons filling the morning sky</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-5.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 4" loading="lazy">
+                <figcaption>Balloons over the chimneys</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-6.jpg" alt="Sunrise hot air balloons over Cappadocia, frame 5" loading="lazy">
+                <figcaption>Last balloon frames before the light went ordinary</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 06</span>
@@ -1117,13 +1180,35 @@
     </article>
     <article class="chapter is-flip" id="goreme">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-7.jpg" alt="Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes">
-            <img src="cappadocia-image-8.jpg" alt="Göreme panorama looking across fairy chimneys" loading="lazy">
-            <img src="cappadocia-image-9.jpg" alt="360 panorama of Göreme and the surrounding valleys" loading="lazy">
-            <img src="cappadocia-image-10.jpg" alt="Rooftop view over Göreme" loading="lazy">
-            <img src="cappadocia-image-11.jpg" alt="Second rooftop view over Göreme" loading="lazy">
-            <img src="cappadocia-image-12.jpg" alt="Cave dwellings cut into the rock in Göreme" loading="lazy">
-            <img src="cappadocia-image-27.jpg" alt="A cat in Göreme" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-7.jpg" alt="Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes">
+                <figcaption>Göreme with Mount Erciyes in the background</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-8.jpg" alt="Göreme panorama looking across fairy chimneys" loading="lazy">
+                <figcaption>A second Göreme overlook</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-9.jpg" alt="360 panorama of Göreme and the surrounding valleys" loading="lazy">
+                <figcaption>A 360-degree Göreme view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-10.jpg" alt="Rooftop view over Göreme" loading="lazy">
+                <figcaption>From a Göreme rooftop</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-11.jpg" alt="Second rooftop view over Göreme" loading="lazy">
+                <figcaption>Another rooftop hour</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-12.jpg" alt="Cave dwellings cut into the rock in Göreme" loading="lazy">
+                <figcaption>Cave dwellings in Göreme</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-27.jpg" alt="A cat in Göreme" loading="lazy">
+                <figcaption>A cat who lives in Göreme</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 07</span>
@@ -1138,9 +1223,19 @@
     </article>
     <article class="chapter" id="cave-hotel">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-13.jpg" alt="Interior of a cave hotel in Göreme">
-            <img src="cappadocia-image-14.jpg" alt="Interior of a cave hotel in Göreme, frame 2" loading="lazy">
-            <img src="cappadocia-image-15.jpg" alt="Interior of a cave hotel in Göreme, frame 3" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-13.jpg" alt="Interior of a cave hotel in Göreme">
+                <figcaption>Inside a cave hotel room</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-14.jpg" alt="Interior of a cave hotel in Göreme, frame 2" loading="lazy">
+                <figcaption>Cave hotel, another room</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-15.jpg" alt="Interior of a cave hotel in Göreme, frame 3" loading="lazy">
+                <figcaption>Cave hotel, the last interior</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1155,11 +1250,27 @@
     </article>
     <article class="chapter is-flip" id="valleys">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-16.jpg" alt="Paşabağ valley fairy chimneys">
-            <img src="cappadocia-image-17.jpg" alt="Paşabağ valley fairy chimneys, frame 2" loading="lazy">
-            <img src="cappadocia-image-18.jpg" alt="Pigeon Valley near Göreme" loading="lazy">
-            <img src="cappadocia-image-19.jpg" alt="Pigeon Valley near Göreme, frame 2" loading="lazy">
-            <img src="cappadocia-image-20.jpg" alt="Love Valley in Cappadocia" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-16.jpg" alt="Paşabağ valley fairy chimneys">
+                <figcaption>Fairy chimneys in Paşabağ</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-17.jpg" alt="Paşabağ valley fairy chimneys, frame 2" loading="lazy">
+                <figcaption>Paşabağ, second walk</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-18.jpg" alt="Pigeon Valley near Göreme" loading="lazy">
+                <figcaption>Pigeon Valley lookout</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-19.jpg" alt="Pigeon Valley near Göreme, frame 2" loading="lazy">
+                <figcaption>Pigeon Valley, the second overlook</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-20.jpg" alt="Love Valley in Cappadocia" loading="lazy">
+                <figcaption>Love Valley from the rim</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 05</span>
@@ -1174,8 +1285,15 @@
     </article>
     <article class="chapter" id="uchisar">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-21.jpg" alt="Uçhisar fortress and village">
-            <img src="cappadocia-image-22.jpg" alt="Uçhisar fortress and village, frame 2" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-21.jpg" alt="Uçhisar fortress and village">
+                <figcaption>Uçhisar castle town</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-22.jpg" alt="Uçhisar fortress and village, frame 2" loading="lazy">
+                <figcaption>Uçhisar, second frame</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1190,8 +1308,15 @@
     </article>
     <article class="chapter is-flip" id="underground">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-23.jpg" alt="Tunnels of a Cappadocia underground city">
-            <img src="cappadocia-image-24.jpg" alt="Scale model of a Cappadocia underground city" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-23.jpg" alt="Tunnels of a Cappadocia underground city">
+                <figcaption>Inside an underground city</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-24.jpg" alt="Scale model of a Cappadocia underground city" loading="lazy">
+                <figcaption>A model of the underground city</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1206,9 +1331,19 @@
     </article>
     <article class="chapter" id="zelve">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-25.jpg" alt="Zelve Open Air Museum">
-            <img src="cappadocia-image-26.jpg" alt="A cave near Göreme" loading="lazy">
-            <img src="cappadocia-image-34.jpg" alt="A second cave near Göreme" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-25.jpg" alt="Zelve Open Air Museum">
+                <figcaption>Zelve’s abandoned village in the rock</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-26.jpg" alt="A cave near Göreme" loading="lazy">
+                <figcaption>A cave we walked into near Göreme</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-34.jpg" alt="A second cave near Göreme" loading="lazy">
+                <figcaption>Another cave we walked into near Göreme</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1223,8 +1358,15 @@
     </article>
     <article class="chapter is-flip" id="lamps">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-30.jpg" alt="Ottoman mosaic lamps">
-            <img src="cappadocia-image-31.jpg" alt="Ottoman mosaic lamps, frame 2" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-30.jpg" alt="Ottoman mosaic lamps">
+                <figcaption>Ottoman lamps</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-31.jpg" alt="Ottoman mosaic lamps, frame 2" loading="lazy">
+                <figcaption>More Ottoman lamps</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1239,9 +1381,19 @@
     </article>
     <article class="chapter" id="carpets">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-32.jpg" alt="Carpet courtyard at Osmanbey Cave Hotel">
-            <img src="cappadocia-image-35.jpg" alt="Veda in the carpet courtyard at Osmanbey Cave Hotel" loading="lazy">
-            <img src="cappadocia-image-36.jpg" alt="Sitting among kilims at Osmanbey Cave Hotel" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-32.jpg" alt="Carpet courtyard at Osmanbey Cave Hotel">
+                <figcaption>Carpet courtyard at Osmanbey Cave Hotel</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-35.jpg" alt="Veda in the carpet courtyard at Osmanbey Cave Hotel" loading="lazy">
+                <figcaption>In the carpet courtyard at Osmanbey</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-36.jpg" alt="Sitting among kilims at Osmanbey Cave Hotel" loading="lazy">
+                <figcaption>Sitting among the kilims at Osmanbey</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1256,9 +1408,19 @@
     </article>
     <article class="chapter is-flip" id="crafts">
         <div class="film" data-film>
-            <img class="is-on" src="cappadocia-image-28.jpg" alt="Turkish barbecue meal in Göreme">
-            <img src="cappadocia-image-29.jpg" alt="Turkish pottery" loading="lazy">
-            <img src="cappadocia-image-33.jpg" alt="Whirling dervish dance" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cappadocia-image-28.jpg" alt="Turkish barbecue meal in Göreme">
+                <figcaption>Turkish barbecue in Göreme</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-29.jpg" alt="Turkish pottery" loading="lazy">
+                <figcaption>Turkish pottery</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cappadocia-image-33.jpg" alt="Whirling dervish dance" loading="lazy">
+                <figcaption>A whirling dervish performance</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1390,7 +1552,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

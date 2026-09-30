@@ -56,7 +56,17 @@
                     "name": "Las Vegas",
                     "containedInPlace": { "@type": "Country", "name": "United States" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/lasvegas/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/lasvegas/#hero",
+                "url": "https://globetrotwithveda.com/lasvegas-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/lasvegas-image.jpg",
+                "caption": "Veda on the Las Vegas Strip near Hell's Kitchen",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1072,10 +1116,23 @@
 
     <article class="chapter" id="venetian">
         <div class="film" data-film>
-            <img class="is-on" src="lasvegas-image-1.jpg" alt="Venetian Casino">
-            <img src="lasvegas-image-2.jpg" alt="Venice city replica" loading="lazy">
-            <img src="lasvegas-image-3.jpg" alt="Nike Winged Victory replica" loading="lazy">
-            <img src="lasvegas-image-6.jpg" alt="Inside the Venice replica" loading="lazy">
+            <figure class="shot is-on">
+                <img src="lasvegas-image-1.jpg" alt="Venetian Casino">
+                <figcaption>Venetian Casino</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lasvegas-image-2.jpg" alt="Venice city replica" loading="lazy">
+                <figcaption>Venice city replica</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lasvegas-image-3.jpg" alt="Nike Winged Victory replica" loading="lazy">
+                <figcaption>Nike Winged Victory replica</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lasvegas-image-6.jpg" alt="Inside the Venice replica" loading="lazy">
+                <figcaption>Inside the Venice replica</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1090,7 +1147,11 @@
     </article>
     <article class="chapter is-flip" id="eiffel">
         <div class="film" data-film>
-            <img class="is-on" src="lasvegas-image-4.jpg" alt="Fake Eiffel Tower at Paris Las Vegas">
+            <figure class="shot is-on">
+                <img src="lasvegas-image-4.jpg" alt="Fake Eiffel Tower at Paris Las Vegas">
+                <figcaption>Fake Eiffel Tower at Paris Las Vegas</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1105,7 +1166,11 @@
     </article>
     <article class="chapter" id="hells-kitchen">
         <div class="film" data-film>
-            <img class="is-on" src="lasvegas-image-5.jpg" alt="Gordon Ramsay's Hell's Kitchen">
+            <figure class="shot is-on">
+                <img src="lasvegas-image-5.jpg" alt="Gordon Ramsay&#x27;s Hell&#x27;s Kitchen">
+                <figcaption>Gordon Ramsay&#x27;s Hell&#x27;s Kitchen</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1120,8 +1185,15 @@
     </article>
     <article class="chapter is-flip" id="hoover">
         <div class="film" data-film>
-            <img class="is-on" src="lasvegas-image-7.jpg" alt="Hoover Dam">
-            <img src="lasvegas-image-8.jpg" alt="Hoover Dam, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="lasvegas-image-7.jpg" alt="Hoover Dam">
+                <figcaption>Hoover Dam</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lasvegas-image-8.jpg" alt="Hoover Dam, another view" loading="lazy">
+                <figcaption>Hoover Dam, another view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1250,7 +1322,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

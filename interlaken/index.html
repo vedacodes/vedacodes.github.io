@@ -56,7 +56,17 @@
                     "name": "Interlaken",
                     "containedInPlace": { "@type": "Country", "name": "Switzerland" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/interlaken/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/interlaken/#hero",
+                "url": "https://globetrotwithveda.com/interlaken-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/interlaken-image.jpg",
+                "caption": "Autumn in Interlaken, between lakes and mountains",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     </style>
 </head>
@@ -1122,8 +1166,15 @@
 
     <article class="chapter" id="streets">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-1.jpg" alt="Streets of Interlaken">
-            <img src="interlaken-image-2.jpg" alt="Interlaken streets, another turn" loading="lazy">
+            <figure class="shot is-on">
+                <img src="interlaken-image-1.jpg" alt="Streets of Interlaken">
+                <figcaption>Streets of Interlaken</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-2.jpg" alt="Interlaken streets, another turn" loading="lazy">
+                <figcaption>Interlaken streets, another turn</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1139,8 +1190,15 @@
 
     <article class="chapter is-flip" id="fall">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-3.jpg" alt="Fall color in Switzerland">
-            <img src="interlaken-image-18.jpg" alt="Fall landscape near Interlaken" loading="lazy">
+            <figure class="shot is-on">
+                <img src="interlaken-image-3.jpg" alt="Fall color in Switzerland">
+                <figcaption>Fall color in Switzerland</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-18.jpg" alt="Fall landscape near Interlaken" loading="lazy">
+                <figcaption>Fall landscape near Interlaken</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1156,13 +1214,35 @@
 
     <article class="chapter" id="harder-film">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-4.jpg" alt="Walking up toward Harder Kulm">
-            <img src="interlaken-image-5.jpg" alt="Harder Kulm" loading="lazy">
-            <img src="interlaken-image-6.jpg" alt="Harder Kulm viewpoint" loading="lazy">
-            <img src="interlaken-image-7.jpg" alt="The top of Harder Kulm" loading="lazy">
-            <img src="interlaken-image-15.jpg" alt="Interlaken seen from Harder Kulm" loading="lazy">
-            <img src="interlaken-image-16.jpg" alt="Lakes from Harder Kulm" loading="lazy">
-            <img src="interlaken-image-17.jpg" alt="Interlaken from Harder Kulm, another frame" loading="lazy">
+            <figure class="shot is-on">
+                <img src="interlaken-image-4.jpg" alt="Walking up toward Harder Kulm">
+                <figcaption>Walking up toward Harder Kulm</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-5.jpg" alt="Harder Kulm" loading="lazy">
+                <figcaption>Harder Kulm</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-6.jpg" alt="Harder Kulm viewpoint" loading="lazy">
+                <figcaption>Harder Kulm viewpoint</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-7.jpg" alt="The top of Harder Kulm" loading="lazy">
+                <figcaption>The top of Harder Kulm</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-15.jpg" alt="Interlaken seen from Harder Kulm" loading="lazy">
+                <figcaption>Interlaken seen from Harder Kulm</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-16.jpg" alt="Lakes from Harder Kulm" loading="lazy">
+                <figcaption>Lakes from Harder Kulm</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-17.jpg" alt="Interlaken from Harder Kulm, another frame" loading="lazy">
+                <figcaption>Interlaken from Harder Kulm, another frame</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 07</span>
@@ -1178,8 +1258,15 @@
 
     <article class="chapter is-flip" id="churches">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-8.jpg" alt="A church in Interlaken">
-            <img src="interlaken-image-9.jpg" alt="Another church in Interlaken" loading="lazy">
+            <figure class="shot is-on">
+                <img src="interlaken-image-8.jpg" alt="A church in Interlaken">
+                <figcaption>A church in Interlaken</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-9.jpg" alt="Another church in Interlaken" loading="lazy">
+                <figcaption>Another church in Interlaken</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1195,10 +1282,23 @@
 
     <article class="chapter" id="schilthorn-film">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-10.jpg" alt="Schilthorn cable car">
-            <img src="interlaken-image-11.jpg" alt="The Alps from Piz Gloria" loading="lazy">
-            <img src="interlaken-image-12.jpg" alt="007 world at Piz Gloria" loading="lazy">
-            <img src="interlaken-image-13.jpg" alt="The revolving restaurant at Schilthorn" loading="lazy">
+            <figure class="shot is-on">
+                <img src="interlaken-image-10.jpg" alt="Schilthorn cable car">
+                <figcaption>Schilthorn cable car</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-11.jpg" alt="The Alps from Piz Gloria" loading="lazy">
+                <figcaption>The Alps from Piz Gloria</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-12.jpg" alt="007 world at Piz Gloria" loading="lazy">
+                <figcaption>007 world at Piz Gloria</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="interlaken-image-13.jpg" alt="The revolving restaurant at Schilthorn" loading="lazy">
+                <figcaption>The revolving restaurant at Schilthorn</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1214,7 +1314,11 @@
 
     <article class="chapter is-flip" id="aare">
         <div class="film" data-film>
-            <img class="is-on" src="interlaken-image-14.jpg" alt="The Aare River in Interlaken">
+            <figure class="shot is-on">
+                <img src="interlaken-image-14.jpg" alt="The Aare River in Interlaken">
+                <figcaption>The Aare River in Interlaken</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1230,13 +1334,35 @@
 
     <article class="chapter" id="lauterbrunnen-film">
         <div class="film" data-film>
-            <img class="is-on" src="lauterbrunnen-image-8.jpg" alt="Lauterbrunnen valley">
-            <img src="lauterbrunnen-image-9.jpg" alt="Lauterbrunnen Falls" loading="lazy">
-            <img src="lauterbrunnen-image-10.jpg" alt="Lauterbrunnen village" loading="lazy">
-            <img src="lauterbrunnen-image-11.jpg" alt="Lauterbrunnen in fall" loading="lazy">
-            <img src="lauterbrunnen-image-5.jpg" alt="Alps from the cable car" loading="lazy">
-            <img src="lauterbrunnen-image-6.jpg" alt="Fall color from the cable car" loading="lazy">
-            <img src="lauterbrunnen-image-7.jpg" alt="Schilthorn cable car from the Lauterbrunnen side" loading="lazy">
+            <figure class="shot is-on">
+                <img src="lauterbrunnen-image-8.jpg" alt="Lauterbrunnen valley">
+                <figcaption>Lauterbrunnen valley</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-9.jpg" alt="Lauterbrunnen Falls" loading="lazy">
+                <figcaption>Lauterbrunnen Falls</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-10.jpg" alt="Lauterbrunnen village" loading="lazy">
+                <figcaption>Lauterbrunnen village</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-11.jpg" alt="Lauterbrunnen in fall" loading="lazy">
+                <figcaption>Lauterbrunnen in fall</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-5.jpg" alt="Alps from the cable car" loading="lazy">
+                <figcaption>Alps from the cable car</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-6.jpg" alt="Fall color from the cable car" loading="lazy">
+                <figcaption>Fall color from the cable car</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="lauterbrunnen-image-7.jpg" alt="Schilthorn cable car from the Lauterbrunnen side" loading="lazy">
+                <figcaption>Schilthorn cable car from the Lauterbrunnen side</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 07</span>
@@ -1373,7 +1499,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

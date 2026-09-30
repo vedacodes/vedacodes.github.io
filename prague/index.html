@@ -56,7 +56,17 @@
                     "name": "Prague",
                     "containedInPlace": { "@type": "Country", "name": "Czechia" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/prague/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/prague/#hero",
+                "url": "https://globetrotwithveda.com/prague-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/prague-image.jpg",
+                "caption": "Charles Bridge with Prague Castle beyond",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     
     </style>
@@ -1116,9 +1160,19 @@
 
     <article class="chapter" id="fall">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-1.jpg" alt="Prague in fall">
-            <img src="prague-image-4.jpg" alt="Fall color over Prague roofs" loading="lazy">
-            <img src="prague-image-14.jpg" alt="Autumn trees in Prague" loading="lazy">
+            <figure class="shot is-on">
+                <img src="prague-image-1.jpg" alt="Prague in fall">
+                <figcaption>Prague in fall</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-4.jpg" alt="Fall color over Prague roofs" loading="lazy">
+                <figcaption>Fall color over Prague roofs</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-14.jpg" alt="Autumn trees in Prague" loading="lazy">
+                <figcaption>Autumn trees in Prague</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1133,7 +1187,11 @@
     </article>
     <article class="chapter is-flip" id="vltava">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-2.jpg" alt="The Vltava">
+            <figure class="shot is-on">
+                <img src="prague-image-2.jpg" alt="The Vltava">
+                <figcaption>The Vltava</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1148,9 +1206,19 @@
     </article>
     <article class="chapter" id="charles">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-3.jpg" alt="Charles Bridge">
-            <img src="prague-image-7.jpg" alt="Charles Bridge statues" loading="lazy">
-            <img src="prague-image-11.jpg" alt="Charles Bridge toward the castle" loading="lazy">
+            <figure class="shot is-on">
+                <img src="prague-image-3.jpg" alt="Charles Bridge">
+                <figcaption>Charles Bridge</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-7.jpg" alt="Charles Bridge statues" loading="lazy">
+                <figcaption>Charles Bridge statues</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-11.jpg" alt="Charles Bridge toward the castle" loading="lazy">
+                <figcaption>Charles Bridge toward the castle</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1165,7 +1233,11 @@
     </article>
     <article class="chapter is-flip" id="lennon">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-5.jpg" alt="Lennon Wall">
+            <figure class="shot is-on">
+                <img src="prague-image-5.jpg" alt="Lennon Wall">
+                <figcaption>Lennon Wall</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1180,8 +1252,15 @@
     </article>
     <article class="chapter" id="clock">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-6.jpg" alt="Astronomical Clock">
-            <img src="prague-image-13.jpg" alt="Old Town Hall and the clock" loading="lazy">
+            <figure class="shot is-on">
+                <img src="prague-image-6.jpg" alt="Astronomical Clock">
+                <figcaption>Astronomical Clock</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-13.jpg" alt="Old Town Hall and the clock" loading="lazy">
+                <figcaption>Old Town Hall and the clock</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1196,8 +1275,15 @@
     </article>
     <article class="chapter is-flip" id="castle">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-8.jpg" alt="Prague Castle">
-            <img src="prague-image-9.jpg" alt="Prague Castle, another court" loading="lazy">
+            <figure class="shot is-on">
+                <img src="prague-image-8.jpg" alt="Prague Castle">
+                <figcaption>Prague Castle</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-9.jpg" alt="Prague Castle, another court" loading="lazy">
+                <figcaption>Prague Castle, another court</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1212,8 +1298,15 @@
     </article>
     <article class="chapter" id="kampa">
         <div class="film" data-film>
-            <img class="is-on" src="prague-image-10.jpg" alt="Kampa">
-            <img src="prague-image-12.jpg" alt="Old-New Synagogue" loading="lazy">
+            <figure class="shot is-on">
+                <img src="prague-image-10.jpg" alt="Kampa">
+                <figcaption>Kampa</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="prague-image-12.jpg" alt="Old-New Synagogue" loading="lazy">
+                <figcaption>Old-New Synagogue</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1343,7 +1436,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

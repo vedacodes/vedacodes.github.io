@@ -56,7 +56,17 @@
                     "name": "Amsterdam",
                     "containedInPlace": { "@type": "Country", "name": "Netherlands" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/amsterdam/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/amsterdam/#hero",
+                "url": "https://globetrotwithveda.com/amsterdam-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/amsterdam-image.jpg",
+                "caption": "Amsterdam canal houses in orange light",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     </style>
 </head>
@@ -1124,8 +1168,15 @@
 
     <article class="chapter" id="centraal-film">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-1.jpg" alt="Amsterdam Centraal">
-            <img src="amsterdam-image-9.jpg" alt="Amsterdam Centraal, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-1.jpg" alt="Amsterdam Centraal">
+                <figcaption>Amsterdam Centraal</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-9.jpg" alt="Amsterdam Centraal, another view" loading="lazy">
+                <figcaption>Amsterdam Centraal, another view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1141,10 +1192,23 @@
 
     <article class="chapter is-flip" id="streets">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-2.jpg" alt="Amsterdam streets">
-            <img src="amsterdam-image-5.jpg" alt="Amsterdam streets, another block" loading="lazy">
-            <img src="amsterdam-image-7.jpg" alt="Amsterdam streets at dusk" loading="lazy">
-            <img src="amsterdam-image-13.jpg" alt="Amsterdam streets, one more turn" loading="lazy">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-2.jpg" alt="Amsterdam streets">
+                <figcaption>Amsterdam streets</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-5.jpg" alt="Amsterdam streets, another block" loading="lazy">
+                <figcaption>Amsterdam streets, another block</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-7.jpg" alt="Amsterdam streets at dusk" loading="lazy">
+                <figcaption>Amsterdam streets at dusk</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-13.jpg" alt="Amsterdam streets, one more turn" loading="lazy">
+                <figcaption>Amsterdam streets, one more turn</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1160,9 +1224,19 @@
 
     <article class="chapter" id="amstel">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-3.jpg" alt="Amstel river">
-            <img src="amsterdam-image-11.jpg" alt="The Amstel from a bridge" loading="lazy">
-            <img src="amsterdam-image-12.jpg" alt="The Amstel, another frame" loading="lazy">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-3.jpg" alt="Amstel river">
+                <figcaption>Amstel river</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-11.jpg" alt="The Amstel from a bridge" loading="lazy">
+                <figcaption>The Amstel from a bridge</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-12.jpg" alt="The Amstel, another frame" loading="lazy">
+                <figcaption>The Amstel, another frame</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1178,7 +1252,11 @@
 
     <article class="chapter is-flip" id="anne-film">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-4.jpg" alt="Anne Frank House">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-4.jpg" alt="Anne Frank House">
+                <figcaption>Anne Frank House</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1194,7 +1272,11 @@
 
     <article class="chapter" id="palace-film">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-6.jpg" alt="Royal Palace on Dam Square">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-6.jpg" alt="Royal Palace on Dam Square">
+                <figcaption>Royal Palace on Dam Square</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1210,7 +1292,11 @@
 
     <article class="chapter is-flip" id="temple-film">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-8.jpg" alt="He Hua Temple">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-8.jpg" alt="He Hua Temple">
+                <figcaption>He Hua Temple</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1226,8 +1312,15 @@
 
     <article class="chapter" id="roaming">
         <div class="film" data-film>
-            <img class="is-on" src="amsterdam-image-10.jpg" alt="Roaming Amsterdam">
-            <img src="amsterdam-image-14.jpg" alt="Roaming Amsterdam, another street" loading="lazy">
+            <figure class="shot is-on">
+                <img src="amsterdam-image-10.jpg" alt="Roaming Amsterdam">
+                <figcaption>Roaming Amsterdam</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="amsterdam-image-14.jpg" alt="Roaming Amsterdam, another street" loading="lazy">
+                <figcaption>Roaming Amsterdam, another street</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1358,7 +1451,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

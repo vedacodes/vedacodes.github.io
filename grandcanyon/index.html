@@ -56,7 +56,17 @@
                     "name": "Grand Canyon",
                     "containedInPlace": { "@type": "Country", "name": "United States" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/grandcanyon/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/grandcanyon/#hero",
+                "url": "https://globetrotwithveda.com/grandcanyon-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/grandcanyon-image.jpg",
+                "caption": "Grand Canyon layered red rock from the rim",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1072,8 +1116,15 @@
 
     <article class="chapter" id="hualapai">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-1.jpg" alt="Hualapai Indian Reservation view">
-            <img src="grandcanyon-image-2.jpg" alt="Hualapai Indian Reservation, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-1.jpg" alt="Hualapai Indian Reservation view">
+                <figcaption>Hualapai Indian Reservation view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-2.jpg" alt="Hualapai Indian Reservation, another view" loading="lazy">
+                <figcaption>Hualapai Indian Reservation, another view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1088,9 +1139,19 @@
     </article>
     <article class="chapter is-flip" id="lakemead">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-3.jpg" alt="Lake Mead National Recreation Area">
-            <img src="grandcanyon-image-4.jpg" alt="Lake Mead shoreline" loading="lazy">
-            <img src="grandcanyon-image-5.jpg" alt="Lake Mead desert water" loading="lazy">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-3.jpg" alt="Lake Mead National Recreation Area">
+                <figcaption>Lake Mead National Recreation Area</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-4.jpg" alt="Lake Mead shoreline" loading="lazy">
+                <figcaption>Lake Mead shoreline</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-5.jpg" alt="Lake Mead desert water" loading="lazy">
+                <figcaption>Lake Mead desert water</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1105,8 +1166,15 @@
     </article>
     <article class="chapter" id="village">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-6.jpg" alt="Grand Canyon Village">
-            <img src="grandcanyon-image-7.jpg" alt="Grand Canyon Village rim" loading="lazy">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-6.jpg" alt="Grand Canyon Village">
+                <figcaption>Grand Canyon Village</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-7.jpg" alt="Grand Canyon Village rim" loading="lazy">
+                <figcaption>Grand Canyon Village rim</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1121,9 +1189,19 @@
     </article>
     <article class="chapter is-flip" id="rim">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-8.jpg" alt="South Rim canyon view">
-            <img src="grandcanyon-image-9.jpg" alt="South Rim light on rock layers" loading="lazy">
-            <img src="grandcanyon-image-13.jpg" alt="South Rim another overlook" loading="lazy">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-8.jpg" alt="South Rim canyon view">
+                <figcaption>South Rim canyon view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-9.jpg" alt="South Rim light on rock layers" loading="lazy">
+                <figcaption>South Rim light on rock layers</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-13.jpg" alt="South Rim another overlook" loading="lazy">
+                <figcaption>South Rim another overlook</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1138,8 +1216,15 @@
     </article>
     <article class="chapter" id="antelope">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-10.jpg" alt="Antelope Canyon slot canyon">
-            <img src="grandcanyon-image-11.jpg" alt="Antelope Canyon light beams" loading="lazy">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-10.jpg" alt="Antelope Canyon slot canyon">
+                <figcaption>Antelope Canyon slot canyon</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="grandcanyon-image-11.jpg" alt="Antelope Canyon light beams" loading="lazy">
+                <figcaption>Antelope Canyon light beams</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1154,7 +1239,11 @@
     </article>
     <article class="chapter is-flip" id="horseshoe">
         <div class="film" data-film>
-            <img class="is-on" src="grandcanyon-image-12.jpg" alt="Horseshoe Bend on the Colorado River">
+            <figure class="shot is-on">
+                <img src="grandcanyon-image-12.jpg" alt="Horseshoe Bend on the Colorado River">
+                <figcaption>Horseshoe Bend on the Colorado River</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1289,7 +1378,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

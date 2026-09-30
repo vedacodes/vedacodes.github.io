@@ -83,6 +83,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px;
             padding: 18px 28px;
             color: var(--white);
             transition: background 0.4s var(--ease), color 0.4s var(--ease), box-shadow 0.4s var(--ease);
@@ -631,13 +632,15 @@
             .atlas { grid-template-columns: repeat(2, 1fr); }
             .intro, .footer-grid, .kit-head { grid-template-columns: 1fr; gap: 24px; }
             .kit-grid { grid-template-columns: repeat(2, 1fr); }
-            .nav-links { gap: 16px; font-size: 0.72rem; }
+            .nav-links { gap: 20px; font-size: 0.72rem; }
         }
 
         @media (max-width: 640px) {
-            .site-nav { padding: 16px 20px; }
-            .wordmark { font-size: 0.88rem; gap: 8px; }
+            .site-nav { padding: 16px 16px; gap: 24px; }
+            .wordmark { font-size: 0.82rem; gap: 8px; }
             .wordmark img { width: 26px; height: 26px; }
+            .nav-links { gap: 0; margin-left: auto; }
+            .nav-links li:not(:first-child) { display: none; }
             .hero-copy { padding: 0 24px 10vh; max-width: none; }
             .intro, .kit, .atlas-head, .featured, .atlas { padding-left: 20px; padding-right: 20px; }
             .kit-grid { grid-template-columns: 1fr; }

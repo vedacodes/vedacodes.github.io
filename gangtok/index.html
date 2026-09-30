@@ -56,7 +56,17 @@
                     "name": "Gangtok",
                     "containedInPlace": { "@type": "Country", "name": "India" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/gangtok/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/gangtok/#hero",
+                "url": "https://globetrotwithveda.com/gangtok-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/gangtok-image.jpg",
+                "caption": "Gangtok hillside capital in Sikkim",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -449,32 +459,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -704,7 +748,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         
         </style>
@@ -1068,10 +1112,23 @@
 
     <article class="chapter" id="mg-marg">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-1.jpg" alt="Evening on MG Marg, Gangtok's pedestrian main street">
-            <img src="gangtok-image-16.jpg" alt="Sitting on MG Marg at night" loading="lazy">
-            <img src="gangtok-image-17.jpg" alt="Gandhi statue on MG Marg, Gangtok" loading="lazy">
-            <img src="gangtok-image-18.jpg" alt="Cheer for India photo cutout on MG Marg" loading="lazy">
+            <figure class="shot is-on">
+                <img src="gangtok-image-1.jpg" alt="Evening on MG Marg, Gangtok&#x27;s pedestrian main street">
+                <figcaption>Evening on MG Marg, Gangtok&#x27;s pedestrian main street</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-16.jpg" alt="Sitting on MG Marg at night" loading="lazy">
+                <figcaption>Sitting on MG Marg at night</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-17.jpg" alt="Gandhi statue on MG Marg, Gangtok" loading="lazy">
+                <figcaption>Gandhi statue on MG Marg, Gangtok</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-18.jpg" alt="Cheer for India photo cutout on MG Marg" loading="lazy">
+                <figcaption>Cheer for India photo cutout on MG Marg</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1086,7 +1143,11 @@
     </article>
     <article class="chapter is-flip" id="flower-centre">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-2.jpg" alt="Inside the Flower Exhibition Centre in Gangtok">
+            <figure class="shot is-on">
+                <img src="gangtok-image-2.jpg" alt="Inside the Flower Exhibition Centre in Gangtok">
+                <figcaption>Inside the Flower Exhibition Centre in Gangtok</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1101,9 +1162,19 @@
     </article>
     <article class="chapter" id="paths">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-3.jpg" alt="Covered hillside staircase with yellow railings">
-            <img src="gangtok-image-4.jpg" alt="Park path with prayer flags in Gangtok" loading="lazy">
-            <img src="gangtok-image-5.jpg" alt="Overlook across misty Sikkim valleys" loading="lazy">
+            <figure class="shot is-on">
+                <img src="gangtok-image-3.jpg" alt="Covered hillside staircase with yellow railings">
+                <figcaption>Covered hillside staircase with yellow railings</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-4.jpg" alt="Park path with prayer flags in Gangtok" loading="lazy">
+                <figcaption>Park path with prayer flags in Gangtok</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-5.jpg" alt="Overlook across misty Sikkim valleys" loading="lazy">
+                <figcaption>Overlook across misty Sikkim valleys</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1118,8 +1189,15 @@
     </article>
     <article class="chapter is-flip" id="waterfall">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-6.jpg" alt="Prayer flags over a mossy waterfall near Gangtok">
-            <img src="gangtok-image-7.jpg" alt="Traditional dress beside a waterfall in Sikkim" loading="lazy">
+            <figure class="shot is-on">
+                <img src="gangtok-image-6.jpg" alt="Prayer flags over a mossy waterfall near Gangtok">
+                <figcaption>Prayer flags over a mossy waterfall near Gangtok</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-7.jpg" alt="Traditional dress beside a waterfall in Sikkim" loading="lazy">
+                <figcaption>Traditional dress beside a waterfall in Sikkim</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1134,7 +1212,11 @@
     </article>
     <article class="chapter" id="ropeway">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-8.jpg" alt="Looking out from the Gangtok ropeway cabin">
+            <figure class="shot is-on">
+                <img src="gangtok-image-8.jpg" alt="Looking out from the Gangtok ropeway cabin">
+                <figcaption>Looking out from the Gangtok ropeway cabin</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1149,7 +1231,11 @@
     </article>
     <article class="chapter is-flip" id="plate">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-9.jpg" alt="Momos and a sizzling platter with hillside town views">
+            <figure class="shot is-on">
+                <img src="gangtok-image-9.jpg" alt="Momos and a sizzling platter with hillside town views">
+                <figcaption>Momos and a sizzling platter with hillside town views</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1164,8 +1250,15 @@
     </article>
     <article class="chapter" id="namchi-day">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-11.jpg" alt="Bhaichung Stadium in Namchi, Sikkim">
-            <img src="gangtok-image-12.jpg" alt="Misty tea gardens on a Sikkim hillside" loading="lazy">
+            <figure class="shot is-on">
+                <img src="gangtok-image-11.jpg" alt="Bhaichung Stadium in Namchi, Sikkim">
+                <figcaption>Bhaichung Stadium in Namchi, Sikkim</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-12.jpg" alt="Misty tea gardens on a Sikkim hillside" loading="lazy">
+                <figcaption>Misty tea gardens on a Sikkim hillside</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1180,8 +1273,15 @@
     </article>
     <article class="chapter is-flip" id="moss-forest">
         <div class="film" data-film>
-            <img class="is-on" src="gangtok-image-14.jpg" alt="Looking up through a moss-covered forest canopy">
-            <img src="gangtok-image-15.jpg" alt="Standing in a mossy Himalayan forest" loading="lazy">
+            <figure class="shot is-on">
+                <img src="gangtok-image-14.jpg" alt="Looking up through a moss-covered forest canopy">
+                <figcaption>Looking up through a moss-covered forest canopy</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="gangtok-image-15.jpg" alt="Standing in a mossy Himalayan forest" loading="lazy">
+                <figcaption>Standing in a mossy Himalayan forest</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1314,7 +1414,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

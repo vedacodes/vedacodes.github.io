@@ -56,7 +56,17 @@
                     "name": "Cancún",
                     "containedInPlace": { "@type": "Country", "name": "Mexico" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/cancun/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/cancun/#hero",
+                "url": "https://globetrotwithveda.com/cancun-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/cancun-image.jpg",
+                "caption": "Cancún Caribbean beach",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1094,11 +1138,27 @@
 
     <article class="chapter" id="tulum">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-3.jpg" alt="Tulum Ruins">
-            <img src="cancun-image-2.jpg" alt="Ven a la Luz Tulum" loading="lazy">
-            <img src="cancun-image-4.jpg" alt="Tulum Beach" loading="lazy">
-            <img src="cancun-image-5.jpg" alt="Exploring Tulum Ruins" loading="lazy">
-            <img src="cancun-image-6.jpg" alt="Exploring Tulum Ruins, another angle" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cancun-image-3.jpg" alt="Tulum Ruins">
+                <figcaption>Tulum Ruins</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-2.jpg" alt="Ven a la Luz Tulum" loading="lazy">
+                <figcaption>Ven a la Luz Tulum</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-4.jpg" alt="Tulum Beach" loading="lazy">
+                <figcaption>Tulum Beach</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-5.jpg" alt="Exploring Tulum Ruins" loading="lazy">
+                <figcaption>Exploring Tulum Ruins</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-6.jpg" alt="Exploring Tulum Ruins, another angle" loading="lazy">
+                <figcaption>Exploring Tulum Ruins, another angle</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 05</span>
@@ -1113,8 +1173,15 @@
     </article>
     <article class="chapter is-flip" id="cenotes">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-7.jpg" alt="Cenote Ik-Kil">
-            <img src="cancun-image-8.jpg" alt="Cenotes" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cancun-image-7.jpg" alt="Cenote Ik-Kil">
+                <figcaption>Cenote Ik-Kil</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-8.jpg" alt="Cenotes" loading="lazy">
+                <figcaption>Cenotes</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1129,15 +1196,43 @@
     </article>
     <article class="chapter" id="chichen">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-9.jpg" alt="Chichén-Itzá">
-            <img src="cancun-image-10.jpg" alt="Chichén-Itzá view" loading="lazy">
-            <img src="cancun-image-16.jpg" alt="Stone serpent's head" loading="lazy">
-            <img src="cancun-image-17.jpg" alt="Skull stone engravings" loading="lazy">
-            <img src="cancun-image-18.jpg" alt="Mayan ball game court" loading="lazy">
-            <img src="cancun-image-19.jpg" alt="At Chichén-Itzá with friends" loading="lazy">
-            <img src="cancun-image-20.jpg" alt="Chichén-Itzá, another frame" loading="lazy">
-            <img src="cancun-image-21.jpg" alt="Chichén-Itzá exploration" loading="lazy">
-            <img src="cancun-image-22.jpg" alt="Chichén-Itzá pyramid view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cancun-image-9.jpg" alt="Chichén-Itzá">
+                <figcaption>Chichén-Itzá</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-10.jpg" alt="Chichén-Itzá view" loading="lazy">
+                <figcaption>Chichén-Itzá view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-16.jpg" alt="Stone serpent&#x27;s head" loading="lazy">
+                <figcaption>Stone serpent&#x27;s head</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-17.jpg" alt="Skull stone engravings" loading="lazy">
+                <figcaption>Skull stone engravings</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-18.jpg" alt="Mayan ball game court" loading="lazy">
+                <figcaption>Mayan ball game court</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-19.jpg" alt="At Chichén-Itzá with friends" loading="lazy">
+                <figcaption>At Chichén-Itzá with friends</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-20.jpg" alt="Chichén-Itzá, another frame" loading="lazy">
+                <figcaption>Chichén-Itzá, another frame</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-21.jpg" alt="Chichén-Itzá exploration" loading="lazy">
+                <figcaption>Chichén-Itzá exploration</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-22.jpg" alt="Chichén-Itzá pyramid view" loading="lazy">
+                <figcaption>Chichén-Itzá pyramid view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 09</span>
@@ -1152,7 +1247,11 @@
     </article>
     <article class="chapter is-flip" id="isla">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-12.jpg" alt="Isla Mujeres">
+            <figure class="shot is-on">
+                <img src="cancun-image-12.jpg" alt="Isla Mujeres">
+                <figcaption>Isla Mujeres</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1167,9 +1266,19 @@
     </article>
     <article class="chapter" id="beach">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-15.jpg" alt="Cancún Beach">
-            <img src="cancun-image-1.jpg" alt="Cancún local life" loading="lazy">
-            <img src="cancun-image-11.jpg" alt="Cancún local life, another street" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cancun-image-15.jpg" alt="Cancún Beach">
+                <figcaption>Cancún Beach</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-1.jpg" alt="Cancún local life" loading="lazy">
+                <figcaption>Cancún local life</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-11.jpg" alt="Cancún local life, another street" loading="lazy">
+                <figcaption>Cancún local life, another street</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1184,7 +1293,11 @@
     </article>
     <article class="chapter is-flip" id="musa">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-14.jpg" alt="Underwater museum">
+            <figure class="shot is-on">
+                <img src="cancun-image-14.jpg" alt="Underwater museum">
+                <figcaption>Underwater museum</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1199,8 +1312,15 @@
     </article>
     <article class="chapter" id="food">
         <div class="film" data-film>
-            <img class="is-on" src="cancun-image-13.jpg" alt="Local seafood">
-            <img src="cancun-image-23.jpg" alt="Local poke" loading="lazy">
+            <figure class="shot is-on">
+                <img src="cancun-image-13.jpg" alt="Local seafood">
+                <figcaption>Local seafood</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="cancun-image-23.jpg" alt="Local poke" loading="lazy">
+                <figcaption>Local poke</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1334,7 +1454,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

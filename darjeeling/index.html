@@ -56,7 +56,17 @@
                     "name": "Darjeeling",
                     "containedInPlace": { "@type": "Country", "name": "India" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/darjeeling/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/darjeeling/#hero",
+                "url": "https://globetrotwithveda.com/darjeeling-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/darjeeling-image.jpg",
+                "caption": "Darjeeling hills and tea country",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -449,32 +459,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -704,7 +748,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         
         </style>
@@ -1071,7 +1115,11 @@
 
     <article class="chapter" id="tiger-hill">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-10.jpg" alt="Watching sunrise from Tiger Hill over the Himalayas">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-10.jpg" alt="Watching sunrise from Tiger Hill over the Himalayas">
+                <figcaption>Watching sunrise from Tiger Hill over the Himalayas</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1086,9 +1134,19 @@
     </article>
     <article class="chapter is-flip" id="tea-gardens">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-4.jpg" alt="Darjeeling tea gardens cascading down the hillsides">
-            <img src="darjeeling-image-8.jpg" alt="Terraced Darjeeling tea plantations" loading="lazy">
-            <img src="darjeeling-image-6.jpg" alt="Tea time among the Darjeeling gardens" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-4.jpg" alt="Darjeeling tea gardens cascading down the hillsides">
+                <figcaption>Darjeeling tea gardens cascading down the hillsides</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-8.jpg" alt="Terraced Darjeeling tea plantations" loading="lazy">
+                <figcaption>Terraced Darjeeling tea plantations</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-6.jpg" alt="Tea time among the Darjeeling gardens" loading="lazy">
+                <figcaption>Tea time among the Darjeeling gardens</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1103,8 +1161,15 @@
     </article>
     <article class="chapter" id="peace-pagoda">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-5.jpg" alt="Japanese Peace Pagoda in Darjeeling">
-            <img src="darjeeling-image-11.jpg" alt="Peace Pagoda with mountain views" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-5.jpg" alt="Japanese Peace Pagoda in Darjeeling">
+                <figcaption>Japanese Peace Pagoda in Darjeeling</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-11.jpg" alt="Peace Pagoda with mountain views" loading="lazy">
+                <figcaption>Peace Pagoda with mountain views</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1119,8 +1184,15 @@
     </article>
     <article class="chapter is-flip" id="kangchenjunga">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-9.jpg" alt="Mount Kangchenjunga from Darjeeling">
-            <img src="darjeeling-image-12.jpg" alt="Kangchenjunga peaks above the clouds" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-9.jpg" alt="Mount Kangchenjunga from Darjeeling">
+                <figcaption>Mount Kangchenjunga from Darjeeling</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-12.jpg" alt="Kangchenjunga peaks above the clouds" loading="lazy">
+                <figcaption>Kangchenjunga peaks above the clouds</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1135,7 +1207,11 @@
     </article>
     <article class="chapter" id="mirik">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-3.jpg" alt="Mirik Lake surrounded by pine forests">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-3.jpg" alt="Mirik Lake surrounded by pine forests">
+                <figcaption>Mirik Lake surrounded by pine forests</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1150,8 +1226,15 @@
     </article>
     <article class="chapter is-flip" id="zero-point">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-1.jpg" alt="Zero Point at the Nepal border viewpoint">
-            <img src="darjeeling-image-2.jpg" alt="Himalayan panorama from Zero Point" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-1.jpg" alt="Zero Point at the Nepal border viewpoint">
+                <figcaption>Zero Point at the Nepal border viewpoint</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-2.jpg" alt="Himalayan panorama from Zero Point" loading="lazy">
+                <figcaption>Himalayan panorama from Zero Point</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1166,9 +1249,19 @@
     </article>
     <article class="chapter" id="char-dham">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-13.jpg" alt="Siddheshwar Dham Char Dham temple complex">
-            <img src="darjeeling-image-14.jpg" alt="Kedareshwara Jyothirlinga replica at Char Dham" loading="lazy">
-            <img src="darjeeling-image-15.jpg" alt="Char Dham temple architecture in the hills" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-13.jpg" alt="Siddheshwar Dham Char Dham temple complex">
+                <figcaption>Siddheshwar Dham Char Dham temple complex</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-14.jpg" alt="Kedareshwara Jyothirlinga replica at Char Dham" loading="lazy">
+                <figcaption>Kedareshwara Jyothirlinga replica at Char Dham</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-15.jpg" alt="Char Dham temple architecture in the hills" loading="lazy">
+                <figcaption>Char Dham temple architecture in the hills</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1183,10 +1276,23 @@
     </article>
     <article class="chapter is-flip" id="samdruptse">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-16.jpg" alt="Samdruptse hilltop in Namchi">
-            <img src="darjeeling-image-17.jpg" alt="Guru Padmasambhava statue area at Samdruptse" loading="lazy">
-            <img src="darjeeling-image-18.jpg" alt="Prayer wheel at Samdruptse" loading="lazy">
-            <img src="darjeeling-image-20.jpg" alt="Samdruptse views over the valley" loading="lazy">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-16.jpg" alt="Samdruptse hilltop in Namchi">
+                <figcaption>Samdruptse hilltop in Namchi</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-17.jpg" alt="Guru Padmasambhava statue area at Samdruptse" loading="lazy">
+                <figcaption>Guru Padmasambhava statue area at Samdruptse</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-18.jpg" alt="Prayer wheel at Samdruptse" loading="lazy">
+                <figcaption>Prayer wheel at Samdruptse</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="darjeeling-image-20.jpg" alt="Samdruptse views over the valley" loading="lazy">
+                <figcaption>Samdruptse views over the valley</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1201,7 +1307,11 @@
     </article>
     <article class="chapter" id="tenzing-rock">
         <div class="film" data-film>
-            <img class="is-on" src="darjeeling-image-7.jpg" alt="Tenzing Rock in Darjeeling">
+            <figure class="shot is-on">
+                <img src="darjeeling-image-7.jpg" alt="Tenzing Rock in Darjeeling">
+                <figcaption>Tenzing Rock in Darjeeling</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1334,7 +1444,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

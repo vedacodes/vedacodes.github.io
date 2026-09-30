@@ -56,7 +56,17 @@
                     "name": "Rome",
                     "containedInPlace": { "@type": "Country", "name": "Italy" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/rome/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/rome/#hero",
+                "url": "https://globetrotwithveda.com/rome-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/rome-image.jpg",
+                "caption": "Veda standing in front of the Colosseum in Rome",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     </style>
 </head>
@@ -1121,10 +1165,22 @@
 
     <article class="chapter" id="colosseum">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-1.jpg" alt="The Colosseum, first look">
-            <img src="rome-image-10.jpg" alt="The Colosseum, another angle" loading="lazy">
-            <img src="rome-image-11.jpg" alt="The Colosseum, close stone" loading="lazy">
-            <img src="rome-image-12.jpg" alt="The Colosseum, wide view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-1.jpg" alt="The Colosseum, first look">
+                <figcaption>The Colosseum, first look</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-10.jpg" alt="The Colosseum, another angle" loading="lazy">
+                <figcaption>The Colosseum, another angle</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-11.jpg" alt="The Colosseum, close stone" loading="lazy">
+                <figcaption>The Colosseum, close stone</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-12.jpg" alt="The Colosseum, wide view" loading="lazy">
+                <figcaption>The Colosseum, wide view</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1140,8 +1196,14 @@
 
     <article class="chapter is-flip" id="streets">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-2.jpg" alt="A narrow Roman street">
-            <img src="rome-image-17.jpg" alt="Another Roman street" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-2.jpg" alt="A narrow Roman street">
+                <figcaption>A narrow street in Rome</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-17.jpg" alt="Another Roman street" loading="lazy">
+                <figcaption>Another street in Rome</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1157,8 +1219,14 @@
 
     <article class="chapter" id="pantheon">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-3.jpg" alt="The Pantheon portico">
-            <img src="rome-image-16.jpg" alt="The Pantheon at another hour" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-3.jpg" alt="The Pantheon portico">
+                <figcaption>The Pantheon portico</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-16.jpg" alt="The Pantheon at another hour" loading="lazy">
+                <figcaption>The Pantheon at another hour</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1174,9 +1242,18 @@
 
     <article class="chapter is-flip" id="castel">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-4.jpg" alt="Castel Sant’Angelo">
-            <img src="rome-image-5.jpg" alt="Castel Sant’Angelo, second view" loading="lazy">
-            <img src="rome-image-6.jpg" alt="Castel Sant’Angelo, third view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-4.jpg" alt="Castel Sant’Angelo">
+                <figcaption>Castel Sant’Angelo</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-5.jpg" alt="Castel Sant’Angelo, second view" loading="lazy">
+                <figcaption>Castel Sant’Angelo, second view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-6.jpg" alt="Castel Sant’Angelo, third view" loading="lazy">
+                <figcaption>Castel Sant’Angelo, third view</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1192,8 +1269,14 @@
 
     <article class="chapter" id="navona">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-7.jpg" alt="Piazza Navona">
-            <img src="rome-image-8.jpg" alt="Piazza Navona, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-7.jpg" alt="Piazza Navona">
+                <figcaption>Piazza Navona</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-8.jpg" alt="Piazza Navona, another view" loading="lazy">
+                <figcaption>Piazza Navona, another view</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1209,7 +1292,10 @@
 
     <article class="chapter is-flip" id="trevi">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-9.jpg" alt="Trevi Fountain at night">
+            <figure class="shot is-on">
+                <img src="rome-image-9.jpg" alt="Trevi Fountain at night">
+                <figcaption>Trevi Fountain at night</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1225,8 +1311,14 @@
 
     <article class="chapter" id="forum">
         <div class="film" data-film>
-            <img class="is-on" src="rome-image-14.jpg" alt="The Roman Forum">
-            <img src="rome-image-15.jpg" alt="The Roman Forum, second view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="rome-image-14.jpg" alt="The Roman Forum">
+                <figcaption>The Roman Forum</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="rome-image-15.jpg" alt="The Roman Forum, second view" loading="lazy">
+                <figcaption>The Roman Forum, second view</figcaption>
+            </figure>
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1387,7 +1479,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

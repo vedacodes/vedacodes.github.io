@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://globetrotwithveda.com/</loc>
     <lastmod>2026-09-09</lastmod>
@@ -11,185 +12,2236 @@
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome-image.jpg</image:loc>
+      <image:title>Veda standing in front of the Colosseum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-1.jpg</image:loc>
+      <image:title>The Colosseum, first look</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-2.jpg</image:loc>
+      <image:title>A narrow Roman street</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-3.jpg</image:loc>
+      <image:title>The Pantheon portico</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-4.jpg</image:loc>
+      <image:title>Castel Sant’Angelo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-5.jpg</image:loc>
+      <image:title>Castel Sant’Angelo, second view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-6.jpg</image:loc>
+      <image:title>Castel Sant’Angelo, third view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-7.jpg</image:loc>
+      <image:title>Piazza Navona</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-8.jpg</image:loc>
+      <image:title>Piazza Navona, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-9.jpg</image:loc>
+      <image:title>Trevi Fountain at night</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-10.jpg</image:loc>
+      <image:title>The Colosseum, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-11.jpg</image:loc>
+      <image:title>The Colosseum, close stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-12.jpg</image:loc>
+      <image:title>The Colosseum, wide view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-14.jpg</image:loc>
+      <image:title>The Roman Forum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-15.jpg</image:loc>
+      <image:title>The Roman Forum, second view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-16.jpg</image:loc>
+      <image:title>The Pantheon at another hour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/rome/rome-image-17.jpg</image:loc>
+      <image:title>Another Roman street</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/amsterdam/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam-image.jpg</image:loc>
+      <image:title>Amsterdam canal houses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-1.jpg</image:loc>
+      <image:title>Amsterdam Centraal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-2.jpg</image:loc>
+      <image:title>Amsterdam streets</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-3.jpg</image:loc>
+      <image:title>Amstel river</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-4.jpg</image:loc>
+      <image:title>Anne Frank House</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-5.jpg</image:loc>
+      <image:title>Amsterdam streets, another block</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-6.jpg</image:loc>
+      <image:title>Royal Palace on Dam Square</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-7.jpg</image:loc>
+      <image:title>Amsterdam streets at dusk</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-8.jpg</image:loc>
+      <image:title>He Hua Temple</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-9.jpg</image:loc>
+      <image:title>Amsterdam Centraal, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-10.jpg</image:loc>
+      <image:title>Roaming Amsterdam</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-11.jpg</image:loc>
+      <image:title>The Amstel from a bridge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-12.jpg</image:loc>
+      <image:title>The Amstel, another frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-13.jpg</image:loc>
+      <image:title>Amsterdam streets, one more turn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/amsterdam/amsterdam-image-14.jpg</image:loc>
+      <image:title>Roaming Amsterdam, another street</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/antalya/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya-image.jpg</image:loc>
+      <image:title>Veda in front of Hadrian’s Gate in Kaleiçi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-1.jpg</image:loc>
+      <image:title>Veda sitting among ancient columns at Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-2.jpg</image:loc>
+      <image:title>Ancient columns at Perge, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-3.jpg</image:loc>
+      <image:title>Ancient columns at Perge, frame 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-4.jpg</image:loc>
+      <image:title>The ruins of Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-5.jpg</image:loc>
+      <image:title>Walking through Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-6.jpg</image:loc>
+      <image:title>Hellenistic towers and ruins at Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-7.jpg</image:loc>
+      <image:title>Carved stones at the entrance to Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-8.jpg</image:loc>
+      <image:title>Entrance wall at Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-9.jpg</image:loc>
+      <image:title>Veda beside the stone wall of the stadium at Perge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-10.jpg</image:loc>
+      <image:title>Boats at Antalya’s old marina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-11.jpg</image:loc>
+      <image:title>Fishing boats and yachts in Antalya marina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-12.jpg</image:loc>
+      <image:title>Antalya harbor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-13.jpg</image:loc>
+      <image:title>Antalya harbor, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-14.jpg</image:loc>
+      <image:title>On a boat in Antalya marina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-15.jpg</image:loc>
+      <image:title>On a boat in Antalya marina, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-16.jpg</image:loc>
+      <image:title>Rocky Mediterranean coast near Antalya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-17.jpg</image:loc>
+      <image:title>Mediterranean coast near Antalya, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-18.jpg</image:loc>
+      <image:title>Veda in front of Hadrian’s Gate in Kaleiçi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-19.jpg</image:loc>
+      <image:title>Evening street in Kaleiçi, Antalya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-20.jpg</image:loc>
+      <image:title>Kaleiçi old town, Antalya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-21.jpg</image:loc>
+      <image:title>Kaleiçi streets, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-22.jpg</image:loc>
+      <image:title>Historic houses in Kaleiçi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/antalya/antalya-image-23.jpg</image:loc>
+      <image:title>Turkish flag over a Kaleiçi street</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/athens/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens-image.jpg</image:loc>
+      <image:title>The Acropolis in Athens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-1.jpg</image:loc>
+      <image:title>Panathenaic Stadium</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-2.jpg</image:loc>
+      <image:title>Under the Panathenaic Stadium</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-3.jpg</image:loc>
+      <image:title>Panathenaic Stadium, the track</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-4.jpg</image:loc>
+      <image:title>Panathenaic Stadium, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-5.jpg</image:loc>
+      <image:title>Temple of Hephaestus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-6.jpg</image:loc>
+      <image:title>Ancient Agora of Athens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-7.jpg</image:loc>
+      <image:title>Acropolis Museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-8.jpg</image:loc>
+      <image:title>Inside the Acropolis Museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-9.jpg</image:loc>
+      <image:title>Acropolis Museum collection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-10.jpg</image:loc>
+      <image:title>Entering the Acropolis</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-11.jpg</image:loc>
+      <image:title>The Acropolis of Athens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-12.jpg</image:loc>
+      <image:title>The Acropolis, another frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-13.jpg</image:loc>
+      <image:title>Odeon of Herodes Atticus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-15.jpg</image:loc>
+      <image:title>Panathenaic Stadium, looking back</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-16.jpg</image:loc>
+      <image:title>Caryatids, the daughters of Athens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/athens/athens-image-17.jpg</image:loc>
+      <image:title>Excavation under the Acropolis Museum</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/bangkok/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok-image.jpg</image:loc>
+      <image:title>Bangkok temples and city skyline</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/bangkok-thumbnail.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/chatuchak-market.jpg</image:loc>
+      <image:title>Chatuchak Weekend Market</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/chinatown.jpg</image:loc>
+      <image:title>Chinatown Bangkok at night</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/floating-market.jpg</image:loc>
+      <image:title>Floating market near Bangkok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/grand-palace.jpg</image:loc>
+      <image:title>Grand Palace in Bangkok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/jim-thompson-house.jpg</image:loc>
+      <image:title>Jim Thompson House</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/khao-san-road.jpg</image:loc>
+      <image:title>Khao San Road</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/lumpini-park.jpg</image:loc>
+      <image:title>Lumpini Park</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/sky-bar.jpg</image:loc>
+      <image:title>Sky Bar Bangkok at night</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/temple-of-dawn.jpg</image:loc>
+      <image:title>Wat Arun Temple of Dawn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/wat-arun.jpg</image:loc>
+      <image:title>Wat Arun close-up</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/bangkok/wat-pho.jpg</image:loc>
+      <image:title>Wat Pho Temple of the Reclining Buddha</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/barcelona/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona-image.jpg</image:loc>
+      <image:title>Gaudí’s mosaics in Barcelona</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-1.jpg</image:loc>
+      <image:title>Sagrada Família</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-2.jpg</image:loc>
+      <image:title>Barcelona Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-3.jpg</image:loc>
+      <image:title>A Barcelona square</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-4.jpg</image:loc>
+      <image:title>Casa Milà</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-5.jpg</image:loc>
+      <image:title>Casa Milà rooftop chimneys</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-6.jpg</image:loc>
+      <image:title>Port Vell</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-7.jpg</image:loc>
+      <image:title>Gothic Quarter</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-8.jpg</image:loc>
+      <image:title>Park Güell</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-9.jpg</image:loc>
+      <image:title>Sagrada Família, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-10.jpg</image:loc>
+      <image:title>Sagrada Família towers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-11.jpg</image:loc>
+      <image:title>Columbus Monument</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/barcelona/barcelona-image-12.jpg</image:loc>
+      <image:title>Port Vell, another stretch</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/berlin/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin-image.jpg</image:loc>
+      <image:title>Veda standing in front of Brandenburg Gate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-2.jpg</image:loc>
+      <image:title>Over the Berlin Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-3.jpg</image:loc>
+      <image:title>The Berlin TV Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-4.jpg</image:loc>
+      <image:title>Berlin in fall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-5.jpg</image:loc>
+      <image:title>Berlin Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-6.jpg</image:loc>
+      <image:title>Berlin Cathedral, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-7.jpg</image:loc>
+      <image:title>Veda in front of Brandenburg Gate</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-8.jpg</image:loc>
+      <image:title>Fall trees in Berlin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-9.jpg</image:loc>
+      <image:title>Berlin in fall, another path</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/berlin/berlin-image-10.jpg</image:loc>
+      <image:title>Street art in Berlin</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/brussels/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels-image.jpg</image:loc>
+      <image:title>Veda with an umbrella in front of Manneken Pis</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-1.jpg</image:loc>
+      <image:title>Street art in Brussels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-2.jpg</image:loc>
+      <image:title>Veda with an umbrella in front of Manneken Pis</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-3.jpg</image:loc>
+      <image:title>Grand Place in Brussels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-4.jpg</image:loc>
+      <image:title>Mont des Arts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-5.jpg</image:loc>
+      <image:title>The garden at Mont des Arts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-6.jpg</image:loc>
+      <image:title>Mini-Europe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-7.jpg</image:loc>
+      <image:title>Eiffel Tower replica at Mini-Europe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-8.jpg</image:loc>
+      <image:title>Sacré-Cœur replica at Mini-Europe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-9.jpg</image:loc>
+      <image:title>Leaning Tower of Pisa replica at Mini-Europe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-11.jpg</image:loc>
+      <image:title>Cobblestone street in Brussels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/brussels/brussels-image-12.jpg</image:loc>
+      <image:title>Cobblestones in Brussels, another street</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/cappadocia/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia-image.jpg</image:loc>
+      <image:title>Veda overlooking Göreme with Mount Erciyes in the background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-1.jpg</image:loc>
+      <image:title>Hot air balloons including a red Juan Valdez balloon over Cappadocia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-2.jpg</image:loc>
+      <image:title>Sunrise photography with hot air balloons over Cappadocia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-3.jpg</image:loc>
+      <image:title>Sunrise hot air balloons over Cappadocia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-4.jpg</image:loc>
+      <image:title>Sunrise hot air balloons over Cappadocia, frame 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-5.jpg</image:loc>
+      <image:title>Sunrise hot air balloons over Cappadocia, frame 4</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-6.jpg</image:loc>
+      <image:title>Sunrise hot air balloons over Cappadocia, frame 5</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-7.jpg</image:loc>
+      <image:title>Veda in a red dress overlooking Göreme with snow-capped Mount Erciyes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-8.jpg</image:loc>
+      <image:title>Göreme panorama looking across fairy chimneys</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-9.jpg</image:loc>
+      <image:title>360 panorama of Göreme and the surrounding valleys</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-10.jpg</image:loc>
+      <image:title>Rooftop view over Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-11.jpg</image:loc>
+      <image:title>Second rooftop view over Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-12.jpg</image:loc>
+      <image:title>Cave dwellings cut into the rock in Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-13.jpg</image:loc>
+      <image:title>Interior of a cave hotel in Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-14.jpg</image:loc>
+      <image:title>Interior of a cave hotel in Göreme, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-15.jpg</image:loc>
+      <image:title>Interior of a cave hotel in Göreme, frame 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-16.jpg</image:loc>
+      <image:title>Paşabağ valley fairy chimneys</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-17.jpg</image:loc>
+      <image:title>Paşabağ valley fairy chimneys, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-18.jpg</image:loc>
+      <image:title>Pigeon Valley near Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-19.jpg</image:loc>
+      <image:title>Pigeon Valley near Göreme, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-20.jpg</image:loc>
+      <image:title>Love Valley in Cappadocia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-21.jpg</image:loc>
+      <image:title>Uçhisar fortress and village</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-22.jpg</image:loc>
+      <image:title>Uçhisar fortress and village, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-23.jpg</image:loc>
+      <image:title>Tunnels of a Cappadocia underground city</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-24.jpg</image:loc>
+      <image:title>Scale model of a Cappadocia underground city</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-25.jpg</image:loc>
+      <image:title>Zelve Open Air Museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-26.jpg</image:loc>
+      <image:title>A cave near Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-27.jpg</image:loc>
+      <image:title>A cat in Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-28.jpg</image:loc>
+      <image:title>Turkish barbecue meal in Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-29.jpg</image:loc>
+      <image:title>Turkish pottery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-30.jpg</image:loc>
+      <image:title>Ottoman mosaic lamps</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-31.jpg</image:loc>
+      <image:title>Ottoman mosaic lamps, frame 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-32.jpg</image:loc>
+      <image:title>Carpet courtyard at Osmanbey Cave Hotel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-33.jpg</image:loc>
+      <image:title>Whirling dervish dance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-34.jpg</image:loc>
+      <image:title>A second cave near Göreme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-35.jpg</image:loc>
+      <image:title>Veda in the carpet courtyard at Osmanbey Cave Hotel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cappadocia/cappadocia-image-36.jpg</image:loc>
+      <image:title>Sitting among kilims at Osmanbey Cave Hotel</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/cancun/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun-image.jpg</image:loc>
+      <image:title>Cancún beach and Caribbean coastline</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-1.jpg</image:loc>
+      <image:title>Cancún local life</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-2.jpg</image:loc>
+      <image:title>Ven a la Luz Tulum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-3.jpg</image:loc>
+      <image:title>Tulum Ruins</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-4.jpg</image:loc>
+      <image:title>Tulum Beach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-5.jpg</image:loc>
+      <image:title>Exploring Tulum Ruins</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-6.jpg</image:loc>
+      <image:title>Exploring Tulum Ruins, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-7.jpg</image:loc>
+      <image:title>Cenote Ik-Kil</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-8.jpg</image:loc>
+      <image:title>Cenotes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-9.jpg</image:loc>
+      <image:title>Chichén-Itzá</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-10.jpg</image:loc>
+      <image:title>Chichén-Itzá view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-11.jpg</image:loc>
+      <image:title>Cancún local life, another street</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-12.jpg</image:loc>
+      <image:title>Isla Mujeres</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-13.jpg</image:loc>
+      <image:title>Local seafood</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-14.jpg</image:loc>
+      <image:title>Underwater museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-15.jpg</image:loc>
+      <image:title>Cancún Beach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-16.jpg</image:loc>
+      <image:title>Stone serpent's head</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-17.jpg</image:loc>
+      <image:title>Skull stone engravings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-18.jpg</image:loc>
+      <image:title>Mayan ball game court</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-19.jpg</image:loc>
+      <image:title>At Chichén-Itzá with friends</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-20.jpg</image:loc>
+      <image:title>Chichén-Itzá, another frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-21.jpg</image:loc>
+      <image:title>Chichén-Itzá exploration</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-22.jpg</image:loc>
+      <image:title>Chichén-Itzá pyramid view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cancun/cancun-image-23.jpg</image:loc>
+      <image:title>Local poke</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/chicago/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago-image.jpg</image:loc>
+      <image:title>Chicago riverwalk and skyline</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-1.jpg</image:loc>
+      <image:title>On the Chicago Riverwalk with the skyline behind</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-2.jpg</image:loc>
+      <image:title>A sunny afternoon in a Chicago park</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-3.jpg</image:loc>
+      <image:title>Deep-dish pizza at Giordano's in Chicago</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-4.jpg</image:loc>
+      <image:title>Cloud Gate reflecting the Chicago skyline in Millennium Park</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-5.jpg</image:loc>
+      <image:title>Chicago Riverwalk in daylight</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-6.jpg</image:loc>
+      <image:title>Chicago Riverwalk at dusk with lit towers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/chicago/chicago-image-7.jpg</image:loc>
+      <image:title>On an architecture boat tour at dusk</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/cusco/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco-image.jpg</image:loc>
+      <image:title>Rainbow Mountain and Andean light near Cusco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-1.jpg</image:loc>
+      <image:title>Rainbow Mountain (Vinicunca)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-2.jpg</image:loc>
+      <image:title>Scenic Andes mountains from high elevation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-3.jpg</image:loc>
+      <image:title>Rainbow Mountain stripes from another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-4.jpg</image:loc>
+      <image:title>Hard hike toward the high ridges</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-5.jpg</image:loc>
+      <image:title>With Incan locals and an alpaca</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-6.jpg</image:loc>
+      <image:title>Cusco city square</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-7.jpg</image:loc>
+      <image:title>Alpacas near Cusco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-8.jpg</image:loc>
+      <image:title>Geared up to zipline in the Andes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-9.jpg</image:loc>
+      <image:title>Ziplining through the Andes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-10.jpg</image:loc>
+      <image:title>Sacred Valley landscape</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-11.jpg</image:loc>
+      <image:title>ATVing through Sacred Valley</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-12.jpg</image:loc>
+      <image:title>Riding ATVs in the valley</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-13.jpg</image:loc>
+      <image:title>Salt mines of Maras</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-14.jpg</image:loc>
+      <image:title>Another hard stretch of the high hike</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-15.jpg</image:loc>
+      <image:title>More alpacas in the highlands</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-16.jpg</image:loc>
+      <image:title>Stay near the historic lanes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-17.jpg</image:loc>
+      <image:title>Plaza de Armas another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-18.jpg</image:loc>
+      <image:title>Cusco plaza at a quieter hour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-19.jpg</image:loc>
+      <image:title>Twelve-angled stone in Cusco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-20.jpg</image:loc>
+      <image:title>Cusco railway station</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/cusco/cusco-image-21.jpg</image:loc>
+      <image:title>Narrow streets of Cusco</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/darjeeling/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling-image.jpg</image:loc>
+      <image:title>Darjeeling hills and tea country</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-1.jpg</image:loc>
+      <image:title>Zero Point at the Nepal border viewpoint</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-2.jpg</image:loc>
+      <image:title>Himalayan panorama from Zero Point</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-3.jpg</image:loc>
+      <image:title>Mirik Lake surrounded by pine forests</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-4.jpg</image:loc>
+      <image:title>Darjeeling tea gardens cascading down the hillsides</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-5.jpg</image:loc>
+      <image:title>Japanese Peace Pagoda in Darjeeling</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-6.jpg</image:loc>
+      <image:title>Tea time among the Darjeeling gardens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-7.jpg</image:loc>
+      <image:title>Tenzing Rock in Darjeeling</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-8.jpg</image:loc>
+      <image:title>Terraced Darjeeling tea plantations</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-9.jpg</image:loc>
+      <image:title>Mount Kangchenjunga from Darjeeling</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-10.jpg</image:loc>
+      <image:title>Watching sunrise from Tiger Hill over the Himalayas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-11.jpg</image:loc>
+      <image:title>Peace Pagoda with mountain views</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-12.jpg</image:loc>
+      <image:title>Kangchenjunga peaks above the clouds</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-13.jpg</image:loc>
+      <image:title>Siddheshwar Dham Char Dham temple complex</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-14.jpg</image:loc>
+      <image:title>Kedareshwara Jyothirlinga replica at Char Dham</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-15.jpg</image:loc>
+      <image:title>Char Dham temple architecture in the hills</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-16.jpg</image:loc>
+      <image:title>Samdruptse hilltop in Namchi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-17.jpg</image:loc>
+      <image:title>Guru Padmasambhava statue area at Samdruptse</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-18.jpg</image:loc>
+      <image:title>Prayer wheel at Samdruptse</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/darjeeling/darjeeling-image-20.jpg</image:loc>
+      <image:title>Samdruptse views over the valley</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/gangtok/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok-image.jpg</image:loc>
+      <image:title>Gangtok hillside capital in Sikkim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-1.jpg</image:loc>
+      <image:title>Evening on MG Marg, Gangtok's pedestrian main street</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-2.jpg</image:loc>
+      <image:title>Inside the Flower Exhibition Centre in Gangtok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-3.jpg</image:loc>
+      <image:title>Covered hillside staircase with yellow railings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-4.jpg</image:loc>
+      <image:title>Park path with prayer flags in Gangtok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-5.jpg</image:loc>
+      <image:title>Overlook across misty Sikkim valleys</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-6.jpg</image:loc>
+      <image:title>Prayer flags over a mossy waterfall near Gangtok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-7.jpg</image:loc>
+      <image:title>Traditional dress beside a waterfall in Sikkim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-8.jpg</image:loc>
+      <image:title>Looking out from the Gangtok ropeway cabin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-9.jpg</image:loc>
+      <image:title>Momos and a sizzling platter with hillside town views</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-11.jpg</image:loc>
+      <image:title>Bhaichung Stadium in Namchi, Sikkim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-12.jpg</image:loc>
+      <image:title>Misty tea gardens on a Sikkim hillside</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-14.jpg</image:loc>
+      <image:title>Looking up through a moss-covered forest canopy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-15.jpg</image:loc>
+      <image:title>Standing in a mossy Himalayan forest</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-16.jpg</image:loc>
+      <image:title>Sitting on MG Marg at night</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-17.jpg</image:loc>
+      <image:title>Gandhi statue on MG Marg, Gangtok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/gangtok/gangtok-image-18.jpg</image:loc>
+      <image:title>Cheer for India photo cutout on MG Marg</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/grandcanyon/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon-image.jpg</image:loc>
+      <image:title>Grand Canyon layered red rock from the rim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-1.jpg</image:loc>
+      <image:title>Hualapai Indian Reservation view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-2.jpg</image:loc>
+      <image:title>Hualapai Indian Reservation, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-3.jpg</image:loc>
+      <image:title>Lake Mead National Recreation Area</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-4.jpg</image:loc>
+      <image:title>Lake Mead shoreline</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-5.jpg</image:loc>
+      <image:title>Lake Mead desert water</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-6.jpg</image:loc>
+      <image:title>Grand Canyon Village</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-7.jpg</image:loc>
+      <image:title>Grand Canyon Village rim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-8.jpg</image:loc>
+      <image:title>South Rim canyon view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-9.jpg</image:loc>
+      <image:title>South Rim light on rock layers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-10.jpg</image:loc>
+      <image:title>Antelope Canyon slot canyon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-11.jpg</image:loc>
+      <image:title>Antelope Canyon light beams</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-12.jpg</image:loc>
+      <image:title>Horseshoe Bend on the Colorado River</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/grandcanyon/grandcanyon-image-13.jpg</image:loc>
+      <image:title>South Rim another overlook</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/interlaken/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken-image.jpg</image:loc>
+      <image:title>Interlaken in autumn, lakes and mountains</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-1.jpg</image:loc>
+      <image:title>Streets of Interlaken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-2.jpg</image:loc>
+      <image:title>Interlaken streets, another turn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-3.jpg</image:loc>
+      <image:title>Fall color in Switzerland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-4.jpg</image:loc>
+      <image:title>Walking up toward Harder Kulm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-5.jpg</image:loc>
+      <image:title>Harder Kulm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-6.jpg</image:loc>
+      <image:title>Harder Kulm viewpoint</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-7.jpg</image:loc>
+      <image:title>The top of Harder Kulm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-8.jpg</image:loc>
+      <image:title>A church in Interlaken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-9.jpg</image:loc>
+      <image:title>Another church in Interlaken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-10.jpg</image:loc>
+      <image:title>Schilthorn cable car</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-11.jpg</image:loc>
+      <image:title>The Alps from Piz Gloria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-12.jpg</image:loc>
+      <image:title>007 world at Piz Gloria</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-13.jpg</image:loc>
+      <image:title>The revolving restaurant at Schilthorn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-14.jpg</image:loc>
+      <image:title>The Aare River in Interlaken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-15.jpg</image:loc>
+      <image:title>Interlaken seen from Harder Kulm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-16.jpg</image:loc>
+      <image:title>Lakes from Harder Kulm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-17.jpg</image:loc>
+      <image:title>Interlaken from Harder Kulm, another frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/interlaken-image-18.jpg</image:loc>
+      <image:title>Fall landscape near Interlaken</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-5.jpg</image:loc>
+      <image:title>Alps from the cable car</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-6.jpg</image:loc>
+      <image:title>Fall color from the cable car</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-7.jpg</image:loc>
+      <image:title>Schilthorn cable car from the Lauterbrunnen side</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-8.jpg</image:loc>
+      <image:title>Lauterbrunnen valley</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-9.jpg</image:loc>
+      <image:title>Lauterbrunnen Falls</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-10.jpg</image:loc>
+      <image:title>Lauterbrunnen village</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/interlaken/lauterbrunnen-image-11.jpg</image:loc>
+      <image:title>Lauterbrunnen in fall</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/lasvegas/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas-image.jpg</image:loc>
+      <image:title>Veda on the Strip near Hell's Kitchen and the Paris Eiffel Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-1.jpg</image:loc>
+      <image:title>Venetian Casino</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-2.jpg</image:loc>
+      <image:title>Venice city replica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-3.jpg</image:loc>
+      <image:title>Nike Winged Victory replica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-4.jpg</image:loc>
+      <image:title>Fake Eiffel Tower at Paris Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-5.jpg</image:loc>
+      <image:title>Gordon Ramsay's Hell's Kitchen</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-6.jpg</image:loc>
+      <image:title>Inside the Venice replica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-7.jpg</image:loc>
+      <image:title>Hoover Dam</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lasvegas/lasvegas-image-8.jpg</image:loc>
+      <image:title>Hoover Dam, another view</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/lima/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima-image.jpg</image:loc>
+      <image:title>Miraflores cliffs and the Pacific in Lima</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-1.jpg</image:loc>
+      <image:title>Cycling through the streets of Lima</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-2.jpg</image:loc>
+      <image:title>La Marina Lighthouse on the Lima coast</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-3.jpg</image:loc>
+      <image:title>Love Park in Miraflores</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-4.jpg</image:loc>
+      <image:title>Street art in Barranco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-5.jpg</image:loc>
+      <image:title>More Barranco murals</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-6.jpg</image:loc>
+      <image:title>Larcomar cliffside open-air mall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-7.jpg</image:loc>
+      <image:title>Larcomar overlooking the Pacific</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-8.jpg</image:loc>
+      <image:title>Pollo a la brasa in Lima</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-9.jpg</image:loc>
+      <image:title>Pollo a la brasa with sides</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-10.jpg</image:loc>
+      <image:title>Love Park mosaics and ocean view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-11.jpg</image:loc>
+      <image:title>Parque del Amor sculpture and coast</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-12.jpg</image:loc>
+      <image:title>Love Park overlooking the Pacific</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-13.jpg</image:loc>
+      <image:title>Miraflores ocean view from the cliffs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-14.jpg</image:loc>
+      <image:title>Pacific waves below Miraflores</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-15.jpg</image:loc>
+      <image:title>Another view of La Marina Lighthouse</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-16.jpg</image:loc>
+      <image:title>Huaca Pucllana adobe pyramid</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/lima/lima-image-17.jpg</image:loc>
+      <image:title>Huaca Pucllana in Miraflores</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/losangeles/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles-image.jpg</image:loc>
+      <image:title>Veda with the Hollywood sign behind her</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-1.jpg</image:loc>
+      <image:title>Disneyland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-2.jpg</image:loc>
+      <image:title>Disneyland, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-3.jpg</image:loc>
+      <image:title>Disneyland streets</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-4.jpg</image:loc>
+      <image:title>With Coco at Disneyland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-5.jpg</image:loc>
+      <image:title>Hollywood Walk of Fame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-6.jpg</image:loc>
+      <image:title>Museum of Illusions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-7.jpg</image:loc>
+      <image:title>Museum of Illusions room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-8.jpg</image:loc>
+      <image:title>Fun at Museum of Illusions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-9.jpg</image:loc>
+      <image:title>Museum of Illusions pose</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-10.jpg</image:loc>
+      <image:title>Museum of Illusions exhibit</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-11.jpg</image:loc>
+      <image:title>Museum of Illusions another room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-12.jpg</image:loc>
+      <image:title>Griffith Observatory view toward the Hollywood sign</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-13.jpg</image:loc>
+      <image:title>Universal Studios</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-14.jpg</image:loc>
+      <image:title>Hogwarts at Universal Studios</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-15.jpg</image:loc>
+      <image:title>Universal Studios view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-16.jpg</image:loc>
+      <image:title>Universal Studios another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-17.jpg</image:loc>
+      <image:title>Santa Monica Pier</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/losangeles/losangeles-image-18.jpg</image:loc>
+      <image:title>Santa Monica Pier Ferris wheel</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/machupicchu/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu-image.jpg</image:loc>
+      <image:title>Machu Picchu citadel in the Andes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-1.jpg</image:loc>
+      <image:title>Ancient houses in Machu Picchu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-2.jpg</image:loc>
+      <image:title>Aguas Calientes town</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-3.jpg</image:loc>
+      <image:title>Walking through Machu Picchu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-4.jpg</image:loc>
+      <image:title>Classic Machu Picchu overlook</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-5.jpg</image:loc>
+      <image:title>Aguas Calientes another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-6.jpg</image:loc>
+      <image:title>PeruRail train through the valley</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-7.jpg</image:loc>
+      <image:title>Cataratas de Aguas Calientes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-8.jpg</image:loc>
+      <image:title>Residential section of Machu Picchu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-9.jpg</image:loc>
+      <image:title>More residential terraces at Machu Picchu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-10.jpg</image:loc>
+      <image:title>Learning about Machu Picchu with a guide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-11.jpg</image:loc>
+      <image:title>Llama at Machu Picchu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/machupicchu/machupicchu-image-12.jpg</image:loc>
+      <image:title>Aguas Calientes riverside streets</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/mexicocity/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity-image.jpg</image:loc>
+      <image:title>Mexico City street and landmark views</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-1.jpg</image:loc>
+      <image:title>Pyramid of the Sun, Teotihuacán</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-2.jpg</image:loc>
+      <image:title>Pyramid of the Sun, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-3.jpg</image:loc>
+      <image:title>Pyramid of the Moon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-4.jpg</image:loc>
+      <image:title>Pyramid of the Moon, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-5.jpg</image:loc>
+      <image:title>Avenue of the Dead</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-6.jpg</image:loc>
+      <image:title>Hot air balloon basket</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-7.jpg</image:loc>
+      <image:title>Hot air balloons preparing for Teotihuacán</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-8.jpg</image:loc>
+      <image:title>Mosaic mural at UNAM</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-9.jpg</image:loc>
+      <image:title>Frida Kahlo portrait display</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-10.jpg</image:loc>
+      <image:title>Inside Frida's house</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-11.jpg</image:loc>
+      <image:title>Churros in Mexico City</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-12.jpg</image:loc>
+      <image:title>Coyoacán, CDMX</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-13.jpg</image:loc>
+      <image:title>With Frida and Diego Rivera mural</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-14.jpg</image:loc>
+      <image:title>La Parroquia in San Miguel de Allende</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-15.jpg</image:loc>
+      <image:title>Streets of San Miguel de Allende</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-16.jpg</image:loc>
+      <image:title>Colorful streets of San Miguel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-17.jpg</image:loc>
+      <image:title>Grutas Tolantongo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-18.jpg</image:loc>
+      <image:title>Heated pools of Tolantongo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-19.jpg</image:loc>
+      <image:title>Tolantongo thermal pools</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-20.jpg</image:loc>
+      <image:title>Art at Palacio de Bellas Artes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-21.jpg</image:loc>
+      <image:title>Man at the Crossroads mural</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-22.jpg</image:loc>
+      <image:title>Mayan calendar at the Anthropology Museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-23.jpg</image:loc>
+      <image:title>National Museum of Anthropology</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-25.jpg</image:loc>
+      <image:title>Teotihuacán from the hot air balloon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-26.jpg</image:loc>
+      <image:title>Palacio de Bellas Artes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-27.jpg</image:loc>
+      <image:title>Xochimilco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-28.jpg</image:loc>
+      <image:title>Xochimilco floating gardens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-29.jpg</image:loc>
+      <image:title>Xochimilco canals</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-30.jpg</image:loc>
+      <image:title>Trajinera on Xochimilco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-31.jpg</image:loc>
+      <image:title>Xochimilco floating gardens, another frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-32.jpg</image:loc>
+      <image:title>Inside Casa Azul</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-33.jpg</image:loc>
+      <image:title>Casa Azul interior</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-34.jpg</image:loc>
+      <image:title>Casa Azul rooms</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-35.jpg</image:loc>
+      <image:title>Casa Azul details</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-36.jpg</image:loc>
+      <image:title>Tolantongo caves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/mexicocity/mexicocity-image-37.jpg</image:loc>
+      <image:title>Grutas Tolantongo waterfall</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/miami/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami-image.jpg</image:loc>
+      <image:title>On the water off Miami</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-1.jpg</image:loc>
+      <image:title>Snorkeling day on the Atlantic off Miami</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-2.jpg</image:loc>
+      <image:title>Miami Bayside Marketplace waterfront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-3.jpg</image:loc>
+      <image:title>Speed boat ride on the Atlantic</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-4.jpg</image:loc>
+      <image:title>Blue-and-yellow macaws in Miami</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-5.jpg</image:loc>
+      <image:title>Everglades boardwalk at sunset</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-6.jpg</image:loc>
+      <image:title>Nightlife in Miami</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-7.jpg</image:loc>
+      <image:title>Southernmost Point buoy in Key West</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/miami/miami-image-8.jpg</image:loc>
+      <image:title>Speed boat ride on the Atlantic, another angle</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/milan/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan-image.jpg</image:loc>
+      <image:title>Milan Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-1.jpg</image:loc>
+      <image:title>Over the Milan Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-2.jpg</image:loc>
+      <image:title>Duomo di Milano</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-3.jpg</image:loc>
+      <image:title>Duomo di Milano, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-4.jpg</image:loc>
+      <image:title>Milan from the cathedral roof</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-5.jpg</image:loc>
+      <image:title>Inside the Duomo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-6.jpg</image:loc>
+      <image:title>Galleria Vittorio Emanuele II</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-7.jpg</image:loc>
+      <image:title>Piazza del Duomo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-8.jpg</image:loc>
+      <image:title>Leonardo’s Last Supper museum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-9.jpg</image:loc>
+      <image:title>Inside the Duomo, another nave</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-10.jpg</image:loc>
+      <image:title>Inside the Duomo, looking up</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/milan/milan-image-11.jpg</image:loc>
+      <image:title>Duomo rooftop, another angle</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/nassau/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau-image.jpg</image:loc>
+      <image:title>Nassau harbor and Caribbean light</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-1.jpg</image:loc>
+      <image:title>Queen’s Staircase in Nassau</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-2.jpg</image:loc>
+      <image:title>The Straw Market in Nassau</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-3.jpg</image:loc>
+      <image:title>Queen’s Staircase carved out of solid rock</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-4.jpg</image:loc>
+      <image:title>Queen’s Staircase, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-5.jpg</image:loc>
+      <image:title>Parliament Square in Nassau</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-6.jpg</image:loc>
+      <image:title>Fresh coconut water in the Bahamas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-7.jpg</image:loc>
+      <image:title>Straw Market stalls</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/nassau/nassau-image-8.jpg</image:loc>
+      <image:title>Nassau Cruise Port</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/paris/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris-image.jpg</image:loc>
+      <image:title>Veda standing in front of the Eiffel Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-1.jpg</image:loc>
+      <image:title>Winged Victory of Samothrace at the Louvre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-2.jpg</image:loc>
+      <image:title>The Eiffel Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-3.jpg</image:loc>
+      <image:title>The Eiffel Tower, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-4.jpg</image:loc>
+      <image:title>View from the Eiffel Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-5.jpg</image:loc>
+      <image:title>The Mona Lisa at the Louvre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-6.jpg</image:loc>
+      <image:title>Notre-Dame Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-7.jpg</image:loc>
+      <image:title>Sacré-Cœur basilica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-8.jpg</image:loc>
+      <image:title>Paris from the Eiffel Tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-9.jpg</image:loc>
+      <image:title>Paris rooftops from the tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-10.jpg</image:loc>
+      <image:title>The Louvre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-11.jpg</image:loc>
+      <image:title>A painting in the Louvre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-12.jpg</image:loc>
+      <image:title>The Eiffel Tower, a third view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-13.jpg</image:loc>
+      <image:title>The Louvre, another hall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-14.jpg</image:loc>
+      <image:title>The Mona Lisa, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-15.jpg</image:loc>
+      <image:title>The Louvre collection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-16.jpg</image:loc>
+      <image:title>Inside the Louvre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/paris/paris-image-17.jpg</image:loc>
+      <image:title>The Louvre, one more room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/pattaya/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya-image.jpg</image:loc>
+      <image:title>Pattaya coastline and temples</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/big-buddha-1.jpg</image:loc>
+      <image:title>The Sanctuary of Truth</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/big-buddha-2.jpg</image:loc>
+      <image:title>Inside the Sanctuary of Truth</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/pattaya-image-1.jpg</image:loc>
+      <image:title>Hand-carved wood structure</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/pattaya-image-2.jpg</image:loc>
+      <image:title>Hand-carved wood detail</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/pattaya-image-3.jpg</image:loc>
+      <image:title>Hand-carved wood architecture</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/pattaya-image-4.jpg</image:loc>
+      <image:title>Wood carvers constructing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/pattaya-image-5.jpg</image:loc>
+      <image:title>Wood carvers at the Sanctuary</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/temple-architecture.jpg</image:loc>
+      <image:title>Central apex structure at the Sanctuary of Truth</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/temple-complex.jpg</image:loc>
+      <image:title>Big Buddha temple complex</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/wooden-temple-1.jpg</image:loc>
+      <image:title>Big Buddha area</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/pattaya/wooden-temple-2.jpg</image:loc>
+      <image:title>Hand-carved wooden temple detail</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/prague/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague-image.jpg</image:loc>
+      <image:title>Charles Bridge with Prague Castle beyond</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-1.jpg</image:loc>
+      <image:title>Prague in fall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-2.jpg</image:loc>
+      <image:title>The Vltava</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-3.jpg</image:loc>
+      <image:title>Charles Bridge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-4.jpg</image:loc>
+      <image:title>Fall color over Prague roofs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-5.jpg</image:loc>
+      <image:title>Lennon Wall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-6.jpg</image:loc>
+      <image:title>Astronomical Clock</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-7.jpg</image:loc>
+      <image:title>Charles Bridge statues</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-8.jpg</image:loc>
+      <image:title>Prague Castle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-9.jpg</image:loc>
+      <image:title>Prague Castle, another court</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-10.jpg</image:loc>
+      <image:title>Kampa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-11.jpg</image:loc>
+      <image:title>Charles Bridge toward the castle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-12.jpg</image:loc>
+      <image:title>Old-New Synagogue</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-13.jpg</image:loc>
+      <image:title>Old Town Hall and the clock</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/prague/prague-image-14.jpg</image:loc>
+      <image:title>Autumn trees in Prague</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/santorini/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini-image.jpg</image:loc>
+      <image:title>Walking the whitewashed lanes of Santorini</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-1.jpg</image:loc>
+      <image:title>Akrotiri, prehistoric town</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-2.jpg</image:loc>
+      <image:title>Akrotiri, another hall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-3.jpg</image:loc>
+      <image:title>Akrotiri site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-4.jpg</image:loc>
+      <image:title>Oia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-5.jpg</image:loc>
+      <image:title>Santorini caldera view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-6.jpg</image:loc>
+      <image:title>Island view from the path</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-8.jpg</image:loc>
+      <image:title>Ammoudi Bay</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-9.jpg</image:loc>
+      <image:title>Oia lanes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-10.jpg</image:loc>
+      <image:title>A cat in Santorini</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-11.jpg</image:loc>
+      <image:title>Oia, another terrace</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-12.jpg</image:loc>
+      <image:title>A Santorini terrace view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-13.jpg</image:loc>
+      <image:title>Santorini scenery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-14.jpg</image:loc>
+      <image:title>Blue dome, Santorini</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-15.jpg</image:loc>
+      <image:title>Blue domes, another church</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-16.jpg</image:loc>
+      <image:title>Fira / Thira</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-17.jpg</image:loc>
+      <image:title>Fira clifftop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/santorini/santorini-image-18.jpg</image:loc>
+      <image:title>Oia toward the caldera</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/vatican/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican-image.jpg</image:loc>
+      <image:title>Veda in front of Bernini’s hourglass monument in St. Peter’s Basilica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-1.jpg</image:loc>
+      <image:title>St. Peter’s Square</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-2.jpg</image:loc>
+      <image:title>Veda in the Vatican Museums courtyard by the bronze sphere — not the Sistine Chapel; you cannot photograph inside</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-3.jpg</image:loc>
+      <image:title>Vatican Museums</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-4.jpg</image:loc>
+      <image:title>Inside the Vatican Museums</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-12.jpg</image:loc>
+      <image:title>Inside St. Peter’s Basilica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-13.jpg</image:loc>
+      <image:title>Vatican Museums, another hall</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-14.jpg</image:loc>
+      <image:title>The entrance line into Vatican City</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vatican/vatican-image-15.jpg</image:loc>
+      <image:title>Walking into Vatican City</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/venice/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice-image.jpg</image:loc>
+      <image:title>Venice canals</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-1.jpg</image:loc>
+      <image:title>Grand Canal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-2.jpg</image:loc>
+      <image:title>A Venice canal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-3.jpg</image:loc>
+      <image:title>Another canal stretch</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-4.jpg</image:loc>
+      <image:title>St Mark's Basilica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-5.jpg</image:loc>
+      <image:title>St Mark's Square</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-6.jpg</image:loc>
+      <image:title>Burano houses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-7.jpg</image:loc>
+      <image:title>Burano canal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-19.jpg</image:loc>
+      <image:title>Burano, another street</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-20.jpg</image:loc>
+      <image:title>Burano from the water</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-21.jpg</image:loc>
+      <image:title>Burano, quieter street</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-22.jpg</image:loc>
+      <image:title>Burano, another canal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/venice/venice-image-24.jpg</image:loc>
+      <image:title>A Venice back canal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://globetrotwithveda.com/vienna/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna-image.jpg</image:loc>
+      <image:title>Veda standing in front of Hundertwasserhaus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-1.jpg</image:loc>
+      <image:title>Veda in front of Hundertwasserhaus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-2.jpg</image:loc>
+      <image:title>Hundertwasserhaus, another angle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-3.jpg</image:loc>
+      <image:title>The colorful facade of Hundertwasserhaus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-4.jpg</image:loc>
+      <image:title>Hofburg Imperial Palace</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-5.jpg</image:loc>
+      <image:title>Hofburg, another courtyard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-6.jpg</image:loc>
+      <image:title>A street in Vienna</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-7.jpg</image:loc>
+      <image:title>Hofburg Imperial Palace, a third view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-8.jpg</image:loc>
+      <image:title>The Plague Column on the Graben</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-9.jpg</image:loc>
+      <image:title>Inside St. Stephen's Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-10.jpg</image:loc>
+      <image:title>St. Stephen's Cathedral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-11.jpg</image:loc>
+      <image:title>Inside St. Stephen's Cathedral, another view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://globetrotwithveda.com/vienna/vienna-image-12.jpg</image:loc>
+      <image:title>Inside St. Stephen's Cathedral, looking up</image:title>
+    </image:image>
   </url>
 </urlset>

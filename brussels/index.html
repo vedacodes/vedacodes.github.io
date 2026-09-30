@@ -56,7 +56,17 @@
                     "name": "Brussels",
                     "containedInPlace": { "@type": "Country", "name": "Belgium" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/brussels/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/brussels/#hero",
+                "url": "https://globetrotwithveda.com/brussels-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/brussels-image.jpg",
+                "caption": "Veda with an umbrella in front of Manneken Pis in Brussels",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1093,7 +1137,11 @@
 
     <article class="chapter" id="streetart">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-1.jpg" alt="Street art in Brussels">
+            <figure class="shot is-on">
+                <img src="brussels-image-1.jpg" alt="Street art in Brussels">
+                <figcaption>Street art in Brussels</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1108,7 +1156,11 @@
     </article>
     <article class="chapter is-flip" id="manneken">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-2.jpg" alt="Veda with an umbrella in front of Manneken Pis">
+            <figure class="shot is-on">
+                <img src="brussels-image-2.jpg" alt="Veda with an umbrella in front of Manneken Pis">
+                <figcaption>Veda with an umbrella in front of Manneken Pis</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1123,7 +1175,11 @@
     </article>
     <article class="chapter" id="grandplace">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-3.jpg" alt="Grand Place in Brussels">
+            <figure class="shot is-on">
+                <img src="brussels-image-3.jpg" alt="Grand Place in Brussels">
+                <figcaption>Grand Place in Brussels</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1138,8 +1194,15 @@
     </article>
     <article class="chapter is-flip" id="montdesarts">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-4.jpg" alt="Mont des Arts">
-            <img src="brussels-image-5.jpg" alt="The garden at Mont des Arts" loading="lazy">
+            <figure class="shot is-on">
+                <img src="brussels-image-4.jpg" alt="Mont des Arts">
+                <figcaption>Mont des Arts</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="brussels-image-5.jpg" alt="The garden at Mont des Arts" loading="lazy">
+                <figcaption>The garden at Mont des Arts</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1154,10 +1217,23 @@
     </article>
     <article class="chapter" id="minieurope">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-6.jpg" alt="Mini-Europe">
-            <img src="brussels-image-7.jpg" alt="Eiffel Tower replica at Mini-Europe" loading="lazy">
-            <img src="brussels-image-8.jpg" alt="Sacré-Cœur replica at Mini-Europe" loading="lazy">
-            <img src="brussels-image-9.jpg" alt="Leaning Tower of Pisa replica at Mini-Europe" loading="lazy">
+            <figure class="shot is-on">
+                <img src="brussels-image-6.jpg" alt="Mini-Europe">
+                <figcaption>Mini-Europe</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="brussels-image-7.jpg" alt="Eiffel Tower replica at Mini-Europe" loading="lazy">
+                <figcaption>Eiffel Tower replica at Mini-Europe</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="brussels-image-8.jpg" alt="Sacré-Cœur replica at Mini-Europe" loading="lazy">
+                <figcaption>Sacré-Cœur replica at Mini-Europe</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="brussels-image-9.jpg" alt="Leaning Tower of Pisa replica at Mini-Europe" loading="lazy">
+                <figcaption>Leaning Tower of Pisa replica at Mini-Europe</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1172,8 +1248,15 @@
     </article>
     <article class="chapter is-flip" id="cobbles">
         <div class="film" data-film>
-            <img class="is-on" src="brussels-image-11.jpg" alt="Cobblestone street in Brussels">
-            <img src="brussels-image-12.jpg" alt="Cobblestones in Brussels, another street" loading="lazy">
+            <figure class="shot is-on">
+                <img src="brussels-image-11.jpg" alt="Cobblestone street in Brussels">
+                <figcaption>Cobblestone street in Brussels</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="brussels-image-12.jpg" alt="Cobblestones in Brussels, another street" loading="lazy">
+                <figcaption>Cobblestones in Brussels, another street</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1299,7 +1382,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

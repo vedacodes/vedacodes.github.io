@@ -56,7 +56,17 @@
                     "name": "Chicago",
                     "containedInPlace": { "@type": "Country", "name": "United States" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/chicago/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/chicago/#hero",
+                "url": "https://globetrotwithveda.com/chicago-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/chicago-image.jpg",
+                "caption": "Chicago riverwalk and skyline",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1079,7 +1123,11 @@
 
     <article class="chapter" id="bean">
         <div class="film" data-film>
-            <img class="is-on" src="chicago-image-4.jpg" alt="Cloud Gate reflecting the Chicago skyline in Millennium Park">
+            <figure class="shot is-on">
+                <img src="chicago-image-4.jpg" alt="Cloud Gate reflecting the Chicago skyline in Millennium Park">
+                <figcaption>Cloud Gate reflecting the Chicago skyline in Millennium Park</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1094,8 +1142,15 @@
     </article>
     <article class="chapter is-flip" id="riverwalk">
         <div class="film" data-film>
-            <img class="is-on" src="chicago-image-1.jpg" alt="On the Chicago Riverwalk with the skyline behind">
-            <img src="chicago-image-5.jpg" alt="Chicago Riverwalk in daylight" loading="lazy">
+            <figure class="shot is-on">
+                <img src="chicago-image-1.jpg" alt="On the Chicago Riverwalk with the skyline behind">
+                <figcaption>On the Chicago Riverwalk with the skyline behind</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="chicago-image-5.jpg" alt="Chicago Riverwalk in daylight" loading="lazy">
+                <figcaption>Chicago Riverwalk in daylight</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1110,8 +1165,15 @@
     </article>
     <article class="chapter" id="architecture-tour">
         <div class="film" data-film>
-            <img class="is-on" src="chicago-image-6.jpg" alt="Chicago Riverwalk at dusk with lit towers">
-            <img src="chicago-image-7.jpg" alt="On an architecture boat tour at dusk" loading="lazy">
+            <figure class="shot is-on">
+                <img src="chicago-image-6.jpg" alt="Chicago Riverwalk at dusk with lit towers">
+                <figcaption>Chicago Riverwalk at dusk with lit towers</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="chicago-image-7.jpg" alt="On an architecture boat tour at dusk" loading="lazy">
+                <figcaption>On an architecture boat tour at dusk</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1126,7 +1188,11 @@
     </article>
     <article class="chapter is-flip" id="deep-dish">
         <div class="film" data-film>
-            <img class="is-on" src="chicago-image-3.jpg" alt="Deep-dish pizza at Giordano's in Chicago">
+            <figure class="shot is-on">
+                <img src="chicago-image-3.jpg" alt="Deep-dish pizza at Giordano&#x27;s in Chicago">
+                <figcaption>Deep-dish pizza at Giordano&#x27;s in Chicago</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1141,7 +1207,11 @@
     </article>
     <article class="chapter" id="lincoln-park">
         <div class="film" data-film>
-            <img class="is-on" src="chicago-image-2.jpg" alt="A sunny afternoon in a Chicago park">
+            <figure class="shot is-on">
+                <img src="chicago-image-2.jpg" alt="A sunny afternoon in a Chicago park">
+                <figcaption>A sunny afternoon in a Chicago park</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1282,7 +1352,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

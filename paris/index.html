@@ -56,7 +56,17 @@
                     "name": "Paris",
                     "containedInPlace": { "@type": "Country", "name": "France" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/paris/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/paris/#hero",
+                "url": "https://globetrotwithveda.com/paris-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/paris-image.jpg",
+                "caption": "Veda standing in front of the Eiffel Tower in Paris",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     </style>
 </head>
@@ -1125,7 +1169,11 @@
 
     <article class="chapter" id="nike">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-1.jpg" alt="Winged Victory of Samothrace at the Louvre">
+            <figure class="shot is-on">
+                <img src="paris-image-1.jpg" alt="Winged Victory of Samothrace at the Louvre">
+                <figcaption>Winged Victory of Samothrace at the Louvre</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1141,9 +1189,19 @@
 
     <article class="chapter is-flip" id="eiffel">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-2.jpg" alt="The Eiffel Tower">
-            <img src="paris-image-3.jpg" alt="The Eiffel Tower, another angle" loading="lazy">
-            <img src="paris-image-12.jpg" alt="The Eiffel Tower, a third view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="paris-image-2.jpg" alt="The Eiffel Tower">
+                <figcaption>The Eiffel Tower</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-3.jpg" alt="The Eiffel Tower, another angle" loading="lazy">
+                <figcaption>The Eiffel Tower, another angle</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-12.jpg" alt="The Eiffel Tower, a third view" loading="lazy">
+                <figcaption>The Eiffel Tower, a third view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1159,9 +1217,19 @@
 
     <article class="chapter" id="summit">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-4.jpg" alt="View from the Eiffel Tower">
-            <img src="paris-image-8.jpg" alt="Paris from the Eiffel Tower" loading="lazy">
-            <img src="paris-image-9.jpg" alt="Paris rooftops from the tower" loading="lazy">
+            <figure class="shot is-on">
+                <img src="paris-image-4.jpg" alt="View from the Eiffel Tower">
+                <figcaption>View from the Eiffel Tower</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-8.jpg" alt="Paris from the Eiffel Tower" loading="lazy">
+                <figcaption>Paris from the Eiffel Tower</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-9.jpg" alt="Paris rooftops from the tower" loading="lazy">
+                <figcaption>Paris rooftops from the tower</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1177,8 +1245,15 @@
 
     <article class="chapter is-flip" id="mona">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-5.jpg" alt="The Mona Lisa at the Louvre">
-            <img src="paris-image-14.jpg" alt="The Mona Lisa, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="paris-image-5.jpg" alt="The Mona Lisa at the Louvre">
+                <figcaption>The Mona Lisa at the Louvre</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-14.jpg" alt="The Mona Lisa, another view" loading="lazy">
+                <figcaption>The Mona Lisa, another view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1194,7 +1269,11 @@
 
     <article class="chapter" id="notre">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-6.jpg" alt="Notre-Dame Cathedral">
+            <figure class="shot is-on">
+                <img src="paris-image-6.jpg" alt="Notre-Dame Cathedral">
+                <figcaption>Notre-Dame Cathedral</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1210,7 +1289,11 @@
 
     <article class="chapter is-flip" id="sacre">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-7.jpg" alt="Sacré-Cœur basilica">
+            <figure class="shot is-on">
+                <img src="paris-image-7.jpg" alt="Sacré-Cœur basilica">
+                <figcaption>Sacré-Cœur basilica</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1226,12 +1309,31 @@
 
     <article class="chapter" id="louvre">
         <div class="film" data-film>
-            <img class="is-on" src="paris-image-10.jpg" alt="The Louvre">
-            <img src="paris-image-11.jpg" alt="A painting in the Louvre" loading="lazy">
-            <img src="paris-image-13.jpg" alt="The Louvre, another hall" loading="lazy">
-            <img src="paris-image-15.jpg" alt="The Louvre collection" loading="lazy">
-            <img src="paris-image-16.jpg" alt="Inside the Louvre" loading="lazy">
-            <img src="paris-image-17.jpg" alt="The Louvre, one more room" loading="lazy">
+            <figure class="shot is-on">
+                <img src="paris-image-10.jpg" alt="The Louvre">
+                <figcaption>The Louvre</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-11.jpg" alt="A painting in the Louvre" loading="lazy">
+                <figcaption>A painting in the Louvre</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-13.jpg" alt="The Louvre, another hall" loading="lazy">
+                <figcaption>The Louvre, another hall</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-15.jpg" alt="The Louvre collection" loading="lazy">
+                <figcaption>The Louvre collection</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-16.jpg" alt="Inside the Louvre" loading="lazy">
+                <figcaption>Inside the Louvre</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="paris-image-17.jpg" alt="The Louvre, one more room" loading="lazy">
+                <figcaption>The Louvre, one more room</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 06</span>
@@ -1394,7 +1496,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

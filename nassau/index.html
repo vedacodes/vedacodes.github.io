@@ -56,7 +56,17 @@
                     "name": "Nassau",
                     "containedInPlace": { "@type": "Country", "name": "Bahamas" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/nassau/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/nassau/#hero",
+                "url": "https://globetrotwithveda.com/nassau-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/nassau-image.jpg",
+                "caption": "Nassau harbor and Caribbean light",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -448,32 +458,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -703,7 +747,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1073,9 +1117,19 @@
 
     <article class="chapter" id="staircase">
         <div class="film" data-film>
-            <img class="is-on" src="nassau-image-1.jpg" alt="Queen’s Staircase in Nassau">
-            <img src="nassau-image-3.jpg" alt="Queen’s Staircase carved out of solid rock" loading="lazy">
-            <img src="nassau-image-4.jpg" alt="Queen’s Staircase, another view" loading="lazy">
+            <figure class="shot is-on">
+                <img src="nassau-image-1.jpg" alt="Queen’s Staircase in Nassau">
+                <figcaption>Queen’s Staircase in Nassau</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="nassau-image-3.jpg" alt="Queen’s Staircase carved out of solid rock" loading="lazy">
+                <figcaption>Queen’s Staircase carved out of solid rock</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="nassau-image-4.jpg" alt="Queen’s Staircase, another view" loading="lazy">
+                <figcaption>Queen’s Staircase, another view</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1090,8 +1144,15 @@
     </article>
     <article class="chapter is-flip" id="straw">
         <div class="film" data-film>
-            <img class="is-on" src="nassau-image-2.jpg" alt="The Straw Market in Nassau">
-            <img src="nassau-image-7.jpg" alt="Straw Market stalls" loading="lazy">
+            <figure class="shot is-on">
+                <img src="nassau-image-2.jpg" alt="The Straw Market in Nassau">
+                <figcaption>The Straw Market in Nassau</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="nassau-image-7.jpg" alt="Straw Market stalls" loading="lazy">
+                <figcaption>Straw Market stalls</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1106,7 +1167,11 @@
     </article>
     <article class="chapter" id="parliament">
         <div class="film" data-film>
-            <img class="is-on" src="nassau-image-5.jpg" alt="Parliament Square in Nassau">
+            <figure class="shot is-on">
+                <img src="nassau-image-5.jpg" alt="Parliament Square in Nassau">
+                <figcaption>Parliament Square in Nassau</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1121,7 +1186,11 @@
     </article>
     <article class="chapter is-flip" id="coconut">
         <div class="film" data-film>
-            <img class="is-on" src="nassau-image-6.jpg" alt="Fresh coconut water in the Bahamas">
+            <figure class="shot is-on">
+                <img src="nassau-image-6.jpg" alt="Fresh coconut water in the Bahamas">
+                <figcaption>Fresh coconut water in the Bahamas</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1136,7 +1205,11 @@
     </article>
     <article class="chapter" id="cruise">
         <div class="film" data-film>
-            <img class="is-on" src="nassau-image-8.jpg" alt="Nassau Cruise Port">
+            <figure class="shot is-on">
+                <img src="nassau-image-8.jpg" alt="Nassau Cruise Port">
+                <figcaption>Nassau Cruise Port</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1267,7 +1340,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

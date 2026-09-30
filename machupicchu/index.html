@@ -62,7 +62,17 @@
                         "longitude": -72.5450
                     }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/machupicchu/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/machupicchu/#hero",
+                "url": "https://globetrotwithveda.com/machupicchu-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/machupicchu-image.jpg",
+                "caption": "Machu Picchu citadel in the Andes",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "TouristAttraction",
@@ -475,32 +485,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -730,7 +774,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
         </style>
 </head>
@@ -1107,9 +1151,19 @@
 
     <article class="chapter" id="aguas">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-2.jpg" alt="Aguas Calientes town">
-            <img src="machupicchu-image-5.jpg" alt="Aguas Calientes another view" loading="lazy">
-            <img src="machupicchu-image-12.jpg" alt="Aguas Calientes riverside streets" loading="lazy">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-2.jpg" alt="Aguas Calientes town">
+                <figcaption>Aguas Calientes town</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-5.jpg" alt="Aguas Calientes another view" loading="lazy">
+                <figcaption>Aguas Calientes another view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-12.jpg" alt="Aguas Calientes riverside streets" loading="lazy">
+                <figcaption>Aguas Calientes riverside streets</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1124,9 +1178,19 @@
     </article>
     <article class="chapter is-flip" id="residential">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-8.jpg" alt="Residential section of Machu Picchu">
-            <img src="machupicchu-image-9.jpg" alt="More residential terraces at Machu Picchu" loading="lazy">
-            <img src="machupicchu-image-1.jpg" alt="Ancient houses in Machu Picchu" loading="lazy">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-8.jpg" alt="Residential section of Machu Picchu">
+                <figcaption>Residential section of Machu Picchu</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-9.jpg" alt="More residential terraces at Machu Picchu" loading="lazy">
+                <figcaption>More residential terraces at Machu Picchu</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-1.jpg" alt="Ancient houses in Machu Picchu" loading="lazy">
+                <figcaption>Ancient houses in Machu Picchu</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1141,8 +1205,15 @@
     </article>
     <article class="chapter" id="walking">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-3.jpg" alt="Walking through Machu Picchu">
-            <img src="machupicchu-image-4.jpg" alt="Classic Machu Picchu overlook" loading="lazy">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-3.jpg" alt="Walking through Machu Picchu">
+                <figcaption>Walking through Machu Picchu</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-4.jpg" alt="Classic Machu Picchu overlook" loading="lazy">
+                <figcaption>Classic Machu Picchu overlook</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1157,7 +1228,11 @@
     </article>
     <article class="chapter is-flip" id="perurail">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-6.jpg" alt="PeruRail train through the valley">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-6.jpg" alt="PeruRail train through the valley">
+                <figcaption>PeruRail train through the valley</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1172,7 +1247,11 @@
     </article>
     <article class="chapter" id="falls">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-7.jpg" alt="Cataratas de Aguas Calientes">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-7.jpg" alt="Cataratas de Aguas Calientes">
+                <figcaption>Cataratas de Aguas Calientes</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1187,8 +1266,15 @@
     </article>
     <article class="chapter is-flip" id="insights">
         <div class="film" data-film>
-            <img class="is-on" src="machupicchu-image-10.jpg" alt="Learning about Machu Picchu with a guide">
-            <img src="machupicchu-image-11.jpg" alt="Llama at Machu Picchu" loading="lazy">
+            <figure class="shot is-on">
+                <img src="machupicchu-image-10.jpg" alt="Learning about Machu Picchu with a guide">
+                <figcaption>Learning about Machu Picchu with a guide</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="machupicchu-image-11.jpg" alt="Llama at Machu Picchu" loading="lazy">
+                <figcaption>Llama at Machu Picchu</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1328,7 +1414,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';

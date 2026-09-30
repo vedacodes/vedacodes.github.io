@@ -56,7 +56,17 @@
                     "name": "Santorini",
                     "containedInPlace": { "@type": "Country", "name": "Greece" }
                 },
-                "author": { "@type": "Person", "name": "Veda" }
+                "author": { "@type": "Person", "name": "Veda" },
+                "primaryImageOfPage": { "@id": "https://globetrotwithveda.com/santorini/#hero" }
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "https://globetrotwithveda.com/santorini/#hero",
+                "url": "https://globetrotwithveda.com/santorini-image.jpg",
+                "contentUrl": "https://globetrotwithveda.com/santorini-image.jpg",
+                "caption": "Walking the whitewashed lanes of Santorini",
+                "creator": { "@type": "Person", "name": "Veda" },
+                "creditText": "Veda"
             },
             {
                 "@type": "BreadcrumbList",
@@ -447,32 +457,66 @@
 
         .film {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--void-2);
-            aspect-ratio: 4 / 5;
-            border: 1px solid var(--line);
+            overflow: visible;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            aspect-ratio: auto;
         }
-        .film img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .film .shot {
+            margin: 0;
             opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
             transition: opacity 0.45s var(--ease);
         }
-        .film img.is-on { opacity: 1; }
+        .film .shot.is-on {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .film .shot img {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--void-2);
+        }
+        .film figcaption {
+            position: static;
+            padding: 8px 2px 0;
+            background: none;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            color: var(--mute);
+            line-height: 1.3;
+            pointer-events: none;
+        }
         .film-ui {
             position: absolute;
-            inset: auto 12px 12px 12px;
-            z-index: 2;
+            left: 12px;
+            right: 12px;
+            top: 0;
+            z-index: 3;
+            aspect-ratio: 4 / 5;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            pointer-events: none;
             gap: 8px;
         }
         .film-ui button {
+            pointer-events: auto;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -702,7 +746,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .film img { transition: none; }
+            .film .shot { transition: none; }
         }
     
     </style>
@@ -1113,9 +1157,19 @@
 
     <article class="chapter" id="akrotiri">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-1.jpg" alt="Akrotiri, prehistoric town">
-            <img src="santorini-image-2.jpg" alt="Akrotiri, another hall" loading="lazy">
-            <img src="santorini-image-3.jpg" alt="Akrotiri site" loading="lazy">
+            <figure class="shot is-on">
+                <img src="santorini-image-1.jpg" alt="Akrotiri, prehistoric town">
+                <figcaption>Akrotiri, prehistoric town</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-2.jpg" alt="Akrotiri, another hall" loading="lazy">
+                <figcaption>Akrotiri, another hall</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-3.jpg" alt="Akrotiri site" loading="lazy">
+                <figcaption>Akrotiri site</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 03</span>
@@ -1130,10 +1184,23 @@
     </article>
     <article class="chapter is-flip" id="oia">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-4.jpg" alt="Oia">
-            <img src="santorini-image-9.jpg" alt="Oia lanes" loading="lazy">
-            <img src="santorini-image-11.jpg" alt="Oia, another terrace" loading="lazy">
-            <img src="santorini-image-18.jpg" alt="Oia toward the caldera" loading="lazy">
+            <figure class="shot is-on">
+                <img src="santorini-image-4.jpg" alt="Oia">
+                <figcaption>Oia</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-9.jpg" alt="Oia lanes" loading="lazy">
+                <figcaption>Oia lanes</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-11.jpg" alt="Oia, another terrace" loading="lazy">
+                <figcaption>Oia, another terrace</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-18.jpg" alt="Oia toward the caldera" loading="lazy">
+                <figcaption>Oia toward the caldera</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1148,10 +1215,23 @@
     </article>
     <article class="chapter" id="views">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-5.jpg" alt="Santorini caldera view">
-            <img src="santorini-image-6.jpg" alt="Island view from the path" loading="lazy">
-            <img src="santorini-image-12.jpg" alt="A Santorini terrace view" loading="lazy">
-            <img src="santorini-image-13.jpg" alt="Santorini scenery" loading="lazy">
+            <figure class="shot is-on">
+                <img src="santorini-image-5.jpg" alt="Santorini caldera view">
+                <figcaption>Santorini caldera view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-6.jpg" alt="Island view from the path" loading="lazy">
+                <figcaption>Island view from the path</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-12.jpg" alt="A Santorini terrace view" loading="lazy">
+                <figcaption>A Santorini terrace view</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-13.jpg" alt="Santorini scenery" loading="lazy">
+                <figcaption>Santorini scenery</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 04</span>
@@ -1166,7 +1246,11 @@
     </article>
     <article class="chapter is-flip" id="ammoudi">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-8.jpg" alt="Ammoudi Bay">
+            <figure class="shot is-on">
+                <img src="santorini-image-8.jpg" alt="Ammoudi Bay">
+                <figcaption>Ammoudi Bay</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1181,7 +1265,11 @@
     </article>
     <article class="chapter" id="cat">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-10.jpg" alt="A cat in Santorini">
+            <figure class="shot is-on">
+                <img src="santorini-image-10.jpg" alt="A cat in Santorini">
+                <figcaption>A cat in Santorini</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 01</span>
@@ -1196,8 +1284,15 @@
     </article>
     <article class="chapter is-flip" id="bluedomes">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-14.jpg" alt="Blue dome, Santorini">
-            <img src="santorini-image-15.jpg" alt="Blue domes, another church" loading="lazy">
+            <figure class="shot is-on">
+                <img src="santorini-image-14.jpg" alt="Blue dome, Santorini">
+                <figcaption>Blue dome, Santorini</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-15.jpg" alt="Blue domes, another church" loading="lazy">
+                <figcaption>Blue domes, another church</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1212,8 +1307,15 @@
     </article>
     <article class="chapter" id="thira">
         <div class="film" data-film>
-            <img class="is-on" src="santorini-image-16.jpg" alt="Fira / Thira">
-            <img src="santorini-image-17.jpg" alt="Fira clifftop" loading="lazy">
+            <figure class="shot is-on">
+                <img src="santorini-image-16.jpg" alt="Fira / Thira">
+                <figcaption>Fira / Thira</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="santorini-image-17.jpg" alt="Fira clifftop" loading="lazy">
+                <figcaption>Fira clifftop</figcaption>
+            </figure>
+
             <div class="film-ui">
                 <button type="button" data-dir="-1" aria-label="Previous photo">←</button>
                 <span class="count">01 / 02</span>
@@ -1343,7 +1445,7 @@
         });
 
         document.querySelectorAll('[data-film]').forEach((film) => {
-            const slides = [...film.querySelectorAll('img')];
+            const slides = [...film.querySelectorAll('.shot')];
             const count = film.querySelector('.count');
             const ui = film.querySelector('.film-ui');
             if (slides.length < 2 && ui) ui.style.display = 'none';
