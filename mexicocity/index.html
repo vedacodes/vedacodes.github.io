@@ -781,6 +781,7 @@
 
     <nav class="rail" aria-label="On this page">
         <a href="#map">Map</a>
+        <a href="#itineraries">Days</a>
         <a href="#intel">Intel</a>
         <a href="#frames">Photos</a>
         <a href="#unfinished">Still</a>
@@ -809,6 +810,13 @@
             <div id="mexicocity-map" role="region" aria-label="Map of Mexico City with tagged locations and day trips"></div>
         </div>
         <a class="map-open" id="mexicocity-map-link" href="https://www.google.com/maps/search/?api=1&query=Mexico City" target="_blank" rel="noopener noreferrer">Open a route in Google Maps ↗</a>
+    </section>
+
+    <section class="intel" id="itineraries" data-itineraries data-city="mexicocity">
+        <h2>Itineraries</h2>
+        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
+        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
+        <div data-itinerary-panels></div>
     </section>
 
     <section class="intel" id="intel">
@@ -1472,7 +1480,7 @@
         const setRail = (href) => {
             links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
         };
-        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const spyTargets = [...document.querySelectorAll('#map, #itineraries, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
         const updateRail = () => {
             const lock = 130;
             let winner = null;
@@ -1522,7 +1530,7 @@
             });
         });
 
-        const tabs = [...document.querySelectorAll('.tabs button')];
+        const tabs = [...document.querySelectorAll('#intel .tabs button')];
         const panels = {
             see: document.getElementById('panel-see'),
             book: document.getElementById('panel-book'),
@@ -1665,5 +1673,6 @@
             mapSpy.observe(mapSection);
         }
     </script>
+    <script src="../itineraries.js"></script>
 </body>
 </html>
