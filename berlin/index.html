@@ -781,8 +781,8 @@
 
     <nav class="rail" aria-label="On this page">
         <a href="#map">Map</a>
-        <a href="#itineraries">Days</a>
         <a href="#intel">Intel</a>
+        <a href="#itineraries">Days</a>
         <a href="#frames">Photos</a>
         <a href="#unfinished">Still</a>
         <a href="#day-tours">Trips</a>
@@ -808,13 +808,6 @@
             <div id="berlin-map" role="region" aria-label="Map of Berlin with tagged locations"></div>
         </div>
         <a class="map-open" id="berlin-map-link" href="https://www.google.com/maps/search/?api=1&query=Berlin" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
-    </section>
-
-    <section class="intel" id="itineraries" data-itineraries data-city="berlin">
-        <h2>Itineraries</h2>
-        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
-        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
-        <div data-itinerary-panels></div>
     </section>
 
     <section class="intel" id="intel">
@@ -1155,6 +1148,13 @@
         </div>
     </section>
 
+    <section class="intel" id="itineraries" data-itineraries data-city="berlin">
+        <h2>Itineraries</h2>
+        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
+        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
+        <div data-itinerary-panels></div>
+    </section>
+
     <section class="frames" id="frames">
         <h2>What stayed on the roll.</h2>
         <p class="frames-lead">Five places I actually stood in. Not a complete Berlin — just the frames I kept.</p>
@@ -1355,7 +1355,7 @@
         const setRail = (href) => {
             links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
         };
-        const spyTargets = [...document.querySelectorAll('#map, #itineraries, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #itineraries, #frames, #unfinished, #day-tours, #visa, .chapter')];
         const updateRail = () => {
             const lock = 130;
             let winner = null;

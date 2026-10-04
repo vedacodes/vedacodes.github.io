@@ -782,8 +782,8 @@
 
     <nav class="rail" aria-label="On this page">
         <a href="#map">Map</a>
-        <a href="#itineraries">Days</a>
         <a href="#intel">Intel</a>
+        <a href="#itineraries">Days</a>
         <a href="#frames">Photos</a>
         <a href="#unfinished">Still</a>
         <a href="#day-tours">Trips</a>
@@ -810,13 +810,6 @@
             <div id="chicago-map" role="region" aria-label="Map of Chicago with tagged locations"></div>
         </div>
         <a class="map-open" id="chicago-map-link" href="https://www.google.com/maps/search/?api=1&query=Chicago" target="_blank" rel="noopener noreferrer">Open a walking route in Google Maps ↗</a>
-    </section>
-
-    <section class="intel" id="itineraries" data-itineraries data-city="chicago">
-        <h2>Itineraries</h2>
-        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
-        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
-        <div data-itinerary-panels></div>
     </section>
 
     <section class="intel" id="intel">
@@ -1124,6 +1117,13 @@
         </div>
     </section>
 
+    <section class="intel" id="itineraries" data-itineraries data-city="chicago">
+        <h2>Itineraries</h2>
+        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
+        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
+        <div data-itinerary-panels></div>
+    </section>
+
     <section class="frames" id="frames">
         <h2>What stayed on the roll.</h2>
         <p class="frames-lead">Five chapters from seven frames — Riverwalk light, the Bean, a boat at dusk, a pizza that refused to be polite, and a green hour in the park.</p>
@@ -1326,7 +1326,7 @@
         const setRail = (href) => {
             links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
         };
-        const spyTargets = [...document.querySelectorAll('#map, #itineraries, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #itineraries, #frames, #unfinished, #day-tours, #visa, .chapter')];
         const updateRail = () => {
             const lock = 130;
             let winner = null;
