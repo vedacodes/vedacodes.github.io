@@ -782,6 +782,7 @@
     <nav class="rail" aria-label="On this page">
         <a href="#map">Map</a>
         <a href="#intel">Intel</a>
+        <a href="#itineraries">Days</a>
         <a href="#frames">Photos</a>
         <a href="#unfinished">Still</a>
         <a href="#day-tours">Trips</a>
@@ -1159,6 +1160,13 @@
     </section>
 
 
+    <section class="intel" id="itineraries" data-itineraries data-city="interlaken">
+        <h2>Itineraries</h2>
+        <p class="intel-lead" data-itinerary-lead>Pick a recommended length. The day-by-day plan shows up underneath.</p>
+        <div class="tabs" role="tablist" aria-label="Recommended trip lengths" data-itinerary-tabs></div>
+        <div data-itinerary-panels></div>
+    </section>
+
     <section class="frames" id="frames">
         <h2>What stayed on the roll.</h2>
         <p class="frames-lead">Seven places I actually stood in. Not every peak — just the frames I kept.</p>
@@ -1465,7 +1473,7 @@
         const setRail = (href) => {
             links.forEach((link) => link.classList.toggle('is-on', link.getAttribute('href') === href));
         };
-        const spyTargets = [...document.querySelectorAll('#map, #intel, #frames, #unfinished, #day-tours, #visa, .chapter')];
+        const spyTargets = [...document.querySelectorAll('#map, #intel, #itineraries, #frames, #unfinished, #day-tours, #visa, .chapter')];
         const updateRail = () => {
             const lock = 130;
             let winner = null;
@@ -1515,7 +1523,7 @@
             });
         });
 
-        const tabs = [...document.querySelectorAll('.tabs button')];
+        const tabs = [...document.querySelectorAll('#intel .tabs button')];
         const panels = {
             see: document.getElementById('panel-see'),
             book: document.getElementById('panel-book'),
@@ -1656,5 +1664,6 @@
             mapSpy.observe(mapSection);
         }
     </script>
+    <script src="../itineraries.js"></script>
 </body>
 </html>

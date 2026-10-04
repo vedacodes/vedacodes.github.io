@@ -1,0 +1,1604 @@
+{
+  "amsterdam": {
+    "lead": "Four days is the trip. Five if you want a windmill town that is not another canal.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Museums, a booked house, and a neighborhood that is not performing.",
+        "itinerary": [
+          {
+            "title": "Centraal, then out of the bike lane",
+            "text": "The station is the greeting and the crowd. Photograph it, then leave. Dam Square and the Royal Palace are the first walk — a building that used to be city hall and still acts like one."
+          },
+          {
+            "title": "Anne Frank House",
+            "text": "The bookcase, then the rooms. Quiet that is not empty. This is a ticket you already booked. Walk-up is a rumor. Keep the rest of the day short."
+          },
+          {
+            "title": "Jordaan on foot",
+            "text": "Canals that behave, cafés that do not, a neighborhood that still feels lived in. Walk it in the evening. Herring if you mean it. Standing still in the street is how you get hit."
+          },
+          {
+            "title": "Zeedijk and the ring",
+            "text": "He Hua Temple is red and unexpected after the brick. Chinatown without the performance. Then one more canal loop. A cruise is optional. A bridge does more work."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day walk, plus one train out of the ring.",
+        "itinerary": [
+          {
+            "title": "Centraal, then out of the bike lane",
+            "text": "The station is the greeting and the crowd. Photograph it, then leave. Dam Square and the Royal Palace are the first walk — a building that used to be city hall and still acts like one."
+          },
+          {
+            "title": "Anne Frank House",
+            "text": "The bookcase, then the rooms. Quiet that is not empty. This is a ticket you already booked. Walk-up is a rumor. Keep the rest of the day short."
+          },
+          {
+            "title": "Jordaan on foot",
+            "text": "Canals that behave, cafés that do not, a neighborhood that still feels lived in. Walk it in the evening. Herring if you mean it. Standing still in the street is how you get hit."
+          },
+          {
+            "title": "Zeedijk and the ring",
+            "text": "He Hua Temple is red and unexpected after the brick. Chinatown without the performance. Then one more canal loop. A cruise is optional. A bridge does more work."
+          },
+          {
+            "title": "Zaanse Schans or Haarlem",
+            "text": "Windmills if you want the poster: train to Zaandijk, walk, go early. Haarlem if you want a square that is not performing Amsterdam — fifteen minutes, a church, a quieter afternoon."
+          }
+        ]
+      }
+    ]
+  },
+  "antalya": {
+    "lead": "Three days covers Perge and Kaleiçi. Four if you add a theater that is not a stroll from the gate.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Ruins in the morning, the old town after the heat breaks.",
+        "itinerary": [
+          {
+            "title": "Perge at opening",
+            "text": "Columns you sit under, a street you walk, a stadium outside the walls. Start early. The heat is part of the ticket. This is the photograph people mean when they say Perge."
+          },
+          {
+            "title": "Hadrian’s Gate and Kaleiçi",
+            "text": "Three arches, then timber houses and tables after dark. The old town is the rest of the day once the ruins are done. The gate is free."
+          },
+          {
+            "title": "Harbor, then the rocks",
+            "text": "The marina under the cliff houses, fishing boats, a short walk to Mediterranean on stone if the path is open. Not a hotel pool. Sit where the town drops into the water."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three-day draft, plus the theater.",
+        "itinerary": [
+          {
+            "title": "Perge at opening",
+            "text": "Columns you sit under, a street you walk, a stadium outside the walls. Start early. The heat is part of the ticket. This is the photograph people mean when they say Perge."
+          },
+          {
+            "title": "Hadrian’s Gate and Kaleiçi",
+            "text": "Three arches, then timber houses and tables after dark. The old town is the rest of the day once the ruins are done. The gate is free."
+          },
+          {
+            "title": "Harbor, then the rocks",
+            "text": "The marina under the cliff houses, fishing boats, a short walk to Mediterranean on stone if the path is open. Not a hotel pool. Sit where the town drops into the water."
+          },
+          {
+            "title": "Aspendos",
+            "text": "The theater, east of Perge. Official ticket. Do not bolt it onto a Perge morning unless you were there at opening. Side or Kekova are longer drives — only if Kaleiçi already felt small."
+          }
+        ]
+      }
+    ]
+  },
+  "athens": {
+    "lead": "Three days is the marble. Four if you want Poseidon on a cape instead of another column.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Hill, museum, marketplace, and the lanes under them.",
+        "itinerary": [
+          {
+            "title": "Acropolis at opening",
+            "text": "The hill before the marble cooks you. Good shoes — the stone is a slide. The Parthenon is the point and also the largest argument. Combined ticket. Odeon of Herodes Atticus is the wall of arches on the way down."
+          },
+          {
+            "title": "Museum, then the Agora",
+            "text": "Acropolis Museum under the hill: glass floors, caryatids in better light. Sometimes a separate ticket. Ancient Agora in the morning while you still have patience. Hephaestus still has a roof. Stay longer than the field wants."
+          },
+          {
+            "title": "Stadium and Plaka",
+            "text": "Panathenaic Stadium: walk the track. The seats do not care that you are tired. Then Plaka, which is a maze you lose on purpose. This is the day that is not a monument."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three marble days, plus the cape at the end of the light.",
+        "itinerary": [
+          {
+            "title": "Acropolis at opening",
+            "text": "The hill before the marble cooks you. Good shoes — the stone is a slide. The Parthenon is the point and also the largest argument. Combined ticket. Odeon of Herodes Atticus is the wall of arches on the way down."
+          },
+          {
+            "title": "Museum, then the Agora",
+            "text": "Acropolis Museum under the hill: glass floors, caryatids in better light. Sometimes a separate ticket. Ancient Agora in the morning while you still have patience. Hephaestus still has a roof. Stay longer than the field wants."
+          },
+          {
+            "title": "Stadium and Plaka",
+            "text": "Panathenaic Stadium: walk the track. The seats do not care that you are tired. Then Plaka, which is a maze you lose on purpose. This is the day that is not a monument."
+          },
+          {
+            "title": "Cape Sounion",
+            "text": "The closest leave that still feels like a leave. KTEL or a tour. Poseidon on the edge. Go for the light, not the gift shop. Delphi is a different, longer day — only if you like assembling buses."
+          }
+        ]
+      }
+    ]
+  },
+  "bangkok": {
+    "lead": "Four days is temples, a river dawn, and a night that smells like a wok. Five if Ayutthaya gets its own morning.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Palace, reclining Buddha, dawn across the river, then a night market.",
+        "itinerary": [
+          {
+            "title": "Grand Palace, then Wat Pho",
+            "text": "Dress for shoulders and knees. Go early, before the heat and the tour groups. The Reclining Buddha is next door and will not fit in one frame. Plan time after the palace, not a sprint."
+          },
+          {
+            "title": "Wat Arun at dawn",
+            "text": "Temple of Dawn across the Chao Phraya. Porcelain spires are the reason for the early boat. Climb carefully. The river view is the prize. Keep the afternoon slow — Chinatown can wait until the woks start."
+          },
+          {
+            "title": "Yaowarat after dark",
+            "text": "Neon, gold shops, a food crawl that is both loud and comforting. This is the meal plan. Jim Thompson House is the quieter hour earlier, if the temples already filled the roll."
+          },
+          {
+            "title": "Chatuchak or the river, not both",
+            "text": "Weekend market if the calendar lands: getting lost is the activity. A weekday version is the river and a sky bar only if you accept the dress code. Do not buy a transit pass you will not finish."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day city, plus the old capital.",
+        "itinerary": [
+          {
+            "title": "Grand Palace, then Wat Pho",
+            "text": "Dress for shoulders and knees. Go early, before the heat and the tour groups. The Reclining Buddha is next door and will not fit in one frame. Plan time after the palace, not a sprint."
+          },
+          {
+            "title": "Wat Arun at dawn",
+            "text": "Temple of Dawn across the Chao Phraya. Porcelain spires are the reason for the early boat. Climb carefully. The river view is the prize. Keep the afternoon slow — Chinatown can wait until the woks start."
+          },
+          {
+            "title": "Yaowarat after dark",
+            "text": "Neon, gold shops, a food crawl that is both loud and comforting. This is the meal plan. Jim Thompson House is the quieter hour earlier, if the temples already filled the roll."
+          },
+          {
+            "title": "Chatuchak or the river, not both",
+            "text": "Weekend market if the calendar lands: getting lost is the activity. A weekday version is the river and a sky bar only if you accept the dress code. Do not buy a transit pass you will not finish."
+          },
+          {
+            "title": "Ayutthaya",
+            "text": "UNESCO ruins north of the city. Train or a tour. Go early, bring water, wear the same shoulders-and-knees rules. This is a ruins day, not a second Grand Palace."
+          }
+        ]
+      }
+    ]
+  },
+  "barcelona": {
+    "lead": "Four days is Gaudí plus the streets that still have right angles. Five if the mountain monastery gets a train.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "One Gaudí day, one park-and-roof day, then the old streets and the port.",
+        "itinerary": [
+          {
+            "title": "Sagrada Família",
+            "text": "Book the towers if you want the climb. The interior light is the thing the posters cannot hold. Leave the rest of the day for walking, not a second ticket."
+          },
+          {
+            "title": "Güell, then the Block of Discord",
+            "text": "Park Güell’s monumental zone is a ticket. Go early. The city view is the souvenir. Casa Milà’s roof if you like chimneys that look like helmets. Passeig de Gràcia is the walk between them."
+          },
+          {
+            "title": "Gothic Quarter",
+            "text": "No ticket. Alleys, Plaça Reial, Barcelona Cathedral — the cloister, not the Sagrada. This is where the city still talks to itself. Kinder queues than the basilica."
+          },
+          {
+            "title": "Port Vell at dusk",
+            "text": "Walk the Rambla de Mar. Columbus is a pin, not a pilgrimage. The water is the point. This is the hour that stayed."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day city, plus the mountain.",
+        "itinerary": [
+          {
+            "title": "Sagrada Família",
+            "text": "Book the towers if you want the climb. The interior light is the thing the posters cannot hold. Leave the rest of the day for walking, not a second ticket."
+          },
+          {
+            "title": "Güell, then the Block of Discord",
+            "text": "Park Güell’s monumental zone is a ticket. Go early. The city view is the souvenir. Casa Milà’s roof if you like chimneys that look like helmets. Passeig de Gràcia is the walk between them."
+          },
+          {
+            "title": "Gothic Quarter",
+            "text": "No ticket. Alleys, Plaça Reial, Barcelona Cathedral — the cloister, not the Sagrada. This is where the city still talks to itself. Kinder queues than the basilica."
+          },
+          {
+            "title": "Port Vell at dusk",
+            "text": "Walk the Rambla de Mar. Columbus is a pin, not a pilgrimage. The water is the point. This is the hour that stayed."
+          },
+          {
+            "title": "Montserrat",
+            "text": "Serrated mountain, a monastery, a train that climbs. FGC from Plaça Espanya. Book the rack railway if you do not want the surprise. Girona or Sitges only if Gaudí already gave you enough stone."
+          }
+        ]
+      }
+    ]
+  },
+  "berlin": {
+    "lead": "Four days is a first draft of a city that was two. Five if you leave Mitte for a palace or a heavier train north.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Gate, dome, island, tower — then one night that is not a postcard.",
+        "itinerary": [
+          {
+            "title": "Brandenburg and the Reichstag",
+            "text": "The gate in daylight, cobbles, a chariot. Register the dome or you are photographing a fence. Bring the passport you used on the form. Evening is the second look, when the lights make it less like a textbook."
+          },
+          {
+            "title": "Museum Island",
+            "text": "The cathedral dome if your legs still work. The city from the roof is the map the U-Bahn hid. Museum tickets are timed. Do the math before you buy a pass you will not finish."
+          },
+          {
+            "title": "Fernsehturm and a wall that still argues",
+            "text": "The TV tower from the ground is already the postcard. A ticket only if you want the revolving view. Street art is not a museum. Walk. Some of it will be gone next year."
+          },
+          {
+            "title": "A neighborhood that is not a gate",
+            "text": "Mitte in the trees if it is fall. Kreuzberg when you want an evening that does not close with the monument lights. The U-Bahn is how you actually move. Currywurst is the correct hour between trains."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day draft, plus the easy leave — or the one you do not treat as sightseeing.",
+        "itinerary": [
+          {
+            "title": "Brandenburg and the Reichstag",
+            "text": "The gate in daylight, cobbles, a chariot. Register the dome or you are photographing a fence. Bring the passport you used on the form. Evening is the second look, when the lights make it less like a textbook."
+          },
+          {
+            "title": "Museum Island",
+            "text": "The cathedral dome if your legs still work. The city from the roof is the map the U-Bahn hid. Museum tickets are timed. Do the math before you buy a pass you will not finish."
+          },
+          {
+            "title": "Fernsehturm and a wall that still argues",
+            "text": "The TV tower from the ground is already the postcard. A ticket only if you want the revolving view. Street art is not a museum. Walk. Some of it will be gone next year."
+          },
+          {
+            "title": "A neighborhood that is not a gate",
+            "text": "Mitte in the trees if it is fall. Kreuzberg when you want an evening that does not close with the monument lights. The U-Bahn is how you actually move. Currywurst is the correct hour between trains."
+          },
+          {
+            "title": "Potsdam, or a heavier leave",
+            "text": "Palaces and a park on the S-Bahn. Sanssouci if you still have patience for gold. Sachsenhausen is not this day unless you mean it and leave the rest of the hours empty. Leipzig is the other train, if Mitte already filled the roll."
+          }
+        ]
+      }
+    ]
+  },
+  "brussels": {
+    "lead": "Three days is the pentagon on foot. Four if Bruges gets the train it is always asking for.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "A square, a view, and a walk that expects rain.",
+        "itinerary": [
+          {
+            "title": "Grand Place, twice",
+            "text": "Gold guildhalls. You do not need a ticket. You need to look up. Night is the better photograph. Manneken Pis is two minutes and a fence — smaller than the souvenir — then walk away."
+          },
+          {
+            "title": "Mont des Arts and the comic walls",
+            "text": "A garden, stairs, the city stacked. Museums next door if you still have eyes. Comic murals off the gold. Brussels is funnier than the EU posters."
+          },
+          {
+            "title": "The pentagon in the rain",
+            "text": "Cobbles, ankles, an umbrella. This is how you actually see it. Heysel and Mini-Europe only if the weather has already won and you want the continent in miniature."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "Three days in the pentagon, then the train people mean when they say a day out.",
+        "itinerary": [
+          {
+            "title": "Grand Place, twice",
+            "text": "Gold guildhalls. You do not need a ticket. You need to look up. Night is the better photograph. Manneken Pis is two minutes and a fence — smaller than the souvenir — then walk away."
+          },
+          {
+            "title": "Mont des Arts and the comic walls",
+            "text": "A garden, stairs, the city stacked. Museums next door if you still have eyes. Comic murals off the gold. Brussels is funnier than the EU posters."
+          },
+          {
+            "title": "The pentagon in the rain",
+            "text": "Cobbles, ankles, an umbrella. This is how you actually see it. Heysel and Mini-Europe only if the weather has already won and you want the continent in miniature."
+          },
+          {
+            "title": "Bruges",
+            "text": "The actual day trip. Train, a canal, a town that knows it is pretty. Book nothing except the train. Ghent if you want less postcard and more city. Antwerp if the canal quota is already full."
+          }
+        ]
+      }
+    ]
+  },
+  "cancun": {
+    "lead": "Five or six days. The Hotel Zone is the swim. The ruins and the cenote are why the brochure was incomplete.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": true,
+        "summary": "Beach, Tulum, an island, a reef of statues, then the long ruins day.",
+        "itinerary": [
+          {
+            "title": "Zona Hotelera, then stop",
+            "text": "Powder sand and the resort spine. One swim day before the mainland gets loud. Do not spend it on a second lounge chair tomorrow."
+          },
+          {
+            "title": "Tulum at opening",
+            "text": "Maya cliffs over Caribbean water. Ruins first, then the sand below. Heat is part of the ticket. Colectivo or a car. Noon is a queue in full sun."
+          },
+          {
+            "title": "Isla Mujeres",
+            "text": "Ferry, golf cart, quieter water. The soft escape from the Hotel Zone. Snorkel, lunch, the last boat back. This is the easy water day."
+          },
+          {
+            "title": "Underwater museum",
+            "text": "MUSA — sculptures that want to become reef. Book the boat. Snorkel or dive. Half a day if you move. The rest of the afternoon is shade."
+          },
+          {
+            "title": "Chichén Itzá and Ik-Kil",
+            "text": "El Castillo, the ball court, then the green well if the line is not a parade. A full day from Cancún. Start early. Water is not optional. Heat is a co-star."
+          }
+        ]
+      },
+      {
+        "days": 6,
+        "recommended": false,
+        "summary": "Same arc, with the pyramid and the cenote on separate days.",
+        "itinerary": [
+          {
+            "title": "Zona Hotelera, then stop",
+            "text": "Powder sand and the resort spine. One swim day before the mainland gets loud. Do not spend it on a second lounge chair tomorrow."
+          },
+          {
+            "title": "Tulum at opening",
+            "text": "Maya cliffs over Caribbean water. Ruins first, then the sand below. Heat is part of the ticket. Colectivo or a car. Noon is a queue in full sun."
+          },
+          {
+            "title": "Isla Mujeres",
+            "text": "Ferry, golf cart, quieter water. The soft escape from the Hotel Zone. Snorkel, lunch, the last boat back. This is the easy water day."
+          },
+          {
+            "title": "Underwater museum",
+            "text": "MUSA — sculptures that want to become reef. Book the boat. Snorkel or dive. Half a day if you move. The rest of the afternoon is shade."
+          },
+          {
+            "title": "Ik-Kil without rushing the Wonder",
+            "text": "The cenote as its own hour: vines, a ladder, sacred water, a tourist rope. Pair it with a slow Hotel Zone evening instead of bolting it to the pyramid."
+          },
+          {
+            "title": "Chichén Itzá",
+            "text": "The Wonder gets the whole day when you are not also racing a well. Serpent heads, skull stones, the ball court. Same rules: dawn departure, water, heat."
+          }
+        ]
+      }
+    ]
+  },
+  "cappadocia": {
+    "lead": "Four days is balloons, valleys, and one underground city. Five if the canyon should not be a stroll from the cave hotel.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Sky, then rock, then a city under the floor.",
+        "itinerary": [
+          {
+            "title": "Balloon morning, then Göreme",
+            "text": "The valley fills before the sun does. Ride or watch from a rooftop. Wind cancels more often than the photos admit. Afterward the village is chimneys, a cat, and water. The open-air museum is next door if your legs still agree."
+          },
+          {
+            "title": "Paşabağ, Pigeon, Love",
+            "text": "Monks Valley when the buses have a gap. Pigeon Valley from the lookout, farther if you have the legs. Love Valley in late light, not at noon. They look like one photograph until you walk them."
+          },
+          {
+            "title": "Uçhisar and one underground city",
+            "text": "The castle is a rock the town grew around. Climb for the map. Then Kaymaklı or Derinkuyu — pick one. Low ceilings. Watch your head. Not a casual stroll."
+          },
+          {
+            "title": "Zelve, or the valley you skipped",
+            "text": "The open-air museum that used to be a village, quieter if the buses went to the other lot. Avanos only if you want pottery on the river and will walk a workshop, not only a showroom."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day geology, plus the canyon that needs a car.",
+        "itinerary": [
+          {
+            "title": "Balloon morning, then Göreme",
+            "text": "The valley fills before the sun does. Ride or watch from a rooftop. Wind cancels more often than the photos admit. Afterward the village is chimneys, a cat, and water. The open-air museum is next door if your legs still agree."
+          },
+          {
+            "title": "Paşabağ, Pigeon, Love",
+            "text": "Monks Valley when the buses have a gap. Pigeon Valley from the lookout, farther if you have the legs. Love Valley in late light, not at noon. They look like one photograph until you walk them."
+          },
+          {
+            "title": "Uçhisar and one underground city",
+            "text": "The castle is a rock the town grew around. Climb for the map. Then Kaymaklı or Derinkuyu — pick one. Low ceilings. Watch your head. Not a casual stroll."
+          },
+          {
+            "title": "Zelve, or the valley you skipped",
+            "text": "The open-air museum that used to be a village, quieter if the buses went to the other lot. Avanos only if you want pottery on the river and will walk a workshop, not only a showroom."
+          },
+          {
+            "title": "Ihlara",
+            "text": "Canyon, churches in the rock, a river. A van or a rental, not a walk from the cave hotel. Soğanlı only if Göreme already felt small."
+          }
+        ]
+      }
+    ]
+  },
+  "chicago": {
+    "lead": "Four days is the river, the Bean, and a pie that is not a slice. Five if Oak Park gets the houses Frank Lloyd Wright actually built.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Park, paintings, a boat, and a pie.",
+        "itinerary": [
+          {
+            "title": "Millennium Park, then the lake edge",
+            "text": "Cloud Gate and Crown Fountain first. The plaza photographs itself. Walk the Riverwalk until the towers have names. This is downtown without a ticket."
+          },
+          {
+            "title": "Art Institute",
+            "text": "Lions outside, Impressionists upstairs. Half a day if you care about paintings. Timed entry keeps the crush honest. The other half is still the river."
+          },
+          {
+            "title": "Architecture from the water",
+            "text": "A late boat if you want blue hour on the glass. From the river the skyline finally makes sense. Navy Pier and the wheel are the sunset version if the boat is full."
+          },
+          {
+            "title": "Deep dish, then a room with a horn",
+            "text": "Lou Malnati’s or Giordano’s if you want the legend. Arrive hungry. One blues or jazz set beats another museum hour. South Side rooms and downtown jazz are both still live."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day city, plus the suburb that is actually the architecture.",
+        "itinerary": [
+          {
+            "title": "Millennium Park, then the lake edge",
+            "text": "Cloud Gate and Crown Fountain first. The plaza photographs itself. Walk the Riverwalk until the towers have names. This is downtown without a ticket."
+          },
+          {
+            "title": "Art Institute",
+            "text": "Lions outside, Impressionists upstairs. Half a day if you care about paintings. Timed entry keeps the crush honest. The other half is still the river."
+          },
+          {
+            "title": "Architecture from the water",
+            "text": "A late boat if you want blue hour on the glass. From the river the skyline finally makes sense. Navy Pier and the wheel are the sunset version if the boat is full."
+          },
+          {
+            "title": "Deep dish, then a room with a horn",
+            "text": "Lou Malnati’s or Giordano’s if you want the legend. Arrive hungry. One blues or jazz set beats another museum hour. South Side rooms and downtown jazz are both still live."
+          },
+          {
+            "title": "Oak Park",
+            "text": "Frank Lloyd Wright Home and Studio, Unity Temple, a street that rewrote American houses. Easy by the L or a rideshare. Hyde Park or the free zoo only if the Loop already filled the roll and you want a softer lake."
+          }
+        ]
+      }
+    ]
+  },
+  "cusco": {
+    "lead": "Five days if you let the altitude win the first ones. Seven if Rainbow Mountain is the reason you came — and only after the easy days.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": true,
+        "summary": "Easy days, the valley, salt — no dawn hike at 17,000 feet.",
+        "itinerary": [
+          {
+            "title": "Plaza, then stop",
+            "text": "Plaza de Armas is the living room: cathedral, arcades, a slow walk. Coca tea if it helps you. Alcohol on night one rarely does. The altitude is part of the architecture. Nap without negotiating."
+          },
+          {
+            "title": "Qorikancha and a short wall",
+            "text": "The Sun Temple under a Spanish church, near the center. Walls that used to be gold. If breath allows, Sacsayhuamán above town — fitted stones, free with the Boleto Turístico. Sunset from the walls is the postcard. A taxi up is not failure."
+          },
+          {
+            "title": "Sacred Valley, lower air",
+            "text": "Pisac, Ollantaytambo, markets. Full-day tour. This is acclimatization that still looks like a trip. Do not add a summit because the van has room."
+          },
+          {
+            "title": "Maras and Moray",
+            "text": "Salt pans still worked, circular terraces. Half day by van, bike, or ATV from the valley floor. The other half is Cusco, horizontal."
+          },
+          {
+            "title": "A soft city day",
+            "text": "Plaza again, a museum room, early dinner. Lungs are the itinerary. Machu Picchu tickets, if that arc is next, should already be booked — the train does not care that you feel ready today."
+          }
+        ]
+      },
+      {
+        "days": 7,
+        "recommended": false,
+        "summary": "Two soft days, the valley, then Rainbow Mountain — not the other way around.",
+        "itinerary": [
+          {
+            "title": "Plaza, then stop",
+            "text": "Plaza de Armas, coca tea, a nap. Sea-level lungs do not get a vote. Keep this day flatter than your plans."
+          },
+          {
+            "title": "Qorikancha and Sacsayhuamán",
+            "text": "Sun Temple in town. Fitted stones above it if a taxi is the honest way up. Sunset, then down. No second monument."
+          },
+          {
+            "title": "Sacred Valley",
+            "text": "Pisac, Ollantaytambo, markets, lunch. Lower than Cusco on purpose. This is the practice day before anything with a 3am pickup."
+          },
+          {
+            "title": "Another easy day",
+            "text": "Maras and Moray, or nothing with a van. The point is the night of sleep before Rainbow Mountain, not a checklist."
+          },
+          {
+            "title": "Vinicunca",
+            "text": "Pre-dawn van. Mineral stripes, thin air, coca leaves, a 3–4am departure. One of the harder day hikes in the country. Only because the days before were soft."
+          },
+          {
+            "title": "Horizontal again",
+            "text": "You will want a plaza, a blanket, and no adventure operator. Give the body the day. Book nothing with an engine."
+          },
+          {
+            "title": "Machu Picchu handoff, or the city",
+            "text": "Train from Poroy or Ollantaytambo if the citadel is next — tickets and circuits sell out before the mist looks romantic. If it is not next, this is Cusco without a goal."
+          }
+        ]
+      }
+    ]
+  },
+  "darjeeling": {
+    "lead": "About four days in the hills. Five if a lake or Namchi should not share a morning with Tiger Hill.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "One brutal dawn, tea, a train or a stupa, then the mall at night.",
+        "itinerary": [
+          {
+            "title": "Mall Road, then sleep early",
+            "text": "Chowrasta in daylight. The jeep for Tiger Hill is booked tonight, not in the morning. Jacket in the bag. The ridge is freezing even when the town feels mild."
+          },
+          {
+            "title": "Tiger Hill, then tea",
+            "text": "Before 4am. Golden light on Kangchenjunga if the mountain agrees to show up. Then Happy Valley or an open estate: walk the rows, taste a flush, buy sealed leaf from someone authorized. Do not hike a second viewpoint on no sleep."
+          },
+          {
+            "title": "Toy train or the pagoda",
+            "text": "Darjeeling Himalayan Railway if steam or a joy ride is actually running — IRCTC, mountain-side window. Peace Pagoda if the train is not: white stupa, sunset, quieter than Chowrasta."
+          },
+          {
+            "title": "The town after the lamps",
+            "text": "Mall Road again, now without the sunrise debt. Momos, thukpa, a Glenary’s table. Clear mornings are for looking at the peak. This evening is for not setting an alarm."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four hill days, plus one jeep that leaves town.",
+        "itinerary": [
+          {
+            "title": "Mall Road, then sleep early",
+            "text": "Chowrasta in daylight. The jeep for Tiger Hill is booked tonight, not in the morning. Jacket in the bag. The ridge is freezing even when the town feels mild."
+          },
+          {
+            "title": "Tiger Hill, then tea",
+            "text": "Before 4am. Golden light on Kangchenjunga if the mountain agrees to show up. Then Happy Valley or an open estate: walk the rows, taste a flush, buy sealed leaf from someone authorized. Do not hike a second viewpoint on no sleep."
+          },
+          {
+            "title": "Toy train or the pagoda",
+            "text": "Darjeeling Himalayan Railway if steam or a joy ride is actually running — IRCTC, mountain-side window. Peace Pagoda if the train is not: white stupa, sunset, quieter than Chowrasta."
+          },
+          {
+            "title": "The town after the lamps",
+            "text": "Mall Road again, now without the sunrise debt. Momos, thukpa, a Glenary’s table. Clear mornings are for looking at the peak. This evening is for not setting an alarm."
+          },
+          {
+            "title": "Mirik, or Namchi if the road behaves",
+            "text": "Mirik Lake is the softer leave: boats, pines, a shared jeep. Namchi — Samdruptse and Char Dham — is the full day, and only if the road agrees. Do not stack either onto Tiger Hill."
+          }
+        ]
+      }
+    ]
+  },
+  "gangtok": {
+    "lead": "Five days in the mountains. Six if Tsomgo or Namchi should not be squeezed against MG Marg.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": true,
+        "summary": "Town, a monastery, a soft day, the lake, then the mall again.",
+        "itinerary": [
+          {
+            "title": "MG Marg, and the permit question",
+            "text": "Pedestrian street, lamps, the Gandhi statue. Start here. If the passport is not Indian, confirm the Tsomgo permit before you fall in love with a lake photo. Eat momos. Sleep."
+          },
+          {
+            "title": "Rumtek",
+            "text": "The monastery outside town. Architecture, a quieter hall than the mall. Half a day. The other half is ropeway: colored roofs, a short cabin, a long view."
+          },
+          {
+            "title": "Flower house or a waterfall",
+            "text": "Flower Exhibition Centre when the rhododendrons show off — humid glass against ridge wind. Ban Jhakri if you want moss, spray, and prayer flags instead. Soft on purpose."
+          },
+          {
+            "title": "Tsomgo Lake",
+            "text": "Shared taxi, warmer clothes than town, yak photos, snow peaks. Sacred and cold. This is the day the extra layer was for. Back before you invent a second lake."
+          },
+          {
+            "title": "MG Marg at night",
+            "text": "The town’s living room, engines gone. People-watching is the sport. Flags on the way home. This is the close, not a new monument."
+          }
+        ]
+      },
+      {
+        "days": 6,
+        "recommended": false,
+        "summary": "The five-day mountain stay, plus the longer road south.",
+        "itinerary": [
+          {
+            "title": "MG Marg, and the permit question",
+            "text": "Pedestrian street, lamps, the Gandhi statue. Start here. If the passport is not Indian, confirm the Tsomgo permit before you fall in love with a lake photo. Eat momos. Sleep."
+          },
+          {
+            "title": "Rumtek",
+            "text": "The monastery outside town. Architecture, a quieter hall than the mall. Half a day. The other half is ropeway: colored roofs, a short cabin, a long view."
+          },
+          {
+            "title": "Flower house or a waterfall",
+            "text": "Flower Exhibition Centre when the rhododendrons show off — humid glass against ridge wind. Ban Jhakri if you want moss, spray, and prayer flags instead. Soft on purpose."
+          },
+          {
+            "title": "Tsomgo Lake",
+            "text": "Shared taxi, warmer clothes than town, yak photos, snow peaks. Sacred and cold. This is the day the extra layer was for. Back before you invent a second lake."
+          },
+          {
+            "title": "Namchi",
+            "text": "Samdruptse, Char Dham approaches, a longer road day. Only if yesterday’s lake did not already spend the legs. Otherwise repeat a waterfall and call it honesty."
+          },
+          {
+            "title": "MG Marg at night",
+            "text": "The town’s living room, engines gone. People-watching is the sport. Flags on the way home. This is the close, not a new monument."
+          }
+        ]
+      }
+    ]
+  },
+  "grandcanyon": {
+    "lead": "Two or three days at the rim. The third is Page — Antelope and Horseshoe Bend — not another postcard of the same overlook.",
+    "plans": [
+      {
+        "days": 2,
+        "recommended": true,
+        "summary": "One rim day, one trail or tower day. Sleep in the village if you can.",
+        "itinerary": [
+          {
+            "title": "Village and the sunrise circuit",
+            "text": "Mather Point, Hopi Point, early parking, light that turns the layers into a different canyon every hour. El Tovar, the depot, rim walks between lodges. The whisper is the point. Carry water like it is the itinerary."
+          },
+          {
+            "title": "Bright Angel, then Desert View",
+            "text": "A day hike down and back, not rim-to-rim. Rest houses and seasonal water. Start early. Heat climbs faster than you do. Desert View Watchtower on the east drive if the legs veto the trail — Mary Colter’s tower earns the miles."
+          }
+        ]
+      },
+      {
+        "days": 3,
+        "recommended": false,
+        "summary": "Rim, trail, then the slot canyon and the bend — as their own day.",
+        "itinerary": [
+          {
+            "title": "Village and the sunrise circuit",
+            "text": "Mather Point, Hopi Point, early parking, light that turns the layers into a different canyon every hour. El Tovar, the depot, rim walks between lodges. The whisper is the point. Carry water like it is the itinerary."
+          },
+          {
+            "title": "Bright Angel, then Desert View",
+            "text": "A day hike down and back, not rim-to-rim. Rest houses and seasonal water. Start early. Heat climbs faster than you do. Desert View Watchtower on the east drive if the legs veto the trail — Mary Colter’s tower earns the miles."
+          },
+          {
+            "title": "Antelope Canyon and Horseshoe Bend",
+            "text": "A real drive to Page, or sleep there. Antelope is Navajo-guided, timed, not a walk-up. Horseshoe Bend is a short walk and a cliff that does not care about your photo. Sunset is packed. Do not treat this as a casual add-on after a trail."
+          }
+        ]
+      }
+    ]
+  },
+  "interlaken": {
+    "lead": "Four days between two lakes, mostly vertical. Five if Grindelwald or Lucerne should not share a funicular morning.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "One hometown mountain, one valley of water, one cable-car stack, one river.",
+        "itinerary": [
+          {
+            "title": "The town, then Harder Kulm",
+            "text": "Höhematte, streets that end in mountains. Interlaken is a hinge, not a capital. Walk it before you leave it. Funicular up for two lakes and three peaks. Sunset if the wind lets you stand still."
+          },
+          {
+            "title": "Lauterbrunnen",
+            "text": "Train from Ost. A valley that looks folded, water left on. Staubbach like a held note. This is the day not to skip. Walk until the waterfalls repeat, then stop."
+          },
+          {
+            "title": "Schilthorn",
+            "text": "Cable cars stacked like a dare. Piz Gloria, Bond still in the restaurant, Alps that do not care about the movie. Francs, wind, a cabin that is not a metro. Eat up there or admit you came for the view."
+          },
+          {
+            "title": "Aare, or a path without a ticket",
+            "text": "The river between the lakes is turquoise that looks edited. Sit. Do not make it a water park. Fall, if you came for it, is gold on a slope and a church steeple. That path is the reason the town is small."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day vertical trip, plus one train that is not a third cable car.",
+        "itinerary": [
+          {
+            "title": "The town, then Harder Kulm",
+            "text": "Höhematte, streets that end in mountains. Interlaken is a hinge, not a capital. Walk it before you leave it. Funicular up for two lakes and three peaks. Sunset if the wind lets you stand still."
+          },
+          {
+            "title": "Lauterbrunnen",
+            "text": "Train from Ost. A valley that looks folded, water left on. Staubbach like a held note. This is the day not to skip. Walk until the waterfalls repeat, then stop."
+          },
+          {
+            "title": "Schilthorn",
+            "text": "Cable cars stacked like a dare. Piz Gloria, Bond still in the restaurant, Alps that do not care about the movie. Francs, wind, a cabin that is not a metro. Eat up there or admit you came for the view."
+          },
+          {
+            "title": "Aare, or a path without a ticket",
+            "text": "The river between the lakes is turquoise that looks edited. Sit. Do not make it a water park. Fall, if you came for it, is gold on a slope and a church steeple. That path is the reason the town is small."
+          },
+          {
+            "title": "Grindelwald, or a city if the peaks won",
+            "text": "The other jaw of the Jungfrau region, train from Ost, only if the legs and the ticket agree. Lucerne if you want a chapel bridge and a slower lake. Bern if you need arcades instead of another viewpoint."
+          }
+        ]
+      }
+    ]
+  },
+  "lasvegas": {
+    "lead": "Three or four days. Walk the Strip at night. The fourth morning is the dam — concrete, not another painted sky.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Neon, replicas, one booked dinner. Leave before the carpet wins.",
+        "itinerary": [
+          {
+            "title": "The Strip after dark",
+            "text": "Four miles of hotels that are the attraction. Bellagio fountains because they are free. Neon does the work. Daytime is for sleeping off the decision to walk the whole thing."
+          },
+          {
+            "title": "Venetian, Paris, a wheel",
+            "text": "Gondolas under a painted sky. A half-scale Eiffel that admits the joke if you climb it. High Roller at sunset if you want the Strip from above. You do not have to gamble to be in the lobby."
+          },
+          {
+            "title": "A show kitchen, then one more walk",
+            "text": "Hell’s Kitchen if dinner is the ticket — book it like a show. Then the Strip again, shorter. Red Rock is the desert option only if you rent a car and go early instead of this night."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "Three Strip days, then the dam in the morning.",
+        "itinerary": [
+          {
+            "title": "The Strip after dark",
+            "text": "Four miles of hotels that are the attraction. Bellagio fountains because they are free. Neon does the work. Daytime is for sleeping off the decision to walk the whole thing."
+          },
+          {
+            "title": "Venetian, Paris, a wheel",
+            "text": "Gondolas under a painted sky. A half-scale Eiffel that admits the joke if you climb it. High Roller at sunset if you want the Strip from above. You do not have to gamble to be in the lobby."
+          },
+          {
+            "title": "A show kitchen, then one more walk",
+            "text": "Hell’s Kitchen if dinner is the ticket — book it like a show. Then the Strip again, shorter. This is the night. Tomorrow is not another casino."
+          },
+          {
+            "title": "Hoover Dam",
+            "text": "About forty-five minutes out. Visitor center, an overlook, a tour if you booked it. Rental car or a day van. Do not assume a rideshare will wait on the dam. This is the quiet that proves the other kind of monument. Grand Canyon is a different trip, not this morning."
+          }
+        ]
+      }
+    ]
+  },
+  "lima": {
+    "lead": "Three days is a first draft of cliffs, murals, and a plaza. Four if the historic center should not share a sunset with Barranco.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Coast, then color, then the old plaza before it heats up.",
+        "itinerary": [
+          {
+            "title": "Miraflores and the malecón",
+            "text": "Cliffs, parks, paragliders, Love Park at sunset. Faro La Marina is an easy pin between overlooks. Larcomar if you want the Pacific under a mall — touristy, still the correct evening. This is the easy base."
+          },
+          {
+            "title": "Barranco into the night",
+            "text": "Murals, the Bridge of Sighs, cafés that turn into the evening. Go in the afternoon on purpose. Huaca Pucllana can sit in the morning of this day: an adobe pyramid in the neighborhood, better with the guided visit."
+          },
+          {
+            "title": "Plaza Mayor early",
+            "text": "Cathedral, Government Palace, balconies. Morning beats the heat and the thicker crowds. Stay aware. Ride back to Miraflores before you invent a second historic district. Museo Larco is the soft swap if the center already feels like enough stone."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three-day draft, with the pyramid and the old center on separate days.",
+        "itinerary": [
+          {
+            "title": "Miraflores and the malecón",
+            "text": "Cliffs, parks, paragliders, Love Park at sunset. Faro La Marina is an easy pin between overlooks. Larcomar if you want the Pacific under a mall — touristy, still the correct evening. This is the easy base."
+          },
+          {
+            "title": "Barranco into the night",
+            "text": "Murals, the Bridge of Sighs, cafés that turn into the evening. Go in the afternoon on purpose. Keep the pyramid for its own morning."
+          },
+          {
+            "title": "Huaca Pucllana, then a slow coast walk",
+            "text": "The pre-Columbian adobe pyramid in Miraflores, guided, before dinner. Then Love Park to Larcomar to the lighthouse without rushing. The sunset selfie is the door, not the whole visit."
+          },
+          {
+            "title": "Centro, or Larco",
+            "text": "Plaza Mayor at opening, San Francisco, then a car back to the cliffs. Museo Larco — mansion, gardens, pottery before the Inca story — if your feet refuse another plaza. Cusco is the next city, not a fourth afternoon here."
+          }
+        ]
+      }
+    ]
+  },
+  "losangeles": {
+    "lead": "Seven days if you want the parks and the pier. Five if one park day is enough and the freeways are already the tax.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "One park, the sign, a studio, the boulevard, the pier.",
+        "itinerary": [
+          {
+            "title": "Disneyland",
+            "text": "Anaheim, not LA proper. A full day. Traffic both ways. Stay nearby if fireworks will wreck the drive back. One park, not two."
+          },
+          {
+            "title": "Hollywood Boulevard, then leave",
+            "text": "Stars underfoot, once. Hunt your people. Leave before the street performers own you. Museum of Illusions if you want rooms that argue with your eyes — photos required, laughing is the method."
+          },
+          {
+            "title": "Griffith at sunset",
+            "text": "Free grounds, the sign on the ridge, the city below. Parking is the boss fight. Go early enough to fail at parking and still see the light."
+          },
+          {
+            "title": "Universal",
+            "text": "Studio tour, a hill of rides that sell the movies back. A full day if you want more than a photo. Express only if yesterday already taught you what a line costs."
+          },
+          {
+            "title": "Santa Monica Pier",
+            "text": "Ferris wheel, Pacific air, the week exhaling. Golden hour. The carnival is the point. Malibu and PCH only if you have a car and treat this as a coast day instead of a pier hour."
+          }
+        ]
+      },
+      {
+        "days": 7,
+        "recommended": true,
+        "summary": "Both park days, the sign, the studio, the pier, and one coast or recovery day.",
+        "itinerary": [
+          {
+            "title": "Disneyland",
+            "text": "Anaheim. Full day. Childhood, engineered. Do not pair it with a Hollywood night unless you enjoy suffering on a freeway."
+          },
+          {
+            "title": "California Adventure, or nothing",
+            "text": "A second park day only if the first felt cut off. If it did not, this is a slow morning and an early night. The week is long on purpose."
+          },
+          {
+            "title": "Walk of Fame and the illusions",
+            "text": "Hollywood Boulevard once. Stars, then out. Museum of Illusions for the rooms that lie. Neither needs a whole heroic agenda."
+          },
+          {
+            "title": "Griffith Observatory",
+            "text": "Sunset pilgrimage. Free grounds. The sign from the ridge. Parking is the plan, not an afterthought."
+          },
+          {
+            "title": "Universal Studios",
+            "text": "Hogwarts, the studio tour, rides. A full day. This is the other park, not a photo stop between coffees."
+          },
+          {
+            "title": "Santa Monica",
+            "text": "Pier, wheel, Pacific. Golden hour. Let the carnival be silly. You earned a day that is not a ticket gate."
+          },
+          {
+            "title": "PCH or a neighborhood",
+            "text": "Malibu and the coast road if the car is already the point of the trip. Otherwise a second pass at whatever day felt rushed. A rental is not optional in this version."
+          }
+        ]
+      }
+    ]
+  },
+  "machupicchu": {
+    "lead": "One or two days on site. The citadel is a timed circuit, not a weekend you invent at the gate.",
+    "plans": [
+      {
+        "days": 1,
+        "recommended": true,
+        "summary": "One circuit, one bus up, no second ticket fantasy.",
+        "itinerary": [
+          {
+            "title": "The citadel, then the river town",
+            "text": "Early bus. Mist often wins until mid-morning — patience photographs better than a selfie-stick fight. Follow the ticket’s circuit. Temple of the Sun if it is on your path; do not rush it. Llamas stay at a distance. Aguas Calientes is the practical overnight: train, a meal, hot springs only if the knees already filed their complaint and lost."
+          }
+        ]
+      },
+      {
+        "days": 2,
+        "recommended": false,
+        "summary": "Two entries if you booked them. Otherwise the citadel, then the town below it.",
+        "itinerary": [
+          {
+            "title": "First circuit",
+            "text": "The classic path, timed. Terraces, the postcard viewpoint, the breath-catch. Huayna Picchu only if that separate ticket has existed for months and your knees agreed in writing. Sunrise is an attempt. Mist is the weather."
+          },
+          {
+            "title": "A second entry, or water",
+            "text": "A different circuit only if you actually hold a second ticket — rare, and worth it when the sky is clear. If you do not, Aguas Calientes: the falls, the hot springs, a soft day. The afternoon train back to Cusco is the close, not a third ruin."
+          }
+        ]
+      }
+    ]
+  },
+  "mexicocity": {
+    "lead": "Five or six days. The sidewalk is already culture. The sixth day is a pyramid hour outside the city, or a colonial town that is not another museum.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": true,
+        "summary": "Center, the anthropology halls, Coyoacán, a dome, then the pyramids.",
+        "itinerary": [
+          {
+            "title": "Zócalo",
+            "text": "Cathedral, National Palace murals, Aztec stone under the plaza. Start the historic center here. Altitude is the quiet tax — walk slower than the itinerary in your head."
+          },
+          {
+            "title": "Anthropology Museum",
+            "text": "The Sun Stone and rooms that eat an afternoon. Plan three or four hours. This is the best museum in the country. Do not bolt a second collection onto it."
+          },
+          {
+            "title": "Casa Azul",
+            "text": "Frida’s blue house in Coyoacán. Booked weeks ahead or you are looking at a wall. Intimate, heavy, worth the ticket fight. The neighborhood is the rest of the day, not another landmark sprint."
+          },
+          {
+            "title": "Bellas Artes and a sidewalk dinner",
+            "text": "Marble, murals, the dome that photographs like a dare. Then tacos. Culture here is not only a ticket. Leave Xochimilco for a day when you have people to put in a boat."
+          },
+          {
+            "title": "Teotihuacán",
+            "text": "Pyramids about an hour out. Climb if it is open. A dawn balloon only if that was the booking, not a whim at the gate. Back before you pretend there is a night museum left in you."
+          }
+        ]
+      },
+      {
+        "days": 6,
+        "recommended": false,
+        "summary": "The five-day city with the boats added, plus an optional leave.",
+        "itinerary": [
+          {
+            "title": "Zócalo",
+            "text": "Cathedral, National Palace murals, Aztec stone under the plaza. Start the historic center here. Altitude is the quiet tax — walk slower than the itinerary in your head."
+          },
+          {
+            "title": "Anthropology Museum",
+            "text": "The Sun Stone and rooms that eat an afternoon. Plan three or four hours. This is the best museum in the country. Do not bolt a second collection onto it."
+          },
+          {
+            "title": "Casa Azul",
+            "text": "Frida’s blue house in Coyoacán. Booked weeks ahead or you are looking at a wall. Intimate, heavy, worth the ticket fight. The neighborhood is the rest of the day, not another landmark sprint."
+          },
+          {
+            "title": "Bellas Artes, then Xochimilco",
+            "text": "The dome in the morning. Trajineras in the afternoon: mariachi, floating vendors, touristy and still a joy if you bring people. Go with a group or do not go."
+          },
+          {
+            "title": "Teotihuacán",
+            "text": "Pyramids about an hour out. Climb if it is open. A dawn balloon only if that was the booking. This day is stone and sky, then an early night."
+          },
+          {
+            "title": "Puebla and Cholula, or stay",
+            "text": "A city day that is not CDMX’s sequel: food, a pyramid under a church. Long. San Miguel de Allende is the overnight version, not a polite afternoon. If the week is already full, repeat a neighborhood and eat."
+          }
+        ]
+      }
+    ]
+  },
+  "miami": {
+    "lead": "Four or five days. South Beach is the postcard. The fifth day is the Glades or the highway to the buoy — not a second Ocean Drive.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Beach, murals, a boat, then the Glades.",
+        "itinerary": [
+          {
+            "title": "South Beach, twice",
+            "text": "Art Deco, white sand, Ocean Drive. Once in daylight, once when the neon argues back. Busy on purpose. Leave before you move in."
+          },
+          {
+            "title": "Wynwood, then Little Havana",
+            "text": "Murals before the evening crowds own the sidewalk. Calle Ocho for dominoes, cigar windows, cafecito. Viernes Culturales if your Friday lands. This is the day the postcard does not show."
+          },
+          {
+            "title": "Water",
+            "text": "A Biscayne boat from Bayside. Celebrity-island narration is optional. The water is the point. Vizcaya or a quieter beach at Key Biscayne if you want gardens or sand without the South Beach volume."
+          },
+          {
+            "title": "Everglades",
+            "text": "Boardwalks, an airboat, birds, alligators. A different Florida an hour west. Go early. Storms rewrite the afternoon. Water and sun protection, then back before you add a night plan that assumes the sky cooperated."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day mix, plus either the quiet key or the long road south.",
+        "itinerary": [
+          {
+            "title": "South Beach, twice",
+            "text": "Art Deco, white sand, Ocean Drive. Once in daylight, once when the neon argues back. Busy on purpose. Leave before you move in."
+          },
+          {
+            "title": "Wynwood, then Little Havana",
+            "text": "Murals before the evening crowds own the sidewalk. Calle Ocho for dominoes, cigar windows, cafecito. Viernes Culturales if your Friday lands. This is the day the postcard does not show."
+          },
+          {
+            "title": "Water",
+            "text": "A Biscayne boat from Bayside. The water is the point. Keep Key Biscayne for a day that is only sand."
+          },
+          {
+            "title": "Everglades",
+            "text": "Airboat or boardwalk, early. Storms get a vote. Do not schedule Key West behind this."
+          },
+          {
+            "title": "Key Biscayne, or Key West if you mean it",
+            "text": "Crandon or Bill Baggs, a lighthouse park, bikes if you want the loop. Key West is the other choice: the southernmost buoy and a long highway. A day tour works. An overnight is kinder. Do not do both."
+          }
+        ]
+      }
+    ]
+  },
+  "milan": {
+    "lead": "Three days is the roof, the Galleria, and a supper you booked weeks ago. Four if Como gets the afternoon the Duomo does not need.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Roof, a booked room with a fading wall, then the glass arcade.",
+        "itinerary": [
+          {
+            "title": "Duomo, roof first",
+            "text": "Marble lace under your shoes. The city from a forest of spires. This is the ticket. The nave is the other one: height, glass, a voice that comes out smaller. Dress like a cathedral, not a runway. Then the piazza — sit where you are allowed and watch Milan at ground level."
+          },
+          {
+            "title": "The Last Supper",
+            "text": "Santa Maria delle Grazie. Fifteen minutes in a room. Leonardo fading on purpose. Weeks ahead, or you do not go. Build the rest of the day around that slot, not the other way around. Sforza’s courtyard is the free preview if the clock still has patience."
+          },
+          {
+            "title": "Galleria and aperitivo",
+            "text": "Iron, glass, a mosaic bull people spin on. Walk through. You do not have to buy the month. Evening is aperitivo. That is the Milan hour the monuments are not."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "Three days in the center, then the lake.",
+        "itinerary": [
+          {
+            "title": "Duomo, roof first",
+            "text": "Marble lace under your shoes. The city from a forest of spires. This is the ticket. The nave afterward. Dress code is real. The square is the free hour."
+          },
+          {
+            "title": "The Last Supper",
+            "text": "Fifteen minutes you already reserved. The day obeys the slot. Sforza if the courtyard is the walk you still want, not a second museum."
+          },
+          {
+            "title": "Galleria and aperitivo",
+            "text": "Walk the arcade. Spin nothing you do not mean. Aperitivo is the evening plan. Keep tomorrow’s train in mind and stop before the last spritz rewrites it."
+          },
+          {
+            "title": "Lake Como",
+            "text": "Train to Como or Varenna. Water, villas, a slower afternoon. Do not try to see every town. Bergamo if you want walls instead of a lake. Verona only if you are not rushing back for another aperitivo."
+          }
+        ]
+      }
+    ]
+  },
+  "nassau": {
+    "lead": "Three or four days. Downtown is walkable. The fourth is Cable Beach or a boat — not a second straw market.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Steps, the pink square, the market, then conch.",
+        "itinerary": [
+          {
+            "title": "Queen’s Staircase, early",
+            "text": "Sixty-six limestone steps, humidity on the stone, tropical overhang. Go before the heat decides. Fort Charlotte the same morning if the cannons still sound like a good idea: harbor view, cooler air, then downtown."
+          },
+          {
+            "title": "Parliament, Bay Street, straw",
+            "text": "Pink colonial blocks, a short stop, then the main drag when the ships are in. Straw Market under the raffia roof: know what you want, smile through the bargaining. Eat on Bay Street, then leave before the souvenir lap."
+          },
+          {
+            "title": "A table that is not the pier",
+            "text": "Fish Fry for conch if the night is the point. The staircase and the market already happened. This day is the meal and a walk that is not a cruise backdrop. Junkanoo only if the calendar actually says so."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three-day walk, plus sand or a boat.",
+        "itinerary": [
+          {
+            "title": "Queen’s Staircase, early",
+            "text": "Sixty-six limestone steps, humidity on the stone. Morning. Fort Charlotte if the harbor view is the second half, before noon."
+          },
+          {
+            "title": "Parliament, Bay Street, straw",
+            "text": "The postcard government square, then hats and bags. Sample the food. Do not move in."
+          },
+          {
+            "title": "Cable Beach",
+            "text": "Taxi out, swim, lunch on the sand strip, taxi back. The brochure beach without a resort keycard. Paradise Island only if Atlantis or the marina is why you came."
+          },
+          {
+            "title": "A boat, or a slower beach",
+            "text": "Snorkel and sandbar with a reputable operator. Weather cancels, and that is the update. If the boat does not go, repeat Cable Beach and call the day honest. Downtown does not need you again."
+          }
+        ]
+      }
+    ]
+  },
+  "paris": {
+    "lead": "Five days is the monuments and the walks between them. Six if Versailles gets the day it actually takes.",
+    "plans": [
+      {
+        "days": 5,
+        "recommended": true,
+        "summary": "Tower, museum, island, arch, hill.",
+        "itinerary": [
+          {
+            "title": "Eiffel and the Trocadéro steps",
+            "text": "Book the summit. Sunset on the steps, then stay for the sparkle. The hourly light is not a myth. The rest of the day is a neighborhood, not a second tower."
+          },
+          {
+            "title": "Louvre, with a list",
+            "text": "Timed entry. Start with what you actually want. The Mona Lisa is a crowd with a painting attached. Leave while you can still see."
+          },
+          {
+            "title": "Île de la Cité",
+            "text": "Notre-Dame is open again — often a free timed reservation. Walk the island. Sainte-Chapelle if you still have eyes for glass. The Seine in the evening does more than a dinner boat."
+          },
+          {
+            "title": "Arc, then a straight avenue you do not cross",
+            "text": "Climb for the Champs-Élysées from above. The underground passage is the way. The roundabout is not a crosswalk."
+          },
+          {
+            "title": "Sacré-Cœur",
+            "text": "Funicular if your legs have filed a complaint. Place du Tertre early, or you are in someone else’s portrait. Montmartre is the day. Stop before you collect every stair."
+          }
+        ]
+      },
+      {
+        "days": 6,
+        "recommended": false,
+        "summary": "The five-day city, plus the palace on the RER.",
+        "itinerary": [
+          {
+            "title": "Eiffel and the Trocadéro steps",
+            "text": "Book the summit. Sunset on the steps, then stay for the sparkle. The hourly light is not a myth."
+          },
+          {
+            "title": "Louvre, with a list",
+            "text": "Timed entry. What you came for, then out. The building will still be there if you do not finish it."
+          },
+          {
+            "title": "Île de la Cité",
+            "text": "Notre-Dame, the island, glass if you have it in you. Evening on the river, walking."
+          },
+          {
+            "title": "Arc de Triomphe",
+            "text": "The view, the tunnel, no heroics in traffic."
+          },
+          {
+            "title": "Sacré-Cœur",
+            "text": "Early square, a funicular if needed, a neighborhood that is not a monument schedule."
+          },
+          {
+            "title": "Versailles",
+            "text": "RER C to Versailles Château–Rive Gauche. Book the palace. The gardens are the part that still feels like air. Giverny, Fontainebleau, and Reims are other leaves — pick one city, not a tour of all of them."
+          }
+        ]
+      }
+    ]
+  },
+  "pattaya": {
+    "lead": "Three days is the carved temple, the hill Buddha, and one beach that is not the nightlife spine. Four if Koh Larn gets a full ferry day.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Wood temple, hill Buddha, then water or a market — and one night you meant.",
+        "itinerary": [
+          {
+            "title": "Sanctuary of Truth",
+            "text": "All-wood, still being carved, on the water. Book the official visit. The cultural show is part of the ticket, not a surprise add-on. Photography is the honest reason. Give it the day it asks for."
+          },
+          {
+            "title": "Big Buddha, then a calmer beach",
+            "text": "The hill over the bay. The climb is the view. Jomtien if Walking Street already spent a night you have not had yet — seafood, softer sand. Nong Nooch only if gardens are the point and you have decided what you think about the elephant show."
+          },
+          {
+            "title": "Island or market, then a deliberate night",
+            "text": "Koh Larn if the ferry fits: Tawaen, snorkel, last boat, cash and sunscreen. The floating market is the morning swap — four regional sections, touristy, hotter at noon. Walking Street after dark only in a zone you chose. Watch your bag."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "Three Pattaya days, with the island held on its own.",
+        "itinerary": [
+          {
+            "title": "Sanctuary of Truth",
+            "text": "The carved temple gets a day. Official ticket. Stay for the show. Do not sprint it before a ferry."
+          },
+          {
+            "title": "Big Buddha and Jomtien",
+            "text": "Peace above the strip, then the calmer beach. Seafood dinner. Leave Walking Street for the night you planned, or skip it."
+          },
+          {
+            "title": "Koh Larn",
+            "text": "Early ferry, beach hop, snorkel, last boat. This is the full island day, not a photo from the pier. Pack cash."
+          },
+          {
+            "title": "Market, gardens, or Bangkok",
+            "text": "Floating market in the morning if you still want the boats. Nong Nooch if the gardens are unfinished business. Bangkok only if Pattaya was the coastal chapter of a longer loop — temples there are another city’s page."
+          }
+        ]
+      }
+    ]
+  },
+  "prague": {
+    "lead": "Three days is the bridge at dawn, the castle hill, and the river quiet. Four if the bone church gets a train.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "Dawn bridge, castle, then the clock and Josefov without rushing.",
+        "itinerary": [
+          {
+            "title": "Charles Bridge at dawn",
+            "text": "The rest of the day is a market with statues. Malá Strana on one side, Old Town on the other. Kampa underneath when you need to sit. The city is loud above the island."
+          },
+          {
+            "title": "Prague Castle",
+            "text": "A hill, a cathedral, a changing of the guard. Circuit tickets on the castle’s own site. St Vitus is the interior. Do not sprint Josefov into the same afternoon unless the synagogue ticket is the thing you came for."
+          },
+          {
+            "title": "Clock, wall, Jewish quarter",
+            "text": "The astronomical clock is a short walk-up show. The tower is a separate climb. Lennon Wall is five minutes or an hour. Old-New Synagogue has its own door; the museum ticket covers the other sites. Go with time, not a checklist."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three-day city, plus the ossuary train.",
+        "itinerary": [
+          {
+            "title": "Charles Bridge at dawn",
+            "text": "Walk it before it becomes a market. Kampa when you need the river. Save the castle for a day with legs."
+          },
+          {
+            "title": "Prague Castle",
+            "text": "St Vitus inside, the circuit you booked, the guard if you catch it. Down through Malá Strana. Stop."
+          },
+          {
+            "title": "Old Town and Josefov",
+            "text": "Clock, tower if you want a roof, Lennon Wall, the synagogue with time. This is the flat day."
+          },
+          {
+            "title": "Kutná Hora",
+            "text": "Bone church, a silver town, a train. Book the ossuary if you want the famous room. Karlštejn is the shorter castle-on-a-hill swap. Český Krumlov is an overnight, not this day."
+          }
+        ]
+      }
+    ]
+  },
+  "rome": {
+    "lead": "Four days is the fever. Five if Ostia gets the easy train — a whole Roman town that is not Pompeii’s timetable.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Ancient Rome, the center, a Vatican day, then a piazza without a ticket.",
+        "itinerary": [
+          {
+            "title": "Colosseum and the Forum",
+            "text": "Skip-the-line, early or late for the light. The Forum is the same ticket. Water, shoes, an audio guide — the ruins need a narrator. This day is ancient and done."
+          },
+          {
+            "title": "Pantheon, then a fountain",
+            "text": "The oculus does different work all day. Rain makes it stranger, in a good way. Trevi at the edges of the day if you want the photo without a hundred shoulders. Navona if the walk still has room."
+          },
+          {
+            "title": "Vatican, as its own day",
+            "text": "Museums weeks ahead, on the official site — not the Colosseum ticket window. Knees covered, shoulders covered. Chapel last, no photos. Basilica on the other side of security. This is not a stop between gelatos. The Vatican page is the longer note."
+          },
+          {
+            "title": "Spanish Steps and a neighborhood",
+            "text": "Sit, watch, wander. Spring azaleas if the calendar cooperates. The rest is a piazza that is not on the ticket. Eat the carbonara in the city that still argues about cream. Walk until the fever makes sense."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day walk, plus the port town on the local train.",
+        "itinerary": [
+          {
+            "title": "Colosseum and the Forum",
+            "text": "Booked entry, better light, the Forum with a narrator. Shoes you can stand in."
+          },
+          {
+            "title": "Pantheon and Trevi",
+            "text": "Oculus, then the fountain when the shoulders thin out. Do not collect every baroque square in one march."
+          },
+          {
+            "title": "Vatican",
+            "text": "Museums, dress code, chapel, basilica. A day. The line is part of it."
+          },
+          {
+            "title": "Steps, Trastevere, or nothing new",
+            "text": "Spanish Steps, then a neighborhood dinner that is not a forum café. The city is the point of the extra evening."
+          },
+          {
+            "title": "Ostia Antica",
+            "text": "Roma–Lido from Porta San Paolo, about half an hour. A Roman town, almost empty next to Pompeii. Do it yourself. Tivoli, Pompeii, and Florence are other trains — each is a day, and Florence is not a second city before dinner."
+          }
+        ]
+      }
+    ]
+  },
+  "santorini": {
+    "lead": "Four days between the walls. Five if the volcano boat should not steal the sunset you came to stand still for.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Hub, the buried town, the loud sunset, then one hard walk or none.",
+        "itinerary": [
+          {
+            "title": "Fira, the hub",
+            "text": "Buses leave from here. The cable car drops to the old port. Stay in Fira if Oia’s prices feel like a joke. Walk the caldera edge and stop. The drop is always there. It can wait."
+          },
+          {
+            "title": "Akrotiri",
+            "text": "The prehistoric town. A roof, a walkway, ash that kept a street. Official hours. This is the island’s oldest argument, and it is not a viewpoint."
+          },
+          {
+            "title": "Oia, with a plan for the sun",
+            "text": "Go early and pick a wall that is not the main terrace. The sun does the same work from a quieter step. Ammoudi for fish if the knees accept the stairs down and back."
+          },
+          {
+            "title": "The path, or a bay",
+            "text": "Oia to Fira on foot only if you are fit and the wind agrees. Water, shoes, a bus back. Not a stroll. If the wind votes no, Ammoudi or a beach bus. Anafi is a ferry, not a whim."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day island, plus the boat that smells like sulfur.",
+        "itinerary": [
+          {
+            "title": "Fira, the hub",
+            "text": "Learn the buses before you need the last one. Cable car if the port is the walk you want. The caldera from a wall, then stop."
+          },
+          {
+            "title": "Akrotiri",
+            "text": "The roofed prehistoric streets. Culture ministry hours. Give it a morning, not a dash before a boat."
+          },
+          {
+            "title": "Oia sunset",
+            "text": "Early wall, not the main terrace. Stairs to Ammoudi only if dinner is the reason and the climb back is already priced into the night."
+          },
+          {
+            "title": "A day without a viewpoint",
+            "text": "A beach, a nap, a bus. The lanes are the trip. You do not need a sixth caldera photo."
+          },
+          {
+            "title": "Volcano and the hot springs",
+            "text": "A boat from the old port or Fira. Nea Kameni on foot, a swim that smells like geology. Book a boat that says where it lands. Athens is a flight, not this day."
+          }
+        ]
+      }
+    ]
+  },
+  "vatican": {
+    "lead": "One day. A morning and an afternoon stolen from Rome — not a second lap of the same hallway.",
+    "plans": [
+      {
+        "days": 1,
+        "recommended": true,
+        "summary": "Official ticket, covered knees, chapel last, basilica after the line.",
+        "itinerary": [
+          {
+            "title": "Museums, then the basilica",
+            "text": "Book the museums weeks ahead on the official site. Coopculture is a different ticket for a different ruin. Scarf in the bag: no shorts, no bare shoulders, or they send you out. The hallway does not end; the Sistine Chapel does, last, in silence, with no photos. St Peter’s Square and the basilica are the other half — security is the queue, the square itself is free. Morning one, afternoon the other, in whichever order the ticket allows. Ottaviano, walk, done. Castel Sant’Angelo is a landmark on the way back to dinner in Trastevere, not a second monument day."
+          }
+        ]
+      }
+    ]
+  },
+  "venice": {
+    "lead": "Four days of alleys and one island that proves you can leave. Five if Padua or Burano should not share the same vaporetto.",
+    "plans": [
+      {
+        "days": 4,
+        "recommended": true,
+        "summary": "Alleys, the square, the market bridge, then the painted island.",
+        "itinerary": [
+          {
+            "title": "Get lost on purpose",
+            "text": "Stop hunting for a curb. Islands, alleys, a vaporetto when the walk is a lie. Line 1 is slow and useful. Venezia Unica before you guess at a machine in a crush."
+          },
+          {
+            "title": "St Mark’s, then the palace",
+            "text": "Basilica mosaics. Modest dress. The square floods — boots, or a different morning. Doge’s Palace booked. The Bridge of Sighs is a corridor with a nickname. The exterior is free and still does the work."
+          },
+          {
+            "title": "Rialto in the morning",
+            "text": "The bridge is a walk-up. The market is the version that still sells fish. Accademia if you want Venetian painting without the palace theater. Walking past it is the mistake."
+          },
+          {
+            "title": "Burano",
+            "text": "A vaporetto, not a mirage. Color, lace, lunch. Murano only if you like glass more than time and you started early. Back before you invent a second lagoon."
+          }
+        ]
+      },
+      {
+        "days": 5,
+        "recommended": false,
+        "summary": "The four-day labyrinth, plus a train to solid ground.",
+        "itinerary": [
+          {
+            "title": "Get lost on purpose",
+            "text": "Alleys first. The vaporetto when you mean it. Learn the stop names before the crush."
+          },
+          {
+            "title": "Basilica and palace",
+            "text": "Mosaics, dress, a booked palace. Acqua alta gets a vote about the square."
+          },
+          {
+            "title": "Rialto market and Accademia",
+            "text": "Fish in the morning, paintings after. Two different Venices, both on foot."
+          },
+          {
+            "title": "Burano",
+            "text": "Color and lunch. Murano only as a short glass stop if the timetable is kind. Otherwise just the paint."
+          },
+          {
+            "title": "Padua",
+            "text": "Giotto, a university town, Trenitalia from Santa Lucia. A shorter train than people pretend. Verona is the arena version — back before the last vaporetto if you still need one."
+          }
+        ]
+      }
+    ]
+  },
+  "vienna": {
+    "lead": "Three days is a crooked house, a palace campus, and a coffee that is allowed to take an hour. Four if another capital is an hour by train.",
+    "plans": [
+      {
+        "days": 3,
+        "recommended": true,
+        "summary": "A crooked house, the Hofburg, a cathedral roof, the U-Bahn palace.",
+        "itinerary": [
+          {
+            "title": "Hundertwasser, then the inner city",
+            "text": "A residential block that refuses a straight line. You look from the street. The shop is the tax for standing there. Then Innere Stadt on foot. The Ring is a loop. The first district is the argument."
+          },
+          {
+            "title": "Hofburg and the column",
+            "text": "Courtyards. Interiors only if you care enough to buy the ticket. Pestsäule on the Graben: two minutes, a gold column for a plague that ended, and it stays. Stephansdom’s roof is the postcard. The tower is a climb you book. Inside, stone that has been listening."
+          },
+          {
+            "title": "Schönbrunn",
+            "text": "Still Vienna, not a countryside leave. U4 out. Gardens if the palace line looks like a second job. Book rooms only if you want rooms. Coffee house before or after — sit down. The city will wait."
+          }
+        ]
+      },
+      {
+        "days": 4,
+        "recommended": false,
+        "summary": "The three-day capital, plus the train across the river border.",
+        "itinerary": [
+          {
+            "title": "Hundertwasser and the Graben",
+            "text": "The house from the street, then the inner city until a coffee house sits you down. Pestsäule because it is two minutes and baroque on purpose."
+          },
+          {
+            "title": "Hofburg",
+            "text": "The campus of courtyards. A ticket if the rooms are the point. Otherwise the walk is the visit."
+          },
+          {
+            "title": "Stephansdom and Schönbrunn",
+            "text": "Cathedral, booked tower if the legs agree, then U4 to the palace gardens. Do not pretend Schönbrunn is a day trip to the countryside. It is a long U-Bahn."
+          },
+          {
+            "title": "Bratislava",
+            "text": "An hour by train. Another language, a castle on a hill, a cheaper lunch. Go if Vienna already gave you enough gold. The Wachau is the slower Danube version — a day, not a casual morning."
+          }
+        ]
+      }
+    ]
+  }
+}
